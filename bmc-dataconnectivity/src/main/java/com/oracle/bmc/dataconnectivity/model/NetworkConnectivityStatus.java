@@ -44,45 +44,81 @@ public final class NetworkConnectivityStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DataAsset key to which the NetworkValidationStatus belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * DataAsset key to which the NetworkValidationStatus belongs to.
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-
+        /**
+         * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointKey")
         private String privateEndPointKey;
 
+        /**
+         * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
+         * @param privateEndPointKey the value to set
+         * @return this builder
+         **/
         public Builder privateEndPointKey(String privateEndPointKey) {
             this.privateEndPointKey = privateEndPointKey;
             this.__explicitlySet__.add("privateEndPointKey");
             return this;
         }
-
+        /**
+         * Exception or error message encountered while testing network reachability for the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * Exception or error message encountered while testing network reachability for the data asset.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-
+        /**
+         * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
         private java.util.Date timeLastUpdated;
 
+        /**
+         * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+         * @param timeLastUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
             this.timeLastUpdated = timeLastUpdated;
             this.__explicitlySet__.add("timeLastUpdated");
             return this;
         }
-
+        /**
+         * Exception or error message encountered while testing network reachability for the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkValidationStatusEnum")
         private NetworkValidationStatusEnum networkValidationStatusEnum;
 
+        /**
+         * Exception or error message encountered while testing network reachability for the data asset.
+         * @param networkValidationStatusEnum the value to set
+         * @return this builder
+         **/
         public Builder networkValidationStatusEnum(
                 NetworkValidationStatusEnum networkValidationStatusEnum) {
             this.networkValidationStatusEnum = networkValidationStatusEnum;
@@ -136,6 +172,10 @@ public final class NetworkConnectivityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * DataAsset key to which the NetworkValidationStatus belongs to.
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -146,6 +186,10 @@ public final class NetworkConnectivityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointKey")
     private final String privateEndPointKey;
 
+    /**
+     * PrivateEndpoint key, if any, to which the NetworkValidationStatus belongs to.
+     * @return the value
+     **/
     public String getPrivateEndPointKey() {
         return privateEndPointKey;
     }
@@ -156,6 +200,10 @@ public final class NetworkConnectivityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * Exception or error message encountered while testing network reachability for the data asset.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -166,6 +214,10 @@ public final class NetworkConnectivityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
     private final java.util.Date timeLastUpdated;
 
+    /**
+     * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+     * @return the value
+     **/
     public java.util.Date getTimeLastUpdated() {
         return timeLastUpdated;
     }
@@ -225,6 +277,10 @@ public final class NetworkConnectivityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("networkValidationStatusEnum")
     private final NetworkValidationStatusEnum networkValidationStatusEnum;
 
+    /**
+     * Exception or error message encountered while testing network reachability for the data asset.
+     * @return the value
+     **/
     public NetworkValidationStatusEnum getNetworkValidationStatusEnum() {
         return networkValidationStatusEnum;
     }

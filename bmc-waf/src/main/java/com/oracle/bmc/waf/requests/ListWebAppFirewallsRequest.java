@@ -16,6 +16,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String id;
 
+    /**
+     * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getId() {
         return id;
     }
@@ -33,6 +39,10 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String webAppFirewallPolicyId;
 
+    /**
+     * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
+     *
+     */
     public String getWebAppFirewallPolicyId() {
         return webAppFirewallPolicyId;
     }
@@ -41,6 +51,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.List<WebAppFirewall.LifecycleState> lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycleState.
+     */
     public java.util.List<WebAppFirewall.LifecycleState> getLifecycleState() {
         return lifecycleState;
     }
@@ -49,6 +62,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +73,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -67,6 +86,11 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results.
+     * This must come from the {@code opc-next-page} header field of a previous response.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -75,6 +99,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.waf.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.waf.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -127,6 +154,13 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for timeCreated is descending.
+     * Default order for displayName is ascending.
+     * If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -135,6 +169,9 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -146,10 +183,14 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -157,10 +198,14 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String id = null;
 
         /**
          * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -168,11 +213,16 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
+         *
+         */
         private String webAppFirewallPolicyId = null;
 
         /**
          * A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
          *
+         * @param webAppFirewallPolicyId the value to set
          * @return this builder instance
          */
         public Builder webAppFirewallPolicyId(String webAppFirewallPolicyId) {
@@ -180,10 +230,14 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycleState.
+         */
         private java.util.List<WebAppFirewall.LifecycleState> lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -194,16 +248,21 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. A filter to return only resources that match the given lifecycleState.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder lifecycleState(WebAppFirewall.LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -211,10 +270,14 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -222,12 +285,18 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results.
+         * This must come from the {@code opc-next-page} header field of a previous response.
+         *
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results.
          * This must come from the {@code opc-next-page} header field of a previous response.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -235,10 +304,14 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.waf.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.waf.model.SortOrder sortOrder) {
@@ -246,6 +319,13 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for timeCreated is descending.
+         * Default order for displayName is ascending.
+         * If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -254,6 +334,7 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
          * Default order for displayName is ascending.
          * If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -261,10 +342,14 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -358,7 +443,8 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -374,6 +460,10 @@ public class ListWebAppFirewallsRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

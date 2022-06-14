@@ -28,9 +28,17 @@ public final class SetHeaderPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of headers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SetHeaderPolicyItem> items;
 
+        /**
+         * The list of headers.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SetHeaderPolicyItem> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -72,6 +80,10 @@ public final class SetHeaderPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SetHeaderPolicyItem> items;
 
+    /**
+     * The list of headers.
+     * @return the value
+     **/
     public java.util.List<SetHeaderPolicyItem> getItems() {
         return items;
     }

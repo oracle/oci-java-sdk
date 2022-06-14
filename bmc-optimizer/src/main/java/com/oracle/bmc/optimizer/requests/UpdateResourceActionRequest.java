@@ -18,6 +18,9 @@ public class UpdateResourceActionRequest
      */
     private String resourceActionId;
 
+    /**
+     * The unique OCID associated with the resource action.
+     */
     public String getResourceActionId() {
         return resourceActionId;
     }
@@ -26,6 +29,9 @@ public class UpdateResourceActionRequest
      */
     private com.oracle.bmc.optimizer.model.UpdateResourceActionDetails updateResourceActionDetails;
 
+    /**
+     * The resource action information to be updated.
+     */
     public com.oracle.bmc.optimizer.model.UpdateResourceActionDetails
             getUpdateResourceActionDetails() {
         return updateResourceActionDetails;
@@ -37,6 +43,11 @@ public class UpdateResourceActionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +61,14 @@ public class UpdateResourceActionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -72,10 +91,14 @@ public class UpdateResourceActionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique OCID associated with the resource action.
+         */
         private String resourceActionId = null;
 
         /**
          * The unique OCID associated with the resource action.
+         * @param resourceActionId the value to set
          * @return this builder instance
          */
         public Builder resourceActionId(String resourceActionId) {
@@ -83,11 +106,15 @@ public class UpdateResourceActionRequest
             return this;
         }
 
+        /**
+         * The resource action information to be updated.
+         */
         private com.oracle.bmc.optimizer.model.UpdateResourceActionDetails
                 updateResourceActionDetails = null;
 
         /**
          * The resource action information to be updated.
+         * @param updateResourceActionDetails the value to set
          * @return this builder instance
          */
         public Builder updateResourceActionDetails(
@@ -97,12 +124,18 @@ public class UpdateResourceActionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -110,6 +143,14 @@ public class UpdateResourceActionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +160,7 @@ public class UpdateResourceActionRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -211,7 +253,8 @@ public class UpdateResourceActionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +264,10 @@ public class UpdateResourceActionRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

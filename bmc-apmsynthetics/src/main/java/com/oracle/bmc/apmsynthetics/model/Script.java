@@ -66,72 +66,149 @@ public final class Script {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
+         * scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
+         * scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Unique name that can be edited. The name should not contain any confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Content type of the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private ContentTypes contentType;
 
+        /**
+         * Content type of the script.
+         * @param contentType the value to set
+         * @return this builder
+         **/
         public Builder contentType(ContentTypes contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
             return this;
         }
-
+        /**
+         * The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters.
+         * The format to set dynamic parameters is: {@code <ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>}.
+         * Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false.
+         * Examples:
+         * With mandatory param name : {@code <ORAP><ON>param name</ON></ORAP>}
+         * With parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
+         * Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
+        /**
+         * The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters.
+         * The format to set dynamic parameters is: {@code <ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>}.
+         * Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false.
+         * Examples:
+         * With mandatory param name : {@code <ORAP><ON>param name</ON></ORAP>}
+         * With parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
+         * Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+         *
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-
+        /**
+         * The time the script was uploaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUploaded")
         private java.util.Date timeUploaded;
 
+        /**
+         * The time the script was uploaded.
+         * @param timeUploaded the value to set
+         * @return this builder
+         **/
         public Builder timeUploaded(java.util.Date timeUploaded) {
             this.timeUploaded = timeUploaded;
             this.__explicitlySet__.add("timeUploaded");
             return this;
         }
-
+        /**
+         * Size of the script content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentSizeInBytes")
         private Integer contentSizeInBytes;
 
+        /**
+         * Size of the script content.
+         * @param contentSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder contentSizeInBytes(Integer contentSizeInBytes) {
             this.contentSizeInBytes = contentSizeInBytes;
             this.__explicitlySet__.add("contentSizeInBytes");
             return this;
         }
-
+        /**
+         * File name of the uploaded script content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentFileName")
         private String contentFileName;
 
+        /**
+         * File name of the uploaded script content.
+         * @param contentFileName the value to set
+         * @return this builder
+         **/
         public Builder contentFileName(String contentFileName) {
             this.contentFileName = contentFileName;
             this.__explicitlySet__.add("contentFileName");
             return this;
         }
-
+        /**
+         * List of script parameters. Example: {@code [{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<ScriptParameterInfo> parameters;
 
+        /**
+         * List of script parameters. Example: {@code [{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]}
+         *
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<ScriptParameterInfo> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -146,37 +223,85 @@ public final class Script {
             this.__explicitlySet__.add("monitorStatusCountMap");
             return this;
         }
-
+        /**
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -248,6 +373,12 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the script.
+     * scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -258,6 +389,10 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Unique name that can be edited. The name should not contain any confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -268,6 +403,10 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final ContentTypes contentType;
 
+    /**
+     * Content type of the script.
+     * @return the value
+     **/
     public ContentTypes getContentType() {
         return contentType;
     }
@@ -285,6 +424,17 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
+    /**
+     * The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters.
+     * The format to set dynamic parameters is: {@code <ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>}.
+     * Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false.
+     * Examples:
+     * With mandatory param name : {@code <ORAP><ON>param name</ON></ORAP>}
+     * With parameter name and value : {@code <ORAP><ON>param name</ON><OV>param value</OV></ORAP>}
+     * Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+     *
+     * @return the value
+     **/
     public String getContent() {
         return content;
     }
@@ -295,6 +445,10 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUploaded")
     private final java.util.Date timeUploaded;
 
+    /**
+     * The time the script was uploaded.
+     * @return the value
+     **/
     public java.util.Date getTimeUploaded() {
         return timeUploaded;
     }
@@ -305,6 +459,10 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("contentSizeInBytes")
     private final Integer contentSizeInBytes;
 
+    /**
+     * Size of the script content.
+     * @return the value
+     **/
     public Integer getContentSizeInBytes() {
         return contentSizeInBytes;
     }
@@ -315,6 +473,10 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("contentFileName")
     private final String contentFileName;
 
+    /**
+     * File name of the uploaded script content.
+     * @return the value
+     **/
     public String getContentFileName() {
         return contentFileName;
     }
@@ -326,6 +488,11 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<ScriptParameterInfo> parameters;
 
+    /**
+     * List of script parameters. Example: {@code [{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]}
+     *
+     * @return the value
+     **/
     public java.util.List<ScriptParameterInfo> getParameters() {
         return parameters;
     }
@@ -346,6 +513,13 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -359,6 +533,13 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-13T22:47:12.613Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -371,6 +552,12 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -383,6 +570,12 @@ public final class Script {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

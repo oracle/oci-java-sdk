@@ -47,54 +47,99 @@ public final class UpdateModelProvenanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * For model reproducibility purposes. URL of the git repository associated with model training.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
+        /**
+         * For model reproducibility purposes. URL of the git repository associated with model training.
+         * @param repositoryUrl the value to set
+         * @return this builder
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-
+        /**
+         * For model reproducibility purposes. Branch of the git repository associated with model training.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gitBranch")
         private String gitBranch;
 
+        /**
+         * For model reproducibility purposes. Branch of the git repository associated with model training.
+         * @param gitBranch the value to set
+         * @return this builder
+         **/
         public Builder gitBranch(String gitBranch) {
             this.gitBranch = gitBranch;
             this.__explicitlySet__.add("gitBranch");
             return this;
         }
-
+        /**
+         * For model reproducibility purposes. Commit ID of the git repository associated with model training.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gitCommit")
         private String gitCommit;
 
+        /**
+         * For model reproducibility purposes. Commit ID of the git repository associated with model training.
+         * @param gitCommit the value to set
+         * @return this builder
+         **/
         public Builder gitCommit(String gitCommit) {
             this.gitCommit = gitCommit;
             this.__explicitlySet__.add("gitCommit");
             return this;
         }
-
+        /**
+         * For model reproducibility purposes. Path to model artifacts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptDir")
         private String scriptDir;
 
+        /**
+         * For model reproducibility purposes. Path to model artifacts.
+         * @param scriptDir the value to set
+         * @return this builder
+         **/
         public Builder scriptDir(String scriptDir) {
             this.scriptDir = scriptDir;
             this.__explicitlySet__.add("scriptDir");
             return this;
         }
-
+        /**
+         * For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trainingScript")
         private String trainingScript;
 
+        /**
+         * For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
+         *
+         * @param trainingScript the value to set
+         * @return this builder
+         **/
         public Builder trainingScript(String trainingScript) {
             this.trainingScript = trainingScript;
             this.__explicitlySet__.add("trainingScript");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trainingId")
         private String trainingId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
+         * @param trainingId the value to set
+         * @return this builder
+         **/
         public Builder trainingId(String trainingId) {
             this.trainingId = trainingId;
             this.__explicitlySet__.add("trainingId");
@@ -149,6 +194,10 @@ public final class UpdateModelProvenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
+    /**
+     * For model reproducibility purposes. URL of the git repository associated with model training.
+     * @return the value
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
@@ -159,6 +208,10 @@ public final class UpdateModelProvenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("gitBranch")
     private final String gitBranch;
 
+    /**
+     * For model reproducibility purposes. Branch of the git repository associated with model training.
+     * @return the value
+     **/
     public String getGitBranch() {
         return gitBranch;
     }
@@ -169,6 +222,10 @@ public final class UpdateModelProvenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("gitCommit")
     private final String gitCommit;
 
+    /**
+     * For model reproducibility purposes. Commit ID of the git repository associated with model training.
+     * @return the value
+     **/
     public String getGitCommit() {
         return gitCommit;
     }
@@ -179,6 +236,10 @@ public final class UpdateModelProvenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scriptDir")
     private final String scriptDir;
 
+    /**
+     * For model reproducibility purposes. Path to model artifacts.
+     * @return the value
+     **/
     public String getScriptDir() {
         return scriptDir;
     }
@@ -190,6 +251,11 @@ public final class UpdateModelProvenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("trainingScript")
     private final String trainingScript;
 
+    /**
+     * For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
+     *
+     * @return the value
+     **/
     public String getTrainingScript() {
         return trainingScript;
     }
@@ -200,6 +266,10 @@ public final class UpdateModelProvenanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("trainingId")
     private final String trainingId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
+     * @return the value
+     **/
     public String getTrainingId() {
         return trainingId;
     }

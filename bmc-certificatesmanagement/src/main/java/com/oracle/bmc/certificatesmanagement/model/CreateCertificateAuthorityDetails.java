@@ -56,36 +56,65 @@ public final class CreateCertificateAuthorityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A brief description of the CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A brief description of the CA.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The compartment in which you want to create the CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment in which you want to create the CA.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A list of rules that control how the CA is used and managed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityRules")
         private java.util.List<CertificateAuthorityRule> certificateAuthorityRules;
 
+        /**
+         * A list of rules that control how the CA is used and managed.
+         * @param certificateAuthorityRules the value to set
+         * @return this builder
+         **/
         public Builder certificateAuthorityRules(
                 java.util.List<CertificateAuthorityRule> certificateAuthorityRules) {
             this.certificateAuthorityRules = certificateAuthorityRules;
@@ -112,28 +141,57 @@ public final class CreateCertificateAuthorityDetails {
             this.__explicitlySet__.add("certificateRevocationListDetails");
             return this;
         }
-
+        /**
+         * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -196,6 +254,10 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -206,6 +268,10 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A brief description of the CA.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -216,6 +282,10 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment in which you want to create the CA.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -226,6 +296,10 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityRules")
     private final java.util.List<CertificateAuthorityRule> certificateAuthorityRules;
 
+    /**
+     * A list of rules that control how the CA is used and managed.
+     * @return the value
+     **/
     public java.util.List<CertificateAuthorityRule> getCertificateAuthorityRules() {
         return certificateAuthorityRules;
     }
@@ -250,6 +324,10 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -262,6 +340,12 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -274,6 +358,12 @@ public final class CreateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

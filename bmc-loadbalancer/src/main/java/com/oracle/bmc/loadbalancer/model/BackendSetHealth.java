@@ -46,45 +46,133 @@ public final class BackendSetHealth {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Overall health status of the backend set.
+         * <p>
+         *  **OK:** All backend servers in the backend set return a status of {@code OK}.
+         * <p>
+         *  **WARNING:** Half or more of the backend set's backend servers return a status of {@code OK} and at least one backend
+         * server returns a status of {@code WARNING}, {@code CRITICAL}, or {@code UNKNOWN}.
+         * <p>
+         *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of {@code OK}.
+         * <p>
+         *  **UNKNOWN:** More than half of the backend set's backend servers return a status of {@code UNKNOWN}, the system was
+         * unable to retrieve metrics, or the backend set does not have a listener attached.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Overall health status of the backend set.
+         * <p>
+         *  **OK:** All backend servers in the backend set return a status of {@code OK}.
+         * <p>
+         *  **WARNING:** Half or more of the backend set's backend servers return a status of {@code OK} and at least one backend
+         * server returns a status of {@code WARNING}, {@code CRITICAL}, or {@code UNKNOWN}.
+         * <p>
+         *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of {@code OK}.
+         * <p>
+         *  **UNKNOWN:** More than half of the backend set's backend servers return a status of {@code UNKNOWN}, the system was
+         * unable to retrieve metrics, or the backend set does not have a listener attached.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * A list of backend servers that are currently in the {@code WARNING} health state. The list identifies each backend server by
+         * IP address and port.
+         * <p>
+         * Example: {@code 10.0.0.3:8080}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")
         private java.util.List<String> warningStateBackendNames;
 
+        /**
+         * A list of backend servers that are currently in the {@code WARNING} health state. The list identifies each backend server by
+         * IP address and port.
+         * <p>
+         * Example: {@code 10.0.0.3:8080}
+         *
+         * @param warningStateBackendNames the value to set
+         * @return this builder
+         **/
         public Builder warningStateBackendNames(java.util.List<String> warningStateBackendNames) {
             this.warningStateBackendNames = warningStateBackendNames;
             this.__explicitlySet__.add("warningStateBackendNames");
             return this;
         }
-
+        /**
+         * A list of backend servers that are currently in the {@code CRITICAL} health state. The list identifies each backend server by
+         * IP address and port.
+         * <p>
+         * Example: {@code 10.0.0.4:8080}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
         private java.util.List<String> criticalStateBackendNames;
 
+        /**
+         * A list of backend servers that are currently in the {@code CRITICAL} health state. The list identifies each backend server by
+         * IP address and port.
+         * <p>
+         * Example: {@code 10.0.0.4:8080}
+         *
+         * @param criticalStateBackendNames the value to set
+         * @return this builder
+         **/
         public Builder criticalStateBackendNames(java.util.List<String> criticalStateBackendNames) {
             this.criticalStateBackendNames = criticalStateBackendNames;
             this.__explicitlySet__.add("criticalStateBackendNames");
             return this;
         }
-
+        /**
+         * A list of backend servers that are currently in the {@code UNKNOWN} health state. The list identifies each backend server by
+         * IP address and port.
+         * <p>
+         * Example: {@code 10.0.0.5:8080}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
         private java.util.List<String> unknownStateBackendNames;
 
+        /**
+         * A list of backend servers that are currently in the {@code UNKNOWN} health state. The list identifies each backend server by
+         * IP address and port.
+         * <p>
+         * Example: {@code 10.0.0.5:8080}
+         *
+         * @param unknownStateBackendNames the value to set
+         * @return this builder
+         **/
         public Builder unknownStateBackendNames(java.util.List<String> unknownStateBackendNames) {
             this.unknownStateBackendNames = unknownStateBackendNames;
             this.__explicitlySet__.add("unknownStateBackendNames");
             return this;
         }
-
+        /**
+         * The total number of backend servers in this backend set.
+         * <p>
+         * Example: {@code 7}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")
         private Integer totalBackendCount;
 
+        /**
+         * The total number of backend servers in this backend set.
+         * <p>
+         * Example: {@code 7}
+         *
+         * @param totalBackendCount the value to set
+         * @return this builder
+         **/
         public Builder totalBackendCount(Integer totalBackendCount) {
             this.totalBackendCount = totalBackendCount;
             this.__explicitlySet__.add("totalBackendCount");
@@ -208,6 +296,21 @@ public final class BackendSetHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Overall health status of the backend set.
+     * <p>
+     *  **OK:** All backend servers in the backend set return a status of {@code OK}.
+     * <p>
+     *  **WARNING:** Half or more of the backend set's backend servers return a status of {@code OK} and at least one backend
+     * server returns a status of {@code WARNING}, {@code CRITICAL}, or {@code UNKNOWN}.
+     * <p>
+     *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of {@code OK}.
+     * <p>
+     *  **UNKNOWN:** More than half of the backend set's backend servers return a status of {@code UNKNOWN}, the system was
+     * unable to retrieve metrics, or the backend set does not have a listener attached.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -222,6 +325,14 @@ public final class BackendSetHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")
     private final java.util.List<String> warningStateBackendNames;
 
+    /**
+     * A list of backend servers that are currently in the {@code WARNING} health state. The list identifies each backend server by
+     * IP address and port.
+     * <p>
+     * Example: {@code 10.0.0.3:8080}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getWarningStateBackendNames() {
         return warningStateBackendNames;
     }
@@ -236,6 +347,14 @@ public final class BackendSetHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
     private final java.util.List<String> criticalStateBackendNames;
 
+    /**
+     * A list of backend servers that are currently in the {@code CRITICAL} health state. The list identifies each backend server by
+     * IP address and port.
+     * <p>
+     * Example: {@code 10.0.0.4:8080}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCriticalStateBackendNames() {
         return criticalStateBackendNames;
     }
@@ -250,6 +369,14 @@ public final class BackendSetHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
     private final java.util.List<String> unknownStateBackendNames;
 
+    /**
+     * A list of backend servers that are currently in the {@code UNKNOWN} health state. The list identifies each backend server by
+     * IP address and port.
+     * <p>
+     * Example: {@code 10.0.0.5:8080}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getUnknownStateBackendNames() {
         return unknownStateBackendNames;
     }
@@ -263,6 +390,13 @@ public final class BackendSetHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")
     private final Integer totalBackendCount;
 
+    /**
+     * The total number of backend servers in this backend set.
+     * <p>
+     * Example: {@code 7}
+     *
+     * @return the value
+     **/
     public Integer getTotalBackendCount() {
         return totalBackendCount;
     }

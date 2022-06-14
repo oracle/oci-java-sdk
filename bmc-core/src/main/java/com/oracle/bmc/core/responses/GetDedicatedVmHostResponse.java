@@ -14,6 +14,11 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost;
 
+    /**
+     * The returned DedicatedVmHost instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.DedicatedVmHost getDedicatedVmHost() {
         return dedicatedVmHost;
     }
@@ -63,22 +78,52 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DedicatedVmHost instance.
+         */
         private com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost;
 
+        /**
+         * The returned DedicatedVmHost instance.
+         * @param dedicatedVmHost the value to set
+         * @return this builder
+         */
         public Builder dedicatedVmHost(com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost) {
             this.dedicatedVmHost = dedicatedVmHost;
             return this;
@@ -97,12 +142,20 @@ public class GetDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetDedicatedVmHostResponse build() {
             return new GetDedicatedVmHostResponse(
                     __httpStatusCode__, etag, opcRequestId, dedicatedVmHost);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String problemId;
 
+    /**
+     * OCID of the problem.
+     */
     public String getProblemId() {
         return problemId;
     }
@@ -32,6 +38,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String resourceProfileId;
 
+    /**
+     * OCID of the resource profile.
+     */
     public String getResourceProfileId() {
         return resourceProfileId;
     }
@@ -44,6 +53,13 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -98,6 +114,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -106,6 +130,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -114,6 +141,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -122,6 +152,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -167,6 +200,10 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -175,6 +212,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private java.util.Date timeLastDetectedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+     */
     public java.util.Date getTimeLastDetectedGreaterThanOrEqualTo() {
         return timeLastDetectedGreaterThanOrEqualTo;
     }
@@ -183,6 +223,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private java.util.Date timeLastDetectedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to current time.
+     */
     public java.util.Date getTimeLastDetectedLessThanOrEqualTo() {
         return timeLastDetectedLessThanOrEqualTo;
     }
@@ -191,6 +234,9 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -202,10 +248,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -213,10 +263,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * OCID of the problem.
+         */
         private String problemId = null;
 
         /**
          * OCID of the problem.
+         * @param problemId the value to set
          * @return this builder instance
          */
         public Builder problemId(String problemId) {
@@ -224,10 +278,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * OCID of the resource profile.
+         */
         private String resourceProfileId = null;
 
         /**
          * OCID of the resource profile.
+         * @param resourceProfileId the value to set
          * @return this builder instance
          */
         public Builder resourceProfileId(String resourceProfileId) {
@@ -235,6 +293,13 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -243,6 +308,7 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -250,6 +316,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -259,6 +333,7 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -266,10 +341,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -277,10 +356,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -288,10 +371,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
@@ -299,11 +386,16 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -311,10 +403,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         */
         private java.util.Date timeLastDetectedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @param timeLastDetectedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLastDetectedGreaterThanOrEqualTo(
@@ -323,10 +419,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         */
         private java.util.Date timeLastDetectedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @param timeLastDetectedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLastDetectedLessThanOrEqualTo(
@@ -335,10 +435,14 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -436,7 +540,8 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -454,6 +559,10 @@ public class ListSightingsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

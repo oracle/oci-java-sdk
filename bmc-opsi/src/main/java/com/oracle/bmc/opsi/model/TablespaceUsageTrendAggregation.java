@@ -34,27 +34,49 @@ public final class TablespaceUsageTrendAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
         private String tablespaceName;
 
+        /**
+         * The name of tablespace.
+         * @param tablespaceName the value to set
+         * @return this builder
+         **/
         public Builder tablespaceName(String tablespaceName) {
             this.tablespaceName = tablespaceName;
             this.__explicitlySet__.add("tablespaceName");
             return this;
         }
-
+        /**
+         * Type of tablespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespaceType")
         private String tablespaceType;
 
+        /**
+         * Type of tablespace
+         * @param tablespaceType the value to set
+         * @return this builder
+         **/
         public Builder tablespaceType(String tablespaceType) {
             this.tablespaceType = tablespaceType;
             this.__explicitlySet__.add("tablespaceType");
             return this;
         }
-
+        /**
+         * List of usage data samples for a tablespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageData")
         private java.util.List<TablespaceUsageTrend> usageData;
 
+        /**
+         * List of usage data samples for a tablespace
+         * @param usageData the value to set
+         * @return this builder
+         **/
         public Builder usageData(java.util.List<TablespaceUsageTrend> usageData) {
             this.usageData = usageData;
             this.__explicitlySet__.add("usageData");
@@ -100,6 +122,10 @@ public final class TablespaceUsageTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
     private final String tablespaceName;
 
+    /**
+     * The name of tablespace.
+     * @return the value
+     **/
     public String getTablespaceName() {
         return tablespaceName;
     }
@@ -110,6 +136,10 @@ public final class TablespaceUsageTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceType")
     private final String tablespaceType;
 
+    /**
+     * Type of tablespace
+     * @return the value
+     **/
     public String getTablespaceType() {
         return tablespaceType;
     }
@@ -120,6 +150,10 @@ public final class TablespaceUsageTrendAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
     private final java.util.List<TablespaceUsageTrend> usageData;
 
+    /**
+     * List of usage data samples for a tablespace
+     * @return the value
+     **/
     public java.util.List<TablespaceUsageTrend> getUsageData() {
         return usageData;
     }

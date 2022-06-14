@@ -32,9 +32,17 @@ public final class ServiceEnvironmentCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ServiceEnvironmentSummary> items;
 
+        /**
+         * Collection of items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ServiceEnvironmentSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -76,6 +84,10 @@ public final class ServiceEnvironmentCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ServiceEnvironmentSummary> items;
 
+    /**
+     * Collection of items.
+     * @return the value
+     **/
     public java.util.List<ServiceEnvironmentSummary> getItems() {
         return items;
     }

@@ -63,19 +63,33 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * The credential properties list. Credential property values will be encrypted format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<CredentialProperty> properties;
 
+        /**
+         * The credential properties list. Credential property values will be encrypted format.
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.List<CredentialProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -137,6 +151,10 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -147,6 +165,10 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<CredentialProperty> properties;
 
+    /**
+     * The credential properties list. Credential property values will be encrypted format.
+     * @return the value
+     **/
     public java.util.List<CredentialProperty> getProperties() {
         return properties;
     }

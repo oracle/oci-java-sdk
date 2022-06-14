@@ -72,10 +72,17 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Commit ID pointed to by the new branch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
 
+        /**
+         * Commit ID pointed to by the new branch.
+         * @param commitId the value to set
+         * @return this builder
+         **/
         public Builder commitId(String commitId) {
             this.commitId = commitId;
             this.__explicitlySet__.add("commitId");
@@ -142,6 +149,10 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
     private final String commitId;
 
+    /**
+     * Commit ID pointed to by the new branch.
+     * @return the value
+     **/
     public String getCommitId() {
         return commitId;
     }

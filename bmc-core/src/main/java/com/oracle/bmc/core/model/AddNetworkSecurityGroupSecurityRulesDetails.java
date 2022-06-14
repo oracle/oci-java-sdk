@@ -30,9 +30,17 @@ public final class AddNetworkSecurityGroupSecurityRulesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The NSG security rules to add.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityRules")
         private java.util.List<AddSecurityRuleDetails> securityRules;
 
+        /**
+         * The NSG security rules to add.
+         * @param securityRules the value to set
+         * @return this builder
+         **/
         public Builder securityRules(java.util.List<AddSecurityRuleDetails> securityRules) {
             this.securityRules = securityRules;
             this.__explicitlySet__.add("securityRules");
@@ -75,6 +83,10 @@ public final class AddNetworkSecurityGroupSecurityRulesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("securityRules")
     private final java.util.List<AddSecurityRuleDetails> securityRules;
 
+    /**
+     * The NSG security rules to add.
+     * @return the value
+     **/
     public java.util.List<AddSecurityRuleDetails> getSecurityRules() {
         return securityRules;
     }

@@ -30,9 +30,19 @@ package com.oracle.bmc.sch.model;
 public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+         *
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
@@ -82,6 +92,11 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+     *
+     * @return the value
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }

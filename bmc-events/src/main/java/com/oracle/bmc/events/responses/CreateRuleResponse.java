@@ -16,6 +16,13 @@ public class CreateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. Add this value to the {@code if-match} parameter
+     * in a PUT or DELETE operation. The resource will be updated only if the value you
+     * provide matches the {@code etag} on the resource.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -27,6 +34,12 @@ public class CreateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +49,10 @@ public class CreateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.events.model.Rule rule;
 
+    /**
+     * The returned Rule instance.
+     * @return the value
+     */
     public com.oracle.bmc.events.model.Rule getRule() {
         return rule;
     }
@@ -60,22 +77,56 @@ public class CreateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. Add this value to the {@code if-match} parameter
+         * in a PUT or DELETE operation. The resource will be updated only if the value you
+         * provide matches the {@code etag} on the resource.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. Add this value to the {@code if-match} parameter
+         * in a PUT or DELETE operation. The resource will be updated only if the value you
+         * provide matches the {@code etag} on the resource.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Rule instance.
+         */
         private com.oracle.bmc.events.model.Rule rule;
 
+        /**
+         * The returned Rule instance.
+         * @param rule the value to set
+         * @return this builder
+         */
         public Builder rule(com.oracle.bmc.events.model.Rule rule) {
             this.rule = rule;
             return this;
@@ -94,11 +145,19 @@ public class CreateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateRuleResponse build() {
             return new CreateRuleResponse(__httpStatusCode__, etag, opcRequestId, rule);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

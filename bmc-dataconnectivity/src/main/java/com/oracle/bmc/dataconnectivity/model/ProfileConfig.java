@@ -42,45 +42,81 @@ public final class ProfileConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of column names to profile. If empty all columns in the entity are profiled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<String> attributes;
 
+        /**
+         * Array of column names to profile. If empty all columns in the entity are profiled.
+         * @param attributes the value to set
+         * @return this builder
+         **/
         public Builder attributes(java.util.List<String> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
             return this;
         }
-
+        /**
+         * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<Functions> functions;
 
+        /**
+         * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+         * @param functions the value to set
+         * @return this builder
+         **/
         public Builder functions(java.util.List<Functions> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
             return this;
         }
-
+        /**
+         * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topNValFreq")
         private Integer topNValFreq;
 
+        /**
+         * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+         * @param topNValFreq the value to set
+         * @return this builder
+         **/
         public Builder topNValFreq(Integer topNValFreq) {
             this.topNValFreq = topNValFreq;
             this.__explicitlySet__.add("topNValFreq");
             return this;
         }
-
+        /**
+         * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternThreshold")
         private Integer patternThreshold;
 
+        /**
+         * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+         * @param patternThreshold the value to set
+         * @return this builder
+         **/
         public Builder patternThreshold(Integer patternThreshold) {
             this.patternThreshold = patternThreshold;
             this.__explicitlySet__.add("patternThreshold");
             return this;
         }
-
+        /**
+         * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeThreshold")
         private Integer dataTypeThreshold;
 
+        /**
+         * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+         * @param dataTypeThreshold the value to set
+         * @return this builder
+         **/
         public Builder dataTypeThreshold(Integer dataTypeThreshold) {
             this.dataTypeThreshold = dataTypeThreshold;
             this.__explicitlySet__.add("dataTypeThreshold");
@@ -133,6 +169,10 @@ public final class ProfileConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.List<String> attributes;
 
+    /**
+     * Array of column names to profile. If empty all columns in the entity are profiled.
+     * @return the value
+     **/
     public java.util.List<String> getAttributes() {
         return attributes;
     }
@@ -195,6 +235,10 @@ public final class ProfileConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<Functions> functions;
 
+    /**
+     * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+     * @return the value
+     **/
     public java.util.List<Functions> getFunctions() {
         return functions;
     }
@@ -205,6 +249,10 @@ public final class ProfileConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("topNValFreq")
     private final Integer topNValFreq;
 
+    /**
+     * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+     * @return the value
+     **/
     public Integer getTopNValFreq() {
         return topNValFreq;
     }
@@ -215,6 +263,10 @@ public final class ProfileConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("patternThreshold")
     private final Integer patternThreshold;
 
+    /**
+     * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+     * @return the value
+     **/
     public Integer getPatternThreshold() {
         return patternThreshold;
     }
@@ -225,6 +277,10 @@ public final class ProfileConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeThreshold")
     private final Integer dataTypeThreshold;
 
+    /**
+     * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+     * @return the value
+     **/
     public Integer getDataTypeThreshold() {
         return dataTypeThreshold;
     }

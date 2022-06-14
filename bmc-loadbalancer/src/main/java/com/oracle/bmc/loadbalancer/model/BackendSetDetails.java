@@ -55,9 +55,25 @@ public final class BackendSetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * <p>
+         * Example: {@code LEAST_CONNECTIONS}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
+        /**
+         * The load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * <p>
+         * Example: {@code LEAST_CONNECTIONS}
+         *
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
@@ -166,6 +182,14 @@ public final class BackendSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
+    /**
+     * The load balancer policy for the backend set. To get a list of available policies, use the
+     * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+     * <p>
+     * Example: {@code LEAST_CONNECTIONS}
+     *
+     * @return the value
+     **/
     public String getPolicy() {
         return policy;
     }

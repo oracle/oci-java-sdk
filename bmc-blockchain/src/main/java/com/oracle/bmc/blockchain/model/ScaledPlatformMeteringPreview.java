@@ -44,45 +44,81 @@ public final class ScaledPlatformMeteringPreview {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of total OCPU allocation for the blockchain platform
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuAllocation")
         private Float totalOcpuAllocation;
 
+        /**
+         * Number of total OCPU allocation for the blockchain platform
+         * @param totalOcpuAllocation the value to set
+         * @return this builder
+         **/
         public Builder totalOcpuAllocation(Float totalOcpuAllocation) {
             this.totalOcpuAllocation = totalOcpuAllocation;
             this.__explicitlySet__.add("totalOcpuAllocation");
             return this;
         }
-
+        /**
+         * Number of total OCPU allocation for the blockchain platform after Scaling
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuAllocationPostScaling")
         private Float totalOcpuAllocationPostScaling;
 
+        /**
+         * Number of total OCPU allocation for the blockchain platform after Scaling
+         * @param totalOcpuAllocationPostScaling the value to set
+         * @return this builder
+         **/
         public Builder totalOcpuAllocationPostScaling(Float totalOcpuAllocationPostScaling) {
             this.totalOcpuAllocationPostScaling = totalOcpuAllocationPostScaling;
             this.__explicitlySet__.add("totalOcpuAllocationPostScaling");
             return this;
         }
-
+        /**
+         * Current Storage metered units in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageMeteredUnits")
         private Double storageMeteredUnits;
 
+        /**
+         * Current Storage metered units in TBs
+         * @param storageMeteredUnits the value to set
+         * @return this builder
+         **/
         public Builder storageMeteredUnits(Double storageMeteredUnits) {
             this.storageMeteredUnits = storageMeteredUnits;
             this.__explicitlySet__.add("storageMeteredUnits");
             return this;
         }
-
+        /**
+         * Extra Storage units required in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extraStorageMeteredUnits")
         private Double extraStorageMeteredUnits;
 
+        /**
+         * Extra Storage units required in TBs
+         * @param extraStorageMeteredUnits the value to set
+         * @return this builder
+         **/
         public Builder extraStorageMeteredUnits(Double extraStorageMeteredUnits) {
             this.extraStorageMeteredUnits = extraStorageMeteredUnits;
             this.__explicitlySet__.add("extraStorageMeteredUnits");
             return this;
         }
-
+        /**
+         * Total Post Scaling Storage metered units in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageMeteredUnitsPostScaling")
         private Double storageMeteredUnitsPostScaling;
 
+        /**
+         * Total Post Scaling Storage metered units in TBs
+         * @param storageMeteredUnitsPostScaling the value to set
+         * @return this builder
+         **/
         public Builder storageMeteredUnitsPostScaling(Double storageMeteredUnitsPostScaling) {
             this.storageMeteredUnitsPostScaling = storageMeteredUnitsPostScaling;
             this.__explicitlySet__.add("storageMeteredUnitsPostScaling");
@@ -135,6 +171,10 @@ public final class ScaledPlatformMeteringPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuAllocation")
     private final Float totalOcpuAllocation;
 
+    /**
+     * Number of total OCPU allocation for the blockchain platform
+     * @return the value
+     **/
     public Float getTotalOcpuAllocation() {
         return totalOcpuAllocation;
     }
@@ -145,6 +185,10 @@ public final class ScaledPlatformMeteringPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuAllocationPostScaling")
     private final Float totalOcpuAllocationPostScaling;
 
+    /**
+     * Number of total OCPU allocation for the blockchain platform after Scaling
+     * @return the value
+     **/
     public Float getTotalOcpuAllocationPostScaling() {
         return totalOcpuAllocationPostScaling;
     }
@@ -155,6 +199,10 @@ public final class ScaledPlatformMeteringPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("storageMeteredUnits")
     private final Double storageMeteredUnits;
 
+    /**
+     * Current Storage metered units in TBs
+     * @return the value
+     **/
     public Double getStorageMeteredUnits() {
         return storageMeteredUnits;
     }
@@ -165,6 +213,10 @@ public final class ScaledPlatformMeteringPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("extraStorageMeteredUnits")
     private final Double extraStorageMeteredUnits;
 
+    /**
+     * Extra Storage units required in TBs
+     * @return the value
+     **/
     public Double getExtraStorageMeteredUnits() {
         return extraStorageMeteredUnits;
     }
@@ -175,6 +227,10 @@ public final class ScaledPlatformMeteringPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("storageMeteredUnitsPostScaling")
     private final Double storageMeteredUnitsPostScaling;
 
+    /**
+     * Total Post Scaling Storage metered units in TBs
+     * @return the value
+     **/
     public Double getStorageMeteredUnitsPostScaling() {
         return storageMeteredUnitsPostScaling;
     }

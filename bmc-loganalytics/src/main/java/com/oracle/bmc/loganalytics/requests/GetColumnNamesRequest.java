@@ -17,6 +17,10 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String sqlQuery;
 
+    /**
+     * The SQL query from which column names are to be extracted.
+     */
     public String getSqlQuery() {
         return sqlQuery;
     }
@@ -38,6 +45,14 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -46,6 +61,9 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,11 +75,16 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -69,10 +92,14 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The SQL query from which column names are to be extracted.
+         */
         private String sqlQuery = null;
 
         /**
          * The SQL query from which column names are to be extracted.
+         * @param sqlQuery the value to set
          * @return this builder instance
          */
         public Builder sqlQuery(String sqlQuery) {
@@ -80,6 +107,14 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -89,6 +124,7 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -96,10 +132,14 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +221,8 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +232,10 @@ public class GetColumnNamesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

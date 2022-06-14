@@ -30,18 +30,37 @@ public final class SqlStatisticsTimeSeries {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * SQL performance statistic name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * SQL performance statistic name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * SQL performance statistic value
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<Double> values;
 
+        /**
+         * SQL performance statistic value
+         *
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<Double> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -84,6 +103,11 @@ public final class SqlStatisticsTimeSeries {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * SQL performance statistic name
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -95,6 +119,11 @@ public final class SqlStatisticsTimeSeries {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<Double> values;
 
+    /**
+     * SQL performance statistic value
+     *
+     * @return the value
+     **/
     public java.util.List<Double> getValues() {
         return values;
     }

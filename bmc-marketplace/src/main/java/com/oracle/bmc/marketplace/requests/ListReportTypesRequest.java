@@ -16,6 +16,9 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +42,9 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -45,10 +56,14 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -56,12 +71,18 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -69,10 +90,14 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -152,12 +177,17 @@ public class ListReportTypesRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().compartmentId(compartmentId).opcRequestId(opcRequestId).page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

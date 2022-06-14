@@ -29,9 +29,17 @@ public final class ThreatTypesCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of threat types that are available to query on
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ThreatTypeSummary> items;
 
+        /**
+         * The list of threat types that are available to query on
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ThreatTypeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ThreatTypesCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ThreatTypeSummary> items;
 
+    /**
+     * The list of threat types that are available to query on
+     * @return the value
+     **/
     public java.util.List<ThreatTypeSummary> getItems() {
         return items;
     }

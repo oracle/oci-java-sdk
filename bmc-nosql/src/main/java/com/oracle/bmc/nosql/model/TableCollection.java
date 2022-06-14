@@ -42,45 +42,81 @@ public final class TableCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A page of TableSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TableSummary> items;
 
+        /**
+         * A page of TableSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TableSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * The maximum number of reclaimable tables allowed in the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxAutoReclaimableTables")
         private Integer maxAutoReclaimableTables;
 
+        /**
+         * The maximum number of reclaimable tables allowed in the tenancy.
+         * @param maxAutoReclaimableTables the value to set
+         * @return this builder
+         **/
         public Builder maxAutoReclaimableTables(Integer maxAutoReclaimableTables) {
             this.maxAutoReclaimableTables = maxAutoReclaimableTables;
             this.__explicitlySet__.add("maxAutoReclaimableTables");
             return this;
         }
-
+        /**
+         * The current number of reclaimable tables in the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
         private Integer autoReclaimableTables;
 
+        /**
+         * The current number of reclaimable tables in the tenancy.
+         * @param autoReclaimableTables the value to set
+         * @return this builder
+         **/
         public Builder autoReclaimableTables(Integer autoReclaimableTables) {
             this.autoReclaimableTables = autoReclaimableTables;
             this.__explicitlySet__.add("autoReclaimableTables");
             return this;
         }
-
+        /**
+         * The current number of on demand capacity tables in the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onDemandCapacityTables")
         private Integer onDemandCapacityTables;
 
+        /**
+         * The current number of on demand capacity tables in the tenancy.
+         * @param onDemandCapacityTables the value to set
+         * @return this builder
+         **/
         public Builder onDemandCapacityTables(Integer onDemandCapacityTables) {
             this.onDemandCapacityTables = onDemandCapacityTables;
             this.__explicitlySet__.add("onDemandCapacityTables");
             return this;
         }
-
+        /**
+         * The maximum number of on demand capacity tables allowed in the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxOnDemandCapacityTables")
         private Integer maxOnDemandCapacityTables;
 
+        /**
+         * The maximum number of on demand capacity tables allowed in the tenancy.
+         * @param maxOnDemandCapacityTables the value to set
+         * @return this builder
+         **/
         public Builder maxOnDemandCapacityTables(Integer maxOnDemandCapacityTables) {
             this.maxOnDemandCapacityTables = maxOnDemandCapacityTables;
             this.__explicitlySet__.add("maxOnDemandCapacityTables");
@@ -133,6 +169,10 @@ public final class TableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TableSummary> items;
 
+    /**
+     * A page of TableSummary objects.
+     * @return the value
+     **/
     public java.util.List<TableSummary> getItems() {
         return items;
     }
@@ -143,6 +183,10 @@ public final class TableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("maxAutoReclaimableTables")
     private final Integer maxAutoReclaimableTables;
 
+    /**
+     * The maximum number of reclaimable tables allowed in the tenancy.
+     * @return the value
+     **/
     public Integer getMaxAutoReclaimableTables() {
         return maxAutoReclaimableTables;
     }
@@ -153,6 +197,10 @@ public final class TableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
     private final Integer autoReclaimableTables;
 
+    /**
+     * The current number of reclaimable tables in the tenancy.
+     * @return the value
+     **/
     public Integer getAutoReclaimableTables() {
         return autoReclaimableTables;
     }
@@ -163,6 +211,10 @@ public final class TableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("onDemandCapacityTables")
     private final Integer onDemandCapacityTables;
 
+    /**
+     * The current number of on demand capacity tables in the tenancy.
+     * @return the value
+     **/
     public Integer getOnDemandCapacityTables() {
         return onDemandCapacityTables;
     }
@@ -173,6 +225,10 @@ public final class TableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("maxOnDemandCapacityTables")
     private final Integer maxOnDemandCapacityTables;
 
+    /**
+     * The maximum number of on demand capacity tables allowed in the tenancy.
+     * @return the value
+     **/
     public Integer getMaxOnDemandCapacityTables() {
         return maxOnDemandCapacityTables;
     }

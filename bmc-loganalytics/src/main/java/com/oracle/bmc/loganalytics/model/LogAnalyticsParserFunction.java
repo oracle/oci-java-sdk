@@ -59,6 +59,7 @@ public final class LogAnalyticsParserFunction {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPlugin")
         private LogAnalyticsParserMetaPlugin parserMetaPlugin;
 
@@ -67,82 +68,151 @@ public final class LogAnalyticsParserFunction {
             this.__explicitlySet__.add("parserMetaPlugin");
             return this;
         }
-
+        /**
+         * The parser function unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
         private Long parserFunctionId;
 
+        /**
+         * The parser function unique identifier.
+         * @param parserFunctionId the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionId(Long parserFunctionId) {
             this.parserFunctionId = parserFunctionId;
             this.__explicitlySet__.add("parserFunctionId");
             return this;
         }
-
+        /**
+         * The parser function internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionName")
         private String parserFunctionName;
 
+        /**
+         * The parser function internal name.
+         * @param parserFunctionName the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionName(String parserFunctionName) {
             this.parserFunctionName = parserFunctionName;
             this.__explicitlySet__.add("parserFunctionName");
             return this;
         }
-
+        /**
+         * A flag inidcating whether or not the parser function is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * A flag inidcating whether or not the parser function is enabled.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The associated parser unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserId")
         private Long parserId;
 
+        /**
+         * The associated parser unique identifier.
+         * @param parserId the value to set
+         * @return this builder
+         **/
         public Builder parserId(Long parserId) {
             this.parserId = parserId;
             this.__explicitlySet__.add("parserId");
             return this;
         }
-
+        /**
+         * The associated parser internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserName")
         private String parserName;
 
+        /**
+         * The associated parser internal name.
+         * @param parserName the value to set
+         * @return this builder
+         **/
         public Builder parserName(String parserName) {
             this.parserName = parserName;
             this.__explicitlySet__.add("parserName");
             return this;
         }
-
+        /**
+         * The plugin internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginName")
         private String parserMetaPluginName;
 
+        /**
+         * The plugin internal name.
+         * @param parserMetaPluginName the value to set
+         * @return this builder
+         **/
         public Builder parserMetaPluginName(String parserMetaPluginName) {
             this.parserMetaPluginName = parserMetaPluginName;
             this.__explicitlySet__.add("parserMetaPluginName");
             return this;
         }
-
+        /**
+         * The parser function priority.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionPriority")
         private Long parserFunctionPriority;
 
+        /**
+         * The parser function priority.
+         * @param parserFunctionPriority the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionPriority(Long parserFunctionPriority) {
             this.parserFunctionPriority = parserFunctionPriority;
             this.__explicitlySet__.add("parserFunctionPriority");
             return this;
         }
-
+        /**
+         * The parser function parameter list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameters")
         private java.util.List<LogAnalyticsParserFunctionParameter> parserFunctionParameters;
 
+        /**
+         * The parser function parameter list.
+         * @param parserFunctionParameters the value to set
+         * @return this builder
+         **/
         public Builder parserFunctionParameters(
                 java.util.List<LogAnalyticsParserFunctionParameter> parserFunctionParameters) {
             this.parserFunctionParameters = parserFunctionParameters;
@@ -213,6 +283,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
     private final Long parserFunctionId;
 
+    /**
+     * The parser function unique identifier.
+     * @return the value
+     **/
     public Long getParserFunctionId() {
         return parserFunctionId;
     }
@@ -223,6 +297,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionName")
     private final String parserFunctionName;
 
+    /**
+     * The parser function internal name.
+     * @return the value
+     **/
     public String getParserFunctionName() {
         return parserFunctionName;
     }
@@ -234,6 +312,11 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * A flag inidcating whether or not the parser function is enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -246,6 +329,12 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -256,6 +345,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserId")
     private final Long parserId;
 
+    /**
+     * The associated parser unique identifier.
+     * @return the value
+     **/
     public Long getParserId() {
         return parserId;
     }
@@ -266,6 +359,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     private final String parserName;
 
+    /**
+     * The associated parser internal name.
+     * @return the value
+     **/
     public String getParserName() {
         return parserName;
     }
@@ -276,6 +373,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginName")
     private final String parserMetaPluginName;
 
+    /**
+     * The plugin internal name.
+     * @return the value
+     **/
     public String getParserMetaPluginName() {
         return parserMetaPluginName;
     }
@@ -286,6 +387,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionPriority")
     private final Long parserFunctionPriority;
 
+    /**
+     * The parser function priority.
+     * @return the value
+     **/
     public Long getParserFunctionPriority() {
         return parserFunctionPriority;
     }
@@ -296,6 +401,10 @@ public final class LogAnalyticsParserFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameters")
     private final java.util.List<LogAnalyticsParserFunctionParameter> parserFunctionParameters;
 
+    /**
+     * The parser function parameter list.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParserFunctionParameter> getParserFunctionParameters() {
         return parserFunctionParameters;
     }

@@ -18,6 +18,9 @@ public class CreateTargetResponderRecipeRequest
      */
     private String targetId;
 
+    /**
+     * OCID of target
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -27,6 +30,9 @@ public class CreateTargetResponderRecipeRequest
     private com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
             attachTargetResponderRecipeDetails;
 
+    /**
+     * Details for associating ResponderRecipe to Target
+     */
     public com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
             getAttachTargetResponderRecipeDetails() {
         return attachTargetResponderRecipeDetails;
@@ -41,6 +47,14 @@ public class CreateTargetResponderRecipeRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -49,6 +63,9 @@ public class CreateTargetResponderRecipeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class CreateTargetResponderRecipeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of target
+         */
         private String targetId = null;
 
         /**
          * OCID of target
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -82,11 +103,15 @@ public class CreateTargetResponderRecipeRequest
             return this;
         }
 
+        /**
+         * Details for associating ResponderRecipe to Target
+         */
         private com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
                 attachTargetResponderRecipeDetails = null;
 
         /**
          * Details for associating ResponderRecipe to Target
+         * @param attachTargetResponderRecipeDetails the value to set
          * @return this builder instance
          */
         public Builder attachTargetResponderRecipeDetails(
@@ -96,6 +121,14 @@ public class CreateTargetResponderRecipeRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -105,6 +138,7 @@ public class CreateTargetResponderRecipeRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -112,10 +146,14 @@ public class CreateTargetResponderRecipeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +247,8 @@ public class CreateTargetResponderRecipeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class CreateTargetResponderRecipeRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

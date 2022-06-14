@@ -17,6 +17,13 @@ public class ListNetworkLoadBalancersProtocolsResponse
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -28,6 +35,12 @@ public class ListNetworkLoadBalancersProtocolsResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +51,10 @@ public class ListNetworkLoadBalancersProtocolsResponse
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
             networkLoadBalancersProtocolCollection;
 
+    /**
+     * The returned NetworkLoadBalancersProtocolCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
             getNetworkLoadBalancersProtocolCollection() {
         return networkLoadBalancersProtocolCollection;
@@ -69,23 +86,57 @@ public class ListNetworkLoadBalancersProtocolsResponse
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned NetworkLoadBalancersProtocolCollection instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
                 networkLoadBalancersProtocolCollection;
 
+        /**
+         * The returned NetworkLoadBalancersProtocolCollection instance.
+         * @param networkLoadBalancersProtocolCollection the value to set
+         * @return this builder
+         */
         public Builder networkLoadBalancersProtocolCollection(
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
                         networkLoadBalancersProtocolCollection) {
@@ -106,6 +157,10 @@ public class ListNetworkLoadBalancersProtocolsResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListNetworkLoadBalancersProtocolsResponse build() {
             return new ListNetworkLoadBalancersProtocolsResponse(
                     __httpStatusCode__,
@@ -115,6 +170,10 @@ public class ListNetworkLoadBalancersProtocolsResponse
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

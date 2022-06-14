@@ -50,18 +50,33 @@ public final class UpdateBlockchainPlatformDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Platform Description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Platform Description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Storage size in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
         private Double storageSizeInTBs;
 
+        /**
+         * Storage size in TBs
+         * @param storageSizeInTBs the value to set
+         * @return this builder
+         **/
         public Builder storageSizeInTBs(Double storageSizeInTBs) {
             this.storageSizeInTBs = storageSizeInTBs;
             this.__explicitlySet__.add("storageSizeInTBs");
@@ -76,37 +91,73 @@ public final class UpdateBlockchainPlatformDetails {
             this.__explicitlySet__.add("replicas");
             return this;
         }
-
+        /**
+         * Number of total OCPUs to allocate
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
         private Integer totalOcpuCapacity;
 
+        /**
+         * Number of total OCPUs to allocate
+         * @param totalOcpuCapacity the value to set
+         * @return this builder
+         **/
         public Builder totalOcpuCapacity(Integer totalOcpuCapacity) {
             this.totalOcpuCapacity = totalOcpuCapacity;
             this.__explicitlySet__.add("totalOcpuCapacity");
             return this;
         }
-
+        /**
+         * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
         private BlockchainPlatform.LoadBalancerShape loadBalancerShape;
 
+        /**
+         * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+         * @param loadBalancerShape the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerShape(BlockchainPlatform.LoadBalancerShape loadBalancerShape) {
             this.loadBalancerShape = loadBalancerShape;
             this.__explicitlySet__.add("loadBalancerShape");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -164,6 +215,10 @@ public final class UpdateBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Platform Description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -174,6 +229,10 @@ public final class UpdateBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
     private final Double storageSizeInTBs;
 
+    /**
+     * Storage size in TBs
+     * @return the value
+     **/
     public Double getStorageSizeInTBs() {
         return storageSizeInTBs;
     }
@@ -191,6 +250,10 @@ public final class UpdateBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
     private final Integer totalOcpuCapacity;
 
+    /**
+     * Number of total OCPUs to allocate
+     * @return the value
+     **/
     public Integer getTotalOcpuCapacity() {
         return totalOcpuCapacity;
     }
@@ -201,6 +264,10 @@ public final class UpdateBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
     private final BlockchainPlatform.LoadBalancerShape loadBalancerShape;
 
+    /**
+     * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     * @return the value
+     **/
     public BlockchainPlatform.LoadBalancerShape getLoadBalancerShape() {
         return loadBalancerShape;
     }
@@ -213,6 +280,12 @@ public final class UpdateBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -225,6 +298,12 @@ public final class UpdateBlockchainPlatformDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

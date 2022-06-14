@@ -72,72 +72,159 @@ public final class ServiceConnector {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The description of the resource. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the resource. Avoid entering confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The date and time when the service connector was created.
+         * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time when the service connector was created.
+         * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time when the service connector was updated.
+         * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time when the service connector was updated.
+         * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the service connector.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the service connector.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail.
+         * For example, the message might provide actionable
+         * information for a resource in a {@code FAILED} state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
+        /**
+         * A message describing the current state in more detail.
+         * For example, the message might provide actionable
+         * information for a resource in a {@code FAILED} state.
+         *
+         * @param lifecyleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = lifecyleDetails;
             this.__explicitlySet__.add("lifecyleDetails");
@@ -152,10 +239,19 @@ public final class ServiceConnector {
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * The list of tasks.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tasks")
         private java.util.List<TaskDetails> tasks;
 
+        /**
+         * The list of tasks.
+         *
+         * @param tasks the value to set
+         * @return this builder
+         **/
         public Builder tasks(java.util.List<TaskDetails> tasks) {
             this.tasks = tasks;
             this.__explicitlySet__.add("tasks");
@@ -170,29 +266,64 @@ public final class ServiceConnector {
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -264,6 +395,11 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -276,6 +412,12 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -287,6 +429,11 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the resource. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -298,6 +445,11 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -311,6 +463,13 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time when the service connector was created.
+     * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -324,6 +483,13 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time when the service connector was updated.
+     * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -335,6 +501,11 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the service connector.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -348,6 +519,13 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
+    /**
+     * A message describing the current state in more detail.
+     * For example, the message might provide actionable
+     * information for a resource in a {@code FAILED} state.
+     *
+     * @return the value
+     **/
     public String getLifecyleDetails() {
         return lifecyleDetails;
     }
@@ -366,6 +544,11 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("tasks")
     private final java.util.List<TaskDetails> tasks;
 
+    /**
+     * The list of tasks.
+     *
+     * @return the value
+     **/
     public java.util.List<TaskDetails> getTasks() {
         return tasks;
     }
@@ -385,6 +568,12 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -397,6 +586,12 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -410,6 +605,13 @@ public final class ServiceConnector {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

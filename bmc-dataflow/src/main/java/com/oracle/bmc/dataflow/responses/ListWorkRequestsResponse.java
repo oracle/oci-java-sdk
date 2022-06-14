@@ -16,6 +16,13 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcPrevPage;
 
+    /**
+     * Retrieves the previous page of results.
+     * When this header appears in the response, previous pages of results exist.
+     * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -27,6 +34,12 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcNextPage;
 
+    /**
+     * Retrieves the next page of results. When this header appears in the response,
+     * additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -38,6 +51,12 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +66,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.dataflow.model.WorkRequestCollection workRequestCollection;
 
+    /**
+     * The returned WorkRequestCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.dataflow.model.WorkRequestCollection getWorkRequestCollection() {
         return workRequestCollection;
     }
@@ -79,29 +102,75 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Retrieves the previous page of results.
+         * When this header appears in the response, previous pages of results exist.
+         * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * Retrieves the previous page of results.
+         * When this header appears in the response, previous pages of results exist.
+         * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response,
+         * additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response,
+         * additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned WorkRequestCollection instance.
+         */
         private com.oracle.bmc.dataflow.model.WorkRequestCollection workRequestCollection;
 
+        /**
+         * The returned WorkRequestCollection instance.
+         * @param workRequestCollection the value to set
+         * @return this builder
+         */
         public Builder workRequestCollection(
                 com.oracle.bmc.dataflow.model.WorkRequestCollection workRequestCollection) {
             this.workRequestCollection = workRequestCollection;
@@ -122,6 +191,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListWorkRequestsResponse build() {
             return new ListWorkRequestsResponse(
                     __httpStatusCode__,
@@ -132,6 +205,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

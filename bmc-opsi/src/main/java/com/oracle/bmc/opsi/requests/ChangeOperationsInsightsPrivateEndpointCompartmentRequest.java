@@ -19,6 +19,9 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
      */
     private String operationsInsightsPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+     */
     public String getOperationsInsightsPrivateEndpointId() {
         return operationsInsightsPrivateEndpointId;
     }
@@ -28,6 +31,9 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
     private com.oracle.bmc.opsi.model.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
             changeOperationsInsightsPrivateEndpointCompartmentDetails;
 
+    /**
+     * The details used to change the compartment of a private endpoint
+     */
     public com.oracle.bmc.opsi.model.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
             getChangeOperationsInsightsPrivateEndpointCompartmentDetails() {
         return changeOperationsInsightsPrivateEndpointCompartmentDetails;
@@ -40,6 +46,12 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +62,11 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,6 +81,15 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * operations, such as a resource being deleted or purged from the system.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -88,10 +114,14 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+         */
         private String operationsInsightsPrivateEndpointId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+         * @param operationsInsightsPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder operationsInsightsPrivateEndpointId(
@@ -100,11 +130,15 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * The details used to change the compartment of a private endpoint
+         */
         private com.oracle.bmc.opsi.model.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
                 changeOperationsInsightsPrivateEndpointCompartmentDetails = null;
 
         /**
          * The details used to change the compartment of a private endpoint
+         * @param changeOperationsInsightsPrivateEndpointCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeOperationsInsightsPrivateEndpointCompartmentDetails(
@@ -115,6 +149,12 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -122,6 +162,7 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -129,12 +170,18 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -142,6 +189,15 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -152,6 +208,7 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
          *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
          * operations, such as a resource being deleted or purged from the system.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -253,7 +310,8 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -265,6 +323,10 @@ public class ChangeOperationsInsightsPrivateEndpointCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

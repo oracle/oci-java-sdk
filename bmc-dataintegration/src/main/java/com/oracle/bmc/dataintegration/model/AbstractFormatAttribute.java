@@ -54,6 +54,10 @@ public class AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
     private final Boolean isFilePattern;
 
+    /**
+     * Defines whether a file pattern is supported.
+     * @return the value
+     **/
     public Boolean getIsFilePattern() {
         return isFilePattern;
     }

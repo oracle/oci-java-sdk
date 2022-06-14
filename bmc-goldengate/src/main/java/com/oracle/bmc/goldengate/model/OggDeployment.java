@@ -37,36 +37,73 @@ public final class OggDeployment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
 
+        /**
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         *
+         * @param deploymentName the value to set
+         * @return this builder
+         **/
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = deploymentName;
             this.__explicitlySet__.add("deploymentName");
             return this;
         }
-
+        /**
+         * The GoldenGate deployment console username.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
+        /**
+         * The GoldenGate deployment console username.
+         *
+         * @param adminUsername the value to set
+         * @return this builder
+         **/
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
             return this;
         }
-
+        /**
+         * Version of OGG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
+        /**
+         * Version of OGG
+         *
+         * @param oggVersion the value to set
+         * @return this builder
+         **/
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
-
+        /**
+         * A PEM-encoded SSL certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
+        /**
+         * A PEM-encoded SSL certificate.
+         *
+         * @param certificate the value to set
+         * @return this builder
+         **/
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
@@ -114,6 +151,11 @@ public final class OggDeployment {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
     private final String deploymentName;
 
+    /**
+     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     *
+     * @return the value
+     **/
     public String getDeploymentName() {
         return deploymentName;
     }
@@ -125,6 +167,11 @@ public final class OggDeployment {
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
+    /**
+     * The GoldenGate deployment console username.
+     *
+     * @return the value
+     **/
     public String getAdminUsername() {
         return adminUsername;
     }
@@ -136,6 +183,11 @@ public final class OggDeployment {
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
+    /**
+     * Version of OGG
+     *
+     * @return the value
+     **/
     public String getOggVersion() {
         return oggVersion;
     }
@@ -147,6 +199,11 @@ public final class OggDeployment {
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
+    /**
+     * A PEM-encoded SSL certificate.
+     *
+     * @return the value
+     **/
     public String getCertificate() {
         return certificate;
     }

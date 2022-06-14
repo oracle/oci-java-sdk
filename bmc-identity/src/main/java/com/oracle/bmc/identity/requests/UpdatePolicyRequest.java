@@ -18,6 +18,9 @@ public class UpdatePolicyRequest
      */
     private String policyId;
 
+    /**
+     * The OCID of the policy.
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -26,6 +29,9 @@ public class UpdatePolicyRequest
      */
     private com.oracle.bmc.identity.model.UpdatePolicyDetails updatePolicyDetails;
 
+    /**
+     * Request object for updating a policy.
+     */
     public com.oracle.bmc.identity.model.UpdatePolicyDetails getUpdatePolicyDetails() {
         return updatePolicyDetails;
     }
@@ -37,6 +43,12 @@ public class UpdatePolicyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,10 +70,14 @@ public class UpdatePolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the policy.
+         */
         private String policyId = null;
 
         /**
          * The OCID of the policy.
+         * @param policyId the value to set
          * @return this builder instance
          */
         public Builder policyId(String policyId) {
@@ -69,10 +85,14 @@ public class UpdatePolicyRequest
             return this;
         }
 
+        /**
+         * Request object for updating a policy.
+         */
         private com.oracle.bmc.identity.model.UpdatePolicyDetails updatePolicyDetails = null;
 
         /**
          * Request object for updating a policy.
+         * @param updatePolicyDetails the value to set
          * @return this builder instance
          */
         public Builder updatePolicyDetails(
@@ -81,6 +101,12 @@ public class UpdatePolicyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -88,6 +114,7 @@ public class UpdatePolicyRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -178,7 +205,8 @@ public class UpdatePolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +215,10 @@ public class UpdatePolicyRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

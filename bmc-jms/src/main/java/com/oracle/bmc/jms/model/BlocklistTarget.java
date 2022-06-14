@@ -29,27 +29,53 @@ public final class BlocklistTarget {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+         *
+         * @param fleetId the value to set
+         * @return this builder
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
+         *
+         * @param managedInstanceId the value to set
+         * @return this builder
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
-
+        /**
+         * The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
         private String installationKey;
 
+        /**
+         * The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+         * @param installationKey the value to set
+         * @return this builder
+         **/
         public Builder installationKey(String installationKey) {
             this.installationKey = installationKey;
             this.__explicitlySet__.add("installationKey");
@@ -96,6 +122,11 @@ public final class BlocklistTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+     *
+     * @return the value
+     **/
     public String getFleetId() {
         return fleetId;
     }
@@ -107,6 +138,11 @@ public final class BlocklistTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
+     *
+     * @return the value
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -117,6 +153,10 @@ public final class BlocklistTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
     private final String installationKey;
 
+    /**
+     * The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+     * @return the value
+     **/
     public String getInstallationKey() {
         return installationKey;
     }

@@ -64,45 +64,283 @@ public final class RedirectUri {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The HTTP protocol to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {protocol}}, the service preserves the original protocol from the
+         * incoming HTTP request URI. Allowed values are:
+         * <p>
+         *  HTTP
+         * *  HTTPS
+         * *  {protocol}
+         * <p>
+         * {@code {protocol}} is the only valid token for this property. It can appear only once in the value string.
+         * <p>
+         * Example: {@code HTTPS}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        /**
+         * The HTTP protocol to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {protocol}}, the service preserves the original protocol from the
+         * incoming HTTP request URI. Allowed values are:
+         * <p>
+         *  HTTP
+         * *  HTTPS
+         * *  {protocol}
+         * <p>
+         * {@code {protocol}} is the only valid token for this property. It can appear only once in the value string.
+         * <p>
+         * Example: {@code HTTPS}
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * The valid domain name (hostname) or IP address to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {host}}, the service preserves the original domain name from the
+         * incoming HTTP request URI.
+         * <p>
+         * All RedirectUri tokens are valid for this property. You can use any token more than once.
+         * <p>
+         * Curly braces are valid in this property only to surround tokens, such as {@code {host}}
+         * <p>
+         * Examples:
+         * <p>
+         *  **example.com** appears as {@code example.com} in the redirect URI.
+         * <p>
+         *  **in{host}** appears as {@code inexample.com} in the redirect URI if {@code example.com} is the hostname in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  **{port}{host}** appears as {@code 8081example.com} in the redirect URI if {@code example.com} is the hostname and
+         *    the port is {@code 8081} in the incoming HTTP request URI.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The valid domain name (hostname) or IP address to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {host}}, the service preserves the original domain name from the
+         * incoming HTTP request URI.
+         * <p>
+         * All RedirectUri tokens are valid for this property. You can use any token more than once.
+         * <p>
+         * Curly braces are valid in this property only to surround tokens, such as {@code {host}}
+         * <p>
+         * Examples:
+         * <p>
+         *  **example.com** appears as {@code example.com} in the redirect URI.
+         * <p>
+         *  **in{host}** appears as {@code inexample.com} in the redirect URI if {@code example.com} is the hostname in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  **{port}{host}** appears as {@code 8081example.com} in the redirect URI if {@code example.com} is the hostname and
+         *    the port is {@code 8081} in the incoming HTTP request URI.
+         *
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The communication port to use in the redirect URI.
+         * <p>
+         * Valid values include integers from 1 to 65535.
+         * <p>
+         * When this value is null, the service preserves the original port from the incoming HTTP request URI.
+         * <p>
+         * Example: {@code 8081}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The communication port to use in the redirect URI.
+         * <p>
+         * Valid values include integers from 1 to 65535.
+         * <p>
+         * When this value is null, the service preserves the original port from the incoming HTTP request URI.
+         * <p>
+         * Example: {@code 8081}
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The HTTP URI path to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {path}}, the service preserves the original path from the
+         * incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+         * <p>
+         * All RedirectUri tokens are valid for this property. You can use any token more than once.
+         * <p>
+         * The path string must begin with {@code /} if it does not begin with the {@code {path}} token.
+         * <p>
+         * Examples:
+         * <p>
+         *  __/example/video/123__ appears as {@code /example/video/123} in the redirect URI.
+         * <p>
+         *  __/example{path}__ appears as {@code /example/video/123} in the redirect URI if {@code /video/123} is the path in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  __{path}/123__ appears as {@code /example/video/123} in the redirect URI if {@code /example/video} is the path in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  __{path}123__ appears as {@code /example/video123} in the redirect URI if {@code /example/video} is the path in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  __/{host}/123__ appears as {@code /example.com/123} in the redirect URI if {@code example.com} is the hostname
+         *    in the incoming HTTP request URI.
+         * <p>
+         *  __/{host}/{port}__ appears as {@code /example.com/123} in the redirect URI if {@code example.com} is the hostname and
+         *    {@code 123} is the port in the incoming HTTP request URI.
+         * <p>
+         *  __/{query}__ appears as {@code /lang=en} in the redirect URI if the query is {@code lang=en} in the incoming HTTP
+         *    request URI.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * The HTTP URI path to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {path}}, the service preserves the original path from the
+         * incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+         * <p>
+         * All RedirectUri tokens are valid for this property. You can use any token more than once.
+         * <p>
+         * The path string must begin with {@code /} if it does not begin with the {@code {path}} token.
+         * <p>
+         * Examples:
+         * <p>
+         *  __/example/video/123__ appears as {@code /example/video/123} in the redirect URI.
+         * <p>
+         *  __/example{path}__ appears as {@code /example/video/123} in the redirect URI if {@code /video/123} is the path in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  __{path}/123__ appears as {@code /example/video/123} in the redirect URI if {@code /example/video} is the path in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  __{path}123__ appears as {@code /example/video123} in the redirect URI if {@code /example/video} is the path in the
+         *    incoming HTTP request URI.
+         * <p>
+         *  __/{host}/123__ appears as {@code /example.com/123} in the redirect URI if {@code example.com} is the hostname
+         *    in the incoming HTTP request URI.
+         * <p>
+         *  __/{host}/{port}__ appears as {@code /example.com/123} in the redirect URI if {@code example.com} is the hostname and
+         *    {@code 123} is the port in the incoming HTTP request URI.
+         * <p>
+         *  __/{query}__ appears as {@code /lang=en} in the redirect URI if the query is {@code lang=en} in the incoming HTTP
+         *    request URI.
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * The query string to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {query}}, the service preserves the original query parameters
+         * from the incoming HTTP request URI.
+         * <p>
+         * All {@code RedirectUri} tokens are valid for this property. You can use any token more than once.
+         * <p>
+         * If the query string does not begin with the {@code {query}} token, it must begin with the question mark (?) character.
+         * <p>
+         * You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand
+         * (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty
+         * string, "".
+         * <p>
+         * If the specified query string results in a redirect URI ending with {@code ?} or {@code &}, the last character is truncated.
+         * For example, if the incoming URI is {@code http://host.com:8080/documents} and the query property value is
+         * {@code ?lang=en&{query}}, the redirect URI is {@code http://host.com:8080/documents?lang=en}. The system
+         * truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+         * <p>
+         * Examples:
+         * * **lang=en&time_zone=PST** appears as {@code lang=en&time_zone=PST} in the redirect URI.
+         * <p>
+         * **{query}** appears as {@code lang=en&time_zone=PST} in the redirect URI if {@code lang=en&time_zone=PST} is the query
+         *   string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the {@code {query}}
+         *   token renders as an empty string.
+         * <p>
+         * **lang=en&{query}&time_zone=PST** appears as {@code lang=en&country=us&time_zone=PST} in the redirect URI if
+         *   {@code country=us} is the query string in the incoming HTTP request. If the incoming HTTP request has no query
+         *   parameters, this value renders as {@code lang=en&time_zone=PST}.
+         * <p>
+         *  **protocol={protocol}&hostname={host}** appears as {@code protocol=http&hostname=example.com} in the redirect
+         *    URI if the protocol is {@code HTTP} and the hostname is {@code example.com} in the incoming HTTP request.
+         * <p>
+         *  **port={port}&hostname={host}** appears as {@code port=8080&hostname=example.com} in the redirect URI if the
+         *    port is {@code 8080} and the hostname is {@code example.com} in the incoming HTTP request URI.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
+        /**
+         * The query string to use in the redirect URI.
+         * <p>
+         * When this value is null, not set, or set to {@code {query}}, the service preserves the original query parameters
+         * from the incoming HTTP request URI.
+         * <p>
+         * All {@code RedirectUri} tokens are valid for this property. You can use any token more than once.
+         * <p>
+         * If the query string does not begin with the {@code {query}} token, it must begin with the question mark (?) character.
+         * <p>
+         * You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand
+         * (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty
+         * string, "".
+         * <p>
+         * If the specified query string results in a redirect URI ending with {@code ?} or {@code &}, the last character is truncated.
+         * For example, if the incoming URI is {@code http://host.com:8080/documents} and the query property value is
+         * {@code ?lang=en&{query}}, the redirect URI is {@code http://host.com:8080/documents?lang=en}. The system
+         * truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+         * <p>
+         * Examples:
+         * * **lang=en&time_zone=PST** appears as {@code lang=en&time_zone=PST} in the redirect URI.
+         * <p>
+         * **{query}** appears as {@code lang=en&time_zone=PST} in the redirect URI if {@code lang=en&time_zone=PST} is the query
+         *   string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the {@code {query}}
+         *   token renders as an empty string.
+         * <p>
+         * **lang=en&{query}&time_zone=PST** appears as {@code lang=en&country=us&time_zone=PST} in the redirect URI if
+         *   {@code country=us} is the query string in the incoming HTTP request. If the incoming HTTP request has no query
+         *   parameters, this value renders as {@code lang=en&time_zone=PST}.
+         * <p>
+         *  **protocol={protocol}&hostname={host}** appears as {@code protocol=http&hostname=example.com} in the redirect
+         *    URI if the protocol is {@code HTTP} and the hostname is {@code example.com} in the incoming HTTP request.
+         * <p>
+         *  **port={port}&hostname={host}** appears as {@code port=8080&hostname=example.com} in the redirect URI if the
+         *    port is {@code 8080} and the hostname is {@code example.com} in the incoming HTTP request URI.
+         *
+         * @param query the value to set
+         * @return this builder
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -161,6 +399,22 @@ public final class RedirectUri {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
+    /**
+     * The HTTP protocol to use in the redirect URI.
+     * <p>
+     * When this value is null, not set, or set to {@code {protocol}}, the service preserves the original protocol from the
+     * incoming HTTP request URI. Allowed values are:
+     * <p>
+     *  HTTP
+     * *  HTTPS
+     * *  {protocol}
+     * <p>
+     * {@code {protocol}} is the only valid token for this property. It can appear only once in the value string.
+     * <p>
+     * Example: {@code HTTPS}
+     *
+     * @return the value
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -189,6 +443,28 @@ public final class RedirectUri {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The valid domain name (hostname) or IP address to use in the redirect URI.
+     * <p>
+     * When this value is null, not set, or set to {@code {host}}, the service preserves the original domain name from the
+     * incoming HTTP request URI.
+     * <p>
+     * All RedirectUri tokens are valid for this property. You can use any token more than once.
+     * <p>
+     * Curly braces are valid in this property only to surround tokens, such as {@code {host}}
+     * <p>
+     * Examples:
+     * <p>
+     *  **example.com** appears as {@code example.com} in the redirect URI.
+     * <p>
+     *  **in{host}** appears as {@code inexample.com} in the redirect URI if {@code example.com} is the hostname in the
+     *    incoming HTTP request URI.
+     * <p>
+     *  **{port}{host}** appears as {@code 8081example.com} in the redirect URI if {@code example.com} is the hostname and
+     *    the port is {@code 8081} in the incoming HTTP request URI.
+     *
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -206,6 +482,17 @@ public final class RedirectUri {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The communication port to use in the redirect URI.
+     * <p>
+     * Valid values include integers from 1 to 65535.
+     * <p>
+     * When this value is null, the service preserves the original port from the incoming HTTP request URI.
+     * <p>
+     * Example: {@code 8081}
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -246,6 +533,40 @@ public final class RedirectUri {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * The HTTP URI path to use in the redirect URI.
+     * <p>
+     * When this value is null, not set, or set to {@code {path}}, the service preserves the original path from the
+     * incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+     * <p>
+     * All RedirectUri tokens are valid for this property. You can use any token more than once.
+     * <p>
+     * The path string must begin with {@code /} if it does not begin with the {@code {path}} token.
+     * <p>
+     * Examples:
+     * <p>
+     *  __/example/video/123__ appears as {@code /example/video/123} in the redirect URI.
+     * <p>
+     *  __/example{path}__ appears as {@code /example/video/123} in the redirect URI if {@code /video/123} is the path in the
+     *    incoming HTTP request URI.
+     * <p>
+     *  __{path}/123__ appears as {@code /example/video/123} in the redirect URI if {@code /example/video} is the path in the
+     *    incoming HTTP request URI.
+     * <p>
+     *  __{path}123__ appears as {@code /example/video123} in the redirect URI if {@code /example/video} is the path in the
+     *    incoming HTTP request URI.
+     * <p>
+     *  __/{host}/123__ appears as {@code /example.com/123} in the redirect URI if {@code example.com} is the hostname
+     *    in the incoming HTTP request URI.
+     * <p>
+     *  __/{host}/{port}__ appears as {@code /example.com/123} in the redirect URI if {@code example.com} is the hostname and
+     *    {@code 123} is the port in the incoming HTTP request URI.
+     * <p>
+     *  __/{query}__ appears as {@code /lang=en} in the redirect URI if the query is {@code lang=en} in the incoming HTTP
+     *    request URI.
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -290,6 +611,44 @@ public final class RedirectUri {
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
+    /**
+     * The query string to use in the redirect URI.
+     * <p>
+     * When this value is null, not set, or set to {@code {query}}, the service preserves the original query parameters
+     * from the incoming HTTP request URI.
+     * <p>
+     * All {@code RedirectUri} tokens are valid for this property. You can use any token more than once.
+     * <p>
+     * If the query string does not begin with the {@code {query}} token, it must begin with the question mark (?) character.
+     * <p>
+     * You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand
+     * (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty
+     * string, "".
+     * <p>
+     * If the specified query string results in a redirect URI ending with {@code ?} or {@code &}, the last character is truncated.
+     * For example, if the incoming URI is {@code http://host.com:8080/documents} and the query property value is
+     * {@code ?lang=en&{query}}, the redirect URI is {@code http://host.com:8080/documents?lang=en}. The system
+     * truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+     * <p>
+     * Examples:
+     * * **lang=en&time_zone=PST** appears as {@code lang=en&time_zone=PST} in the redirect URI.
+     * <p>
+     * **{query}** appears as {@code lang=en&time_zone=PST} in the redirect URI if {@code lang=en&time_zone=PST} is the query
+     *   string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the {@code {query}}
+     *   token renders as an empty string.
+     * <p>
+     * **lang=en&{query}&time_zone=PST** appears as {@code lang=en&country=us&time_zone=PST} in the redirect URI if
+     *   {@code country=us} is the query string in the incoming HTTP request. If the incoming HTTP request has no query
+     *   parameters, this value renders as {@code lang=en&time_zone=PST}.
+     * <p>
+     *  **protocol={protocol}&hostname={host}** appears as {@code protocol=http&hostname=example.com} in the redirect
+     *    URI if the protocol is {@code HTTP} and the hostname is {@code example.com} in the incoming HTTP request.
+     * <p>
+     *  **port={port}&hostname={host}** appears as {@code port=8080&hostname=example.com} in the redirect URI if the
+     *    port is {@code 8080} and the hostname is {@code example.com} in the incoming HTTP request URI.
+     *
+     * @return the value
+     **/
     public String getQuery() {
         return query;
     }

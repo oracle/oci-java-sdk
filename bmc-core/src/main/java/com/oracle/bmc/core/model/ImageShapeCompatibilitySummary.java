@@ -36,18 +36,33 @@ public final class ImageShapeCompatibilitySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * The shape name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The shape name.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -113,6 +128,10 @@ public final class ImageShapeCompatibilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -123,6 +142,10 @@ public final class ImageShapeCompatibilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The shape name.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }

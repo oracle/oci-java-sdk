@@ -154,10 +154,17 @@ public final class OkeBlueGreenTrafficShiftDeployStage extends DeployStage {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okeBlueGreenDeployStageId")
         private String okeBlueGreenDeployStageId;
 
+        /**
+         * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
+         * @param okeBlueGreenDeployStageId the value to set
+         * @return this builder
+         **/
         public Builder okeBlueGreenDeployStageId(String okeBlueGreenDeployStageId) {
             this.okeBlueGreenDeployStageId = okeBlueGreenDeployStageId;
             this.__explicitlySet__.add("okeBlueGreenDeployStageId");
@@ -266,6 +273,10 @@ public final class OkeBlueGreenTrafficShiftDeployStage extends DeployStage {
     @com.fasterxml.jackson.annotation.JsonProperty("okeBlueGreenDeployStageId")
     private final String okeBlueGreenDeployStageId;
 
+    /**
+     * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
+     * @return the value
+     **/
     public String getOkeBlueGreenDeployStageId() {
         return okeBlueGreenDeployStageId;
     }

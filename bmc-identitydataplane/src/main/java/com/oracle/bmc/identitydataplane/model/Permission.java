@@ -27,9 +27,17 @@ public final class Permission {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the permission.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("p")
         private String p;
 
+        /**
+         * The name of the permission.
+         * @param p the value to set
+         * @return this builder
+         **/
         public Builder p(String p) {
             this.p = p;
             this.__explicitlySet__.add("p");
@@ -71,6 +79,10 @@ public final class Permission {
     @com.fasterxml.jackson.annotation.JsonProperty("p")
     private final String p;
 
+    /**
+     * The name of the permission.
+     * @return the value
+     **/
     public String getP() {
         return p;
     }

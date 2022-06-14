@@ -69,54 +69,109 @@ public final class AnalyticsInstanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The resource OCID.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Optional description.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Optional description.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCID of the compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current state of an instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AnalyticsInstanceLifecycleState lifecycleState;
 
+        /**
+         * The current state of an instance.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(AnalyticsInstanceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Analytics feature set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
         private FeatureSet featureSet;
 
+        /**
+         * Analytics feature set.
+         *
+         * @param featureSet the value to set
+         * @return this builder
+         **/
         public Builder featureSet(FeatureSet featureSet) {
             this.featureSet = featureSet;
             this.__explicitlySet__.add("featureSet");
@@ -131,19 +186,37 @@ public final class AnalyticsInstanceSummary {
             this.__explicitlySet__.add("capacity");
             return this;
         }
-
+        /**
+         * The license used for the service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private LicenseType licenseType;
 
+        /**
+         * The license used for the service.
+         *
+         * @param licenseType the value to set
+         * @return this builder
+         **/
         public Builder licenseType(LicenseType licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-
+        /**
+         * Email address receiving notifications.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
         private String emailNotification;
 
+        /**
+         * Email address receiving notifications.
+         *
+         * @param emailNotification the value to set
+         * @return this builder
+         **/
         public Builder emailNotification(String emailNotification) {
             this.emailNotification = emailNotification;
             this.__explicitlySet__.add("emailNotification");
@@ -158,28 +231,63 @@ public final class AnalyticsInstanceSummary {
             this.__explicitlySet__.add("networkEndpointDetails");
             return this;
         }
-
+        /**
+         * URL of the Analytics service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
+        /**
+         * URL of the Analytics service.
+         *
+         * @param serviceUrl the value to set
+         * @return this builder
+         **/
         public Builder serviceUrl(String serviceUrl) {
             this.serviceUrl = serviceUrl;
             this.__explicitlySet__.add("serviceUrl");
             return this;
         }
-
+        /**
+         * The date and time the instance was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the instance was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the instance was last updated (in the format defined by RFC3339).
+         * This timestamp represents updates made through this API. External events do not
+         * influence it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the instance was last updated (in the format defined by RFC3339).
+         * This timestamp represents updates made through this API. External events do not
+         * influence it.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -249,6 +357,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The resource OCID.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -260,6 +373,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -271,6 +389,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Optional description.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -282,6 +405,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -293,6 +421,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AnalyticsInstanceLifecycleState lifecycleState;
 
+    /**
+     * The current state of an instance.
+     *
+     * @return the value
+     **/
     public AnalyticsInstanceLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -304,6 +437,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
     private final FeatureSet featureSet;
 
+    /**
+     * Analytics feature set.
+     *
+     * @return the value
+     **/
     public FeatureSet getFeatureSet() {
         return featureSet;
     }
@@ -322,6 +460,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
+    /**
+     * The license used for the service.
+     *
+     * @return the value
+     **/
     public LicenseType getLicenseType() {
         return licenseType;
     }
@@ -333,6 +476,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
     private final String emailNotification;
 
+    /**
+     * Email address receiving notifications.
+     *
+     * @return the value
+     **/
     public String getEmailNotification() {
         return emailNotification;
     }
@@ -351,6 +499,11 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     private final String serviceUrl;
 
+    /**
+     * URL of the Analytics service.
+     *
+     * @return the value
+     **/
     public String getServiceUrl() {
         return serviceUrl;
     }
@@ -364,6 +517,13 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the instance was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -377,6 +537,13 @@ public final class AnalyticsInstanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the instance was last updated (in the format defined by RFC3339).
+     * This timestamp represents updates made through this API. External events do not
+     * influence it.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

@@ -116,28 +116,49 @@ public final class UpdateDataAssetFromMySQL extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-
+        /**
+         * The generic JDBC host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The generic JDBC host name.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The generic JDBC port number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
+        /**
+         * The generic JDBC port number.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The generic JDBC service name for the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The generic JDBC service name for the database.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -250,6 +271,10 @@ public final class UpdateDataAssetFromMySQL extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The generic JDBC host name.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -260,6 +285,10 @@ public final class UpdateDataAssetFromMySQL extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
+    /**
+     * The generic JDBC port number.
+     * @return the value
+     **/
     public String getPort() {
         return port;
     }
@@ -270,6 +299,10 @@ public final class UpdateDataAssetFromMySQL extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The generic JDBC service name for the database.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

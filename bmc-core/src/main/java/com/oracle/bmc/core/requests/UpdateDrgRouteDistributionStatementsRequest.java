@@ -18,6 +18,9 @@ public class UpdateDrgRouteDistributionStatementsRequest
      */
     private String drgRouteDistributionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+     */
     public String getDrgRouteDistributionId() {
         return drgRouteDistributionId;
     }
@@ -28,6 +31,10 @@ public class UpdateDrgRouteDistributionStatementsRequest
     private com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails
             updateDrgRouteDistributionStatementsDetails;
 
+    /**
+     * Request to update one or more route distribution statements in the route distribution.
+     *
+     */
     public com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails
             getUpdateDrgRouteDistributionStatementsDetails() {
         return updateDrgRouteDistributionStatementsDetails;
@@ -51,10 +58,14 @@ public class UpdateDrgRouteDistributionStatementsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         */
         private String drgRouteDistributionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         * @param drgRouteDistributionId the value to set
          * @return this builder instance
          */
         public Builder drgRouteDistributionId(String drgRouteDistributionId) {
@@ -62,12 +73,17 @@ public class UpdateDrgRouteDistributionStatementsRequest
             return this;
         }
 
+        /**
+         * Request to update one or more route distribution statements in the route distribution.
+         *
+         */
         private com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails
                 updateDrgRouteDistributionStatementsDetails = null;
 
         /**
          * Request to update one or more route distribution statements in the route distribution.
          *
+         * @param updateDrgRouteDistributionStatementsDetails the value to set
          * @return this builder instance
          */
         public Builder updateDrgRouteDistributionStatementsDetails(
@@ -163,7 +179,8 @@ public class UpdateDrgRouteDistributionStatementsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -172,6 +189,10 @@ public class UpdateDrgRouteDistributionStatementsRequest
                         updateDrgRouteDistributionStatementsDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -31,18 +31,33 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private RelatedResourceEntityType entityType;
 
+        /**
+         * The resource entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(RelatedResourceEntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related resource.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
@@ -85,6 +100,10 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final RelatedResourceEntityType entityType;
 
+    /**
+     * The resource entity type.
+     * @return the value
+     **/
     public RelatedResourceEntityType getEntityType() {
         return entityType;
     }
@@ -95,6 +114,10 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related resource.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }

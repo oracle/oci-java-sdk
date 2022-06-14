@@ -19,6 +19,10 @@ public class IngestHostConfigurationRequest
      */
     private String id;
 
+    /**
+     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -27,6 +31,9 @@ public class IngestHostConfigurationRequest
      */
     private com.oracle.bmc.opsi.model.IngestHostConfigurationDetails ingestHostConfigurationDetails;
 
+    /**
+     * Payload for one or more host configuration metrics for a particular host.
+     */
     public com.oracle.bmc.opsi.model.IngestHostConfigurationDetails
             getIngestHostConfigurationDetails() {
         return ingestHostConfigurationDetails;
@@ -38,6 +45,11 @@ public class IngestHostConfigurationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +61,12 @@ public class IngestHostConfigurationRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -63,6 +81,15 @@ public class IngestHostConfigurationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * operations, such as a resource being deleted or purged from the system.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -85,11 +112,16 @@ public class IngestHostConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+         *
+         */
         private String id = null;
 
         /**
          * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -97,11 +129,15 @@ public class IngestHostConfigurationRequest
             return this;
         }
 
+        /**
+         * Payload for one or more host configuration metrics for a particular host.
+         */
         private com.oracle.bmc.opsi.model.IngestHostConfigurationDetails
                 ingestHostConfigurationDetails = null;
 
         /**
          * Payload for one or more host configuration metrics for a particular host.
+         * @param ingestHostConfigurationDetails the value to set
          * @return this builder instance
          */
         public Builder ingestHostConfigurationDetails(
@@ -111,12 +147,18 @@ public class IngestHostConfigurationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -124,6 +166,12 @@ public class IngestHostConfigurationRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -131,6 +179,7 @@ public class IngestHostConfigurationRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -138,6 +187,15 @@ public class IngestHostConfigurationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -148,6 +206,7 @@ public class IngestHostConfigurationRequest
          *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
          * operations, such as a resource being deleted or purged from the system.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -242,7 +301,8 @@ public class IngestHostConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -253,6 +313,10 @@ public class IngestHostConfigurationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

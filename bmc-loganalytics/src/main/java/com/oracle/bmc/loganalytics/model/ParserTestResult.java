@@ -42,45 +42,81 @@ public final class ParserTestResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Additional information for the test result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
         private java.util.Map<String, String> additionalInfo;
 
+        /**
+         * Additional information for the test result.
+         * @param additionalInfo the value to set
+         * @return this builder
+         **/
         public Builder additionalInfo(java.util.Map<String, String> additionalInfo) {
             this.additionalInfo = additionalInfo;
             this.__explicitlySet__.add("additionalInfo");
             return this;
         }
-
+        /**
+         * The test result log entries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entries")
         private java.util.List<AbstractParserTestResultLogEntry> entries;
 
+        /**
+         * The test result log entries.
+         * @param entries the value to set
+         * @return this builder
+         **/
         public Builder entries(java.util.List<AbstractParserTestResultLogEntry> entries) {
             this.entries = entries;
             this.__explicitlySet__.add("entries");
             return this;
         }
-
+        /**
+         * The example content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
         private String exampleContent;
 
+        /**
+         * The example content.
+         * @param exampleContent the value to set
+         * @return this builder
+         **/
         public Builder exampleContent(String exampleContent) {
             this.exampleContent = exampleContent;
             this.__explicitlySet__.add("exampleContent");
             return this;
         }
-
+        /**
+         * The test result log lines.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<AbstractParserTestResultLogLine> lines;
 
+        /**
+         * The test result log lines.
+         * @param lines the value to set
+         * @return this builder
+         **/
         public Builder lines(java.util.List<AbstractParserTestResultLogLine> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
             return this;
         }
-
+        /**
+         * The named capture groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namedCaptureGroups")
         private java.util.List<String> namedCaptureGroups;
 
+        /**
+         * The named capture groups.
+         * @param namedCaptureGroups the value to set
+         * @return this builder
+         **/
         public Builder namedCaptureGroups(java.util.List<String> namedCaptureGroups) {
             this.namedCaptureGroups = namedCaptureGroups;
             this.__explicitlySet__.add("namedCaptureGroups");
@@ -129,6 +165,10 @@ public final class ParserTestResult {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
     private final java.util.Map<String, String> additionalInfo;
 
+    /**
+     * Additional information for the test result.
+     * @return the value
+     **/
     public java.util.Map<String, String> getAdditionalInfo() {
         return additionalInfo;
     }
@@ -139,6 +179,10 @@ public final class ParserTestResult {
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
     private final java.util.List<AbstractParserTestResultLogEntry> entries;
 
+    /**
+     * The test result log entries.
+     * @return the value
+     **/
     public java.util.List<AbstractParserTestResultLogEntry> getEntries() {
         return entries;
     }
@@ -149,6 +193,10 @@ public final class ParserTestResult {
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
     private final String exampleContent;
 
+    /**
+     * The example content.
+     * @return the value
+     **/
     public String getExampleContent() {
         return exampleContent;
     }
@@ -159,6 +207,10 @@ public final class ParserTestResult {
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<AbstractParserTestResultLogLine> lines;
 
+    /**
+     * The test result log lines.
+     * @return the value
+     **/
     public java.util.List<AbstractParserTestResultLogLine> getLines() {
         return lines;
     }
@@ -169,6 +221,10 @@ public final class ParserTestResult {
     @com.fasterxml.jackson.annotation.JsonProperty("namedCaptureGroups")
     private final java.util.List<String> namedCaptureGroups;
 
+    /**
+     * The named capture groups.
+     * @return the value
+     **/
     public java.util.List<String> getNamedCaptureGroups() {
         return namedCaptureGroups;
     }

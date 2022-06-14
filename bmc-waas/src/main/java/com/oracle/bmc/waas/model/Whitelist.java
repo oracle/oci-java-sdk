@@ -30,27 +30,49 @@ public final class Whitelist {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name of the whitelist.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique name of the whitelist.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A set of IP addresses or CIDR notations to include in the whitelist.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<String> addresses;
 
+        /**
+         * A set of IP addresses or CIDR notations to include in the whitelist.
+         * @param addresses the value to set
+         * @return this builder
+         **/
         public Builder addresses(java.util.List<String> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
             return this;
         }
-
+        /**
+         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
         private java.util.List<String> addressLists;
 
+        /**
+         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+         * @param addressLists the value to set
+         * @return this builder
+         **/
         public Builder addressLists(java.util.List<String> addressLists) {
             this.addressLists = addressLists;
             this.__explicitlySet__.add("addressLists");
@@ -93,6 +115,10 @@ public final class Whitelist {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique name of the whitelist.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -103,6 +129,10 @@ public final class Whitelist {
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<String> addresses;
 
+    /**
+     * A set of IP addresses or CIDR notations to include in the whitelist.
+     * @return the value
+     **/
     public java.util.List<String> getAddresses() {
         return addresses;
     }
@@ -113,6 +143,10 @@ public final class Whitelist {
     @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
     private final java.util.List<String> addressLists;
 
+    /**
+     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+     * @return the value
+     **/
     public java.util.List<String> getAddressLists() {
         return addressLists;
     }

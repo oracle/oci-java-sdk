@@ -80,6 +80,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Field display name - will be alias if field is renamed by queryStrng.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -91,6 +96,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("isDeclared")
     private final Boolean isDeclared;
 
+    /**
+     * Field denoting if this is a declaration of the field in the queryString.
+     *
+     * @return the value
+     **/
     public Boolean getIsDeclared() {
         return isDeclared;
     }
@@ -103,6 +113,12 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("originalDisplayNames")
     private final java.util.List<String> originalDisplayNames;
 
+    /**
+     * Same as displayName unless field renamed in which case this will hold the original display names for the field
+     * across all renames.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getOriginalDisplayNames() {
         return originalDisplayNames;
     }
@@ -114,6 +130,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
+    /**
+     * Internal identifier for the field.
+     *
+     * @return the value
+     **/
     public String getInternalName() {
         return internalName;
     }
@@ -125,6 +146,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
+    /**
+     * Field denoting field data type.
+     *
+     * @return the value
+     **/
     public ValueType getValueType() {
         return valueType;
     }
@@ -136,6 +162,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupable")
     private final Boolean isGroupable;
 
+    /**
+     * Identifies if this field can be used as a grouping field in any grouping command.
+     *
+     * @return the value
+     **/
     public Boolean getIsGroupable() {
         return isGroupable;
     }
@@ -147,6 +178,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("isDuration")
     private final Boolean isDuration;
 
+    /**
+     * Identifies if this field format is a duration.
+     *
+     * @return the value
+     **/
     public Boolean getIsDuration() {
         return isDuration;
     }
@@ -158,6 +194,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
+    /**
+     * Alias of field if renamed by queryStrng.
+     *
+     * @return the value
+     **/
     public String getAlias() {
         return alias;
     }
@@ -169,6 +210,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("filterQueryString")
     private final String filterQueryString;
 
+    /**
+     * Query used to derive this field if specified.
+     *
+     * @return the value
+     **/
     public String getFilterQueryString() {
         return filterQueryString;
     }
@@ -180,6 +226,11 @@ public class AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
     private final String unitType;
 
+    /**
+     * Field denoting field unit type.
+     *
+     * @return the value
+     **/
     public String getUnitType() {
         return unitType;
     }

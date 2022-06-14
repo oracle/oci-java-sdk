@@ -29,9 +29,17 @@ public final class EsxiHostCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of ESXi hosts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EsxiHostSummary> items;
 
+        /**
+         * A list of ESXi hosts.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<EsxiHostSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class EsxiHostCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EsxiHostSummary> items;
 
+    /**
+     * A list of ESXi hosts.
+     * @return the value
+     **/
     public java.util.List<EsxiHostSummary> getItems() {
         return items;
     }

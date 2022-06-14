@@ -30,9 +30,19 @@ package com.oracle.bmc.sch.model;
 public final class FunctionsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+         *
+         * @param functionId the value to set
+         * @return this builder
+         **/
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
@@ -81,6 +91,11 @@ public final class FunctionsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+     *
+     * @return the value
+     **/
     public String getFunctionId() {
         return functionId;
     }

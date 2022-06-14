@@ -27,9 +27,17 @@ package com.oracle.bmc.datasafe.model;
 public final class UpdateColumnSourceTargetDetails extends UpdateColumnSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the target database to be associated as the column source with the masking policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database to be associated as the column source with the masking policy.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
@@ -78,6 +86,10 @@ public final class UpdateColumnSourceTargetDetails extends UpdateColumnSourceDet
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database to be associated as the column source with the masking policy.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }

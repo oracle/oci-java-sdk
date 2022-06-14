@@ -45,9 +45,17 @@ public final class ProtectionRuleExclusion {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The target of the exclusion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private Target target;
 
+        /**
+         * The target of the exclusion.
+         * @param target the value to set
+         * @return this builder
+         **/
         public Builder target(Target target) {
             this.target = target;
             this.__explicitlySet__.add("target");
@@ -147,6 +155,10 @@ public final class ProtectionRuleExclusion {
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final Target target;
 
+    /**
+     * The target of the exclusion.
+     * @return the value
+     **/
     public Target getTarget() {
         return target;
     }

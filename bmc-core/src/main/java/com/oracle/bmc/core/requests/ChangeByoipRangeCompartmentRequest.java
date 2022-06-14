@@ -18,6 +18,9 @@ public class ChangeByoipRangeCompartmentRequest
      */
     private String byoipRangeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
+     */
     public String getByoipRangeId() {
         return byoipRangeId;
     }
@@ -27,6 +30,9 @@ public class ChangeByoipRangeCompartmentRequest
     private com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails
             changeByoipRangeCompartmentDetails;
 
+    /**
+     * Request to change the compartment of a BYOIP CIDR block.
+     */
     public com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails
             getChangeByoipRangeCompartmentDetails() {
         return changeByoipRangeCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeByoipRangeCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class ChangeByoipRangeCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -73,10 +92,14 @@ public class ChangeByoipRangeCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
+         */
         private String byoipRangeId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource containing the BYOIP CIDR block.
+         * @param byoipRangeId the value to set
          * @return this builder instance
          */
         public Builder byoipRangeId(String byoipRangeId) {
@@ -84,11 +107,15 @@ public class ChangeByoipRangeCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of a BYOIP CIDR block.
+         */
         private com.oracle.bmc.core.model.ChangeByoipRangeCompartmentDetails
                 changeByoipRangeCompartmentDetails = null;
 
         /**
          * Request to change the compartment of a BYOIP CIDR block.
+         * @param changeByoipRangeCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeByoipRangeCompartmentDetails(
@@ -98,12 +125,18 @@ public class ChangeByoipRangeCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -111,6 +144,14 @@ public class ChangeByoipRangeCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -120,6 +161,7 @@ public class ChangeByoipRangeCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -212,7 +254,8 @@ public class ChangeByoipRangeCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +265,10 @@ public class ChangeByoipRangeCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

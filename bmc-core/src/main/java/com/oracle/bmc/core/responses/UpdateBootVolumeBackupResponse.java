@@ -14,6 +14,11 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -23,6 +28,10 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
+    /**
+     * The returned BootVolumeBackup instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.BootVolumeBackup getBootVolumeBackup() {
         return bootVolumeBackup;
     }
@@ -45,15 +54,33 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned BootVolumeBackup instance.
+         */
         private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
+        /**
+         * The returned BootVolumeBackup instance.
+         * @param bootVolumeBackup the value to set
+         * @return this builder
+         */
         public Builder bootVolumeBackup(
                 com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup) {
             this.bootVolumeBackup = bootVolumeBackup;
@@ -72,11 +99,19 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateBootVolumeBackupResponse build() {
             return new UpdateBootVolumeBackupResponse(__httpStatusCode__, etag, bootVolumeBackup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

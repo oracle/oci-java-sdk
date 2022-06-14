@@ -15,6 +15,12 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult;
 
+    /**
+     * The returned ValidatePatternResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.datacatalog.model.ValidatePatternResult getValidatePatternResult() {
         return validatePatternResult;
     }
@@ -50,15 +60,35 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ValidatePatternResult instance.
+         */
         private com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult;
 
+        /**
+         * The returned ValidatePatternResult instance.
+         * @param validatePatternResult the value to set
+         * @return this builder
+         */
         public Builder validatePatternResult(
                 com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult) {
             this.validatePatternResult = validatePatternResult;
@@ -77,12 +107,20 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ValidatePatternResponse build() {
             return new ValidatePatternResponse(
                     __httpStatusCode__, opcRequestId, validatePatternResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

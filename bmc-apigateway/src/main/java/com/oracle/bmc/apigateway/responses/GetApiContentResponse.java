@@ -14,6 +14,11 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -26,6 +31,13 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +47,10 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String xContentSha256;
 
+    /**
+     * Base64 encoded Sha256 of the body.
+     * @return the value
+     */
     public String getXContentSha256() {
         return xContentSha256;
     }
@@ -44,6 +60,10 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -76,29 +96,69 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Base64 encoded Sha256 of the body.
+         */
         private String xContentSha256;
 
+        /**
+         * Base64 encoded Sha256 of the body.
+         * @param xContentSha256 the value to set
+         * @return this builder
+         */
         public Builder xContentSha256(String xContentSha256) {
             this.xContentSha256 = xContentSha256;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -118,12 +178,20 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetApiContentResponse build() {
             return new GetApiContentResponse(
                     __httpStatusCode__, etag, opcRequestId, xContentSha256, inputStream);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

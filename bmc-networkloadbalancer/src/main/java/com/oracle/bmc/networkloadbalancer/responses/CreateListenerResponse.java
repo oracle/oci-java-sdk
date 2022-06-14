@@ -14,6 +14,11 @@ public class CreateListenerResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -25,6 +30,12 @@ public class CreateListenerResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,11 @@ public class CreateListenerResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String eTag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -61,22 +77,54 @@ public class CreateListenerResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String eTag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -95,12 +143,20 @@ public class CreateListenerResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateListenerResponse build() {
             return new CreateListenerResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, eTag);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

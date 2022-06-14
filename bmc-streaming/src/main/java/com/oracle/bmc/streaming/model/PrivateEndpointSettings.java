@@ -32,27 +32,57 @@ public final class PrivateEndpointSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The subnet id from which the private stream pool can be accessed.
+         * Trying to access the streams from another network location will result in an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The subnet id from which the private stream pool can be accessed.
+         * Trying to access the streams from another network location will result in an error.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The private IP associated with the stream pool in the associated subnetId.
+         * The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
+        /**
+         * The private IP associated with the stream pool in the associated subnetId.
+         * The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
+         *
+         * @param privateEndpointIp the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = privateEndpointIp;
             this.__explicitlySet__.add("privateEndpointIp");
             return this;
         }
-
+        /**
+         * The optional list of network security groups that are associated with the private endpoint of the stream pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The optional list of network security groups that are associated with the private endpoint of the stream pool.
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -100,6 +130,12 @@ public final class PrivateEndpointSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The subnet id from which the private stream pool can be accessed.
+     * Trying to access the streams from another network location will result in an error.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -112,6 +148,12 @@ public final class PrivateEndpointSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
 
+    /**
+     * The private IP associated with the stream pool in the associated subnetId.
+     * The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
+     *
+     * @return the value
+     **/
     public String getPrivateEndpointIp() {
         return privateEndpointIp;
     }
@@ -122,6 +164,10 @@ public final class PrivateEndpointSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The optional list of network security groups that are associated with the private endpoint of the stream pool.
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

@@ -13,6 +13,10 @@ public class DeleteDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -22,6 +26,10 @@ public class DeleteDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -42,15 +50,31 @@ public class DeleteDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -68,12 +92,20 @@ public class DeleteDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteDeployEnvironmentResponse build() {
             return new DeleteDeployEnvironmentResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

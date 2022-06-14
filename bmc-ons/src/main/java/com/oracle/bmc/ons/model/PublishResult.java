@@ -29,18 +29,33 @@ public final class PublishResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The UUID of the message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageId")
         private String messageId;
 
+        /**
+         * The UUID of the message.
+         * @param messageId the value to set
+         * @return this builder
+         **/
         public Builder messageId(String messageId) {
             this.messageId = messageId;
             this.__explicitlySet__.add("messageId");
             return this;
         }
-
+        /**
+         * The time that the service received the message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
         private java.util.Date timeStamp;
 
+        /**
+         * The time that the service received the message.
+         * @param timeStamp the value to set
+         * @return this builder
+         **/
         public Builder timeStamp(java.util.Date timeStamp) {
             this.timeStamp = timeStamp;
             this.__explicitlySet__.add("timeStamp");
@@ -82,6 +97,10 @@ public final class PublishResult {
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
     private final String messageId;
 
+    /**
+     * The UUID of the message.
+     * @return the value
+     **/
     public String getMessageId() {
         return messageId;
     }
@@ -92,6 +111,10 @@ public final class PublishResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
     private final java.util.Date timeStamp;
 
+    /**
+     * The time that the service received the message.
+     * @return the value
+     **/
     public java.util.Date getTimeStamp() {
         return timeStamp;
     }

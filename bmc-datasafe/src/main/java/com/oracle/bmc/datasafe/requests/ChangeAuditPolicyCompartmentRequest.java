@@ -18,6 +18,9 @@ public class ChangeAuditPolicyCompartmentRequest
      */
     private String auditPolicyId;
 
+    /**
+     * Unique audit policy identifier.
+     */
     public String getAuditPolicyId() {
         return auditPolicyId;
     }
@@ -27,6 +30,9 @@ public class ChangeAuditPolicyCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeAuditPolicyCompartmentDetails
             changeAuditPolicyCompartmentDetails;
 
+    /**
+     * Details for the compartment move.
+     */
     public com.oracle.bmc.datasafe.model.ChangeAuditPolicyCompartmentDetails
             getChangeAuditPolicyCompartmentDetails() {
         return changeAuditPolicyCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeAuditPolicyCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeAuditPolicyCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +78,13 @@ public class ChangeAuditPolicyCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -83,10 +107,14 @@ public class ChangeAuditPolicyCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique audit policy identifier.
+         */
         private String auditPolicyId = null;
 
         /**
          * Unique audit policy identifier.
+         * @param auditPolicyId the value to set
          * @return this builder instance
          */
         public Builder auditPolicyId(String auditPolicyId) {
@@ -94,11 +122,15 @@ public class ChangeAuditPolicyCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for the compartment move.
+         */
         private com.oracle.bmc.datasafe.model.ChangeAuditPolicyCompartmentDetails
                 changeAuditPolicyCompartmentDetails = null;
 
         /**
          * Details for the compartment move.
+         * @param changeAuditPolicyCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeAuditPolicyCompartmentDetails(
@@ -108,6 +140,14 @@ public class ChangeAuditPolicyCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -117,6 +157,7 @@ public class ChangeAuditPolicyCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -124,10 +165,14 @@ public class ChangeAuditPolicyCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -135,6 +180,13 @@ public class ChangeAuditPolicyCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -143,6 +195,7 @@ public class ChangeAuditPolicyCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -238,7 +291,8 @@ public class ChangeAuditPolicyCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +303,10 @@ public class ChangeAuditPolicyCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

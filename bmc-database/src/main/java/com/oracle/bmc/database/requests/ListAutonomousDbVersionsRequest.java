@@ -17,6 +17,9 @@ public class ListAutonomousDbVersionsRequest
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListAutonomousDbVersionsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +39,9 @@ public class ListAutonomousDbVersionsRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -42,6 +51,10 @@ public class ListAutonomousDbVersionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +63,9 @@ public class ListAutonomousDbVersionsRequest
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
+    /**
+     * A filter to return only autonomous database resources that match the specified workload type.
+     */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload getDbWorkload() {
         return dbWorkload;
     }
@@ -94,6 +110,9 @@ public class ListAutonomousDbVersionsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -105,10 +124,14 @@ public class ListAutonomousDbVersionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -116,10 +139,14 @@ public class ListAutonomousDbVersionsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -127,10 +154,14 @@ public class ListAutonomousDbVersionsRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -138,11 +169,16 @@ public class ListAutonomousDbVersionsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,11 +186,15 @@ public class ListAutonomousDbVersionsRequest
             return this;
         }
 
+        /**
+         * A filter to return only autonomous database resources that match the specified workload type.
+         */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload =
                 null;
 
         /**
          * A filter to return only autonomous database resources that match the specified workload type.
+         * @param dbWorkload the value to set
          * @return this builder instance
          */
         public Builder dbWorkload(
@@ -163,10 +203,14 @@ public class ListAutonomousDbVersionsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -252,7 +296,8 @@ public class ListAutonomousDbVersionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -264,6 +309,10 @@ public class ListAutonomousDbVersionsRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

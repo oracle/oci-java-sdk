@@ -13,6 +13,10 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
+    /**
+     * The returned MultipleTransferPackages instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.MultipleTransferPackages getMultipleTransferPackages() {
         return multipleTransferPackages;
     }
@@ -48,15 +56,31 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned MultipleTransferPackages instance.
+         */
         private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
+        /**
+         * The returned MultipleTransferPackages instance.
+         * @param multipleTransferPackages the value to set
+         * @return this builder
+         */
         public Builder multipleTransferPackages(
                 com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages) {
             this.multipleTransferPackages = multipleTransferPackages;
@@ -75,12 +99,20 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListTransferPackagesResponse build() {
             return new ListTransferPackagesResponse(
                     __httpStatusCode__, opcRequestId, multipleTransferPackages);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

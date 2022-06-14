@@ -28,9 +28,19 @@ package com.oracle.bmc.resourcemanager.model;
 public final class CreateImportTfStateJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Base64-encoded state file
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tfStateBase64Encoded")
         private byte[] tfStateBase64Encoded;
 
+        /**
+         * Base64-encoded state file
+         *
+         * @param tfStateBase64Encoded the value to set
+         * @return this builder
+         **/
         public Builder tfStateBase64Encoded(byte[] tfStateBase64Encoded) {
             this.tfStateBase64Encoded = tfStateBase64Encoded;
             this.__explicitlySet__.add("tfStateBase64Encoded");
@@ -80,6 +90,11 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
     @com.fasterxml.jackson.annotation.JsonProperty("tfStateBase64Encoded")
     private final byte[] tfStateBase64Encoded;
 
+    /**
+     * Base64-encoded state file
+     *
+     * @return the value
+     **/
     public byte[] getTfStateBase64Encoded() {
         return tfStateBase64Encoded;
     }

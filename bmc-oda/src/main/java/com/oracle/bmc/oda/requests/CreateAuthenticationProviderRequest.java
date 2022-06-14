@@ -18,6 +18,9 @@ public class CreateAuthenticationProviderRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -27,6 +30,9 @@ public class CreateAuthenticationProviderRequest
     private com.oracle.bmc.oda.model.CreateAuthenticationProviderDetails
             createAuthenticationProviderDetails;
 
+    /**
+     * Property values required to create the new Authentication Provider.
+     */
     public com.oracle.bmc.oda.model.CreateAuthenticationProviderDetails
             getCreateAuthenticationProviderDetails() {
         return createAuthenticationProviderDetails;
@@ -36,6 +42,9 @@ public class CreateAuthenticationProviderRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +59,15 @@ public class CreateAuthenticationProviderRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * conflicting operations. For example, if an instance was deleted and purged from the system,
+     * then the service might reject a retry of the original creation request.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -72,10 +90,14 @@ public class CreateAuthenticationProviderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -83,11 +105,15 @@ public class CreateAuthenticationProviderRequest
             return this;
         }
 
+        /**
+         * Property values required to create the new Authentication Provider.
+         */
         private com.oracle.bmc.oda.model.CreateAuthenticationProviderDetails
                 createAuthenticationProviderDetails = null;
 
         /**
          * Property values required to create the new Authentication Provider.
+         * @param createAuthenticationProviderDetails the value to set
          * @return this builder instance
          */
         public Builder createAuthenticationProviderDetails(
@@ -97,10 +123,14 @@ public class CreateAuthenticationProviderRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,6 +138,15 @@ public class CreateAuthenticationProviderRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -118,6 +157,7 @@ public class CreateAuthenticationProviderRequest
          * conflicting operations. For example, if an instance was deleted and purged from the system,
          * then the service might reject a retry of the original creation request.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -210,7 +250,8 @@ public class CreateAuthenticationProviderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +261,10 @@ public class CreateAuthenticationProviderRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

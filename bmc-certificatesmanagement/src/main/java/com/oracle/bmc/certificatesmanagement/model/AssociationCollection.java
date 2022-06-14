@@ -29,9 +29,17 @@ public final class AssociationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of association summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AssociationSummary> items;
 
+        /**
+         * A list of association summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AssociationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AssociationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AssociationSummary> items;
 
+    /**
+     * A list of association summary objects.
+     * @return the value
+     **/
     public java.util.List<AssociationSummary> getItems() {
         return items;
     }

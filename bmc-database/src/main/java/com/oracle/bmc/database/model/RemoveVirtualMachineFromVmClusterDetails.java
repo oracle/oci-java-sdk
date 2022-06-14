@@ -30,9 +30,17 @@ public final class RemoveVirtualMachineFromVmClusterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of Exacc DB servers for the cluster to be removed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<DbServerDetails> dbServers;
 
+        /**
+         * The list of Exacc DB servers for the cluster to be removed.
+         * @param dbServers the value to set
+         * @return this builder
+         **/
         public Builder dbServers(java.util.List<DbServerDetails> dbServers) {
             this.dbServers = dbServers;
             this.__explicitlySet__.add("dbServers");
@@ -75,6 +83,10 @@ public final class RemoveVirtualMachineFromVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<DbServerDetails> dbServers;
 
+    /**
+     * The list of Exacc DB servers for the cluster to be removed.
+     * @return the value
+     **/
     public java.util.List<DbServerDetails> getDbServers() {
         return dbServers;
     }

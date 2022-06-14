@@ -16,6 +16,9 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String dbHomeId;
 
+    /**
+     * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbHomeId() {
         return dbHomeId;
     }
@@ -24,6 +27,9 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String patchId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+     */
     public String getPatchId() {
         return patchId;
     }
@@ -35,10 +41,14 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbHomeId = null;
 
         /**
          * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbHomeId the value to set
          * @return this builder instance
          */
         public Builder dbHomeId(String dbHomeId) {
@@ -46,10 +56,14 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         */
         private String patchId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         * @param patchId the value to set
          * @return this builder instance
          */
         public Builder patchId(String patchId) {
@@ -127,12 +141,17 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbHomeId(dbHomeId).patchId(patchId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

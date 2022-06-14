@@ -56,6 +56,10 @@ public class Item {
     @com.fasterxml.jackson.annotation.JsonProperty("itemKey")
     private final String itemKey;
 
+    /**
+     * Unique identifier for the item.
+     * @return the value
+     **/
     public String getItemKey() {
         return itemKey;
     }
@@ -66,6 +70,10 @@ public class Item {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the item.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

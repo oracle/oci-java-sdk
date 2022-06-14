@@ -47,9 +47,25 @@ public final class UpdateVirtualServiceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Description of the resource. It can be changed after creation.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code This is my new resource}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the resource. It can be changed after creation.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code This is my new resource}
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -65,10 +81,25 @@ public final class UpdateVirtualServiceDetails {
             this.__explicitlySet__.add("defaultRoutingPolicy");
             return this;
         }
-
+        /**
+         * The DNS hostnames of the virtual service that is used by its callers.
+         * Wildcard hostnames are supported in the prefix form.
+         * Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+         * Can be omitted if the virtual service will only have TCP virtual deployments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
+        /**
+         * The DNS hostnames of the virtual service that is used by its callers.
+         * Wildcard hostnames are supported in the prefix form.
+         * Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+         * Can be omitted if the virtual service will only have TCP virtual deployments.
+         *
+         * @param hosts the value to set
+         * @return this builder
+         **/
         public Builder hosts(java.util.List<String> hosts) {
             this.hosts = hosts;
             this.__explicitlySet__.add("hosts");
@@ -83,19 +114,41 @@ public final class UpdateVirtualServiceDetails {
             this.__explicitlySet__.add("mtls");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -155,6 +208,14 @@ public final class UpdateVirtualServiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the resource. It can be changed after creation.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code This is my new resource}
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -176,6 +237,14 @@ public final class UpdateVirtualServiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
+    /**
+     * The DNS hostnames of the virtual service that is used by its callers.
+     * Wildcard hostnames are supported in the prefix form.
+     * Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+     * Can be omitted if the virtual service will only have TCP virtual deployments.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getHosts() {
         return hosts;
     }
@@ -195,6 +264,12 @@ public final class UpdateVirtualServiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -207,6 +282,12 @@ public final class UpdateVirtualServiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

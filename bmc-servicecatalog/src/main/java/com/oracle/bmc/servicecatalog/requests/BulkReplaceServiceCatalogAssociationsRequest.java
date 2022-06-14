@@ -18,6 +18,9 @@ public class BulkReplaceServiceCatalogAssociationsRequest
      */
     private String serviceCatalogId;
 
+    /**
+     * The unique identifier for the service catalog.
+     */
     public String getServiceCatalogId() {
         return serviceCatalogId;
     }
@@ -27,6 +30,9 @@ public class BulkReplaceServiceCatalogAssociationsRequest
     private com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails
             bulkReplaceServiceCatalogAssociationsDetails;
 
+    /**
+     * Details of the service catalog update operation.
+     */
     public com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails
             getBulkReplaceServiceCatalogAssociationsDetails() {
         return bulkReplaceServiceCatalogAssociationsDetails;
@@ -39,6 +45,12 @@ public class BulkReplaceServiceCatalogAssociationsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to
+     * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+     * deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +61,11 @@ public class BulkReplaceServiceCatalogAssociationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,10 +90,14 @@ public class BulkReplaceServiceCatalogAssociationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the service catalog.
+         */
         private String serviceCatalogId = null;
 
         /**
          * The unique identifier for the service catalog.
+         * @param serviceCatalogId the value to set
          * @return this builder instance
          */
         public Builder serviceCatalogId(String serviceCatalogId) {
@@ -84,11 +105,15 @@ public class BulkReplaceServiceCatalogAssociationsRequest
             return this;
         }
 
+        /**
+         * Details of the service catalog update operation.
+         */
         private com.oracle.bmc.servicecatalog.model.BulkReplaceServiceCatalogAssociationsDetails
                 bulkReplaceServiceCatalogAssociationsDetails = null;
 
         /**
          * Details of the service catalog update operation.
+         * @param bulkReplaceServiceCatalogAssociationsDetails the value to set
          * @return this builder instance
          */
         public Builder bulkReplaceServiceCatalogAssociationsDetails(
@@ -99,6 +124,12 @@ public class BulkReplaceServiceCatalogAssociationsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to
+         * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +137,7 @@ public class BulkReplaceServiceCatalogAssociationsRequest
          * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
          * deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,12 +145,18 @@ public class BulkReplaceServiceCatalogAssociationsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -216,7 +254,8 @@ public class BulkReplaceServiceCatalogAssociationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -227,6 +266,10 @@ public class BulkReplaceServiceCatalogAssociationsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

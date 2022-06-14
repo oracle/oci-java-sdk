@@ -30,18 +30,37 @@ public final class TextClassification {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Label of the the given text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * Label of the the given text.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-
+        /**
+         * Score or confidence of extracted text label.
+         * Example: {@code 0.9999856066867399}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
+        /**
+         * Score or confidence of extracted text label.
+         * Example: {@code 0.9999856066867399}
+         *
+         * @param score the value to set
+         * @return this builder
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -83,6 +102,10 @@ public final class TextClassification {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * Label of the the given text.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }
@@ -95,6 +118,12 @@ public final class TextClassification {
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
+    /**
+     * Score or confidence of extracted text label.
+     * Example: {@code 0.9999856066867399}
+     *
+     * @return the value
+     **/
     public Double getScore() {
         return score;
     }

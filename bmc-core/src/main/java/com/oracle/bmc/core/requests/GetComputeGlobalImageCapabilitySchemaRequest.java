@@ -17,6 +17,9 @@ public class GetComputeGlobalImageCapabilitySchemaRequest
      */
     private String computeGlobalImageCapabilitySchemaId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
+     */
     public String getComputeGlobalImageCapabilitySchemaId() {
         return computeGlobalImageCapabilitySchemaId;
     }
@@ -28,10 +31,14 @@ public class GetComputeGlobalImageCapabilitySchemaRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
+         */
         private String computeGlobalImageCapabilitySchemaId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
+         * @param computeGlobalImageCapabilitySchemaId the value to set
          * @return this builder instance
          */
         public Builder computeGlobalImageCapabilitySchemaId(
@@ -109,13 +116,18 @@ public class GetComputeGlobalImageCapabilitySchemaRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .computeGlobalImageCapabilitySchemaId(computeGlobalImageCapabilitySchemaId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

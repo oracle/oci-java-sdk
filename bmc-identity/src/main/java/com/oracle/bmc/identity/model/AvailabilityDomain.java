@@ -34,27 +34,49 @@ public final class AvailabilityDomain {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Availability Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Availability Domain.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The OCID of the Availability Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Availability Domain.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the tenancy.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -97,6 +119,10 @@ public final class AvailabilityDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Availability Domain.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -107,6 +133,10 @@ public final class AvailabilityDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Availability Domain.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -117,6 +147,10 @@ public final class AvailabilityDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

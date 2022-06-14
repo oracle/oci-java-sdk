@@ -16,6 +16,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String connectionKey;
 
+    /**
+     * The connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -32,6 +38,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String schemaResourceName;
 
+    /**
+     * Schema resource name used for retrieving schemas.
+     */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
@@ -40,6 +49,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -56,6 +71,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> fields;
 
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -100,6 +118,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -144,6 +165,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -152,6 +176,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -163,6 +190,12 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -171,6 +204,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> nameList;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public java.util.List<String> getNameList() {
         return nameList;
     }
@@ -182,10 +218,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -193,10 +233,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The connection key.
+         */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -204,10 +248,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Schema resource name used for retrieving schemas.
+         */
         private String schemaResourceName = null;
 
         /**
          * Schema resource name used for retrieving schemas.
+         * @param schemaResourceName the value to set
          * @return this builder instance
          */
         public Builder schemaResourceName(String schemaResourceName) {
@@ -215,10 +263,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -226,10 +278,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -237,10 +293,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<String> fields) {
@@ -250,16 +310,21 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(String singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -267,10 +332,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -278,10 +347,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -289,6 +362,12 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -296,6 +375,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -303,10 +383,14 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private java.util.List<String> nameList = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param nameList the value to set
          * @return this builder instance
          */
         public Builder nameList(java.util.List<String> nameList) {
@@ -316,6 +400,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Used to filter by the name of the object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder nameList(String singularValue) {
@@ -410,7 +495,8 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -427,6 +513,10 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .nameList(nameList);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

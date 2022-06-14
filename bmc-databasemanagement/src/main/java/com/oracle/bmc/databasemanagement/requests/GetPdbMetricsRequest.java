@@ -16,6 +16,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -26,6 +29,11 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String startTime;
 
+    /**
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
+     */
     public String getStartTime() {
         return startTime;
     }
@@ -36,6 +44,11 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String endTime;
 
+    /**
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
+     */
     public String getEndTime() {
         return endTime;
     }
@@ -44,6 +57,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +68,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -60,6 +79,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.databasemanagement.model.CompareType compareType;
 
+    /**
+     * The time window used for metrics comparison.
+     */
     public com.oracle.bmc.databasemanagement.model.CompareType getCompareType() {
         return compareType;
     }
@@ -68,6 +90,9 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String filterByMetricNames;
 
+    /**
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+     */
     public String getFilterByMetricNames() {
         return filterByMetricNames;
     }
@@ -79,10 +104,14 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -90,12 +119,18 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
+         */
         private String startTime = null;
 
         /**
          * The start time of the time range to retrieve the health metrics of a Managed Database
          * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
+         * @param startTime the value to set
          * @return this builder instance
          */
         public Builder startTime(String startTime) {
@@ -103,12 +138,18 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
+         */
         private String endTime = null;
 
         /**
          * The end time of the time range to retrieve the health metrics of a Managed Database
          * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
+         * @param endTime the value to set
          * @return this builder instance
          */
         public Builder endTime(String endTime) {
@@ -116,10 +157,14 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,10 +172,14 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -138,10 +187,14 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The time window used for metrics comparison.
+         */
         private com.oracle.bmc.databasemanagement.model.CompareType compareType = null;
 
         /**
          * The time window used for metrics comparison.
+         * @param compareType the value to set
          * @return this builder instance
          */
         public Builder compareType(
@@ -150,10 +203,14 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+         */
         private String filterByMetricNames = null;
 
         /**
          * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+         * @param filterByMetricNames the value to set
          * @return this builder instance
          */
         public Builder filterByMetricNames(String filterByMetricNames) {
@@ -241,7 +298,8 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -254,6 +312,10 @@ public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .filterByMetricNames(filterByMetricNames);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

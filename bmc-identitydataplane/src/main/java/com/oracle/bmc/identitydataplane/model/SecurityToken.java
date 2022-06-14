@@ -27,9 +27,17 @@ public final class SecurityToken {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The security token, signed by auth service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
+        /**
+         * The security token, signed by auth service
+         * @param token the value to set
+         * @return this builder
+         **/
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
@@ -71,6 +79,10 @@ public final class SecurityToken {
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
+    /**
+     * The security token, signed by auth service
+     * @return the value
+     **/
     public String getToken() {
         return token;
     }

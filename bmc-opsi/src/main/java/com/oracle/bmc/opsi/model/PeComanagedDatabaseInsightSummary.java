@@ -189,19 +189,33 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
+        /**
+         * OCI database resource type
+         * @param databaseResourceType the value to set
+         * @return this builder
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * @param opsiPrivateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
@@ -329,6 +343,10 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
+    /**
+     * OCI database resource type
+     * @return the value
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }
@@ -339,6 +357,10 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * @return the value
+     **/
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }

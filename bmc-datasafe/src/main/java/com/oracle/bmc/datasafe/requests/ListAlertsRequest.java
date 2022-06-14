@@ -16,6 +16,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String id;
 
+    /**
+     * A filter to return alert by it's OCID.
+     */
     public String getId() {
         return id;
     }
@@ -34,6 +40,11 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -42,6 +53,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -50,6 +64,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -58,6 +75,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -110,6 +130,13 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -154,6 +181,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -200,6 +230,10 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -226,6 +260,27 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String scimQuery;
 
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
+     * Supported fields:
+     * severity
+     * status
+     * alertType
+     * targetIds
+     * targetNames
+     * operationTime
+     * lifecycleState
+     * displayName
+     * timeCreated
+     * timeUpdated
+     *
+     */
     public String getScimQuery() {
         return scimQuery;
     }
@@ -282,6 +337,9 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
     public java.util.List<Field> getField() {
         return field;
     }
@@ -293,10 +351,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -304,10 +366,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return alert by it's OCID.
+         */
         private String id = null;
 
         /**
          * A filter to return alert by it's OCID.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -315,12 +381,18 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -328,10 +400,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -339,10 +415,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -350,10 +430,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -361,6 +445,13 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -369,6 +460,7 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -376,10 +468,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -387,11 +483,16 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -399,6 +500,27 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
+         * Supported fields:
+         * severity
+         * status
+         * alertType
+         * targetIds
+         * targetNames
+         * operationTime
+         * lifecycleState
+         * displayName
+         * timeCreated
+         * timeUpdated
+         *
+         */
         private String scimQuery = null;
 
         /**
@@ -421,6 +543,7 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * timeCreated
          * timeUpdated
          *
+         * @param scimQuery the value to set
          * @return this builder instance
          */
         public Builder scimQuery(String scimQuery) {
@@ -428,10 +551,14 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Specifies a subset of fields to be returned in the response.
+         */
         private java.util.List<Field> field = null;
 
         /**
          * Specifies a subset of fields to be returned in the response.
+         * @param field the value to set
          * @return this builder instance
          */
         public Builder field(java.util.List<Field> field) {
@@ -441,6 +568,7 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Singular setter. Specifies a subset of fields to be returned in the response.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder field(Field singularValue) {
@@ -535,7 +663,8 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -552,6 +681,10 @@ public class ListAlertsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .field(field);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

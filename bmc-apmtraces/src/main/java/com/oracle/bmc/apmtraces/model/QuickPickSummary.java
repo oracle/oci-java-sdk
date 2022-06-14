@@ -29,18 +29,37 @@ public final class QuickPickSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Quick Pick name for the query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quickPickName")
         private String quickPickName;
 
+        /**
+         * Quick Pick name for the query.
+         *
+         * @param quickPickName the value to set
+         * @return this builder
+         **/
         public Builder quickPickName(String quickPickName) {
             this.quickPickName = quickPickName;
             this.__explicitlySet__.add("quickPickName");
             return this;
         }
-
+        /**
+         * Query for the Quick Pick.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quickPickQuery")
         private String quickPickQuery;
 
+        /**
+         * Query for the Quick Pick.
+         *
+         * @param quickPickQuery the value to set
+         * @return this builder
+         **/
         public Builder quickPickQuery(String quickPickQuery) {
             this.quickPickQuery = quickPickQuery;
             this.__explicitlySet__.add("quickPickQuery");
@@ -84,6 +103,11 @@ public final class QuickPickSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("quickPickName")
     private final String quickPickName;
 
+    /**
+     * Quick Pick name for the query.
+     *
+     * @return the value
+     **/
     public String getQuickPickName() {
         return quickPickName;
     }
@@ -95,6 +119,11 @@ public final class QuickPickSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("quickPickQuery")
     private final String quickPickQuery;
 
+    /**
+     * Query for the Quick Pick.
+     *
+     * @return the value
+     **/
     public String getQuickPickQuery() {
         return quickPickQuery;
     }

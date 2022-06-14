@@ -15,6 +15,12 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.identitydataplane.model.SecurityToken securityToken;
 
+    /**
+     * The returned SecurityToken instance.
+     * @return the value
+     */
     public com.oracle.bmc.identitydataplane.model.SecurityToken getSecurityToken() {
         return securityToken;
     }
@@ -46,15 +56,35 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SecurityToken instance.
+         */
         private com.oracle.bmc.identitydataplane.model.SecurityToken securityToken;
 
+        /**
+         * The returned SecurityToken instance.
+         * @param securityToken the value to set
+         * @return this builder
+         */
         public Builder securityToken(
                 com.oracle.bmc.identitydataplane.model.SecurityToken securityToken) {
             this.securityToken = securityToken;
@@ -73,12 +103,20 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GenerateScopedAccessTokenResponse build() {
             return new GenerateScopedAccessTokenResponse(
                     __httpStatusCode__, opcRequestId, securityToken);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

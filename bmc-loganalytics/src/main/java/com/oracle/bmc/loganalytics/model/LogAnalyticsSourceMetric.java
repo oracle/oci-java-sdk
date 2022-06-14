@@ -41,36 +41,67 @@ public final class LogAnalyticsSourceMetric {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A flag specifying whether or not the metric source is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
         private Boolean isMetricSourceEnabled;
 
+        /**
+         * A flag specifying whether or not the metric source is enabled.
+         *
+         * @param isMetricSourceEnabled the value to set
+         * @return this builder
+         **/
         public Builder isMetricSourceEnabled(Boolean isMetricSourceEnabled) {
             this.isMetricSourceEnabled = isMetricSourceEnabled;
             this.__explicitlySet__.add("isMetricSourceEnabled");
             return this;
         }
-
+        /**
+         * The metric name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
+        /**
+         * The metric name.
+         * @param metricName the value to set
+         * @return this builder
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-
+        /**
+         * The source internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The source internal name.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -119,6 +150,11 @@ public final class LogAnalyticsSourceMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricSourceEnabled")
     private final Boolean isMetricSourceEnabled;
 
+    /**
+     * A flag specifying whether or not the metric source is enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsMetricSourceEnabled() {
         return isMetricSourceEnabled;
     }
@@ -129,6 +165,10 @@ public final class LogAnalyticsSourceMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
+    /**
+     * The metric name.
+     * @return the value
+     **/
     public String getMetricName() {
         return metricName;
     }
@@ -139,6 +179,10 @@ public final class LogAnalyticsSourceMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The source internal name.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -149,6 +193,10 @@ public final class LogAnalyticsSourceMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }

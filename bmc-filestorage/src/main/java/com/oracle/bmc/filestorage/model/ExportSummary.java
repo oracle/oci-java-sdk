@@ -46,54 +46,115 @@ public final class ExportSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
+         * @param exportSetId the value to set
+         * @return this builder
+         **/
         public Builder exportSetId(String exportSetId) {
             this.exportSetId = exportSetId;
             this.__explicitlySet__.add("exportSetId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
+         * @param fileSystemId the value to set
+         * @return this builder
+         **/
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = fileSystemId;
             this.__explicitlySet__.add("fileSystemId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The current state of this export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of this export.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Path used to access the associated file system.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code /mediafiles}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Path used to access the associated file system.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code /mediafiles}
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * The date and time the export was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the export was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -143,6 +204,10 @@ public final class ExportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
+     * @return the value
+     **/
     public String getExportSetId() {
         return exportSetId;
     }
@@ -153,6 +218,10 @@ public final class ExportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
+     * @return the value
+     **/
     public String getFileSystemId() {
         return fileSystemId;
     }
@@ -163,6 +232,10 @@ public final class ExportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -223,6 +296,10 @@ public final class ExportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of this export.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -238,6 +315,15 @@ public final class ExportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Path used to access the associated file system.
+     * <p>
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code /mediafiles}
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -252,6 +338,14 @@ public final class ExportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the export was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

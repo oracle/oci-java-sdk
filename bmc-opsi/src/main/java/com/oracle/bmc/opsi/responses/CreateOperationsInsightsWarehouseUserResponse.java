@@ -15,6 +15,11 @@ public class CreateOperationsInsightsWarehouseUserResponse
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -26,6 +31,12 @@ public class CreateOperationsInsightsWarehouseUserResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,10 @@ public class CreateOperationsInsightsWarehouseUserResponse
      */
     private String location;
 
+    /**
+     * URI of the resource
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -44,6 +59,10 @@ public class CreateOperationsInsightsWarehouseUserResponse
      */
     private String contentLocation;
 
+    /**
+     * URI of the resource
+     * @return the value
+     */
     public String getContentLocation() {
         return contentLocation;
     }
@@ -54,6 +73,11 @@ public class CreateOperationsInsightsWarehouseUserResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -64,6 +88,10 @@ public class CreateOperationsInsightsWarehouseUserResponse
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
             operationsInsightsWarehouseUser;
 
+    /**
+     * The returned OperationsInsightsWarehouseUser instance.
+     * @return the value
+     */
     public com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
             getOperationsInsightsWarehouseUser() {
         return operationsInsightsWarehouseUser;
@@ -104,44 +132,100 @@ public class CreateOperationsInsightsWarehouseUserResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * URI of the resource
+         */
         private String location;
 
+        /**
+         * URI of the resource
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * URI of the resource
+         */
         private String contentLocation;
 
+        /**
+         * URI of the resource
+         * @param contentLocation the value to set
+         * @return this builder
+         */
         public Builder contentLocation(String contentLocation) {
             this.contentLocation = contentLocation;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned OperationsInsightsWarehouseUser instance.
+         */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                 operationsInsightsWarehouseUser;
 
+        /**
+         * The returned OperationsInsightsWarehouseUser instance.
+         * @param operationsInsightsWarehouseUser the value to set
+         * @return this builder
+         */
         public Builder operationsInsightsWarehouseUser(
                 com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                         operationsInsightsWarehouseUser) {
@@ -165,6 +249,10 @@ public class CreateOperationsInsightsWarehouseUserResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateOperationsInsightsWarehouseUserResponse build() {
             return new CreateOperationsInsightsWarehouseUserResponse(
                     __httpStatusCode__,
@@ -177,6 +265,10 @@ public class CreateOperationsInsightsWarehouseUserResponse
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

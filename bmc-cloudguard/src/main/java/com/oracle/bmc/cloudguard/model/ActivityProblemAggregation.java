@@ -41,9 +41,17 @@ public final class ActivityProblemAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key-value pairs of dimensions and their names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
+        /**
+         * The key-value pairs of dimensions and their names.
+         * @param dimensionsMap the value to set
+         * @return this builder
+         **/
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
@@ -67,10 +75,17 @@ public final class ActivityProblemAggregation {
             this.__explicitlySet__.add("geographicalLocation");
             return this;
         }
-
+        /**
+         * The number of occurences with given dimension/s
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of occurences with given dimension/s
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -118,6 +133,10 @@ public final class ActivityProblemAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
+    /**
+     * The key-value pairs of dimensions and their names.
+     * @return the value
+     **/
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
@@ -142,6 +161,10 @@ public final class ActivityProblemAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of occurences with given dimension/s
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

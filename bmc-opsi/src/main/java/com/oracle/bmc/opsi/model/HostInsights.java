@@ -27,9 +27,17 @@ public final class HostInsights {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Host Insights Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostInsights")
         private Object hostInsights;
 
+        /**
+         * Host Insights Object.
+         * @param hostInsights the value to set
+         * @return this builder
+         **/
         public Builder hostInsights(Object hostInsights) {
             this.hostInsights = hostInsights;
             this.__explicitlySet__.add("hostInsights");
@@ -71,6 +79,10 @@ public final class HostInsights {
     @com.fasterxml.jackson.annotation.JsonProperty("hostInsights")
     private final Object hostInsights;
 
+    /**
+     * Host Insights Object.
+     * @return the value
+     **/
     public Object getHostInsights() {
         return hostInsights;
     }

@@ -17,6 +17,9 @@ public class ListIamWorkRequestErrorsRequest
      */
     private String iamWorkRequestId;
 
+    /**
+     * The OCID of the IAM work request.
+     */
     public String getIamWorkRequestId() {
         return iamWorkRequestId;
     }
@@ -26,6 +29,10 @@ public class ListIamWorkRequestErrorsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -35,6 +42,10 @@ public class ListIamWorkRequestErrorsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -83,6 +94,11 @@ public class ListIamWorkRequestErrorsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -93,6 +109,11 @@ public class ListIamWorkRequestErrorsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -104,10 +125,14 @@ public class ListIamWorkRequestErrorsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the IAM work request.
+         */
         private String iamWorkRequestId = null;
 
         /**
          * The OCID of the IAM work request.
+         * @param iamWorkRequestId the value to set
          * @return this builder instance
          */
         public Builder iamWorkRequestId(String iamWorkRequestId) {
@@ -115,11 +140,16 @@ public class ListIamWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -127,11 +157,16 @@ public class ListIamWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -139,12 +174,18 @@ public class ListIamWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The NAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -152,12 +193,18 @@ public class ListIamWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -241,7 +288,8 @@ public class ListIamWorkRequestErrorsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -252,6 +300,10 @@ public class ListIamWorkRequestErrorsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

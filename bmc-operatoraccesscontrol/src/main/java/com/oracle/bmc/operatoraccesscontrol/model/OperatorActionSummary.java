@@ -50,63 +50,117 @@ public final class OperatorActionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier assigned by Oracle to an operator action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier assigned by Oracle to an operator action.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Name of the operator action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the operator action.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Name of the component for which the operator action is applicable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("component")
         private String component;
 
+        /**
+         * Name of the component for which the operator action is applicable.
+         * @param component the value to set
+         * @return this builder
+         **/
         public Builder component(String component) {
             this.component = component;
             this.__explicitlySet__.add("component");
             return this;
         }
-
+        /**
+         * compartmentId for which the OperatorAction is applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * compartmentId for which the OperatorAction is applicable
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * resourceType for which the OperatorAction is applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceTypes resourceType;
 
+        /**
+         * resourceType for which the OperatorAction is applicable
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the operator action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperatorActionLifecycleStates lifecycleState;
 
+        /**
+         * The current lifecycle state of the operator action.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(OperatorActionLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made
+         * available to the operator under this operator action.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made
+         * available to the operator under this operator action.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -163,6 +217,10 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier assigned by Oracle to an operator action.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -173,6 +231,10 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the operator action.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -183,6 +245,10 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     private final String component;
 
+    /**
+     * Name of the component for which the operator action is applicable.
+     * @return the value
+     **/
     public String getComponent() {
         return component;
     }
@@ -193,6 +259,10 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * compartmentId for which the OperatorAction is applicable
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -203,6 +273,10 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceTypes resourceType;
 
+    /**
+     * resourceType for which the OperatorAction is applicable
+     * @return the value
+     **/
     public ResourceTypes getResourceType() {
         return resourceType;
     }
@@ -213,6 +287,10 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperatorActionLifecycleStates lifecycleState;
 
+    /**
+     * The current lifecycle state of the operator action.
+     * @return the value
+     **/
     public OperatorActionLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -225,6 +303,12 @@ public final class OperatorActionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made
+     * available to the operator under this operator action.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

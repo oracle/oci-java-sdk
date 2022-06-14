@@ -13,6 +13,10 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
+    /**
+     * The returned NamespaceMetadata instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.NamespaceMetadata getNamespaceMetadata() {
         return namespaceMetadata;
     }
@@ -62,22 +76,50 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned NamespaceMetadata instance.
+         */
         private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
+        /**
+         * The returned NamespaceMetadata instance.
+         * @param namespaceMetadata the value to set
+         * @return this builder
+         */
         public Builder namespaceMetadata(
                 com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata) {
             this.namespaceMetadata = namespaceMetadata;
@@ -97,12 +139,20 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetNamespaceMetadataResponse build() {
             return new GetNamespaceMetadataResponse(
                     __httpStatusCode__, opcClientRequestId, opcRequestId, namespaceMetadata);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

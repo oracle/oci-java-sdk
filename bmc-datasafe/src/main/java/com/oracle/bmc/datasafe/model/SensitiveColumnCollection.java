@@ -29,9 +29,17 @@ public final class SensitiveColumnCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of sensitive column summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SensitiveColumnSummary> items;
 
+        /**
+         * An array of sensitive column summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SensitiveColumnSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SensitiveColumnCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SensitiveColumnSummary> items;
 
+    /**
+     * An array of sensitive column summary objects.
+     * @return the value
+     **/
     public java.util.List<SensitiveColumnSummary> getItems() {
         return items;
     }

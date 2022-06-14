@@ -27,9 +27,17 @@ public final class CategorySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the product category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the product category.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -71,6 +79,10 @@ public final class CategorySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the product category.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

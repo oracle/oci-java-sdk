@@ -31,27 +31,49 @@ public final class ClientCredentialsResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The access token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("access_token")
         private String accessToken;
 
+        /**
+         * The access token.
+         * @param accessToken the value to set
+         * @return this builder
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
             return this;
         }
-
+        /**
+         * The token type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("token_type")
         private String tokenType;
 
+        /**
+         * The token type.
+         * @param tokenType the value to set
+         * @return this builder
+         **/
         public Builder tokenType(String tokenType) {
             this.tokenType = tokenType;
             this.__explicitlySet__.add("tokenType");
             return this;
         }
-
+        /**
+         * The amount of time until the token expires.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expires_in")
         private String expiresIn;
 
+        /**
+         * The amount of time until the token expires.
+         * @param expiresIn the value to set
+         * @return this builder
+         **/
         public Builder expiresIn(String expiresIn) {
             this.expiresIn = expiresIn;
             this.__explicitlySet__.add("expiresIn");
@@ -97,6 +119,10 @@ public final class ClientCredentialsResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("access_token")
     private final String accessToken;
 
+    /**
+     * The access token.
+     * @return the value
+     **/
     public String getAccessToken() {
         return accessToken;
     }
@@ -107,6 +133,10 @@ public final class ClientCredentialsResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("token_type")
     private final String tokenType;
 
+    /**
+     * The token type.
+     * @return the value
+     **/
     public String getTokenType() {
         return tokenType;
     }
@@ -117,6 +147,10 @@ public final class ClientCredentialsResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("expires_in")
     private final String expiresIn;
 
+    /**
+     * The amount of time until the token expires.
+     * @return the value
+     **/
     public String getExpiresIn() {
         return expiresIn;
     }

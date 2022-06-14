@@ -72,45 +72,81 @@ public final class DataMaskRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier that is immutable on creation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Data Mask Rule Identifier, can be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Data Mask Rule Identifier, can be renamed.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Compartment Identifier where the resource is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier where the resource is created.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The data mask rule description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The data mask rule description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * IAM Group id associated with the data mask rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
         private String iamGroupId;
 
+        /**
+         * IAM Group id associated with the data mask rule
+         * @param iamGroupId the value to set
+         * @return this builder
+         **/
         public Builder iamGroupId(String iamGroupId) {
             this.iamGroupId = iamGroupId;
             this.__explicitlySet__.add("iamGroupId");
@@ -125,83 +161,168 @@ public final class DataMaskRule {
             this.__explicitlySet__.add("targetSelected");
             return this;
         }
-
+        /**
+         * Data Mask Categories
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
         private java.util.List<DataMaskCategory> dataMaskCategories;
 
+        /**
+         * Data Mask Categories
+         * @param dataMaskCategories the value to set
+         * @return this builder
+         **/
         public Builder dataMaskCategories(java.util.List<DataMaskCategory> dataMaskCategories) {
             this.dataMaskCategories = dataMaskCategories;
             this.__explicitlySet__.add("dataMaskCategories");
             return this;
         }
-
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The status of the dataMaskRule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
         private DataMaskRuleStatus dataMaskRuleStatus;
 
+        /**
+         * The status of the dataMaskRule.
+         * @param dataMaskRuleStatus the value to set
+         * @return this builder
+         **/
         public Builder dataMaskRuleStatus(DataMaskRuleStatus dataMaskRuleStatus) {
             this.dataMaskRuleStatus = dataMaskRuleStatus;
             this.__explicitlySet__.add("dataMaskRuleStatus");
             return this;
         }
-
+        /**
+         * The current state of the DataMaskRule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the DataMaskRule.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecyleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = lifecyleDetails;
             this.__explicitlySet__.add("lifecyleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -274,6 +395,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier that is immutable on creation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -284,6 +409,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Data Mask Rule Identifier, can be renamed.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -294,6 +423,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier where the resource is created.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -304,6 +437,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The data mask rule description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -314,6 +451,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
     private final String iamGroupId;
 
+    /**
+     * IAM Group id associated with the data mask rule
+     * @return the value
+     **/
     public String getIamGroupId() {
         return iamGroupId;
     }
@@ -331,6 +472,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
     private final java.util.List<DataMaskCategory> dataMaskCategories;
 
+    /**
+     * Data Mask Categories
+     * @return the value
+     **/
     public java.util.List<DataMaskCategory> getDataMaskCategories() {
         return dataMaskCategories;
     }
@@ -341,6 +486,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the target was created. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -351,6 +500,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the target was updated. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -361,6 +514,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
     private final DataMaskRuleStatus dataMaskRuleStatus;
 
+    /**
+     * The status of the dataMaskRule.
+     * @return the value
+     **/
     public DataMaskRuleStatus getDataMaskRuleStatus() {
         return dataMaskRuleStatus;
     }
@@ -371,6 +528,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the DataMaskRule.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -381,6 +542,10 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecyleDetails() {
         return lifecyleDetails;
     }
@@ -395,6 +560,14 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -407,6 +580,12 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -422,6 +601,15 @@ public final class DataMaskRule {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

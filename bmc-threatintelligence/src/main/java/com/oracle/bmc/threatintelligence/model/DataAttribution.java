@@ -42,9 +42,17 @@ public final class DataAttribution {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator.  For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
+        /**
+         * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator.  For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -68,19 +76,33 @@ public final class DataAttribution {
             this.__explicitlySet__.add("visibility");
             return this;
         }
-
+        /**
+         * The time the data was first seen for this entity. Defaults to time last seen if no time first seen is provided from the data source. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
         private java.util.Date timeFirstSeen;
 
+        /**
+         * The time the data was first seen for this entity. Defaults to time last seen if no time first seen is provided from the data source. An RFC3339 formatted datetime string
+         * @param timeFirstSeen the value to set
+         * @return this builder
+         **/
         public Builder timeFirstSeen(java.util.Date timeFirstSeen) {
             this.timeFirstSeen = timeFirstSeen;
             this.__explicitlySet__.add("timeFirstSeen");
             return this;
         }
-
+        /**
+         * The last time this data was seen for this entity. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
+        /**
+         * The last time this data was seen for this entity. An RFC3339 formatted datetime string
+         * @param timeLastSeen the value to set
+         * @return this builder
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -129,6 +151,10 @@ public final class DataAttribution {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
+    /**
+     * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of data attributed to an indicator.  For example, if the source of the data being attributed is the Tor Project, our confidence that the associated indicator is a tor exit node would be 100.
+     * @return the value
+     **/
     public Integer getConfidence() {
         return confidence;
     }
@@ -153,6 +179,10 @@ public final class DataAttribution {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
     private final java.util.Date timeFirstSeen;
 
+    /**
+     * The time the data was first seen for this entity. Defaults to time last seen if no time first seen is provided from the data source. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeFirstSeen() {
         return timeFirstSeen;
     }
@@ -163,6 +193,10 @@ public final class DataAttribution {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
+    /**
+     * The last time this data was seen for this entity. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }

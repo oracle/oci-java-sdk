@@ -30,18 +30,33 @@ public final class ImageOcpuConstraints {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The minimum number of OCPUs supported for this image and shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
+        /**
+         * The minimum number of OCPUs supported for this image and shape.
+         * @param min the value to set
+         * @return this builder
+         **/
         public Builder min(Integer min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-
+        /**
+         * The maximum number of OCPUs supported for this image and shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Integer max;
 
+        /**
+         * The maximum number of OCPUs supported for this image and shape.
+         * @param max the value to set
+         * @return this builder
+         **/
         public Builder max(Integer max) {
             this.max = max;
             this.__explicitlySet__.add("max");
@@ -83,6 +98,10 @@ public final class ImageOcpuConstraints {
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Integer min;
 
+    /**
+     * The minimum number of OCPUs supported for this image and shape.
+     * @return the value
+     **/
     public Integer getMin() {
         return min;
     }
@@ -93,6 +112,10 @@ public final class ImageOcpuConstraints {
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Integer max;
 
+    /**
+     * The maximum number of OCPUs supported for this image and shape.
+     * @return the value
+     **/
     public Integer getMax() {
         return max;
     }

@@ -17,6 +17,9 @@ public class GetIntegrationInstanceRequest
      */
     private String integrationInstanceId;
 
+    /**
+     * Unique Integration Instance identifier.
+     */
     public String getIntegrationInstanceId() {
         return integrationInstanceId;
     }
@@ -25,6 +28,9 @@ public class GetIntegrationInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,10 +42,14 @@ public class GetIntegrationInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Integration Instance identifier.
+         */
         private String integrationInstanceId = null;
 
         /**
          * Unique Integration Instance identifier.
+         * @param integrationInstanceId the value to set
          * @return this builder instance
          */
         public Builder integrationInstanceId(String integrationInstanceId) {
@@ -47,10 +57,14 @@ public class GetIntegrationInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,7 +142,8 @@ public class GetIntegrationInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -136,6 +151,10 @@ public class GetIntegrationInstanceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -20,6 +20,10 @@ public class BatchDetectLanguageSentimentsRequest
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
             batchDetectLanguageSentimentsDetails;
 
+    /**
+     * The details to make sentiment detect call.
+     *
+     */
     public com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
             getBatchDetectLanguageSentimentsDetails() {
         return batchDetectLanguageSentimentsDetails;
@@ -29,6 +33,9 @@ public class BatchDetectLanguageSentimentsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -81,6 +88,13 @@ public class BatchDetectLanguageSentimentsRequest
         }
     };
 
+    /**
+     * Set this parameter for sentence and aspect level sentiment analysis.
+     * Allowed values are:
+     *    - ASPECT
+     *    - SENTENCE
+     *
+     */
     public java.util.List<Level> getLevel() {
         return level;
     }
@@ -103,12 +117,17 @@ public class BatchDetectLanguageSentimentsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details to make sentiment detect call.
+         *
+         */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
                 batchDetectLanguageSentimentsDetails = null;
 
         /**
          * The details to make sentiment detect call.
          *
+         * @param batchDetectLanguageSentimentsDetails the value to set
          * @return this builder instance
          */
         public Builder batchDetectLanguageSentimentsDetails(
@@ -118,10 +137,14 @@ public class BatchDetectLanguageSentimentsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -129,6 +152,13 @@ public class BatchDetectLanguageSentimentsRequest
             return this;
         }
 
+        /**
+         * Set this parameter for sentence and aspect level sentiment analysis.
+         * Allowed values are:
+         *    - ASPECT
+         *    - SENTENCE
+         *
+         */
         private java.util.List<Level> level = null;
 
         /**
@@ -137,6 +167,7 @@ public class BatchDetectLanguageSentimentsRequest
          *    - ASPECT
          *    - SENTENCE
          *
+         * @param level the value to set
          * @return this builder instance
          */
         public Builder level(java.util.List<Level> level) {
@@ -150,6 +181,7 @@ public class BatchDetectLanguageSentimentsRequest
          *    - ASPECT
          *    - SENTENCE
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder level(Level singularValue) {
@@ -241,7 +273,8 @@ public class BatchDetectLanguageSentimentsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -250,6 +283,10 @@ public class BatchDetectLanguageSentimentsRequest
                 .level(level);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

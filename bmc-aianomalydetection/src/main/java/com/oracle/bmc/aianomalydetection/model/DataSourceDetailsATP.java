@@ -27,99 +27,177 @@ package com.oracle.bmc.aianomalydetection.model;
 public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * wallet password Secret ID in String format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecretId")
         private String walletPasswordSecretId;
 
+        /**
+         * wallet password Secret ID in String format
+         * @param walletPasswordSecretId the value to set
+         * @return this builder
+         **/
         public Builder walletPasswordSecretId(String walletPasswordSecretId) {
             this.walletPasswordSecretId = walletPasswordSecretId;
             this.__explicitlySet__.add("walletPasswordSecretId");
             return this;
         }
-
+        /**
+         * atp db user name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("atpUserName")
         private String atpUserName;
 
+        /**
+         * atp db user name
+         * @param atpUserName the value to set
+         * @return this builder
+         **/
         public Builder atpUserName(String atpUserName) {
             this.atpUserName = atpUserName;
             this.__explicitlySet__.add("atpUserName");
             return this;
         }
-
+        /**
+         * atp db password Secret Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("atpPasswordSecretId")
         private String atpPasswordSecretId;
 
+        /**
+         * atp db password Secret Id
+         * @param atpPasswordSecretId the value to set
+         * @return this builder
+         **/
         public Builder atpPasswordSecretId(String atpPasswordSecretId) {
             this.atpPasswordSecretId = atpPasswordSecretId;
             this.__explicitlySet__.add("atpPasswordSecretId");
             return this;
         }
-
+        /**
+         * OCID of the secret containing the containers certificates of ATP wallet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cwalletFileSecretId")
         private String cwalletFileSecretId;
 
+        /**
+         * OCID of the secret containing the containers certificates of ATP wallet
+         * @param cwalletFileSecretId the value to set
+         * @return this builder
+         **/
         public Builder cwalletFileSecretId(String cwalletFileSecretId) {
             this.cwalletFileSecretId = cwalletFileSecretId;
             this.__explicitlySet__.add("cwalletFileSecretId");
             return this;
         }
-
+        /**
+         * OCID of the secret containing the PDB'S certificates of ATP wallet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ewalletFileSecretId")
         private String ewalletFileSecretId;
 
+        /**
+         * OCID of the secret containing the PDB'S certificates of ATP wallet
+         * @param ewalletFileSecretId the value to set
+         * @return this builder
+         **/
         public Builder ewalletFileSecretId(String ewalletFileSecretId) {
             this.ewalletFileSecretId = ewalletFileSecretId;
             this.__explicitlySet__.add("ewalletFileSecretId");
             return this;
         }
-
+        /**
+         * OCID of the secret containing Keystore.jks file of the ATP wallet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreFileSecretId")
         private String keyStoreFileSecretId;
 
+        /**
+         * OCID of the secret containing Keystore.jks file of the ATP wallet
+         * @param keyStoreFileSecretId the value to set
+         * @return this builder
+         **/
         public Builder keyStoreFileSecretId(String keyStoreFileSecretId) {
             this.keyStoreFileSecretId = keyStoreFileSecretId;
             this.__explicitlySet__.add("keyStoreFileSecretId");
             return this;
         }
-
+        /**
+         * OCID of the secret that contains jdbc properties file of ATP wallet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ojdbcFileSecretId")
         private String ojdbcFileSecretId;
 
+        /**
+         * OCID of the secret that contains jdbc properties file of ATP wallet
+         * @param ojdbcFileSecretId the value to set
+         * @return this builder
+         **/
         public Builder ojdbcFileSecretId(String ojdbcFileSecretId) {
             this.ojdbcFileSecretId = ojdbcFileSecretId;
             this.__explicitlySet__.add("ojdbcFileSecretId");
             return this;
         }
-
+        /**
+         * OCID of the secret that contains the tnsnames file of ATP wallet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tnsnamesFileSecretId")
         private String tnsnamesFileSecretId;
 
+        /**
+         * OCID of the secret that contains the tnsnames file of ATP wallet
+         * @param tnsnamesFileSecretId the value to set
+         * @return this builder
+         **/
         public Builder tnsnamesFileSecretId(String tnsnamesFileSecretId) {
             this.tnsnamesFileSecretId = tnsnamesFileSecretId;
             this.__explicitlySet__.add("tnsnamesFileSecretId");
             return this;
         }
-
+        /**
+         * OCID of the secret containing truststore.jks file of the ATP wallet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("truststoreFileSecretId")
         private String truststoreFileSecretId;
 
+        /**
+         * OCID of the secret containing truststore.jks file of the ATP wallet
+         * @param truststoreFileSecretId the value to set
+         * @return this builder
+         **/
         public Builder truststoreFileSecretId(String truststoreFileSecretId) {
             this.truststoreFileSecretId = truststoreFileSecretId;
             this.__explicitlySet__.add("truststoreFileSecretId");
             return this;
         }
-
+        /**
+         * atp database name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * atp database name
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * atp database table name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * atp database table name
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
@@ -211,6 +289,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("walletPasswordSecretId")
     private final String walletPasswordSecretId;
 
+    /**
+     * wallet password Secret ID in String format
+     * @return the value
+     **/
     public String getWalletPasswordSecretId() {
         return walletPasswordSecretId;
     }
@@ -221,6 +303,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("atpUserName")
     private final String atpUserName;
 
+    /**
+     * atp db user name
+     * @return the value
+     **/
     public String getAtpUserName() {
         return atpUserName;
     }
@@ -231,6 +317,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("atpPasswordSecretId")
     private final String atpPasswordSecretId;
 
+    /**
+     * atp db password Secret Id
+     * @return the value
+     **/
     public String getAtpPasswordSecretId() {
         return atpPasswordSecretId;
     }
@@ -241,6 +331,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cwalletFileSecretId")
     private final String cwalletFileSecretId;
 
+    /**
+     * OCID of the secret containing the containers certificates of ATP wallet
+     * @return the value
+     **/
     public String getCwalletFileSecretId() {
         return cwalletFileSecretId;
     }
@@ -251,6 +345,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ewalletFileSecretId")
     private final String ewalletFileSecretId;
 
+    /**
+     * OCID of the secret containing the PDB'S certificates of ATP wallet
+     * @return the value
+     **/
     public String getEwalletFileSecretId() {
         return ewalletFileSecretId;
     }
@@ -261,6 +359,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreFileSecretId")
     private final String keyStoreFileSecretId;
 
+    /**
+     * OCID of the secret containing Keystore.jks file of the ATP wallet
+     * @return the value
+     **/
     public String getKeyStoreFileSecretId() {
         return keyStoreFileSecretId;
     }
@@ -271,6 +373,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ojdbcFileSecretId")
     private final String ojdbcFileSecretId;
 
+    /**
+     * OCID of the secret that contains jdbc properties file of ATP wallet
+     * @return the value
+     **/
     public String getOjdbcFileSecretId() {
         return ojdbcFileSecretId;
     }
@@ -281,6 +387,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tnsnamesFileSecretId")
     private final String tnsnamesFileSecretId;
 
+    /**
+     * OCID of the secret that contains the tnsnames file of ATP wallet
+     * @return the value
+     **/
     public String getTnsnamesFileSecretId() {
         return tnsnamesFileSecretId;
     }
@@ -291,6 +401,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("truststoreFileSecretId")
     private final String truststoreFileSecretId;
 
+    /**
+     * OCID of the secret containing truststore.jks file of the ATP wallet
+     * @return the value
+     **/
     public String getTruststoreFileSecretId() {
         return truststoreFileSecretId;
     }
@@ -301,6 +415,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * atp database name
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -311,6 +429,10 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * atp database table name
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }

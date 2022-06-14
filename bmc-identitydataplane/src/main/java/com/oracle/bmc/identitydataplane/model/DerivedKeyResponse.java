@@ -30,18 +30,33 @@ public final class DerivedKeyResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The derived key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingKey")
         private String signingKey;
 
+        /**
+         * The derived key.
+         * @param signingKey the value to set
+         * @return this builder
+         **/
         public Builder signingKey(String signingKey) {
             this.signingKey = signingKey;
             this.__explicitlySet__.add("signingKey");
             return this;
         }
-
+        /**
+         * The principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principal")
         private CommonPrincipal principal;
 
+        /**
+         * The principal.
+         * @param principal the value to set
+         * @return this builder
+         **/
         public Builder principal(CommonPrincipal principal) {
             this.principal = principal;
             this.__explicitlySet__.add("principal");
@@ -83,6 +98,10 @@ public final class DerivedKeyResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("signingKey")
     private final String signingKey;
 
+    /**
+     * The derived key.
+     * @return the value
+     **/
     public String getSigningKey() {
         return signingKey;
     }
@@ -93,6 +112,10 @@ public final class DerivedKeyResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("principal")
     private final CommonPrincipal principal;
 
+    /**
+     * The principal.
+     * @return the value
+     **/
     public CommonPrincipal getPrincipal() {
         return principal;
     }

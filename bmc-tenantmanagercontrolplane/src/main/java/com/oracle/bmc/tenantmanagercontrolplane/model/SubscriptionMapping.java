@@ -53,72 +53,129 @@ public final class SubscriptionMapping {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the mapping between subscription and compartment identified by the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the mapping between subscription and compartment identified by the tenancy.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
+        /**
+         * OCID of the subscription.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-
+        /**
+         * OCID of the compartment. Always a tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment. Always a tenancy OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Denotes if the subscription is explicity assigned to the root compartment or tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isExplicitlyAssigned")
         private Boolean isExplicitlyAssigned;
 
+        /**
+         * Denotes if the subscription is explicity assigned to the root compartment or tenancy.
+         * @param isExplicitlyAssigned the value to set
+         * @return this builder
+         **/
         public Builder isExplicitlyAssigned(Boolean isExplicitlyAssigned) {
             this.isExplicitlyAssigned = isExplicitlyAssigned;
             this.__explicitlySet__.add("isExplicitlyAssigned");
             return this;
         }
-
+        /**
+         * Lifecycle state of the subscription mapping.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * Lifecycle state of the subscription mapping.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Date-time when subscription mapping was terminated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
         private java.util.Date timeTerminated;
 
+        /**
+         * Date-time when subscription mapping was terminated.
+         * @param timeTerminated the value to set
+         * @return this builder
+         **/
         public Builder timeTerminated(java.util.Date timeTerminated) {
             this.timeTerminated = timeTerminated;
             this.__explicitlySet__.add("timeTerminated");
             return this;
         }
-
+        /**
+         * Date-time when subscription mapping was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date-time when subscription mapping was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date-time when subscription mapping was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date-time when subscription mapping was updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -177,6 +234,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the mapping between subscription and compartment identified by the tenancy.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -187,6 +248,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
+    /**
+     * OCID of the subscription.
+     * @return the value
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -197,6 +262,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment. Always a tenancy OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -207,6 +276,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("isExplicitlyAssigned")
     private final Boolean isExplicitlyAssigned;
 
+    /**
+     * Denotes if the subscription is explicity assigned to the root compartment or tenancy.
+     * @return the value
+     **/
     public Boolean getIsExplicitlyAssigned() {
         return isExplicitlyAssigned;
     }
@@ -270,6 +343,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * Lifecycle state of the subscription mapping.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -280,6 +357,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
     private final java.util.Date timeTerminated;
 
+    /**
+     * Date-time when subscription mapping was terminated.
+     * @return the value
+     **/
     public java.util.Date getTimeTerminated() {
         return timeTerminated;
     }
@@ -290,6 +371,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date-time when subscription mapping was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -300,6 +385,10 @@ public final class SubscriptionMapping {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date-time when subscription mapping was updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

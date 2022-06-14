@@ -18,6 +18,10 @@ public class SummarizeExadataMembersRequest
      */
     private String exadataInsightId;
 
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     *
+     */
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -28,6 +32,11 @@ public class SummarizeExadataMembersRequest
      */
     private java.util.List<String> exadataType;
 
+    /**
+     * Filter by one or more Exadata types.
+     * Possible value are DBMACHINE, EXACS, and EXACC.
+     *
+     */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
@@ -37,6 +46,10 @@ public class SummarizeExadataMembersRequest
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -82,6 +95,9 @@ public class SummarizeExadataMembersRequest
         }
     };
 
+    /**
+     * The order in which exadata member records are listed
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -95,6 +111,14 @@ public class SummarizeExadataMembersRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -106,6 +130,12 @@ public class SummarizeExadataMembersRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -116,6 +146,11 @@ public class SummarizeExadataMembersRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -127,11 +162,16 @@ public class SummarizeExadataMembersRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         *
+         */
         private String exadataInsightId = null;
 
         /**
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
          *
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String exadataInsightId) {
@@ -139,12 +179,18 @@ public class SummarizeExadataMembersRequest
             return this;
         }
 
+        /**
+         * Filter by one or more Exadata types.
+         * Possible value are DBMACHINE, EXACS, and EXACC.
+         *
+         */
         private java.util.List<String> exadataType = null;
 
         /**
          * Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param exadataType the value to set
          * @return this builder instance
          */
         public Builder exadataType(java.util.List<String> exadataType) {
@@ -156,17 +202,23 @@ public class SummarizeExadataMembersRequest
          * Singular setter. Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
@@ -174,10 +226,14 @@ public class SummarizeExadataMembersRequest
             return this;
         }
 
+        /**
+         * The order in which exadata member records are listed
+         */
         private SortBy sortBy = null;
 
         /**
          * The order in which exadata member records are listed
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -185,6 +241,14 @@ public class SummarizeExadataMembersRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -194,6 +258,7 @@ public class SummarizeExadataMembersRequest
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -201,6 +266,12 @@ public class SummarizeExadataMembersRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -208,6 +279,7 @@ public class SummarizeExadataMembersRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -215,12 +287,18 @@ public class SummarizeExadataMembersRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -308,7 +386,8 @@ public class SummarizeExadataMembersRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -321,6 +400,10 @@ public class SummarizeExadataMembersRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

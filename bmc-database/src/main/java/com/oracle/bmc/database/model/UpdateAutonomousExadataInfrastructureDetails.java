@@ -45,9 +45,17 @@ public final class UpdateAutonomousExadataInfrastructureDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name is a user-friendly name for the Autonomous Exadata Infrastructure. The display name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name is a user-friendly name for the Autonomous Exadata Infrastructure. The display name does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -62,28 +70,67 @@ public final class UpdateAutonomousExadataInfrastructureDetails {
             this.__explicitlySet__.add("maintenanceWindowDetails");
             return this;
         }
-
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -137,6 +184,10 @@ public final class UpdateAutonomousExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name is a user-friendly name for the Autonomous Exadata Infrastructure. The display name does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -157,6 +208,13 @@ public final class UpdateAutonomousExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -171,6 +229,14 @@ public final class UpdateAutonomousExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -183,6 +249,12 @@ public final class UpdateAutonomousExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

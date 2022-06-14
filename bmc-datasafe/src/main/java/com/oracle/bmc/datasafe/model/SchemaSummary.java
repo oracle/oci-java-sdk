@@ -28,18 +28,33 @@ public final class SchemaSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * Name of the schema.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-
+        /**
+         * Indicates if the schema is oracle supplied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
         private Boolean isOracleMaintained;
 
+        /**
+         * Indicates if the schema is oracle supplied.
+         * @param isOracleMaintained the value to set
+         * @return this builder
+         **/
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
             this.isOracleMaintained = isOracleMaintained;
             this.__explicitlySet__.add("isOracleMaintained");
@@ -82,6 +97,10 @@ public final class SchemaSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * Name of the schema.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }
@@ -92,6 +111,10 @@ public final class SchemaSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
     private final Boolean isOracleMaintained;
 
+    /**
+     * Indicates if the schema is oracle supplied.
+     * @return the value
+     **/
     public Boolean getIsOracleMaintained() {
         return isOracleMaintained;
     }

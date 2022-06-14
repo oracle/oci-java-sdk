@@ -18,6 +18,10 @@ public class GetVolumeGroupBackupRequest
      */
     private String volumeGroupBackupId;
 
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+     *
+     */
     public String getVolumeGroupBackupId() {
         return volumeGroupBackupId;
     }
@@ -29,11 +33,16 @@ public class GetVolumeGroupBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+         *
+         */
         private String volumeGroupBackupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
          *
+         * @param volumeGroupBackupId the value to set
          * @return this builder instance
          */
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
@@ -109,12 +118,17 @@ public class GetVolumeGroupBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().volumeGroupBackupId(volumeGroupBackupId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

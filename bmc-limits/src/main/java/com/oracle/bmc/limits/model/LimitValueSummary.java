@@ -33,36 +33,69 @@ public final class LimitValueSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The scope type of the limit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
         private ScopeType scopeType;
 
+        /**
+         * The scope type of the limit.
+         *
+         * @param scopeType the value to set
+         * @return this builder
+         **/
         public Builder scopeType(ScopeType scopeType) {
             this.scopeType = scopeType;
             this.__explicitlySet__.add("scopeType");
             return this;
         }
-
+        /**
+         * If present, the returned value is only specific to this availability domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * If present, the returned value is only specific to this availability domain.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The resource limit value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Long value;
 
+        /**
+         * The resource limit value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Long value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -110,6 +143,11 @@ public final class LimitValueSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -171,6 +209,11 @@ public final class LimitValueSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
     private final ScopeType scopeType;
 
+    /**
+     * The scope type of the limit.
+     *
+     * @return the value
+     **/
     public ScopeType getScopeType() {
         return scopeType;
     }
@@ -181,6 +224,10 @@ public final class LimitValueSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * If present, the returned value is only specific to this availability domain.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -191,6 +238,10 @@ public final class LimitValueSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Long value;
 
+    /**
+     * The resource limit value.
+     * @return the value
+     **/
     public Long getValue() {
         return value;
     }

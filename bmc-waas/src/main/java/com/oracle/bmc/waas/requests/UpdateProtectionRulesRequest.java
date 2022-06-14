@@ -18,12 +18,13 @@ public class UpdateProtectionRulesRequest
      */
     private String waasPolicyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
-    /**
-     *
-     */
+
     private java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> protectionRules;
 
     public java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction> getProtectionRules() {
@@ -34,6 +35,9 @@ public class UpdateProtectionRulesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -42,6 +46,9 @@ public class UpdateProtectionRulesRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -64,10 +71,14 @@ public class UpdateProtectionRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         */
         private String waasPolicyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * @param waasPolicyId the value to set
          * @return this builder instance
          */
         public Builder waasPolicyId(String waasPolicyId) {
@@ -80,6 +91,7 @@ public class UpdateProtectionRulesRequest
 
         /**
          *
+         * @param protectionRules the value to set
          * @return this builder instance
          */
         public Builder protectionRules(
@@ -90,6 +102,7 @@ public class UpdateProtectionRulesRequest
 
         /**
          * Singular setter.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder protectionRules(
@@ -97,10 +110,14 @@ public class UpdateProtectionRulesRequest
             return this.protectionRules(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,10 +125,14 @@ public class UpdateProtectionRulesRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -204,7 +225,8 @@ public class UpdateProtectionRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -214,6 +236,10 @@ public class UpdateProtectionRulesRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

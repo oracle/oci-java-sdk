@@ -28,18 +28,33 @@ public final class OsnSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OSN identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osnKey")
         private String osnKey;
 
+        /**
+         * OSN identifier
+         * @param osnKey the value to set
+         * @return this builder
+         **/
         public Builder osnKey(String osnKey) {
             this.osnKey = osnKey;
             this.__explicitlySet__.add("osnKey");
             return this;
         }
-
+        /**
+         * The current state of the OSN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Osn.LifecycleState lifecycleState;
 
+        /**
+         * The current state of the OSN.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Osn.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -81,6 +96,10 @@ public final class OsnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("osnKey")
     private final String osnKey;
 
+    /**
+     * OSN identifier
+     * @return the value
+     **/
     public String getOsnKey() {
         return osnKey;
     }
@@ -91,6 +110,10 @@ public final class OsnSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Osn.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the OSN.
+     * @return the value
+     **/
     public Osn.LifecycleState getLifecycleState() {
         return lifecycleState;
     }

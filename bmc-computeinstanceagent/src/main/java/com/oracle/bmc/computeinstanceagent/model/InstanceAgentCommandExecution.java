@@ -56,72 +56,155 @@ public final class InstanceAgentCommandExecution {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the command
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
         private String instanceAgentCommandId;
 
+        /**
+         * The OCID of the command
+         * @param instanceAgentCommandId the value to set
+         * @return this builder
+         **/
         public Builder instanceAgentCommandId(String instanceAgentCommandId) {
             this.instanceAgentCommandId = instanceAgentCommandId;
             this.__explicitlySet__.add("instanceAgentCommandId");
             return this;
         }
-
+        /**
+         * The OCID of the instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The OCID of the instance
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * Specifies the command delivery state.
+         *  * {@code VISIBLE} - The command is visible to instance.
+         *  * {@code PENDING} - The command is pending ack from the instance.
+         *  * {@code ACKED} - The command has been received and acked by the instance.
+         *  * {@code ACKED_CANCELED} - The canceled command has been received and acked by the instance.
+         *  * {@code EXPIRED} - The instance has not requested for commands and its delivery has expired.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
         private DeliveryState deliveryState;
 
+        /**
+         * Specifies the command delivery state.
+         *  * {@code VISIBLE} - The command is visible to instance.
+         *  * {@code PENDING} - The command is pending ack from the instance.
+         *  * {@code ACKED} - The command has been received and acked by the instance.
+         *  * {@code ACKED_CANCELED} - The canceled command has been received and acked by the instance.
+         *  * {@code EXPIRED} - The instance has not requested for commands and its delivery has expired.
+         *
+         * @param deliveryState the value to set
+         * @return this builder
+         **/
         public Builder deliveryState(DeliveryState deliveryState) {
             this.deliveryState = deliveryState;
             this.__explicitlySet__.add("deliveryState");
             return this;
         }
-
+        /**
+         * command execution life cycle state.
+         * * {@code ACCEPTED} - The command execution has been accepted to run.
+         * * {@code IN_PROGRESS} - The command execution is in progress.
+         * * {@code SUCCEEDED} - The command execution is successful.
+         * * {@code FAILED} - The command execution has failed.
+         * * {@code TIMED_OUT} - The command execution has timedout.
+         * * {@code CANCELED} - The command execution has canceled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * command execution life cycle state.
+         * * {@code ACCEPTED} - The command execution has been accepted to run.
+         * * {@code IN_PROGRESS} - The command execution is in progress.
+         * * {@code SUCCEEDED} - The command execution is successful.
+         * * {@code FAILED} - The command execution has failed.
+         * * {@code TIMED_OUT} - The command execution has timedout.
+         * * {@code CANCELED} - The command execution has canceled.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The command creation date
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The command creation date
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The command last updated at date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The command last updated at date.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The large non-consecutive number that Run Command Service assigns to each created command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sequenceNumber")
         private Long sequenceNumber;
 
+        /**
+         * The large non-consecutive number that Run Command Service assigns to each created command.
+         * @param sequenceNumber the value to set
+         * @return this builder
+         **/
         public Builder sequenceNumber(Long sequenceNumber) {
             this.sequenceNumber = sequenceNumber;
             this.__explicitlySet__.add("sequenceNumber");
             return this;
         }
-
+        /**
+         * The user friendly display name of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user friendly display name of the command.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -191,6 +274,10 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
     private final String instanceAgentCommandId;
 
+    /**
+     * The OCID of the command
+     * @return the value
+     **/
     public String getInstanceAgentCommandId() {
         return instanceAgentCommandId;
     }
@@ -201,6 +288,10 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the instance
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -274,6 +365,16 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryState")
     private final DeliveryState deliveryState;
 
+    /**
+     * Specifies the command delivery state.
+     *  * {@code VISIBLE} - The command is visible to instance.
+     *  * {@code PENDING} - The command is pending ack from the instance.
+     *  * {@code ACKED} - The command has been received and acked by the instance.
+     *  * {@code ACKED_CANCELED} - The canceled command has been received and acked by the instance.
+     *  * {@code EXPIRED} - The instance has not requested for commands and its delivery has expired.
+     *
+     * @return the value
+     **/
     public DeliveryState getDeliveryState() {
         return deliveryState;
     }
@@ -350,6 +451,17 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * command execution life cycle state.
+     * * {@code ACCEPTED} - The command execution has been accepted to run.
+     * * {@code IN_PROGRESS} - The command execution is in progress.
+     * * {@code SUCCEEDED} - The command execution is successful.
+     * * {@code FAILED} - The command execution has failed.
+     * * {@code TIMED_OUT} - The command execution has timedout.
+     * * {@code CANCELED} - The command execution has canceled.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -360,6 +472,10 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The command creation date
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -370,6 +486,10 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The command last updated at date.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -380,6 +500,10 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("sequenceNumber")
     private final Long sequenceNumber;
 
+    /**
+     * The large non-consecutive number that Run Command Service assigns to each created command.
+     * @return the value
+     **/
     public Long getSequenceNumber() {
         return sequenceNumber;
     }
@@ -390,6 +514,10 @@ public final class InstanceAgentCommandExecution {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user friendly display name of the command.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

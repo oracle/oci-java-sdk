@@ -14,6 +14,11 @@ public class GetIngressGatewayRouteTableResponse extends com.oracle.bmc.response
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetIngressGatewayRouteTableResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetIngressGatewayRouteTableResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable ingressGatewayRouteTable;
 
+    /**
+     * The returned IngressGatewayRouteTable instance.
+     * @return the value
+     */
     public com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable getIngressGatewayRouteTable() {
         return ingressGatewayRouteTable;
     }
@@ -63,22 +78,52 @@ public class GetIngressGatewayRouteTableResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned IngressGatewayRouteTable instance.
+         */
         private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable ingressGatewayRouteTable;
 
+        /**
+         * The returned IngressGatewayRouteTable instance.
+         * @param ingressGatewayRouteTable the value to set
+         * @return this builder
+         */
         public Builder ingressGatewayRouteTable(
                 com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable
                         ingressGatewayRouteTable) {
@@ -99,12 +144,20 @@ public class GetIngressGatewayRouteTableResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetIngressGatewayRouteTableResponse build() {
             return new GetIngressGatewayRouteTableResponse(
                     __httpStatusCode__, etag, opcRequestId, ingressGatewayRouteTable);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

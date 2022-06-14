@@ -18,6 +18,10 @@ public class ListSourceEventTypesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ListSourceEventTypesRequest
      */
     private String sourceName;
 
+    /**
+     * The source name.
+     */
     public String getSourceName() {
         return sourceName;
     }
@@ -35,6 +42,10 @@ public class ListSourceEventTypesRequest
      */
     private String displayText;
 
+    /**
+     * The text used for filtering event types by name or description.
+     *
+     */
     public String getDisplayText() {
         return displayText;
     }
@@ -86,6 +97,12 @@ public class ListSourceEventTypesRequest
         }
     };
 
+    /**
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
+     *
+     */
     public IsSystem getIsSystem() {
         return isSystem;
     }
@@ -96,6 +113,11 @@ public class ListSourceEventTypesRequest
      */
     private Boolean isEnabled;
 
+    /**
+     * The enabled flag used for filtering.  Only items with the specified enabled value
+     * will be returned.
+     *
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -104,6 +126,9 @@ public class ListSourceEventTypesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -112,6 +137,9 @@ public class ListSourceEventTypesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -156,6 +184,9 @@ public class ListSourceEventTypesRequest
         }
     };
 
+    /**
+     * The attribute used to sort the returned source event types.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -202,6 +233,10 @@ public class ListSourceEventTypesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -210,6 +245,9 @@ public class ListSourceEventTypesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -221,11 +259,16 @@ public class ListSourceEventTypesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -233,10 +276,14 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The source name.
+         */
         private String sourceName = null;
 
         /**
          * The source name.
+         * @param sourceName the value to set
          * @return this builder instance
          */
         public Builder sourceName(String sourceName) {
@@ -244,11 +291,16 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The text used for filtering event types by name or description.
+         *
+         */
         private String displayText = null;
 
         /**
          * The text used for filtering event types by name or description.
          *
+         * @param displayText the value to set
          * @return this builder instance
          */
         public Builder displayText(String displayText) {
@@ -256,6 +308,12 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The system value used for filtering.  Only items with the specified system value
+         * will be returned.  Valid values are built in, custom (for user defined items), or
+         * all (for all items, regardless of system value).
+         *
+         */
         private IsSystem isSystem = null;
 
         /**
@@ -263,6 +321,7 @@ public class ListSourceEventTypesRequest
          * will be returned.  Valid values are built in, custom (for user defined items), or
          * all (for all items, regardless of system value).
          *
+         * @param isSystem the value to set
          * @return this builder instance
          */
         public Builder isSystem(IsSystem isSystem) {
@@ -270,12 +329,18 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The enabled flag used for filtering.  Only items with the specified enabled value
+         * will be returned.
+         *
+         */
         private Boolean isEnabled = null;
 
         /**
          * The enabled flag used for filtering.  Only items with the specified enabled value
          * will be returned.
          *
+         * @param isEnabled the value to set
          * @return this builder instance
          */
         public Builder isEnabled(Boolean isEnabled) {
@@ -283,10 +348,14 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -294,10 +363,14 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -305,10 +378,14 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned source event types.
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned source event types.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -316,11 +393,16 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -328,10 +410,14 @@ public class ListSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -425,7 +511,8 @@ public class ListSourceEventTypesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -441,6 +528,10 @@ public class ListSourceEventTypesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

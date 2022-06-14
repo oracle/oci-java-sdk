@@ -45,54 +45,111 @@ public final class WrappingKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment that contains this key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains this key.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The OCID of the key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the key.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The key's current lifecycle state.
+         * <p>
+         * Example: {@code ENABLED}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The key's current lifecycle state.
+         * <p>
+         * Example: {@code ENABLED}
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The public key, in PEM format, to use to wrap the key material before importing it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        /**
+         * The public key, in PEM format, to use to wrap the key material before importing it.
+         *
+         * @param publicKey the value to set
+         * @return this builder
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
-
+        /**
+         * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The OCID of the vault that contains this key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The OCID of the vault that contains this key.
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
@@ -142,6 +199,10 @@ public final class WrappingKey {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains this key.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -152,6 +213,10 @@ public final class WrappingKey {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the key.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -227,6 +292,13 @@ public final class WrappingKey {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The key's current lifecycle state.
+     * <p>
+     * Example: {@code ENABLED}
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -238,6 +310,11 @@ public final class WrappingKey {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
+    /**
+     * The public key, in PEM format, to use to wrap the key material before importing it.
+     *
+     * @return the value
+     **/
     public String getPublicKey() {
         return publicKey;
     }
@@ -251,6 +328,13 @@ public final class WrappingKey {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -261,6 +345,10 @@ public final class WrappingKey {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The OCID of the vault that contains this key.
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }

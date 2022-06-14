@@ -66,63 +66,113 @@ public final class ObjectMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user that created the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        /**
+         * The user that created the object.
+         * @param createdBy the value to set
+         * @return this builder
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-
+        /**
+         * The user that created the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByName")
         private String createdByName;
 
+        /**
+         * The user that created the object.
+         * @param createdByName the value to set
+         * @return this builder
+         **/
         public Builder createdByName(String createdByName) {
             this.createdByName = createdByName;
             this.__explicitlySet__.add("createdByName");
             return this;
         }
-
+        /**
+         * The user that updated the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
+        /**
+         * The user that updated the object.
+         * @param updatedBy the value to set
+         * @return this builder
+         **/
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-
+        /**
+         * The user that updated the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedByName")
         private String updatedByName;
 
+        /**
+         * The user that updated the object.
+         * @param updatedByName the value to set
+         * @return this builder
+         **/
         public Builder updatedByName(String updatedByName) {
             this.updatedByName = updatedByName;
             this.__explicitlySet__.add("updatedByName");
             return this;
         }
-
+        /**
+         * The date and time that the object was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time that the object was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time that the object was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time that the object was updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The owning object key for this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
         private String aggregatorKey;
 
+        /**
+         * The owning object key for this object.
+         * @param aggregatorKey the value to set
+         * @return this builder
+         **/
         public Builder aggregatorKey(String aggregatorKey) {
             this.aggregatorKey = aggregatorKey;
             this.__explicitlySet__.add("aggregatorKey");
@@ -137,46 +187,81 @@ public final class ObjectMetadata {
             this.__explicitlySet__.add("aggregator");
             return this;
         }
-
+        /**
+         * The full path to identify this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
         private String identifierPath;
 
+        /**
+         * The full path to identify this object.
+         * @param identifierPath the value to set
+         * @return this builder
+         **/
         public Builder identifierPath(String identifierPath) {
             this.identifierPath = identifierPath;
             this.__explicitlySet__.add("identifierPath");
             return this;
         }
-
+        /**
+         * Information property fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("infoFields")
         private java.util.Map<String, String> infoFields;
 
+        /**
+         * Information property fields.
+         * @param infoFields the value to set
+         * @return this builder
+         **/
         public Builder infoFields(java.util.Map<String, String> infoFields) {
             this.infoFields = infoFields;
             this.__explicitlySet__.add("infoFields");
             return this;
         }
-
+        /**
+         * The registry version of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
         private Integer registryVersion;
 
+        /**
+         * The registry version of the object.
+         * @param registryVersion the value to set
+         * @return this builder
+         **/
         public Builder registryVersion(Integer registryVersion) {
             this.registryVersion = registryVersion;
             this.__explicitlySet__.add("registryVersion");
             return this;
         }
-
+        /**
+         * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-
+        /**
+         * Specifies whether this object is a favorite or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
         private Boolean isFavorite;
 
+        /**
+         * Specifies whether this object is a favorite or not.
+         * @param isFavorite the value to set
+         * @return this builder
+         **/
         public Builder isFavorite(Boolean isFavorite) {
             this.isFavorite = isFavorite;
             this.__explicitlySet__.add("isFavorite");
@@ -245,6 +330,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
+    /**
+     * The user that created the object.
+     * @return the value
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
@@ -255,6 +344,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("createdByName")
     private final String createdByName;
 
+    /**
+     * The user that created the object.
+     * @return the value
+     **/
     public String getCreatedByName() {
         return createdByName;
     }
@@ -265,6 +358,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
+    /**
+     * The user that updated the object.
+     * @return the value
+     **/
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -275,6 +372,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByName")
     private final String updatedByName;
 
+    /**
+     * The user that updated the object.
+     * @return the value
+     **/
     public String getUpdatedByName() {
         return updatedByName;
     }
@@ -285,6 +386,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time that the object was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -295,6 +400,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time that the object was updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -305,6 +414,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
     private final String aggregatorKey;
 
+    /**
+     * The owning object key for this object.
+     * @return the value
+     **/
     public String getAggregatorKey() {
         return aggregatorKey;
     }
@@ -322,6 +435,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
     private final String identifierPath;
 
+    /**
+     * The full path to identify this object.
+     * @return the value
+     **/
     public String getIdentifierPath() {
         return identifierPath;
     }
@@ -332,6 +449,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("infoFields")
     private final java.util.Map<String, String> infoFields;
 
+    /**
+     * Information property fields.
+     * @return the value
+     **/
     public java.util.Map<String, String> getInfoFields() {
         return infoFields;
     }
@@ -342,6 +463,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
     private final Integer registryVersion;
 
+    /**
+     * The registry version of the object.
+     * @return the value
+     **/
     public Integer getRegistryVersion() {
         return registryVersion;
     }
@@ -352,6 +477,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -362,6 +491,10 @@ public final class ObjectMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     private final Boolean isFavorite;
 
+    /**
+     * Specifies whether this object is a favorite or not.
+     * @return the value
+     **/
     public Boolean getIsFavorite() {
         return isFavorite;
     }

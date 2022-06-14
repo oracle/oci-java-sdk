@@ -29,18 +29,41 @@ public final class WorkRequestLog {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The description of the event that occurred.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * The description of the event that occurred.
+         *
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The date and time the log entry occured, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the log entry occured, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -83,6 +106,11 @@ public final class WorkRequestLog {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * The description of the event that occurred.
+     *
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -96,6 +124,13 @@ public final class WorkRequestLog {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the log entry occured, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

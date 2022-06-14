@@ -80,153 +80,283 @@ public final class OperatorControlAssignmentSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the operator control assignment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the operator control assignment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatorControlId")
         private String operatorControlId;
 
+        /**
+         * The OCID of the operator control.
+         * @param operatorControlId the value to set
+         * @return this builder
+         **/
         public Builder operatorControlId(String operatorControlId) {
             this.operatorControlId = operatorControlId;
             this.__explicitlySet__.add("operatorControlId");
             return this;
         }
-
+        /**
+         * The OCID of the target resource being governed by the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The OCID of the target resource being governed by the operator control.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the operator control assignment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the operator control assignment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * resourceType for which the OperatorControlAssignment is applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceTypes resourceType;
 
+        /**
+         * resourceType for which the OperatorControlAssignment is applicable
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentFrom")
         private java.util.Date timeAssignmentFrom;
 
+        /**
+         * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeAssignmentFrom the value to set
+         * @return this builder
+         **/
         public Builder timeAssignmentFrom(java.util.Date timeAssignmentFrom) {
             this.timeAssignmentFrom = timeAssignmentFrom;
             this.__explicitlySet__.add("timeAssignmentFrom");
             return this;
         }
-
+        /**
+         * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentTo")
         private java.util.Date timeAssignmentTo;
 
+        /**
+         * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeAssignmentTo the value to set
+         * @return this builder
+         **/
         public Builder timeAssignmentTo(java.util.Date timeAssignmentTo) {
             this.timeAssignmentTo = timeAssignmentTo;
             this.__explicitlySet__.add("timeAssignmentTo");
             return this;
         }
-
+        /**
+         * If true, then the target resource is always governed by the operator control. Otherwise governance is time-based as specified by timeAssignmentTo and timeAssignmentFrom.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedAlways")
         private Boolean isEnforcedAlways;
 
+        /**
+         * If true, then the target resource is always governed by the operator control. Otherwise governance is time-based as specified by timeAssignmentTo and timeAssignmentFrom.
+         * @param isEnforcedAlways the value to set
+         * @return this builder
+         **/
         public Builder isEnforcedAlways(Boolean isEnforcedAlways) {
             this.isEnforcedAlways = isEnforcedAlways;
             this.__explicitlySet__.add("isEnforcedAlways");
             return this;
         }
-
+        /**
+         * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfAssignment")
         private java.util.Date timeOfAssignment;
 
+        /**
+         * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeOfAssignment the value to set
+         * @return this builder
+         **/
         public Builder timeOfAssignment(java.util.Date timeOfAssignment) {
             this.timeOfAssignment = timeOfAssignment;
             this.__explicitlySet__.add("timeOfAssignment");
             return this;
         }
-
+        /**
+         * The code identifying the error occurred during Assignment operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private Integer errorCode;
 
+        /**
+         * The code identifying the error occurred during Assignment operation.
+         * @param errorCode the value to set
+         * @return this builder
+         **/
         public Builder errorCode(Integer errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-
+        /**
+         * The message describing the error occurred during Assignment operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * The message describing the error occurred during Assignment operation.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-
+        /**
+         * If set, then the audit logs are being forwarded to the relevant remote logging server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
         private Boolean isLogForwarded;
 
+        /**
+         * If set, then the audit logs are being forwarded to the relevant remote logging server
+         * @param isLogForwarded the value to set
+         * @return this builder
+         **/
         public Builder isLogForwarded(Boolean isLogForwarded) {
             this.isLogForwarded = isLogForwarded;
             this.__explicitlySet__.add("isLogForwarded");
             return this;
         }
-
+        /**
+         * The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
         private String remoteSyslogServerAddress;
 
+        /**
+         * The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
+         * @param remoteSyslogServerAddress the value to set
+         * @return this builder
+         **/
         public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
             this.remoteSyslogServerAddress = remoteSyslogServerAddress;
             this.__explicitlySet__.add("remoteSyslogServerAddress");
             return this;
         }
-
+        /**
+         * The listening port of the remote syslog server. The port range is 0 - 65535.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
         private Integer remoteSyslogServerPort;
 
+        /**
+         * The listening port of the remote syslog server. The port range is 0 - 65535.
+         * @param remoteSyslogServerPort the value to set
+         * @return this builder
+         **/
         public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
             this.remoteSyslogServerPort = remoteSyslogServerPort;
             this.__explicitlySet__.add("remoteSyslogServerPort");
             return this;
         }
-
+        /**
+         * The current lifcycle state of the OperatorControl.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperatorControlAssignmentLifecycleStates lifecycleState;
 
+        /**
+         * The current lifcycle state of the OperatorControl.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(OperatorControlAssignmentLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -304,6 +434,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the operator control assignment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -314,6 +448,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlId")
     private final String operatorControlId;
 
+    /**
+     * The OCID of the operator control.
+     * @return the value
+     **/
     public String getOperatorControlId() {
         return operatorControlId;
     }
@@ -324,6 +462,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The OCID of the target resource being governed by the operator control.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -334,6 +476,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the operator control assignment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -344,6 +490,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceTypes resourceType;
 
+    /**
+     * resourceType for which the OperatorControlAssignment is applicable
+     * @return the value
+     **/
     public ResourceTypes getResourceType() {
         return resourceType;
     }
@@ -355,6 +505,11 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentFrom")
     private final java.util.Date timeAssignmentFrom;
 
+    /**
+     * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAssignmentFrom() {
         return timeAssignmentFrom;
     }
@@ -366,6 +521,11 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentTo")
     private final java.util.Date timeAssignmentTo;
 
+    /**
+     * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAssignmentTo() {
         return timeAssignmentTo;
     }
@@ -376,6 +536,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedAlways")
     private final Boolean isEnforcedAlways;
 
+    /**
+     * If true, then the target resource is always governed by the operator control. Otherwise governance is time-based as specified by timeAssignmentTo and timeAssignmentFrom.
+     * @return the value
+     **/
     public Boolean getIsEnforcedAlways() {
         return isEnforcedAlways;
     }
@@ -387,6 +551,11 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAssignment")
     private final java.util.Date timeOfAssignment;
 
+    /**
+     * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfAssignment() {
         return timeOfAssignment;
     }
@@ -397,6 +566,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final Integer errorCode;
 
+    /**
+     * The code identifying the error occurred during Assignment operation.
+     * @return the value
+     **/
     public Integer getErrorCode() {
         return errorCode;
     }
@@ -407,6 +580,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * The message describing the error occurred during Assignment operation.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -417,6 +594,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
     private final Boolean isLogForwarded;
 
+    /**
+     * If set, then the audit logs are being forwarded to the relevant remote logging server
+     * @return the value
+     **/
     public Boolean getIsLogForwarded() {
         return isLogForwarded;
     }
@@ -427,6 +608,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
     private final String remoteSyslogServerAddress;
 
+    /**
+     * The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
+     * @return the value
+     **/
     public String getRemoteSyslogServerAddress() {
         return remoteSyslogServerAddress;
     }
@@ -437,6 +622,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
     private final Integer remoteSyslogServerPort;
 
+    /**
+     * The listening port of the remote syslog server. The port range is 0 - 65535.
+     * @return the value
+     **/
     public Integer getRemoteSyslogServerPort() {
         return remoteSyslogServerPort;
     }
@@ -447,6 +636,10 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperatorControlAssignmentLifecycleStates lifecycleState;
 
+    /**
+     * The current lifcycle state of the OperatorControl.
+     * @return the value
+     **/
     public OperatorControlAssignmentLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -458,6 +651,11 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -469,6 +667,11 @@ public final class OperatorControlAssignmentSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

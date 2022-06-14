@@ -45,9 +45,25 @@ public final class ReencryptObjectDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the master encryption key used to call the Vault
+         * service to re-encrypt the data encryption keys associated with the object and its chunks. If the kmsKeyId value is
+         * empty, whether null or an empty string, the API will perform re-encryption by using the kmsKeyId associated with the
+         * bucket or the master encryption key managed by Oracle, depending on the bucket encryption mechanism.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the master encryption key used to call the Vault
+         * service to re-encrypt the data encryption keys associated with the object and its chunks. If the kmsKeyId value is
+         * empty, whether null or an empty string, the API will perform re-encryption by using the kmsKeyId associated with the
+         * bucket or the master encryption key managed by Oracle, depending on the bucket encryption mechanism.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -115,6 +131,14 @@ public final class ReencryptObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the master encryption key used to call the Vault
+     * service to re-encrypt the data encryption keys associated with the object and its chunks. If the kmsKeyId value is
+     * empty, whether null or an empty string, the API will perform re-encryption by using the kmsKeyId associated with the
+     * bucket or the master encryption key managed by Oracle, depending on the bucket encryption mechanism.
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }

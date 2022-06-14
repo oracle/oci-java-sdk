@@ -34,36 +34,73 @@ public final class SubscriptionProduct {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Product part numner
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
+        /**
+         * Product part numner
+         *
+         * @param partNumber the value to set
+         * @return this builder
+         **/
         public Builder partNumber(String partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-
+        /**
+         * Product name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Product name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Unit of measure
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
+        /**
+         * Unit of measure
+         *
+         * @param unitOfMeasure the value to set
+         * @return this builder
+         **/
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = unitOfMeasure;
             this.__explicitlySet__.add("unitOfMeasure");
             return this;
         }
-
+        /**
+         * Product provisioning group
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisioningGroup")
         private String provisioningGroup;
 
+        /**
+         * Product provisioning group
+         *
+         * @param provisioningGroup the value to set
+         * @return this builder
+         **/
         public Builder provisioningGroup(String provisioningGroup) {
             this.provisioningGroup = provisioningGroup;
             this.__explicitlySet__.add("provisioningGroup");
@@ -111,6 +148,11 @@ public final class SubscriptionProduct {
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
+    /**
+     * Product part numner
+     *
+     * @return the value
+     **/
     public String getPartNumber() {
         return partNumber;
     }
@@ -122,6 +164,11 @@ public final class SubscriptionProduct {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Product name
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -133,6 +180,11 @@ public final class SubscriptionProduct {
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
+    /**
+     * Unit of measure
+     *
+     * @return the value
+     **/
     public String getUnitOfMeasure() {
         return unitOfMeasure;
     }
@@ -144,6 +196,11 @@ public final class SubscriptionProduct {
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningGroup")
     private final String provisioningGroup;
 
+    /**
+     * Product provisioning group
+     *
+     * @return the value
+     **/
     public String getProvisioningGroup() {
         return provisioningGroup;
     }

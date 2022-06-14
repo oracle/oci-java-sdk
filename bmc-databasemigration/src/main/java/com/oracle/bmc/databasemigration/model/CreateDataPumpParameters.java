@@ -48,55 +48,112 @@ public final class CreateDataPumpParameters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Set to false to force Data Pump worker process to run on one instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
+        /**
+         * Set to false to force Data Pump worker process to run on one instance.
+         *
+         * @param isCluster the value to set
+         * @return this builder
+         **/
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = isCluster;
             this.__explicitlySet__.add("isCluster");
             return this;
         }
-
+        /**
+         * Estimate size of dumps that will be generated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimate")
         private DataPumpEstimate estimate;
 
+        /**
+         * Estimate size of dumps that will be generated.
+         *
+         * @param estimate the value to set
+         * @return this builder
+         **/
         public Builder estimate(DataPumpEstimate estimate) {
             this.estimate = estimate;
             this.__explicitlySet__.add("estimate");
             return this;
         }
-
+        /**
+         * IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableExistsAction")
         private DataPumpTableExistsAction tableExistsAction;
 
+        /**
+         * IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+         *
+         * @param tableExistsAction the value to set
+         * @return this builder
+         **/
         public Builder tableExistsAction(DataPumpTableExistsAction tableExistsAction) {
             this.tableExistsAction = tableExistsAction;
             this.__explicitlySet__.add("tableExistsAction");
             return this;
         }
-
+        /**
+         * Exclude paratemers for Export and Import.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
         private java.util.List<DataPumpExcludeParameters> excludeParameters;
 
+        /**
+         * Exclude paratemers for Export and Import.
+         *
+         * @param excludeParameters the value to set
+         * @return this builder
+         **/
         public Builder excludeParameters(
                 java.util.List<DataPumpExcludeParameters> excludeParameters) {
             this.excludeParameters = excludeParameters;
             this.__explicitlySet__.add("excludeParameters");
             return this;
         }
-
+        /**
+         * Maximum number of worker processes that can be used for a Data Pump Import job.
+         * For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importParallelismDegree")
         private Integer importParallelismDegree;
 
+        /**
+         * Maximum number of worker processes that can be used for a Data Pump Import job.
+         * For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+         *
+         * @param importParallelismDegree the value to set
+         * @return this builder
+         **/
         public Builder importParallelismDegree(Integer importParallelismDegree) {
             this.importParallelismDegree = importParallelismDegree;
             this.__explicitlySet__.add("importParallelismDegree");
             return this;
         }
-
+        /**
+         * Maximum number of worker processes that can be used for a Data Pump Export job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportParallelismDegree")
         private Integer exportParallelismDegree;
 
+        /**
+         * Maximum number of worker processes that can be used for a Data Pump Export job.
+         *
+         * @param exportParallelismDegree the value to set
+         * @return this builder
+         **/
         public Builder exportParallelismDegree(Integer exportParallelismDegree) {
             this.exportParallelismDegree = exportParallelismDegree;
             this.__explicitlySet__.add("exportParallelismDegree");
@@ -152,6 +209,11 @@ public final class CreateDataPumpParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     private final Boolean isCluster;
 
+    /**
+     * Set to false to force Data Pump worker process to run on one instance.
+     *
+     * @return the value
+     **/
     public Boolean getIsCluster() {
         return isCluster;
     }
@@ -163,6 +225,11 @@ public final class CreateDataPumpParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("estimate")
     private final DataPumpEstimate estimate;
 
+    /**
+     * Estimate size of dumps that will be generated.
+     *
+     * @return the value
+     **/
     public DataPumpEstimate getEstimate() {
         return estimate;
     }
@@ -174,6 +241,11 @@ public final class CreateDataPumpParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("tableExistsAction")
     private final DataPumpTableExistsAction tableExistsAction;
 
+    /**
+     * IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+     *
+     * @return the value
+     **/
     public DataPumpTableExistsAction getTableExistsAction() {
         return tableExistsAction;
     }
@@ -185,6 +257,11 @@ public final class CreateDataPumpParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
     private final java.util.List<DataPumpExcludeParameters> excludeParameters;
 
+    /**
+     * Exclude paratemers for Export and Import.
+     *
+     * @return the value
+     **/
     public java.util.List<DataPumpExcludeParameters> getExcludeParameters() {
         return excludeParameters;
     }
@@ -197,6 +274,12 @@ public final class CreateDataPumpParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("importParallelismDegree")
     private final Integer importParallelismDegree;
 
+    /**
+     * Maximum number of worker processes that can be used for a Data Pump Import job.
+     * For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+     *
+     * @return the value
+     **/
     public Integer getImportParallelismDegree() {
         return importParallelismDegree;
     }
@@ -208,6 +291,11 @@ public final class CreateDataPumpParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("exportParallelismDegree")
     private final Integer exportParallelismDegree;
 
+    /**
+     * Maximum number of worker processes that can be used for a Data Pump Export job.
+     *
+     * @return the value
+     **/
     public Integer getExportParallelismDegree() {
         return exportParallelismDegree;
     }

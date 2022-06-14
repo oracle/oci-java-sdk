@@ -187,28 +187,59 @@ public final class Announcement extends BaseAnnouncement {
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * A detailed explanation of the event, expressed by using Markdown language. Avoid entering
+         * confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A detailed explanation of the event, expressed by using Markdown language. Avoid entering
+         * confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Additional information about the event, expressed by using Markdown language and included in the
+         * details view of an announcement. Additional information might include remediation steps or
+         * answers to frequently asked questions. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalInformation")
         private String additionalInformation;
 
+        /**
+         * Additional information about the event, expressed by using Markdown language and included in the
+         * details view of an announcement. Additional information might include remediation steps or
+         * answers to frequently asked questions. Avoid entering confidential information.
+         *
+         * @param additionalInformation the value to set
+         * @return this builder
+         **/
         public Builder additionalInformation(String additionalInformation) {
             this.additionalInformation = additionalInformation;
             this.__explicitlySet__.add("additionalInformation");
             return this;
         }
-
+        /**
+         * The list of resources, if any, affected by the event described in the announcement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("affectedResources")
         private java.util.List<AffectedResource> affectedResources;
 
+        /**
+         * The list of resources, if any, affected by the event described in the announcement.
+         * @param affectedResources the value to set
+         * @return this builder
+         **/
         public Builder affectedResources(java.util.List<AffectedResource> affectedResources) {
             this.affectedResources = affectedResources;
             this.__explicitlySet__.add("affectedResources");
@@ -342,6 +373,12 @@ public final class Announcement extends BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A detailed explanation of the event, expressed by using Markdown language. Avoid entering
+     * confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -355,6 +392,13 @@ public final class Announcement extends BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInformation")
     private final String additionalInformation;
 
+    /**
+     * Additional information about the event, expressed by using Markdown language and included in the
+     * details view of an announcement. Additional information might include remediation steps or
+     * answers to frequently asked questions. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getAdditionalInformation() {
         return additionalInformation;
     }
@@ -365,6 +409,10 @@ public final class Announcement extends BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("affectedResources")
     private final java.util.List<AffectedResource> affectedResources;
 
+    /**
+     * The list of resources, if any, affected by the event described in the announcement.
+     * @return the value
+     **/
     public java.util.List<AffectedResource> getAffectedResources() {
         return affectedResources;
     }

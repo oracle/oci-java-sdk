@@ -13,6 +13,10 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -22,6 +26,10 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,6 +39,10 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
+    /**
+     * The returned DeployArtifact instance.
+     * @return the value
+     */
     public com.oracle.bmc.devops.model.DeployArtifact getDeployArtifact() {
         return deployArtifact;
     }
@@ -60,22 +72,46 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DeployArtifact instance.
+         */
         private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
+        /**
+         * The returned DeployArtifact instance.
+         * @param deployArtifact the value to set
+         * @return this builder
+         */
         public Builder deployArtifact(com.oracle.bmc.devops.model.DeployArtifact deployArtifact) {
             this.deployArtifact = deployArtifact;
             return this;
@@ -94,12 +130,20 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetDeployArtifactResponse build() {
             return new GetDeployArtifactResponse(
                     __httpStatusCode__, etag, opcRequestId, deployArtifact);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,18 +29,33 @@ public final class AutoScalePolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyType")
         private PolicyType policyType;
 
+        /**
+         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         * @param policyType the value to set
+         * @return this builder
+         **/
         public Builder policyType(PolicyType policyType) {
             this.policyType = policyType;
             this.__explicitlySet__.add("policyType");
             return this;
         }
-
+        /**
+         * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<AutoScalePolicyRule> rules;
 
+        /**
+         * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<AutoScalePolicyRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -131,6 +146,10 @@ public final class AutoScalePolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     private final PolicyType policyType;
 
+    /**
+     * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+     * @return the value
+     **/
     public PolicyType getPolicyType() {
         return policyType;
     }
@@ -141,6 +160,10 @@ public final class AutoScalePolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<AutoScalePolicyRule> rules;
 
+    /**
+     * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
+     * @return the value
+     **/
     public java.util.List<AutoScalePolicyRule> getRules() {
         return rules;
     }

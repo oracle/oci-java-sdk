@@ -108,10 +108,17 @@ public final class CreateConnectionFromBIP extends CreateConnectionDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-
+        /**
+         * The user name for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The user name for the connection.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
@@ -212,6 +219,10 @@ public final class CreateConnectionFromBIP extends CreateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The user name for the connection.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }

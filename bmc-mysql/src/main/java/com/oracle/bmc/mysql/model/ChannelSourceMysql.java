@@ -27,36 +27,71 @@ package com.oracle.bmc.mysql.model;
 public final class ChannelSourceMysql extends ChannelSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The network address of the MySQL instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The network address of the MySQL instance.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The port the source MySQL instance listens on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port the source MySQL instance listens on.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The name of the replication user on the source MySQL instance.
+         * The username has a maximum length of 96 characters. For more information,
+         * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The name of the replication user on the source MySQL instance.
+         * The username has a maximum length of 96 characters. For more information,
+         * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+         *
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * The SSL mode of the Channel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
         private SslMode sslMode;
 
+        /**
+         * The SSL mode of the Channel.
+         * @param sslMode the value to set
+         * @return this builder
+         **/
         public Builder sslMode(SslMode sslMode) {
             this.sslMode = sslMode;
             this.__explicitlySet__.add("sslMode");
@@ -128,6 +163,10 @@ public final class ChannelSourceMysql extends ChannelSource {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The network address of the MySQL instance.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -138,6 +177,10 @@ public final class ChannelSourceMysql extends ChannelSource {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port the source MySQL instance listens on.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -151,6 +194,13 @@ public final class ChannelSourceMysql extends ChannelSource {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The name of the replication user on the source MySQL instance.
+     * The username has a maximum length of 96 characters. For more information,
+     * please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+     *
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -211,6 +261,10 @@ public final class ChannelSourceMysql extends ChannelSource {
     @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
     private final SslMode sslMode;
 
+    /**
+     * The SSL mode of the Channel.
+     * @return the value
+     **/
     public SslMode getSslMode() {
         return sslMode;
     }

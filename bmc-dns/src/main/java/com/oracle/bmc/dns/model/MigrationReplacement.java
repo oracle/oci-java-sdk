@@ -33,36 +33,71 @@ public final class MigrationReplacement {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rtype")
         private String rtype;
 
+        /**
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         *
+         * @param rtype the value to set
+         * @return this builder
+         **/
         public Builder rtype(String rtype) {
             this.rtype = rtype;
             this.__explicitlySet__.add("rtype");
             return this;
         }
-
+        /**
+         * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("substituteRtype")
         private String substituteRtype;
 
+        /**
+         * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
+         * @param substituteRtype the value to set
+         * @return this builder
+         **/
         public Builder substituteRtype(String substituteRtype) {
             this.substituteRtype = substituteRtype;
             this.__explicitlySet__.add("substituteRtype");
             return this;
         }
-
+        /**
+         * The Time To Live of the replacement record, in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttl")
         private Integer ttl;
 
+        /**
+         * The Time To Live of the replacement record, in seconds.
+         * @param ttl the value to set
+         * @return this builder
+         **/
         public Builder ttl(Integer ttl) {
             this.ttl = ttl;
             this.__explicitlySet__.add("ttl");
             return this;
         }
-
+        /**
+         * The record data of the replacement record, as whitespace-delimited tokens in
+         * type-specific presentation format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
 
+        /**
+         * The record data of the replacement record, as whitespace-delimited tokens in
+         * type-specific presentation format.
+         *
+         * @param rdata the value to set
+         * @return this builder
+         **/
         public Builder rdata(String rdata) {
             this.rdata = rdata;
             this.__explicitlySet__.add("rdata");
@@ -110,6 +145,11 @@ public final class MigrationReplacement {
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
     private final String rtype;
 
+    /**
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     *
+     * @return the value
+     **/
     public String getRtype() {
         return rtype;
     }
@@ -120,6 +160,10 @@ public final class MigrationReplacement {
     @com.fasterxml.jackson.annotation.JsonProperty("substituteRtype")
     private final String substituteRtype;
 
+    /**
+     * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
+     * @return the value
+     **/
     public String getSubstituteRtype() {
         return substituteRtype;
     }
@@ -130,6 +174,10 @@ public final class MigrationReplacement {
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     private final Integer ttl;
 
+    /**
+     * The Time To Live of the replacement record, in seconds.
+     * @return the value
+     **/
     public Integer getTtl() {
         return ttl;
     }
@@ -142,6 +190,12 @@ public final class MigrationReplacement {
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
 
+    /**
+     * The record data of the replacement record, as whitespace-delimited tokens in
+     * type-specific presentation format.
+     *
+     * @return the value
+     **/
     public String getRdata() {
         return rdata;
     }

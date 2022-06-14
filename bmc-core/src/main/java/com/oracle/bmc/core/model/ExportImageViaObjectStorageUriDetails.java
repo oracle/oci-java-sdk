@@ -35,10 +35,25 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
             this.__explicitlySet__.add("exportFormat");
             return this;
         }
-
+        /**
+         * The Object Storage URL to export the image to. See [Object
+         * Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
+         * and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+         * for constructing URLs for image import/export.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
         private String destinationUri;
 
+        /**
+         * The Object Storage URL to export the image to. See [Object
+         * Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
+         * and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+         * for constructing URLs for image import/export.
+         *
+         * @param destinationUri the value to set
+         * @return this builder
+         **/
         public Builder destinationUri(String destinationUri) {
             this.destinationUri = destinationUri;
             this.__explicitlySet__.add("destinationUri");
@@ -92,6 +107,14 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
     @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
     private final String destinationUri;
 
+    /**
+     * The Object Storage URL to export the image to. See [Object
+     * Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
+     * and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * for constructing URLs for image import/export.
+     *
+     * @return the value
+     **/
     public String getDestinationUri() {
         return destinationUri;
     }

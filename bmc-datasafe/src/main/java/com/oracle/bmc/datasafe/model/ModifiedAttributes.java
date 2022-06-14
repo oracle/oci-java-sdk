@@ -34,18 +34,33 @@ public final class ModifiedAttributes {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
         private java.util.List<String> appDefinedChildColumnKeys;
 
+        /**
+         * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+         * @param appDefinedChildColumnKeys the value to set
+         * @return this builder
+         **/
         public Builder appDefinedChildColumnKeys(java.util.List<String> appDefinedChildColumnKeys) {
             this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             this.__explicitlySet__.add("appDefinedChildColumnKeys");
             return this;
         }
-
+        /**
+         * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
         private java.util.List<String> dbDefinedChildColumnKeys;
 
+        /**
+         * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+         * @param dbDefinedChildColumnKeys the value to set
+         * @return this builder
+         **/
         public Builder dbDefinedChildColumnKeys(java.util.List<String> dbDefinedChildColumnKeys) {
             this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             this.__explicitlySet__.add("dbDefinedChildColumnKeys");
@@ -90,6 +105,10 @@ public final class ModifiedAttributes {
     @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
     private final java.util.List<String> appDefinedChildColumnKeys;
 
+    /**
+     * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+     * @return the value
+     **/
     public java.util.List<String> getAppDefinedChildColumnKeys() {
         return appDefinedChildColumnKeys;
     }
@@ -100,6 +119,10 @@ public final class ModifiedAttributes {
     @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
     private final java.util.List<String> dbDefinedChildColumnKeys;
 
+    /**
+     * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+     * @return the value
+     **/
     public java.util.List<String> getDbDefinedChildColumnKeys() {
         return dbDefinedChildColumnKeys;
     }

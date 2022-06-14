@@ -32,27 +32,51 @@ public final class CreateClusterEndpointConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the regional subnet in which to place the Cluster endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the regional subnet in which to place the Cluster endpoint.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see {@link NetworkSecurityGroup}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see {@link NetworkSecurityGroup}.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-
+        /**
+         * Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublicIpEnabled")
         private Boolean isPublicIpEnabled;
 
+        /**
+         * Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+         * @param isPublicIpEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPublicIpEnabled(Boolean isPublicIpEnabled) {
             this.isPublicIpEnabled = isPublicIpEnabled;
             this.__explicitlySet__.add("isPublicIpEnabled");
@@ -98,6 +122,10 @@ public final class CreateClusterEndpointConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the regional subnet in which to place the Cluster endpoint.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -109,6 +137,11 @@ public final class CreateClusterEndpointConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see {@link NetworkSecurityGroup}.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -119,6 +152,10 @@ public final class CreateClusterEndpointConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPublicIpEnabled")
     private final Boolean isPublicIpEnabled;
 
+    /**
+     * Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+     * @return the value
+     **/
     public Boolean getIsPublicIpEnabled() {
         return isPublicIpEnabled;
     }

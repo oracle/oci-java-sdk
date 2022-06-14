@@ -82,10 +82,17 @@ public final class CreateOkeCanaryTrafficShiftDeployStageDetails extends CreateD
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The OCID of an upstream OKE canary deployment stage in this pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okeCanaryDeployStageId")
         private String okeCanaryDeployStageId;
 
+        /**
+         * The OCID of an upstream OKE canary deployment stage in this pipeline.
+         * @param okeCanaryDeployStageId the value to set
+         * @return this builder
+         **/
         public Builder okeCanaryDeployStageId(String okeCanaryDeployStageId) {
             this.okeCanaryDeployStageId = okeCanaryDeployStageId;
             this.__explicitlySet__.add("okeCanaryDeployStageId");
@@ -175,6 +182,10 @@ public final class CreateOkeCanaryTrafficShiftDeployStageDetails extends CreateD
     @com.fasterxml.jackson.annotation.JsonProperty("okeCanaryDeployStageId")
     private final String okeCanaryDeployStageId;
 
+    /**
+     * The OCID of an upstream OKE canary deployment stage in this pipeline.
+     * @return the value
+     **/
     public String getOkeCanaryDeployStageId() {
         return okeCanaryDeployStageId;
     }

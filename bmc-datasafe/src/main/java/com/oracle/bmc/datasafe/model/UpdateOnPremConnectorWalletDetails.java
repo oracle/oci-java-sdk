@@ -29,9 +29,17 @@ public final class UpdateOnPremConnectorWalletDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether to update or not. If false, the wallet will not be updated. Default is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUpdate")
         private Boolean isUpdate;
 
+        /**
+         * Indicates whether to update or not. If false, the wallet will not be updated. Default is false.
+         * @param isUpdate the value to set
+         * @return this builder
+         **/
         public Builder isUpdate(Boolean isUpdate) {
             this.isUpdate = isUpdate;
             this.__explicitlySet__.add("isUpdate");
@@ -74,6 +82,10 @@ public final class UpdateOnPremConnectorWalletDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isUpdate")
     private final Boolean isUpdate;
 
+    /**
+     * Indicates whether to update or not. If false, the wallet will not be updated. Default is false.
+     * @return the value
+     **/
     public Boolean getIsUpdate() {
         return isUpdate;
     }

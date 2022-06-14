@@ -57,6 +57,11 @@ public class HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -68,6 +73,11 @@ public class HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
+    /**
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getCapacity() {
         return capacity;
     }
@@ -79,6 +89,11 @@ public class HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
     private final Double utilizationPercent;
 
+    /**
+     * Resource utilization in percentage.
+     *
+     * @return the value
+     **/
     public Double getUtilizationPercent() {
         return utilizationPercent;
     }
@@ -89,6 +104,10 @@ public class HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
+    /**
+     * Change in resource utilization in percentage
+     * @return the value
+     **/
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }

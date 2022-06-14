@@ -17,6 +17,9 @@ public class GetInstanceConfigurationRequest
      */
     private String instanceConfigurationId;
 
+    /**
+     * The OCID of the instance configuration.
+     */
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
@@ -28,10 +31,14 @@ public class GetInstanceConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the instance configuration.
+         */
         private String instanceConfigurationId = null;
 
         /**
          * The OCID of the instance configuration.
+         * @param instanceConfigurationId the value to set
          * @return this builder instance
          */
         public Builder instanceConfigurationId(String instanceConfigurationId) {
@@ -107,12 +114,17 @@ public class GetInstanceConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().instanceConfigurationId(instanceConfigurationId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

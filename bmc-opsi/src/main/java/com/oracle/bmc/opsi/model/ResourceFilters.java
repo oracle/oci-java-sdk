@@ -46,45 +46,115 @@ public final class ResourceFilters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be considered.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTagEquals")
         private java.util.List<String> definedTagEquals;
 
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be considered.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param definedTagEquals the value to set
+         * @return this builder
+         **/
         public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
             this.definedTagEquals = definedTagEquals;
             this.__explicitlySet__.add("definedTagEquals");
             return this;
         }
-
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be considered.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTagEquals")
         private java.util.List<String> freeformTagEquals;
 
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be considered.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         * @param freeformTagEquals the value to set
+         * @return this builder
+         **/
         public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
             this.freeformTagEquals = freeformTagEquals;
             this.__explicitlySet__.add("freeformTagEquals");
             return this;
         }
-
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be considered.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTagExists")
         private java.util.List<String> definedTagExists;
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be considered.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param definedTagExists the value to set
+         * @return this builder
+         **/
         public Builder definedTagExists(java.util.List<String> definedTagExists) {
             this.definedTagExists = definedTagExists;
             this.__explicitlySet__.add("definedTagExists");
             return this;
         }
-
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist will be considered.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTagExists")
         private java.util.List<String> freeformTagExists;
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist will be considered.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         * @param freeformTagExists the value to set
+         * @return this builder
+         **/
         public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
             this.freeformTagExists = freeformTagExists;
             this.__explicitlySet__.add("freeformTagExists");
             return this;
         }
-
+        /**
+         * A flag to consider all resources within a given compartment and all sub-compartments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
+        /**
+         * A flag to consider all resources within a given compartment and all sub-compartments.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
@@ -141,6 +211,14 @@ public final class ResourceFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTagEquals")
     private final java.util.List<String> definedTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be considered.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
@@ -154,6 +232,13 @@ public final class ResourceFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTagEquals")
     private final java.util.List<String> freeformTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be considered.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
@@ -170,6 +255,16 @@ public final class ResourceFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTagExists")
     private final java.util.List<String> definedTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be considered.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
@@ -184,6 +279,14 @@ public final class ResourceFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTagExists")
     private final java.util.List<String> freeformTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist will be considered.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
@@ -194,6 +297,10 @@ public final class ResourceFilters {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
+    /**
+     * A flag to consider all resources within a given compartment and all sub-compartments.
+     * @return the value
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }

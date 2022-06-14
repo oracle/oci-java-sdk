@@ -21,6 +21,12 @@ public class ChangeContainerRepositoryCompartmentRequest
      */
     private String repositoryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+     * <p>
+     * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -30,6 +36,9 @@ public class ChangeContainerRepositoryCompartmentRequest
     private com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails
             changeContainerRepositoryCompartmentDetails;
 
+    /**
+     * Change container repository compartment details.
+     */
     public com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails
             getChangeContainerRepositoryCompartmentDetails() {
         return changeContainerRepositoryCompartmentDetails;
@@ -42,6 +51,12 @@ public class ChangeContainerRepositoryCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +67,11 @@ public class ChangeContainerRepositoryCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,6 +85,14 @@ public class ChangeContainerRepositoryCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -87,6 +115,12 @@ public class ChangeContainerRepositoryCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+         * <p>
+         * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+         *
+         */
         private String repositoryId = null;
 
         /**
@@ -94,6 +128,7 @@ public class ChangeContainerRepositoryCompartmentRequest
          * <p>
          * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -101,11 +136,15 @@ public class ChangeContainerRepositoryCompartmentRequest
             return this;
         }
 
+        /**
+         * Change container repository compartment details.
+         */
         private com.oracle.bmc.artifacts.model.ChangeContainerRepositoryCompartmentDetails
                 changeContainerRepositoryCompartmentDetails = null;
 
         /**
          * Change container repository compartment details.
+         * @param changeContainerRepositoryCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeContainerRepositoryCompartmentDetails(
@@ -116,6 +155,12 @@ public class ChangeContainerRepositoryCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +168,7 @@ public class ChangeContainerRepositoryCompartmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,12 +176,18 @@ public class ChangeContainerRepositoryCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -143,6 +195,14 @@ public class ChangeContainerRepositoryCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -152,6 +212,7 @@ public class ChangeContainerRepositoryCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -250,7 +311,8 @@ public class ChangeContainerRepositoryCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -262,6 +324,10 @@ public class ChangeContainerRepositoryCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

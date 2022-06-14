@@ -36,36 +36,119 @@ public final class CreateExportDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Export options for the new export. If left unspecified,
+         * defaults to:
+         * <p>
+         * [
+         *          {
+         *             "source" : "0.0.0.0/0",
+         *             "requirePrivilegedSourcePort" : false,
+         *             "access" : "READ_WRITE",
+         *             "identitySquash" : "NONE"
+         *           }
+         *        ]
+         * <p>
+         **Note:** Mount targets do not have Internet-routable IP
+         *   addresses.  Therefore they will not be reachable from the
+         *   Internet, even if an associated {@code ClientOptions} item has
+         *   a source of {@code 0.0.0.0/0}.
+         * <p>
+         **If set to the empty array then the export will not be
+         *   visible to any clients.**
+         * <p>
+         * The export's {@code exportOptions} can be changed after creation
+         *   using the {@code UpdateExport} operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
         private java.util.List<ClientOptions> exportOptions;
 
+        /**
+         * Export options for the new export. If left unspecified,
+         * defaults to:
+         * <p>
+         * [
+         *          {
+         *             "source" : "0.0.0.0/0",
+         *             "requirePrivilegedSourcePort" : false,
+         *             "access" : "READ_WRITE",
+         *             "identitySquash" : "NONE"
+         *           }
+         *        ]
+         * <p>
+         **Note:** Mount targets do not have Internet-routable IP
+         *   addresses.  Therefore they will not be reachable from the
+         *   Internet, even if an associated {@code ClientOptions} item has
+         *   a source of {@code 0.0.0.0/0}.
+         * <p>
+         **If set to the empty array then the export will not be
+         *   visible to any clients.**
+         * <p>
+         * The export's {@code exportOptions} can be changed after creation
+         *   using the {@code UpdateExport} operation.
+         *
+         * @param exportOptions the value to set
+         * @return this builder
+         **/
         public Builder exportOptions(java.util.List<ClientOptions> exportOptions) {
             this.exportOptions = exportOptions;
             this.__explicitlySet__.add("exportOptions");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
+         * @param exportSetId the value to set
+         * @return this builder
+         **/
         public Builder exportSetId(String exportSetId) {
             this.exportSetId = exportSetId;
             this.__explicitlySet__.add("exportSetId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
+         * @param fileSystemId the value to set
+         * @return this builder
+         **/
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = fileSystemId;
             this.__explicitlySet__.add("fileSystemId");
             return this;
         }
-
+        /**
+         * Path used to access the associated file system.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code /mediafiles}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Path used to access the associated file system.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code /mediafiles}
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -134,6 +217,32 @@ public final class CreateExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
     private final java.util.List<ClientOptions> exportOptions;
 
+    /**
+     * Export options for the new export. If left unspecified,
+     * defaults to:
+     * <p>
+     * [
+     *          {
+     *             "source" : "0.0.0.0/0",
+     *             "requirePrivilegedSourcePort" : false,
+     *             "access" : "READ_WRITE",
+     *             "identitySquash" : "NONE"
+     *           }
+     *        ]
+     * <p>
+     **Note:** Mount targets do not have Internet-routable IP
+     *   addresses.  Therefore they will not be reachable from the
+     *   Internet, even if an associated {@code ClientOptions} item has
+     *   a source of {@code 0.0.0.0/0}.
+     * <p>
+     **If set to the empty array then the export will not be
+     *   visible to any clients.**
+     * <p>
+     * The export's {@code exportOptions} can be changed after creation
+     *   using the {@code UpdateExport} operation.
+     *
+     * @return the value
+     **/
     public java.util.List<ClientOptions> getExportOptions() {
         return exportOptions;
     }
@@ -144,6 +253,10 @@ public final class CreateExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's export set.
+     * @return the value
+     **/
     public String getExportSetId() {
         return exportSetId;
     }
@@ -154,6 +267,10 @@ public final class CreateExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this export's file system.
+     * @return the value
+     **/
     public String getFileSystemId() {
         return fileSystemId;
     }
@@ -169,6 +286,15 @@ public final class CreateExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Path used to access the associated file system.
+     * <p>
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code /mediafiles}
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }

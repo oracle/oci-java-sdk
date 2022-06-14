@@ -30,18 +30,33 @@ public final class WorkRequestLogEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * The log message.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The date and time the work request log event happend, expressed in RFC 3339 timestamp format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the work request log event happend, expressed in RFC 3339 timestamp format.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -83,6 +98,10 @@ public final class WorkRequestLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * The log message.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -93,6 +112,10 @@ public final class WorkRequestLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the work request log event happend, expressed in RFC 3339 timestamp format.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

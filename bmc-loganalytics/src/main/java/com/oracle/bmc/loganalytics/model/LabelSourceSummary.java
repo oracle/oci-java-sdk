@@ -50,63 +50,113 @@ public final class LabelSourceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The source display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
+        /**
+         * The source display name.
+         * @param sourceDisplayName the value to set
+         * @return this builder
+         **/
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-
+        /**
+         * The source internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The source internal name.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The label operator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelOperatorName")
         private String labelOperatorName;
 
+        /**
+         * The label operator.
+         * @param labelOperatorName the value to set
+         * @return this builder
+         **/
         public Builder labelOperatorName(String labelOperatorName) {
             this.labelOperatorName = labelOperatorName;
             this.__explicitlySet__.add("labelOperatorName");
             return this;
         }
-
+        /**
+         * The label condition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelCondition")
         private String labelCondition;
 
+        /**
+         * The label condition.
+         * @param labelCondition the value to set
+         * @return this builder
+         **/
         public Builder labelCondition(String labelCondition) {
             this.labelCondition = labelCondition;
             this.__explicitlySet__.add("labelCondition");
             return this;
         }
-
+        /**
+         * The label field display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
         private String labelFieldDisplayname;
 
+        /**
+         * The label field display name.
+         * @param labelFieldDisplayname the value to set
+         * @return this builder
+         **/
         public Builder labelFieldDisplayname(String labelFieldDisplayname) {
             this.labelFieldDisplayname = labelFieldDisplayname;
             this.__explicitlySet__.add("labelFieldDisplayname");
             return this;
         }
-
+        /**
+         * The label field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelFieldName")
         private String labelFieldName;
 
+        /**
+         * The label field name.
+         * @param labelFieldName the value to set
+         * @return this builder
+         **/
         public Builder labelFieldName(String labelFieldName) {
             this.labelFieldName = labelFieldName;
             this.__explicitlySet__.add("labelFieldName");
@@ -163,6 +213,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
+    /**
+     * The source display name.
+     * @return the value
+     **/
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
@@ -173,6 +227,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The source internal name.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -183,6 +241,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -193,6 +255,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("labelOperatorName")
     private final String labelOperatorName;
 
+    /**
+     * The label operator.
+     * @return the value
+     **/
     public String getLabelOperatorName() {
         return labelOperatorName;
     }
@@ -203,6 +269,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("labelCondition")
     private final String labelCondition;
 
+    /**
+     * The label condition.
+     * @return the value
+     **/
     public String getLabelCondition() {
         return labelCondition;
     }
@@ -213,6 +283,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
     private final String labelFieldDisplayname;
 
+    /**
+     * The label field display name.
+     * @return the value
+     **/
     public String getLabelFieldDisplayname() {
         return labelFieldDisplayname;
     }
@@ -223,6 +297,10 @@ public final class LabelSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldName")
     private final String labelFieldName;
 
+    /**
+     * The label field name.
+     * @return the value
+     **/
     public String getLabelFieldName() {
         return labelFieldName;
     }

@@ -42,45 +42,81 @@ public final class StatusSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of chunks processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
         private Long chunksProcessed;
 
+        /**
+         * The number of chunks processed.
+         * @param chunksProcessed the value to set
+         * @return this builder
+         **/
         public Builder chunksProcessed(Long chunksProcessed) {
             this.chunksProcessed = chunksProcessed;
             this.__explicitlySet__.add("chunksProcessed");
             return this;
         }
-
+        /**
+         * The failure details, if any.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
         private String failureDetails;
 
+        /**
+         * The failure details, if any.
+         * @param failureDetails the value to set
+         * @return this builder
+         **/
         public Builder failureDetails(String failureDetails) {
             this.failureDetails = failureDetails;
             this.__explicitlySet__.add("failureDetails");
             return this;
         }
-
+        /**
+         * The filename.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filename")
         private String filename;
 
+        /**
+         * The filename.
+         * @param filename the value to set
+         * @return this builder
+         **/
         public Builder filename(String filename) {
             this.filename = filename;
             this.__explicitlySet__.add("filename");
             return this;
         }
-
+        /**
+         * The status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The status.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The total number of chunks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
         private Long totalChunks;
 
+        /**
+         * The total number of chunks.
+         * @param totalChunks the value to set
+         * @return this builder
+         **/
         public Builder totalChunks(Long totalChunks) {
             this.totalChunks = totalChunks;
             this.__explicitlySet__.add("totalChunks");
@@ -129,6 +165,10 @@ public final class StatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("chunksProcessed")
     private final Long chunksProcessed;
 
+    /**
+     * The number of chunks processed.
+     * @return the value
+     **/
     public Long getChunksProcessed() {
         return chunksProcessed;
     }
@@ -139,6 +179,10 @@ public final class StatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
     private final String failureDetails;
 
+    /**
+     * The failure details, if any.
+     * @return the value
+     **/
     public String getFailureDetails() {
         return failureDetails;
     }
@@ -149,6 +193,10 @@ public final class StatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("filename")
     private final String filename;
 
+    /**
+     * The filename.
+     * @return the value
+     **/
     public String getFilename() {
         return filename;
     }
@@ -159,6 +207,10 @@ public final class StatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The status.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -169,6 +221,10 @@ public final class StatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("totalChunks")
     private final Long totalChunks;
 
+    /**
+     * The total number of chunks.
+     * @return the value
+     **/
     public Long getTotalChunks() {
         return totalChunks;
     }

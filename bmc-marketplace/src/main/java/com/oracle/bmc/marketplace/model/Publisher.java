@@ -57,72 +57,129 @@ public final class Publisher {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier for the publisher.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the publisher.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A description of the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the publisher.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The year the publisher's company or organization was founded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("yearFounded")
         private Long yearFounded;
 
+        /**
+         * The year the publisher's company or organization was founded.
+         * @param yearFounded the value to set
+         * @return this builder
+         **/
         public Builder yearFounded(Long yearFounded) {
             this.yearFounded = yearFounded;
             this.__explicitlySet__.add("yearFounded");
             return this;
         }
-
+        /**
+         * The publisher's website.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("websiteUrl")
         private String websiteUrl;
 
+        /**
+         * The publisher's website.
+         * @param websiteUrl the value to set
+         * @return this builder
+         **/
         public Builder websiteUrl(String websiteUrl) {
             this.websiteUrl = websiteUrl;
             this.__explicitlySet__.add("websiteUrl");
             return this;
         }
-
+        /**
+         * The email address of the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
         private String contactEmail;
 
+        /**
+         * The email address of the publisher.
+         * @param contactEmail the value to set
+         * @return this builder
+         **/
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = contactEmail;
             this.__explicitlySet__.add("contactEmail");
             return this;
         }
-
+        /**
+         * The phone number of the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
         private String contactPhone;
 
+        /**
+         * The phone number of the publisher.
+         * @param contactPhone the value to set
+         * @return this builder
+         **/
         public Builder contactPhone(String contactPhone) {
             this.contactPhone = contactPhone;
             this.__explicitlySet__.add("contactPhone");
             return this;
         }
-
+        /**
+         * The address of the publisher's headquarters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hqAddress")
         private String hqAddress;
 
+        /**
+         * The address of the publisher's headquarters.
+         * @param hqAddress the value to set
+         * @return this builder
+         **/
         public Builder hqAddress(String hqAddress) {
             this.hqAddress = hqAddress;
             this.__explicitlySet__.add("hqAddress");
@@ -137,10 +194,17 @@ public final class Publisher {
             this.__explicitlySet__.add("logo");
             return this;
         }
-
+        /**
+         * Reference links.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("links")
         private java.util.List<Link> links;
 
+        /**
+         * Reference links.
+         * @param links the value to set
+         * @return this builder
+         **/
         public Builder links(java.util.List<Link> links) {
             this.links = links;
             this.__explicitlySet__.add("links");
@@ -203,6 +267,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier for the publisher.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -213,6 +281,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the publisher.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -223,6 +295,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the publisher.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -233,6 +309,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("yearFounded")
     private final Long yearFounded;
 
+    /**
+     * The year the publisher's company or organization was founded.
+     * @return the value
+     **/
     public Long getYearFounded() {
         return yearFounded;
     }
@@ -243,6 +323,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("websiteUrl")
     private final String websiteUrl;
 
+    /**
+     * The publisher's website.
+     * @return the value
+     **/
     public String getWebsiteUrl() {
         return websiteUrl;
     }
@@ -253,6 +337,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
     private final String contactEmail;
 
+    /**
+     * The email address of the publisher.
+     * @return the value
+     **/
     public String getContactEmail() {
         return contactEmail;
     }
@@ -263,6 +351,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
     private final String contactPhone;
 
+    /**
+     * The phone number of the publisher.
+     * @return the value
+     **/
     public String getContactPhone() {
         return contactPhone;
     }
@@ -273,6 +365,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("hqAddress")
     private final String hqAddress;
 
+    /**
+     * The address of the publisher's headquarters.
+     * @return the value
+     **/
     public String getHqAddress() {
         return hqAddress;
     }
@@ -290,6 +386,10 @@ public final class Publisher {
     @com.fasterxml.jackson.annotation.JsonProperty("links")
     private final java.util.List<Link> links;
 
+    /**
+     * Reference links.
+     * @return the value
+     **/
     public java.util.List<Link> getLinks() {
         return links;
     }

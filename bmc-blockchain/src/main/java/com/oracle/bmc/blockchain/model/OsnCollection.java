@@ -27,9 +27,17 @@ public final class OsnCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of OsnSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<OsnSummary> items;
 
+        /**
+         * Collection of OsnSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<OsnSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class OsnCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<OsnSummary> items;
 
+    /**
+     * Collection of OsnSummary
+     * @return the value
+     **/
     public java.util.List<OsnSummary> getItems() {
         return items;
     }

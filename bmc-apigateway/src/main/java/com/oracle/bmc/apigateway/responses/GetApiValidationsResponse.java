@@ -14,6 +14,11 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -26,6 +31,13 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +47,10 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.apigateway.model.ApiValidations apiValidations;
 
+    /**
+     * The returned ApiValidations instance.
+     * @return the value
+     */
     public com.oracle.bmc.apigateway.model.ApiValidations getApiValidations() {
         return apiValidations;
     }
@@ -64,22 +80,54 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ApiValidations instance.
+         */
         private com.oracle.bmc.apigateway.model.ApiValidations apiValidations;
 
+        /**
+         * The returned ApiValidations instance.
+         * @param apiValidations the value to set
+         * @return this builder
+         */
         public Builder apiValidations(
                 com.oracle.bmc.apigateway.model.ApiValidations apiValidations) {
             this.apiValidations = apiValidations;
@@ -99,12 +147,20 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetApiValidationsResponse build() {
             return new GetApiValidationsResponse(
                     __httpStatusCode__, etag, opcRequestId, apiValidations);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,12 @@ public class BatchDetectLanguageTextClassificationResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +32,10 @@ public class BatchDetectLanguageTextClassificationResponse
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
             batchDetectLanguageTextClassificationResult;
 
+    /**
+     * The returned BatchDetectLanguageTextClassificationResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
             getBatchDetectLanguageTextClassificationResult() {
         return batchDetectLanguageTextClassificationResult;
@@ -55,16 +65,36 @@ public class BatchDetectLanguageTextClassificationResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned BatchDetectLanguageTextClassificationResult instance.
+         */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
                 batchDetectLanguageTextClassificationResult;
 
+        /**
+         * The returned BatchDetectLanguageTextClassificationResult instance.
+         * @param batchDetectLanguageTextClassificationResult the value to set
+         * @return this builder
+         */
         public Builder batchDetectLanguageTextClassificationResult(
                 com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
                         batchDetectLanguageTextClassificationResult) {
@@ -86,12 +116,20 @@ public class BatchDetectLanguageTextClassificationResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public BatchDetectLanguageTextClassificationResponse build() {
             return new BatchDetectLanguageTextClassificationResponse(
                     __httpStatusCode__, opcRequestId, batchDetectLanguageTextClassificationResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

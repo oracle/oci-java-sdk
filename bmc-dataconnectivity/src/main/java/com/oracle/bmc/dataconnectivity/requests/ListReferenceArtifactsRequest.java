@@ -17,6 +17,9 @@ public class ListReferenceArtifactsRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -25,6 +28,9 @@ public class ListReferenceArtifactsRequest
      */
     private String dcmsArtifactId;
 
+    /**
+     * The ID of a dcms artifact (DataAsset or Endpoint).
+     */
     public String getDcmsArtifactId() {
         return dcmsArtifactId;
     }
@@ -33,6 +39,9 @@ public class ListReferenceArtifactsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -41,6 +50,9 @@ public class ListReferenceArtifactsRequest
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,6 +61,9 @@ public class ListReferenceArtifactsRequest
      */
     private java.util.List<String> fields;
 
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -57,6 +72,9 @@ public class ListReferenceArtifactsRequest
      */
     private String type;
 
+    /**
+     * Type of the object to filter the results with.
+     */
     public String getType() {
         return type;
     }
@@ -102,6 +120,9 @@ public class ListReferenceArtifactsRequest
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -146,6 +167,9 @@ public class ListReferenceArtifactsRequest
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -154,6 +178,9 @@ public class ListReferenceArtifactsRequest
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -165,6 +192,12 @@ public class ListReferenceArtifactsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -173,6 +206,9 @@ public class ListReferenceArtifactsRequest
      */
     private java.util.List<String> excludeTypes;
 
+    /**
+     * Types which wont be listed while listing dataAsset/Connection
+     */
     public java.util.List<String> getExcludeTypes() {
         return excludeTypes;
     }
@@ -218,6 +254,9 @@ public class ListReferenceArtifactsRequest
         }
     };
 
+    /**
+     * If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
+     */
     public FavoritesQueryParam getFavoritesQueryParam() {
         return favoritesQueryParam;
     }
@@ -226,6 +265,9 @@ public class ListReferenceArtifactsRequest
      */
     private String serviceArtifactId;
 
+    /**
+     * Unique key of the service.
+     */
     public String getServiceArtifactId() {
         return serviceArtifactId;
     }
@@ -237,10 +279,14 @@ public class ListReferenceArtifactsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -248,10 +294,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * The ID of a dcms artifact (DataAsset or Endpoint).
+         */
         private String dcmsArtifactId = null;
 
         /**
          * The ID of a dcms artifact (DataAsset or Endpoint).
+         * @param dcmsArtifactId the value to set
          * @return this builder instance
          */
         public Builder dcmsArtifactId(String dcmsArtifactId) {
@@ -259,10 +309,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -270,10 +324,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -281,10 +339,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<String> fields) {
@@ -294,16 +356,21 @@ public class ListReferenceArtifactsRequest
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(String singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Type of the object to filter the results with.
+         */
         private String type = null;
 
         /**
          * Type of the object to filter the results with.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(String type) {
@@ -311,10 +378,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -322,10 +393,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -333,10 +408,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -344,6 +423,12 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -351,6 +436,7 @@ public class ListReferenceArtifactsRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -358,10 +444,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Types which wont be listed while listing dataAsset/Connection
+         */
         private java.util.List<String> excludeTypes = null;
 
         /**
          * Types which wont be listed while listing dataAsset/Connection
+         * @param excludeTypes the value to set
          * @return this builder instance
          */
         public Builder excludeTypes(java.util.List<String> excludeTypes) {
@@ -371,16 +461,21 @@ public class ListReferenceArtifactsRequest
 
         /**
          * Singular setter. Types which wont be listed while listing dataAsset/Connection
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder excludeTypes(String singularValue) {
             return this.excludeTypes(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
+         */
         private FavoritesQueryParam favoritesQueryParam = null;
 
         /**
          * If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
+         * @param favoritesQueryParam the value to set
          * @return this builder instance
          */
         public Builder favoritesQueryParam(FavoritesQueryParam favoritesQueryParam) {
@@ -388,10 +483,14 @@ public class ListReferenceArtifactsRequest
             return this;
         }
 
+        /**
+         * Unique key of the service.
+         */
         private String serviceArtifactId = null;
 
         /**
          * Unique key of the service.
+         * @param serviceArtifactId the value to set
          * @return this builder instance
          */
         public Builder serviceArtifactId(String serviceArtifactId) {
@@ -491,7 +590,8 @@ public class ListReferenceArtifactsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -510,6 +610,10 @@ public class ListReferenceArtifactsRequest
                 .serviceArtifactId(serviceArtifactId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

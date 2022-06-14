@@ -16,6 +16,13 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -25,6 +32,10 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Integer opcTotalItems;
 
+    /**
+     * The total number of items that match the query.
+     * @return the value
+     */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
@@ -36,6 +47,12 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +65,13 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -57,6 +81,10 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
+    /**
+     * The returned RecordCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.dns.model.RecordCollection getRecordCollection() {
         return recordCollection;
     }
@@ -92,36 +120,92 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The total number of items that match the query.
+         */
         private Integer opcTotalItems;
 
+        /**
+         * The total number of items that match the query.
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
         public Builder opcTotalItems(Integer opcTotalItems) {
             this.opcTotalItems = opcTotalItems;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String eTag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The returned RecordCollection instance.
+         */
         private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
+        /**
+         * The returned RecordCollection instance.
+         * @param recordCollection the value to set
+         * @return this builder
+         */
         public Builder recordCollection(
                 com.oracle.bmc.dns.model.RecordCollection recordCollection) {
             this.recordCollection = recordCollection;
@@ -143,6 +227,10 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public PatchRRSetResponse build() {
             return new PatchRRSetResponse(
                     __httpStatusCode__,
@@ -154,6 +242,10 @@ public class PatchRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

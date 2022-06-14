@@ -143,28 +143,49 @@ public final class DataAssetFromJdbc extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-
+        /**
+         * The generic JDBC host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The generic JDBC host name.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The generic JDBC port number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
+        /**
+         * The generic JDBC port number.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The data asset type for the generic JDBC data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetType")
         private String dataAssetType;
 
+        /**
+         * The data asset type for the generic JDBC data asset.
+         * @param dataAssetType the value to set
+         * @return this builder
+         **/
         public Builder dataAssetType(String dataAssetType) {
             this.dataAssetType = dataAssetType;
             this.__explicitlySet__.add("dataAssetType");
@@ -289,6 +310,10 @@ public final class DataAssetFromJdbc extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The generic JDBC host name.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -299,6 +324,10 @@ public final class DataAssetFromJdbc extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
+    /**
+     * The generic JDBC port number.
+     * @return the value
+     **/
     public String getPort() {
         return port;
     }
@@ -309,6 +338,10 @@ public final class DataAssetFromJdbc extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetType")
     private final String dataAssetType;
 
+    /**
+     * The data asset type for the generic JDBC data asset.
+     * @return the value
+     **/
     public String getDataAssetType() {
         return dataAssetType;
     }

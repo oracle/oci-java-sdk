@@ -27,9 +27,17 @@ public final class ApiValidations {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * API validation results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validations")
         private java.util.List<ApiValidationDetails> validations;
 
+        /**
+         * API validation results.
+         * @param validations the value to set
+         * @return this builder
+         **/
         public Builder validations(java.util.List<ApiValidationDetails> validations) {
             this.validations = validations;
             this.__explicitlySet__.add("validations");
@@ -71,6 +79,10 @@ public final class ApiValidations {
     @com.fasterxml.jackson.annotation.JsonProperty("validations")
     private final java.util.List<ApiValidationDetails> validations;
 
+    /**
+     * API validation results.
+     * @return the value
+     **/
     public java.util.List<ApiValidationDetails> getValidations() {
         return validations;
     }

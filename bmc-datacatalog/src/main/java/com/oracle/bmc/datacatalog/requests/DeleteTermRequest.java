@@ -16,6 +16,9 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String glossaryKey;
 
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -32,6 +38,9 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String termKey;
 
+    /**
+     * Unique glossary term key.
+     */
     public String getTermKey() {
         return termKey;
     }
@@ -45,6 +54,14 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,6 +70,9 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,10 +84,14 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -75,10 +99,14 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         * @param glossaryKey the value to set
          * @return this builder instance
          */
         public Builder glossaryKey(String glossaryKey) {
@@ -86,10 +114,14 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique glossary term key.
+         */
         private String termKey = null;
 
         /**
          * Unique glossary term key.
+         * @param termKey the value to set
          * @return this builder instance
          */
         public Builder termKey(String termKey) {
@@ -97,6 +129,14 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -106,6 +146,7 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,10 +154,14 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -200,7 +245,8 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -211,6 +257,10 @@ public class DeleteTermRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

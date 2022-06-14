@@ -17,6 +17,9 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
      */
     private String ipscId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     */
     public String getIpscId() {
         return ipscId;
     }
@@ -25,6 +28,9 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
      */
     private String tunnelId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+     */
     public String getTunnelId() {
         return tunnelId;
     }
@@ -38,6 +44,14 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -49,6 +63,12 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -60,10 +80,14 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         */
         private String ipscId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         * @param ipscId the value to set
          * @return this builder instance
          */
         public Builder ipscId(String ipscId) {
@@ -71,10 +95,14 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         */
         private String tunnelId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         * @param tunnelId the value to set
          * @return this builder instance
          */
         public Builder tunnelId(String tunnelId) {
@@ -82,6 +110,14 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -91,6 +127,7 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -98,6 +135,12 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -105,6 +148,7 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -189,12 +233,17 @@ public class ListIPSecConnectionTunnelSecurityAssociationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().ipscId(ipscId).tunnelId(tunnelId).limit(limit).page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

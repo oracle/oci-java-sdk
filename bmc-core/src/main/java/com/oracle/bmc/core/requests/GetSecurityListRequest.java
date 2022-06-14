@@ -16,6 +16,9 @@ public class GetSecurityListRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String securityListId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the security list.
+     */
     public String getSecurityListId() {
         return securityListId;
     }
@@ -27,10 +30,14 @@ public class GetSecurityListRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the security list.
+         */
         private String securityListId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the security list.
+         * @param securityListId the value to set
          * @return this builder instance
          */
         public Builder securityListId(String securityListId) {
@@ -106,12 +113,17 @@ public class GetSecurityListRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().securityListId(securityListId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

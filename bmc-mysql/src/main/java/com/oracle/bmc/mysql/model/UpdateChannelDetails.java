@@ -50,6 +50,7 @@ public final class UpdateChannelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private UpdateChannelSourceDetails source;
 
@@ -67,46 +68,97 @@ public final class UpdateChannelDetails {
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * The user-friendly name for the Channel. It does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the Channel. It does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Whether the Channel should be enabled or disabled. Enabling a previously
+         * disabled Channel will cause the Channel to be started. Conversely, disabling
+         * a previously enabled Channel will stop the Channel. Both operations are
+         * executed asynchronously.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Whether the Channel should be enabled or disabled. Enabling a previously
+         * disabled Channel will cause the Channel to be started. Conversely, disabling
+         * a previously enabled Channel will stop the Channel. Both operations are
+         * executed asynchronously.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * User provided description of the Channel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * User provided description of the Channel.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -178,6 +230,10 @@ public final class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the Channel. It does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -192,6 +248,14 @@ public final class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether the Channel should be enabled or disabled. Enabling a previously
+     * disabled Channel will cause the Channel to be started. Conversely, disabling
+     * a previously enabled Channel will stop the Channel. Both operations are
+     * executed asynchronously.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -202,6 +266,10 @@ public final class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * User provided description of the Channel.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -214,6 +282,12 @@ public final class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -226,6 +300,12 @@ public final class UpdateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -30,36 +30,65 @@ public final class InstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the Oracle RAC database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Integer id;
 
+        /**
+         * The ID of the Oracle RAC database instance.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(Integer id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the Oracle RAC database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Oracle RAC database instance.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the host of the Oracle RAC database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * The name of the host of the Oracle RAC database instance.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * The status of the Oracle RAC database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the Oracle RAC database instance.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -102,6 +131,10 @@ public final class InstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Integer id;
 
+    /**
+     * The ID of the Oracle RAC database instance.
+     * @return the value
+     **/
     public Integer getId() {
         return id;
     }
@@ -112,6 +145,10 @@ public final class InstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Oracle RAC database instance.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -122,6 +159,10 @@ public final class InstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The name of the host of the Oracle RAC database instance.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -180,6 +221,10 @@ public final class InstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the Oracle RAC database instance.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }

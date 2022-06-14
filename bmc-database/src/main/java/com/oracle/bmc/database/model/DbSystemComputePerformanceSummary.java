@@ -32,18 +32,33 @@ public final class DbSystemComputePerformanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape of the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * The shape of the DB system.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * List of Compute performance details for the specified DB system shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computePerformanceList")
         private java.util.List<ComputePerformanceSummary> computePerformanceList;
 
+        /**
+         * List of Compute performance details for the specified DB system shape.
+         * @param computePerformanceList the value to set
+         * @return this builder
+         **/
         public Builder computePerformanceList(
                 java.util.List<ComputePerformanceSummary> computePerformanceList) {
             this.computePerformanceList = computePerformanceList;
@@ -88,6 +103,10 @@ public final class DbSystemComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * The shape of the DB system.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -98,6 +117,10 @@ public final class DbSystemComputePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("computePerformanceList")
     private final java.util.List<ComputePerformanceSummary> computePerformanceList;
 
+    /**
+     * List of Compute performance details for the specified DB system shape.
+     * @return the value
+     **/
     public java.util.List<ComputePerformanceSummary> getComputePerformanceList() {
         return computePerformanceList;
     }

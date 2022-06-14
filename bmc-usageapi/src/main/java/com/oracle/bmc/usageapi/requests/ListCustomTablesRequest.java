@@ -16,6 +16,9 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The compartment ID in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String savedReportId;
 
+    /**
+     * The saved report ID in which to list resources.
+     */
     public String getSavedReportId() {
         return savedReportId;
     }
@@ -34,6 +40,11 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -42,6 +53,9 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximumimum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -52,6 +66,11 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results.
+     * This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -97,6 +116,10 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field to sort by. If not specified, the default is displayName.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -141,6 +164,9 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -152,10 +178,14 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment ID in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The compartment ID in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -163,10 +193,14 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The saved report ID in which to list resources.
+         */
         private String savedReportId = null;
 
         /**
          * The saved report ID in which to list resources.
+         * @param savedReportId the value to set
          * @return this builder instance
          */
         public Builder savedReportId(String savedReportId) {
@@ -174,12 +208,18 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -187,10 +227,14 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximumimum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximumimum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -198,12 +242,18 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results.
+         * This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results.
          * This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -211,11 +261,16 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The field to sort by. If not specified, the default is displayName.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. If not specified, the default is displayName.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -223,10 +278,14 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -314,7 +373,8 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -327,6 +387,10 @@ public class ListCustomTablesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

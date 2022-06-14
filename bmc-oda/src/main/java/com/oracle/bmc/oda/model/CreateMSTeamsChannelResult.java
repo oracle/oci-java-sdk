@@ -118,28 +118,53 @@ public final class CreateMSTeamsChannelResult extends CreateChannelResult {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The Microsoft App ID that you obtained when you created your bot registration in Azure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("msaAppId")
         private String msaAppId;
 
+        /**
+         * The Microsoft App ID that you obtained when you created your bot registration in Azure.
+         * @param msaAppId the value to set
+         * @return this builder
+         **/
         public Builder msaAppId(String msaAppId) {
             this.msaAppId = msaAppId;
             this.__explicitlySet__.add("msaAppId");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
             return this;
         }
-
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
         private String webhookUrl;
 
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         * @param webhookUrl the value to set
+         * @return this builder
+         **/
         public Builder webhookUrl(String webhookUrl) {
             this.webhookUrl = webhookUrl;
             this.__explicitlySet__.add("webhookUrl");
@@ -240,6 +265,10 @@ public final class CreateMSTeamsChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("msaAppId")
     private final String msaAppId;
 
+    /**
+     * The Microsoft App ID that you obtained when you created your bot registration in Azure.
+     * @return the value
+     **/
     public String getMsaAppId() {
         return msaAppId;
     }
@@ -250,6 +279,10 @@ public final class CreateMSTeamsChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }
@@ -262,6 +295,12 @@ public final class CreateMSTeamsChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
     private final String webhookUrl;
 
+    /**
+     * The URL to use to send messages to this channel.
+     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+     *
+     * @return the value
+     **/
     public String getWebhookUrl() {
         return webhookUrl;
     }

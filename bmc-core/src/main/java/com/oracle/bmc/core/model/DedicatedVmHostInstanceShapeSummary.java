@@ -32,18 +32,37 @@ public final class DedicatedVmHostInstanceShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape's availability domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The shape's availability domain.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
         private String instanceShapeName;
 
+        /**
+         * The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
+         *
+         * @param instanceShapeName the value to set
+         * @return this builder
+         **/
         public Builder instanceShapeName(String instanceShapeName) {
             this.instanceShapeName = instanceShapeName;
             this.__explicitlySet__.add("instanceShapeName");
@@ -89,6 +108,11 @@ public final class DedicatedVmHostInstanceShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The shape's availability domain.
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -100,6 +124,11 @@ public final class DedicatedVmHostInstanceShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
     private final String instanceShapeName;
 
+    /**
+     * The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
+     *
+     * @return the value
+     **/
     public String getInstanceShapeName() {
         return instanceShapeName;
     }

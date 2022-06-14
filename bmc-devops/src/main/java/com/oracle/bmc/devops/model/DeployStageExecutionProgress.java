@@ -132,6 +132,10 @@ public class DeployStageExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageDisplayName")
     private final String deployStageDisplayName;
 
+    /**
+     * Stage display name. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDeployStageDisplayName() {
         return deployStageDisplayName;
     }
@@ -142,6 +146,10 @@ public class DeployStageExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
+    /**
+     * The OCID of the stage.
+     * @return the value
+     **/
     public String getDeployStageId() {
         return deployStageId;
     }
@@ -152,6 +160,10 @@ public class DeployStageExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -162,6 +174,10 @@ public class DeployStageExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * Time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -226,6 +242,10 @@ public class DeployStageExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current state of the stage.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -244,6 +264,10 @@ public class DeployStageExecutionProgress {
     private final java.util.List<DeployStageExecutionProgressDetails>
             deployStageExecutionProgressDetails;
 
+    /**
+     * Details about stage execution for all the target environments.
+     * @return the value
+     **/
     public java.util.List<DeployStageExecutionProgressDetails>
             getDeployStageExecutionProgressDetails() {
         return deployStageExecutionProgressDetails;

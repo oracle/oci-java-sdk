@@ -18,6 +18,9 @@ public class CreateEntityShapeRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class CreateEntityShapeRequest
      */
     private String connectionKey;
 
+    /**
+     * The connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -34,6 +40,9 @@ public class CreateEntityShapeRequest
      */
     private String schemaResourceName;
 
+    /**
+     * The schema resource name used for retrieving schemas.
+     */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
@@ -42,6 +51,9 @@ public class CreateEntityShapeRequest
      */
     private com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails createEntityShapeDetails;
 
+    /**
+     * The details needed to create the data entity shape.
+     */
     public com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails
             getCreateEntityShapeDetails() {
         return createEntityShapeDetails;
@@ -54,6 +66,12 @@ public class CreateEntityShapeRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +81,10 @@ public class CreateEntityShapeRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -74,6 +96,12 @@ public class CreateEntityShapeRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -96,10 +124,14 @@ public class CreateEntityShapeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -107,10 +139,14 @@ public class CreateEntityShapeRequest
             return this;
         }
 
+        /**
+         * The connection key.
+         */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -118,10 +154,14 @@ public class CreateEntityShapeRequest
             return this;
         }
 
+        /**
+         * The schema resource name used for retrieving schemas.
+         */
         private String schemaResourceName = null;
 
         /**
          * The schema resource name used for retrieving schemas.
+         * @param schemaResourceName the value to set
          * @return this builder instance
          */
         public Builder schemaResourceName(String schemaResourceName) {
@@ -129,11 +169,15 @@ public class CreateEntityShapeRequest
             return this;
         }
 
+        /**
+         * The details needed to create the data entity shape.
+         */
         private com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails
                 createEntityShapeDetails = null;
 
         /**
          * The details needed to create the data entity shape.
+         * @param createEntityShapeDetails the value to set
          * @return this builder instance
          */
         public Builder createEntityShapeDetails(
@@ -143,6 +187,12 @@ public class CreateEntityShapeRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -150,6 +200,7 @@ public class CreateEntityShapeRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -157,11 +208,16 @@ public class CreateEntityShapeRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -169,6 +225,12 @@ public class CreateEntityShapeRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -176,6 +238,7 @@ public class CreateEntityShapeRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -274,7 +337,8 @@ public class CreateEntityShapeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -287,6 +351,10 @@ public class CreateEntityShapeRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

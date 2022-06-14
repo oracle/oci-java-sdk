@@ -18,6 +18,9 @@ public class CreateQueryRequest
      */
     private com.oracle.bmc.usageapi.model.CreateQueryDetails createQueryDetails;
 
+    /**
+     * New query details. Up to ten saved queries.
+     */
     public com.oracle.bmc.usageapi.model.CreateQueryDetails getCreateQueryDetails() {
         return createQueryDetails;
     }
@@ -28,6 +31,11 @@ public class CreateQueryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +49,14 @@ public class CreateQueryRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,10 +78,14 @@ public class CreateQueryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * New query details. Up to ten saved queries.
+         */
         private com.oracle.bmc.usageapi.model.CreateQueryDetails createQueryDetails = null;
 
         /**
          * New query details. Up to ten saved queries.
+         * @param createQueryDetails the value to set
          * @return this builder instance
          */
         public Builder createQueryDetails(
@@ -74,12 +94,18 @@ public class CreateQueryRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -87,6 +113,14 @@ public class CreateQueryRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -96,6 +130,7 @@ public class CreateQueryRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -186,7 +221,8 @@ public class CreateQueryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -195,6 +231,10 @@ public class CreateQueryRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

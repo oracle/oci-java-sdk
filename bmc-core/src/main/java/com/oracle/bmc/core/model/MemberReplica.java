@@ -27,9 +27,17 @@ public final class MemberReplica {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The volume replica ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeReplicaId")
         private String volumeReplicaId;
 
+        /**
+         * The volume replica ID.
+         * @param volumeReplicaId the value to set
+         * @return this builder
+         **/
         public Builder volumeReplicaId(String volumeReplicaId) {
             this.volumeReplicaId = volumeReplicaId;
             this.__explicitlySet__.add("volumeReplicaId");
@@ -71,6 +79,10 @@ public final class MemberReplica {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeReplicaId")
     private final String volumeReplicaId;
 
+    /**
+     * The volume replica ID.
+     * @return the value
+     **/
     public String getVolumeReplicaId() {
         return volumeReplicaId;
     }

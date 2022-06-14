@@ -35,36 +35,81 @@ public final class Quota {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of requests that can be made per time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * The number of requests that can be made per time period.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The unit of time over which quotas are calculated.
+         * Example: {@code MINUTE} or {@code MONTH}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * The unit of time over which quotas are calculated.
+         * Example: {@code MINUTE} or {@code MONTH}
+         *
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-
+        /**
+         * The policy that controls when quotas will reset.
+         * Example: {@code CALENDAR}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resetPolicy")
         private ResetPolicy resetPolicy;
 
+        /**
+         * The policy that controls when quotas will reset.
+         * Example: {@code CALENDAR}
+         *
+         * @param resetPolicy the value to set
+         * @return this builder
+         **/
         public Builder resetPolicy(ResetPolicy resetPolicy) {
             this.resetPolicy = resetPolicy;
             this.__explicitlySet__.add("resetPolicy");
             return this;
         }
-
+        /**
+         * What the usage plan will do when a quota is breached:
+         * {@code REJECT} will allow no further requests
+         * {@code ALLOW} will continue to allow further requests
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationOnBreach")
         private OperationOnBreach operationOnBreach;
 
+        /**
+         * What the usage plan will do when a quota is breached:
+         * {@code REJECT} will allow no further requests
+         * {@code ALLOW} will continue to allow further requests
+         *
+         * @param operationOnBreach the value to set
+         * @return this builder
+         **/
         public Builder operationOnBreach(OperationOnBreach operationOnBreach) {
             this.operationOnBreach = operationOnBreach;
             this.__explicitlySet__.add("operationOnBreach");
@@ -111,6 +156,11 @@ public final class Quota {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * The number of requests that can be made per time period.
+     *
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }
@@ -174,6 +224,12 @@ public final class Quota {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * The unit of time over which quotas are calculated.
+     * Example: {@code MINUTE} or {@code MONTH}
+     *
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }
@@ -235,6 +291,12 @@ public final class Quota {
     @com.fasterxml.jackson.annotation.JsonProperty("resetPolicy")
     private final ResetPolicy resetPolicy;
 
+    /**
+     * The policy that controls when quotas will reset.
+     * Example: {@code CALENDAR}
+     *
+     * @return the value
+     **/
     public ResetPolicy getResetPolicy() {
         return resetPolicy;
     }
@@ -299,6 +361,13 @@ public final class Quota {
     @com.fasterxml.jackson.annotation.JsonProperty("operationOnBreach")
     private final OperationOnBreach operationOnBreach;
 
+    /**
+     * What the usage plan will do when a quota is breached:
+     * {@code REJECT} will allow no further requests
+     * {@code ALLOW} will continue to allow further requests
+     *
+     * @return the value
+     **/
     public OperationOnBreach getOperationOnBreach() {
         return operationOnBreach;
     }

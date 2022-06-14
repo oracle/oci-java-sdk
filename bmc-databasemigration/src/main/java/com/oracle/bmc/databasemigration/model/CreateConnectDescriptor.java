@@ -35,36 +35,81 @@ public final class CreateConnectDescriptor {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Host or IP address of the connect descriptor. Required if no connectString was specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Host or IP address of the connect descriptor. Required if no connectString was specified.
+         *
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Port of the connect descriptor. Required if no connectString was specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Port of the connect descriptor. Required if no connectString was specified.
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Database service name. Required if no connectString was specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseServiceName")
         private String databaseServiceName;
 
+        /**
+         * Database service name. Required if no connectString was specified.
+         *
+         * @param databaseServiceName the value to set
+         * @return this builder
+         **/
         public Builder databaseServiceName(String databaseServiceName) {
             this.databaseServiceName = databaseServiceName;
             this.__explicitlySet__.add("databaseServiceName");
             return this;
         }
-
+        /**
+         * Connect String. Required if no host, port nor databaseServiceName were specified.
+         * If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address.
+         * Supported formats:
+         * Easy connect: <host>:<port>/<db_service_name>
+         * Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectString")
         private String connectString;
 
+        /**
+         * Connect String. Required if no host, port nor databaseServiceName were specified.
+         * If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address.
+         * Supported formats:
+         * Easy connect: <host>:<port>/<db_service_name>
+         * Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
+         *
+         * @param connectString the value to set
+         * @return this builder
+         **/
         public Builder connectString(String connectString) {
             this.connectString = connectString;
             this.__explicitlySet__.add("connectString");
@@ -112,6 +157,11 @@ public final class CreateConnectDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Host or IP address of the connect descriptor. Required if no connectString was specified.
+     *
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -123,6 +173,11 @@ public final class CreateConnectDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Port of the connect descriptor. Required if no connectString was specified.
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -134,6 +189,11 @@ public final class CreateConnectDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseServiceName")
     private final String databaseServiceName;
 
+    /**
+     * Database service name. Required if no connectString was specified.
+     *
+     * @return the value
+     **/
     public String getDatabaseServiceName() {
         return databaseServiceName;
     }
@@ -149,6 +209,15 @@ public final class CreateConnectDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("connectString")
     private final String connectString;
 
+    /**
+     * Connect String. Required if no host, port nor databaseServiceName were specified.
+     * If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address.
+     * Supported formats:
+     * Easy connect: <host>:<port>/<db_service_name>
+     * Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
+     *
+     * @return the value
+     **/
     public String getConnectString() {
         return connectString;
     }

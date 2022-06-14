@@ -36,27 +36,53 @@ public final class CustomEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A custom hostname to be used for the integration instance URL, in FQDN format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * A custom hostname to be used for the integration instance URL, in FQDN format.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
         private String certificateSecretId;
 
+        /**
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         *
+         * @param certificateSecretId the value to set
+         * @return this builder
+         **/
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             this.__explicitlySet__.add("certificateSecretId");
             return this;
         }
-
+        /**
+         * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
         private Integer certificateSecretVersion;
 
+        /**
+         * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+         *
+         * @param certificateSecretVersion the value to set
+         * @return this builder
+         **/
         public Builder certificateSecretVersion(Integer certificateSecretVersion) {
             this.certificateSecretVersion = certificateSecretVersion;
             this.__explicitlySet__.add("certificateSecretVersion");
@@ -103,6 +129,10 @@ public final class CustomEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * A custom hostname to be used for the integration instance URL, in FQDN format.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -114,6 +144,11 @@ public final class CustomEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
     private final String certificateSecretId;
 
+    /**
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+     *
+     * @return the value
+     **/
     public String getCertificateSecretId() {
         return certificateSecretId;
     }
@@ -125,6 +160,11 @@ public final class CustomEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
     private final Integer certificateSecretVersion;
 
+    /**
+     * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+     *
+     * @return the value
+     **/
     public Integer getCertificateSecretVersion() {
         return certificateSecretVersion;
     }

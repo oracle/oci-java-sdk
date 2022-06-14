@@ -100,6 +100,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the announcement.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -110,6 +114,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("referenceTicketNumber")
     private final String referenceTicketNumber;
 
+    /**
+     * The reference Jira ticket number.
+     * @return the value
+     **/
     public String getReferenceTicketNumber() {
         return referenceTicketNumber;
     }
@@ -122,6 +130,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * A summary of the issue. A summary might appear in the console banner view of the announcement or in
+     * an email subject line. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }
@@ -134,6 +148,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneTitle")
     private final String timeOneTitle;
 
+    /**
+     * The label associated with an initial time value.
+     * Example: {@code Time Started}
+     *
+     * @return the value
+     **/
     public String getTimeOneTitle() {
         return timeOneTitle;
     }
@@ -187,6 +207,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneType")
     private final TimeOneType timeOneType;
 
+    /**
+     * The type of a time associated with an initial time value. If the {@code timeOneTitle} attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code timeOneType} in English.
+     * Example: {@code START_TIME}
+     *
+     * @return the value
+     **/
     public TimeOneType getTimeOneType() {
         return timeOneType;
     }
@@ -199,6 +225,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneValue")
     private final java.util.Date timeOneValue;
 
+    /**
+     * The actual value of the first time value for the event. Typically, this denotes the time an event started, but the meaning
+     * can vary, depending on the announcement type. The {@code timeOneType} attribute describes the meaning.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOneValue() {
         return timeOneValue;
     }
@@ -211,6 +243,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoTitle")
     private final String timeTwoTitle;
 
+    /**
+     * The label associated with a second time value.
+     * Example: {@code Time Ended}
+     *
+     * @return the value
+     **/
     public String getTimeTwoTitle() {
         return timeTwoTitle;
     }
@@ -260,6 +298,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoType")
     private final TimeTwoType timeTwoType;
 
+    /**
+     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType} in English.
+     * Example: {@code END_TIME}
+     *
+     * @return the value
+     **/
     public TimeTwoType getTimeTwoType() {
         return timeTwoType;
     }
@@ -272,6 +316,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoValue")
     private final java.util.Date timeTwoValue;
 
+    /**
+     * The actual value of the second time value. Typically, this denotes the time an event ended, but the meaning
+     * can vary, depending on the announcement type. The {@code timeTwoType} attribute describes the meaning.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeTwoValue() {
         return timeTwoValue;
     }
@@ -282,6 +332,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
+    /**
+     * Impacted Oracle Cloud Infrastructure services.
+     * @return the value
+     **/
     public java.util.List<String> getServices() {
         return services;
     }
@@ -292,6 +346,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("affectedRegions")
     private final java.util.List<String> affectedRegions;
 
+    /**
+     * Impacted regions.
+     * @return the value
+     **/
     public java.util.List<String> getAffectedRegions() {
         return affectedRegions;
     }
@@ -349,6 +407,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("announcementType")
     private final AnnouncementType announcementType;
 
+    /**
+     * The type of announcement. An announcement's type signals its severity.
+     * @return the value
+     **/
     public AnnouncementType getAnnouncementType() {
         return announcementType;
     }
@@ -394,6 +456,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the announcement.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -404,6 +470,10 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("isBanner")
     private final Boolean isBanner;
 
+    /**
+     * Whether the announcement is displayed as a banner in the console.
+     * @return the value
+     **/
     public Boolean getIsBanner() {
         return isBanner;
     }
@@ -416,6 +486,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the announcement was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -428,6 +504,12 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the announcement was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -439,6 +521,11 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("environmentName")
     private final String environmentName;
 
+    /**
+     * The name of the environment that this announcement pertains to.
+     *
+     * @return the value
+     **/
     public String getEnvironmentName() {
         return environmentName;
     }
@@ -486,6 +573,11 @@ public class BaseAnnouncement {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * The platform type that this announcement pertains to.
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }

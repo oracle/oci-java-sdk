@@ -29,9 +29,17 @@ public final class MultipleTransferDevices {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of TransferDeviceObject's
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transferDeviceObjects")
         private java.util.List<TransferDeviceSummary> transferDeviceObjects;
 
+        /**
+         * List of TransferDeviceObject's
+         * @param transferDeviceObjects the value to set
+         * @return this builder
+         **/
         public Builder transferDeviceObjects(
                 java.util.List<TransferDeviceSummary> transferDeviceObjects) {
             this.transferDeviceObjects = transferDeviceObjects;
@@ -75,6 +83,10 @@ public final class MultipleTransferDevices {
     @com.fasterxml.jackson.annotation.JsonProperty("transferDeviceObjects")
     private final java.util.List<TransferDeviceSummary> transferDeviceObjects;
 
+    /**
+     * List of TransferDeviceObject's
+     * @return the value
+     **/
     public java.util.List<TransferDeviceSummary> getTransferDeviceObjects() {
         return transferDeviceObjects;
     }

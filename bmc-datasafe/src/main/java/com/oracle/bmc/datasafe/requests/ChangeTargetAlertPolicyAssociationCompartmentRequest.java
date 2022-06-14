@@ -19,6 +19,9 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
      */
     private String targetAlertPolicyAssociationId;
 
+    /**
+     * The OCID of the target-alert policy association.
+     */
     public String getTargetAlertPolicyAssociationId() {
         return targetAlertPolicyAssociationId;
     }
@@ -28,6 +31,9 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeTargetAlertPolicyAssociationCompartmentDetails
             changeTargetAlertPolicyAssociationCompartmentDetails;
 
+    /**
+     * The details used to change the compartment of a target-alert policy association.
+     */
     public com.oracle.bmc.datasafe.model.ChangeTargetAlertPolicyAssociationCompartmentDetails
             getChangeTargetAlertPolicyAssociationCompartmentDetails() {
         return changeTargetAlertPolicyAssociationCompartmentDetails;
@@ -37,6 +43,9 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +59,14 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -62,6 +79,13 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -86,10 +110,14 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target-alert policy association.
+         */
         private String targetAlertPolicyAssociationId = null;
 
         /**
          * The OCID of the target-alert policy association.
+         * @param targetAlertPolicyAssociationId the value to set
          * @return this builder instance
          */
         public Builder targetAlertPolicyAssociationId(String targetAlertPolicyAssociationId) {
@@ -97,11 +125,15 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
             return this;
         }
 
+        /**
+         * The details used to change the compartment of a target-alert policy association.
+         */
         private com.oracle.bmc.datasafe.model.ChangeTargetAlertPolicyAssociationCompartmentDetails
                 changeTargetAlertPolicyAssociationCompartmentDetails = null;
 
         /**
          * The details used to change the compartment of a target-alert policy association.
+         * @param changeTargetAlertPolicyAssociationCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeTargetAlertPolicyAssociationCompartmentDetails(
@@ -112,10 +144,14 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -123,6 +159,14 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -132,6 +176,7 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -139,6 +184,13 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -147,6 +199,7 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -248,7 +301,8 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -260,6 +314,10 @@ public class ChangeTargetAlertPolicyAssociationCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

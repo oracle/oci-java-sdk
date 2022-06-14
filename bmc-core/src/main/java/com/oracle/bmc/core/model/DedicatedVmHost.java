@@ -71,127 +71,290 @@ public final class DedicatedVmHost {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain the dedicated virtual machine host is running in.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain the dedicated virtual machine host is running in.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the dedicated virtual machine host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the dedicated virtual machine host.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The dedicated virtual machine host shape. The shape determines the number of CPUs and
+         * other resources available for VMs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
         private String dedicatedVmHostShape;
 
+        /**
+         * The dedicated virtual machine host shape. The shape determines the number of CPUs and
+         * other resources available for VMs.
+         *
+         * @param dedicatedVmHostShape the value to set
+         * @return this builder
+         **/
         public Builder dedicatedVmHostShape(String dedicatedVmHostShape) {
             this.dedicatedVmHostShape = dedicatedVmHostShape;
             this.__explicitlySet__.add("dedicatedVmHostShape");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The fault domain for the dedicated virtual machine host's assigned instances.
+         * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+         * <p>
+         * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+         * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
+         * <p>
+         * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain for the dedicated virtual machine host's assigned instances.
+         * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+         * <p>
+         * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+         * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
+         * <p>
+         * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
+         *
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The current state of the dedicated VM host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the dedicated VM host.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The total OCPUs of the dedicated VM host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalOcpus")
         private Float totalOcpus;
 
+        /**
+         * The total OCPUs of the dedicated VM host.
+         *
+         * @param totalOcpus the value to set
+         * @return this builder
+         **/
         public Builder totalOcpus(Float totalOcpus) {
             this.totalOcpus = totalOcpus;
             this.__explicitlySet__.add("totalOcpus");
             return this;
         }
-
+        /**
+         * The available OCPUs of the dedicated VM host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remainingOcpus")
         private Float remainingOcpus;
 
+        /**
+         * The available OCPUs of the dedicated VM host.
+         *
+         * @param remainingOcpus the value to set
+         * @return this builder
+         **/
         public Builder remainingOcpus(Float remainingOcpus) {
             this.remainingOcpus = remainingOcpus;
             this.__explicitlySet__.add("remainingOcpus");
             return this;
         }
-
+        /**
+         * The total memory of the dedicated VM host, in GBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
         private Float totalMemoryInGBs;
 
+        /**
+         * The total memory of the dedicated VM host, in GBs.
+         *
+         * @param totalMemoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder totalMemoryInGBs(Float totalMemoryInGBs) {
             this.totalMemoryInGBs = totalMemoryInGBs;
             this.__explicitlySet__.add("totalMemoryInGBs");
             return this;
         }
-
+        /**
+         * The remaining memory of the dedicated VM host, in GBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remainingMemoryInGBs")
         private Float remainingMemoryInGBs;
 
+        /**
+         * The remaining memory of the dedicated VM host, in GBs.
+         *
+         * @param remainingMemoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder remainingMemoryInGBs(Float remainingMemoryInGBs) {
             this.remainingMemoryInGBs = remainingMemoryInGBs;
             this.__explicitlySet__.add("remainingMemoryInGBs");
@@ -265,6 +428,13 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain the dedicated virtual machine host is running in.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -275,6 +445,10 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the dedicated virtual machine host.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -287,6 +461,12 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
     private final String dedicatedVmHostShape;
 
+    /**
+     * The dedicated virtual machine host shape. The shape determines the number of CPUs and
+     * other resources available for VMs.
+     *
+     * @return the value
+     **/
     public String getDedicatedVmHostShape() {
         return dedicatedVmHostShape;
     }
@@ -301,6 +481,14 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -313,6 +501,12 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -332,6 +526,19 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain for the dedicated virtual machine host's assigned instances.
+     * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+     * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
+     * <p>
+     * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
+     *
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -346,6 +553,14 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -356,6 +571,10 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -420,6 +639,11 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the dedicated VM host.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -433,6 +657,13 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -444,6 +675,11 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpus")
     private final Float totalOcpus;
 
+    /**
+     * The total OCPUs of the dedicated VM host.
+     *
+     * @return the value
+     **/
     public Float getTotalOcpus() {
         return totalOcpus;
     }
@@ -455,6 +691,11 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("remainingOcpus")
     private final Float remainingOcpus;
 
+    /**
+     * The available OCPUs of the dedicated VM host.
+     *
+     * @return the value
+     **/
     public Float getRemainingOcpus() {
         return remainingOcpus;
     }
@@ -466,6 +707,11 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
     private final Float totalMemoryInGBs;
 
+    /**
+     * The total memory of the dedicated VM host, in GBs.
+     *
+     * @return the value
+     **/
     public Float getTotalMemoryInGBs() {
         return totalMemoryInGBs;
     }
@@ -477,6 +723,11 @@ public final class DedicatedVmHost {
     @com.fasterxml.jackson.annotation.JsonProperty("remainingMemoryInGBs")
     private final Float remainingMemoryInGBs;
 
+    /**
+     * The remaining memory of the dedicated VM host, in GBs.
+     *
+     * @return the value
+     **/
     public Float getRemainingMemoryInGBs() {
         return remainingMemoryInGBs;
     }

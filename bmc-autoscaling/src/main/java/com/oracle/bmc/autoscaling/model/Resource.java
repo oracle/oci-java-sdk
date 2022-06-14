@@ -46,6 +46,11 @@ public class Resource {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }

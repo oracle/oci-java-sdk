@@ -32,18 +32,37 @@ public final class FleetAgentOsConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of file system paths (environment variables supported).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("includePaths")
         private java.util.List<String> includePaths;
 
+        /**
+         * An array of file system paths (environment variables supported).
+         *
+         * @param includePaths the value to set
+         * @return this builder
+         **/
         public Builder includePaths(java.util.List<String> includePaths) {
             this.includePaths = includePaths;
             this.__explicitlySet__.add("includePaths");
             return this;
         }
-
+        /**
+         * An array of file system paths (environment variables supported).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludePaths")
         private java.util.List<String> excludePaths;
 
+        /**
+         * An array of file system paths (environment variables supported).
+         *
+         * @param excludePaths the value to set
+         * @return this builder
+         **/
         public Builder excludePaths(java.util.List<String> excludePaths) {
             this.excludePaths = excludePaths;
             this.__explicitlySet__.add("excludePaths");
@@ -88,6 +107,11 @@ public final class FleetAgentOsConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("includePaths")
     private final java.util.List<String> includePaths;
 
+    /**
+     * An array of file system paths (environment variables supported).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getIncludePaths() {
         return includePaths;
     }
@@ -99,6 +123,11 @@ public final class FleetAgentOsConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("excludePaths")
     private final java.util.List<String> excludePaths;
 
+    /**
+     * An array of file system paths (environment variables supported).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getExcludePaths() {
         return excludePaths;
     }

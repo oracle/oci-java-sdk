@@ -66,19 +66,37 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Task type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private TaskType taskType;
 
+        /**
+         * Task type.
+         * @param taskType the value to set
+         * @return this builder
+         **/
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
             return this;
         }
-
+        /**
+         * Schedules, typically a single schedule.
+         * Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedules")
         private java.util.List<Schedule> schedules;
 
+        /**
+         * Schedules, typically a single schedule.
+         * Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+         *
+         * @param schedules the value to set
+         * @return this builder
+         **/
         public Builder schedules(java.util.List<Schedule> schedules) {
             this.schedules = schedules;
             this.__explicitlySet__.add("schedules");
@@ -159,6 +177,10 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
+    /**
+     * Task type.
+     * @return the value
+     **/
     public TaskType getTaskType() {
         return taskType;
     }
@@ -171,6 +193,12 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     private final java.util.List<Schedule> schedules;
 
+    /**
+     * Schedules, typically a single schedule.
+     * Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+     *
+     * @return the value
+     **/
     public java.util.List<Schedule> getSchedules() {
         return schedules;
     }

@@ -16,6 +16,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -24,6 +27,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     public String getName() {
         return name;
     }
@@ -82,6 +91,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -90,6 +105,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -98,6 +116,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -108,6 +129,11 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -119,10 +145,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -130,10 +160,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -141,10 +175,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -152,6 +190,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The default sort order
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -159,6 +203,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
          * The \u2018NAME\u2019 sort order is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -166,10 +211,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -177,10 +226,14 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -188,12 +241,18 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -281,7 +340,8 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -294,6 +354,10 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

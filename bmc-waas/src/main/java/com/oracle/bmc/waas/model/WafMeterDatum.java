@@ -57,90 +57,161 @@ public final class WafMeterDatum {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
         private java.util.Date timeObserved;
 
+        /**
+         * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
+         * @param timeObserved the value to set
+         * @return this builder
+         **/
         public Builder timeObserved(java.util.Date timeObserved) {
             this.timeObserved = timeObserved;
             this.__explicitlySet__.add("timeObserved");
             return this;
         }
-
+        /**
+         * The number of seconds this data covers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
         private Integer timeRangeInSeconds;
 
+        /**
+         * The number of seconds this data covers.
+         * @param timeRangeInSeconds the value to set
+         * @return this builder
+         **/
         public Builder timeRangeInSeconds(Integer timeRangeInSeconds) {
             this.timeRangeInSeconds = timeRangeInSeconds;
             this.__explicitlySet__.add("timeRangeInSeconds");
             return this;
         }
-
+        /**
+         * The tenancy OCID of the data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * The tenancy OCID of the data.
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-
+        /**
+         * The compartment OCID of the data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment OCID of the data.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The policy OCID of the data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waasPolicyId")
         private String waasPolicyId;
 
+        /**
+         * The policy OCID of the data.
+         * @param waasPolicyId the value to set
+         * @return this builder
+         **/
         public Builder waasPolicyId(String waasPolicyId) {
             this.waasPolicyId = waasPolicyId;
             this.__explicitlySet__.add("waasPolicyId");
             return this;
         }
-
+        /**
+         * True if origin (endpoint) is an OCI resource. False if external.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOciOrigin")
         private Boolean isOciOrigin;
 
+        /**
+         * True if origin (endpoint) is an OCI resource. False if external.
+         * @param isOciOrigin the value to set
+         * @return this builder
+         **/
         public Builder isOciOrigin(Boolean isOciOrigin) {
             this.isOciOrigin = isOciOrigin;
             this.__explicitlySet__.add("isOciOrigin");
             return this;
         }
-
+        /**
+         * True if bot manager is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBotEnabled")
         private Boolean isBotEnabled;
 
+        /**
+         * True if bot manager is enabled.
+         * @param isBotEnabled the value to set
+         * @return this builder
+         **/
         public Builder isBotEnabled(Boolean isBotEnabled) {
             this.isBotEnabled = isBotEnabled;
             this.__explicitlySet__.add("isBotEnabled");
             return this;
         }
-
+        /**
+         * The number of incoming requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestCount")
         private Integer requestCount;
 
+        /**
+         * The number of incoming requests.
+         * @param requestCount the value to set
+         * @return this builder
+         **/
         public Builder requestCount(Integer requestCount) {
             this.requestCount = requestCount;
             this.__explicitlySet__.add("requestCount");
             return this;
         }
-
+        /**
+         * Traffic in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficInBytes")
         private Integer trafficInBytes;
 
+        /**
+         * Traffic in bytes.
+         * @param trafficInBytes the value to set
+         * @return this builder
+         **/
         public Builder trafficInBytes(Integer trafficInBytes) {
             this.trafficInBytes = trafficInBytes;
             this.__explicitlySet__.add("trafficInBytes");
             return this;
         }
-
+        /**
+         * The tag slug for the specified {@code waasPolicyId}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagSlug")
         private byte[] tagSlug;
 
+        /**
+         * The tag slug for the specified {@code waasPolicyId}.
+         * @param tagSlug the value to set
+         * @return this builder
+         **/
         public Builder tagSlug(byte[] tagSlug) {
             this.tagSlug = tagSlug;
             this.__explicitlySet__.add("tagSlug");
@@ -203,6 +274,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
     private final java.util.Date timeObserved;
 
+    /**
+     * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
+     * @return the value
+     **/
     public java.util.Date getTimeObserved() {
         return timeObserved;
     }
@@ -213,6 +288,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
     private final Integer timeRangeInSeconds;
 
+    /**
+     * The number of seconds this data covers.
+     * @return the value
+     **/
     public Integer getTimeRangeInSeconds() {
         return timeRangeInSeconds;
     }
@@ -223,6 +302,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * The tenancy OCID of the data.
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -233,6 +316,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment OCID of the data.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -243,6 +330,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("waasPolicyId")
     private final String waasPolicyId;
 
+    /**
+     * The policy OCID of the data.
+     * @return the value
+     **/
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
@@ -253,6 +344,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("isOciOrigin")
     private final Boolean isOciOrigin;
 
+    /**
+     * True if origin (endpoint) is an OCI resource. False if external.
+     * @return the value
+     **/
     public Boolean getIsOciOrigin() {
         return isOciOrigin;
     }
@@ -263,6 +358,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("isBotEnabled")
     private final Boolean isBotEnabled;
 
+    /**
+     * True if bot manager is enabled.
+     * @return the value
+     **/
     public Boolean getIsBotEnabled() {
         return isBotEnabled;
     }
@@ -273,6 +372,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("requestCount")
     private final Integer requestCount;
 
+    /**
+     * The number of incoming requests.
+     * @return the value
+     **/
     public Integer getRequestCount() {
         return requestCount;
     }
@@ -283,6 +386,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("trafficInBytes")
     private final Integer trafficInBytes;
 
+    /**
+     * Traffic in bytes.
+     * @return the value
+     **/
     public Integer getTrafficInBytes() {
         return trafficInBytes;
     }
@@ -293,6 +400,10 @@ public final class WafMeterDatum {
     @com.fasterxml.jackson.annotation.JsonProperty("tagSlug")
     private final byte[] tagSlug;
 
+    /**
+     * The tag slug for the specified {@code waasPolicyId}.
+     * @return the value
+     **/
     public byte[] getTagSlug() {
         return tagSlug;
     }

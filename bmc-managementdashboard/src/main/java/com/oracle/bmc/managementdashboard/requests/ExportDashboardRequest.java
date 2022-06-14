@@ -16,6 +16,9 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String exportDashboardId;
 
+    /**
+     * List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in OCI CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
+     */
     public String getExportDashboardId() {
         return exportDashboardId;
     }
@@ -29,6 +32,14 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -37,6 +48,9 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,10 +62,14 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in OCI CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
+         */
         private String exportDashboardId = null;
 
         /**
          * List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in OCI CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
+         * @param exportDashboardId the value to set
          * @return this builder instance
          */
         public Builder exportDashboardId(String exportDashboardId) {
@@ -59,6 +77,14 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -68,6 +94,7 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -75,10 +102,14 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,7 +189,8 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +199,10 @@ public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

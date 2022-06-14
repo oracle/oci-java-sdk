@@ -45,45 +45,83 @@ public final class MigrateVaultKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-
+        /**
+         * The existing TDE wallet password of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
         private String tdeWalletPassword;
 
+        /**
+         * The existing TDE wallet password of the database.
+         * @param tdeWalletPassword the value to set
+         * @return this builder
+         **/
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
             this.__explicitlySet__.add("tdeWalletPassword");
             return this;
         }
-
+        /**
+         * The existing admin password of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
+        /**
+         * The existing admin password of the database.
+         * @param adminPassword the value to set
+         * @return this builder
+         **/
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
@@ -132,6 +170,10 @@ public final class MigrateVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -143,6 +185,11 @@ public final class MigrateVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -153,6 +200,10 @@ public final class MigrateVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -163,6 +214,10 @@ public final class MigrateVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
     private final String tdeWalletPassword;
 
+    /**
+     * The existing TDE wallet password of the database.
+     * @return the value
+     **/
     public String getTdeWalletPassword() {
         return tdeWalletPassword;
     }
@@ -173,6 +228,10 @@ public final class MigrateVaultKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
+    /**
+     * The existing admin password of the database.
+     * @return the value
+     **/
     public String getAdminPassword() {
         return adminPassword;
     }

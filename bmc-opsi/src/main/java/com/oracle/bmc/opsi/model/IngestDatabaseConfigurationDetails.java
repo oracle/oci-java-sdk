@@ -30,9 +30,17 @@ public final class IngestDatabaseConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of one or more database configuration metrics objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseConfigurationMetricGroup> items;
 
+        /**
+         * Array of one or more database configuration metrics objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DatabaseConfigurationMetricGroup> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class IngestDatabaseConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseConfigurationMetricGroup> items;
 
+    /**
+     * Array of one or more database configuration metrics objects.
+     * @return the value
+     **/
     public java.util.List<DatabaseConfigurationMetricGroup> getItems() {
         return items;
     }

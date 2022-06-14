@@ -50,54 +50,105 @@ public final class ConfirmationResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the subscribed topic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicName")
         private String topicName;
 
+        /**
+         * The name of the subscribed topic.
+         *
+         * @param topicName the value to set
+         * @return this builder
+         **/
         public Builder topicName(String topicName) {
             this.topicName = topicName;
             this.__explicitlySet__.add("topicName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
+         *
+         * @param topicId the value to set
+         * @return this builder
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
             return this;
         }
-
+        /**
+         * A locator that corresponds to the subscription protocol.
+         * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
 
+        /**
+         * A locator that corresponds to the subscription protocol.
+         * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         **/
         public Builder endpoint(String endpoint) {
             this.endpoint = endpoint;
             this.__explicitlySet__.add("endpoint");
             return this;
         }
-
+        /**
+         * The URL for unsubscribing from the topic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unsubscribeUrl")
         private String unsubscribeUrl;
 
+        /**
+         * The URL for unsubscribing from the topic.
+         * @param unsubscribeUrl the value to set
+         * @return this builder
+         **/
         public Builder unsubscribeUrl(String unsubscribeUrl) {
             this.unsubscribeUrl = unsubscribeUrl;
             this.__explicitlySet__.add("unsubscribeUrl");
             return this;
         }
-
+        /**
+         * A human-readable string indicating the status of the subscription confirmation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A human-readable string indicating the status of the subscription confirmation.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -148,6 +199,11 @@ public final class ConfirmationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("topicName")
     private final String topicName;
 
+    /**
+     * The name of the subscribed topic.
+     *
+     * @return the value
+     **/
     public String getTopicName() {
         return topicName;
     }
@@ -159,6 +215,11 @@ public final class ConfirmationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
+     *
+     * @return the value
+     **/
     public String getTopicId() {
         return topicId;
     }
@@ -171,6 +232,12 @@ public final class ConfirmationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
 
+    /**
+     * A locator that corresponds to the subscription protocol.
+     * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+     *
+     * @return the value
+     **/
     public String getEndpoint() {
         return endpoint;
     }
@@ -181,6 +248,10 @@ public final class ConfirmationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("unsubscribeUrl")
     private final String unsubscribeUrl;
 
+    /**
+     * The URL for unsubscribing from the topic.
+     * @return the value
+     **/
     public String getUnsubscribeUrl() {
         return unsubscribeUrl;
     }
@@ -191,6 +262,10 @@ public final class ConfirmationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human-readable string indicating the status of the subscription confirmation.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -201,6 +276,10 @@ public final class ConfirmationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
+     * @return the value
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }

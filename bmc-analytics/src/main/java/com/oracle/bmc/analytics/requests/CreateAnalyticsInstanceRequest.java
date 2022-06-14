@@ -20,6 +20,10 @@ public class CreateAnalyticsInstanceRequest
     private com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
             createAnalyticsInstanceDetails;
 
+    /**
+     * Analytics Instance details.
+     *
+     */
     public com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
             getCreateAnalyticsInstanceDetails() {
         return createAnalyticsInstanceDetails;
@@ -31,6 +35,11 @@ public class CreateAnalyticsInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +53,14 @@ public class CreateAnalyticsInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -66,12 +83,17 @@ public class CreateAnalyticsInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Analytics Instance details.
+         *
+         */
         private com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
                 createAnalyticsInstanceDetails = null;
 
         /**
          * Analytics Instance details.
          *
+         * @param createAnalyticsInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder createAnalyticsInstanceDetails(
@@ -81,12 +103,18 @@ public class CreateAnalyticsInstanceRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -94,6 +122,14 @@ public class CreateAnalyticsInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -103,6 +139,7 @@ public class CreateAnalyticsInstanceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -193,7 +230,8 @@ public class CreateAnalyticsInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -202,6 +240,10 @@ public class CreateAnalyticsInstanceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

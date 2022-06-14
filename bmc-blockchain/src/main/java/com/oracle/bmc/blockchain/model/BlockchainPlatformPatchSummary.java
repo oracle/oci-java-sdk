@@ -33,36 +33,65 @@ public final class BlockchainPlatformPatchSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * patch id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * patch id
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * patch service version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
         private String serviceVersion;
 
+        /**
+         * patch service version
+         * @param serviceVersion the value to set
+         * @return this builder
+         **/
         public Builder serviceVersion(String serviceVersion) {
             this.serviceVersion = serviceVersion;
             this.__explicitlySet__.add("serviceVersion");
             return this;
         }
-
+        /**
+         * A URL for the patch specific documentation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchInfoUrl")
         private String patchInfoUrl;
 
+        /**
+         * A URL for the patch specific documentation
+         * @param patchInfoUrl the value to set
+         * @return this builder
+         **/
         public Builder patchInfoUrl(String patchInfoUrl) {
             this.patchInfoUrl = patchInfoUrl;
             this.__explicitlySet__.add("patchInfoUrl");
             return this;
         }
-
+        /**
+         * patch due date for customer initiated patching
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePatchDue")
         private java.util.Date timePatchDue;
 
+        /**
+         * patch due date for customer initiated patching
+         * @param timePatchDue the value to set
+         * @return this builder
+         **/
         public Builder timePatchDue(java.util.Date timePatchDue) {
             this.timePatchDue = timePatchDue;
             this.__explicitlySet__.add("timePatchDue");
@@ -110,6 +139,10 @@ public final class BlockchainPlatformPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * patch id
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -120,6 +153,10 @@ public final class BlockchainPlatformPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
     private final String serviceVersion;
 
+    /**
+     * patch service version
+     * @return the value
+     **/
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -130,6 +167,10 @@ public final class BlockchainPlatformPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("patchInfoUrl")
     private final String patchInfoUrl;
 
+    /**
+     * A URL for the patch specific documentation
+     * @return the value
+     **/
     public String getPatchInfoUrl() {
         return patchInfoUrl;
     }
@@ -140,6 +181,10 @@ public final class BlockchainPlatformPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchDue")
     private final java.util.Date timePatchDue;
 
+    /**
+     * patch due date for customer initiated patching
+     * @return the value
+     **/
     public java.util.Date getTimePatchDue() {
         return timePatchDue;
     }

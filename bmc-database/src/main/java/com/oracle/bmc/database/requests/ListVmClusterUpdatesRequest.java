@@ -17,6 +17,9 @@ public class ListVmClusterUpdatesRequest
      */
     private String vmClusterId;
 
+    /**
+     * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -62,6 +65,9 @@ public class ListVmClusterUpdatesRequest
         }
     };
 
+    /**
+     * A filter to return only resources that match the given update type exactly.
+     */
     public UpdateType getUpdateType() {
         return updateType;
     }
@@ -70,6 +76,9 @@ public class ListVmClusterUpdatesRequest
      */
     private com.oracle.bmc.database.model.VmClusterUpdateSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.VmClusterUpdateSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -78,6 +87,9 @@ public class ListVmClusterUpdatesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -86,6 +98,9 @@ public class ListVmClusterUpdatesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -95,6 +110,10 @@ public class ListVmClusterUpdatesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -106,10 +125,14 @@ public class ListVmClusterUpdatesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String vmClusterId = null;
 
         /**
          * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param vmClusterId the value to set
          * @return this builder instance
          */
         public Builder vmClusterId(String vmClusterId) {
@@ -117,10 +140,14 @@ public class ListVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given update type exactly.
+         */
         private UpdateType updateType = null;
 
         /**
          * A filter to return only resources that match the given update type exactly.
+         * @param updateType the value to set
          * @return this builder instance
          */
         public Builder updateType(UpdateType updateType) {
@@ -128,11 +155,15 @@ public class ListVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.VmClusterUpdateSummary.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -142,10 +173,14 @@ public class ListVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -153,10 +188,14 @@ public class ListVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -164,11 +203,16 @@ public class ListVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -254,7 +298,8 @@ public class ListVmClusterUpdatesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -266,6 +311,10 @@ public class ListVmClusterUpdatesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

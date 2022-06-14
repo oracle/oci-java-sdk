@@ -15,6 +15,11 @@ public class ChangeCatalogPrivateEndpointCompartmentResponse
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the asynchronous request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest) with this OCID to track the status of the asynchronous request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -26,6 +31,12 @@ public class ChangeCatalogPrivateEndpointCompartmentResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,15 +57,37 @@ public class ChangeCatalogPrivateEndpointCompartmentResponse
             return this;
         }
 
+        /**
+         * The OCID of the asynchronous request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest) with this OCID to track the status of the asynchronous request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the asynchronous request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest) with this OCID to track the status of the asynchronous request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -72,12 +105,20 @@ public class ChangeCatalogPrivateEndpointCompartmentResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ChangeCatalogPrivateEndpointCompartmentResponse build() {
             return new ChangeCatalogPrivateEndpointCompartmentResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

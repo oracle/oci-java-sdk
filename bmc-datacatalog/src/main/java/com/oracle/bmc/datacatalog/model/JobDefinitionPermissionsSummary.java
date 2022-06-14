@@ -31,18 +31,33 @@ public final class JobDefinitionPermissionsSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of the parent job definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
         private String jobDefinitionKey;
 
+        /**
+         * The unique key of the parent job definition.
+         * @param jobDefinitionKey the value to set
+         * @return this builder
+         **/
         public Builder jobDefinitionKey(String jobDefinitionKey) {
             this.jobDefinitionKey = jobDefinitionKey;
             this.__explicitlySet__.add("jobDefinitionKey");
             return this;
         }
-
+        /**
+         * An array of permissions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
         private java.util.List<String> userPermissions;
 
+        /**
+         * An array of permissions.
+         * @param userPermissions the value to set
+         * @return this builder
+         **/
         public Builder userPermissions(java.util.List<String> userPermissions) {
             this.userPermissions = userPermissions;
             this.__explicitlySet__.add("userPermissions");
@@ -87,6 +102,10 @@ public final class JobDefinitionPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
     private final String jobDefinitionKey;
 
+    /**
+     * The unique key of the parent job definition.
+     * @return the value
+     **/
     public String getJobDefinitionKey() {
         return jobDefinitionKey;
     }
@@ -97,6 +116,10 @@ public final class JobDefinitionPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
     private final java.util.List<String> userPermissions;
 
+    /**
+     * An array of permissions.
+     * @return the value
+     **/
     public java.util.List<String> getUserPermissions() {
         return userPermissions;
     }

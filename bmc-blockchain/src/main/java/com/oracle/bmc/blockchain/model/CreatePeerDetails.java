@@ -36,18 +36,33 @@ public final class CreatePeerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Peer role
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private PeerRole.Role role;
 
+        /**
+         * Peer role
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(PeerRole.Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * peer alias
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
+        /**
+         * peer alias
+         * @param alias the value to set
+         * @return this builder
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
@@ -62,10 +77,17 @@ public final class CreatePeerDetails {
             this.__explicitlySet__.add("ocpuAllocationParam");
             return this;
         }
-
+        /**
+         * Availability Domain to place new peer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private AvailabilityDomain.Ads ad;
 
+        /**
+         * Availability Domain to place new peer
+         * @param ad the value to set
+         * @return this builder
+         **/
         public Builder ad(AvailabilityDomain.Ads ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
@@ -112,6 +134,10 @@ public final class CreatePeerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final PeerRole.Role role;
 
+    /**
+     * Peer role
+     * @return the value
+     **/
     public PeerRole.Role getRole() {
         return role;
     }
@@ -122,6 +148,10 @@ public final class CreatePeerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
+    /**
+     * peer alias
+     * @return the value
+     **/
     public String getAlias() {
         return alias;
     }
@@ -139,6 +169,10 @@ public final class CreatePeerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final AvailabilityDomain.Ads ad;
 
+    /**
+     * Availability Domain to place new peer
+     * @return the value
+     **/
     public AvailabilityDomain.Ads getAd() {
         return ad;
     }

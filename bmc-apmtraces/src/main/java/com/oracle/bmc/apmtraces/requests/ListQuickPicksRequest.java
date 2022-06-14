@@ -17,6 +17,10 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,11 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +45,10 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -46,6 +59,11 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results.
+     * This is usually retrieved from a previous response.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -57,11 +75,16 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -69,12 +92,18 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -82,11 +111,16 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -94,12 +128,18 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results.
+         * This is usually retrieved from a previous response.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results.
          * This is usually retrieved from a previous response.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -181,7 +221,8 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +232,10 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

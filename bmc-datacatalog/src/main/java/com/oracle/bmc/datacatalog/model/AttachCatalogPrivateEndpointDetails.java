@@ -29,9 +29,17 @@ public final class AttachCatalogPrivateEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of the private endpoint to be attached to the catalog resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogPrivateEndpointId")
         private String catalogPrivateEndpointId;
 
+        /**
+         * The identifier of the private endpoint to be attached to the catalog resource.
+         * @param catalogPrivateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder catalogPrivateEndpointId(String catalogPrivateEndpointId) {
             this.catalogPrivateEndpointId = catalogPrivateEndpointId;
             this.__explicitlySet__.add("catalogPrivateEndpointId");
@@ -74,6 +82,10 @@ public final class AttachCatalogPrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("catalogPrivateEndpointId")
     private final String catalogPrivateEndpointId;
 
+    /**
+     * The identifier of the private endpoint to be attached to the catalog resource.
+     * @return the value
+     **/
     public String getCatalogPrivateEndpointId() {
         return catalogPrivateEndpointId;
     }

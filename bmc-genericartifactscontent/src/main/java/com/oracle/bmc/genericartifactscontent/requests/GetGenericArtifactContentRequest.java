@@ -20,6 +20,12 @@ public class GetGenericArtifactContentRequest
      */
     private String artifactId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+     * <p>
+     * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
+     *
+     */
     public String getArtifactId() {
         return artifactId;
     }
@@ -32,6 +38,13 @@ public class GetGenericArtifactContentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * <p>
+     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+     * If you contact Oracle about a request, provide this request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +56,12 @@ public class GetGenericArtifactContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+         * <p>
+         * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
+         *
+         */
         private String artifactId = null;
 
         /**
@@ -50,6 +69,7 @@ public class GetGenericArtifactContentRequest
          * <p>
          * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          *
+         * @param artifactId the value to set
          * @return this builder instance
          */
         public Builder artifactId(String artifactId) {
@@ -57,6 +77,13 @@ public class GetGenericArtifactContentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * <p>
+         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+         * If you contact Oracle about a request, provide this request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -65,6 +92,7 @@ public class GetGenericArtifactContentRequest
          * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
          * If you contact Oracle about a request, provide this request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -142,12 +170,17 @@ public class GetGenericArtifactContentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().artifactId(artifactId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

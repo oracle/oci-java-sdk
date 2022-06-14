@@ -27,6 +27,7 @@ public final class ReservedIP {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 

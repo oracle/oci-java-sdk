@@ -18,6 +18,9 @@ public class CreateMaskingPolicyRequest
      */
     private com.oracle.bmc.datasafe.model.CreateMaskingPolicyDetails createMaskingPolicyDetails;
 
+    /**
+     * Details to create a new masking policy.
+     */
     public com.oracle.bmc.datasafe.model.CreateMaskingPolicyDetails
             getCreateMaskingPolicyDetails() {
         return createMaskingPolicyDetails;
@@ -31,6 +34,13 @@ public class CreateMaskingPolicyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +49,9 @@ public class CreateMaskingPolicyRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,11 +74,15 @@ public class CreateMaskingPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details to create a new masking policy.
+         */
         private com.oracle.bmc.datasafe.model.CreateMaskingPolicyDetails
                 createMaskingPolicyDetails = null;
 
         /**
          * Details to create a new masking policy.
+         * @param createMaskingPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder createMaskingPolicyDetails(
@@ -75,6 +92,13 @@ public class CreateMaskingPolicyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -83,6 +107,7 @@ public class CreateMaskingPolicyRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -90,10 +115,14 @@ public class CreateMaskingPolicyRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,7 +213,8 @@ public class CreateMaskingPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +223,10 @@ public class CreateMaskingPolicyRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

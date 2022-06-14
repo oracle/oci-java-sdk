@@ -35,18 +35,37 @@ public final class Byoipv6CidrDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6RangeId")
         private String byoipv6RangeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * @param byoipv6RangeId the value to set
+         * @return this builder
+         **/
         public Builder byoipv6RangeId(String byoipv6RangeId) {
             this.byoipv6RangeId = byoipv6RangeId;
             this.__explicitlySet__.add("byoipv6RangeId");
             return this;
         }
-
+        /**
+         * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in {@code byoipv6RangeId}, or a subrange.
+         * Example: {@code 2001:0db8:0123::/48}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
+        /**
+         * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in {@code byoipv6RangeId}, or a subrange.
+         * Example: {@code 2001:0db8:0123::/48}
+         *
+         * @param ipv6CidrBlock the value to set
+         * @return this builder
+         **/
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
@@ -89,6 +108,10 @@ public final class Byoipv6CidrDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6RangeId")
     private final String byoipv6RangeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+     * @return the value
+     **/
     public String getByoipv6RangeId() {
         return byoipv6RangeId;
     }
@@ -101,6 +124,12 @@ public final class Byoipv6CidrDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
+    /**
+     * An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in {@code byoipv6RangeId}, or a subrange.
+     * Example: {@code 2001:0db8:0123::/48}
+     *
+     * @return the value
+     **/
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }

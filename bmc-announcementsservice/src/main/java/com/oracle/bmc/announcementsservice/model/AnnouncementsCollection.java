@@ -33,18 +33,33 @@ public final class AnnouncementsCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A collection of announcements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnouncementSummary> items;
 
+        /**
+         * A collection of announcements.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AnnouncementSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * The user-specific status for found announcements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userStatuses")
         private java.util.List<AnnouncementUserStatusDetails> userStatuses;
 
+        /**
+         * The user-specific status for found announcements.
+         * @param userStatuses the value to set
+         * @return this builder
+         **/
         public Builder userStatuses(java.util.List<AnnouncementUserStatusDetails> userStatuses) {
             this.userStatuses = userStatuses;
             this.__explicitlySet__.add("userStatuses");
@@ -86,6 +101,10 @@ public final class AnnouncementsCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AnnouncementSummary> items;
 
+    /**
+     * A collection of announcements.
+     * @return the value
+     **/
     public java.util.List<AnnouncementSummary> getItems() {
         return items;
     }
@@ -96,6 +115,10 @@ public final class AnnouncementsCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("userStatuses")
     private final java.util.List<AnnouncementUserStatusDetails> userStatuses;
 
+    /**
+     * The user-specific status for found announcements.
+     * @return the value
+     **/
     public java.util.List<AnnouncementUserStatusDetails> getUserStatuses() {
         return userStatuses;
     }

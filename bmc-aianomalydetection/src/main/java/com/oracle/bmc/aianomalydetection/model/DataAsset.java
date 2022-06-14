@@ -66,72 +66,129 @@ public final class DataAsset {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Unique Oracle ID (OCID) that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The Unique Oracle ID (OCID) that is immutable on creation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the DataAsset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the DataAsset.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A short description of the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A short description of the data asset.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The time the the DataAsset was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the the DataAsset was created. An RFC3339 formatted datetime string
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the the DataAsset was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the the DataAsset was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The lifecycle state of the Data Asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The lifecycle state of the Data Asset.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The Unique project id which is created at project creation that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
+        /**
+         * The Unique project id which is created at project creation that is immutable on creation.
+         * @param projectId the value to set
+         * @return this builder
+         **/
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
@@ -146,38 +203,78 @@ public final class DataAsset {
             this.__explicitlySet__.add("dataSourceDetails");
             return this;
         }
-
+        /**
+         * OCID of Private Endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
+        /**
+         * OCID of Private Endpoint.
+         * @param privateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -246,6 +343,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The Unique Oracle ID (OCID) that is immutable on creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -256,6 +357,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the DataAsset.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -266,6 +371,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -276,6 +385,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A short description of the data asset.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -286,6 +399,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the the DataAsset was created. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -296,6 +413,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the the DataAsset was updated. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -354,6 +475,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the Data Asset.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -364,6 +489,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
+    /**
+     * The Unique project id which is created at project creation that is immutable on creation.
+     * @return the value
+     **/
     public String getProjectId() {
         return projectId;
     }
@@ -381,6 +510,10 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
+    /**
+     * OCID of Private Endpoint.
+     * @return the value
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -393,6 +526,12 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -405,6 +544,12 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -417,6 +562,12 @@ public final class DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

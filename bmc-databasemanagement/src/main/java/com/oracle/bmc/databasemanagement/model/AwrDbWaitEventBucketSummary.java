@@ -30,18 +30,33 @@ public final class AwrDbWaitEventBucketSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-
+        /**
+         * The percentage of waits in a wait event bucket over the total waits of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentage")
         private Double percentage;
 
+        /**
+         * The percentage of waits in a wait event bucket over the total waits of the database.
+         * @param percentage the value to set
+         * @return this builder
+         **/
         public Builder percentage(Double percentage) {
             this.percentage = percentage;
             this.__explicitlySet__.add("percentage");
@@ -84,6 +99,10 @@ public final class AwrDbWaitEventBucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -94,6 +113,10 @@ public final class AwrDbWaitEventBucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentage")
     private final Double percentage;
 
+    /**
+     * The percentage of waits in a wait event bucket over the total waits of the database.
+     * @return the value
+     **/
     public Double getPercentage() {
         return percentage;
     }

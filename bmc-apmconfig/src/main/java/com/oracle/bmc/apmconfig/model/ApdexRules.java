@@ -72,10 +72,17 @@ public final class ApdexRules extends Config {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -150,11 +157,15 @@ public final class ApdexRules extends Config {
     }
 
     /**
-     * The name by which the rule set is displayed to the end user.
+     * The name by which a configuration entity is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name by which a configuration entity is displayed to the end user.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

@@ -90,19 +90,35 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The unique identifier of the Skill to create a new version of.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier of the Skill to create a new version of.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -186,6 +202,10 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier of the Skill to create a new version of.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -197,6 +217,11 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

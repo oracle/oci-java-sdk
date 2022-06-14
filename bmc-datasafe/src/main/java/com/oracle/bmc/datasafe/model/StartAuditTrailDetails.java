@@ -31,18 +31,37 @@ public final class StartAuditTrailDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
         private java.util.Date auditCollectionStartTime;
 
+        /**
+         * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+         * @param auditCollectionStartTime the value to set
+         * @return this builder
+         **/
         public Builder auditCollectionStartTime(java.util.Date auditCollectionStartTime) {
             this.auditCollectionStartTime = auditCollectionStartTime;
             this.__explicitlySet__.add("auditCollectionStartTime");
             return this;
         }
-
+        /**
+         * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
+         * target database every seven days so that the database's audit trail does not become too large.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoPurgeEnabled")
         private Boolean isAutoPurgeEnabled;
 
+        /**
+         * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
+         * target database every seven days so that the database's audit trail does not become too large.
+         *
+         * @param isAutoPurgeEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutoPurgeEnabled(Boolean isAutoPurgeEnabled) {
             this.isAutoPurgeEnabled = isAutoPurgeEnabled;
             this.__explicitlySet__.add("isAutoPurgeEnabled");
@@ -87,6 +106,10 @@ public final class StartAuditTrailDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("auditCollectionStartTime")
     private final java.util.Date auditCollectionStartTime;
 
+    /**
+     * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getAuditCollectionStartTime() {
         return auditCollectionStartTime;
     }
@@ -99,6 +122,12 @@ public final class StartAuditTrailDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoPurgeEnabled")
     private final Boolean isAutoPurgeEnabled;
 
+    /**
+     * Indicates if auto purge is enabled on the target database, which helps delete audit data in the
+     * target database every seven days so that the database's audit trail does not become too large.
+     *
+     * @return the value
+     **/
     public Boolean getIsAutoPurgeEnabled() {
         return isAutoPurgeEnabled;
     }

@@ -32,6 +32,7 @@ public final class IngressListenerClientValidationConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("trustedCaBundle")
         private CaBundle trustedCaBundle;
 
@@ -40,10 +41,19 @@ public final class IngressListenerClientValidationConfig {
             this.__explicitlySet__.add("trustedCaBundle");
             return this;
         }
-
+        /**
+         * A list of alternate names to verify the subject identity in the certificate presented by the client.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternateNames")
         private java.util.List<String> subjectAlternateNames;
 
+        /**
+         * A list of alternate names to verify the subject identity in the certificate presented by the client.
+         *
+         * @param subjectAlternateNames the value to set
+         * @return this builder
+         **/
         public Builder subjectAlternateNames(java.util.List<String> subjectAlternateNames) {
             this.subjectAlternateNames = subjectAlternateNames;
             this.__explicitlySet__.add("subjectAlternateNames");
@@ -97,6 +107,11 @@ public final class IngressListenerClientValidationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternateNames")
     private final java.util.List<String> subjectAlternateNames;
 
+    /**
+     * A list of alternate names to verify the subject identity in the certificate presented by the client.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getSubjectAlternateNames() {
         return subjectAlternateNames;
     }

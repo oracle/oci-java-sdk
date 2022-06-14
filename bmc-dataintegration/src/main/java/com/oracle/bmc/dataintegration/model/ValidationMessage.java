@@ -31,27 +31,49 @@ public final class ValidationMessage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of validation messages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private String level;
 
+        /**
+         * The total number of validation messages.
+         * @param level the value to set
+         * @return this builder
+         **/
         public Builder level(String level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
-
+        /**
+         * The validation message key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageKey")
         private String messageKey;
 
+        /**
+         * The validation message key.
+         * @param messageKey the value to set
+         * @return this builder
+         **/
         public Builder messageKey(String messageKey) {
             this.messageKey = messageKey;
             this.__explicitlySet__.add("messageKey");
             return this;
         }
-
+        /**
+         * The validation message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationMessage")
         private String validationMessage;
 
+        /**
+         * The validation message.
+         * @param validationMessage the value to set
+         * @return this builder
+         **/
         public Builder validationMessage(String validationMessage) {
             this.validationMessage = validationMessage;
             this.__explicitlySet__.add("validationMessage");
@@ -97,6 +119,10 @@ public final class ValidationMessage {
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final String level;
 
+    /**
+     * The total number of validation messages.
+     * @return the value
+     **/
     public String getLevel() {
         return level;
     }
@@ -107,6 +133,10 @@ public final class ValidationMessage {
     @com.fasterxml.jackson.annotation.JsonProperty("messageKey")
     private final String messageKey;
 
+    /**
+     * The validation message key.
+     * @return the value
+     **/
     public String getMessageKey() {
         return messageKey;
     }
@@ -117,6 +147,10 @@ public final class ValidationMessage {
     @com.fasterxml.jackson.annotation.JsonProperty("validationMessage")
     private final String validationMessage;
 
+    /**
+     * The validation message.
+     * @return the value
+     **/
     public String getValidationMessage() {
         return validationMessage;
     }

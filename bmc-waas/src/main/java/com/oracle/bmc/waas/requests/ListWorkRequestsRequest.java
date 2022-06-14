@@ -16,6 +16,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String waasPolicyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the policy.
+     */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
@@ -24,6 +27,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -32,6 +38,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,6 +49,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -96,6 +111,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The value by which work requests are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeAccepted}.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -140,6 +158,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -151,10 +172,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the policy.
+         */
         private String waasPolicyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the policy.
+         * @param waasPolicyId the value to set
          * @return this builder instance
          */
         public Builder waasPolicyId(String waasPolicyId) {
@@ -162,10 +187,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -173,10 +202,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,10 +217,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -195,10 +232,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -206,10 +247,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value by which work requests are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeAccepted}.
+         */
         private SortBy sortBy = null;
 
         /**
          * The value by which work requests are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeAccepted}.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -217,10 +262,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -308,7 +357,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -321,6 +371,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

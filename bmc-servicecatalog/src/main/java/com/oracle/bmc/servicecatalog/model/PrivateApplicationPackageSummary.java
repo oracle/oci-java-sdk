@@ -47,54 +47,109 @@ public final class PrivateApplicationPackageSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application package.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application package.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateApplicationId")
         private String privateApplicationId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
+         *
+         * @param privateApplicationId the value to set
+         * @return this builder
+         **/
         public Builder privateApplicationId(String privateApplicationId) {
             this.privateApplicationId = privateApplicationId;
             this.__explicitlySet__.add("privateApplicationId");
             return this;
         }
-
+        /**
+         * The display name of the specified package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the specified package.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The version of the specified package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the specified package.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The type of the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private PackageTypeEnum packageType;
 
+        /**
+         * The type of the package.
+         * @param packageType the value to set
+         * @return this builder
+         **/
         public Builder packageType(PackageTypeEnum packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
-
+        /**
+         * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2021-05-27T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2021-05-27T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -150,6 +205,11 @@ public final class PrivateApplicationPackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application package.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -161,6 +221,11 @@ public final class PrivateApplicationPackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("privateApplicationId")
     private final String privateApplicationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
+     *
+     * @return the value
+     **/
     public String getPrivateApplicationId() {
         return privateApplicationId;
     }
@@ -171,6 +236,10 @@ public final class PrivateApplicationPackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the specified package.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -181,6 +250,10 @@ public final class PrivateApplicationPackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the specified package.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -191,6 +264,10 @@ public final class PrivateApplicationPackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final PackageTypeEnum packageType;
 
+    /**
+     * The type of the package.
+     * @return the value
+     **/
     public PackageTypeEnum getPackageType() {
         return packageType;
     }
@@ -205,6 +282,14 @@ public final class PrivateApplicationPackageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2021-05-27T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

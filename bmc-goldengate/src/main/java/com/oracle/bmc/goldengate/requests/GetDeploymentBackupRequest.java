@@ -17,6 +17,10 @@ public class GetDeploymentBackupRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String deploymentBackupId;
 
+    /**
+     * A unique DeploymentBackup identifier.
+     *
+     */
     public String getDeploymentBackupId() {
         return deploymentBackupId;
     }
@@ -26,6 +30,10 @@ public class GetDeploymentBackupRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,11 +45,16 @@ public class GetDeploymentBackupRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique DeploymentBackup identifier.
+         *
+         */
         private String deploymentBackupId = null;
 
         /**
          * A unique DeploymentBackup identifier.
          *
+         * @param deploymentBackupId the value to set
          * @return this builder instance
          */
         public Builder deploymentBackupId(String deploymentBackupId) {
@@ -49,11 +62,16 @@ public class GetDeploymentBackupRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,12 +149,17 @@ public class GetDeploymentBackupRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().deploymentBackupId(deploymentBackupId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

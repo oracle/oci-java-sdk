@@ -32,6 +32,7 @@ public final class DatabaseHomeMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseHomeMetrics")
         private DatabaseHomeMetricDefinition databaseHomeMetrics;
 
@@ -40,10 +41,17 @@ public final class DatabaseHomeMetrics {
             this.__explicitlySet__.add("databaseHomeMetrics");
             return this;
         }
-
+        /**
+         * The metrics for the RAC database instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseInstanceHomeMetrics")
         private java.util.List<DatabaseInstanceHomeMetricsDefinition> databaseInstanceHomeMetrics;
 
+        /**
+         * The metrics for the RAC database instances.
+         * @param databaseInstanceHomeMetrics the value to set
+         * @return this builder
+         **/
         public Builder databaseInstanceHomeMetrics(
                 java.util.List<DatabaseInstanceHomeMetricsDefinition> databaseInstanceHomeMetrics) {
             this.databaseInstanceHomeMetrics = databaseInstanceHomeMetrics;
@@ -96,6 +104,10 @@ public final class DatabaseHomeMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseInstanceHomeMetrics")
     private final java.util.List<DatabaseInstanceHomeMetricsDefinition> databaseInstanceHomeMetrics;
 
+    /**
+     * The metrics for the RAC database instances.
+     * @return the value
+     **/
     public java.util.List<DatabaseInstanceHomeMetricsDefinition> getDatabaseInstanceHomeMetrics() {
         return databaseInstanceHomeMetrics;
     }

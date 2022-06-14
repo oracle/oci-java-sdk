@@ -19,6 +19,10 @@ public class CreateMonitorRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,9 @@ public class CreateMonitorRequest
      */
     private com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails createMonitorDetails;
 
+    /**
+     * The configuration details for creating a monitor.
+     */
     public com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails getCreateMonitorDetails() {
         return createMonitorDetails;
     }
@@ -40,6 +47,14 @@ public class CreateMonitorRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +65,11 @@ public class CreateMonitorRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,11 +91,16 @@ public class CreateMonitorRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -83,10 +108,14 @@ public class CreateMonitorRequest
             return this;
         }
 
+        /**
+         * The configuration details for creating a monitor.
+         */
         private com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails createMonitorDetails = null;
 
         /**
          * The configuration details for creating a monitor.
+         * @param createMonitorDetails the value to set
          * @return this builder instance
          */
         public Builder createMonitorDetails(
@@ -95,6 +124,14 @@ public class CreateMonitorRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -104,6 +141,7 @@ public class CreateMonitorRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -111,12 +149,18 @@ public class CreateMonitorRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +253,8 @@ public class CreateMonitorRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +264,10 @@ public class CreateMonitorRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

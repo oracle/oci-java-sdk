@@ -18,6 +18,9 @@ public class UpdateAuditTrailRequest
      */
     private String auditTrailId;
 
+    /**
+     * The OCID of the audit trail.
+     */
     public String getAuditTrailId() {
         return auditTrailId;
     }
@@ -26,6 +29,9 @@ public class UpdateAuditTrailRequest
      */
     private com.oracle.bmc.datasafe.model.UpdateAuditTrailDetails updateAuditTrailDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.datasafe.model.UpdateAuditTrailDetails getUpdateAuditTrailDetails() {
         return updateAuditTrailDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateAuditTrailRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class UpdateAuditTrailRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +86,14 @@ public class UpdateAuditTrailRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the audit trail.
+         */
         private String auditTrailId = null;
 
         /**
          * The OCID of the audit trail.
+         * @param auditTrailId the value to set
          * @return this builder instance
          */
         public Builder auditTrailId(String auditTrailId) {
@@ -80,11 +101,15 @@ public class UpdateAuditTrailRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.datasafe.model.UpdateAuditTrailDetails updateAuditTrailDetails =
                 null;
 
         /**
          * The information to be updated.
+         * @param updateAuditTrailDetails the value to set
          * @return this builder instance
          */
         public Builder updateAuditTrailDetails(
@@ -93,6 +118,14 @@ public class UpdateAuditTrailRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +135,7 @@ public class UpdateAuditTrailRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,10 +143,14 @@ public class UpdateAuditTrailRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +243,8 @@ public class UpdateAuditTrailRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +254,10 @@ public class UpdateAuditTrailRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

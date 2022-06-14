@@ -31,18 +31,55 @@ public final class ExecutionLogPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
+         * <p>
+         * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
+         * for an API Deployment. If there is an active log object for the API Deployment and its
+         * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
+         * OCI Object Storage log archival bucket.
+         * <p>
+         * Please note that the functionality to push to the legacy OCI Object Storage log
+         * archival bucket has been deprecated and will be removed in the future.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
+         * <p>
+         * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
+         * for an API Deployment. If there is an active log object for the API Deployment and its
+         * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
+         * OCI Object Storage log archival bucket.
+         * <p>
+         * Please note that the functionality to push to the legacy OCI Object Storage log
+         * archival bucket has been deprecated and will be removed in the future.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * Specifies the log level used to control logging output of execution logs.
+         * Enabling logging at a given level also enables logging at all higher levels.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
         private LogLevel logLevel;
 
+        /**
+         * Specifies the log level used to control logging output of execution logs.
+         * Enabling logging at a given level also enables logging at all higher levels.
+         *
+         * @param logLevel the value to set
+         * @return this builder
+         **/
         public Builder logLevel(LogLevel logLevel) {
             this.logLevel = logLevel;
             this.__explicitlySet__.add("logLevel");
@@ -93,6 +130,19 @@ public final class ExecutionLogPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
+     * <p>
+     * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
+     * for an API Deployment. If there is an active log object for the API Deployment and its
+     * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
+     * OCI Object Storage log archival bucket.
+     * <p>
+     * Please note that the functionality to push to the legacy OCI Object Storage log
+     * archival bucket has been deprecated and will be removed in the future.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -156,6 +206,12 @@ public final class ExecutionLogPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
     private final LogLevel logLevel;
 
+    /**
+     * Specifies the log level used to control logging output of execution logs.
+     * Enabling logging at a given level also enables logging at all higher levels.
+     *
+     * @return the value
+     **/
     public LogLevel getLogLevel() {
         return logLevel;
     }

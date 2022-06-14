@@ -44,45 +44,81 @@ public final class SqlPlanInsightAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Plan hash value for the SQL Execution Plan
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
+        /**
+         * Plan hash value for the SQL Execution Plan
+         * @param planHash the value to set
+         * @return this builder
+         **/
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
-
+        /**
+         * IO Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
         private Double ioTimeInSec;
 
+        /**
+         * IO Time in seconds
+         * @param ioTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder ioTimeInSec(Double ioTimeInSec) {
             this.ioTimeInSec = ioTimeInSec;
             this.__explicitlySet__.add("ioTimeInSec");
             return this;
         }
-
+        /**
+         * CPU Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
         private Double cpuTimeInSec;
 
+        /**
+         * CPU Time in seconds
+         * @param cpuTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder cpuTimeInSec(Double cpuTimeInSec) {
             this.cpuTimeInSec = cpuTimeInSec;
             this.__explicitlySet__.add("cpuTimeInSec");
             return this;
         }
-
+        /**
+         * Inefficient Wait Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
         private Double inefficientWaitTimeInSec;
 
+        /**
+         * Inefficient Wait Time in seconds
+         * @param inefficientWaitTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder inefficientWaitTimeInSec(Double inefficientWaitTimeInSec) {
             this.inefficientWaitTimeInSec = inefficientWaitTimeInSec;
             this.__explicitlySet__.add("inefficientWaitTimeInSec");
             return this;
         }
-
+        /**
+         * Total number of executions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
         private Long executionsCount;
 
+        /**
+         * Total number of executions
+         * @param executionsCount the value to set
+         * @return this builder
+         **/
         public Builder executionsCount(Long executionsCount) {
             this.executionsCount = executionsCount;
             this.__explicitlySet__.add("executionsCount");
@@ -135,6 +171,10 @@ public final class SqlPlanInsightAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
+    /**
+     * Plan hash value for the SQL Execution Plan
+     * @return the value
+     **/
     public Long getPlanHash() {
         return planHash;
     }
@@ -145,6 +185,10 @@ public final class SqlPlanInsightAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
     private final Double ioTimeInSec;
 
+    /**
+     * IO Time in seconds
+     * @return the value
+     **/
     public Double getIoTimeInSec() {
         return ioTimeInSec;
     }
@@ -155,6 +199,10 @@ public final class SqlPlanInsightAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
     private final Double cpuTimeInSec;
 
+    /**
+     * CPU Time in seconds
+     * @return the value
+     **/
     public Double getCpuTimeInSec() {
         return cpuTimeInSec;
     }
@@ -165,6 +213,10 @@ public final class SqlPlanInsightAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
     private final Double inefficientWaitTimeInSec;
 
+    /**
+     * Inefficient Wait Time in seconds
+     * @return the value
+     **/
     public Double getInefficientWaitTimeInSec() {
         return inefficientWaitTimeInSec;
     }
@@ -175,6 +227,10 @@ public final class SqlPlanInsightAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
     private final Long executionsCount;
 
+    /**
+     * Total number of executions
+     * @return the value
+     **/
     public Long getExecutionsCount() {
         return executionsCount;
     }

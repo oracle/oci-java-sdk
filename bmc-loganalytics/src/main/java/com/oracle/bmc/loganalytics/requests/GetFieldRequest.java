@@ -17,6 +17,10 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String fieldName;
 
+    /**
+     * The field name.
+     */
     public String getFieldName() {
         return fieldName;
     }
@@ -33,6 +40,9 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,11 +53,16 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -55,10 +70,14 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The field name.
+         */
         private String fieldName = null;
 
         /**
          * The field name.
+         * @param fieldName the value to set
          * @return this builder instance
          */
         public Builder fieldName(String fieldName) {
@@ -66,10 +85,14 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,7 +172,8 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +182,10 @@ public class GetFieldRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -19,6 +19,10 @@ public class UpdateTagNamespaceRequest
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -27,8 +31,22 @@ public class UpdateTagNamespaceRequest
      */
     private com.oracle.bmc.identity.model.UpdateTagNamespaceDetails updateTagNamespaceDetails;
 
+    /**
+     * Request object for updating a namespace.
+     */
     public com.oracle.bmc.identity.model.UpdateTagNamespaceDetails getUpdateTagNamespaceDetails() {
         return updateTagNamespaceDetails;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -49,11 +67,16 @@ public class UpdateTagNamespaceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -61,16 +84,35 @@ public class UpdateTagNamespaceRequest
             return this;
         }
 
+        /**
+         * Request object for updating a namespace.
+         */
         private com.oracle.bmc.identity.model.UpdateTagNamespaceDetails updateTagNamespaceDetails =
                 null;
 
         /**
          * Request object for updating a namespace.
+         * @param updateTagNamespaceDetails the value to set
          * @return this builder instance
          */
         public Builder updateTagNamespaceDetails(
                 com.oracle.bmc.identity.model.UpdateTagNamespaceDetails updateTagNamespaceDetails) {
             this.updateTagNamespaceDetails = updateTagNamespaceDetails;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -104,6 +146,7 @@ public class UpdateTagNamespaceRequest
         public Builder copy(UpdateTagNamespaceRequest o) {
             tagNamespaceId(o.getTagNamespaceId());
             updateTagNamespaceDetails(o.getUpdateTagNamespaceDetails());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -149,20 +192,27 @@ public class UpdateTagNamespaceRequest
             UpdateTagNamespaceRequest request = new UpdateTagNamespaceRequest();
             request.tagNamespaceId = tagNamespaceId;
             request.updateTagNamespaceDetails = updateTagNamespaceDetails;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateTagNamespaceRequest(tagNamespaceId, updateTagNamespaceDetails);
+            // new UpdateTagNamespaceRequest(tagNamespaceId, updateTagNamespaceDetails, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .tagNamespaceId(tagNamespaceId)
-                .updateTagNamespaceDetails(updateTagNamespaceDetails);
+                .updateTagNamespaceDetails(updateTagNamespaceDetails)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,6 +225,7 @@ public class UpdateTagNamespaceRequest
         sb.append(",tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
         sb.append(",updateTagNamespaceDetails=")
                 .append(String.valueOf(this.updateTagNamespaceDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +243,8 @@ public class UpdateTagNamespaceRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
                 && java.util.Objects.equals(
-                        this.updateTagNamespaceDetails, other.updateTagNamespaceDetails);
+                        this.updateTagNamespaceDetails, other.updateTagNamespaceDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -207,6 +259,9 @@ public class UpdateTagNamespaceRequest
                         + (this.updateTagNamespaceDetails == null
                                 ? 43
                                 : this.updateTagNamespaceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

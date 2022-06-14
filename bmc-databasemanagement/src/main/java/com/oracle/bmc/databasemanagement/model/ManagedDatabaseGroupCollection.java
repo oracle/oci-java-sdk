@@ -29,9 +29,17 @@ public final class ManagedDatabaseGroupCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of ManagedDatabaseGroupSummary resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagedDatabaseGroupSummary> items;
 
+        /**
+         * An array of ManagedDatabaseGroupSummary resources.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ManagedDatabaseGroupSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ManagedDatabaseGroupCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagedDatabaseGroupSummary> items;
 
+    /**
+     * An array of ManagedDatabaseGroupSummary resources.
+     * @return the value
+     **/
     public java.util.List<ManagedDatabaseGroupSummary> getItems() {
         return items;
     }

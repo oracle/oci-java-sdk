@@ -30,18 +30,33 @@ public final class RestrictedOperation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the restricted operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
 
+        /**
+         * Name of the restricted operation.
+         * @param operationName the value to set
+         * @return this builder
+         **/
         public Builder operationName(String operationName) {
             this.operationName = operationName;
             this.__explicitlySet__.add("operationName");
             return this;
         }
-
+        /**
+         * Name of the service restricting the operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restrictingService")
         private String restrictingService;
 
+        /**
+         * Name of the service restricting the operation.
+         * @param restrictingService the value to set
+         * @return this builder
+         **/
         public Builder restrictingService(String restrictingService) {
             this.restrictingService = restrictingService;
             this.__explicitlySet__.add("restrictingService");
@@ -86,6 +101,10 @@ public final class RestrictedOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
     private final String operationName;
 
+    /**
+     * Name of the restricted operation.
+     * @return the value
+     **/
     public String getOperationName() {
         return operationName;
     }
@@ -96,6 +115,10 @@ public final class RestrictedOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("restrictingService")
     private final String restrictingService;
 
+    /**
+     * Name of the service restricting the operation.
+     * @return the value
+     **/
     public String getRestrictingService() {
         return restrictingService;
     }

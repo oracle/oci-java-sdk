@@ -14,6 +14,11 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +31,13 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -38,6 +50,13 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -47,6 +66,10 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private Float retryAfter;
 
+    /**
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -56,6 +79,10 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
+    /**
+     * The returned QueryAggregation instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.QueryAggregation getQueryAggregation() {
         return queryAggregation;
     }
@@ -91,36 +118,90 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         */
         private Float retryAfter;
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned QueryAggregation instance.
+         */
         private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
+        /**
+         * The returned QueryAggregation instance.
+         * @param queryAggregation the value to set
+         * @return this builder
+         */
         public Builder queryAggregation(
                 com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation) {
             this.queryAggregation = queryAggregation;
@@ -142,6 +223,10 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetQueryResultResponse build() {
             return new GetQueryResultResponse(
                     __httpStatusCode__,
@@ -153,6 +238,10 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

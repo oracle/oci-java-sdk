@@ -18,6 +18,9 @@ public class UpdateIPSecConnectionRequest
      */
     private String ipscId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     */
     public String getIpscId() {
         return ipscId;
     }
@@ -26,6 +29,9 @@ public class UpdateIPSecConnectionRequest
      */
     private com.oracle.bmc.core.model.UpdateIPSecConnectionDetails updateIPSecConnectionDetails;
 
+    /**
+     * Details object for updating an IPSec connection.
+     */
     public com.oracle.bmc.core.model.UpdateIPSecConnectionDetails
             getUpdateIPSecConnectionDetails() {
         return updateIPSecConnectionDetails;
@@ -38,6 +44,12 @@ public class UpdateIPSecConnectionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -60,10 +72,14 @@ public class UpdateIPSecConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         */
         private String ipscId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         * @param ipscId the value to set
          * @return this builder instance
          */
         public Builder ipscId(String ipscId) {
@@ -71,11 +87,15 @@ public class UpdateIPSecConnectionRequest
             return this;
         }
 
+        /**
+         * Details object for updating an IPSec connection.
+         */
         private com.oracle.bmc.core.model.UpdateIPSecConnectionDetails
                 updateIPSecConnectionDetails = null;
 
         /**
          * Details object for updating an IPSec connection.
+         * @param updateIPSecConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder updateIPSecConnectionDetails(
@@ -85,6 +105,12 @@ public class UpdateIPSecConnectionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -92,6 +118,7 @@ public class UpdateIPSecConnectionRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -182,7 +209,8 @@ public class UpdateIPSecConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +219,10 @@ public class UpdateIPSecConnectionRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

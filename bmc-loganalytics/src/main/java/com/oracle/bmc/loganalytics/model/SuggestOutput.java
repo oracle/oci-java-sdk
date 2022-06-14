@@ -49,63 +49,127 @@ public final class SuggestOutput {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Character position suggestion should be placed in queryString provided as input.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
+        /**
+         * Character position suggestion should be placed in queryString provided as input.
+         *
+         * @param position the value to set
+         * @return this builder
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-
+        /**
+         * Context specific list of querylanguage commands if input is seeking command suggestions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commands")
         private java.util.List<String> commands;
 
+        /**
+         * Context specific list of querylanguage commands if input is seeking command suggestions.
+         *
+         * @param commands the value to set
+         * @return this builder
+         **/
         public Builder commands(java.util.List<String> commands) {
             this.commands = commands;
             this.__explicitlySet__.add("commands");
             return this;
         }
-
+        /**
+         * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<String> fields;
 
+        /**
+         * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
+         *
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<String> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * Context specific list of field values if input is seeking field value suggestions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<String> fieldValues;
 
+        /**
+         * Context specific list of field values if input is seeking field value suggestions.
+         *
+         * @param fieldValues the value to set
+         * @return this builder
+         **/
         public Builder fieldValues(java.util.List<String> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
             return this;
         }
-
+        /**
+         * Context specific list of terms / phrases if input is seeking terms / phrase suggestions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("terms")
         private java.util.List<String> terms;
 
+        /**
+         * Context specific list of terms / phrases if input is seeking terms / phrase suggestions.
+         *
+         * @param terms the value to set
+         * @return this builder
+         **/
         public Builder terms(java.util.List<String> terms) {
             this.terms = terms;
             this.__explicitlySet__.add("terms");
             return this;
         }
-
+        /**
+         * Context specific list of querylanguage command options if input is seeking command option suggestions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private java.util.List<String> options;
 
+        /**
+         * Context specific list of querylanguage command options if input is seeking command option suggestions.
+         *
+         * @param options the value to set
+         * @return this builder
+         **/
         public Builder options(java.util.List<String> options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
-
+        /**
+         * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("examples")
         private java.util.List<String> examples;
 
+        /**
+         * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
+         *
+         * @param examples the value to set
+         * @return this builder
+         **/
         public Builder examples(java.util.List<String> examples) {
             this.examples = examples;
             this.__explicitlySet__.add("examples");
@@ -157,6 +221,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
+    /**
+     * Character position suggestion should be placed in queryString provided as input.
+     *
+     * @return the value
+     **/
     public Integer getPosition() {
         return position;
     }
@@ -168,6 +237,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("commands")
     private final java.util.List<String> commands;
 
+    /**
+     * Context specific list of querylanguage commands if input is seeking command suggestions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCommands() {
         return commands;
     }
@@ -179,6 +253,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<String> fields;
 
+    /**
+     * Context specific list of querylanguage fields / columns if input is seeking field / column suggestions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -190,6 +269,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<String> fieldValues;
 
+    /**
+     * Context specific list of field values if input is seeking field value suggestions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFieldValues() {
         return fieldValues;
     }
@@ -201,6 +285,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("terms")
     private final java.util.List<String> terms;
 
+    /**
+     * Context specific list of terms / phrases if input is seeking terms / phrase suggestions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getTerms() {
         return terms;
     }
@@ -212,6 +301,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final java.util.List<String> options;
 
+    /**
+     * Context specific list of querylanguage command options if input is seeking command option suggestions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getOptions() {
         return options;
     }
@@ -223,6 +317,11 @@ public final class SuggestOutput {
     @com.fasterxml.jackson.annotation.JsonProperty("examples")
     private final java.util.List<String> examples;
 
+    /**
+     * Context specific list of querylanguage querystring examples if input is seeking queryString example suggestions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getExamples() {
         return examples;
     }

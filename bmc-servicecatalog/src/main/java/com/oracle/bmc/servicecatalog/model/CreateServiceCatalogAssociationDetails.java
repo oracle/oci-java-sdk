@@ -32,27 +32,49 @@ public final class CreateServiceCatalogAssociationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifier of the service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceCatalogId")
         private String serviceCatalogId;
 
+        /**
+         * Identifier of the service catalog.
+         * @param serviceCatalogId the value to set
+         * @return this builder
+         **/
         public Builder serviceCatalogId(String serviceCatalogId) {
             this.serviceCatalogId = serviceCatalogId;
             this.__explicitlySet__.add("serviceCatalogId");
             return this;
         }
-
+        /**
+         * Identifier of the entity being associated with service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * Identifier of the entity being associated with service catalog.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The type of the entity that is associated with the service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The type of the entity that is associated with the service catalog.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -99,6 +121,10 @@ public final class CreateServiceCatalogAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCatalogId")
     private final String serviceCatalogId;
 
+    /**
+     * Identifier of the service catalog.
+     * @return the value
+     **/
     public String getServiceCatalogId() {
         return serviceCatalogId;
     }
@@ -109,6 +135,10 @@ public final class CreateServiceCatalogAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * Identifier of the entity being associated with service catalog.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -119,6 +149,10 @@ public final class CreateServiceCatalogAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The type of the entity that is associated with the service catalog.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }

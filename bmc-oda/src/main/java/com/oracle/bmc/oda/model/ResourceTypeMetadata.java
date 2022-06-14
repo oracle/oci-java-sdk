@@ -30,18 +30,33 @@ public final class ResourceTypeMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of the resource described by this metadata object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The type of the resource described by this metadata object.
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MetadataProperty> properties;
 
+        /**
+         * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.List<MetadataProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -83,6 +98,10 @@ public final class ResourceTypeMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The type of the resource described by this metadata object.
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -93,6 +112,10 @@ public final class ResourceTypeMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MetadataProperty> properties;
 
+    /**
+     * Any properties needed to describe the content and its usage for this resource type, and within the containing package.
+     * @return the value
+     **/
     public java.util.List<MetadataProperty> getProperties() {
         return properties;
     }

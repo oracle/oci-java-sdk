@@ -68,63 +68,113 @@ public final class CreateBdsInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Name of the Big Data Service cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name of the Big Data Service cluster.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Version of the Hadoop distribution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
         private BdsInstance.ClusterVersion clusterVersion;
 
+        /**
+         * Version of the Hadoop distribution.
+         * @param clusterVersion the value to set
+         * @return this builder
+         **/
         public Builder clusterVersion(BdsInstance.ClusterVersion clusterVersion) {
             this.clusterVersion = clusterVersion;
             this.__explicitlySet__.add("clusterVersion");
             return this;
         }
-
+        /**
+         * The SSH public key used to authenticate the cluster connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPublicKey")
         private String clusterPublicKey;
 
+        /**
+         * The SSH public key used to authenticate the cluster connection.
+         * @param clusterPublicKey the value to set
+         * @return this builder
+         **/
         public Builder clusterPublicKey(String clusterPublicKey) {
             this.clusterPublicKey = clusterPublicKey;
             this.__explicitlySet__.add("clusterPublicKey");
             return this;
         }
-
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not the cluster is highly available (HA).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
         private Boolean isHighAvailability;
 
+        /**
+         * Boolean flag specifying whether or not the cluster is highly available (HA).
+         * @param isHighAvailability the value to set
+         * @return this builder
+         **/
         public Builder isHighAvailability(Boolean isHighAvailability) {
             this.isHighAvailability = isHighAvailability;
             this.__explicitlySet__.add("isHighAvailability");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not the cluster should be set up as secure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
         private Boolean isSecure;
 
+        /**
+         * Boolean flag specifying whether or not the cluster should be set up as secure.
+         * @param isSecure the value to set
+         * @return this builder
+         **/
         public Builder isSecure(Boolean isSecure) {
             this.isSecure = isSecure;
             this.__explicitlySet__.add("isSecure");
@@ -139,46 +189,89 @@ public final class CreateBdsInstanceDetails {
             this.__explicitlySet__.add("networkConfig");
             return this;
         }
-
+        /**
+         * Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
         private String bootstrapScriptUrl;
 
+        /**
+         * Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+         * @param bootstrapScriptUrl the value to set
+         * @return this builder
+         **/
         public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
             this.bootstrapScriptUrl = bootstrapScriptUrl;
             this.__explicitlySet__.add("bootstrapScriptUrl");
             return this;
         }
-
+        /**
+         * The list of nodes in the Big Data Service cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodes")
         private java.util.List<CreateNodeDetails> nodes;
 
+        /**
+         * The list of nodes in the Big Data Service cluster.
+         * @param nodes the value to set
+         * @return this builder
+         **/
         public Builder nodes(java.util.List<CreateNodeDetails> nodes) {
             this.nodes = nodes;
             this.__explicitlySet__.add("nodes");
             return this;
         }
-
+        /**
+         * The user-defined kerberos realm name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealmName")
         private String kerberosRealmName;
 
+        /**
+         * The user-defined kerberos realm name.
+         * @param kerberosRealmName the value to set
+         * @return this builder
+         **/
         public Builder kerberosRealmName(String kerberosRealmName) {
             this.kerberosRealmName = kerberosRealmName;
             this.__explicitlySet__.add("kerberosRealmName");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -248,6 +341,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -258,6 +355,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name of the Big Data Service cluster.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -268,6 +369,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterVersion")
     private final BdsInstance.ClusterVersion clusterVersion;
 
+    /**
+     * Version of the Hadoop distribution.
+     * @return the value
+     **/
     public BdsInstance.ClusterVersion getClusterVersion() {
         return clusterVersion;
     }
@@ -278,6 +383,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPublicKey")
     private final String clusterPublicKey;
 
+    /**
+     * The SSH public key used to authenticate the cluster connection.
+     * @return the value
+     **/
     public String getClusterPublicKey() {
         return clusterPublicKey;
     }
@@ -288,6 +397,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
@@ -298,6 +411,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isHighAvailability")
     private final Boolean isHighAvailability;
 
+    /**
+     * Boolean flag specifying whether or not the cluster is highly available (HA).
+     * @return the value
+     **/
     public Boolean getIsHighAvailability() {
         return isHighAvailability;
     }
@@ -308,6 +425,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSecure")
     private final Boolean isSecure;
 
+    /**
+     * Boolean flag specifying whether or not the cluster should be set up as secure.
+     * @return the value
+     **/
     public Boolean getIsSecure() {
         return isSecure;
     }
@@ -325,6 +446,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
     private final String bootstrapScriptUrl;
 
+    /**
+     * Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+     * @return the value
+     **/
     public String getBootstrapScriptUrl() {
         return bootstrapScriptUrl;
     }
@@ -335,6 +460,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     private final java.util.List<CreateNodeDetails> nodes;
 
+    /**
+     * The list of nodes in the Big Data Service cluster.
+     * @return the value
+     **/
     public java.util.List<CreateNodeDetails> getNodes() {
         return nodes;
     }
@@ -345,6 +474,10 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealmName")
     private final String kerberosRealmName;
 
+    /**
+     * The user-defined kerberos realm name.
+     * @return the value
+     **/
     public String getKerberosRealmName() {
         return kerberosRealmName;
     }
@@ -357,6 +490,12 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only. For example, {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -369,6 +508,12 @@ public final class CreateBdsInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example, {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

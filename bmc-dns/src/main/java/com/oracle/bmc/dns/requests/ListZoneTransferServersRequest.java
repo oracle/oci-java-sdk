@@ -17,6 +17,9 @@ public class ListZoneTransferServersRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the resource belongs to.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,6 +31,12 @@ public class ListZoneTransferServersRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +46,10 @@ public class ListZoneTransferServersRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -46,6 +59,10 @@ public class ListZoneTransferServersRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -57,10 +74,14 @@ public class ListZoneTransferServersRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment the resource belongs to.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -68,6 +89,12 @@ public class ListZoneTransferServersRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -75,6 +102,7 @@ public class ListZoneTransferServersRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -82,11 +110,16 @@ public class ListZoneTransferServersRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -94,11 +127,16 @@ public class ListZoneTransferServersRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -180,7 +218,8 @@ public class ListZoneTransferServersRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +229,10 @@ public class ListZoneTransferServersRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

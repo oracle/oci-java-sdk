@@ -27,9 +27,17 @@ public final class PropertyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key/Value pair of Property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertiesMap")
         private java.util.Map<String, String> propertiesMap;
 
+        /**
+         * Key/Value pair of Property
+         * @param propertiesMap the value to set
+         * @return this builder
+         **/
         public Builder propertiesMap(java.util.Map<String, String> propertiesMap) {
             this.propertiesMap = propertiesMap;
             this.__explicitlySet__.add("propertiesMap");
@@ -71,6 +79,10 @@ public final class PropertyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("propertiesMap")
     private final java.util.Map<String, String> propertiesMap;
 
+    /**
+     * Key/Value pair of Property
+     * @return the value
+     **/
     public java.util.Map<String, String> getPropertiesMap() {
         return propertiesMap;
     }

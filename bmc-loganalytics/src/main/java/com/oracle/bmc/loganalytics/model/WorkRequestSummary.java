@@ -51,63 +51,121 @@ public final class WorkRequestSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique OCID identifier to reference this query job work Request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique OCID identifier to reference this query job work Request.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * When the work request started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * When the work request started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * When the work request was accepted. Should match timeStarted in all cases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * When the work request was accepted. Should match timeStarted in all cases.
+         *
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * When the work request finished execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * When the work request finished execution.
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * Percentage progress completion of the query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
+        /**
+         * Percentage progress completion of the query.
+         *
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * Work request status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkRequestStatus status;
 
+        /**
+         * Work request status.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(WorkRequestStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -165,6 +223,11 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique OCID identifier to reference this query job work Request.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -175,6 +238,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -185,6 +252,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * When the work request started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -196,6 +267,11 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * When the work request was accepted. Should match timeStarted in all cases.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -206,6 +282,10 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * When the work request finished execution.
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -217,6 +297,11 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
+    /**
+     * Percentage progress completion of the query.
+     *
+     * @return the value
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }
@@ -228,6 +313,11 @@ public final class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkRequestStatus status;
 
+    /**
+     * Work request status.
+     *
+     * @return the value
+     **/
     public WorkRequestStatus getStatus() {
         return status;
     }

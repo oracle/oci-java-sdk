@@ -16,6 +16,12 @@ public class GetManagementAgentInstallKeyContentResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class GetManagementAgentInstallKeyContentResponse
      */
     private Long contentLength;
 
+    /**
+     * The content size of the body in bytes.
+     * @return the value
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -34,6 +44,10 @@ public class GetManagementAgentInstallKeyContentResponse
      */
     private String contentType;
 
+    /**
+     * The content type of the body.
+     * @return the value
+     */
     public String getContentType() {
         return contentType;
     }
@@ -43,6 +57,10 @@ public class GetManagementAgentInstallKeyContentResponse
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -75,29 +93,65 @@ public class GetManagementAgentInstallKeyContentResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The content size of the body in bytes.
+         */
         private Long contentLength;
 
+        /**
+         * The content size of the body in bytes.
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Long contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * The content type of the body.
+         */
         private String contentType;
 
+        /**
+         * The content type of the body.
+         * @param contentType the value to set
+         * @return this builder
+         */
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -117,12 +171,20 @@ public class GetManagementAgentInstallKeyContentResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetManagementAgentInstallKeyContentResponse build() {
             return new GetManagementAgentInstallKeyContentResponse(
                     __httpStatusCode__, opcRequestId, contentLength, contentType, inputStream);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

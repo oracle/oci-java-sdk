@@ -27,9 +27,17 @@ public final class LogSetCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the array of log sets
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<String> items;
 
+        /**
+         * This is the array of log sets
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<String> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class LogSetCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<String> items;
 
+    /**
+     * This is the array of log sets
+     * @return the value
+     **/
     public java.util.List<String> getItems() {
         return items;
     }

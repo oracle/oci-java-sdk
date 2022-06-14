@@ -29,18 +29,37 @@ public final class Action {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of action to take.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of action to take.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of
+         * instances), provide a negative value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of
+         * instances), provide a negative value.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -127,6 +146,10 @@ public final class Action {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of action to take.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -139,6 +162,12 @@ public final class Action {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of
+     * instances), provide a negative value.
+     *
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }

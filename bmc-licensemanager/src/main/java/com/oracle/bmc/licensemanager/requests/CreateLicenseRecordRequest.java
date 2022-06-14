@@ -19,6 +19,9 @@ public class CreateLicenseRecordRequest
     private com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
             createLicenseRecordDetails;
 
+    /**
+     * Details needed to create a new license record.
+     */
     public com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
             getCreateLicenseRecordDetails() {
         return createLicenseRecordDetails;
@@ -28,6 +31,9 @@ public class CreateLicenseRecordRequest
      */
     private String productLicenseId;
 
+    /**
+     * Unique product license identifier.
+     */
     public String getProductLicenseId() {
         return productLicenseId;
     }
@@ -38,6 +44,11 @@ public class CreateLicenseRecordRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +61,13 @@ public class CreateLicenseRecordRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
+     * risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
+     * then a retry of the original creation request might be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -72,11 +90,15 @@ public class CreateLicenseRecordRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details needed to create a new license record.
+         */
         private com.oracle.bmc.licensemanager.model.CreateLicenseRecordDetails
                 createLicenseRecordDetails = null;
 
         /**
          * Details needed to create a new license record.
+         * @param createLicenseRecordDetails the value to set
          * @return this builder instance
          */
         public Builder createLicenseRecordDetails(
@@ -86,10 +108,14 @@ public class CreateLicenseRecordRequest
             return this;
         }
 
+        /**
+         * Unique product license identifier.
+         */
         private String productLicenseId = null;
 
         /**
          * Unique product license identifier.
+         * @param productLicenseId the value to set
          * @return this builder instance
          */
         public Builder productLicenseId(String productLicenseId) {
@@ -97,12 +123,18 @@ public class CreateLicenseRecordRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -110,6 +142,13 @@ public class CreateLicenseRecordRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
+         * risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
+         * then a retry of the original creation request might be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -118,6 +157,7 @@ public class CreateLicenseRecordRequest
          * then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
          * then a retry of the original creation request might be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -210,7 +250,8 @@ public class CreateLicenseRecordRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +261,10 @@ public class CreateLicenseRecordRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

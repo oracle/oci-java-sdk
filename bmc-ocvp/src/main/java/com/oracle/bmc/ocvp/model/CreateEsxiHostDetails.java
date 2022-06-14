@@ -62,99 +62,247 @@ public final class CreateEsxiHostDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC to add the
+         * ESXi host to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
         private String sddcId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC to add the
+         * ESXi host to.
+         *
+         * @param sddcId the value to set
+         * @return this builder
+         **/
         public Builder sddcId(String sddcId) {
             this.sddcId = sddcId;
             this.__explicitlySet__.add("sddcId");
             return this;
         }
-
+        /**
+         * A descriptive name for the ESXi host. It's changeable.
+         * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+         * <p>
+         * If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix} attribute is used
+         * to name and incrementally number the ESXi host. For example, if you're creating the fourth
+         * ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is {@code MySDDC}, the host's display
+         * name is {@code MySDDC-4}.
+         * <p>
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A descriptive name for the ESXi host. It's changeable.
+         * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+         * <p>
+         * If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix} attribute is used
+         * to name and incrementally number the ESXi host. For example, if you're creating the fourth
+         * ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is {@code MySDDC}, the host's display
+         * name is {@code MySDDC-4}.
+         * <p>
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The billing option currently used by the ESXi host.
+         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
         private Sku currentSku;
 
+        /**
+         * The billing option currently used by the ESXi host.
+         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         *
+         * @param currentSku the value to set
+         * @return this builder
+         **/
         public Builder currentSku(Sku currentSku) {
             this.currentSku = currentSku;
             this.__explicitlySet__.add("currentSku");
             return this;
         }
-
+        /**
+         * The billing option to switch to after the existing billing cycle ends.
+         * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
+         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
         private Sku nextSku;
 
+        /**
+         * The billing option to switch to after the existing billing cycle ends.
+         * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
+         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         *
+         * @param nextSku the value to set
+         * @return this builder
+         **/
         public Builder nextSku(Sku nextSku) {
             this.nextSku = nextSku;
             this.__explicitlySet__.add("nextSku");
             return this;
         }
-
+        /**
+         * The availability domain to create the ESXi host in.
+         * If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain;
+         * for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
         private String computeAvailabilityDomain;
 
+        /**
+         * The availability domain to create the ESXi host in.
+         * If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain;
+         * for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+         *
+         * @param computeAvailabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             this.__explicitlySet__.add("computeAvailabilityDomain");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
+         * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
+         * will be udpated in the newly created Esxi host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
         private String failedEsxiHostId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
+         * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
+         * will be udpated in the newly created Esxi host.
+         *
+         * @param failedEsxiHostId the value to set
+         * @return this builder
+         **/
         public Builder failedEsxiHostId(String failedEsxiHostId) {
             this.failedEsxiHostId = failedEsxiHostId;
             this.__explicitlySet__.add("failedEsxiHostId");
             return this;
         }
-
+        /**
+         * The compute shape name of the ESXi host.
+         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
         private String hostShapeName;
 
+        /**
+         * The compute shape name of the ESXi host.
+         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+         *
+         * @param hostShapeName the value to set
+         * @return this builder
+         **/
         public Builder hostShapeName(String hostShapeName) {
             this.hostShapeName = hostShapeName;
             this.__explicitlySet__.add("hostShapeName");
             return this;
         }
-
+        /**
+         * The OCPU count of the ESXi host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
         private Float hostOcpuCount;
 
+        /**
+         * The OCPU count of the ESXi host.
+         *
+         * @param hostOcpuCount the value to set
+         * @return this builder
+         **/
         public Builder hostOcpuCount(Float hostOcpuCount) {
             this.hostOcpuCount = hostOcpuCount;
             this.__explicitlySet__.add("hostOcpuCount");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         **/
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -222,6 +370,12 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
     private final String sddcId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC to add the
+     * ESXi host to.
+     *
+     * @return the value
+     **/
     public String getSddcId() {
         return sddcId;
     }
@@ -241,6 +395,19 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A descriptive name for the ESXi host. It's changeable.
+     * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * <p>
+     * If this attribute is not specified, the SDDC's {@code instanceDisplayNamePrefix} attribute is used
+     * to name and incrementally number the ESXi host. For example, if you're creating the fourth
+     * ESXi host in the SDDC, and {@code instanceDisplayNamePrefix} is {@code MySDDC}, the host's display
+     * name is {@code MySDDC-4}.
+     * <p>
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -253,6 +420,12 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
     private final Sku currentSku;
 
+    /**
+     * The billing option currently used by the ESXi host.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     * @return the value
+     **/
     public Sku getCurrentSku() {
         return currentSku;
     }
@@ -266,6 +439,13 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
     private final Sku nextSku;
 
+    /**
+     * The billing option to switch to after the existing billing cycle ends.
+     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
+     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     *
+     * @return the value
+     **/
     public Sku getNextSku() {
         return nextSku;
     }
@@ -279,6 +459,13 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
     private final String computeAvailabilityDomain;
 
+    /**
+     * The availability domain to create the ESXi host in.
+     * If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain;
+     * for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     *
+     * @return the value
+     **/
     public String getComputeAvailabilityDomain() {
         return computeAvailabilityDomain;
     }
@@ -293,6 +480,14 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
     private final String failedEsxiHostId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
+     * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
+     * will be udpated in the newly created Esxi host.
+     *
+     * @return the value
+     **/
     public String getFailedEsxiHostId() {
         return failedEsxiHostId;
     }
@@ -305,6 +500,12 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
     private final String hostShapeName;
 
+    /**
+     * The compute shape name of the ESXi host.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     *
+     * @return the value
+     **/
     public String getHostShapeName() {
         return hostShapeName;
     }
@@ -316,6 +517,11 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
     private final Float hostOcpuCount;
 
+    /**
+     * The OCPU count of the ESXi host.
+     *
+     * @return the value
+     **/
     public Float getHostOcpuCount() {
         return hostOcpuCount;
     }
@@ -327,6 +533,11 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     * @return the value
+     **/
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
@@ -341,6 +552,14 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -355,6 +574,14 @@ public final class CreateEsxiHostDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

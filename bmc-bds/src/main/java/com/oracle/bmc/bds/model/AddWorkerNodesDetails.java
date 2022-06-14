@@ -47,45 +47,83 @@ public final class AddWorkerNodesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
-
+        /**
+         * Number of additional worker nodes for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfWorkerNodes")
         private Integer numberOfWorkerNodes;
 
+        /**
+         * Number of additional worker nodes for the cluster.
+         * @param numberOfWorkerNodes the value to set
+         * @return this builder
+         **/
         public Builder numberOfWorkerNodes(Integer numberOfWorkerNodes) {
             this.numberOfWorkerNodes = numberOfWorkerNodes;
             this.__explicitlySet__.add("numberOfWorkerNodes");
             return this;
         }
-
+        /**
+         * Worker node types, can either be Worker Data node or Compute only worker node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private NodeType nodeType;
 
+        /**
+         * Worker node types, can either be Worker Data node or Compute only worker node.
+         * @param nodeType the value to set
+         * @return this builder
+         **/
         public Builder nodeType(NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-
+        /**
+         * Shape of the node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * Shape of the node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
+        /**
+         * The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+         *
+         * @param blockVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
@@ -149,6 +187,10 @@ public final class AddWorkerNodesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
@@ -159,6 +201,10 @@ public final class AddWorkerNodesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfWorkerNodes")
     private final Integer numberOfWorkerNodes;
 
+    /**
+     * Number of additional worker nodes for the cluster.
+     * @return the value
+     **/
     public Integer getNumberOfWorkerNodes() {
         return numberOfWorkerNodes;
     }
@@ -204,6 +250,10 @@ public final class AddWorkerNodesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final NodeType nodeType;
 
+    /**
+     * Worker node types, can either be Worker Data node or Compute only worker node.
+     * @return the value
+     **/
     public NodeType getNodeType() {
         return nodeType;
     }
@@ -214,6 +264,10 @@ public final class AddWorkerNodesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * Shape of the node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -225,6 +279,11 @@ public final class AddWorkerNodesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
+    /**
+     * The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+     *
+     * @return the value
+     **/
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }

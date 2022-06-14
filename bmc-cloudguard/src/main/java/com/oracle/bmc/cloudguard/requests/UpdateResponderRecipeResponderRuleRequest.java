@@ -18,6 +18,9 @@ public class UpdateResponderRecipeResponderRuleRequest
      */
     private String responderRecipeId;
 
+    /**
+     * OCID of ResponderRecipe
+     */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
@@ -26,6 +29,9 @@ public class UpdateResponderRecipeResponderRuleRequest
      */
     private String responderRuleId;
 
+    /**
+     * The id of ResponderRule
+     */
     public String getResponderRuleId() {
         return responderRuleId;
     }
@@ -35,6 +41,9 @@ public class UpdateResponderRecipeResponderRuleRequest
     private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
             updateResponderRecipeResponderRuleDetails;
 
+    /**
+     * The details to be updated for ResponderRule.
+     */
     public com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
             getUpdateResponderRecipeResponderRuleDetails() {
         return updateResponderRecipeResponderRuleDetails;
@@ -49,6 +58,14 @@ public class UpdateResponderRecipeResponderRuleRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,6 +74,9 @@ public class UpdateResponderRecipeResponderRuleRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -79,10 +99,14 @@ public class UpdateResponderRecipeResponderRuleRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of ResponderRecipe
+         */
         private String responderRecipeId = null;
 
         /**
          * OCID of ResponderRecipe
+         * @param responderRecipeId the value to set
          * @return this builder instance
          */
         public Builder responderRecipeId(String responderRecipeId) {
@@ -90,10 +114,14 @@ public class UpdateResponderRecipeResponderRuleRequest
             return this;
         }
 
+        /**
+         * The id of ResponderRule
+         */
         private String responderRuleId = null;
 
         /**
          * The id of ResponderRule
+         * @param responderRuleId the value to set
          * @return this builder instance
          */
         public Builder responderRuleId(String responderRuleId) {
@@ -101,11 +129,15 @@ public class UpdateResponderRecipeResponderRuleRequest
             return this;
         }
 
+        /**
+         * The details to be updated for ResponderRule.
+         */
         private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
                 updateResponderRecipeResponderRuleDetails = null;
 
         /**
          * The details to be updated for ResponderRule.
+         * @param updateResponderRecipeResponderRuleDetails the value to set
          * @return this builder instance
          */
         public Builder updateResponderRecipeResponderRuleDetails(
@@ -116,6 +148,14 @@ public class UpdateResponderRecipeResponderRuleRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -125,6 +165,7 @@ public class UpdateResponderRecipeResponderRuleRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -132,10 +173,14 @@ public class UpdateResponderRecipeResponderRuleRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -234,7 +279,8 @@ public class UpdateResponderRecipeResponderRuleRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -246,6 +292,10 @@ public class UpdateResponderRecipeResponderRuleRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

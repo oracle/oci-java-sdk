@@ -17,6 +17,9 @@ public class GetAiPrivateEndpointRequest
      */
     private String aiPrivateEndpointId;
 
+    /**
+     * Unique private reverse connection identifier.
+     */
     public String getAiPrivateEndpointId() {
         return aiPrivateEndpointId;
     }
@@ -25,6 +28,9 @@ public class GetAiPrivateEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,10 +42,14 @@ public class GetAiPrivateEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique private reverse connection identifier.
+         */
         private String aiPrivateEndpointId = null;
 
         /**
          * Unique private reverse connection identifier.
+         * @param aiPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder aiPrivateEndpointId(String aiPrivateEndpointId) {
@@ -47,10 +57,14 @@ public class GetAiPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,12 +142,17 @@ public class GetAiPrivateEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().aiPrivateEndpointId(aiPrivateEndpointId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

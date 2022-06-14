@@ -28,18 +28,33 @@ public final class DiffSection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of change.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of change.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The lines within changed section.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<DiffLineDetails> lines;
 
+        /**
+         * The lines within changed section.
+         * @param lines the value to set
+         * @return this builder
+         **/
         public Builder lines(java.util.List<DiffLineDetails> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
@@ -81,6 +96,10 @@ public final class DiffSection {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of change.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -91,6 +110,10 @@ public final class DiffSection {
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<DiffLineDetails> lines;
 
+    /**
+     * The lines within changed section.
+     * @return the value
+     **/
     public java.util.List<DiffLineDetails> getLines() {
         return lines;
     }

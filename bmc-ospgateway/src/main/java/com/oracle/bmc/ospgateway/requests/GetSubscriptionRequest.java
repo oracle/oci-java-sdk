@@ -16,6 +16,9 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String subscriptionId;
 
+    /**
+     * Subscription id(OCID).
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -25,6 +28,10 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String ospHomeRegion;
 
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
@@ -34,6 +41,10 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -44,6 +55,11 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,10 +71,14 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Subscription id(OCID).
+         */
         private String subscriptionId = null;
 
         /**
          * Subscription id(OCID).
+         * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
@@ -66,11 +86,16 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
          * The home region's public name of the logged in user.
          *
+         * @param ospHomeRegion the value to set
          * @return this builder instance
          */
         public Builder ospHomeRegion(String ospHomeRegion) {
@@ -78,11 +103,16 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -90,12 +120,18 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -177,7 +213,8 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +224,10 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

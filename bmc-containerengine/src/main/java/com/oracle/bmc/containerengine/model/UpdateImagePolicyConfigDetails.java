@@ -31,18 +31,33 @@ public final class UpdateImagePolicyConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPolicyEnabled")
         private Boolean isPolicyEnabled;
 
+        /**
+         * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+         * @param isPolicyEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
             this.isPolicyEnabled = isPolicyEnabled;
             this.__explicitlySet__.add("isPolicyEnabled");
             return this;
         }
-
+        /**
+         * A list of KMS key details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyDetails")
         private java.util.List<KeyDetails> keyDetails;
 
+        /**
+         * A list of KMS key details.
+         * @param keyDetails the value to set
+         * @return this builder
+         **/
         public Builder keyDetails(java.util.List<KeyDetails> keyDetails) {
             this.keyDetails = keyDetails;
             this.__explicitlySet__.add("keyDetails");
@@ -86,6 +101,10 @@ public final class UpdateImagePolicyConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyEnabled")
     private final Boolean isPolicyEnabled;
 
+    /**
+     * Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+     * @return the value
+     **/
     public Boolean getIsPolicyEnabled() {
         return isPolicyEnabled;
     }
@@ -96,6 +115,10 @@ public final class UpdateImagePolicyConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyDetails")
     private final java.util.List<KeyDetails> keyDetails;
 
+    /**
+     * A list of KMS key details.
+     * @return the value
+     **/
     public java.util.List<KeyDetails> getKeyDetails() {
         return keyDetails;
     }

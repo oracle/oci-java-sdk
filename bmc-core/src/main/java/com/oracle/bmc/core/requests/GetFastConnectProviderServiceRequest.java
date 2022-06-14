@@ -17,6 +17,9 @@ public class GetFastConnectProviderServiceRequest
      */
     private String providerServiceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+     */
     public String getProviderServiceId() {
         return providerServiceId;
     }
@@ -28,10 +31,14 @@ public class GetFastConnectProviderServiceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+         */
         private String providerServiceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+         * @param providerServiceId the value to set
          * @return this builder instance
          */
         public Builder providerServiceId(String providerServiceId) {
@@ -108,12 +115,17 @@ public class GetFastConnectProviderServiceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().providerServiceId(providerServiceId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

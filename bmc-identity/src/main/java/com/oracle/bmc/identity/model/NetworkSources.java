@@ -66,109 +66,228 @@ public final class NetworkSources {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the network source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the network source.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy containing the network source. The tenancy is the root compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the tenancy containing the network source. The tenancy is the root compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name you assign to the network source during creation. The name must be unique across
+         * the tenancy and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name you assign to the network source during creation. The name must be unique across
+         * the tenancy and cannot be changed.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The description you assign to the network source. Does not have to be unique, and it's changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description you assign to the network source. Does not have to be unique, and it's changeable.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A list of allowed public IPs and CIDR ranges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
         private java.util.List<String> publicSourceList;
 
+        /**
+         * A list of allowed public IPs and CIDR ranges.
+         *
+         * @param publicSourceList the value to set
+         * @return this builder
+         **/
         public Builder publicSourceList(java.util.List<String> publicSourceList) {
             this.publicSourceList = publicSourceList;
             this.__explicitlySet__.add("publicSourceList");
             return this;
         }
-
+        /**
+         * A list of allowed VCN OCID and IP range pairs.
+         * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
         private java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
 
+        /**
+         * A list of allowed VCN OCID and IP range pairs.
+         * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+         *
+         * @param virtualSourceList the value to set
+         * @return this builder
+         **/
         public Builder virtualSourceList(
                 java.util.List<NetworkSources_virtualSourceList> virtualSourceList) {
             this.virtualSourceList = virtualSourceList;
             this.__explicitlySet__.add("virtualSourceList");
             return this;
         }
-
+        /**
+         * -- The services attribute has no effect and is reserved for use by Oracle. --
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<String> services;
 
+        /**
+         * -- The services attribute has no effect and is reserved for use by Oracle. --
+         *
+         * @param services the value to set
+         * @return this builder
+         **/
         public Builder services(java.util.List<String> services) {
             this.services = services;
             this.__explicitlySet__.add("services");
             return this;
         }
-
+        /**
+         * Date and time the group was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the group was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        /**
+         * The detailed status of INACTIVE lifecycleState.
+         * @param inactiveStatus the value to set
+         * @return this builder
+         **/
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -236,6 +355,10 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the network source.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -246,6 +369,10 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy containing the network source. The tenancy is the root compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -258,6 +385,12 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name you assign to the network source during creation. The name must be unique across
+     * the tenancy and cannot be changed.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -268,6 +401,10 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description you assign to the network source. Does not have to be unique, and it's changeable.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -279,6 +416,11 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
     private final java.util.List<String> publicSourceList;
 
+    /**
+     * A list of allowed public IPs and CIDR ranges.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPublicSourceList() {
         return publicSourceList;
     }
@@ -291,19 +433,28 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
     private final java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
 
+    /**
+     * A list of allowed VCN OCID and IP range pairs.
+     * Example:{@code "vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]}
+     *
+     * @return the value
+     **/
     public java.util.List<NetworkSources_virtualSourceList> getVirtualSourceList() {
         return virtualSourceList;
     }
 
     /**
-     * A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than
-     * those specified in the network source.
-     * Currently, only {@code all} and {@code none} are supported. The default is {@code all}.
+     * -- The services attribute has no effect and is reserved for use by Oracle. --
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
+    /**
+     * -- The services attribute has no effect and is reserved for use by Oracle. --
+     *
+     * @return the value
+     **/
     public java.util.List<String> getServices() {
         return services;
     }
@@ -317,6 +468,13 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the group was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -382,6 +540,12 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -392,6 +556,10 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
+    /**
+     * The detailed status of INACTIVE lifecycleState.
+     * @return the value
+     **/
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
@@ -405,6 +573,13 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -418,6 +593,13 @@ public final class NetworkSources {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

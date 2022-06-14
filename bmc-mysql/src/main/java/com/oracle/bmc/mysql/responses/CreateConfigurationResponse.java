@@ -13,6 +13,10 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String location;
 
+    /**
+     * The URI for the entity being described in the response body.
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -23,6 +27,11 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +43,12 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +59,11 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -53,6 +73,10 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.mysql.model.Configuration configuration;
 
+    /**
+     * The returned Configuration instance.
+     * @return the value
+     */
     public com.oracle.bmc.mysql.model.Configuration getConfiguration() {
         return configuration;
     }
@@ -88,36 +112,84 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * The URI for the entity being described in the response body.
+         */
         private String location;
 
+        /**
+         * The URI for the entity being described in the response body.
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned Configuration instance.
+         */
         private com.oracle.bmc.mysql.model.Configuration configuration;
 
+        /**
+         * The returned Configuration instance.
+         * @param configuration the value to set
+         * @return this builder
+         */
         public Builder configuration(com.oracle.bmc.mysql.model.Configuration configuration) {
             this.configuration = configuration;
             return this;
@@ -138,6 +210,10 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateConfigurationResponse build() {
             return new CreateConfigurationResponse(
                     __httpStatusCode__,
@@ -149,6 +225,10 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

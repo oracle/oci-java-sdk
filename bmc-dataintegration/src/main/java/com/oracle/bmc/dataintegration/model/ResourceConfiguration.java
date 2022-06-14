@@ -38,36 +38,65 @@ public final class ResourceConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The version of the spark used while creating an Oracle Cloud Infrastructure Data Flow application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
 
+        /**
+         * The version of the spark used while creating an Oracle Cloud Infrastructure Data Flow application.
+         * @param sparkVersion the value to set
+         * @return this builder
+         **/
         public Builder sparkVersion(String sparkVersion) {
             this.sparkVersion = sparkVersion;
             this.__explicitlySet__.add("sparkVersion");
             return this;
         }
-
+        /**
+         * The VM shape of the driver used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the driver cores and memory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
         private String driverShape;
 
+        /**
+         * The VM shape of the driver used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the driver cores and memory.
+         * @param driverShape the value to set
+         * @return this builder
+         **/
         public Builder driverShape(String driverShape) {
             this.driverShape = driverShape;
             this.__explicitlySet__.add("driverShape");
             return this;
         }
-
+        /**
+         * The shape of the executor used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the executor cores and memory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
         private String executorShape;
 
+        /**
+         * The shape of the executor used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the executor cores and memory.
+         * @param executorShape the value to set
+         * @return this builder
+         **/
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
             return this;
         }
-
+        /**
+         * Number of executor VMs requested while creating an Oracle Cloud Infrastructure Data Flow application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalExecutors")
         private Integer totalExecutors;
 
+        /**
+         * Number of executor VMs requested while creating an Oracle Cloud Infrastructure Data Flow application.
+         * @param totalExecutors the value to set
+         * @return this builder
+         **/
         public Builder totalExecutors(Integer totalExecutors) {
             this.totalExecutors = totalExecutors;
             this.__explicitlySet__.add("totalExecutors");
@@ -115,6 +144,10 @@ public final class ResourceConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
     private final String sparkVersion;
 
+    /**
+     * The version of the spark used while creating an Oracle Cloud Infrastructure Data Flow application.
+     * @return the value
+     **/
     public String getSparkVersion() {
         return sparkVersion;
     }
@@ -125,6 +158,10 @@ public final class ResourceConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     private final String driverShape;
 
+    /**
+     * The VM shape of the driver used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the driver cores and memory.
+     * @return the value
+     **/
     public String getDriverShape() {
         return driverShape;
     }
@@ -135,6 +172,10 @@ public final class ResourceConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     private final String executorShape;
 
+    /**
+     * The shape of the executor used while creating an Oracle Cloud Infrastructure Data Flow application. It sets the executor cores and memory.
+     * @return the value
+     **/
     public String getExecutorShape() {
         return executorShape;
     }
@@ -145,6 +186,10 @@ public final class ResourceConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("totalExecutors")
     private final Integer totalExecutors;
 
+    /**
+     * Number of executor VMs requested while creating an Oracle Cloud Infrastructure Data Flow application.
+     * @return the value
+     **/
     public Integer getTotalExecutors() {
         return totalExecutors;
     }

@@ -135,10 +135,17 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The OCID of the Kubernetes cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
+        /**
+         * The OCID of the Kubernetes cluster.
+         * @param clusterId the value to set
+         * @return this builder
+         **/
         public Builder clusterId(String clusterId) {
             this.clusterId = clusterId;
             this.__explicitlySet__.add("clusterId");
@@ -251,6 +258,10 @@ public final class OkeClusterDeployEnvironment extends DeployEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
+    /**
+     * The OCID of the Kubernetes cluster.
+     * @return the value
+     **/
     public String getClusterId() {
         return clusterId;
     }

@@ -31,27 +31,49 @@ public final class AuthenticationRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The user name
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The password
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-
+        /**
+         * The name of the tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
         private String tenantName;
 
+        /**
+         * The name of the tenancy
+         * @param tenantName the value to set
+         * @return this builder
+         **/
         public Builder tenantName(String tenantName) {
             this.tenantName = tenantName;
             this.__explicitlySet__.add("tenantName");
@@ -97,6 +119,10 @@ public final class AuthenticationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The user name
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -107,6 +133,10 @@ public final class AuthenticationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }
@@ -117,6 +147,10 @@ public final class AuthenticationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
     private final String tenantName;
 
+    /**
+     * The name of the tenancy
+     * @return the value
+     **/
     public String getTenantName() {
         return tenantName;
     }

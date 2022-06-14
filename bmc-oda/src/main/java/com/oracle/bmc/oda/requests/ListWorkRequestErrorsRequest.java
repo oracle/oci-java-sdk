@@ -17,6 +17,9 @@ public class ListWorkRequestErrorsRequest
      */
     private String workRequestId;
 
+    /**
+     * The identifier of the asynchronous work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -25,6 +28,9 @@ public class ListWorkRequestErrorsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,6 +45,15 @@ public class ListWorkRequestErrorsRequest
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -47,6 +62,9 @@ public class ListWorkRequestErrorsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -97,6 +115,12 @@ public class ListWorkRequestErrorsRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order. If no value is specified, then the default is {@code TIMESTAMP}.
+     * <p>
+     * The default sort order for both {@code TIMESTAMP} and {@code CODE} is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -141,6 +165,9 @@ public class ListWorkRequestErrorsRequest
         }
     };
 
+    /**
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -152,10 +179,14 @@ public class ListWorkRequestErrorsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The identifier of the asynchronous work request.
+         */
         private String workRequestId = null;
 
         /**
          * The identifier of the asynchronous work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -163,10 +194,14 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -174,6 +209,15 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         */
         private String page = null;
 
         /**
@@ -184,6 +228,7 @@ public class ListWorkRequestErrorsRequest
          * <p>
          * Example: {@code MToxMA==}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -191,10 +236,14 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -202,6 +251,12 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order. If no value is specified, then the default is {@code TIMESTAMP}.
+         * <p>
+         * The default sort order for both {@code TIMESTAMP} and {@code CODE} is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -209,6 +264,7 @@ public class ListWorkRequestErrorsRequest
          * <p>
          * The default sort order for both {@code TIMESTAMP} and {@code CODE} is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -216,10 +272,14 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -305,7 +365,8 @@ public class ListWorkRequestErrorsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -317,6 +378,10 @@ public class ListWorkRequestErrorsRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -51,72 +51,155 @@ public final class SecretVersion {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The content type of the secret version's secret contents.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private ContentType contentType;
 
+        /**
+         * The content type of the secret version's secret contents.
+         * @param contentType the value to set
+         * @return this builder
+         **/
         public Builder contentType(ContentType contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
             return this;
         }
-
+        /**
+         * The name of the secret version. A name is unique across versions of a secret.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the secret version. A name is unique across versions of a secret.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The OCID of the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
+        /**
+         * The OCID of the secret.
+         * @param secretId the value to set
+         * @return this builder
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
-
+        /**
+         * A list of possible rotation states for the secret version. A secret version marked {@code CURRENT} is currently in use. A secret version
+         * marked {@code PENDING} is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated
+         * into current, active use. The secret most recently uploaded to a vault is always marked {@code LATEST}. (The first version of a secret is
+         * always marked as both {@code CURRENT} and {@code LATEST}.) A secret version marked {@code PREVIOUS} is the secret version that was most recently marked
+         * {@code CURRENT}, before the last secret version rotation. A secret version marked {@code DEPRECATED} is neither current, pending, nor the previous
+         * one in use. Only secret versions marked {@code DEPRECATED} can be scheduled for deletion.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stages")
         private java.util.List<Stages> stages;
 
+        /**
+         * A list of possible rotation states for the secret version. A secret version marked {@code CURRENT} is currently in use. A secret version
+         * marked {@code PENDING} is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated
+         * into current, active use. The secret most recently uploaded to a vault is always marked {@code LATEST}. (The first version of a secret is
+         * always marked as both {@code CURRENT} and {@code LATEST}.) A secret version marked {@code PREVIOUS} is the secret version that was most recently marked
+         * {@code CURRENT}, before the last secret version rotation. A secret version marked {@code DEPRECATED} is neither current, pending, nor the previous
+         * one in use. Only secret versions marked {@code DEPRECATED} can be scheduled for deletion.
+         *
+         * @param stages the value to set
+         * @return this builder
+         **/
         public Builder stages(java.util.List<Stages> stages) {
             this.stages = stages;
             this.__explicitlySet__.add("stages");
             return this;
         }
-
+        /**
+         * A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
             return this;
         }
-
+        /**
+         * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfCurrentVersionExpiry")
         private java.util.Date timeOfCurrentVersionExpiry;
 
+        /**
+         * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfCurrentVersionExpiry the value to set
+         * @return this builder
+         **/
         public Builder timeOfCurrentVersionExpiry(java.util.Date timeOfCurrentVersionExpiry) {
             this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
             this.__explicitlySet__.add("timeOfCurrentVersionExpiry");
             return this;
         }
-
+        /**
+         * The version number of the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
         private Long versionNumber;
 
+        /**
+         * The version number of the secret.
+         * @param versionNumber the value to set
+         * @return this builder
+         **/
         public Builder versionNumber(Long versionNumber) {
             this.versionNumber = versionNumber;
             this.__explicitlySet__.add("versionNumber");
@@ -222,6 +305,10 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final ContentType contentType;
 
+    /**
+     * The content type of the secret version's secret contents.
+     * @return the value
+     **/
     public ContentType getContentType() {
         return contentType;
     }
@@ -233,6 +320,11 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the secret version. A name is unique across versions of a secret.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -243,6 +335,10 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
+    /**
+     * The OCID of the secret.
+     * @return the value
+     **/
     public String getSecretId() {
         return secretId;
     }
@@ -308,6 +404,16 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
     private final java.util.List<Stages> stages;
 
+    /**
+     * A list of possible rotation states for the secret version. A secret version marked {@code CURRENT} is currently in use. A secret version
+     * marked {@code PENDING} is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated
+     * into current, active use. The secret most recently uploaded to a vault is always marked {@code LATEST}. (The first version of a secret is
+     * always marked as both {@code CURRENT} and {@code LATEST}.) A secret version marked {@code PREVIOUS} is the secret version that was most recently marked
+     * {@code CURRENT}, before the last secret version rotation. A secret version marked {@code DEPRECATED} is neither current, pending, nor the previous
+     * one in use. Only secret versions marked {@code DEPRECATED} can be scheduled for deletion.
+     *
+     * @return the value
+     **/
     public java.util.List<Stages> getStages() {
         return stages;
     }
@@ -320,6 +426,12 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -332,6 +444,12 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -344,6 +462,12 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfCurrentVersionExpiry")
     private final java.util.Date timeOfCurrentVersionExpiry;
 
+    /**
+     * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfCurrentVersionExpiry() {
         return timeOfCurrentVersionExpiry;
     }
@@ -354,6 +478,10 @@ public final class SecretVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
     private final Long versionNumber;
 
+    /**
+     * The version number of the secret.
+     * @return the value
+     **/
     public Long getVersionNumber() {
         return versionNumber;
     }

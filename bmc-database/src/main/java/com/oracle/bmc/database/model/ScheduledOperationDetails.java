@@ -33,6 +33,7 @@ public final class ScheduledOperationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
@@ -41,19 +42,33 @@ public final class ScheduledOperationDetails {
             this.__explicitlySet__.add("dayOfWeek");
             return this;
         }
-
+        /**
+         * auto start time. value must be of ISO-8601 format "HH:mm"
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledStartTime")
         private String scheduledStartTime;
 
+        /**
+         * auto start time. value must be of ISO-8601 format "HH:mm"
+         * @param scheduledStartTime the value to set
+         * @return this builder
+         **/
         public Builder scheduledStartTime(String scheduledStartTime) {
             this.scheduledStartTime = scheduledStartTime;
             this.__explicitlySet__.add("scheduledStartTime");
             return this;
         }
-
+        /**
+         * auto stop time. value must be of ISO-8601 format "HH:mm"
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledStopTime")
         private String scheduledStopTime;
 
+        /**
+         * auto stop time. value must be of ISO-8601 format "HH:mm"
+         * @param scheduledStopTime the value to set
+         * @return this builder
+         **/
         public Builder scheduledStopTime(String scheduledStopTime) {
             this.scheduledStopTime = scheduledStopTime;
             this.__explicitlySet__.add("scheduledStopTime");
@@ -106,6 +121,10 @@ public final class ScheduledOperationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledStartTime")
     private final String scheduledStartTime;
 
+    /**
+     * auto start time. value must be of ISO-8601 format "HH:mm"
+     * @return the value
+     **/
     public String getScheduledStartTime() {
         return scheduledStartTime;
     }
@@ -116,6 +135,10 @@ public final class ScheduledOperationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledStopTime")
     private final String scheduledStopTime;
 
+    /**
+     * auto stop time. value must be of ISO-8601 format "HH:mm"
+     * @return the value
+     **/
     public String getScheduledStopTime() {
         return scheduledStopTime;
     }

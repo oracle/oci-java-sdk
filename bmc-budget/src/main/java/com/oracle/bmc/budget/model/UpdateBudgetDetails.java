@@ -53,73 +53,152 @@ public final class UpdateBudgetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The displayName of the budget. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The displayName of the budget. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The description of the budget.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the budget.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The amount of the budget expressed as a whole number in the currency of the customer's rate card.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("amount")
         private java.math.BigDecimal amount;
 
+        /**
+         * The amount of the budget expressed as a whole number in the currency of the customer's rate card.
+         *
+         * @param amount the value to set
+         * @return this builder
+         **/
         public Builder amount(java.math.BigDecimal amount) {
             this.amount = amount;
             this.__explicitlySet__.add("amount");
             return this;
         }
-
+        /**
+         * The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
         private Integer budgetProcessingPeriodStartOffset;
 
+        /**
+         * The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+         * @param budgetProcessingPeriodStartOffset the value to set
+         * @return this builder
+         **/
         public Builder budgetProcessingPeriodStartOffset(
                 Integer budgetProcessingPeriodStartOffset) {
             this.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
             this.__explicitlySet__.add("budgetProcessingPeriodStartOffset");
             return this;
         }
-
+        /**
+         * The type of the budget processing period. Valid values are INVOICE and MONTH.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
         private ProcessingPeriodType processingPeriodType;
 
+        /**
+         * The type of the budget processing period. Valid values are INVOICE and MONTH.
+         *
+         * @param processingPeriodType the value to set
+         * @return this builder
+         **/
         public Builder processingPeriodType(ProcessingPeriodType processingPeriodType) {
             this.processingPeriodType = processingPeriodType;
             this.__explicitlySet__.add("processingPeriodType");
             return this;
         }
-
+        /**
+         * The reset period for the budget.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resetPeriod")
         private ResetPeriod resetPeriod;
 
+        /**
+         * The reset period for the budget.
+         *
+         * @param resetPeriod the value to set
+         * @return this builder
+         **/
         public Builder resetPeriod(ResetPeriod resetPeriod) {
             this.resetPeriod = resetPeriod;
             this.__explicitlySet__.add("resetPeriod");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -180,6 +259,10 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The displayName of the budget. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -190,6 +273,10 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the budget.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -201,6 +288,11 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
     private final java.math.BigDecimal amount;
 
+    /**
+     * The amount of the budget expressed as a whole number in the currency of the customer's rate card.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getAmount() {
         return amount;
     }
@@ -211,6 +303,10 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
     private final Integer budgetProcessingPeriodStartOffset;
 
+    /**
+     * The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+     * @return the value
+     **/
     public Integer getBudgetProcessingPeriodStartOffset() {
         return budgetProcessingPeriodStartOffset;
     }
@@ -222,6 +318,11 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
     private final ProcessingPeriodType processingPeriodType;
 
+    /**
+     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     *
+     * @return the value
+     **/
     public ProcessingPeriodType getProcessingPeriodType() {
         return processingPeriodType;
     }
@@ -233,6 +334,11 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resetPeriod")
     private final ResetPeriod resetPeriod;
 
+    /**
+     * The reset period for the budget.
+     *
+     * @return the value
+     **/
     public ResetPeriod getResetPeriod() {
         return resetPeriod;
     }
@@ -247,6 +353,14 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -261,6 +375,14 @@ public final class UpdateBudgetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

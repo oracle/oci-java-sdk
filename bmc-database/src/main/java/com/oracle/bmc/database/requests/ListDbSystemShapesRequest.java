@@ -16,6 +16,9 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String availabilityDomain;
 
+    /**
+     * The name of the Availability Domain.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -32,6 +38,9 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -51,10 +63,14 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -62,10 +78,14 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The name of the Availability Domain.
+         */
         private String availabilityDomain = null;
 
         /**
          * The name of the Availability Domain.
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -73,10 +93,14 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -84,10 +108,14 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -169,7 +197,8 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -179,6 +208,10 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

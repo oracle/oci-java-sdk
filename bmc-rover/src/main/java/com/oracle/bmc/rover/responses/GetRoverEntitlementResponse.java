@@ -13,6 +13,10 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement;
 
+    /**
+     * The returned RoverEntitlement instance.
+     * @return the value
+     */
     public com.oracle.bmc.rover.model.RoverEntitlement getRoverEntitlement() {
         return roverEntitlement;
     }
@@ -60,22 +72,46 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned RoverEntitlement instance.
+         */
         private com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement;
 
+        /**
+         * The returned RoverEntitlement instance.
+         * @param roverEntitlement the value to set
+         * @return this builder
+         */
         public Builder roverEntitlement(
                 com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement) {
             this.roverEntitlement = roverEntitlement;
@@ -95,12 +131,20 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRoverEntitlementResponse build() {
             return new GetRoverEntitlementResponse(
                     __httpStatusCode__, opcRequestId, etag, roverEntitlement);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

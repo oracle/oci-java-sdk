@@ -17,6 +17,14 @@ public class ListKeysResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then there are additional items still to get. Include this value as the {@code page} parameter for the
+     * subsequent GET request. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -28,6 +36,12 @@ public class ListKeysResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +51,10 @@ public class ListKeysResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.keymanagement.model.KeySummary> items;
 
+    /**
+     * A list of com.oracle.bmc.keymanagement.model.KeySummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.keymanagement.model.KeySummary> getItems() {
         return items;
     }
@@ -66,22 +84,58 @@ public class ListKeysResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.keymanagement.model.KeySummary instances.
+         */
         private java.util.List<com.oracle.bmc.keymanagement.model.KeySummary> items;
 
+        /**
+         * A list of com.oracle.bmc.keymanagement.model.KeySummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(java.util.List<com.oracle.bmc.keymanagement.model.KeySummary> items) {
             this.items = items;
             return this;
@@ -100,11 +154,19 @@ public class ListKeysResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListKeysResponse build() {
             return new ListKeysResponse(__httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

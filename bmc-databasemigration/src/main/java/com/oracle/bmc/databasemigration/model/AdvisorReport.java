@@ -46,6 +46,7 @@ public final class AdvisorReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("reportLocationDetails")
         private AdvisorReportLocationDetails reportLocationDetails;
 
@@ -54,46 +55,91 @@ public final class AdvisorReport {
             this.__explicitlySet__.add("reportLocationDetails");
             return this;
         }
-
+        /**
+         * Pre-Migration advisor result.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private AdvisorResults result;
 
+        /**
+         * Pre-Migration advisor result.
+         *
+         * @param result the value to set
+         * @return this builder
+         **/
         public Builder result(AdvisorResults result) {
             this.result = result;
             this.__explicitlySet__.add("result");
             return this;
         }
-
+        /**
+         * Number of Fatal results in the advisor report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfFatal")
         private Integer numberOfFatal;
 
+        /**
+         * Number of Fatal results in the advisor report.
+         *
+         * @param numberOfFatal the value to set
+         * @return this builder
+         **/
         public Builder numberOfFatal(Integer numberOfFatal) {
             this.numberOfFatal = numberOfFatal;
             this.__explicitlySet__.add("numberOfFatal");
             return this;
         }
-
+        /**
+         * Number of Fatal Blocker results in the advisor report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfFatalBlockers")
         private Integer numberOfFatalBlockers;
 
+        /**
+         * Number of Fatal Blocker results in the advisor report.
+         *
+         * @param numberOfFatalBlockers the value to set
+         * @return this builder
+         **/
         public Builder numberOfFatalBlockers(Integer numberOfFatalBlockers) {
             this.numberOfFatalBlockers = numberOfFatalBlockers;
             this.__explicitlySet__.add("numberOfFatalBlockers");
             return this;
         }
-
+        /**
+         * Number of Warning results in the advisor report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfWarnings")
         private Integer numberOfWarnings;
 
+        /**
+         * Number of Warning results in the advisor report.
+         *
+         * @param numberOfWarnings the value to set
+         * @return this builder
+         **/
         public Builder numberOfWarnings(Integer numberOfWarnings) {
             this.numberOfWarnings = numberOfWarnings;
             this.__explicitlySet__.add("numberOfWarnings");
             return this;
         }
-
+        /**
+         * Number of Informational results in the advisor report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfInformationalResults")
         private Integer numberOfInformationalResults;
 
+        /**
+         * Number of Informational results in the advisor report.
+         *
+         * @param numberOfInformationalResults the value to set
+         * @return this builder
+         **/
         public Builder numberOfInformationalResults(Integer numberOfInformationalResults) {
             this.numberOfInformationalResults = numberOfInformationalResults;
             this.__explicitlySet__.add("numberOfInformationalResults");
@@ -156,6 +202,11 @@ public final class AdvisorReport {
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final AdvisorResults result;
 
+    /**
+     * Pre-Migration advisor result.
+     *
+     * @return the value
+     **/
     public AdvisorResults getResult() {
         return result;
     }
@@ -167,6 +218,11 @@ public final class AdvisorReport {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfFatal")
     private final Integer numberOfFatal;
 
+    /**
+     * Number of Fatal results in the advisor report.
+     *
+     * @return the value
+     **/
     public Integer getNumberOfFatal() {
         return numberOfFatal;
     }
@@ -178,6 +234,11 @@ public final class AdvisorReport {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfFatalBlockers")
     private final Integer numberOfFatalBlockers;
 
+    /**
+     * Number of Fatal Blocker results in the advisor report.
+     *
+     * @return the value
+     **/
     public Integer getNumberOfFatalBlockers() {
         return numberOfFatalBlockers;
     }
@@ -189,6 +250,11 @@ public final class AdvisorReport {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfWarnings")
     private final Integer numberOfWarnings;
 
+    /**
+     * Number of Warning results in the advisor report.
+     *
+     * @return the value
+     **/
     public Integer getNumberOfWarnings() {
         return numberOfWarnings;
     }
@@ -200,6 +266,11 @@ public final class AdvisorReport {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfInformationalResults")
     private final Integer numberOfInformationalResults;
 
+    /**
+     * Number of Informational results in the advisor report.
+     *
+     * @return the value
+     **/
     public Integer getNumberOfInformationalResults() {
         return numberOfInformationalResults;
     }

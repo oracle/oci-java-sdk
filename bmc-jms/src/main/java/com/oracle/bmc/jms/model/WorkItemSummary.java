@@ -45,18 +45,33 @@ public final class WorkItemSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique ID of ths work item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique ID of ths work item.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the work request created this work item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
+        /**
+         * The OCID of the work request created this work item.
+         * @param workRequestId the value to set
+         * @return this builder
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
@@ -71,28 +86,51 @@ public final class WorkItemSummary {
             this.__explicitlySet__.add("installationSite");
             return this;
         }
-
+        /**
+         * The status of the work item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkItemStatus status;
 
+        /**
+         * The status of the work item.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(WorkItemStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Number of times this work item is retried.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
         private Integer retryCount;
 
+        /**
+         * Number of times this work item is retried.
+         * @param retryCount the value to set
+         * @return this builder
+         **/
         public Builder retryCount(Integer retryCount) {
             this.retryCount = retryCount;
             this.__explicitlySet__.add("retryCount");
             return this;
         }
-
+        /**
+         * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
         private java.util.Date timeLastUpdated;
 
+        /**
+         * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeLastUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
             this.timeLastUpdated = timeLastUpdated;
             this.__explicitlySet__.add("timeLastUpdated");
@@ -147,6 +185,10 @@ public final class WorkItemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique ID of ths work item.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -157,6 +199,10 @@ public final class WorkItemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
+    /**
+     * The OCID of the work request created this work item.
+     * @return the value
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -174,6 +220,10 @@ public final class WorkItemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkItemStatus status;
 
+    /**
+     * The status of the work item.
+     * @return the value
+     **/
     public WorkItemStatus getStatus() {
         return status;
     }
@@ -184,6 +234,10 @@ public final class WorkItemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
     private final Integer retryCount;
 
+    /**
+     * Number of times this work item is retried.
+     * @return the value
+     **/
     public Integer getRetryCount() {
         return retryCount;
     }
@@ -195,6 +249,11 @@ public final class WorkItemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
     private final java.util.Date timeLastUpdated;
 
+    /**
+     * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastUpdated() {
         return timeLastUpdated;
     }

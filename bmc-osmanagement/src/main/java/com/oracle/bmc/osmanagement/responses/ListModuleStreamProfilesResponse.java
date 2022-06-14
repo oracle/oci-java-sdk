@@ -15,6 +15,12 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query the status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -26,6 +32,12 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,6 +51,14 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this
+     * header appears in the response, then a partial list might have been
+     * returned. Include this value as the {@code page} parameter for the subsequent
+     * GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -48,6 +68,10 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary> items;
 
+    /**
+     * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary> getItems() {
         return items;
     }
@@ -80,29 +104,77 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query the status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query the status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this
+         * header appears in the response, then a partial list might have been
+         * returned. Include this value as the {@code page} parameter for the subsequent
+         * GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this
+         * header appears in the response, then a partial list might have been
+         * returned. Include this value as the {@code page} parameter for the subsequent
+         * GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances.
+         */
         private java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary> items;
 
+        /**
+         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>
                         items) {
@@ -124,12 +196,20 @@ public class ListModuleStreamProfilesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListModuleStreamProfilesResponse build() {
             return new ListModuleStreamProfilesResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, opcNextPage, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

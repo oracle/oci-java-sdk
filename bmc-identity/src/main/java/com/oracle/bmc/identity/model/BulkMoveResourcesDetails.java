@@ -31,18 +31,39 @@ public final class BulkMoveResourcesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resources to be moved.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<BulkActionResource> resources;
 
+        /**
+         * The resources to be moved.
+         *
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<BulkActionResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment
+         * into which to move the resources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
         private String targetCompartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment
+         * into which to move the resources.
+         *
+         * @param targetCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder targetCompartmentId(String targetCompartmentId) {
             this.targetCompartmentId = targetCompartmentId;
             this.__explicitlySet__.add("targetCompartmentId");
@@ -87,6 +108,11 @@ public final class BulkMoveResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<BulkActionResource> resources;
 
+    /**
+     * The resources to be moved.
+     *
+     * @return the value
+     **/
     public java.util.List<BulkActionResource> getResources() {
         return resources;
     }
@@ -99,6 +125,12 @@ public final class BulkMoveResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     private final String targetCompartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment
+     * into which to move the resources.
+     *
+     * @return the value
+     **/
     public String getTargetCompartmentId() {
         return targetCompartmentId;
     }

@@ -29,9 +29,17 @@ public final class BulkDeleteTagsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCIDs of the tag definitions to delete
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionIds")
         private java.util.List<String> tagDefinitionIds;
 
+        /**
+         * The OCIDs of the tag definitions to delete
+         * @param tagDefinitionIds the value to set
+         * @return this builder
+         **/
         public Builder tagDefinitionIds(java.util.List<String> tagDefinitionIds) {
             this.tagDefinitionIds = tagDefinitionIds;
             this.__explicitlySet__.add("tagDefinitionIds");
@@ -73,6 +81,10 @@ public final class BulkDeleteTagsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionIds")
     private final java.util.List<String> tagDefinitionIds;
 
+    /**
+     * The OCIDs of the tag definitions to delete
+     * @return the value
+     **/
     public java.util.List<String> getTagDefinitionIds() {
         return tagDefinitionIds;
     }

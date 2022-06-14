@@ -99,207 +99,377 @@ public final class CustomPropertySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique custom property key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique custom property key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Display name of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the custom property
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the custom property
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Data type of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private CustomPropertyDataType dataType;
 
+        /**
+         * Data type of the custom property
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(CustomPropertyDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Namespace name of the custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * Namespace name of the custom property
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-
+        /**
+         * If this field allows to sort from UI
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSortable")
         private Boolean isSortable;
 
+        /**
+         * If this field allows to sort from UI
+         * @param isSortable the value to set
+         * @return this builder
+         **/
         public Builder isSortable(Boolean isSortable) {
             this.isSortable = isSortable;
             this.__explicitlySet__.add("isSortable");
             return this;
         }
-
+        /**
+         * If this field allows to filter or create facets from UI
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFilterable")
         private Boolean isFilterable;
 
+        /**
+         * If this field allows to filter or create facets from UI
+         * @param isFilterable the value to set
+         * @return this builder
+         **/
         public Builder isFilterable(Boolean isFilterable) {
             this.isFilterable = isFilterable;
             this.__explicitlySet__.add("isFilterable");
             return this;
         }
-
+        /**
+         * If this field allows multiple values to be set
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
+        /**
+         * If this field allows multiple values to be set
+         * @param isMultiValued the value to set
+         * @return this builder
+         **/
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-
+        /**
+         * If this field is a hidden field
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * If this field is a hidden field
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-
+        /**
+         * If this field is a editable field
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
         private Boolean isEditable;
 
+        /**
+         * If this field is a editable field
+         * @param isEditable the value to set
+         * @return this builder
+         **/
         public Builder isEditable(Boolean isEditable) {
             this.isEditable = isEditable;
             this.__explicitlySet__.add("isEditable");
             return this;
         }
-
+        /**
+         * If this field is displayed in a list view of applicable objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
         private Boolean isShownInList;
 
+        /**
+         * If this field is displayed in a list view of applicable objects.
+         * @param isShownInList the value to set
+         * @return this builder
+         **/
         public Builder isShownInList(Boolean isShownInList) {
             this.isShownInList = isShownInList;
             this.__explicitlySet__.add("isShownInList");
             return this;
         }
-
+        /**
+         * If this field is defined by service or by a user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
         private Boolean isServiceDefined;
 
+        /**
+         * If this field is defined by service or by a user
+         * @param isServiceDefined the value to set
+         * @return this builder
+         **/
         public Builder isServiceDefined(Boolean isServiceDefined) {
             this.isServiceDefined = isServiceDefined;
             this.__explicitlySet__.add("isServiceDefined");
             return this;
         }
-
+        /**
+         * If this field is allowed to pop in search results
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
         private Boolean isHiddenInSearch;
 
+        /**
+         * If this field is allowed to pop in search results
+         * @param isHiddenInSearch the value to set
+         * @return this builder
+         **/
         public Builder isHiddenInSearch(Boolean isHiddenInSearch) {
             this.isHiddenInSearch = isHiddenInSearch;
             this.__explicitlySet__.add("isHiddenInSearch");
             return this;
         }
-
+        /**
+         * The date and time the custom property was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the custom property was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The current state of the custom property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the custom property.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Total number of first class objects using this custom property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageCount")
         private Integer usageCount;
 
+        /**
+         * Total number of first class objects using this custom property
+         * @param usageCount the value to set
+         * @return this builder
+         **/
         public Builder usageCount(Integer usageCount) {
             this.usageCount = usageCount;
             this.__explicitlySet__.add("usageCount");
             return this;
         }
-
+        /**
+         * Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private java.util.List<CustomPropertyTypeUsage> scope;
 
+        /**
+         * Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to
+         *
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(java.util.List<CustomPropertyTypeUsage> scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * Allowed values for the custom property if any
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<String> allowedValues;
 
+        /**
+         * Allowed values for the custom property if any
+         * @param allowedValues the value to set
+         * @return this builder
+         **/
         public Builder allowedValues(java.util.List<String> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-
+        /**
+         * The last time that any change was made to the custom property. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last time that any change was made to the custom property. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * OCID of the user who created the custom property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
+        /**
+         * OCID of the user who created the custom property.
+         * @param createdById the value to set
+         * @return this builder
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
-
+        /**
+         * OCID of the user who last modified the custom property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
         private String updatedById;
 
+        /**
+         * OCID of the user who last modified the custom property.
+         * @param updatedById the value to set
+         * @return this builder
+         **/
         public Builder updatedById(String updatedById) {
             this.updatedById = updatedById;
             this.__explicitlySet__.add("updatedById");
             return this;
         }
-
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
+        /**
+         * If an OCI Event will be emitted when the custom property is modified.
+         * @param isEventEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
             return this;
         }
-
+        /**
+         * Event configuration for this custom property, against the desired subset of object types to which the property applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<EventConfig> events;
 
+        /**
+         * Event configuration for this custom property, against the desired subset of object types to which the property applies.
+         * @param events the value to set
+         * @return this builder
+         **/
         public Builder events(java.util.List<EventConfig> events) {
             this.events = events;
             this.__explicitlySet__.add("events");
@@ -388,6 +558,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique custom property key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -398,6 +572,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the custom property
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -408,6 +586,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the custom property
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -418,6 +600,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final CustomPropertyDataType dataType;
 
+    /**
+     * Data type of the custom property
+     * @return the value
+     **/
     public CustomPropertyDataType getDataType() {
         return dataType;
     }
@@ -428,6 +614,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * Namespace name of the custom property
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -438,6 +628,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSortable")
     private final Boolean isSortable;
 
+    /**
+     * If this field allows to sort from UI
+     * @return the value
+     **/
     public Boolean getIsSortable() {
         return isSortable;
     }
@@ -448,6 +642,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isFilterable")
     private final Boolean isFilterable;
 
+    /**
+     * If this field allows to filter or create facets from UI
+     * @return the value
+     **/
     public Boolean getIsFilterable() {
         return isFilterable;
     }
@@ -458,6 +656,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
+    /**
+     * If this field allows multiple values to be set
+     * @return the value
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
@@ -468,6 +670,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * If this field is a hidden field
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -478,6 +684,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     private final Boolean isEditable;
 
+    /**
+     * If this field is a editable field
+     * @return the value
+     **/
     public Boolean getIsEditable() {
         return isEditable;
     }
@@ -488,6 +698,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
     private final Boolean isShownInList;
 
+    /**
+     * If this field is displayed in a list view of applicable objects.
+     * @return the value
+     **/
     public Boolean getIsShownInList() {
         return isShownInList;
     }
@@ -498,6 +712,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
     private final Boolean isServiceDefined;
 
+    /**
+     * If this field is defined by service or by a user
+     * @return the value
+     **/
     public Boolean getIsServiceDefined() {
         return isServiceDefined;
     }
@@ -508,6 +726,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
     private final Boolean isHiddenInSearch;
 
+    /**
+     * If this field is allowed to pop in search results
+     * @return the value
+     **/
     public Boolean getIsHiddenInSearch() {
         return isHiddenInSearch;
     }
@@ -520,6 +742,12 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the custom property was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -530,6 +758,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the custom property.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -540,6 +772,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usageCount")
     private final Integer usageCount;
 
+    /**
+     * Total number of first class objects using this custom property
+     * @return the value
+     **/
     public Integer getUsageCount() {
         return usageCount;
     }
@@ -551,6 +787,11 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final java.util.List<CustomPropertyTypeUsage> scope;
 
+    /**
+     * Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to
+     *
+     * @return the value
+     **/
     public java.util.List<CustomPropertyTypeUsage> getScope() {
         return scope;
     }
@@ -561,6 +802,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<String> allowedValues;
 
+    /**
+     * Allowed values for the custom property if any
+     * @return the value
+     **/
     public java.util.List<String> getAllowedValues() {
         return allowedValues;
     }
@@ -572,6 +817,11 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last time that any change was made to the custom property. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -582,6 +832,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
+    /**
+     * OCID of the user who created the custom property.
+     * @return the value
+     **/
     public String getCreatedById() {
         return createdById;
     }
@@ -592,6 +846,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     private final String updatedById;
 
+    /**
+     * OCID of the user who last modified the custom property.
+     * @return the value
+     **/
     public String getUpdatedById() {
         return updatedById;
     }
@@ -602,6 +860,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
+    /**
+     * If an OCI Event will be emitted when the custom property is modified.
+     * @return the value
+     **/
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }
@@ -612,6 +874,10 @@ public final class CustomPropertySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     private final java.util.List<EventConfig> events;
 
+    /**
+     * Event configuration for this custom property, against the desired subset of object types to which the property applies.
+     * @return the value
+     **/
     public java.util.List<EventConfig> getEvents() {
         return events;
     }

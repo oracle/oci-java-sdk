@@ -29,9 +29,17 @@ public final class UpdateDigitalAssistantParameterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current value.  The value will be interpreted based on the {@code type}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The current value.  The value will be interpreted based on the {@code type}.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -74,6 +82,10 @@ public final class UpdateDigitalAssistantParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The current value.  The value will be interpreted based on the {@code type}.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

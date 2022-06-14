@@ -17,6 +17,9 @@ public class CreateVtapRequest
      */
     private com.oracle.bmc.core.model.CreateVtapDetails createVtapDetails;
 
+    /**
+     * Details used to create a VTAP.
+     */
     public com.oracle.bmc.core.model.CreateVtapDetails getCreateVtapDetails() {
         return createVtapDetails;
     }
@@ -30,6 +33,14 @@ public class CreateVtapRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -40,6 +51,11 @@ public class CreateVtapRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,10 +77,14 @@ public class CreateVtapRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details used to create a VTAP.
+         */
         private com.oracle.bmc.core.model.CreateVtapDetails createVtapDetails = null;
 
         /**
          * Details used to create a VTAP.
+         * @param createVtapDetails the value to set
          * @return this builder instance
          */
         public Builder createVtapDetails(
@@ -73,6 +93,14 @@ public class CreateVtapRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -82,6 +110,7 @@ public class CreateVtapRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -89,12 +118,18 @@ public class CreateVtapRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -185,7 +220,8 @@ public class CreateVtapRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -194,6 +230,10 @@ public class CreateVtapRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

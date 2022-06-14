@@ -18,6 +18,9 @@ public class CreatePipelineValidationRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -27,6 +30,9 @@ public class CreatePipelineValidationRequest
     private com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails
             createPipelineValidationDetails;
 
+    /**
+     * The information needed to create the data flow validation for the pipeline object.
+     */
     public com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails
             getCreatePipelineValidationDetails() {
         return createPipelineValidationDetails;
@@ -39,6 +45,12 @@ public class CreatePipelineValidationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +60,10 @@ public class CreatePipelineValidationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -70,10 +86,14 @@ public class CreatePipelineValidationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -81,11 +101,15 @@ public class CreatePipelineValidationRequest
             return this;
         }
 
+        /**
+         * The information needed to create the data flow validation for the pipeline object.
+         */
         private com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails
                 createPipelineValidationDetails = null;
 
         /**
          * The information needed to create the data flow validation for the pipeline object.
+         * @param createPipelineValidationDetails the value to set
          * @return this builder instance
          */
         public Builder createPipelineValidationDetails(
@@ -95,6 +119,12 @@ public class CreatePipelineValidationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -102,6 +132,7 @@ public class CreatePipelineValidationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,11 +140,16 @@ public class CreatePipelineValidationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -207,7 +243,8 @@ public class CreatePipelineValidationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +254,10 @@ public class CreatePipelineValidationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

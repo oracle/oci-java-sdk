@@ -18,6 +18,9 @@ public class UpdateMeshRequest
      */
     private String meshId;
 
+    /**
+     * Unique Mesh identifier.
+     */
     public String getMeshId() {
         return meshId;
     }
@@ -26,6 +29,9 @@ public class UpdateMeshRequest
      */
     private com.oracle.bmc.servicemesh.model.UpdateMeshDetails updateMeshDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.servicemesh.model.UpdateMeshDetails getUpdateMeshDetails() {
         return updateMeshDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateMeshRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +66,14 @@ public class UpdateMeshRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -60,6 +82,9 @@ public class UpdateMeshRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -81,10 +106,14 @@ public class UpdateMeshRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Mesh identifier.
+         */
         private String meshId = null;
 
         /**
          * Unique Mesh identifier.
+         * @param meshId the value to set
          * @return this builder instance
          */
         public Builder meshId(String meshId) {
@@ -92,10 +121,14 @@ public class UpdateMeshRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.servicemesh.model.UpdateMeshDetails updateMeshDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateMeshDetails the value to set
          * @return this builder instance
          */
         public Builder updateMeshDetails(
@@ -104,6 +137,14 @@ public class UpdateMeshRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -113,6 +154,7 @@ public class UpdateMeshRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -120,6 +162,14 @@ public class UpdateMeshRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -129,6 +179,7 @@ public class UpdateMeshRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -136,10 +187,14 @@ public class UpdateMeshRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -234,7 +289,8 @@ public class UpdateMeshRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +301,10 @@ public class UpdateMeshRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

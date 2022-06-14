@@ -54,6 +54,10 @@ public class WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Rule name. Must be unique within the module.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -104,6 +108,13 @@ public class WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguage")
     private final ConditionLanguage conditionLanguage;
 
+    /**
+     * The language used to parse condition from field {@code condition}. Available languages:
+     * <p>
+     * **JMESPATH** an extended JMESPath language syntax.
+     *
+     * @return the value
+     **/
     public ConditionLanguage getConditionLanguage() {
         return conditionLanguage;
     }
@@ -115,6 +126,11 @@ public class WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
+    /**
+     * An expression that determines whether or not the rule action should be executed.
+     *
+     * @return the value
+     **/
     public String getCondition() {
         return condition;
     }
@@ -125,6 +141,10 @@ public class WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("actionName")
     private final String actionName;
 
+    /**
+     * References action by name from actions defined in WebAppFirewallPolicy.
+     * @return the value
+     **/
     public String getActionName() {
         return actionName;
     }

@@ -17,6 +17,9 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,11 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String sqlIdentifier;
 
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     * Example: {@code 6rgjh9bjmy2s7}
+     *
+     */
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -36,6 +44,10 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String databaseId;
 
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -45,6 +57,10 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String id;
 
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -57,6 +73,13 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String analysisTimeInterval;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
+     */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
@@ -70,6 +93,14 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private java.util.Date timeIntervalStart;
 
+    /**
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -82,6 +113,13 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    /**
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -93,6 +131,12 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -103,6 +147,11 @@ public class SummarizeSqlPlanInsightsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -114,10 +163,14 @@ public class SummarizeSqlPlanInsightsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -125,12 +178,18 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         * Example: {@code 6rgjh9bjmy2s7}
+         *
+         */
         private String sqlIdentifier = null;
 
         /**
          * Unique SQL_ID for a SQL Statement.
          * Example: {@code 6rgjh9bjmy2s7}
          *
+         * @param sqlIdentifier the value to set
          * @return this builder instance
          */
         public Builder sqlIdentifier(String sqlIdentifier) {
@@ -138,11 +197,16 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         */
         private String databaseId = null;
 
         /**
          * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -150,11 +214,16 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         *
+         */
         private String id = null;
 
         /**
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -162,6 +231,13 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         */
         private String analysisTimeInterval = null;
 
         /**
@@ -170,6 +246,7 @@ public class SummarizeSqlPlanInsightsRequest
          * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
          * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
+         * @param analysisTimeInterval the value to set
          * @return this builder instance
          */
         public Builder analysisTimeInterval(String analysisTimeInterval) {
@@ -177,6 +254,14 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         */
         private java.util.Date timeIntervalStart = null;
 
         /**
@@ -186,6 +271,7 @@ public class SummarizeSqlPlanInsightsRequest
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          * If analysisTimeInterval is specified, this parameter is ignored.
          *
+         * @param timeIntervalStart the value to set
          * @return this builder instance
          */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
@@ -193,6 +279,13 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         */
         private java.util.Date timeIntervalEnd = null;
 
         /**
@@ -201,6 +294,7 @@ public class SummarizeSqlPlanInsightsRequest
          * timeIntervalStart and timeIntervalEnd are used together.
          * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
+         * @param timeIntervalEnd the value to set
          * @return this builder instance
          */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
@@ -208,6 +302,12 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -215,6 +315,7 @@ public class SummarizeSqlPlanInsightsRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -222,12 +323,18 @@ public class SummarizeSqlPlanInsightsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -319,7 +426,8 @@ public class SummarizeSqlPlanInsightsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -334,6 +442,10 @@ public class SummarizeSqlPlanInsightsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

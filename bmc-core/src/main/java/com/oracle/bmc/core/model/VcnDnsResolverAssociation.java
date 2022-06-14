@@ -33,27 +33,51 @@ public final class VcnDnsResolverAssociation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN in the association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN in the association.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS resolver in the association.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsResolverId")
         private String dnsResolverId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS resolver in the association.
+         *
+         * @param dnsResolverId the value to set
+         * @return this builder
+         **/
         public Builder dnsResolverId(String dnsResolverId) {
             this.dnsResolverId = dnsResolverId;
             this.__explicitlySet__.add("dnsResolverId");
             return this;
         }
-
+        /**
+         * The current state of the association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the association.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -99,6 +123,10 @@ public final class VcnDnsResolverAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN in the association.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -110,6 +138,11 @@ public final class VcnDnsResolverAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsResolverId")
     private final String dnsResolverId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS resolver in the association.
+     *
+     * @return the value
+     **/
     public String getDnsResolverId() {
         return dnsResolverId;
     }
@@ -170,6 +203,10 @@ public final class VcnDnsResolverAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the association.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

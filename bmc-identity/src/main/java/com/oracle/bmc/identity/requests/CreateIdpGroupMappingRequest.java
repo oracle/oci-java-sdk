@@ -18,6 +18,9 @@ public class CreateIdpGroupMappingRequest
      */
     private com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails createIdpGroupMappingDetails;
 
+    /**
+     * Add a mapping from an SAML2.0 identity provider group to a BMC group.
+     */
     public com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails
             getCreateIdpGroupMappingDetails() {
         return createIdpGroupMappingDetails;
@@ -27,6 +30,9 @@ public class CreateIdpGroupMappingRequest
      */
     private String identityProviderId;
 
+    /**
+     * The OCID of the identity provider.
+     */
     public String getIdentityProviderId() {
         return identityProviderId;
     }
@@ -40,6 +46,14 @@ public class CreateIdpGroupMappingRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,11 +76,15 @@ public class CreateIdpGroupMappingRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Add a mapping from an SAML2.0 identity provider group to a BMC group.
+         */
         private com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails
                 createIdpGroupMappingDetails = null;
 
         /**
          * Add a mapping from an SAML2.0 identity provider group to a BMC group.
+         * @param createIdpGroupMappingDetails the value to set
          * @return this builder instance
          */
         public Builder createIdpGroupMappingDetails(
@@ -76,10 +94,14 @@ public class CreateIdpGroupMappingRequest
             return this;
         }
 
+        /**
+         * The OCID of the identity provider.
+         */
         private String identityProviderId = null;
 
         /**
          * The OCID of the identity provider.
+         * @param identityProviderId the value to set
          * @return this builder instance
          */
         public Builder identityProviderId(String identityProviderId) {
@@ -87,6 +109,14 @@ public class CreateIdpGroupMappingRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -96,6 +126,7 @@ public class CreateIdpGroupMappingRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -186,7 +217,8 @@ public class CreateIdpGroupMappingRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -195,6 +227,10 @@ public class CreateIdpGroupMappingRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

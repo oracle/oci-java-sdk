@@ -86,144 +86,291 @@ public final class DataGuardAssociationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the reporting database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the reporting database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * The role of the reporting database in this Data Guard association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
+        /**
+         * The role of the reporting database in this Data Guard association.
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * The current state of the Data Guard association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Data Guard association.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycleState, if available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycleState, if available.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
+         * peer database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
         private String peerDbSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
+         * peer database.
+         *
+         * @param peerDbSystemId the value to set
+         * @return this builder
+         **/
         public Builder peerDbSystemId(String peerDbSystemId) {
             this.peerDbSystemId = peerDbSystemId;
             this.__explicitlySet__.add("peerDbSystemId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
         private String peerDbHomeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
+         *
+         * @param peerDbHomeId the value to set
+         * @return this builder
+         **/
         public Builder peerDbHomeId(String peerDbHomeId) {
             this.peerDbHomeId = peerDbHomeId;
             this.__explicitlySet__.add("peerDbHomeId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
         private String peerDatabaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
+         * @param peerDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder peerDatabaseId(String peerDatabaseId) {
             this.peerDatabaseId = peerDatabaseId;
             this.__explicitlySet__.add("peerDatabaseId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
         private String peerDataGuardAssociationId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+         * @param peerDataGuardAssociationId the value to set
+         * @return this builder
+         **/
         public Builder peerDataGuardAssociationId(String peerDataGuardAssociationId) {
             this.peerDataGuardAssociationId = peerDataGuardAssociationId;
             this.__explicitlySet__.add("peerDataGuardAssociationId");
             return this;
         }
-
+        /**
+         * The role of the peer database in this Data Guard association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
         private PeerRole peerRole;
 
+        /**
+         * The role of the peer database in this Data Guard association.
+         * @param peerRole the value to set
+         * @return this builder
+         **/
         public Builder peerRole(PeerRole peerRole) {
             this.peerRole = peerRole;
             this.__explicitlySet__.add("peerRole");
             return this;
         }
-
+        /**
+         * The lag time between updates to the primary database and application of the redo data on the standby database,
+         * as computed by the reporting database.
+         * <p>
+         * Example: {@code 9 seconds}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
         private String applyLag;
 
+        /**
+         * The lag time between updates to the primary database and application of the redo data on the standby database,
+         * as computed by the reporting database.
+         * <p>
+         * Example: {@code 9 seconds}
+         *
+         * @param applyLag the value to set
+         * @return this builder
+         **/
         public Builder applyLag(String applyLag) {
             this.applyLag = applyLag;
             this.__explicitlySet__.add("applyLag");
             return this;
         }
-
+        /**
+         * The rate at which redo logs are synced between the associated databases.
+         * <p>
+         * Example: {@code 180 Mb per second}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
         private String applyRate;
 
+        /**
+         * The rate at which redo logs are synced between the associated databases.
+         * <p>
+         * Example: {@code 180 Mb per second}
+         *
+         * @param applyRate the value to set
+         * @return this builder
+         **/
         public Builder applyRate(String applyRate) {
             this.applyRate = applyRate;
             this.__explicitlySet__.add("applyRate");
             return this;
         }
-
+        /**
+         * The protection mode of this Data Guard association. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
+        /**
+         * The protection mode of this Data Guard association. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
-
+        /**
+         * The redo transport type used by this Data Guard association.  For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transportType")
         private TransportType transportType;
 
+        /**
+         * The redo transport type used by this Data Guard association.  For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param transportType the value to set
+         * @return this builder
+         **/
         public Builder transportType(TransportType transportType) {
             this.transportType = transportType;
             this.__explicitlySet__.add("transportType");
             return this;
         }
-
+        /**
+         * The date and time the Data Guard association was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the Data Guard association was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * True if active Data Guard is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
         private Boolean isActiveDataGuardEnabled;
 
+        /**
+         * True if active Data Guard is enabled.
+         * @param isActiveDataGuardEnabled the value to set
+         * @return this builder
+         **/
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             this.__explicitlySet__.add("isActiveDataGuardEnabled");
@@ -298,6 +445,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -308,6 +459,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the reporting database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -365,6 +520,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * The role of the reporting database in this Data Guard association.
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }
@@ -428,6 +587,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Data Guard association.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -439,6 +602,11 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycleState, if available.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -451,6 +619,12 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
     private final String peerDbSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
+     * peer database.
+     *
+     * @return the value
+     **/
     public String getPeerDbSystemId() {
         return peerDbSystemId;
     }
@@ -462,6 +636,11 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
     private final String peerDbHomeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
+     *
+     * @return the value
+     **/
     public String getPeerDbHomeId() {
         return peerDbHomeId;
     }
@@ -472,6 +651,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
     private final String peerDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
+     * @return the value
+     **/
     public String getPeerDatabaseId() {
         return peerDatabaseId;
     }
@@ -482,6 +665,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
     private final String peerDataGuardAssociationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+     * @return the value
+     **/
     public String getPeerDataGuardAssociationId() {
         return peerDataGuardAssociationId;
     }
@@ -541,6 +728,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
     private final PeerRole peerRole;
 
+    /**
+     * The role of the peer database in this Data Guard association.
+     * @return the value
+     **/
     public PeerRole getPeerRole() {
         return peerRole;
     }
@@ -555,6 +746,14 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
     private final String applyLag;
 
+    /**
+     * The lag time between updates to the primary database and application of the redo data on the standby database,
+     * as computed by the reporting database.
+     * <p>
+     * Example: {@code 9 seconds}
+     *
+     * @return the value
+     **/
     public String getApplyLag() {
         return applyLag;
     }
@@ -568,6 +767,13 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
     private final String applyRate;
 
+    /**
+     * The rate at which redo logs are synced between the associated databases.
+     * <p>
+     * Example: {@code 180 Mb per second}
+     *
+     * @return the value
+     **/
     public String getApplyRate() {
         return applyRate;
     }
@@ -633,6 +839,13 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
+    /**
+     * The protection mode of this Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -698,6 +911,13 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     private final TransportType transportType;
 
+    /**
+     * The redo transport type used by this Data Guard association.  For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
     public TransportType getTransportType() {
         return transportType;
     }
@@ -708,6 +928,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the Data Guard association was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -718,6 +942,10 @@ public final class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
     private final Boolean isActiveDataGuardEnabled;
 
+    /**
+     * True if active Data Guard is enabled.
+     * @return the value
+     **/
     public Boolean getIsActiveDataGuardEnabled() {
         return isActiveDataGuardEnabled;
     }

@@ -30,18 +30,39 @@ public final class UpdateExtract {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Extract performance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
         private ExtractPerformanceProfile performanceProfile;
 
+        /**
+         * Extract performance.
+         *
+         * @param performanceProfile the value to set
+         * @return this builder
+         **/
         public Builder performanceProfile(ExtractPerformanceProfile performanceProfile) {
             this.performanceProfile = performanceProfile;
             this.__explicitlySet__.add("performanceProfile");
             return this;
         }
-
+        /**
+         * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
+         * If not specified, Extract will not generate a warning on long-running transactions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longTransDuration")
         private Integer longTransDuration;
 
+        /**
+         * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
+         * If not specified, Extract will not generate a warning on long-running transactions.
+         *
+         * @param longTransDuration the value to set
+         * @return this builder
+         **/
         public Builder longTransDuration(Integer longTransDuration) {
             this.longTransDuration = longTransDuration;
             this.__explicitlySet__.add("longTransDuration");
@@ -86,6 +107,11 @@ public final class UpdateExtract {
     @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
     private final ExtractPerformanceProfile performanceProfile;
 
+    /**
+     * Extract performance.
+     *
+     * @return the value
+     **/
     public ExtractPerformanceProfile getPerformanceProfile() {
         return performanceProfile;
     }
@@ -98,6 +124,12 @@ public final class UpdateExtract {
     @com.fasterxml.jackson.annotation.JsonProperty("longTransDuration")
     private final Integer longTransDuration;
 
+    /**
+     * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
+     * If not specified, Extract will not generate a warning on long-running transactions.
+     *
+     * @return the value
+     **/
     public Integer getLongTransDuration() {
         return longTransDuration;
     }

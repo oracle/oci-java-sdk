@@ -30,18 +30,33 @@ public final class AutonomousDatabaseConsoleTokenDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
+        /**
+         * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * @param token the value to set
+         * @return this builder
+         **/
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
             return this;
         }
-
+        /**
+         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
         private String loginUrl;
 
+        /**
+         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * @param loginUrl the value to set
+         * @return this builder
+         **/
         public Builder loginUrl(String loginUrl) {
             this.loginUrl = loginUrl;
             this.__explicitlySet__.add("loginUrl");
@@ -84,6 +99,10 @@ public final class AutonomousDatabaseConsoleTokenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
+    /**
+     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * @return the value
+     **/
     public String getToken() {
         return token;
     }
@@ -94,6 +113,10 @@ public final class AutonomousDatabaseConsoleTokenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
     private final String loginUrl;
 
+    /**
+     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * @return the value
+     **/
     public String getLoginUrl() {
         return loginUrl;
     }

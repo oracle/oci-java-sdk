@@ -17,6 +17,9 @@ public class UpdateLogRequest
      */
     private String logGroupId;
 
+    /**
+     * OCID of a log group to work with.
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -25,6 +28,9 @@ public class UpdateLogRequest
      */
     private String logId;
 
+    /**
+     * OCID of a log to work with.
+     */
     public String getLogId() {
         return logId;
     }
@@ -33,6 +39,9 @@ public class UpdateLogRequest
      */
     private com.oracle.bmc.logging.model.UpdateLogDetails updateLogDetails;
 
+    /**
+     * Log config parameters to update.
+     */
     public com.oracle.bmc.logging.model.UpdateLogDetails getUpdateLogDetails() {
         return updateLogDetails;
     }
@@ -46,6 +55,14 @@ public class UpdateLogRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +73,11 @@ public class UpdateLogRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -77,10 +99,14 @@ public class UpdateLogRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of a log group to work with.
+         */
         private String logGroupId = null;
 
         /**
          * OCID of a log group to work with.
+         * @param logGroupId the value to set
          * @return this builder instance
          */
         public Builder logGroupId(String logGroupId) {
@@ -88,10 +114,14 @@ public class UpdateLogRequest
             return this;
         }
 
+        /**
+         * OCID of a log to work with.
+         */
         private String logId = null;
 
         /**
          * OCID of a log to work with.
+         * @param logId the value to set
          * @return this builder instance
          */
         public Builder logId(String logId) {
@@ -99,10 +129,14 @@ public class UpdateLogRequest
             return this;
         }
 
+        /**
+         * Log config parameters to update.
+         */
         private com.oracle.bmc.logging.model.UpdateLogDetails updateLogDetails = null;
 
         /**
          * Log config parameters to update.
+         * @param updateLogDetails the value to set
          * @return this builder instance
          */
         public Builder updateLogDetails(
@@ -111,6 +145,14 @@ public class UpdateLogRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -120,6 +162,7 @@ public class UpdateLogRequest
          * updated or deleted only if the etag you provide matches the resource's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -127,12 +170,18 @@ public class UpdateLogRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -227,7 +276,8 @@ public class UpdateLogRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -238,6 +288,10 @@ public class UpdateLogRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

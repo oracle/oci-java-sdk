@@ -18,6 +18,9 @@ public class RequestSummarizedResponderExecutionsRequest
     private java.util.List<com.oracle.bmc.cloudguard.model.ResponderDimension>
             responderExecutionsDimensions;
 
+    /**
+     * The possible attributes based on which the responder executions can be distinguished
+     */
     public java.util.List<com.oracle.bmc.cloudguard.model.ResponderDimension>
             getResponderExecutionsDimensions() {
         return responderExecutionsDimensions;
@@ -27,6 +30,9 @@ public class RequestSummarizedResponderExecutionsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -37,6 +43,11 @@ public class RequestSummarizedResponderExecutionsRequest
      */
     private java.util.List<com.oracle.bmc.cloudguard.model.ResponderType> responderTypeFilter;
 
+    /**
+     * The possible filters for Responder Type Dimension to distinguish Responder Executions.
+     * If no values are passed, the metric for responder executions of all reponder types are returned
+     *
+     */
     public java.util.List<com.oracle.bmc.cloudguard.model.ResponderType> getResponderTypeFilter() {
         return responderTypeFilter;
     }
@@ -48,6 +59,11 @@ public class RequestSummarizedResponderExecutionsRequest
     private java.util.List<com.oracle.bmc.cloudguard.model.ResponderExecutionStatus>
             responderExecutionStatusFilter;
 
+    /**
+     * The possible filters for Responder Type Dimension to distinguish Responder Executions.
+     * If no values are passed, the metric for responder executions of all status are returned
+     *
+     */
     public java.util.List<com.oracle.bmc.cloudguard.model.ResponderExecutionStatus>
             getResponderExecutionStatusFilter() {
         return responderExecutionStatusFilter;
@@ -61,6 +77,13 @@ public class RequestSummarizedResponderExecutionsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -115,6 +138,14 @@ public class RequestSummarizedResponderExecutionsRequest
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -123,6 +154,9 @@ public class RequestSummarizedResponderExecutionsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -131,6 +165,9 @@ public class RequestSummarizedResponderExecutionsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -139,6 +176,9 @@ public class RequestSummarizedResponderExecutionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -150,11 +190,15 @@ public class RequestSummarizedResponderExecutionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The possible attributes based on which the responder executions can be distinguished
+         */
         private java.util.List<com.oracle.bmc.cloudguard.model.ResponderDimension>
                 responderExecutionsDimensions = null;
 
         /**
          * The possible attributes based on which the responder executions can be distinguished
+         * @param responderExecutionsDimensions the value to set
          * @return this builder instance
          */
         public Builder responderExecutionsDimensions(
@@ -166,16 +210,21 @@ public class RequestSummarizedResponderExecutionsRequest
 
         /**
          * Singular setter. The possible attributes based on which the responder executions can be distinguished
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder responderExecutionsDimensions(ResponderDimension singularValue) {
             return this.responderExecutionsDimensions(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -183,6 +232,11 @@ public class RequestSummarizedResponderExecutionsRequest
             return this;
         }
 
+        /**
+         * The possible filters for Responder Type Dimension to distinguish Responder Executions.
+         * If no values are passed, the metric for responder executions of all reponder types are returned
+         *
+         */
         private java.util.List<com.oracle.bmc.cloudguard.model.ResponderType> responderTypeFilter =
                 null;
 
@@ -190,6 +244,7 @@ public class RequestSummarizedResponderExecutionsRequest
          * The possible filters for Responder Type Dimension to distinguish Responder Executions.
          * If no values are passed, the metric for responder executions of all reponder types are returned
          *
+         * @param responderTypeFilter the value to set
          * @return this builder instance
          */
         public Builder responderTypeFilter(
@@ -202,12 +257,18 @@ public class RequestSummarizedResponderExecutionsRequest
          * Singular setter. The possible filters for Responder Type Dimension to distinguish Responder Executions.
          * If no values are passed, the metric for responder executions of all reponder types are returned
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder responderTypeFilter(ResponderType singularValue) {
             return this.responderTypeFilter(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The possible filters for Responder Type Dimension to distinguish Responder Executions.
+         * If no values are passed, the metric for responder executions of all status are returned
+         *
+         */
         private java.util.List<com.oracle.bmc.cloudguard.model.ResponderExecutionStatus>
                 responderExecutionStatusFilter = null;
 
@@ -215,6 +276,7 @@ public class RequestSummarizedResponderExecutionsRequest
          * The possible filters for Responder Type Dimension to distinguish Responder Executions.
          * If no values are passed, the metric for responder executions of all status are returned
          *
+         * @param responderExecutionStatusFilter the value to set
          * @return this builder instance
          */
         public Builder responderExecutionStatusFilter(
@@ -228,12 +290,20 @@ public class RequestSummarizedResponderExecutionsRequest
          * Singular setter. The possible filters for Responder Type Dimension to distinguish Responder Executions.
          * If no values are passed, the metric for responder executions of all status are returned
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder responderExecutionStatusFilter(ResponderExecutionStatus singularValue) {
             return this.responderExecutionStatusFilter(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -242,6 +312,7 @@ public class RequestSummarizedResponderExecutionsRequest
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -249,6 +320,14 @@ public class RequestSummarizedResponderExecutionsRequest
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -258,6 +337,7 @@ public class RequestSummarizedResponderExecutionsRequest
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -265,10 +345,14 @@ public class RequestSummarizedResponderExecutionsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -276,10 +360,14 @@ public class RequestSummarizedResponderExecutionsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -287,10 +375,14 @@ public class RequestSummarizedResponderExecutionsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -383,7 +475,8 @@ public class RequestSummarizedResponderExecutionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -398,6 +491,10 @@ public class RequestSummarizedResponderExecutionsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

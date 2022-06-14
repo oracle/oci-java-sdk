@@ -29,9 +29,17 @@ public final class MaskingPolicyCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of masking policy summary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MaskingPolicySummary> items;
 
+        /**
+         * An array of masking policy summary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<MaskingPolicySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class MaskingPolicyCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MaskingPolicySummary> items;
 
+    /**
+     * An array of masking policy summary objects.
+     * @return the value
+     **/
     public java.util.List<MaskingPolicySummary> getItems() {
         return items;
     }

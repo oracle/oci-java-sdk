@@ -32,6 +32,7 @@ public final class ApiSpecification {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("requestPolicies")
         private ApiSpecificationRequestPolicies requestPolicies;
 
@@ -49,10 +50,17 @@ public final class ApiSpecification {
             this.__explicitlySet__.add("loggingPolicies");
             return this;
         }
-
+        /**
+         * A list of routes that this API exposes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routes")
         private java.util.List<ApiSpecificationRoute> routes;
 
+        /**
+         * A list of routes that this API exposes.
+         * @param routes the value to set
+         * @return this builder
+         **/
         public Builder routes(java.util.List<ApiSpecificationRoute> routes) {
             this.routes = routes;
             this.__explicitlySet__.add("routes");
@@ -112,6 +120,10 @@ public final class ApiSpecification {
     @com.fasterxml.jackson.annotation.JsonProperty("routes")
     private final java.util.List<ApiSpecificationRoute> routes;
 
+    /**
+     * A list of routes that this API exposes.
+     * @return the value
+     **/
     public java.util.List<ApiSpecificationRoute> getRoutes() {
         return routes;
     }

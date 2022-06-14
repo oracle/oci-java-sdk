@@ -16,6 +16,9 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String enterpriseManagerBridgeId;
 
+    /**
+     * Unique Enterprise Manager bridge identifier
+     */
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -33,6 +39,10 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.List<String> id;
 
+    /**
+     * Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public java.util.List<String> getId() {
         return id;
     }
@@ -41,6 +51,9 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
 
+    /**
+     * Resource Status
+     */
     public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
         return status;
     }
@@ -49,6 +62,9 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState;
 
+    /**
+     * Lifecycle states
+     */
     public java.util.List<com.oracle.bmc.opsi.model.LifecycleState> getLifecycleState() {
         return lifecycleState;
     }
@@ -59,6 +75,11 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private java.util.List<String> exadataType;
 
+    /**
+     * Filter by one or more Exadata types.
+     * Possible value are DBMACHINE, EXACS, and EXACC.
+     *
+     */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
@@ -72,6 +93,14 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -83,6 +112,12 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -92,6 +127,10 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -138,6 +177,10 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * Exadata insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified. Default order for timeCreated is descending. Default order for exadataName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -147,6 +190,10 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -157,6 +204,11 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -168,10 +220,14 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -179,10 +235,14 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Enterprise Manager bridge identifier
+         */
         private String enterpriseManagerBridgeId = null;
 
         /**
          * Unique Enterprise Manager bridge identifier
+         * @param enterpriseManagerBridgeId the value to set
          * @return this builder instance
          */
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
@@ -190,11 +250,16 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private java.util.List<String> id = null;
 
         /**
          * Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(java.util.List<String> id) {
@@ -205,16 +270,21 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Singular setter. Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder id(String singularValue) {
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Resource Status
+         */
         private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
 
         /**
          * Resource Status
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
@@ -224,16 +294,21 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. Resource Status
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder status(ResourceStatus singularValue) {
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Lifecycle states
+         */
         private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState = null;
 
         /**
          * Lifecycle states
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -244,18 +319,25 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. Lifecycle states
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState singularValue) {
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more Exadata types.
+         * Possible value are DBMACHINE, EXACS, and EXACC.
+         *
+         */
         private java.util.List<String> exadataType = null;
 
         /**
          * Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param exadataType the value to set
          * @return this builder instance
          */
         public Builder exadataType(java.util.List<String> exadataType) {
@@ -267,12 +349,21 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
          * Singular setter. Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -282,6 +373,7 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -289,6 +381,12 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -296,6 +394,7 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -303,11 +402,16 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.opsi.model.SortOrder sortOrder) {
@@ -315,11 +419,16 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Exadata insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified. Default order for timeCreated is descending. Default order for exadataName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * Exadata insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified. Default order for timeCreated is descending. Default order for exadataName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -327,11 +436,16 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * A flag to search all resources within a given compartment and all sub-compartments.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -339,12 +453,18 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -442,7 +562,8 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -460,6 +581,10 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class ChangeIngressGatewayCompartmentRequest
      */
     private String ingressGatewayId;
 
+    /**
+     * Unique IngressGateway identifier.
+     */
     public String getIngressGatewayId() {
         return ingressGatewayId;
     }
@@ -27,6 +30,9 @@ public class ChangeIngressGatewayCompartmentRequest
     private com.oracle.bmc.servicemesh.model.ChangeIngressGatewayCompartmentDetails
             changeIngressGatewayCompartmentDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.servicemesh.model.ChangeIngressGatewayCompartmentDetails
             getChangeIngressGatewayCompartmentDetails() {
         return changeIngressGatewayCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeIngressGatewayCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeIngressGatewayCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangeIngressGatewayCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangeIngressGatewayCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique IngressGateway identifier.
+         */
         private String ingressGatewayId = null;
 
         /**
          * Unique IngressGateway identifier.
+         * @param ingressGatewayId the value to set
          * @return this builder instance
          */
         public Builder ingressGatewayId(String ingressGatewayId) {
@@ -95,11 +124,15 @@ public class ChangeIngressGatewayCompartmentRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.servicemesh.model.ChangeIngressGatewayCompartmentDetails
                 changeIngressGatewayCompartmentDetails = null;
 
         /**
          * The information to be updated.
+         * @param changeIngressGatewayCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeIngressGatewayCompartmentDetails(
@@ -109,6 +142,14 @@ public class ChangeIngressGatewayCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +159,7 @@ public class ChangeIngressGatewayCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,10 +167,14 @@ public class ChangeIngressGatewayCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,14 @@ public class ChangeIngressGatewayCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeIngressGatewayCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -241,7 +296,8 @@ public class ChangeIngressGatewayCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -252,6 +308,10 @@ public class ChangeIngressGatewayCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

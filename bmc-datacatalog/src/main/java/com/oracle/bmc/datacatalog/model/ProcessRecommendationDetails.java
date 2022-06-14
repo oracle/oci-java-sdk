@@ -35,27 +35,69 @@ public final class ProcessRecommendationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
         private String recommendationKey;
 
+        /**
+         * Unique identifier of the recommendation.
+         * @param recommendationKey the value to set
+         * @return this builder
+         **/
         public Builder recommendationKey(String recommendationKey) {
             this.recommendationKey = recommendationKey;
             this.__explicitlySet__.add("recommendationKey");
             return this;
         }
-
+        /**
+         * The status of a recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationStatus")
         private RecommendationStatus recommendationStatus;
 
+        /**
+         * The status of a recommendation.
+         * @param recommendationStatus the value to set
+         * @return this builder
+         **/
         public Builder recommendationStatus(RecommendationStatus recommendationStatus) {
             this.recommendationStatus = recommendationStatus;
             this.__explicitlySet__.add("recommendationStatus");
             return this;
         }
-
+        /**
+         * A map of maps that contains additional properties which are specific to the associated objects.
+         * Each associated object defines it's set of required and optional properties.
+         * Example: {@code {
+         *             "DataEntity": {
+         *               "parentId": "entityId"
+         *             },
+         *             "Term": {
+         *               "parentId": "glossaryId"
+         *             }
+         *           }}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains additional properties which are specific to the associated objects.
+         * Each associated object defines it's set of required and optional properties.
+         * Example: {@code {
+         *             "DataEntity": {
+         *               "parentId": "entityId"
+         *             },
+         *             "Term": {
+         *               "parentId": "glossaryId"
+         *             }
+         *           }}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -102,6 +144,10 @@ public final class ProcessRecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
     private final String recommendationKey;
 
+    /**
+     * Unique identifier of the recommendation.
+     * @return the value
+     **/
     public String getRecommendationKey() {
         return recommendationKey;
     }
@@ -112,6 +158,10 @@ public final class ProcessRecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationStatus")
     private final RecommendationStatus recommendationStatus;
 
+    /**
+     * The status of a recommendation.
+     * @return the value
+     **/
     public RecommendationStatus getRecommendationStatus() {
         return recommendationStatus;
     }
@@ -132,6 +182,20 @@ public final class ProcessRecommendationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains additional properties which are specific to the associated objects.
+     * Each associated object defines it's set of required and optional properties.
+     * Example: {@code {
+     *             "DataEntity": {
+     *               "parentId": "entityId"
+     *             },
+     *             "Term": {
+     *               "parentId": "glossaryId"
+     *             }
+     *           }}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

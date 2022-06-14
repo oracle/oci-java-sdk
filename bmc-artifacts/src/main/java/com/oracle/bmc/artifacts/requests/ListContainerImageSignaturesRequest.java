@@ -17,6 +17,9 @@ public class ListContainerImageSignaturesRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -30,6 +33,14 @@ public class ListContainerImageSignaturesRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * inspected depending on the the setting of {@code accessLevel}.
+     * Default is false. Can only be set to true when calling the API
+     * on the tenancy (root compartment).
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -39,6 +50,10 @@ public class ListContainerImageSignaturesRequest
      */
     private String imageId;
 
+    /**
+     * A filter to return a container image summary only for the specified container image OCID.
+     *
+     */
     public String getImageId() {
         return imageId;
     }
@@ -48,6 +63,10 @@ public class ListContainerImageSignaturesRequest
      */
     private String repositoryId;
 
+    /**
+     * A filter to return container images only for the specified container repository OCID.
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -59,6 +78,12 @@ public class ListContainerImageSignaturesRequest
      */
     private String repositoryName;
 
+    /**
+     * A filter to return container images or container image signatures that match the repository name.
+     * <p>
+     * Example: {@code foo} or {@code foo*}
+     *
+     */
     public String getRepositoryName() {
         return repositoryName;
     }
@@ -70,6 +95,12 @@ public class ListContainerImageSignaturesRequest
      */
     private String imageDigest;
 
+    /**
+     * The digest of the container image.
+     * <p>
+     * Example: {@code sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
+     *
+     */
     public String getImageDigest() {
         return imageDigest;
     }
@@ -79,6 +110,10 @@ public class ListContainerImageSignaturesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -90,6 +125,12 @@ public class ListContainerImageSignaturesRequest
      */
     private String kmsKeyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+     * <p>
+     * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+     *
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -101,6 +142,12 @@ public class ListContainerImageSignaturesRequest
      */
     private String kmsKeyVersionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+     * <p>
+     * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+     *
+     */
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -147,6 +194,9 @@ public class ListContainerImageSignaturesRequest
         }
     };
 
+    /**
+     * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     */
     public SigningAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }
@@ -160,6 +210,14 @@ public class ListContainerImageSignaturesRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -171,6 +229,12 @@ public class ListContainerImageSignaturesRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -181,6 +245,11 @@ public class ListContainerImageSignaturesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -241,6 +310,17 @@ public class ListContainerImageSignaturesRequest
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -289,6 +369,11 @@ public class ListContainerImageSignaturesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -300,10 +385,14 @@ public class ListContainerImageSignaturesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -311,6 +400,14 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * inspected depending on the the setting of {@code accessLevel}.
+         * Default is false. Can only be set to true when calling the API
+         * on the tenancy (root compartment).
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -320,6 +417,7 @@ public class ListContainerImageSignaturesRequest
          * Default is false. Can only be set to true when calling the API
          * on the tenancy (root compartment).
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -327,11 +425,16 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * A filter to return a container image summary only for the specified container image OCID.
+         *
+         */
         private String imageId = null;
 
         /**
          * A filter to return a container image summary only for the specified container image OCID.
          *
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -339,11 +442,16 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * A filter to return container images only for the specified container repository OCID.
+         *
+         */
         private String repositoryId = null;
 
         /**
          * A filter to return container images only for the specified container repository OCID.
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -351,6 +459,12 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * A filter to return container images or container image signatures that match the repository name.
+         * <p>
+         * Example: {@code foo} or {@code foo*}
+         *
+         */
         private String repositoryName = null;
 
         /**
@@ -358,6 +472,7 @@ public class ListContainerImageSignaturesRequest
          * <p>
          * Example: {@code foo} or {@code foo*}
          *
+         * @param repositoryName the value to set
          * @return this builder instance
          */
         public Builder repositoryName(String repositoryName) {
@@ -365,6 +480,12 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * The digest of the container image.
+         * <p>
+         * Example: {@code sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
+         *
+         */
         private String imageDigest = null;
 
         /**
@@ -372,6 +493,7 @@ public class ListContainerImageSignaturesRequest
          * <p>
          * Example: {@code sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa}
          *
+         * @param imageDigest the value to set
          * @return this builder instance
          */
         public Builder imageDigest(String imageDigest) {
@@ -379,11 +501,16 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the given display name exactly.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -391,6 +518,12 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+         * <p>
+         * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+         *
+         */
         private String kmsKeyId = null;
 
         /**
@@ -398,6 +531,7 @@ public class ListContainerImageSignaturesRequest
          * <p>
          * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
          *
+         * @param kmsKeyId the value to set
          * @return this builder instance
          */
         public Builder kmsKeyId(String kmsKeyId) {
@@ -405,6 +539,12 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.
+         * <p>
+         * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
+         *
+         */
         private String kmsKeyVersionId = null;
 
         /**
@@ -412,6 +552,7 @@ public class ListContainerImageSignaturesRequest
          * <p>
          * Example: {@code ocid1.keyversion.oc1..exampleuniqueID}
          *
+         * @param kmsKeyVersionId the value to set
          * @return this builder instance
          */
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
@@ -419,10 +560,14 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+         */
         private SigningAlgorithm signingAlgorithm = null;
 
         /**
          * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+         * @param signingAlgorithm the value to set
          * @return this builder instance
          */
         public Builder signingAlgorithm(SigningAlgorithm signingAlgorithm) {
@@ -430,6 +575,14 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -439,6 +592,7 @@ public class ListContainerImageSignaturesRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -446,6 +600,12 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -453,6 +613,7 @@ public class ListContainerImageSignaturesRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -460,12 +621,18 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -473,6 +640,17 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -485,6 +663,7 @@ public class ListContainerImageSignaturesRequest
          * single availability domain. If you call one of these "List" operations without specifying
          * an availability domain, the resources are grouped by availability domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -492,12 +671,18 @@ public class ListContainerImageSignaturesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -601,7 +786,8 @@ public class ListContainerImageSignaturesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -622,6 +808,10 @@ public class ListContainerImageSignaturesRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

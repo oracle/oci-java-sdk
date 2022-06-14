@@ -28,18 +28,37 @@ public final class Product {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates the associated AR Invoice Number
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
+        /**
+         * Indicates the associated AR Invoice Number
+         *
+         * @param partNumber the value to set
+         * @return this builder
+         **/
         public Builder partNumber(String partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-
+        /**
+         * Product name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Product name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -82,6 +101,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
+    /**
+     * Indicates the associated AR Invoice Number
+     *
+     * @return the value
+     **/
     public String getPartNumber() {
         return partNumber;
     }
@@ -93,6 +117,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Product name
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

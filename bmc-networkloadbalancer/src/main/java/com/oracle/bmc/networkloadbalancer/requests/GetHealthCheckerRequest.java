@@ -16,6 +16,9 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -27,6 +30,12 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String backendSetName;
 
+    /**
+     * The name of the backend set associated with the health check policy to be retrieved.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -37,6 +46,11 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +64,14 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,6 +85,14 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifNoneMatch;
 
+    /**
+     * The system returns the requested resource, with a 200 status, only if the resource has no etag
+     * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+     * HTTP status code {@code 304 (Not Modified)}.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -74,10 +104,14 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -85,6 +119,12 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The name of the backend set associated with the health check policy to be retrieved.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         */
         private String backendSetName = null;
 
         /**
@@ -92,6 +132,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * Example: {@code example_backend_set}
          *
+         * @param backendSetName the value to set
          * @return this builder instance
          */
         public Builder backendSetName(String backendSetName) {
@@ -99,12 +140,18 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -112,6 +159,14 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -121,6 +176,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -128,6 +184,14 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The system returns the requested resource, with a 200 status, only if the resource has no etag
+         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+         * HTTP status code {@code 304 (Not Modified)}.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -137,6 +201,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * Example: {@code example-etag}
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -220,7 +285,8 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -231,6 +297,10 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
                 .ifNoneMatch(ifNoneMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

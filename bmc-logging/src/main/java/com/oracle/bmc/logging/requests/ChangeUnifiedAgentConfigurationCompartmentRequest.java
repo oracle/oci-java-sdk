@@ -18,6 +18,9 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
      */
     private String unifiedAgentConfigurationId;
 
+    /**
+     * The OCID of the Unified Agent configuration.
+     */
     public String getUnifiedAgentConfigurationId() {
         return unifiedAgentConfigurationId;
     }
@@ -27,6 +30,9 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
     private com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails
             changeUnifiedAgentConfigurationCompartmentDetails;
 
+    /**
+     * Request to change the compartment of a given resource.
+     */
     public com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails
             getChangeUnifiedAgentConfigurationCompartmentDetails() {
         return changeUnifiedAgentConfigurationCompartmentDetails;
@@ -42,6 +48,15 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error, without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated
+     * before then due to conflicting operations (e.g., if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -55,6 +70,14 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -65,6 +88,11 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -89,10 +117,14 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Unified Agent configuration.
+         */
         private String unifiedAgentConfigurationId = null;
 
         /**
          * The OCID of the Unified Agent configuration.
+         * @param unifiedAgentConfigurationId the value to set
          * @return this builder instance
          */
         public Builder unifiedAgentConfigurationId(String unifiedAgentConfigurationId) {
@@ -100,11 +132,15 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of a given resource.
+         */
         private com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails
                 changeUnifiedAgentConfigurationCompartmentDetails = null;
 
         /**
          * Request to change the compartment of a given resource.
+         * @param changeUnifiedAgentConfigurationCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeUnifiedAgentConfigurationCompartmentDetails(
@@ -115,6 +151,15 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error, without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -125,6 +170,7 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
          * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -132,6 +178,14 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -141,6 +195,7 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
          * updated or deleted only if the etag you provide matches the resource's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -148,12 +203,18 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -254,7 +315,8 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -266,6 +328,10 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

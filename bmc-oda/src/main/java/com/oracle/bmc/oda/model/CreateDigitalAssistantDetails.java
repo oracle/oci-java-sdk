@@ -75,6 +75,10 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * The resource's category.  This is used to group resource's together.
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -85,6 +89,10 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A short description of the resource.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -95,6 +103,10 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
+    /**
+     * The ODA Platform Version for this resource.
+     * @return the value
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -105,6 +117,10 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("multilingualMode")
     private final BotMultilingualMode multilingualMode;
 
+    /**
+     * The multilingual mode for the resource.
+     * @return the value
+     **/
     public BotMultilingualMode getMultilingualMode() {
         return multilingualMode;
     }
@@ -115,6 +131,10 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("primaryLanguageTag")
     private final String primaryLanguageTag;
 
+    /**
+     * The primary language for the resource.
+     * @return the value
+     **/
     public String getPrimaryLanguageTag() {
         return primaryLanguageTag;
     }
@@ -127,6 +147,12 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -139,6 +165,12 @@ public class CreateDigitalAssistantDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

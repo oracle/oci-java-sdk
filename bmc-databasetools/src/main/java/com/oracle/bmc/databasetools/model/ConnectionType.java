@@ -5,11 +5,12 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Possible connection type.
+ * The connection type.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum ConnectionType {
     OracleDatabase("ORACLE_DATABASE"),
+    Mysql("MYSQL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

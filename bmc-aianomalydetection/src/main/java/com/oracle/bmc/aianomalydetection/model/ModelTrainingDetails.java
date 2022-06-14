@@ -32,27 +32,49 @@ public final class ModelTrainingDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A target model accuracy metric user provides as their requirement
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetFap")
         private Float targetFap;
 
+        /**
+         * A target model accuracy metric user provides as their requirement
+         * @param targetFap the value to set
+         * @return this builder
+         **/
         public Builder targetFap(Float targetFap) {
             this.targetFap = targetFap;
             this.__explicitlySet__.add("targetFap");
             return this;
         }
-
+        /**
+         * Fraction of total data that is used for training the model. The remaining is used for validation of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trainingFraction")
         private Float trainingFraction;
 
+        /**
+         * Fraction of total data that is used for training the model. The remaining is used for validation of the model.
+         * @param trainingFraction the value to set
+         * @return this builder
+         **/
         public Builder trainingFraction(Float trainingFraction) {
             this.trainingFraction = trainingFraction;
             this.__explicitlySet__.add("trainingFraction");
             return this;
         }
-
+        /**
+         * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetIds")
         private java.util.List<String> dataAssetIds;
 
+        /**
+         * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
+         * @param dataAssetIds the value to set
+         * @return this builder
+         **/
         public Builder dataAssetIds(java.util.List<String> dataAssetIds) {
             this.dataAssetIds = dataAssetIds;
             this.__explicitlySet__.add("dataAssetIds");
@@ -98,6 +120,10 @@ public final class ModelTrainingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetFap")
     private final Float targetFap;
 
+    /**
+     * A target model accuracy metric user provides as their requirement
+     * @return the value
+     **/
     public Float getTargetFap() {
         return targetFap;
     }
@@ -108,6 +134,10 @@ public final class ModelTrainingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("trainingFraction")
     private final Float trainingFraction;
 
+    /**
+     * Fraction of total data that is used for training the model. The remaining is used for validation of the model.
+     * @return the value
+     **/
     public Float getTrainingFraction() {
         return trainingFraction;
     }
@@ -118,6 +148,10 @@ public final class ModelTrainingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetIds")
     private final java.util.List<String> dataAssetIds;
 
+    /**
+     * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
+     * @return the value
+     **/
     public java.util.List<String> getDataAssetIds() {
         return dataAssetIds;
     }

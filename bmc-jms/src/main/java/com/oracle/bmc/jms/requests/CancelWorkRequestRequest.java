@@ -16,6 +16,9 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String workRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -24,6 +27,9 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +43,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,10 +62,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         */
         private String workRequestId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -59,10 +77,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -70,6 +92,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -79,6 +109,7 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
          * The resource will be updated or deleted only if the ETag you
          * provide matches the resource's current ETag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -158,7 +189,8 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +199,10 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

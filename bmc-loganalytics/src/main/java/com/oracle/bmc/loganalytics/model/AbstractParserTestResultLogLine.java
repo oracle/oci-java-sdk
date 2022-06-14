@@ -30,18 +30,33 @@ public final class AbstractParserTestResultLogLine {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The original log line.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
         private String originalLogLine;
 
+        /**
+         * The original log line.
+         * @param originalLogLine the value to set
+         * @return this builder
+         **/
         public Builder originalLogLine(String originalLogLine) {
             this.originalLogLine = originalLogLine;
             this.__explicitlySet__.add("originalLogLine");
             return this;
         }
-
+        /**
+         * The pre-processed log line.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preProcessedLogLine")
         private String preProcessedLogLine;
 
+        /**
+         * The pre-processed log line.
+         * @param preProcessedLogLine the value to set
+         * @return this builder
+         **/
         public Builder preProcessedLogLine(String preProcessedLogLine) {
             this.preProcessedLogLine = preProcessedLogLine;
             this.__explicitlySet__.add("preProcessedLogLine");
@@ -86,6 +101,10 @@ public final class AbstractParserTestResultLogLine {
     @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
     private final String originalLogLine;
 
+    /**
+     * The original log line.
+     * @return the value
+     **/
     public String getOriginalLogLine() {
         return originalLogLine;
     }
@@ -96,6 +115,10 @@ public final class AbstractParserTestResultLogLine {
     @com.fasterxml.jackson.annotation.JsonProperty("preProcessedLogLine")
     private final String preProcessedLogLine;
 
+    /**
+     * The pre-processed log line.
+     * @return the value
+     **/
     public String getPreProcessedLogLine() {
         return preProcessedLogLine;
     }

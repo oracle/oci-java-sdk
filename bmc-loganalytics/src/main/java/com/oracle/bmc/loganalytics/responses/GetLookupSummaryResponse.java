@@ -14,6 +14,11 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport;
 
+    /**
+     * The returned LookupSummaryReport instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LookupSummaryReport getLookupSummaryReport() {
         return lookupSummaryReport;
     }
@@ -45,15 +54,33 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LookupSummaryReport instance.
+         */
         private com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport;
 
+        /**
+         * The returned LookupSummaryReport instance.
+         * @param lookupSummaryReport the value to set
+         * @return this builder
+         */
         public Builder lookupSummaryReport(
                 com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport) {
             this.lookupSummaryReport = lookupSummaryReport;
@@ -72,12 +99,20 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetLookupSummaryResponse build() {
             return new GetLookupSummaryResponse(
                     __httpStatusCode__, opcRequestId, lookupSummaryReport);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

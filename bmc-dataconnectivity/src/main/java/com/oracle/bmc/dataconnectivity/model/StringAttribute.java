@@ -123,19 +123,33 @@ public final class StringAttribute extends AttributeProfileResult {
             this.__explicitlySet__.add("meanLength");
             return this;
         }
-
+        /**
+         * Pattern frequencies for the column as described already in profile config.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
         private java.util.List<ObjectFreqStat> patternFrequencies;
 
+        /**
+         * Pattern frequencies for the column as described already in profile config.
+         * @param patternFrequencies the value to set
+         * @return this builder
+         **/
         public Builder patternFrequencies(java.util.List<ObjectFreqStat> patternFrequencies) {
             this.patternFrequencies = patternFrequencies;
             this.__explicitlySet__.add("patternFrequencies");
             return this;
         }
-
+        /**
+         * Inferred DataType for the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inferredDataTypes")
         private java.util.List<DataTypeStat> inferredDataTypes;
 
+        /**
+         * Inferred DataType for the column.
+         * @param inferredDataTypes the value to set
+         * @return this builder
+         **/
         public Builder inferredDataTypes(java.util.List<DataTypeStat> inferredDataTypes) {
             this.inferredDataTypes = inferredDataTypes;
             this.__explicitlySet__.add("inferredDataTypes");
@@ -256,6 +270,10 @@ public final class StringAttribute extends AttributeProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
     private final java.util.List<ObjectFreqStat> patternFrequencies;
 
+    /**
+     * Pattern frequencies for the column as described already in profile config.
+     * @return the value
+     **/
     public java.util.List<ObjectFreqStat> getPatternFrequencies() {
         return patternFrequencies;
     }
@@ -266,6 +284,10 @@ public final class StringAttribute extends AttributeProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("inferredDataTypes")
     private final java.util.List<DataTypeStat> inferredDataTypes;
 
+    /**
+     * Inferred DataType for the column.
+     * @return the value
+     **/
     public java.util.List<DataTypeStat> getInferredDataTypes() {
         return inferredDataTypes;
     }

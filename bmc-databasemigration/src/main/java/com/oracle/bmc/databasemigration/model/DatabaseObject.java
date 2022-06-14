@@ -30,27 +30,57 @@ public final class DatabaseObject {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Owner of the object (regular expression is allowed)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
+        /**
+         * Owner of the object (regular expression is allowed)
+         *
+         * @param owner the value to set
+         * @return this builder
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-
+        /**
+         * Name of the object (regular expression is allowed)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * Name of the object (regular expression is allowed)
+         *
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * Type of object to exclude.
+         * If not specified, matching owners and object names of type TABLE would be excluded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of object to exclude.
+         * If not specified, matching owners and object names of type TABLE would be excluded.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -94,6 +124,11 @@ public final class DatabaseObject {
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
+    /**
+     * Owner of the object (regular expression is allowed)
+     *
+     * @return the value
+     **/
     public String getOwner() {
         return owner;
     }
@@ -105,6 +140,11 @@ public final class DatabaseObject {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * Name of the object (regular expression is allowed)
+     *
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -117,6 +157,12 @@ public final class DatabaseObject {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of object to exclude.
+     * If not specified, matching owners and object names of type TABLE would be excluded.
+     *
+     * @return the value
+     **/
     public String getType() {
         return type;
     }

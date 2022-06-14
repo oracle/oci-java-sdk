@@ -28,18 +28,33 @@ public final class NetworkConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A boolean flag whether to configure a NAT gateway.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNatGatewayRequired")
         private Boolean isNatGatewayRequired;
 
+        /**
+         * A boolean flag whether to configure a NAT gateway.
+         * @param isNatGatewayRequired the value to set
+         * @return this builder
+         **/
         public Builder isNatGatewayRequired(Boolean isNatGatewayRequired) {
             this.isNatGatewayRequired = isNatGatewayRequired;
             this.__explicitlySet__.add("isNatGatewayRequired");
             return this;
         }
-
+        /**
+         * The CIDR IP address block of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * The CIDR IP address block of the VCN.
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
@@ -82,6 +97,10 @@ public final class NetworkConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isNatGatewayRequired")
     private final Boolean isNatGatewayRequired;
 
+    /**
+     * A boolean flag whether to configure a NAT gateway.
+     * @return the value
+     **/
     public Boolean getIsNatGatewayRequired() {
         return isNatGatewayRequired;
     }
@@ -92,6 +111,10 @@ public final class NetworkConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * The CIDR IP address block of the VCN.
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }

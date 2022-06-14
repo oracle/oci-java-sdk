@@ -16,6 +16,9 @@ public class GetInstancePoolRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String instancePoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+     */
     public String getInstancePoolId() {
         return instancePoolId;
     }
@@ -27,10 +30,14 @@ public class GetInstancePoolRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         */
         private String instancePoolId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         * @param instancePoolId the value to set
          * @return this builder instance
          */
         public Builder instancePoolId(String instancePoolId) {
@@ -106,12 +113,17 @@ public class GetInstancePoolRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().instancePoolId(instancePoolId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

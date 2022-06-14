@@ -18,6 +18,9 @@ public class UpdateResponderRecipeRequest
      */
     private String responderRecipeId;
 
+    /**
+     * OCID of ResponderRecipe
+     */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
@@ -27,6 +30,9 @@ public class UpdateResponderRecipeRequest
     private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
             updateResponderRecipeDetails;
 
+    /**
+     * The details to be updated.
+     */
     public com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
             getUpdateResponderRecipeDetails() {
         return updateResponderRecipeDetails;
@@ -41,6 +47,14 @@ public class UpdateResponderRecipeRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateResponderRecipeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateResponderRecipeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of ResponderRecipe
+         */
         private String responderRecipeId = null;
 
         /**
          * OCID of ResponderRecipe
+         * @param responderRecipeId the value to set
          * @return this builder instance
          */
         public Builder responderRecipeId(String responderRecipeId) {
@@ -82,11 +103,15 @@ public class UpdateResponderRecipeRequest
             return this;
         }
 
+        /**
+         * The details to be updated.
+         */
         private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
                 updateResponderRecipeDetails = null;
 
         /**
          * The details to be updated.
+         * @param updateResponderRecipeDetails the value to set
          * @return this builder instance
          */
         public Builder updateResponderRecipeDetails(
@@ -96,6 +121,14 @@ public class UpdateResponderRecipeRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +138,7 @@ public class UpdateResponderRecipeRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,10 +146,14 @@ public class UpdateResponderRecipeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -208,7 +246,8 @@ public class UpdateResponderRecipeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +257,10 @@ public class UpdateResponderRecipeRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

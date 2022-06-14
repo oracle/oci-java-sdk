@@ -154,29 +154,50 @@ public final class ComputeInstanceGroupCanaryDeployStageSummary extends DeploySt
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * A compute instance group environment OCID for Canary deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupDeployEnvironmentId")
         private String computeInstanceGroupDeployEnvironmentId;
 
+        /**
+         * A compute instance group environment OCID for Canary deployment.
+         * @param computeInstanceGroupDeployEnvironmentId the value to set
+         * @return this builder
+         **/
         public Builder computeInstanceGroupDeployEnvironmentId(
                 String computeInstanceGroupDeployEnvironmentId) {
             this.computeInstanceGroupDeployEnvironmentId = computeInstanceGroupDeployEnvironmentId;
             this.__explicitlySet__.add("computeInstanceGroupDeployEnvironmentId");
             return this;
         }
-
+        /**
+         * The OCID of the artifact that contains the deployment specification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
         private String deploymentSpecDeployArtifactId;
 
+        /**
+         * The OCID of the artifact that contains the deployment specification.
+         * @param deploymentSpecDeployArtifactId the value to set
+         * @return this builder
+         **/
         public Builder deploymentSpecDeployArtifactId(String deploymentSpecDeployArtifactId) {
             this.deploymentSpecDeployArtifactId = deploymentSpecDeployArtifactId;
             this.__explicitlySet__.add("deploymentSpecDeployArtifactId");
             return this;
         }
-
+        /**
+         * The list of file artifact OCIDs to deploy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
         private java.util.List<String> deployArtifactIds;
 
+        /**
+         * The list of file artifact OCIDs to deploy.
+         * @param deployArtifactIds the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactIds(java.util.List<String> deployArtifactIds) {
             this.deployArtifactIds = deployArtifactIds;
             this.__explicitlySet__.add("deployArtifactIds");
@@ -334,6 +355,10 @@ public final class ComputeInstanceGroupCanaryDeployStageSummary extends DeploySt
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupDeployEnvironmentId")
     private final String computeInstanceGroupDeployEnvironmentId;
 
+    /**
+     * A compute instance group environment OCID for Canary deployment.
+     * @return the value
+     **/
     public String getComputeInstanceGroupDeployEnvironmentId() {
         return computeInstanceGroupDeployEnvironmentId;
     }
@@ -344,6 +369,10 @@ public final class ComputeInstanceGroupCanaryDeployStageSummary extends DeploySt
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
     private final String deploymentSpecDeployArtifactId;
 
+    /**
+     * The OCID of the artifact that contains the deployment specification.
+     * @return the value
+     **/
     public String getDeploymentSpecDeployArtifactId() {
         return deploymentSpecDeployArtifactId;
     }
@@ -354,6 +383,10 @@ public final class ComputeInstanceGroupCanaryDeployStageSummary extends DeploySt
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
     private final java.util.List<String> deployArtifactIds;
 
+    /**
+     * The list of file artifact OCIDs to deploy.
+     * @return the value
+     **/
     public java.util.List<String> getDeployArtifactIds() {
         return deployArtifactIds;
     }

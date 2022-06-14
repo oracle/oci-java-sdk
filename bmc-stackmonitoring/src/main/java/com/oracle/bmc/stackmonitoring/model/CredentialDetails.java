@@ -32,18 +32,33 @@ public final class CredentialDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of Credential
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
 
+        /**
+         * Name of Credential
+         * @param credentialName the value to set
+         * @return this builder
+         **/
         public Builder credentialName(String credentialName) {
             this.credentialName = credentialName;
             this.__explicitlySet__.add("credentialName");
             return this;
         }
-
+        /**
+         * Name of Credential Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
         private String credentialType;
 
+        /**
+         * Name of Credential Type
+         * @param credentialType the value to set
+         * @return this builder
+         **/
         public Builder credentialType(String credentialType) {
             this.credentialType = credentialType;
             this.__explicitlySet__.add("credentialType");
@@ -98,6 +113,10 @@ public final class CredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
     private final String credentialName;
 
+    /**
+     * Name of Credential
+     * @return the value
+     **/
     public String getCredentialName() {
         return credentialName;
     }
@@ -108,6 +127,10 @@ public final class CredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
     private final String credentialType;
 
+    /**
+     * Name of Credential Type
+     * @return the value
+     **/
     public String getCredentialType() {
         return credentialType;
     }

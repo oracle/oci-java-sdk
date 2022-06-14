@@ -18,6 +18,9 @@ public class CreateAutoScalingPolicyRequest
      */
     private String autoScalingConfigurationId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     */
     public String getAutoScalingConfigurationId() {
         return autoScalingConfigurationId;
     }
@@ -27,13 +30,14 @@ public class CreateAutoScalingPolicyRequest
     private com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
             createAutoScalingPolicyDetails;
 
+    /**
+     * Creation details for an autoscaling policy.
+     */
     public com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
             getCreateAutoScalingPolicyDetails() {
         return createAutoScalingPolicyDetails;
     }
-    /**
-     *
-     */
+
     private String opcRequestId;
 
     public String getOpcRequestId() {
@@ -49,6 +53,14 @@ public class CreateAutoScalingPolicyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -71,10 +83,14 @@ public class CreateAutoScalingPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         */
         private String autoScalingConfigurationId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * @param autoScalingConfigurationId the value to set
          * @return this builder instance
          */
         public Builder autoScalingConfigurationId(String autoScalingConfigurationId) {
@@ -82,11 +98,15 @@ public class CreateAutoScalingPolicyRequest
             return this;
         }
 
+        /**
+         * Creation details for an autoscaling policy.
+         */
         private com.oracle.bmc.autoscaling.model.CreateAutoScalingPolicyDetails
                 createAutoScalingPolicyDetails = null;
 
         /**
          * Creation details for an autoscaling policy.
+         * @param createAutoScalingPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder createAutoScalingPolicyDetails(
@@ -100,6 +120,7 @@ public class CreateAutoScalingPolicyRequest
 
         /**
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -107,6 +128,14 @@ public class CreateAutoScalingPolicyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -116,6 +145,7 @@ public class CreateAutoScalingPolicyRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -208,7 +238,8 @@ public class CreateAutoScalingPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +249,10 @@ public class CreateAutoScalingPolicyRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

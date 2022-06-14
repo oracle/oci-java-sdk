@@ -15,6 +15,12 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private Float retryAfter;
 
+    /**
+     * The number of seconds that the client should wait before polling again.
+     *
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -34,6 +45,10 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
+    /**
+     * The returned TaggingWorkRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.identity.model.TaggingWorkRequest getTaggingWorkRequest() {
         return taggingWorkRequest;
     }
@@ -63,22 +78,52 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The number of seconds that the client should wait before polling again.
+         *
+         */
         private Float retryAfter;
 
+        /**
+         * The number of seconds that the client should wait before polling again.
+         *
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned TaggingWorkRequest instance.
+         */
         private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
+        /**
+         * The returned TaggingWorkRequest instance.
+         * @param taggingWorkRequest the value to set
+         * @return this builder
+         */
         public Builder taggingWorkRequest(
                 com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest) {
             this.taggingWorkRequest = taggingWorkRequest;
@@ -98,12 +143,20 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetTaggingWorkRequestResponse build() {
             return new GetTaggingWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, retryAfter, taggingWorkRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

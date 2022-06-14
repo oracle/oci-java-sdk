@@ -36,10 +36,17 @@ public final class CreateSubordinateCaIssuedByInternalCaConfigDetails
             this.__explicitlySet__.add("versionName");
             return this;
         }
-
+        /**
+         * The OCID of the private CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
         private String issuerCertificateAuthorityId;
 
+        /**
+         * The OCID of the private CA.
+         * @param issuerCertificateAuthorityId the value to set
+         * @return this builder
+         **/
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             this.__explicitlySet__.add("issuerCertificateAuthorityId");
@@ -54,10 +61,17 @@ public final class CreateSubordinateCaIssuedByInternalCaConfigDetails
             this.__explicitlySet__.add("validity");
             return this;
         }
-
+        /**
+         * The algorithm used to sign public key certificates that the CA issues.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
         private SignatureAlgorithm signingAlgorithm;
 
+        /**
+         * The algorithm used to sign public key certificates that the CA issues.
+         * @param signingAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder signingAlgorithm(SignatureAlgorithm signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             this.__explicitlySet__.add("signingAlgorithm");
@@ -133,6 +147,10 @@ public final class CreateSubordinateCaIssuedByInternalCaConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("issuerCertificateAuthorityId")
     private final String issuerCertificateAuthorityId;
 
+    /**
+     * The OCID of the private CA.
+     * @return the value
+     **/
     public String getIssuerCertificateAuthorityId() {
         return issuerCertificateAuthorityId;
     }
@@ -150,6 +168,10 @@ public final class CreateSubordinateCaIssuedByInternalCaConfigDetails
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
     private final SignatureAlgorithm signingAlgorithm;
 
+    /**
+     * The algorithm used to sign public key certificates that the CA issues.
+     * @return the value
+     **/
     public SignatureAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }

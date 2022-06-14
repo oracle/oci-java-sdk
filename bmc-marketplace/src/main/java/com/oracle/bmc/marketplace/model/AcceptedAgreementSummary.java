@@ -50,63 +50,113 @@ public final class AcceptedAgreementSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier for the acceptance of the agreement within a specific compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier for the acceptance of the agreement within a specific compartment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A display name for the accepted agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A display name for the accepted agreement.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The unique identifier for the compartment where the agreement was accepted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The unique identifier for the compartment where the agreement was accepted.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The unique identifier for the listing associated with the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The unique identifier for the listing associated with the agreement.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * The package version associated with the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
+        /**
+         * The package version associated with the agreement.
+         * @param packageVersion the value to set
+         * @return this builder
+         **/
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
             return this;
         }
-
+        /**
+         * The unique identifier for the terms of use agreement itself.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agreementId")
         private String agreementId;
 
+        /**
+         * The unique identifier for the terms of use agreement itself.
+         * @param agreementId the value to set
+         * @return this builder
+         **/
         public Builder agreementId(String agreementId) {
             this.agreementId = agreementId;
             this.__explicitlySet__.add("agreementId");
             return this;
         }
-
+        /**
+         * The time the agreement was accepted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The time the agreement was accepted.
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
@@ -163,6 +213,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier for the acceptance of the agreement within a specific compartment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -173,6 +227,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A display name for the accepted agreement.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -183,6 +241,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The unique identifier for the compartment where the agreement was accepted.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -193,6 +255,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The unique identifier for the listing associated with the agreement.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -203,6 +269,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
+    /**
+     * The package version associated with the agreement.
+     * @return the value
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }
@@ -213,6 +283,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("agreementId")
     private final String agreementId;
 
+    /**
+     * The unique identifier for the terms of use agreement itself.
+     * @return the value
+     **/
     public String getAgreementId() {
         return agreementId;
     }
@@ -223,6 +297,10 @@ public final class AcceptedAgreementSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The time the agreement was accepted.
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }

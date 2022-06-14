@@ -37,18 +37,69 @@ package com.oracle.bmc.loadbalancer.model;
 public final class ControlAccessUsingHttpMethodsRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of HTTP methods allowed for this listener.
+         * <p>
+         * By default, you can specify only the standard HTTP methods defined in the
+         * [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
+         * see a list of supported standard HTTP methods in the Load Balancing service documentation at
+         * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+         * <p>
+         * Your backend application must be able to handle the methods specified in this list.
+         * <p>
+         * The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact
+         * [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+         * <p>
+         * Example: ["GET", "PUT", "POST", "PROPFIND"]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
         private java.util.List<String> allowedMethods;
 
+        /**
+         * The list of HTTP methods allowed for this listener.
+         * <p>
+         * By default, you can specify only the standard HTTP methods defined in the
+         * [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
+         * see a list of supported standard HTTP methods in the Load Balancing service documentation at
+         * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+         * <p>
+         * Your backend application must be able to handle the methods specified in this list.
+         * <p>
+         * The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact
+         * [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+         * <p>
+         * Example: ["GET", "PUT", "POST", "PROPFIND"]
+         *
+         * @param allowedMethods the value to set
+         * @return this builder
+         **/
         public Builder allowedMethods(java.util.List<String> allowedMethods) {
             this.allowedMethods = allowedMethods;
             this.__explicitlySet__.add("allowedMethods");
             return this;
         }
-
+        /**
+         * The HTTP status code to return when the requested HTTP method is not in the list of allowed methods.
+         * The associated status line returned with the code is mapped from the standard HTTP specification. The
+         * default value is {@code 405 (Method Not Allowed)}.
+         * <p>
+         * Example: 403
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
         private Integer statusCode;
 
+        /**
+         * The HTTP status code to return when the requested HTTP method is not in the list of allowed methods.
+         * The associated status line returned with the code is mapped from the standard HTTP specification. The
+         * default value is {@code 405 (Method Not Allowed)}.
+         * <p>
+         * Example: 403
+         *
+         * @param statusCode the value to set
+         * @return this builder
+         **/
         public Builder statusCode(Integer statusCode) {
             this.statusCode = statusCode;
             this.__explicitlySet__.add("statusCode");
@@ -113,6 +164,23 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedMethods")
     private final java.util.List<String> allowedMethods;
 
+    /**
+     * The list of HTTP methods allowed for this listener.
+     * <p>
+     * By default, you can specify only the standard HTTP methods defined in the
+     * [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
+     * see a list of supported standard HTTP methods in the Load Balancing service documentation at
+     * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * <p>
+     * Your backend application must be able to handle the methods specified in this list.
+     * <p>
+     * The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact
+     * [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+     * <p>
+     * Example: ["GET", "PUT", "POST", "PROPFIND"]
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAllowedMethods() {
         return allowedMethods;
     }
@@ -128,6 +196,15 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     private final Integer statusCode;
 
+    /**
+     * The HTTP status code to return when the requested HTTP method is not in the list of allowed methods.
+     * The associated status line returned with the code is mapped from the standard HTTP specification. The
+     * default value is {@code 405 (Method Not Allowed)}.
+     * <p>
+     * Example: 403
+     *
+     * @return the value
+     **/
     public Integer getStatusCode() {
         return statusCode;
     }

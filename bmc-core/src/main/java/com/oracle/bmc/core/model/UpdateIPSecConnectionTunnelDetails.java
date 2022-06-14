@@ -59,27 +59,57 @@ public final class UpdateIPSecConnectionTunnelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routing")
         private Routing routing;
 
+        /**
+         * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+         *
+         * @param routing the value to set
+         * @return this builder
+         **/
         public Builder routing(Routing routing) {
             this.routing = routing;
             this.__explicitlySet__.add("routing");
             return this;
         }
-
+        /**
+         * Internet Key Exchange protocol version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
         private IkeVersion ikeVersion;
 
+        /**
+         * Internet Key Exchange protocol version.
+         *
+         * @param ikeVersion the value to set
+         * @return this builder
+         **/
         public Builder ikeVersion(IkeVersion ikeVersion) {
             this.ikeVersion = ikeVersion;
             this.__explicitlySet__.add("ikeVersion");
@@ -94,19 +124,51 @@ public final class UpdateIPSecConnectionTunnelDetails {
             this.__explicitlySet__.add("bgpSessionConfig");
             return this;
         }
-
+        /**
+         * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
         private OracleInitiation oracleInitiation;
 
+        /**
+         * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+         *
+         * @param oracleInitiation the value to set
+         * @return this builder
+         **/
         public Builder oracleInitiation(OracleInitiation oracleInitiation) {
             this.oracleInitiation = oracleInitiation;
             this.__explicitlySet__.add("oracleInitiation");
             return this;
         }
-
+        /**
+         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+         * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+         * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * <p>
+         * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * <p>
+         * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+         * even if it senses there may be a NAT device in use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
         private NatTranslationEnabled natTranslationEnabled;
 
+        /**
+         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+         * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+         * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * <p>
+         * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * <p>
+         * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+         * even if it senses there may be a NAT device in use.
+         *
+         * @param natTranslationEnabled the value to set
+         * @return this builder
+         **/
         public Builder natTranslationEnabled(NatTranslationEnabled natTranslationEnabled) {
             this.natTranslationEnabled = natTranslationEnabled;
             this.__explicitlySet__.add("natTranslationEnabled");
@@ -208,6 +270,12 @@ public final class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -256,6 +324,11 @@ public final class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     private final Routing routing;
 
+    /**
+     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+     *
+     * @return the value
+     **/
     public Routing getRouting() {
         return routing;
     }
@@ -303,6 +376,11 @@ public final class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
     private final IkeVersion ikeVersion;
 
+    /**
+     * Internet Key Exchange protocol version.
+     *
+     * @return the value
+     **/
     public IkeVersion getIkeVersion() {
         return ikeVersion;
     }
@@ -357,6 +435,11 @@ public final class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
     private final OracleInitiation oracleInitiation;
 
+    /**
+     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+     *
+     * @return the value
+     **/
     public OracleInitiation getOracleInitiation() {
         return oracleInitiation;
     }
@@ -419,6 +502,18 @@ public final class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
     private final NatTranslationEnabled natTranslationEnabled;
 
+    /**
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
+     *
+     * @return the value
+     **/
     public NatTranslationEnabled getNatTranslationEnabled() {
         return natTranslationEnabled;
     }

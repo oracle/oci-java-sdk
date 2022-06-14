@@ -32,27 +32,61 @@ public final class AllowedDomainLicenseTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The license type name.
+         * <p>
+         * Example: "Oracle Apps Premium"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The license type name.
+         * <p>
+         * Example: "Oracle Apps Premium"
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The license type identifier.
+         * <p>
+         * Example: "oracle-apps-premium"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
+        /**
+         * The license type identifier.
+         * <p>
+         * Example: "oracle-apps-premium"
+         *
+         * @param licenseType the value to set
+         * @return this builder
+         **/
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-
+        /**
+         * The license type description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The license type description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -101,6 +135,13 @@ public final class AllowedDomainLicenseTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The license type name.
+     * <p>
+     * Example: "Oracle Apps Premium"
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -114,6 +155,13 @@ public final class AllowedDomainLicenseTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
+    /**
+     * The license type identifier.
+     * <p>
+     * Example: "oracle-apps-premium"
+     *
+     * @return the value
+     **/
     public String getLicenseType() {
         return licenseType;
     }
@@ -124,6 +172,10 @@ public final class AllowedDomainLicenseTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The license type description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

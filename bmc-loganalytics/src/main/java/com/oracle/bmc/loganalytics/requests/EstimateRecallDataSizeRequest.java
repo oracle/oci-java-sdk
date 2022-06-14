@@ -19,6 +19,10 @@ public class EstimateRecallDataSizeRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,9 @@ public class EstimateRecallDataSizeRequest
     private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
             estimateRecallDataSizeDetails;
 
+    /**
+     * This is the input to estimate the size of data to be recalled.
+     */
     public com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
             getEstimateRecallDataSizeDetails() {
         return estimateRecallDataSizeDetails;
@@ -37,6 +44,9 @@ public class EstimateRecallDataSizeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,11 +74,16 @@ public class EstimateRecallDataSizeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -76,11 +91,15 @@ public class EstimateRecallDataSizeRequest
             return this;
         }
 
+        /**
+         * This is the input to estimate the size of data to be recalled.
+         */
         private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
                 estimateRecallDataSizeDetails = null;
 
         /**
          * This is the input to estimate the size of data to be recalled.
+         * @param estimateRecallDataSizeDetails the value to set
          * @return this builder instance
          */
         public Builder estimateRecallDataSizeDetails(
@@ -90,10 +109,14 @@ public class EstimateRecallDataSizeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,7 +207,8 @@ public class EstimateRecallDataSizeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +217,10 @@ public class EstimateRecallDataSizeRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

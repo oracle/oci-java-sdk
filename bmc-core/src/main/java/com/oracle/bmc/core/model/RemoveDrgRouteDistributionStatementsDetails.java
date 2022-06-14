@@ -30,9 +30,19 @@ public final class RemoveDrgRouteDistributionStatementsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle-assigned ID of each route distribution to remove.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statementIds")
         private java.util.List<String> statementIds;
 
+        /**
+         * The Oracle-assigned ID of each route distribution to remove.
+         *
+         * @param statementIds the value to set
+         * @return this builder
+         **/
         public Builder statementIds(java.util.List<String> statementIds) {
             this.statementIds = statementIds;
             this.__explicitlySet__.add("statementIds");
@@ -76,6 +86,11 @@ public final class RemoveDrgRouteDistributionStatementsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("statementIds")
     private final java.util.List<String> statementIds;
 
+    /**
+     * The Oracle-assigned ID of each route distribution to remove.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getStatementIds() {
         return statementIds;
     }

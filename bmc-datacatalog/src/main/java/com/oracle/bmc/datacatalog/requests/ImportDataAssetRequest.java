@@ -18,6 +18,9 @@ public class ImportDataAssetRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class ImportDataAssetRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -34,6 +40,9 @@ public class ImportDataAssetRequest
      */
     private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails;
 
+    /**
+     * The file contents to be imported.
+     */
     public com.oracle.bmc.datacatalog.model.ImportDataAssetDetails getImportDataAssetDetails() {
         return importDataAssetDetails;
     }
@@ -43,6 +52,9 @@ public class ImportDataAssetRequest
     private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             importType;
 
+    /**
+     * Type of import.
+     */
     public java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             getImportType() {
         return importType;
@@ -52,6 +64,9 @@ public class ImportDataAssetRequest
      */
     private Boolean isMissingValueIgnored;
 
+    /**
+     * Specify whether to ignore the missing values in the import file.
+     */
     public Boolean getIsMissingValueIgnored() {
         return isMissingValueIgnored;
     }
@@ -60,6 +75,9 @@ public class ImportDataAssetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,6 +91,14 @@ public class ImportDataAssetRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -95,10 +121,14 @@ public class ImportDataAssetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -106,10 +136,14 @@ public class ImportDataAssetRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -117,11 +151,15 @@ public class ImportDataAssetRequest
             return this;
         }
 
+        /**
+         * The file contents to be imported.
+         */
         private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails =
                 null;
 
         /**
          * The file contents to be imported.
+         * @param importDataAssetDetails the value to set
          * @return this builder instance
          */
         public Builder importDataAssetDetails(
@@ -130,11 +168,15 @@ public class ImportDataAssetRequest
             return this;
         }
 
+        /**
+         * Type of import.
+         */
         private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
                 importType = null;
 
         /**
          * Type of import.
+         * @param importType the value to set
          * @return this builder instance
          */
         public Builder importType(
@@ -146,16 +188,21 @@ public class ImportDataAssetRequest
 
         /**
          * Singular setter. Type of import.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder importType(DataAssetImportExportTypeFilter singularValue) {
             return this.importType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Specify whether to ignore the missing values in the import file.
+         */
         private Boolean isMissingValueIgnored = null;
 
         /**
          * Specify whether to ignore the missing values in the import file.
+         * @param isMissingValueIgnored the value to set
          * @return this builder instance
          */
         public Builder isMissingValueIgnored(Boolean isMissingValueIgnored) {
@@ -163,10 +210,14 @@ public class ImportDataAssetRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -174,6 +225,14 @@ public class ImportDataAssetRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -183,6 +242,7 @@ public class ImportDataAssetRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -281,7 +341,8 @@ public class ImportDataAssetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -294,6 +355,10 @@ public class ImportDataAssetRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

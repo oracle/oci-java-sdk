@@ -18,6 +18,10 @@ public class UpdateSddcRequest
      */
     private String sddcId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+     *
+     */
     public String getSddcId() {
         return sddcId;
     }
@@ -26,6 +30,9 @@ public class UpdateSddcRequest
      */
     private com.oracle.bmc.ocvp.model.UpdateSddcDetails updateSddcDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.ocvp.model.UpdateSddcDetails getUpdateSddcDetails() {
         return updateSddcDetails;
     }
@@ -39,6 +46,14 @@ public class UpdateSddcRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +64,11 @@ public class UpdateSddcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request. If you need to contact Oracle about a particular
+     * request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,11 +90,16 @@ public class UpdateSddcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+         *
+         */
         private String sddcId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
          *
+         * @param sddcId the value to set
          * @return this builder instance
          */
         public Builder sddcId(String sddcId) {
@@ -82,10 +107,14 @@ public class UpdateSddcRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.ocvp.model.UpdateSddcDetails updateSddcDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateSddcDetails the value to set
          * @return this builder instance
          */
         public Builder updateSddcDetails(
@@ -94,6 +123,14 @@ public class UpdateSddcRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -103,6 +140,7 @@ public class UpdateSddcRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -110,12 +148,18 @@ public class UpdateSddcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request. If you need to contact Oracle about a particular
          * request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -208,7 +252,8 @@ public class UpdateSddcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +263,10 @@ public class UpdateSddcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

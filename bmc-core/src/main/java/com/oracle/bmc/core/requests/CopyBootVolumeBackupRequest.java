@@ -18,6 +18,9 @@ public class CopyBootVolumeBackupRequest
      */
     private String bootVolumeBackupId;
 
+    /**
+     * The OCID of the boot volume backup.
+     */
     public String getBootVolumeBackupId() {
         return bootVolumeBackupId;
     }
@@ -26,6 +29,9 @@ public class CopyBootVolumeBackupRequest
      */
     private com.oracle.bmc.core.model.CopyBootVolumeBackupDetails copyBootVolumeBackupDetails;
 
+    /**
+     * Request to create a cross-region copy of given boot volume backup.
+     */
     public com.oracle.bmc.core.model.CopyBootVolumeBackupDetails getCopyBootVolumeBackupDetails() {
         return copyBootVolumeBackupDetails;
     }
@@ -39,6 +45,14 @@ public class CopyBootVolumeBackupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -49,6 +63,11 @@ public class CopyBootVolumeBackupRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +90,14 @@ public class CopyBootVolumeBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the boot volume backup.
+         */
         private String bootVolumeBackupId = null;
 
         /**
          * The OCID of the boot volume backup.
+         * @param bootVolumeBackupId the value to set
          * @return this builder instance
          */
         public Builder bootVolumeBackupId(String bootVolumeBackupId) {
@@ -82,11 +105,15 @@ public class CopyBootVolumeBackupRequest
             return this;
         }
 
+        /**
+         * Request to create a cross-region copy of given boot volume backup.
+         */
         private com.oracle.bmc.core.model.CopyBootVolumeBackupDetails copyBootVolumeBackupDetails =
                 null;
 
         /**
          * Request to create a cross-region copy of given boot volume backup.
+         * @param copyBootVolumeBackupDetails the value to set
          * @return this builder instance
          */
         public Builder copyBootVolumeBackupDetails(
@@ -95,6 +122,14 @@ public class CopyBootVolumeBackupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -104,6 +139,7 @@ public class CopyBootVolumeBackupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -111,12 +147,18 @@ public class CopyBootVolumeBackupRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +251,8 @@ public class CopyBootVolumeBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +262,10 @@ public class CopyBootVolumeBackupRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

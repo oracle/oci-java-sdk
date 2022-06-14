@@ -34,27 +34,55 @@ public final class DeleteRowResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Convey the success or failure of the operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSuccess")
         private Boolean isSuccess;
 
+        /**
+         * Convey the success or failure of the operation.
+         * @param isSuccess the value to set
+         * @return this builder
+         **/
         public Builder isSuccess(Boolean isSuccess) {
             this.isSuccess = isSuccess;
             this.__explicitlySet__.add("isSuccess");
             return this;
         }
-
+        /**
+         * The version string associated with the existing row.
+         * Returned if the delete fails due to options setting in the
+         * request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
         private String existingVersion;
 
+        /**
+         * The version string associated with the existing row.
+         * Returned if the delete fails due to options setting in the
+         * request.
+         *
+         * @param existingVersion the value to set
+         * @return this builder
+         **/
         public Builder existingVersion(String existingVersion) {
             this.existingVersion = existingVersion;
             this.__explicitlySet__.add("existingVersion");
             return this;
         }
-
+        /**
+         * The map of values from a row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
         private java.util.Map<String, Object> existingValue;
 
+        /**
+         * The map of values from a row.
+         * @param existingValue the value to set
+         * @return this builder
+         **/
         public Builder existingValue(java.util.Map<String, Object> existingValue) {
             this.existingValue = existingValue;
             this.__explicitlySet__.add("existingValue");
@@ -110,6 +138,10 @@ public final class DeleteRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("isSuccess")
     private final Boolean isSuccess;
 
+    /**
+     * Convey the success or failure of the operation.
+     * @return the value
+     **/
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -123,6 +155,13 @@ public final class DeleteRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
     private final String existingVersion;
 
+    /**
+     * The version string associated with the existing row.
+     * Returned if the delete fails due to options setting in the
+     * request.
+     *
+     * @return the value
+     **/
     public String getExistingVersion() {
         return existingVersion;
     }
@@ -133,6 +172,10 @@ public final class DeleteRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
     private final java.util.Map<String, Object> existingValue;
 
+    /**
+     * The map of values from a row.
+     * @return the value
+     **/
     public java.util.Map<String, Object> getExistingValue() {
         return existingValue;
     }

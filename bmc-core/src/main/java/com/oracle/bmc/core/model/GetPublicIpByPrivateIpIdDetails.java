@@ -30,9 +30,19 @@ public final class GetPublicIpByPrivateIpIdDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
         private String privateIpId;
 
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP.
+         *
+         * @param privateIpId the value to set
+         * @return this builder
+         **/
         public Builder privateIpId(String privateIpId) {
             this.privateIpId = privateIpId;
             this.__explicitlySet__.add("privateIpId");
@@ -76,6 +86,11 @@ public final class GetPublicIpByPrivateIpIdDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP.
+     *
+     * @return the value
+     **/
     public String getPrivateIpId() {
         return privateIpId;
     }

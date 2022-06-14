@@ -14,6 +14,11 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,11 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
      */
     private Float retryAfter;
 
+    /**
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -42,6 +56,10 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
+    /**
+     * The returned QueryWorkRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.QueryWorkRequest getQueryWorkRequest() {
         return queryWorkRequest;
     }
@@ -74,29 +92,65 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         */
         private Float retryAfter;
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned QueryWorkRequest instance.
+         */
         private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
+        /**
+         * The returned QueryWorkRequest instance.
+         * @param queryWorkRequest the value to set
+         * @return this builder
+         */
         public Builder queryWorkRequest(
                 com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest) {
             this.queryWorkRequest = queryWorkRequest;
@@ -117,12 +171,20 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetQueryWorkRequestResponse build() {
             return new GetQueryWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, etag, retryAfter, queryWorkRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

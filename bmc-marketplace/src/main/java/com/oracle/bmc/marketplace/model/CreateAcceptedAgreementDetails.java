@@ -53,73 +53,146 @@ public final class CreateAcceptedAgreementDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A display name for the accepted agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A display name for the accepted agreement.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The unique identifier for the compartment where the agreement will be accepted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The unique identifier for the compartment where the agreement will be accepted.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The unique identifier for the listing associated with the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The unique identifier for the listing associated with the agreement.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * The package version associated with the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
+        /**
+         * The package version associated with the agreement.
+         * @param packageVersion the value to set
+         * @return this builder
+         **/
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
             return this;
         }
-
+        /**
+         * The agreement to accept.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agreementId")
         private String agreementId;
 
+        /**
+         * The agreement to accept.
+         * @param agreementId the value to set
+         * @return this builder
+         **/
         public Builder agreementId(String agreementId) {
             this.agreementId = agreementId;
             this.__explicitlySet__.add("agreementId");
             return this;
         }
-
+        /**
+         * A signature generated for the listing package agreements that you can retrieve
+         * with [GetAgreement](https://docs.cloud.oracle.com/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
+        /**
+         * A signature generated for the listing package agreements that you can retrieve
+         * with [GetAgreement](https://docs.cloud.oracle.com/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+         *
+         * @param signature the value to set
+         * @return this builder
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
             return this;
         }
-
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -178,6 +251,10 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A display name for the accepted agreement.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -188,6 +265,10 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The unique identifier for the compartment where the agreement will be accepted.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -198,6 +279,10 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The unique identifier for the listing associated with the agreement.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -208,6 +293,10 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
+    /**
+     * The package version associated with the agreement.
+     * @return the value
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }
@@ -218,6 +307,10 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("agreementId")
     private final String agreementId;
 
+    /**
+     * The agreement to accept.
+     * @return the value
+     **/
     public String getAgreementId() {
         return agreementId;
     }
@@ -230,6 +323,12 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
+    /**
+     * A signature generated for the listing package agreements that you can retrieve
+     * with [GetAgreement](https://docs.cloud.oracle.com/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+     *
+     * @return the value
+     **/
     public String getSignature() {
         return signature;
     }
@@ -243,6 +342,13 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -256,6 +362,13 @@ public final class CreateAcceptedAgreementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

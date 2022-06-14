@@ -44,45 +44,81 @@ public final class ExadataInsightResourceInsightUtilizationItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         * @param exadataInsightId the value to set
+         * @return this builder
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
             return this;
         }
-
+        /**
+         * Current utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentUtilization")
         private Double currentUtilization;
 
+        /**
+         * Current utilization
+         * @param currentUtilization the value to set
+         * @return this builder
+         **/
         public Builder currentUtilization(Double currentUtilization) {
             this.currentUtilization = currentUtilization;
             this.__explicitlySet__.add("currentUtilization");
             return this;
         }
-
+        /**
+         * Projected utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectedUtilization")
         private Double projectedUtilization;
 
+        /**
+         * Projected utilization
+         * @param projectedUtilization the value to set
+         * @return this builder
+         **/
         public Builder projectedUtilization(Double projectedUtilization) {
             this.projectedUtilization = projectedUtilization;
             this.__explicitlySet__.add("projectedUtilization");
             return this;
         }
-
+        /**
+         * Days to reach projected high utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReachHighUtilization")
         private Integer daysToReachHighUtilization;
 
+        /**
+         * Days to reach projected high utilization
+         * @param daysToReachHighUtilization the value to set
+         * @return this builder
+         **/
         public Builder daysToReachHighUtilization(Integer daysToReachHighUtilization) {
             this.daysToReachHighUtilization = daysToReachHighUtilization;
             this.__explicitlySet__.add("daysToReachHighUtilization");
             return this;
         }
-
+        /**
+         * Days to reach projected low utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReachLowUtilization")
         private Integer daysToReachLowUtilization;
 
+        /**
+         * Days to reach projected low utilization
+         * @param daysToReachLowUtilization the value to set
+         * @return this builder
+         **/
         public Builder daysToReachLowUtilization(Integer daysToReachLowUtilization) {
             this.daysToReachLowUtilization = daysToReachLowUtilization;
             this.__explicitlySet__.add("daysToReachLowUtilization");
@@ -135,6 +171,10 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * @return the value
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -145,6 +185,10 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("currentUtilization")
     private final Double currentUtilization;
 
+    /**
+     * Current utilization
+     * @return the value
+     **/
     public Double getCurrentUtilization() {
         return currentUtilization;
     }
@@ -155,6 +199,10 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("projectedUtilization")
     private final Double projectedUtilization;
 
+    /**
+     * Projected utilization
+     * @return the value
+     **/
     public Double getProjectedUtilization() {
         return projectedUtilization;
     }
@@ -165,6 +213,10 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachHighUtilization")
     private final Integer daysToReachHighUtilization;
 
+    /**
+     * Days to reach projected high utilization
+     * @return the value
+     **/
     public Integer getDaysToReachHighUtilization() {
         return daysToReachHighUtilization;
     }
@@ -175,6 +227,10 @@ public final class ExadataInsightResourceInsightUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachLowUtilization")
     private final Integer daysToReachLowUtilization;
 
+    /**
+     * Days to reach projected low utilization
+     * @return the value
+     **/
     public Integer getDaysToReachLowUtilization() {
         return daysToReachLowUtilization;
     }

@@ -51,63 +51,113 @@ public final class InfoForNetworkGenDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The network type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkType")
         private NetworkType networkType;
 
+        /**
+         * The network type.
+         * @param networkType the value to set
+         * @return this builder
+         **/
         public Builder networkType(NetworkType networkType) {
             this.networkType = networkType;
             this.__explicitlySet__.add("networkType");
             return this;
         }
-
+        /**
+         * The network VLAN ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
 
+        /**
+         * The network VLAN ID.
+         * @param vlanId the value to set
+         * @return this builder
+         **/
         public Builder vlanId(String vlanId) {
             this.vlanId = vlanId;
             this.__explicitlySet__.add("vlanId");
             return this;
         }
-
+        /**
+         * The cidr for the network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidr")
         private String cidr;
 
+        /**
+         * The cidr for the network.
+         * @param cidr the value to set
+         * @return this builder
+         **/
         public Builder cidr(String cidr) {
             this.cidr = cidr;
             this.__explicitlySet__.add("cidr");
             return this;
         }
-
+        /**
+         * The network gateway.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gateway")
         private String gateway;
 
+        /**
+         * The network gateway.
+         * @param gateway the value to set
+         * @return this builder
+         **/
         public Builder gateway(String gateway) {
             this.gateway = gateway;
             this.__explicitlySet__.add("gateway");
             return this;
         }
-
+        /**
+         * The network netmask.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("netmask")
         private String netmask;
 
+        /**
+         * The network netmask.
+         * @param netmask the value to set
+         * @return this builder
+         **/
         public Builder netmask(String netmask) {
             this.netmask = netmask;
             this.__explicitlySet__.add("netmask");
             return this;
         }
-
+        /**
+         * The network domain name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
+        /**
+         * The network domain name.
+         * @param domain the value to set
+         * @return this builder
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-
+        /**
+         * The network domain name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * The network domain name.
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
@@ -193,6 +243,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
     private final NetworkType networkType;
 
+    /**
+     * The network type.
+     * @return the value
+     **/
     public NetworkType getNetworkType() {
         return networkType;
     }
@@ -203,6 +257,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
+    /**
+     * The network VLAN ID.
+     * @return the value
+     **/
     public String getVlanId() {
         return vlanId;
     }
@@ -213,6 +271,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidr")
     private final String cidr;
 
+    /**
+     * The cidr for the network.
+     * @return the value
+     **/
     public String getCidr() {
         return cidr;
     }
@@ -223,6 +285,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("gateway")
     private final String gateway;
 
+    /**
+     * The network gateway.
+     * @return the value
+     **/
     public String getGateway() {
         return gateway;
     }
@@ -233,6 +299,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("netmask")
     private final String netmask;
 
+    /**
+     * The network netmask.
+     * @return the value
+     **/
     public String getNetmask() {
         return netmask;
     }
@@ -243,6 +313,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
+    /**
+     * The network domain name.
+     * @return the value
+     **/
     public String getDomain() {
         return domain;
     }
@@ -253,6 +327,10 @@ public final class InfoForNetworkGenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * The network domain name.
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }

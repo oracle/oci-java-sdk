@@ -15,6 +15,12 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth;
 
+    /**
+     * The returned BackendHealth instance.
+     * @return the value
+     */
     public com.oracle.bmc.networkloadbalancer.model.BackendHealth getBackendHealth() {
         return backendHealth;
     }
@@ -46,15 +56,35 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned BackendHealth instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth;
 
+        /**
+         * The returned BackendHealth instance.
+         * @param backendHealth the value to set
+         * @return this builder
+         */
         public Builder backendHealth(
                 com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth) {
             this.backendHealth = backendHealth;
@@ -73,11 +103,19 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetBackendHealthResponse build() {
             return new GetBackendHealthResponse(__httpStatusCode__, opcRequestId, backendHealth);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

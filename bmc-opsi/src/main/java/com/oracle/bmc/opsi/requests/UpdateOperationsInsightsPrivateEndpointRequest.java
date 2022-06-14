@@ -18,6 +18,9 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
      */
     private String operationsInsightsPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+     */
     public String getOperationsInsightsPrivateEndpointId() {
         return operationsInsightsPrivateEndpointId;
     }
@@ -27,6 +30,9 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
     private com.oracle.bmc.opsi.model.UpdateOperationsInsightsPrivateEndpointDetails
             updateOperationsInsightsPrivateEndpointDetails;
 
+    /**
+     * The details used to update a private endpoint.
+     */
     public com.oracle.bmc.opsi.model.UpdateOperationsInsightsPrivateEndpointDetails
             getUpdateOperationsInsightsPrivateEndpointDetails() {
         return updateOperationsInsightsPrivateEndpointDetails;
@@ -39,6 +45,12 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +61,11 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+         */
         private String operationsInsightsPrivateEndpointId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
+         * @param operationsInsightsPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder operationsInsightsPrivateEndpointId(
@@ -83,11 +104,15 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * The details used to update a private endpoint.
+         */
         private com.oracle.bmc.opsi.model.UpdateOperationsInsightsPrivateEndpointDetails
                 updateOperationsInsightsPrivateEndpointDetails = null;
 
         /**
          * The details used to update a private endpoint.
+         * @param updateOperationsInsightsPrivateEndpointDetails the value to set
          * @return this builder instance
          */
         public Builder updateOperationsInsightsPrivateEndpointDetails(
@@ -98,6 +123,12 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +136,7 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,12 +144,18 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -215,7 +253,8 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +265,10 @@ public class UpdateOperationsInsightsPrivateEndpointRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

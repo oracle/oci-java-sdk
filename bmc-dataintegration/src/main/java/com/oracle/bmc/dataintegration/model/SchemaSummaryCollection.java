@@ -29,9 +29,17 @@ public final class SchemaSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of schema summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SchemaSummary> items;
 
+        /**
+         * The array of schema summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SchemaSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SchemaSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SchemaSummary> items;
 
+    /**
+     * The array of schema summaries.
+     * @return the value
+     **/
     public java.util.List<SchemaSummary> getItems() {
         return items;
     }

@@ -30,18 +30,41 @@ public final class CreateRuleSetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering
+         * confidential information.
+         * <p>
+         * Example: {@code example_rule_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering
+         * confidential information.
+         * <p>
+         * Example: {@code example_rule_set}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * An array of rules that compose the rule set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<Rule> items;
 
+        /**
+         * An array of rules that compose the rule set.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<Rule> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -87,6 +110,14 @@ public final class CreateRuleSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering
+     * confidential information.
+     * <p>
+     * Example: {@code example_rule_set}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -97,6 +128,10 @@ public final class CreateRuleSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<Rule> items;
 
+    /**
+     * An array of rules that compose the rule set.
+     * @return the value
+     **/
     public java.util.List<Rule> getItems() {
         return items;
     }

@@ -96,28 +96,49 @@ public final class DerivedField extends TypedObject {
             this.__explicitlySet__.add("expr");
             return this;
         }
-
+        /**
+         * The type of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The type of the field.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseInferredType")
         private Boolean isUseInferredType;
 
+        /**
+         * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+         * @param isUseInferredType the value to set
+         * @return this builder
+         **/
         public Builder isUseInferredType(Boolean isUseInferredType) {
             this.isUseInferredType = isUseInferredType;
             this.__explicitlySet__.add("isUseInferredType");
             return this;
         }
-
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -209,6 +230,10 @@ public final class DerivedField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The type of the field.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -219,6 +244,10 @@ public final class DerivedField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("isUseInferredType")
     private final Boolean isUseInferredType;
 
+    /**
+     * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+     * @return the value
+     **/
     public Boolean getIsUseInferredType() {
         return isUseInferredType;
     }
@@ -229,6 +258,10 @@ public final class DerivedField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }

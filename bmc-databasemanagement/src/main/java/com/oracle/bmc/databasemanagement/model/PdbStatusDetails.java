@@ -28,18 +28,33 @@ public final class PdbStatusDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the PDBs with this count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DatabaseStatus status;
 
+        /**
+         * The status of the PDBs with this count.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(DatabaseStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The number of PDBs with this status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of PDBs with this status.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -81,6 +96,10 @@ public final class PdbStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DatabaseStatus status;
 
+    /**
+     * The status of the PDBs with this count.
+     * @return the value
+     **/
     public DatabaseStatus getStatus() {
         return status;
     }
@@ -91,6 +110,10 @@ public final class PdbStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of PDBs with this status.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

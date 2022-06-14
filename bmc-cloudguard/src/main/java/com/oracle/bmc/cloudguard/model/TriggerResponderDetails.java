@@ -31,18 +31,33 @@ public final class TriggerResponderDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ResponderRule ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
         private String responderRuleId;
 
+        /**
+         * ResponderRule ID
+         * @param responderRuleId the value to set
+         * @return this builder
+         **/
         public Builder responderRuleId(String responderRuleId) {
             this.responderRuleId = responderRuleId;
             this.__explicitlySet__.add("responderRuleId");
             return this;
         }
-
+        /**
+         * ResponderRule configurations
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
+        /**
+         * ResponderRule configurations
+         * @param configurations the value to set
+         * @return this builder
+         **/
         public Builder configurations(java.util.List<ResponderConfiguration> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
@@ -86,6 +101,10 @@ public final class TriggerResponderDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
     private final String responderRuleId;
 
+    /**
+     * ResponderRule ID
+     * @return the value
+     **/
     public String getResponderRuleId() {
         return responderRuleId;
     }
@@ -96,6 +115,10 @@ public final class TriggerResponderDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
+    /**
+     * ResponderRule configurations
+     * @return the value
+     **/
     public java.util.List<ResponderConfiguration> getConfigurations() {
         return configurations;
     }

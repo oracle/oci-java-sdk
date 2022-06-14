@@ -32,18 +32,35 @@ public final class CustomProtectionRuleSetting {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The action to take when the custom protection rule is triggered.
+         * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action to take when the custom protection rule is triggered.
+         * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -96,6 +113,10 @@ public final class CustomProtectionRuleSetting {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -155,6 +176,11 @@ public final class CustomProtectionRuleSetting {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action to take when the custom protection rule is triggered.
+     * {@code DETECT} - Logs the request when the criteria of the custom protection rule are met. {@code BLOCK} - Blocks the request when the criteria of the custom protection rule are met.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

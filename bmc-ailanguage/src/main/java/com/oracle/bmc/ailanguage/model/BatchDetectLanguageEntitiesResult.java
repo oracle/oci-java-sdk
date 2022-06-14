@@ -31,18 +31,33 @@ public final class BatchDetectLanguageEntitiesResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of succeeded document response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<EntityDocumentResult> documents;
 
+        /**
+         * List of succeeded document response.
+         * @param documents the value to set
+         * @return this builder
+         **/
         public Builder documents(java.util.List<EntityDocumentResult> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
         }
-
+        /**
+         * List of failed document response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<DocumentError> errors;
 
+        /**
+         * List of failed document response.
+         * @param errors the value to set
+         * @return this builder
+         **/
         public Builder errors(java.util.List<DocumentError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
@@ -85,6 +100,10 @@ public final class BatchDetectLanguageEntitiesResult {
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<EntityDocumentResult> documents;
 
+    /**
+     * List of succeeded document response.
+     * @return the value
+     **/
     public java.util.List<EntityDocumentResult> getDocuments() {
         return documents;
     }
@@ -95,6 +114,10 @@ public final class BatchDetectLanguageEntitiesResult {
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<DocumentError> errors;
 
+    /**
+     * List of failed document response.
+     * @return the value
+     **/
     public java.util.List<DocumentError> getErrors() {
         return errors;
     }

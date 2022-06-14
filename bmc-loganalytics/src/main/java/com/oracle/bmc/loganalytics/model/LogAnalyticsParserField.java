@@ -59,6 +59,7 @@ public final class LogAnalyticsParserField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private LogAnalyticsField field;
 
@@ -67,64 +68,113 @@ public final class LogAnalyticsParserField {
             this.__explicitlySet__.add("field");
             return this;
         }
-
+        /**
+         * The parser field unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFieldId")
         private Long parserFieldId;
 
+        /**
+         * The parser field unique identifier.
+         * @param parserFieldId the value to set
+         * @return this builder
+         **/
         public Builder parserFieldId(Long parserFieldId) {
             this.parserFieldId = parserFieldId;
             this.__explicitlySet__.add("parserFieldId");
             return this;
         }
-
+        /**
+         * the parser field expression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFieldExpression")
         private String parserFieldExpression;
 
+        /**
+         * the parser field expression.
+         * @param parserFieldExpression the value to set
+         * @return this builder
+         **/
         public Builder parserFieldExpression(String parserFieldExpression) {
             this.parserFieldExpression = parserFieldExpression;
             this.__explicitlySet__.add("parserFieldExpression");
             return this;
         }
-
+        /**
+         * The parser field internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFieldName")
         private String parserFieldName;
 
+        /**
+         * The parser field internal name.
+         * @param parserFieldName the value to set
+         * @return this builder
+         **/
         public Builder parserFieldName(String parserFieldName) {
             this.parserFieldName = parserFieldName;
             this.__explicitlySet__.add("parserFieldName");
             return this;
         }
-
+        /**
+         * The storage field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageFieldName")
         private String storageFieldName;
 
+        /**
+         * The storage field name.
+         * @param storageFieldName the value to set
+         * @return this builder
+         **/
         public Builder storageFieldName(String storageFieldName) {
             this.storageFieldName = storageFieldName;
             this.__explicitlySet__.add("storageFieldName");
             return this;
         }
-
+        /**
+         * The integrator name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFieldIntegratorName")
         private String parserFieldIntegratorName;
 
+        /**
+         * The integrator name.
+         * @param parserFieldIntegratorName the value to set
+         * @return this builder
+         **/
         public Builder parserFieldIntegratorName(String parserFieldIntegratorName) {
             this.parserFieldIntegratorName = parserFieldIntegratorName;
             this.__explicitlySet__.add("parserFieldIntegratorName");
             return this;
         }
-
+        /**
+         * The parser internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserName")
         private String parserName;
 
+        /**
+         * The parser internal name.
+         * @param parserName the value to set
+         * @return this builder
+         **/
         public Builder parserName(String parserName) {
             this.parserName = parserName;
             this.__explicitlySet__.add("parserName");
             return this;
         }
-
+        /**
+         * The parser field sequence.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFieldSequence")
         private Long parserFieldSequence;
 
+        /**
+         * The parser field sequence.
+         * @param parserFieldSequence the value to set
+         * @return this builder
+         **/
         public Builder parserFieldSequence(Long parserFieldSequence) {
             this.parserFieldSequence = parserFieldSequence;
             this.__explicitlySet__.add("parserFieldSequence");
@@ -139,10 +189,17 @@ public final class LogAnalyticsParserField {
             this.__explicitlySet__.add("parser");
             return this;
         }
-
+        /**
+         * The structured column information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("structuredColumnInfo")
         private String structuredColumnInfo;
 
+        /**
+         * The structured column information.
+         * @param structuredColumnInfo the value to set
+         * @return this builder
+         **/
         public Builder structuredColumnInfo(String structuredColumnInfo) {
             this.structuredColumnInfo = structuredColumnInfo;
             this.__explicitlySet__.add("structuredColumnInfo");
@@ -212,6 +269,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldId")
     private final Long parserFieldId;
 
+    /**
+     * The parser field unique identifier.
+     * @return the value
+     **/
     public Long getParserFieldId() {
         return parserFieldId;
     }
@@ -222,6 +283,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldExpression")
     private final String parserFieldExpression;
 
+    /**
+     * the parser field expression.
+     * @return the value
+     **/
     public String getParserFieldExpression() {
         return parserFieldExpression;
     }
@@ -232,6 +297,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldName")
     private final String parserFieldName;
 
+    /**
+     * The parser field internal name.
+     * @return the value
+     **/
     public String getParserFieldName() {
         return parserFieldName;
     }
@@ -242,6 +311,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("storageFieldName")
     private final String storageFieldName;
 
+    /**
+     * The storage field name.
+     * @return the value
+     **/
     public String getStorageFieldName() {
         return storageFieldName;
     }
@@ -252,6 +325,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldIntegratorName")
     private final String parserFieldIntegratorName;
 
+    /**
+     * The integrator name.
+     * @return the value
+     **/
     public String getParserFieldIntegratorName() {
         return parserFieldIntegratorName;
     }
@@ -262,6 +339,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     private final String parserName;
 
+    /**
+     * The parser internal name.
+     * @return the value
+     **/
     public String getParserName() {
         return parserName;
     }
@@ -272,6 +353,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFieldSequence")
     private final Long parserFieldSequence;
 
+    /**
+     * The parser field sequence.
+     * @return the value
+     **/
     public Long getParserFieldSequence() {
         return parserFieldSequence;
     }
@@ -289,6 +374,10 @@ public final class LogAnalyticsParserField {
     @com.fasterxml.jackson.annotation.JsonProperty("structuredColumnInfo")
     private final String structuredColumnInfo;
 
+    /**
+     * The structured column information.
+     * @return the value
+     **/
     public String getStructuredColumnInfo() {
         return structuredColumnInfo;
     }

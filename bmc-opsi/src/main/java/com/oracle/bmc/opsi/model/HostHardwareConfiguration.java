@@ -36,10 +36,17 @@ public final class HostHardwareConfiguration extends HostConfigurationMetricGrou
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Processor architecture used by the platform
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuArchitecture")
         private String cpuArchitecture;
 
+        /**
+         * Processor architecture used by the platform
+         * @param cpuArchitecture the value to set
+         * @return this builder
+         **/
         public Builder cpuArchitecture(String cpuArchitecture) {
             this.cpuArchitecture = cpuArchitecture;
             this.__explicitlySet__.add("cpuArchitecture");
@@ -89,6 +96,10 @@ public final class HostHardwareConfiguration extends HostConfigurationMetricGrou
     @com.fasterxml.jackson.annotation.JsonProperty("cpuArchitecture")
     private final String cpuArchitecture;
 
+    /**
+     * Processor architecture used by the platform
+     * @return the value
+     **/
     public String getCpuArchitecture() {
         return cpuArchitecture;
     }

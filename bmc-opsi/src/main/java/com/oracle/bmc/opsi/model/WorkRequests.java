@@ -27,9 +27,17 @@ public final class WorkRequests {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OPSI Work Request Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequests")
         private Object workRequests;
 
+        /**
+         * OPSI Work Request Object.
+         * @param workRequests the value to set
+         * @return this builder
+         **/
         public Builder workRequests(Object workRequests) {
             this.workRequests = workRequests;
             this.__explicitlySet__.add("workRequests");
@@ -71,6 +79,10 @@ public final class WorkRequests {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequests")
     private final Object workRequests;
 
+    /**
+     * OPSI Work Request Object.
+     * @return the value
+     **/
     public Object getWorkRequests() {
         return workRequests;
     }

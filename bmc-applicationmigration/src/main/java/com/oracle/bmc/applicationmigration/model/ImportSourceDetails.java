@@ -27,6 +27,7 @@ package com.oracle.bmc.applicationmigration.model;
 public final class ImportSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("manifest")
         private ImportManifest manifest;
 
@@ -35,28 +36,49 @@ public final class ImportSourceDetails extends SourceDetails {
             this.__explicitlySet__.add("manifest");
             return this;
         }
-
+        /**
+         * the object storage namespace where the bucket and uploaded object resides
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * the object storage namespace where the bucket and uploaded object resides
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * the bucket wherein the export archive exists in object storage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
+        /**
+         * the bucket wherein the export archive exists in object storage
+         * @param bucket the value to set
+         * @return this builder
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
-
+        /**
+         * the name of the archive as it exists in object storage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * the name of the archive as it exists in object storage
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -120,6 +142,10 @@ public final class ImportSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * the object storage namespace where the bucket and uploaded object resides
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -130,6 +156,10 @@ public final class ImportSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
+    /**
+     * the bucket wherein the export archive exists in object storage
+     * @return the value
+     **/
     public String getBucket() {
         return bucket;
     }
@@ -140,6 +170,10 @@ public final class ImportSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * the name of the archive as it exists in object storage
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }

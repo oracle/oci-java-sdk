@@ -29,9 +29,17 @@ public final class InitialRecordGenerationConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the maximum number of records to generate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private java.math.BigDecimal limit;
 
+        /**
+         * the maximum number of records to generate.
+         * @param limit the value to set
+         * @return this builder
+         **/
         public Builder limit(java.math.BigDecimal limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
@@ -74,6 +82,10 @@ public final class InitialRecordGenerationConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final java.math.BigDecimal limit;
 
+    /**
+     * the maximum number of records to generate.
+     * @return the value
+     **/
     public java.math.BigDecimal getLimit() {
         return limit;
     }

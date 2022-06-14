@@ -18,6 +18,9 @@ public class ChangeVolumeGroupCompartmentRequest
      */
     private String volumeGroupId;
 
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+     */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
@@ -27,6 +30,9 @@ public class ChangeVolumeGroupCompartmentRequest
     private com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
             changeVolumeGroupCompartmentDetails;
 
+    /**
+     * Request to change the compartment of given volume group.
+     */
     public com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
             getChangeVolumeGroupCompartmentDetails() {
         return changeVolumeGroupCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeVolumeGroupCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,10 +71,14 @@ public class ChangeVolumeGroupCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         */
         private String volumeGroupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         * @param volumeGroupId the value to set
          * @return this builder instance
          */
         public Builder volumeGroupId(String volumeGroupId) {
@@ -71,11 +86,15 @@ public class ChangeVolumeGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of given volume group.
+         */
         private com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
                 changeVolumeGroupCompartmentDetails = null;
 
         /**
          * Request to change the compartment of given volume group.
+         * @param changeVolumeGroupCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeVolumeGroupCompartmentDetails(
@@ -85,12 +104,18 @@ public class ChangeVolumeGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +206,8 @@ public class ChangeVolumeGroupCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +216,10 @@ public class ChangeVolumeGroupCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

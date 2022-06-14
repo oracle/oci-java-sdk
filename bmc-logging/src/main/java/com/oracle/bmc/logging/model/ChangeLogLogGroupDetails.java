@@ -29,9 +29,17 @@ public final class ChangeLogLogGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Log group OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetLogGroupId")
         private String targetLogGroupId;
 
+        /**
+         * Log group OCID.
+         * @param targetLogGroupId the value to set
+         * @return this builder
+         **/
         public Builder targetLogGroupId(String targetLogGroupId) {
             this.targetLogGroupId = targetLogGroupId;
             this.__explicitlySet__.add("targetLogGroupId");
@@ -73,6 +81,10 @@ public final class ChangeLogLogGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetLogGroupId")
     private final String targetLogGroupId;
 
+    /**
+     * Log group OCID.
+     * @return the value
+     **/
     public String getTargetLogGroupId() {
         return targetLogGroupId;
     }

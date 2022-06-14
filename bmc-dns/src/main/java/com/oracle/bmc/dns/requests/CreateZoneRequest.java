@@ -17,6 +17,9 @@ public class CreateZoneRequest
      */
     private com.oracle.bmc.dns.model.CreateZoneBaseDetails createZoneDetails;
 
+    /**
+     * Details for creating a new zone.
+     */
     public com.oracle.bmc.dns.model.CreateZoneBaseDetails getCreateZoneDetails() {
         return createZoneDetails;
     }
@@ -28,6 +31,12 @@ public class CreateZoneRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,6 +48,12 @@ public class CreateZoneRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -48,6 +63,10 @@ public class CreateZoneRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -56,6 +75,9 @@ public class CreateZoneRequest
      */
     private String viewId;
 
+    /**
+     * The OCID of the view the resource is associated with.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -77,10 +99,14 @@ public class CreateZoneRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for creating a new zone.
+         */
         private com.oracle.bmc.dns.model.CreateZoneBaseDetails createZoneDetails = null;
 
         /**
          * Details for creating a new zone.
+         * @param createZoneDetails the value to set
          * @return this builder instance
          */
         public Builder createZoneDetails(
@@ -89,6 +115,12 @@ public class CreateZoneRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -96,6 +128,7 @@ public class CreateZoneRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -103,6 +136,12 @@ public class CreateZoneRequest
             return this;
         }
 
+        /**
+         * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -110,6 +149,7 @@ public class CreateZoneRequest
          * <p>
          * This parameter is deprecated and should be omitted.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -117,11 +157,16 @@ public class CreateZoneRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -129,10 +174,14 @@ public class CreateZoneRequest
             return this;
         }
 
+        /**
+         * The OCID of the view the resource is associated with.
+         */
         private String viewId = null;
 
         /**
          * The OCID of the view the resource is associated with.
+         * @param viewId the value to set
          * @return this builder instance
          */
         public Builder viewId(String viewId) {
@@ -227,7 +276,8 @@ public class CreateZoneRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -238,6 +288,10 @@ public class CreateZoneRequest
                 .viewId(viewId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,27 +29,49 @@ public final class Time {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The hour value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hour")
         private Integer hour;
 
+        /**
+         * The hour value.
+         * @param hour the value to set
+         * @return this builder
+         **/
         public Builder hour(Integer hour) {
             this.hour = hour;
             this.__explicitlySet__.add("hour");
             return this;
         }
-
+        /**
+         * The minute value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minute")
         private Integer minute;
 
+        /**
+         * The minute value.
+         * @param minute the value to set
+         * @return this builder
+         **/
         public Builder minute(Integer minute) {
             this.minute = minute;
             this.__explicitlySet__.add("minute");
             return this;
         }
-
+        /**
+         * The second value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("second")
         private Integer second;
 
+        /**
+         * The second value.
+         * @param second the value to set
+         * @return this builder
+         **/
         public Builder second(Integer second) {
             this.second = second;
             this.__explicitlySet__.add("second");
@@ -91,6 +113,10 @@ public final class Time {
     @com.fasterxml.jackson.annotation.JsonProperty("hour")
     private final Integer hour;
 
+    /**
+     * The hour value.
+     * @return the value
+     **/
     public Integer getHour() {
         return hour;
     }
@@ -101,6 +127,10 @@ public final class Time {
     @com.fasterxml.jackson.annotation.JsonProperty("minute")
     private final Integer minute;
 
+    /**
+     * The minute value.
+     * @return the value
+     **/
     public Integer getMinute() {
         return minute;
     }
@@ -111,6 +141,10 @@ public final class Time {
     @com.fasterxml.jackson.annotation.JsonProperty("second")
     private final Integer second;
 
+    /**
+     * The second value.
+     * @return the value
+     **/
     public Integer getSecond() {
         return second;
     }

@@ -184,10 +184,17 @@ public final class DeployPipelineRedeployment extends Deployment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Specifies the OCID of the previous deployment to be redeployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
         private String previousDeploymentId;
 
+        /**
+         * Specifies the OCID of the previous deployment to be redeployed.
+         * @param previousDeploymentId the value to set
+         * @return this builder
+         **/
         public Builder previousDeploymentId(String previousDeploymentId) {
             this.previousDeploymentId = previousDeploymentId;
             this.__explicitlySet__.add("previousDeploymentId");
@@ -307,6 +314,10 @@ public final class DeployPipelineRedeployment extends Deployment {
     @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
     private final String previousDeploymentId;
 
+    /**
+     * Specifies the OCID of the previous deployment to be redeployed.
+     * @return the value
+     **/
     public String getPreviousDeploymentId() {
         return previousDeploymentId;
     }

@@ -28,18 +28,33 @@ public final class DetectedLanguage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The language of the document, abbreviated according to ISO 639-2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private DocumentLanguage languageCode;
 
+        /**
+         * The language of the document, abbreviated according to ISO 639-2.
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(DocumentLanguage languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -81,6 +96,10 @@ public final class DetectedLanguage {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final DocumentLanguage languageCode;
 
+    /**
+     * The language of the document, abbreviated according to ISO 639-2.
+     * @return the value
+     **/
     public DocumentLanguage getLanguageCode() {
         return languageCode;
     }
@@ -91,6 +110,10 @@ public final class DetectedLanguage {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }

@@ -32,18 +32,39 @@ public final class FilterHeaderPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
+         * permits only the headers in the list and removes all others, so it acts as an inclusion list.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
+         * permits only the headers in the list and removes all others, so it acts as an inclusion list.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The list of headers.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<FilterHeaderPolicyItem> items;
 
+        /**
+         * The list of headers.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<FilterHeaderPolicyItem> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -135,6 +156,12 @@ public final class FilterHeaderPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
+     * permits only the headers in the list and removes all others, so it acts as an inclusion list.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -146,6 +173,11 @@ public final class FilterHeaderPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<FilterHeaderPolicyItem> items;
 
+    /**
+     * The list of headers.
+     *
+     * @return the value
+     **/
     public java.util.List<FilterHeaderPolicyItem> getItems() {
         return items;
     }

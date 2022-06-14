@@ -29,18 +29,49 @@ public final class IpAddress {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An IP address.
+         * <p>
+         * Example: {@code 192.168.0.3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * An IP address.
+         * <p>
+         * Example: {@code 192.168.0.3}
+         *
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * Whether the IP address is public or private.
+         * <p>
+         * If "true", the IP address is public and accessible from the internet.
+         * <p>
+         * If "false", the IP address is private and accessible only from within the associated VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
+        /**
+         * Whether the IP address is public or private.
+         * <p>
+         * If "true", the IP address is public and accessible from the internet.
+         * <p>
+         * If "false", the IP address is private and accessible only from within the associated VCN.
+         *
+         * @param isPublic the value to set
+         * @return this builder
+         **/
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
@@ -97,6 +128,13 @@ public final class IpAddress {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * An IP address.
+     * <p>
+     * Example: {@code 192.168.0.3}
+     *
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -112,6 +150,15 @@ public final class IpAddress {
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
+    /**
+     * Whether the IP address is public or private.
+     * <p>
+     * If "true", the IP address is public and accessible from the internet.
+     * <p>
+     * If "false", the IP address is private and accessible only from within the associated VCN.
+     *
+     * @return the value
+     **/
     public Boolean getIsPublic() {
         return isPublic;
     }

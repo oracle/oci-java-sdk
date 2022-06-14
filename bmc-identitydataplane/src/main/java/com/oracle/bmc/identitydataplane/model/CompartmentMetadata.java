@@ -30,18 +30,33 @@ public final class CompartmentMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compartment id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment id.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The access level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessLevel")
         private AccessLevel accessLevel;
 
+        /**
+         * The access level.
+         * @param accessLevel the value to set
+         * @return this builder
+         **/
         public Builder accessLevel(AccessLevel accessLevel) {
             this.accessLevel = accessLevel;
             this.__explicitlySet__.add("accessLevel");
@@ -84,6 +99,10 @@ public final class CompartmentMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment id.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -130,6 +149,10 @@ public final class CompartmentMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("accessLevel")
     private final AccessLevel accessLevel;
 
+    /**
+     * The access level.
+     * @return the value
+     **/
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }

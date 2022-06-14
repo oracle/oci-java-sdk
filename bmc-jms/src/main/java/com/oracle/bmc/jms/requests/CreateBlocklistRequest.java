@@ -18,6 +18,9 @@ public class CreateBlocklistRequest
      */
     private String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
@@ -26,6 +29,9 @@ public class CreateBlocklistRequest
      */
     private com.oracle.bmc.jms.model.CreateBlocklistDetails createBlocklistDetails;
 
+    /**
+     * Details for the new blocklist record.
+     */
     public com.oracle.bmc.jms.model.CreateBlocklistDetails getCreateBlocklistDetails() {
         return createBlocklistDetails;
     }
@@ -39,6 +45,14 @@ public class CreateBlocklistRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -47,6 +61,9 @@ public class CreateBlocklistRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,10 +85,14 @@ public class CreateBlocklistRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * @param fleetId the value to set
          * @return this builder instance
          */
         public Builder fleetId(String fleetId) {
@@ -79,10 +100,14 @@ public class CreateBlocklistRequest
             return this;
         }
 
+        /**
+         * Details for the new blocklist record.
+         */
         private com.oracle.bmc.jms.model.CreateBlocklistDetails createBlocklistDetails = null;
 
         /**
          * Details for the new blocklist record.
+         * @param createBlocklistDetails the value to set
          * @return this builder instance
          */
         public Builder createBlocklistDetails(
@@ -91,6 +116,14 @@ public class CreateBlocklistRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -100,6 +133,7 @@ public class CreateBlocklistRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -107,10 +141,14 @@ public class CreateBlocklistRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -203,7 +241,8 @@ public class CreateBlocklistRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +252,10 @@ public class CreateBlocklistRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

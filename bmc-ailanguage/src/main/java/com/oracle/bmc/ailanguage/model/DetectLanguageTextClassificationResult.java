@@ -30,9 +30,17 @@ public final class DetectLanguageTextClassificationResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of detected text classes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textClassification")
         private java.util.List<TextClassification> textClassification;
 
+        /**
+         * List of detected text classes.
+         * @param textClassification the value to set
+         * @return this builder
+         **/
         public Builder textClassification(java.util.List<TextClassification> textClassification) {
             this.textClassification = textClassification;
             this.__explicitlySet__.add("textClassification");
@@ -75,6 +83,10 @@ public final class DetectLanguageTextClassificationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("textClassification")
     private final java.util.List<TextClassification> textClassification;
 
+    /**
+     * List of detected text classes.
+     * @return the value
+     **/
     public java.util.List<TextClassification> getTextClassification() {
         return textClassification;
     }

@@ -31,27 +31,49 @@ public final class RelatedEventSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID identifier of the event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID identifier of the event
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID identifier of the instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * OCID identifier of the instance
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * time occurence
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * time occurence
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -94,6 +116,10 @@ public final class RelatedEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID identifier of the event
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -104,6 +130,10 @@ public final class RelatedEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * OCID identifier of the instance
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -114,6 +144,10 @@ public final class RelatedEventSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * time occurence
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

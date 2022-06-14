@@ -15,6 +15,12 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.BackendCollection backendCollection;
 
+    /**
+     * The returned BackendCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.networkloadbalancer.model.BackendCollection getBackendCollection() {
         return backendCollection;
     }
@@ -65,22 +82,56 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned BackendCollection instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.BackendCollection backendCollection;
 
+        /**
+         * The returned BackendCollection instance.
+         * @param backendCollection the value to set
+         * @return this builder
+         */
         public Builder backendCollection(
                 com.oracle.bmc.networkloadbalancer.model.BackendCollection backendCollection) {
             this.backendCollection = backendCollection;
@@ -100,12 +151,20 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListBackendsResponse build() {
             return new ListBackendsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, backendCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -42,6 +42,7 @@ public final class SqlTuningAdvisorTaskSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("taskInfo")
         private SqlTuningAdvisorTaskSummaryReportTaskInfo taskInfo;
 
@@ -59,11 +60,18 @@ public final class SqlTuningAdvisorTaskSummaryReport {
             this.__explicitlySet__.add("statistics");
             return this;
         }
-
+        /**
+         * The list of object findings related to statistics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatFindings")
         private java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
                 objectStatFindings;
 
+        /**
+         * The list of object findings related to statistics.
+         * @param objectStatFindings the value to set
+         * @return this builder
+         **/
         public Builder objectStatFindings(
                 java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
                         objectStatFindings) {
@@ -71,10 +79,17 @@ public final class SqlTuningAdvisorTaskSummaryReport {
             this.__explicitlySet__.add("objectStatFindings");
             return this;
         }
-
+        /**
+         * The list of object findings related to indexes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexFindings")
         private java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> indexFindings;
 
+        /**
+         * The list of object findings related to indexes.
+         * @param indexFindings the value to set
+         * @return this builder
+         **/
         public Builder indexFindings(
                 java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary>
                         indexFindings) {
@@ -139,6 +154,10 @@ public final class SqlTuningAdvisorTaskSummaryReport {
     private final java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
             objectStatFindings;
 
+    /**
+     * The list of object findings related to statistics.
+     * @return the value
+     **/
     public java.util.List<SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary>
             getObjectStatFindings() {
         return objectStatFindings;
@@ -151,6 +170,10 @@ public final class SqlTuningAdvisorTaskSummaryReport {
     private final java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary>
             indexFindings;
 
+    /**
+     * The list of object findings related to indexes.
+     * @return the value
+     **/
     public java.util.List<SqlTuningAdvisorTaskSummaryReportIndexFindingSummary> getIndexFindings() {
         return indexFindings;
     }

@@ -19,6 +19,9 @@ public class CreatePrivateEndpointRequest
     private com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails
             createPrivateEndpointDetails;
 
+    /**
+     * Creation details for a private endpoint.
+     */
     public com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails
             getCreatePrivateEndpointDetails() {
         return createPrivateEndpointDetails;
@@ -30,6 +33,11 @@ public class CreatePrivateEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +51,14 @@ public class CreatePrivateEndpointRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -65,11 +81,15 @@ public class CreatePrivateEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Creation details for a private endpoint.
+         */
         private com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails
                 createPrivateEndpointDetails = null;
 
         /**
          * Creation details for a private endpoint.
+         * @param createPrivateEndpointDetails the value to set
          * @return this builder instance
          */
         public Builder createPrivateEndpointDetails(
@@ -79,12 +99,18 @@ public class CreatePrivateEndpointRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -92,6 +118,14 @@ public class CreatePrivateEndpointRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -101,6 +135,7 @@ public class CreatePrivateEndpointRequest
          * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request may be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -192,7 +227,8 @@ public class CreatePrivateEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -201,6 +237,10 @@ public class CreatePrivateEndpointRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

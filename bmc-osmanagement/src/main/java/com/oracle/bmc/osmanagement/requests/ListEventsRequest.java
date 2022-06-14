@@ -16,6 +16,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String managedInstanceId;
 
+    /**
+     * Instance Oracle Cloud identifier (ocid)
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -24,6 +27,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -32,6 +38,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String eventId;
 
+    /**
+     * Unique event identifier (OCID)
+     */
     public String getEventId() {
         return eventId;
     }
@@ -40,6 +49,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -92,6 +107,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -138,6 +156,10 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -146,6 +168,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -154,6 +179,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private com.oracle.bmc.osmanagement.model.EventType eventType;
 
+    /**
+     * A filter to return only event of given type.
+     */
     public com.oracle.bmc.osmanagement.model.EventType getEventType() {
         return eventType;
     }
@@ -164,6 +192,11 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date latestTimestampLessThan;
 
+    /**
+     * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
+     * Example: 2017-07-14T02:40:00.000Z
+     *
+     */
     public java.util.Date getLatestTimestampLessThan() {
         return latestTimestampLessThan;
     }
@@ -174,6 +207,11 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date latestTimestampGreaterThanOrEqualTo;
 
+    /**
+     * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
+     * Example: 2017-07-14T02:40:00.000Z
+     *
+     */
     public java.util.Date getLatestTimestampGreaterThanOrEqualTo() {
         return latestTimestampGreaterThanOrEqualTo;
     }
@@ -185,10 +223,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Instance Oracle Cloud identifier (ocid)
+         */
         private String managedInstanceId = null;
 
         /**
          * Instance Oracle Cloud identifier (ocid)
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -196,10 +238,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -207,10 +253,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique event identifier (OCID)
+         */
         private String eventId = null;
 
         /**
          * Unique event identifier (OCID)
+         * @param eventId the value to set
          * @return this builder instance
          */
         public Builder eventId(String eventId) {
@@ -218,10 +268,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -229,10 +283,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -240,10 +298,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -251,11 +313,16 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -263,10 +330,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -274,10 +345,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only event of given type.
+         */
         private com.oracle.bmc.osmanagement.model.EventType eventType = null;
 
         /**
          * A filter to return only event of given type.
+         * @param eventType the value to set
          * @return this builder instance
          */
         public Builder eventType(com.oracle.bmc.osmanagement.model.EventType eventType) {
@@ -285,12 +360,18 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         */
         private java.util.Date latestTimestampLessThan = null;
 
         /**
          * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
          * Example: 2017-07-14T02:40:00.000Z
          *
+         * @param latestTimestampLessThan the value to set
          * @return this builder instance
          */
         public Builder latestTimestampLessThan(java.util.Date latestTimestampLessThan) {
@@ -298,12 +379,18 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         */
         private java.util.Date latestTimestampGreaterThanOrEqualTo = null;
 
         /**
          * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
          * Example: 2017-07-14T02:40:00.000Z
          *
+         * @param latestTimestampGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder latestTimestampGreaterThanOrEqualTo(
@@ -400,7 +487,8 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -417,6 +505,10 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .latestTimestampGreaterThanOrEqualTo(latestTimestampGreaterThanOrEqualTo);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

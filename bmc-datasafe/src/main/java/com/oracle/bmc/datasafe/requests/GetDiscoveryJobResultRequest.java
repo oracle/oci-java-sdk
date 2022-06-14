@@ -17,6 +17,9 @@ public class GetDiscoveryJobResultRequest
      */
     private String discoveryJobId;
 
+    /**
+     * The OCID of the discovery job.
+     */
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
@@ -25,6 +28,9 @@ public class GetDiscoveryJobResultRequest
      */
     private String resultKey;
 
+    /**
+     * The unique key that identifies the discovery result.
+     */
     public String getResultKey() {
         return resultKey;
     }
@@ -33,6 +39,9 @@ public class GetDiscoveryJobResultRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +53,14 @@ public class GetDiscoveryJobResultRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the discovery job.
+         */
         private String discoveryJobId = null;
 
         /**
          * The OCID of the discovery job.
+         * @param discoveryJobId the value to set
          * @return this builder instance
          */
         public Builder discoveryJobId(String discoveryJobId) {
@@ -55,10 +68,14 @@ public class GetDiscoveryJobResultRequest
             return this;
         }
 
+        /**
+         * The unique key that identifies the discovery result.
+         */
         private String resultKey = null;
 
         /**
          * The unique key that identifies the discovery result.
+         * @param resultKey the value to set
          * @return this builder instance
          */
         public Builder resultKey(String resultKey) {
@@ -66,10 +83,14 @@ public class GetDiscoveryJobResultRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,7 +170,8 @@ public class GetDiscoveryJobResultRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -158,6 +180,10 @@ public class GetDiscoveryJobResultRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

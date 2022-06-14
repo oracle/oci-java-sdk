@@ -18,6 +18,9 @@ public class ChangeReportCompartmentRequest
      */
     private String reportId;
 
+    /**
+     * Unique report identifier
+     */
     public String getReportId() {
         return reportId;
     }
@@ -27,6 +30,9 @@ public class ChangeReportCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeReportCompartmentDetails
             changeReportCompartmentDetails;
 
+    /**
+     * Details for the different Report.
+     */
     public com.oracle.bmc.datasafe.model.ChangeReportCompartmentDetails
             getChangeReportCompartmentDetails() {
         return changeReportCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeReportCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeReportCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +78,13 @@ public class ChangeReportCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -83,10 +107,14 @@ public class ChangeReportCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique report identifier
+         */
         private String reportId = null;
 
         /**
          * Unique report identifier
+         * @param reportId the value to set
          * @return this builder instance
          */
         public Builder reportId(String reportId) {
@@ -94,11 +122,15 @@ public class ChangeReportCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for the different Report.
+         */
         private com.oracle.bmc.datasafe.model.ChangeReportCompartmentDetails
                 changeReportCompartmentDetails = null;
 
         /**
          * Details for the different Report.
+         * @param changeReportCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeReportCompartmentDetails(
@@ -108,6 +140,14 @@ public class ChangeReportCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -117,6 +157,7 @@ public class ChangeReportCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -124,10 +165,14 @@ public class ChangeReportCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -135,6 +180,13 @@ public class ChangeReportCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -143,6 +195,7 @@ public class ChangeReportCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -237,7 +290,8 @@ public class ChangeReportCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +302,10 @@ public class ChangeReportCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

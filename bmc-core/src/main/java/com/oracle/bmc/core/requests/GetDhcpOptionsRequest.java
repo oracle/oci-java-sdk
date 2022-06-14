@@ -16,6 +16,9 @@ public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String dhcpId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+     */
     public String getDhcpId() {
         return dhcpId;
     }
@@ -27,10 +30,14 @@ public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+         */
         private String dhcpId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
+         * @param dhcpId the value to set
          * @return this builder instance
          */
         public Builder dhcpId(String dhcpId) {
@@ -106,12 +113,17 @@ public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dhcpId(dhcpId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

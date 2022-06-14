@@ -30,6 +30,7 @@ public final class IndicatorCountSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private IndicatorCountDimensions dimensions;
 
@@ -38,10 +39,17 @@ public final class IndicatorCountSummary {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * The count of indicators in the group
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The count of indicators in the group
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -90,6 +98,10 @@ public final class IndicatorCountSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The count of indicators in the group
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

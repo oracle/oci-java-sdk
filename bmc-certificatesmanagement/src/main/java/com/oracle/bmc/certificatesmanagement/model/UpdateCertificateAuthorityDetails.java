@@ -50,18 +50,33 @@ public final class UpdateCertificateAuthorityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A brief description of the CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A brief description of the CA.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Makes this version the current version. This property cannot be updated in combination with any other properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentVersionNumber")
         private Long currentVersionNumber;
 
+        /**
+         * Makes this version the current version. This property cannot be updated in combination with any other properties.
+         * @param currentVersionNumber the value to set
+         * @return this builder
+         **/
         public Builder currentVersionNumber(Long currentVersionNumber) {
             this.currentVersionNumber = currentVersionNumber;
             this.__explicitlySet__.add("currentVersionNumber");
@@ -87,29 +102,58 @@ public final class UpdateCertificateAuthorityDetails {
             this.__explicitlySet__.add("certificateRevocationListDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A list of rules that control how the CA is used and managed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityRules")
         private java.util.List<CertificateAuthorityRule> certificateAuthorityRules;
 
+        /**
+         * A list of rules that control how the CA is used and managed.
+         * @param certificateAuthorityRules the value to set
+         * @return this builder
+         **/
         public Builder certificateAuthorityRules(
                 java.util.List<CertificateAuthorityRule> certificateAuthorityRules) {
             this.certificateAuthorityRules = certificateAuthorityRules;
@@ -168,6 +212,10 @@ public final class UpdateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A brief description of the CA.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -178,6 +226,10 @@ public final class UpdateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("currentVersionNumber")
     private final Long currentVersionNumber;
 
+    /**
+     * Makes this version the current version. This property cannot be updated in combination with any other properties.
+     * @return the value
+     **/
     public Long getCurrentVersionNumber() {
         return currentVersionNumber;
     }
@@ -204,6 +256,12 @@ public final class UpdateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -216,6 +274,12 @@ public final class UpdateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -226,6 +290,10 @@ public final class UpdateCertificateAuthorityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityRules")
     private final java.util.List<CertificateAuthorityRule> certificateAuthorityRules;
 
+    /**
+     * A list of rules that control how the CA is used and managed.
+     * @return the value
+     **/
     public java.util.List<CertificateAuthorityRule> getCertificateAuthorityRules() {
         return certificateAuthorityRules;
     }

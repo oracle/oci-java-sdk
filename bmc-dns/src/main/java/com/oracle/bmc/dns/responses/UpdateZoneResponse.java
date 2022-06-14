@@ -16,6 +16,13 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -27,6 +34,12 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +51,12 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -47,6 +66,10 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.Zone zone;
 
+    /**
+     * The returned Zone instance.
+     * @return the value
+     */
     public com.oracle.bmc.dns.model.Zone getZone() {
         return zone;
     }
@@ -79,29 +102,75 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String eTag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned Zone instance.
+         */
         private com.oracle.bmc.dns.model.Zone zone;
 
+        /**
+         * The returned Zone instance.
+         * @param zone the value to set
+         * @return this builder
+         */
         public Builder zone(com.oracle.bmc.dns.model.Zone zone) {
             this.zone = zone;
             return this;
@@ -121,12 +190,20 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateZoneResponse build() {
             return new UpdateZoneResponse(
                     __httpStatusCode__, eTag, opcRequestId, opcWorkRequestId, zone);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

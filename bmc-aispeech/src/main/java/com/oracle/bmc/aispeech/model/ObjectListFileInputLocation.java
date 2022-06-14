@@ -27,6 +27,7 @@ package com.oracle.bmc.aispeech.model;
 public final class ObjectListFileInputLocation extends InputLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectLocation")
         private ObjectLocation objectLocation;
 

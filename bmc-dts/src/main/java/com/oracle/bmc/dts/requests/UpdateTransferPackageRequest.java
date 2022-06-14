@@ -18,6 +18,9 @@ public class UpdateTransferPackageRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -26,6 +29,9 @@ public class UpdateTransferPackageRequest
      */
     private String transferPackageLabel;
 
+    /**
+     * Label of the Transfer Package
+     */
     public String getTransferPackageLabel() {
         return transferPackageLabel;
     }
@@ -34,6 +40,9 @@ public class UpdateTransferPackageRequest
      */
     private com.oracle.bmc.dts.model.UpdateTransferPackageDetails updateTransferPackageDetails;
 
+    /**
+     * fields to update
+     */
     public com.oracle.bmc.dts.model.UpdateTransferPackageDetails getUpdateTransferPackageDetails() {
         return updateTransferPackageDetails;
     }
@@ -44,6 +53,11 @@ public class UpdateTransferPackageRequest
      */
     private String ifMatch;
 
+    /**
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -66,10 +80,14 @@ public class UpdateTransferPackageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -77,10 +95,14 @@ public class UpdateTransferPackageRequest
             return this;
         }
 
+        /**
+         * Label of the Transfer Package
+         */
         private String transferPackageLabel = null;
 
         /**
          * Label of the Transfer Package
+         * @param transferPackageLabel the value to set
          * @return this builder instance
          */
         public Builder transferPackageLabel(String transferPackageLabel) {
@@ -88,11 +110,15 @@ public class UpdateTransferPackageRequest
             return this;
         }
 
+        /**
+         * fields to update
+         */
         private com.oracle.bmc.dts.model.UpdateTransferPackageDetails updateTransferPackageDetails =
                 null;
 
         /**
          * fields to update
+         * @param updateTransferPackageDetails the value to set
          * @return this builder instance
          */
         public Builder updateTransferPackageDetails(
@@ -102,12 +128,18 @@ public class UpdateTransferPackageRequest
             return this;
         }
 
+        /**
+         * The entity tag to match. Optional, if set, the update will be successful only if the
+         * object's tag matches the tag specified in the request.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -200,7 +232,8 @@ public class UpdateTransferPackageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -210,6 +243,10 @@ public class UpdateTransferPackageRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,19 @@ public final class ExcludedObjectSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Items in collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ExcludedObjectSummary> items;
 
+        /**
+         * Items in collection.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ExcludedObjectSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -76,6 +86,11 @@ public final class ExcludedObjectSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ExcludedObjectSummary> items;
 
+    /**
+     * Items in collection.
+     *
+     * @return the value
+     **/
     public java.util.List<ExcludedObjectSummary> getItems() {
         return items;
     }

@@ -28,18 +28,33 @@ public final class WorkflowStep {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * workflow step name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
+        /**
+         * workflow step name
+         * @param stepName the value to set
+         * @return this builder
+         **/
         public Builder stepName(String stepName) {
             this.stepName = stepName;
             this.__explicitlySet__.add("stepName");
             return this;
         }
-
+        /**
+         * workflow step status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * workflow step status
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -81,6 +96,10 @@ public final class WorkflowStep {
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
+    /**
+     * workflow step name
+     * @return the value
+     **/
     public String getStepName() {
         return stepName;
     }
@@ -91,6 +110,10 @@ public final class WorkflowStep {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * workflow step status
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }

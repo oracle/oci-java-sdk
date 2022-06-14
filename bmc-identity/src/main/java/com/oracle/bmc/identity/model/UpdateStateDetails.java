@@ -29,9 +29,19 @@ public final class UpdateStateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Update state to blocked or unblocked. Only "false" is supported (for changing the state to unblocked).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blocked")
         private Boolean blocked;
 
+        /**
+         * Update state to blocked or unblocked. Only "false" is supported (for changing the state to unblocked).
+         *
+         * @param blocked the value to set
+         * @return this builder
+         **/
         public Builder blocked(Boolean blocked) {
             this.blocked = blocked;
             this.__explicitlySet__.add("blocked");
@@ -74,6 +84,11 @@ public final class UpdateStateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("blocked")
     private final Boolean blocked;
 
+    /**
+     * Update state to blocked or unblocked. Only "false" is supported (for changing the state to unblocked).
+     *
+     * @return the value
+     **/
     public Boolean getBlocked() {
         return blocked;
     }

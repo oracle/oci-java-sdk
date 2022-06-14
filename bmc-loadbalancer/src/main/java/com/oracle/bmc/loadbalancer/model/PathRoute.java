@@ -32,27 +32,73 @@ public final class PathRoute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The path string to match against the incoming URI path.
+         * <p>
+         *  Path strings are case-insensitive.
+         * <p>
+         *  Asterisk (*) wildcards are not supported.
+         * <p>
+         *  Regular expressions are not supported.
+         * <p>
+         * Example: {@code /example/video/123}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * The path string to match against the incoming URI path.
+         * <p>
+         *  Path strings are case-insensitive.
+         * <p>
+         *  Asterisk (*) wildcards are not supported.
+         * <p>
+         *  Regular expressions are not supported.
+         * <p>
+         * Example: {@code /example/video/123}
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * The type of matching to apply to incoming URIs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathMatchType")
         private PathMatchType pathMatchType;
 
+        /**
+         * The type of matching to apply to incoming URIs.
+         * @param pathMatchType the value to set
+         * @return this builder
+         **/
         public Builder pathMatchType(PathMatchType pathMatchType) {
             this.pathMatchType = pathMatchType;
             this.__explicitlySet__.add("pathMatchType");
             return this;
         }
-
+        /**
+         * The name of the target backend set for requests where the incoming URI matches the specified path.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
+        /**
+         * The name of the target backend set for requests where the incoming URI matches the specified path.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @param backendSetName the value to set
+         * @return this builder
+         **/
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
@@ -106,6 +152,19 @@ public final class PathRoute {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * The path string to match against the incoming URI path.
+     * <p>
+     *  Path strings are case-insensitive.
+     * <p>
+     *  Asterisk (*) wildcards are not supported.
+     * <p>
+     *  Regular expressions are not supported.
+     * <p>
+     * Example: {@code /example/video/123}
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -116,6 +175,10 @@ public final class PathRoute {
     @com.fasterxml.jackson.annotation.JsonProperty("pathMatchType")
     private final PathMatchType pathMatchType;
 
+    /**
+     * The type of matching to apply to incoming URIs.
+     * @return the value
+     **/
     public PathMatchType getPathMatchType() {
         return pathMatchType;
     }
@@ -129,6 +192,13 @@ public final class PathRoute {
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
+    /**
+     * The name of the target backend set for requests where the incoming URI matches the specified path.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     * @return the value
+     **/
     public String getBackendSetName() {
         return backendSetName;
     }

@@ -27,9 +27,17 @@ public final class SkillCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Skill summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SkillSummary> items;
 
+        /**
+         * The Skill summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SkillSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class SkillCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SkillSummary> items;
 
+    /**
+     * The Skill summaries.
+     * @return the value
+     **/
     public java.util.List<SkillSummary> getItems() {
         return items;
     }

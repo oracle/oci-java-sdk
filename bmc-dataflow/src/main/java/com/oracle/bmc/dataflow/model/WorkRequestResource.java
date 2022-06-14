@@ -48,54 +48,109 @@ public final class WorkRequestResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The way in which this resource is affected by the work tracked in the work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
+        /**
+         * The way in which this resource is affected by the work tracked in the work request.
+         *
+         * @param actionType the value to set
+         * @return this builder
+         **/
         public Builder actionType(ActionType actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-
+        /**
+         * The id of a work request resource object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
+        /**
+         * The id of a work request resource object.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The id of the releated resource. See resourceType to identity the specific type of resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The id of the releated resource. See resourceType to identity the specific type of resource.
+         *
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The type of resource.  See resourceId for the id of the specific resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The type of resource.  See resourceId for the id of the specific resource.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The URI path that the user can use to get access to the resource metadata
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
         private String resourceUri;
 
+        /**
+         * The URI path that the user can use to get access to the resource metadata
+         *
+         * @param resourceUri the value to set
+         * @return this builder
+         **/
         public Builder resourceUri(String resourceUri) {
             this.resourceUri = resourceUri;
             this.__explicitlySet__.add("resourceUri");
             return this;
         }
-
+        /**
+         * The OCID of a work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
         private String workRequestid;
 
+        /**
+         * The OCID of a work request.
+         *
+         * @param workRequestid the value to set
+         * @return this builder
+         **/
         public Builder workRequestid(String workRequestid) {
             this.workRequestid = workRequestid;
             this.__explicitlySet__.add("workRequestid");
@@ -198,6 +253,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
+    /**
+     * The way in which this resource is affected by the work tracked in the work request.
+     *
+     * @return the value
+     **/
     public ActionType getActionType() {
         return actionType;
     }
@@ -209,6 +269,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
+    /**
+     * The id of a work request resource object.
+     *
+     * @return the value
+     **/
     public Long getId() {
         return id;
     }
@@ -220,6 +285,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The id of the releated resource. See resourceType to identity the specific type of resource.
+     *
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -231,6 +301,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The type of resource.  See resourceId for the id of the specific resource.
+     *
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -242,6 +317,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
     private final String resourceUri;
 
+    /**
+     * The URI path that the user can use to get access to the resource metadata
+     *
+     * @return the value
+     **/
     public String getResourceUri() {
         return resourceUri;
     }
@@ -253,6 +333,11 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestid")
     private final String workRequestid;
 
+    /**
+     * The OCID of a work request.
+     *
+     * @return the value
+     **/
     public String getWorkRequestid() {
         return workRequestid;
     }

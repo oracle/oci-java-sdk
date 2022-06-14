@@ -18,6 +18,9 @@ public class CreateNetworkSourceRequest
      */
     private com.oracle.bmc.identity.model.CreateNetworkSourceDetails createNetworkSourceDetails;
 
+    /**
+     * Request object for creating a new network source.
+     */
     public com.oracle.bmc.identity.model.CreateNetworkSourceDetails
             getCreateNetworkSourceDetails() {
         return createNetworkSourceDetails;
@@ -32,6 +35,14 @@ public class CreateNetworkSourceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -54,11 +65,15 @@ public class CreateNetworkSourceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for creating a new network source.
+         */
         private com.oracle.bmc.identity.model.CreateNetworkSourceDetails
                 createNetworkSourceDetails = null;
 
         /**
          * Request object for creating a new network source.
+         * @param createNetworkSourceDetails the value to set
          * @return this builder instance
          */
         public Builder createNetworkSourceDetails(
@@ -68,6 +83,14 @@ public class CreateNetworkSourceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -77,6 +100,7 @@ public class CreateNetworkSourceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -165,7 +189,8 @@ public class CreateNetworkSourceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -173,6 +198,10 @@ public class CreateNetworkSourceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

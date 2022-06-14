@@ -29,9 +29,17 @@ public final class FunctionLibrarySummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of FunctionLibrary summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<FunctionLibrarySummary> items;
 
+        /**
+         * The array of FunctionLibrary summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<FunctionLibrarySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class FunctionLibrarySummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<FunctionLibrarySummary> items;
 
+    /**
+     * The array of FunctionLibrary summaries.
+     * @return the value
+     **/
     public java.util.List<FunctionLibrarySummary> getItems() {
         return items;
     }

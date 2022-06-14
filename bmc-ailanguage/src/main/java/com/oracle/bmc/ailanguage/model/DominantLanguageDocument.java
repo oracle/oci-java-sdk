@@ -30,18 +30,33 @@ public final class DominantLanguageDocument {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Document unique identifier defined by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Document unique identifier defined by the user.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Document text for detect language.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * Document text for detect language.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
@@ -83,6 +98,10 @@ public final class DominantLanguageDocument {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Document unique identifier defined by the user.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -93,6 +112,10 @@ public final class DominantLanguageDocument {
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * Document text for detect language.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }

@@ -16,6 +16,9 @@ public class GetSensitiveTypeRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String sensitiveTypeId;
 
+    /**
+     * The OCID of the sensitive type.
+     */
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -24,6 +27,9 @@ public class GetSensitiveTypeRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetSensitiveTypeRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive type.
+         */
         private String sensitiveTypeId = null;
 
         /**
          * The OCID of the sensitive type.
+         * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
         public Builder sensitiveTypeId(String sensitiveTypeId) {
@@ -46,10 +56,14 @@ public class GetSensitiveTypeRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetSensitiveTypeRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().sensitiveTypeId(sensitiveTypeId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

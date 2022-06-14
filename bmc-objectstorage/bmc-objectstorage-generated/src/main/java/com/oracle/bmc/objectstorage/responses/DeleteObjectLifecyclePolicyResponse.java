@@ -15,6 +15,12 @@ public class DeleteObjectLifecyclePolicyResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class DeleteObjectLifecyclePolicyResponse extends com.oracle.bmc.response
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -44,15 +54,35 @@ public class DeleteObjectLifecyclePolicyResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
@@ -70,12 +100,20 @@ public class DeleteObjectLifecyclePolicyResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteObjectLifecyclePolicyResponse build() {
             return new DeleteObjectLifecyclePolicyResponse(
                     __httpStatusCode__, opcRequestId, opcClientRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

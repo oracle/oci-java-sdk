@@ -18,6 +18,9 @@ public class UpdateModelDeploymentRequest
      */
     private String modelDeploymentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+     */
     public String getModelDeploymentId() {
         return modelDeploymentId;
     }
@@ -31,6 +34,13 @@ public class UpdateModelDeploymentRequest
     private com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails
             updateModelDeploymentDetails;
 
+    /**
+     * Details for updating a model deployment. Some of the properties of {@code modelDeploymentConfigurationDetails} or {@code CategoryLogDetails} can also be updated with zero down time
+     * when the model deployment's lifecycle state is ACTIVE or NEEDS_ATTENTION i.e {@code instanceShapeName}, {@code instanceCount} and {@code modelId}, separately {@code loadBalancerShape} or
+     * {@code CategoryLogDetails} can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next
+     * time the model deployment is activated.
+     *
+     */
     public com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails
             getUpdateModelDeploymentDetails() {
         return updateModelDeploymentDetails;
@@ -45,6 +55,14 @@ public class UpdateModelDeploymentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -54,6 +72,10 @@ public class UpdateModelDeploymentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -76,10 +98,14 @@ public class UpdateModelDeploymentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+         */
         private String modelDeploymentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+         * @param modelDeploymentId the value to set
          * @return this builder instance
          */
         public Builder modelDeploymentId(String modelDeploymentId) {
@@ -87,6 +113,13 @@ public class UpdateModelDeploymentRequest
             return this;
         }
 
+        /**
+         * Details for updating a model deployment. Some of the properties of {@code modelDeploymentConfigurationDetails} or {@code CategoryLogDetails} can also be updated with zero down time
+         * when the model deployment's lifecycle state is ACTIVE or NEEDS_ATTENTION i.e {@code instanceShapeName}, {@code instanceCount} and {@code modelId}, separately {@code loadBalancerShape} or
+         * {@code CategoryLogDetails} can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next
+         * time the model deployment is activated.
+         *
+         */
         private com.oracle.bmc.datascience.model.UpdateModelDeploymentDetails
                 updateModelDeploymentDetails = null;
 
@@ -96,6 +129,7 @@ public class UpdateModelDeploymentRequest
          * {@code CategoryLogDetails} can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next
          * time the model deployment is activated.
          *
+         * @param updateModelDeploymentDetails the value to set
          * @return this builder instance
          */
         public Builder updateModelDeploymentDetails(
@@ -105,6 +139,14 @@ public class UpdateModelDeploymentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -114,6 +156,7 @@ public class UpdateModelDeploymentRequest
          * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -121,11 +164,16 @@ public class UpdateModelDeploymentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -218,7 +266,8 @@ public class UpdateModelDeploymentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -228,6 +277,10 @@ public class UpdateModelDeploymentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

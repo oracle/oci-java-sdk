@@ -32,18 +32,43 @@ public final class RequestAccessControl {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+         * <p>
+         * **ALLOW** continues execution of other modules and their rules.
+         * <p>
+         * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultActionName")
         private String defaultActionName;
 
+        /**
+         * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+         * <p>
+         * **ALLOW** continues execution of other modules and their rules.
+         * <p>
+         * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+         *
+         * @param defaultActionName the value to set
+         * @return this builder
+         **/
         public Builder defaultActionName(String defaultActionName) {
             this.defaultActionName = defaultActionName;
             this.__explicitlySet__.add("defaultActionName");
             return this;
         }
-
+        /**
+         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<AccessControlRule> rules;
 
+        /**
+         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<AccessControlRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -90,6 +115,15 @@ public final class RequestAccessControl {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultActionName")
     private final String defaultActionName;
 
+    /**
+     * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+     * <p>
+     * **ALLOW** continues execution of other modules and their rules.
+     * <p>
+     * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+     *
+     * @return the value
+     **/
     public String getDefaultActionName() {
         return defaultActionName;
     }
@@ -100,6 +134,10 @@ public final class RequestAccessControl {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<AccessControlRule> rules;
 
+    /**
+     * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+     * @return the value
+     **/
     public java.util.List<AccessControlRule> getRules() {
         return rules;
     }

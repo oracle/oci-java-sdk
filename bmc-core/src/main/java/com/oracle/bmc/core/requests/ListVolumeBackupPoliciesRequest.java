@@ -22,6 +22,14 @@ public class ListVolumeBackupPoliciesRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +41,12 @@ public class ListVolumeBackupPoliciesRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -43,6 +57,11 @@ public class ListVolumeBackupPoliciesRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     * If no compartment is specified, the Oracle defined backup policies are listed.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -54,6 +73,14 @@ public class ListVolumeBackupPoliciesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -63,6 +90,7 @@ public class ListVolumeBackupPoliciesRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -70,6 +98,12 @@ public class ListVolumeBackupPoliciesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -77,6 +111,7 @@ public class ListVolumeBackupPoliciesRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -84,12 +119,18 @@ public class ListVolumeBackupPoliciesRequest
             return this;
         }
 
+        /**
+         * The OCID of the compartment.
+         * If no compartment is specified, the Oracle defined backup policies are listed.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
          * If no compartment is specified, the Oracle defined backup policies are listed.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -169,12 +210,17 @@ public class ListVolumeBackupPoliciesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().limit(limit).page(page).compartmentId(compartmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,9 +27,23 @@ public final class DbSystemOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The storage option used in DB system.
+         * ASM - Automatic storage management
+         * LVM - Logical Volume management
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
         private StorageManagement storageManagement;
 
+        /**
+         * The storage option used in DB system.
+         * ASM - Automatic storage management
+         * LVM - Logical Volume management
+         *
+         * @param storageManagement the value to set
+         * @return this builder
+         **/
         public Builder storageManagement(StorageManagement storageManagement) {
             this.storageManagement = storageManagement;
             this.__explicitlySet__.add("storageManagement");
@@ -125,6 +139,13 @@ public final class DbSystemOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
     private final StorageManagement storageManagement;
 
+    /**
+     * The storage option used in DB system.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
+     *
+     * @return the value
+     **/
     public StorageManagement getStorageManagement() {
         return storageManagement;
     }

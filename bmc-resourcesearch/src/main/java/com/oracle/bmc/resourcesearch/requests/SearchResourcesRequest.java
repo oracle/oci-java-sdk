@@ -19,6 +19,10 @@ public class SearchResourcesRequest
      */
     private com.oracle.bmc.resourcesearch.model.SearchDetails searchDetails;
 
+    /**
+     * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
+     *
+     */
     public com.oracle.bmc.resourcesearch.model.SearchDetails getSearchDetails() {
         return searchDetails;
     }
@@ -27,6 +31,9 @@ public class SearchResourcesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return. The value must be between 1 and 1000.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -35,6 +42,9 @@ public class SearchResourcesRequest
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     */
     public String getPage() {
         return page;
     }
@@ -44,6 +54,10 @@ public class SearchResourcesRequest
      */
     private String tenantId;
 
+    /**
+     * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
+     *
+     */
     public String getTenantId() {
         return tenantId;
     }
@@ -54,6 +68,11 @@ public class SearchResourcesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -75,11 +94,16 @@ public class SearchResourcesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
+         *
+         */
         private com.oracle.bmc.resourcesearch.model.SearchDetails searchDetails = null;
 
         /**
          * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
          *
+         * @param searchDetails the value to set
          * @return this builder instance
          */
         public Builder searchDetails(
@@ -88,10 +112,14 @@ public class SearchResourcesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return. The value must be between 1 and 1000.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. The value must be between 1 and 1000.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -99,10 +127,14 @@ public class SearchResourcesRequest
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -110,11 +142,16 @@ public class SearchResourcesRequest
             return this;
         }
 
+        /**
+         * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
+         *
+         */
         private String tenantId = null;
 
         /**
          * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
          *
+         * @param tenantId the value to set
          * @return this builder instance
          */
         public Builder tenantId(String tenantId) {
@@ -122,12 +159,18 @@ public class SearchResourcesRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
          * request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -222,7 +265,8 @@ public class SearchResourcesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -233,6 +277,10 @@ public class SearchResourcesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

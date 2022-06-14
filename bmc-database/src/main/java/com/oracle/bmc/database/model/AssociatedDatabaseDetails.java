@@ -30,18 +30,33 @@ public final class AssociatedDatabaseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of the database that is associated with the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The display name of the database that is associated with the backup destination.
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
@@ -83,6 +98,10 @@ public final class AssociatedDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -93,6 +112,10 @@ public final class AssociatedDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The display name of the database that is associated with the backup destination.
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }

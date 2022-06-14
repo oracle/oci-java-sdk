@@ -17,6 +17,10 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -26,6 +30,10 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String configId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
+     *
+     */
     public String getConfigId() {
         return configId;
     }
@@ -39,6 +47,14 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +65,11 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,11 +81,16 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -72,11 +98,16 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
+         *
+         */
         private String configId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
          *
+         * @param configId the value to set
          * @return this builder instance
          */
         public Builder configId(String configId) {
@@ -84,6 +115,14 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -93,6 +132,7 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -100,12 +140,18 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -187,7 +233,8 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -197,6 +244,10 @@ public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

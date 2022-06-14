@@ -17,6 +17,9 @@ public class StopAutonomousDatabaseRequest
      */
     private String autonomousDatabaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
@@ -28,6 +31,12 @@ public class StopAutonomousDatabaseRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -37,6 +46,10 @@ public class StopAutonomousDatabaseRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,10 +61,14 @@ public class StopAutonomousDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousDatabaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
@@ -59,6 +76,12 @@ public class StopAutonomousDatabaseRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -66,6 +89,7 @@ public class StopAutonomousDatabaseRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -73,11 +97,16 @@ public class StopAutonomousDatabaseRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -157,7 +186,8 @@ public class StopAutonomousDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -166,6 +196,10 @@ public class StopAutonomousDatabaseRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

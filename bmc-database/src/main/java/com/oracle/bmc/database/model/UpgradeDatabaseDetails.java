@@ -32,9 +32,17 @@ public final class UpgradeDatabaseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database upgrade action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The database upgrade action.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -125,6 +133,10 @@ public final class UpgradeDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The database upgrade action.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

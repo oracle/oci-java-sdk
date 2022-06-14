@@ -32,18 +32,37 @@ public final class QueryResultsOrderedBySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Attribute by which the query results are sorted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultsOrderedBy")
         private String queryResultsOrderedBy;
 
+        /**
+         * Attribute by which the query results are sorted.
+         *
+         * @param queryResultsOrderedBy the value to set
+         * @return this builder
+         **/
         public Builder queryResultsOrderedBy(String queryResultsOrderedBy) {
             this.queryResultsOrderedBy = queryResultsOrderedBy;
             this.__explicitlySet__.add("queryResultsOrderedBy");
             return this;
         }
-
+        /**
+         * The sort order for the attribute, either 'ASC' or 'DESC'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultsSortOrder")
         private String queryResultsSortOrder;
 
+        /**
+         * The sort order for the attribute, either 'ASC' or 'DESC'.
+         *
+         * @param queryResultsSortOrder the value to set
+         * @return this builder
+         **/
         public Builder queryResultsSortOrder(String queryResultsSortOrder) {
             this.queryResultsSortOrder = queryResultsSortOrder;
             this.__explicitlySet__.add("queryResultsSortOrder");
@@ -89,6 +108,11 @@ public final class QueryResultsOrderedBySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsOrderedBy")
     private final String queryResultsOrderedBy;
 
+    /**
+     * Attribute by which the query results are sorted.
+     *
+     * @return the value
+     **/
     public String getQueryResultsOrderedBy() {
         return queryResultsOrderedBy;
     }
@@ -100,6 +124,11 @@ public final class QueryResultsOrderedBySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsSortOrder")
     private final String queryResultsSortOrder;
 
+    /**
+     * The sort order for the attribute, either 'ASC' or 'DESC'.
+     *
+     * @return the value
+     **/
     public String getQueryResultsSortOrder() {
         return queryResultsSortOrder;
     }

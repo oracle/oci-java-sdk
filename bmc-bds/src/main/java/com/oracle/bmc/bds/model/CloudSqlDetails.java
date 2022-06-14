@@ -42,45 +42,89 @@ public final class CloudSqlDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Shape of the node
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * Shape of the node
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The size of block volume in GB that needs to be attached to a given node.
+         * All the necessary details needed for attachment are managed by service itself.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
+        /**
+         * The size of block volume in GB that needs to be attached to a given node.
+         * All the necessary details needed for attachment are managed by service itself.
+         *
+         * @param blockVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
             return this;
         }
-
+        /**
+         * Boolean flag specifying whether or not Kerberos principals are mapped
+         * to database users.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKerberosMappedToDatabaseUsers")
         private Boolean isKerberosMappedToDatabaseUsers;
 
+        /**
+         * Boolean flag specifying whether or not Kerberos principals are mapped
+         * to database users.
+         *
+         * @param isKerberosMappedToDatabaseUsers the value to set
+         * @return this builder
+         **/
         public Builder isKerberosMappedToDatabaseUsers(Boolean isKerberosMappedToDatabaseUsers) {
             this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             this.__explicitlySet__.add("isKerberosMappedToDatabaseUsers");
             return this;
         }
-
+        /**
+         * IP address of the Cloud SQL node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * IP address of the Cloud SQL node.
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * Details about the Kerberos principals.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kerberosDetails")
         private java.util.List<KerberosDetails> kerberosDetails;
 
+        /**
+         * Details about the Kerberos principals.
+         * @param kerberosDetails the value to set
+         * @return this builder
+         **/
         public Builder kerberosDetails(java.util.List<KerberosDetails> kerberosDetails) {
             this.kerberosDetails = kerberosDetails;
             this.__explicitlySet__.add("kerberosDetails");
@@ -133,6 +177,10 @@ public final class CloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * Shape of the node
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -145,6 +193,12 @@ public final class CloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
+    /**
+     * The size of block volume in GB that needs to be attached to a given node.
+     * All the necessary details needed for attachment are managed by service itself.
+     *
+     * @return the value
+     **/
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
@@ -157,6 +211,12 @@ public final class CloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isKerberosMappedToDatabaseUsers")
     private final Boolean isKerberosMappedToDatabaseUsers;
 
+    /**
+     * Boolean flag specifying whether or not Kerberos principals are mapped
+     * to database users.
+     *
+     * @return the value
+     **/
     public Boolean getIsKerberosMappedToDatabaseUsers() {
         return isKerberosMappedToDatabaseUsers;
     }
@@ -167,6 +227,10 @@ public final class CloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * IP address of the Cloud SQL node.
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -177,6 +241,10 @@ public final class CloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kerberosDetails")
     private final java.util.List<KerberosDetails> kerberosDetails;
 
+    /**
+     * Details about the Kerberos principals.
+     * @return the value
+     **/
     public java.util.List<KerberosDetails> getKerberosDetails() {
         return kerberosDetails;
     }

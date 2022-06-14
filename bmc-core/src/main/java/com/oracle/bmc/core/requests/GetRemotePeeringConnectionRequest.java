@@ -17,6 +17,9 @@ public class GetRemotePeeringConnectionRequest
      */
     private String remotePeeringConnectionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+     */
     public String getRemotePeeringConnectionId() {
         return remotePeeringConnectionId;
     }
@@ -28,10 +31,14 @@ public class GetRemotePeeringConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+         */
         private String remotePeeringConnectionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+         * @param remotePeeringConnectionId the value to set
          * @return this builder instance
          */
         public Builder remotePeeringConnectionId(String remotePeeringConnectionId) {
@@ -107,12 +114,17 @@ public class GetRemotePeeringConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().remotePeeringConnectionId(remotePeeringConnectionId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

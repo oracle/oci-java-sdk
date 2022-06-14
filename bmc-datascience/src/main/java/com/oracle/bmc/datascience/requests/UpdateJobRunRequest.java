@@ -18,6 +18,9 @@ public class UpdateJobRunRequest
      */
     private String jobRunId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+     */
     public String getJobRunId() {
         return jobRunId;
     }
@@ -26,6 +29,9 @@ public class UpdateJobRunRequest
      */
     private com.oracle.bmc.datascience.model.UpdateJobRunDetails updateJobRunDetails;
 
+    /**
+     * Details for updating a job.
+     */
     public com.oracle.bmc.datascience.model.UpdateJobRunDetails getUpdateJobRunDetails() {
         return updateJobRunDetails;
     }
@@ -35,6 +41,10 @@ public class UpdateJobRunRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +58,14 @@ public class UpdateJobRunRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -69,10 +87,14 @@ public class UpdateJobRunRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+         */
         private String jobRunId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+         * @param jobRunId the value to set
          * @return this builder instance
          */
         public Builder jobRunId(String jobRunId) {
@@ -80,10 +102,14 @@ public class UpdateJobRunRequest
             return this;
         }
 
+        /**
+         * Details for updating a job.
+         */
         private com.oracle.bmc.datascience.model.UpdateJobRunDetails updateJobRunDetails = null;
 
         /**
          * Details for updating a job.
+         * @param updateJobRunDetails the value to set
          * @return this builder instance
          */
         public Builder updateJobRunDetails(
@@ -92,11 +118,16 @@ public class UpdateJobRunRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -104,6 +135,14 @@ public class UpdateJobRunRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -113,6 +152,7 @@ public class UpdateJobRunRequest
          * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -205,7 +245,8 @@ public class UpdateJobRunRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +256,10 @@ public class UpdateJobRunRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

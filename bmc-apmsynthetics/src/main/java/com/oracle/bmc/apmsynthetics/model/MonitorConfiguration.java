@@ -54,6 +54,10 @@ public class MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("isFailureRetried")
     private final Boolean isFailureRetried;
 
+    /**
+     * If isFailureRetried is enabled, then a failed call will be retried.
+     * @return the value
+     **/
     public Boolean getIsFailureRetried() {
         return isFailureRetried;
     }

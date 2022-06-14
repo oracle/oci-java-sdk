@@ -68,6 +68,10 @@ public class FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -78,6 +82,10 @@ public class FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -95,6 +103,10 @@ public class FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -105,6 +117,10 @@ public class FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -115,6 +131,10 @@ public class FlowPortLink {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
+    /**
+     * Key of FlowPort reference
+     * @return the value
+     **/
     public String getPort() {
         return port;
     }

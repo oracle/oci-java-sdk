@@ -47,54 +47,97 @@ public final class OrchestrationVariable {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the variable.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The variable's default value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
+        /**
+         * The variable's default value.
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-
+        /**
+         * A description of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the variable.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The data type of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private OrchestrationVariableTypeEnum dataType;
 
+        /**
+         * The data type of the variable.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(OrchestrationVariableTypeEnum dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Whether the variable is mandatory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
+        /**
+         * Whether the variable is mandatory.
+         * @param isMandatory the value to set
+         * @return this builder
+         **/
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = isMandatory;
             this.__explicitlySet__.add("isMandatory");
             return this;
         }
-
+        /**
+         * A brief textual description that helps to explain the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hintMessage")
         private String hintMessage;
 
+        /**
+         * A brief textual description that helps to explain the variable.
+         * @param hintMessage the value to set
+         * @return this builder
+         **/
         public Builder hintMessage(String hintMessage) {
             this.hintMessage = hintMessage;
             this.__explicitlySet__.add("hintMessage");
@@ -144,6 +187,10 @@ public final class OrchestrationVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the variable.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -154,6 +201,10 @@ public final class OrchestrationVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
+    /**
+     * The variable's default value.
+     * @return the value
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -164,6 +215,10 @@ public final class OrchestrationVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the variable.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -174,6 +229,10 @@ public final class OrchestrationVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final OrchestrationVariableTypeEnum dataType;
 
+    /**
+     * The data type of the variable.
+     * @return the value
+     **/
     public OrchestrationVariableTypeEnum getDataType() {
         return dataType;
     }
@@ -184,6 +243,10 @@ public final class OrchestrationVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
+    /**
+     * Whether the variable is mandatory.
+     * @return the value
+     **/
     public Boolean getIsMandatory() {
         return isMandatory;
     }
@@ -194,6 +257,10 @@ public final class OrchestrationVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("hintMessage")
     private final String hintMessage;
 
+    /**
+     * A brief textual description that helps to explain the variable.
+     * @return the value
+     **/
     public String getHintMessage() {
         return hintMessage;
     }

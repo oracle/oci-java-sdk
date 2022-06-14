@@ -27,18 +27,33 @@ package com.oracle.bmc.database.model;
 public final class AutomatedMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * IP addresses for NFS Auto mount.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
         private java.util.List<String> nfsServer;
 
+        /**
+         * IP addresses for NFS Auto mount.
+         * @param nfsServer the value to set
+         * @return this builder
+         **/
         public Builder nfsServer(java.util.List<String> nfsServer) {
             this.nfsServer = nfsServer;
             this.__explicitlySet__.add("nfsServer");
             return this;
         }
-
+        /**
+         * Specifies the directory on which to mount the file system
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
         private String nfsServerExport;
 
+        /**
+         * Specifies the directory on which to mount the file system
+         * @param nfsServerExport the value to set
+         * @return this builder
+         **/
         public Builder nfsServerExport(String nfsServerExport) {
             this.nfsServerExport = nfsServerExport;
             this.__explicitlySet__.add("nfsServerExport");
@@ -89,6 +104,10 @@ public final class AutomatedMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
     private final java.util.List<String> nfsServer;
 
+    /**
+     * IP addresses for NFS Auto mount.
+     * @return the value
+     **/
     public java.util.List<String> getNfsServer() {
         return nfsServer;
     }
@@ -99,6 +118,10 @@ public final class AutomatedMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
     private final String nfsServerExport;
 
+    /**
+     * Specifies the directory on which to mount the file system
+     * @return the value
+     **/
     public String getNfsServerExport() {
         return nfsServerExport;
     }

@@ -32,27 +32,49 @@ public final class FieldSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The count of custom (user defined) fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
         private Integer nonOobCount;
 
+        /**
+         * The count of custom (user defined) fields.
+         * @param nonOobCount the value to set
+         * @return this builder
+         **/
         public Builder nonOobCount(Integer nonOobCount) {
             this.nonOobCount = nonOobCount;
             this.__explicitlySet__.add("nonOobCount");
             return this;
         }
-
+        /**
+         * The count of built in fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
         private Integer oobCount;
 
+        /**
+         * The count of built in fields.
+         * @param oobCount the value to set
+         * @return this builder
+         **/
         public Builder oobCount(Integer oobCount) {
             this.oobCount = oobCount;
             this.__explicitlySet__.add("oobCount");
             return this;
         }
-
+        /**
+         * Field usage detailss
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageDetails")
         private java.util.List<UsageStatusItem> usageDetails;
 
+        /**
+         * Field usage detailss
+         * @param usageDetails the value to set
+         * @return this builder
+         **/
         public Builder usageDetails(java.util.List<UsageStatusItem> usageDetails) {
             this.usageDetails = usageDetails;
             this.__explicitlySet__.add("usageDetails");
@@ -98,6 +120,10 @@ public final class FieldSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     private final Integer nonOobCount;
 
+    /**
+     * The count of custom (user defined) fields.
+     * @return the value
+     **/
     public Integer getNonOobCount() {
         return nonOobCount;
     }
@@ -108,6 +134,10 @@ public final class FieldSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     private final Integer oobCount;
 
+    /**
+     * The count of built in fields.
+     * @return the value
+     **/
     public Integer getOobCount() {
         return oobCount;
     }
@@ -118,6 +148,10 @@ public final class FieldSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("usageDetails")
     private final java.util.List<UsageStatusItem> usageDetails;
 
+    /**
+     * Field usage detailss
+     * @return the value
+     **/
     public java.util.List<UsageStatusItem> getUsageDetails() {
         return usageDetails;
     }

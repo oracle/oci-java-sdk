@@ -27,6 +27,18 @@ public class DetectAnomaliesRequest
      */
     private com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails detectAnomaliesDetails;
 
+    /**
+     * The input is either:
+     *   - JSON object in the request. This object is defined and SDK will generate the
+     *     object for it
+     *   - Data embedded as base64 string in format of either
+     *     - CSV
+     *     - JSON
+     *     If this option is chosen then customer has to provide the content of specified
+     *     CSV or JSON in base64 encoded string. The Embedded JSON will still has to be
+     *     in same format as inline request JSON
+     *
+     */
     public com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails
             getDetectAnomaliesDetails() {
         return detectAnomaliesDetails;
@@ -36,6 +48,9 @@ public class DetectAnomaliesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +64,14 @@ public class DetectAnomaliesRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -62,6 +85,14 @@ public class DetectAnomaliesRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,6 +115,18 @@ public class DetectAnomaliesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The input is either:
+         *   - JSON object in the request. This object is defined and SDK will generate the
+         *     object for it
+         *   - Data embedded as base64 string in format of either
+         *     - CSV
+         *     - JSON
+         *     If this option is chosen then customer has to provide the content of specified
+         *     CSV or JSON in base64 encoded string. The Embedded JSON will still has to be
+         *     in same format as inline request JSON
+         *
+         */
         private com.oracle.bmc.aianomalydetection.model.DetectAnomaliesDetails
                 detectAnomaliesDetails = null;
 
@@ -98,6 +141,7 @@ public class DetectAnomaliesRequest
          *     CSV or JSON in base64 encoded string. The Embedded JSON will still has to be
          *     in same format as inline request JSON
          *
+         * @param detectAnomaliesDetails the value to set
          * @return this builder instance
          */
         public Builder detectAnomaliesDetails(
@@ -107,10 +151,14 @@ public class DetectAnomaliesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -118,6 +166,14 @@ public class DetectAnomaliesRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -127,6 +183,7 @@ public class DetectAnomaliesRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -134,6 +191,14 @@ public class DetectAnomaliesRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -143,6 +208,7 @@ public class DetectAnomaliesRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -235,7 +301,8 @@ public class DetectAnomaliesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +312,10 @@ public class DetectAnomaliesRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

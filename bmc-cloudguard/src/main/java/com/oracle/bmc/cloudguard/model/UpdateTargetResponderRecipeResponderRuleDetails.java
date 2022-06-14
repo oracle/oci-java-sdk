@@ -30,6 +30,7 @@ public final class UpdateTargetResponderRecipeResponderRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private UpdateTargetResponderRuleDetails details;
 

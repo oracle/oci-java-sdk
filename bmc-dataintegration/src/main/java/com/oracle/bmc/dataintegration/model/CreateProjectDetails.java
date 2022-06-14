@@ -50,54 +50,97 @@ public final class CreateProjectDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The model version of an object.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A user defined description for the project.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A user defined description for the project.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-
+        /**
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * Generated key that can be used in API calls to identify project.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Generated key that can be used in API calls to identify project.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -163,6 +206,10 @@ public final class CreateProjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -173,6 +220,10 @@ public final class CreateProjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -183,6 +234,10 @@ public final class CreateProjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A user defined description for the project.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -193,6 +248,10 @@ public final class CreateProjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -203,6 +262,10 @@ public final class CreateProjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -213,6 +276,10 @@ public final class CreateProjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Generated key that can be used in API calls to identify project.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }

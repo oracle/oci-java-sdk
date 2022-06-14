@@ -53,10 +53,17 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * The OCI resource type that will supply the authentication token
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalSource")
         private ResourcePrincipalSource resourcePrincipalSource;
 
+        /**
+         * The OCI resource type that will supply the authentication token
+         * @param resourcePrincipalSource the value to set
+         * @return this builder
+         **/
         public Builder resourcePrincipalSource(ResourcePrincipalSource resourcePrincipalSource) {
             this.resourcePrincipalSource = resourcePrincipalSource;
             this.__explicitlySet__.add("resourcePrincipalSource");
@@ -162,6 +169,10 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalSource")
     private final ResourcePrincipalSource resourcePrincipalSource;
 
+    /**
+     * The OCI resource type that will supply the authentication token
+     * @return the value
+     **/
     public ResourcePrincipalSource getResourcePrincipalSource() {
         return resourcePrincipalSource;
     }

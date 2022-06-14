@@ -30,18 +30,33 @@ public final class IndicatorCountDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The indicator type that corresponds to the count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private IndicatorType type;
 
+        /**
+         * The indicator type that corresponds to the count.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(IndicatorType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -84,6 +99,10 @@ public final class IndicatorCountDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -94,6 +113,10 @@ public final class IndicatorCountDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final IndicatorType type;
 
+    /**
+     * The indicator type that corresponds to the count.
+     * @return the value
+     **/
     public IndicatorType getType() {
         return type;
     }

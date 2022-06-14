@@ -29,9 +29,17 @@ public final class DefaultVirtualServiceRoutingPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of the virtual service routing policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Type of the virtual service routing policy.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -120,6 +128,10 @@ public final class DefaultVirtualServiceRoutingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Type of the virtual service routing policy.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }

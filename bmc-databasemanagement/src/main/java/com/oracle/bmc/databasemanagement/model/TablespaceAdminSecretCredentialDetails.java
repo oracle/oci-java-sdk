@@ -45,10 +45,21 @@ public final class TablespaceAdminSecretCredentialDetails extends TablespaceAdmi
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret
+         * where the database password is stored.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret
+         * where the database password is stored.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
@@ -103,6 +114,12 @@ public final class TablespaceAdminSecretCredentialDetails extends TablespaceAdmi
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret
+     * where the database password is stored.
+     *
+     * @return the value
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }

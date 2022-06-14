@@ -16,6 +16,9 @@ public class GetCpeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String cpeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+     */
     public String getCpeId() {
         return cpeId;
     }
@@ -26,10 +29,14 @@ public class GetCpeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+         */
         private String cpeId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+         * @param cpeId the value to set
          * @return this builder instance
          */
         public Builder cpeId(String cpeId) {
@@ -105,12 +112,17 @@ public class GetCpeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().cpeId(cpeId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

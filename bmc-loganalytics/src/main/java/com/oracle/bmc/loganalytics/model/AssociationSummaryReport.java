@@ -29,9 +29,17 @@ public final class AssociationSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The association count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
         private Integer associationCount;
 
+        /**
+         * The association count.
+         * @param associationCount the value to set
+         * @return this builder
+         **/
         public Builder associationCount(Integer associationCount) {
             this.associationCount = associationCount;
             this.__explicitlySet__.add("associationCount");
@@ -73,6 +81,10 @@ public final class AssociationSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
     private final Integer associationCount;
 
+    /**
+     * The association count.
+     * @return the value
+     **/
     public Integer getAssociationCount() {
         return associationCount;
     }

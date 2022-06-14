@@ -47,54 +47,105 @@ public final class WorkRequestResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The action to take against the Digital Assistant instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
         private ResourceAction resourceAction;
 
+        /**
+         * The action to take against the Digital Assistant instance.
+         * @param resourceAction the value to set
+         * @return this builder
+         **/
         public Builder resourceAction(ResourceAction resourceAction) {
             this.resourceAction = resourceAction;
             this.__explicitlySet__.add("resourceAction");
             return this;
         }
-
+        /**
+         * The resource type that the work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The resource type that the work request affects.
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The identifier of the Digital Assistant instance that is the subject of the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The identifier of the Digital Assistant instance that is the subject of the request.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+         * correspond to the action being performed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+         * correspond to the action being performed.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Short message providing more detail for the current status. For example, if an operation fails
+         * this may include information about the reason for the failure and a possible resolution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
         private String statusMessage;
 
+        /**
+         * Short message providing more detail for the current status. For example, if an operation fails
+         * this may include information about the reason for the failure and a possible resolution.
+         *
+         * @param statusMessage the value to set
+         * @return this builder
+         **/
         public Builder statusMessage(String statusMessage) {
             this.statusMessage = statusMessage;
             this.__explicitlySet__.add("statusMessage");
             return this;
         }
-
+        /**
+         * The URI path that the user can do a GET on to access the resource metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
         private String resourceUri;
 
+        /**
+         * The URI path that the user can do a GET on to access the resource metadata.
+         * @param resourceUri the value to set
+         * @return this builder
+         **/
         public Builder resourceUri(String resourceUri) {
             this.resourceUri = resourceUri;
             this.__explicitlySet__.add("resourceUri");
@@ -214,6 +265,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
     private final ResourceAction resourceAction;
 
+    /**
+     * The action to take against the Digital Assistant instance.
+     * @return the value
+     **/
     public ResourceAction getResourceAction() {
         return resourceAction;
     }
@@ -224,6 +279,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The resource type that the work request affects.
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -234,6 +293,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The identifier of the Digital Assistant instance that is the subject of the request.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -299,6 +362,12 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+     * correspond to the action being performed.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -311,6 +380,12 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
     private final String statusMessage;
 
+    /**
+     * Short message providing more detail for the current status. For example, if an operation fails
+     * this may include information about the reason for the failure and a possible resolution.
+     *
+     * @return the value
+     **/
     public String getStatusMessage() {
         return statusMessage;
     }
@@ -321,6 +396,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
     private final String resourceUri;
 
+    /**
+     * The URI path that the user can do a GET on to access the resource metadata.
+     * @return the value
+     **/
     public String getResourceUri() {
         return resourceUri;
     }

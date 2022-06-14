@@ -18,6 +18,9 @@ public class UpdateNotebookSessionRequest
      */
     private String notebookSessionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+     */
     public String getNotebookSessionId() {
         return notebookSessionId;
     }
@@ -29,6 +32,11 @@ public class UpdateNotebookSessionRequest
     private com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails
             updateNotebookSessionDetails;
 
+    /**
+     * Details for updating a notebook session. {@code notebookSessionConfigurationDetails} can only be updated while the notebook session is in the {@code INACTIVE} state.
+     * Changes to the {@code notebookSessionConfigurationDetails} take effect the next time the {@code ActivateNotebookSession} action is invoked on the notebook session resource.
+     *
+     */
     public com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails
             getUpdateNotebookSessionDetails() {
         return updateNotebookSessionDetails;
@@ -43,6 +51,14 @@ public class UpdateNotebookSessionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +68,10 @@ public class UpdateNotebookSessionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,10 +94,14 @@ public class UpdateNotebookSessionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+         */
         private String notebookSessionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+         * @param notebookSessionId the value to set
          * @return this builder instance
          */
         public Builder notebookSessionId(String notebookSessionId) {
@@ -85,6 +109,11 @@ public class UpdateNotebookSessionRequest
             return this;
         }
 
+        /**
+         * Details for updating a notebook session. {@code notebookSessionConfigurationDetails} can only be updated while the notebook session is in the {@code INACTIVE} state.
+         * Changes to the {@code notebookSessionConfigurationDetails} take effect the next time the {@code ActivateNotebookSession} action is invoked on the notebook session resource.
+         *
+         */
         private com.oracle.bmc.datascience.model.UpdateNotebookSessionDetails
                 updateNotebookSessionDetails = null;
 
@@ -92,6 +121,7 @@ public class UpdateNotebookSessionRequest
          * Details for updating a notebook session. {@code notebookSessionConfigurationDetails} can only be updated while the notebook session is in the {@code INACTIVE} state.
          * Changes to the {@code notebookSessionConfigurationDetails} take effect the next time the {@code ActivateNotebookSession} action is invoked on the notebook session resource.
          *
+         * @param updateNotebookSessionDetails the value to set
          * @return this builder instance
          */
         public Builder updateNotebookSessionDetails(
@@ -101,6 +131,14 @@ public class UpdateNotebookSessionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -110,6 +148,7 @@ public class UpdateNotebookSessionRequest
          * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -117,11 +156,16 @@ public class UpdateNotebookSessionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -214,7 +258,8 @@ public class UpdateNotebookSessionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +269,10 @@ public class UpdateNotebookSessionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

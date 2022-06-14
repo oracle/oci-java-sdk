@@ -18,6 +18,10 @@ public class ListStandardTagNamespacesRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +31,10 @@ public class ListStandardTagNamespacesRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -36,6 +44,10 @@ public class ListStandardTagNamespacesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -47,11 +59,16 @@ public class ListStandardTagNamespacesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -59,11 +76,16 @@ public class ListStandardTagNamespacesRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -71,11 +93,16 @@ public class ListStandardTagNamespacesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -155,12 +182,17 @@ public class ListStandardTagNamespacesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().compartmentId(compartmentId).page(page).limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

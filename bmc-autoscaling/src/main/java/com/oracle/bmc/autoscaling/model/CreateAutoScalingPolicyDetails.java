@@ -57,6 +57,10 @@ public class CreateAutoScalingPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Capacity capacity;
 
+    /**
+     * The capacity requirements of the autoscaling policy.
+     * @return the value
+     **/
     public Capacity getCapacity() {
         return capacity;
     }
@@ -68,6 +72,11 @@ public class CreateAutoScalingPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -78,6 +87,10 @@ public class CreateAutoScalingPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether the autoscaling policy is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

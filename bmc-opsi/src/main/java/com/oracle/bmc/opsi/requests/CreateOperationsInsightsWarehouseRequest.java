@@ -19,6 +19,9 @@ public class CreateOperationsInsightsWarehouseRequest
     private com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
             createOperationsInsightsWarehouseDetails;
 
+    /**
+     * Details using which an Operations Insights Warehouse resource will be created in Operations Insights.
+     */
     public com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
             getCreateOperationsInsightsWarehouseDetails() {
         return createOperationsInsightsWarehouseDetails;
@@ -34,6 +37,15 @@ public class CreateOperationsInsightsWarehouseRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * operations, such as a resource being deleted or purged from the system.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -44,6 +56,11 @@ public class CreateOperationsInsightsWarehouseRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -66,11 +83,15 @@ public class CreateOperationsInsightsWarehouseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details using which an Operations Insights Warehouse resource will be created in Operations Insights.
+         */
         private com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
                 createOperationsInsightsWarehouseDetails = null;
 
         /**
          * Details using which an Operations Insights Warehouse resource will be created in Operations Insights.
+         * @param createOperationsInsightsWarehouseDetails the value to set
          * @return this builder instance
          */
         public Builder createOperationsInsightsWarehouseDetails(
@@ -81,6 +102,15 @@ public class CreateOperationsInsightsWarehouseRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request that can be retried in case of a timeout or
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -91,6 +121,7 @@ public class CreateOperationsInsightsWarehouseRequest
          *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
          * operations, such as a resource being deleted or purged from the system.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -98,12 +129,18 @@ public class CreateOperationsInsightsWarehouseRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -198,7 +235,8 @@ public class CreateOperationsInsightsWarehouseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +245,10 @@ public class CreateOperationsInsightsWarehouseRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

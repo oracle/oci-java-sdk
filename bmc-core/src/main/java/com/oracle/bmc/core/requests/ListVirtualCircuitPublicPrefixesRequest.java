@@ -17,6 +17,9 @@ public class ListVirtualCircuitPublicPrefixesRequest
      */
     private String virtualCircuitId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+     */
     public String getVirtualCircuitId() {
         return virtualCircuitId;
     }
@@ -30,6 +33,13 @@ public class ListVirtualCircuitPublicPrefixesRequest
     private com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
             verificationState;
 
+    /**
+     * A filter to only return resources that match the given verification
+     * state.
+     * <p>
+     * The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
             getVerificationState() {
         return verificationState;
@@ -42,10 +52,14 @@ public class ListVirtualCircuitPublicPrefixesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+         */
         private String virtualCircuitId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+         * @param virtualCircuitId the value to set
          * @return this builder instance
          */
         public Builder virtualCircuitId(String virtualCircuitId) {
@@ -53,6 +67,13 @@ public class ListVirtualCircuitPublicPrefixesRequest
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given verification
+         * state.
+         * <p>
+         * The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
                 verificationState = null;
 
@@ -62,6 +83,7 @@ public class ListVirtualCircuitPublicPrefixesRequest
          * <p>
          * The state value is case-insensitive.
          *
+         * @param verificationState the value to set
          * @return this builder instance
          */
         public Builder verificationState(
@@ -142,7 +164,8 @@ public class ListVirtualCircuitPublicPrefixesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -150,6 +173,10 @@ public class ListVirtualCircuitPublicPrefixesRequest
                 .verificationState(verificationState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

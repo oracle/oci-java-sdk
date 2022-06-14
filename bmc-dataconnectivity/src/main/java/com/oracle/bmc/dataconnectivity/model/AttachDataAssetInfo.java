@@ -29,9 +29,17 @@ public final class AttachDataAssetInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Map of DataAsset name as key and results as value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceInfo")
         private java.util.Map<String, ValidationResult> referenceInfo;
 
+        /**
+         * Map of DataAsset name as key and results as value
+         * @param referenceInfo the value to set
+         * @return this builder
+         **/
         public Builder referenceInfo(java.util.Map<String, ValidationResult> referenceInfo) {
             this.referenceInfo = referenceInfo;
             this.__explicitlySet__.add("referenceInfo");
@@ -73,6 +81,10 @@ public final class AttachDataAssetInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("referenceInfo")
     private final java.util.Map<String, ValidationResult> referenceInfo;
 
+    /**
+     * Map of DataAsset name as key and results as value
+     * @return the value
+     **/
     public java.util.Map<String, ValidationResult> getReferenceInfo() {
         return referenceInfo;
     }

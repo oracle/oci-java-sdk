@@ -16,6 +16,13 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +32,10 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +45,10 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
+    /**
+     * The returned HttpMonitor instance, or null if {@link #isNotModified()} is true.
+     * @return the value
+     */
     public com.oracle.bmc.healthchecks.model.HttpMonitor getHttpMonitor() {
         return httpMonitor;
     }
@@ -46,6 +61,13 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private boolean isNotModified;
 
+    /**
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
+     * @param true if the object was not modified
+     */
     public boolean isNotModified() {
         return isNotModified;
     }
@@ -78,29 +100,72 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned HttpMonitor instance, or null if {@link #isNotModified()} is true.
+         */
         private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
+        /**
+         * The returned HttpMonitor instance, or null if {@link #isNotModified()} is true.
+         * @param httpMonitor the value to set
+         * @return this builder
+         */
         public Builder httpMonitor(com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor) {
             this.httpMonitor = httpMonitor;
             return this;
         }
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         */
         private boolean isNotModified;
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         * @param true if the object was not modified
+         */
         public Builder isNotModified(boolean isNotModified) {
             this.isNotModified = isNotModified;
             return this;
@@ -119,12 +184,20 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetHttpMonitorResponse build() {
             return new GetHttpMonitorResponse(
                     __httpStatusCode__, opcRequestId, etag, httpMonitor, isNotModified);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

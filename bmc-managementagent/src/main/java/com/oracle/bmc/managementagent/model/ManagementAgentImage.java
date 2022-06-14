@@ -59,90 +59,161 @@ public final class ManagementAgentImage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Agent image resource id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Agent image resource id
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Agent image platform type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformTypes platformType;
 
+        /**
+         * Agent image platform type
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformTypes platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * Agent image platform display name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformName")
         private String platformName;
 
+        /**
+         * Agent image platform display name
+         * @param platformName the value to set
+         * @return this builder
+         **/
         public Builder platformName(String platformName) {
             this.platformName = platformName;
             this.__explicitlySet__.add("platformName");
             return this;
         }
-
+        /**
+         * The installation package type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private PackageTypes packageType;
 
+        /**
+         * The installation package type
+         * @param packageType the value to set
+         * @return this builder
+         **/
         public Builder packageType(PackageTypes packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
-
+        /**
+         * The installation package target architecture type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageArchitectureType")
         private ArchitectureTypes packageArchitectureType;
 
+        /**
+         * The installation package target architecture type
+         * @param packageArchitectureType the value to set
+         * @return this builder
+         **/
         public Builder packageArchitectureType(ArchitectureTypes packageArchitectureType) {
             this.packageArchitectureType = packageArchitectureType;
             this.__explicitlySet__.add("packageArchitectureType");
             return this;
         }
-
+        /**
+         * Agent image version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Agent image version
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Agent image size in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private java.math.BigDecimal size;
 
+        /**
+         * Agent image size in bytes
+         * @param size the value to set
+         * @return this builder
+         **/
         public Builder size(java.math.BigDecimal size) {
             this.size = size;
             this.__explicitlySet__.add("size");
             return this;
         }
-
+        /**
+         * Agent image content SHA256 Hash
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
+        /**
+         * Agent image content SHA256 Hash
+         * @param checksum the value to set
+         * @return this builder
+         **/
         public Builder checksum(String checksum) {
             this.checksum = checksum;
             this.__explicitlySet__.add("checksum");
             return this;
         }
-
+        /**
+         * Object storage URL for download
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectUrl")
         private String objectUrl;
 
+        /**
+         * Object storage URL for download
+         * @param objectUrl the value to set
+         * @return this builder
+         **/
         public Builder objectUrl(String objectUrl) {
             this.objectUrl = objectUrl;
             this.__explicitlySet__.add("objectUrl");
             return this;
         }
-
+        /**
+         * The current state of Management Agent Image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
+        /**
+         * The current state of Management Agent Image
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -205,6 +276,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Agent image resource id
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -215,6 +290,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformTypes platformType;
 
+    /**
+     * Agent image platform type
+     * @return the value
+     **/
     public PlatformTypes getPlatformType() {
         return platformType;
     }
@@ -225,6 +304,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
     private final String platformName;
 
+    /**
+     * Agent image platform display name
+     * @return the value
+     **/
     public String getPlatformName() {
         return platformName;
     }
@@ -235,6 +318,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final PackageTypes packageType;
 
+    /**
+     * The installation package type
+     * @return the value
+     **/
     public PackageTypes getPackageType() {
         return packageType;
     }
@@ -245,6 +332,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("packageArchitectureType")
     private final ArchitectureTypes packageArchitectureType;
 
+    /**
+     * The installation package target architecture type
+     * @return the value
+     **/
     public ArchitectureTypes getPackageArchitectureType() {
         return packageArchitectureType;
     }
@@ -255,6 +346,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Agent image version
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -265,6 +360,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final java.math.BigDecimal size;
 
+    /**
+     * Agent image size in bytes
+     * @return the value
+     **/
     public java.math.BigDecimal getSize() {
         return size;
     }
@@ -275,6 +374,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
+    /**
+     * Agent image content SHA256 Hash
+     * @return the value
+     **/
     public String getChecksum() {
         return checksum;
     }
@@ -285,6 +388,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("objectUrl")
     private final String objectUrl;
 
+    /**
+     * Object storage URL for download
+     * @return the value
+     **/
     public String getObjectUrl() {
         return objectUrl;
     }
@@ -295,6 +402,10 @@ public final class ManagementAgentImage {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
+    /**
+     * The current state of Management Agent Image
+     * @return the value
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }

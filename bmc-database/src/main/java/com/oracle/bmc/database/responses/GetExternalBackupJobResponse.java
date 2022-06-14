@@ -13,6 +13,10 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob;
 
+    /**
+     * The returned ExternalBackupJob instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.ExternalBackupJob getExternalBackupJob() {
         return externalBackupJob;
     }
@@ -62,22 +76,50 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ExternalBackupJob instance.
+         */
         private com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob;
 
+        /**
+         * The returned ExternalBackupJob instance.
+         * @param externalBackupJob the value to set
+         * @return this builder
+         */
         public Builder externalBackupJob(
                 com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob) {
             this.externalBackupJob = externalBackupJob;
@@ -97,12 +139,20 @@ public class GetExternalBackupJobResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetExternalBackupJobResponse build() {
             return new GetExternalBackupJobResponse(
                     __httpStatusCode__, etag, opcRequestId, externalBackupJob);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

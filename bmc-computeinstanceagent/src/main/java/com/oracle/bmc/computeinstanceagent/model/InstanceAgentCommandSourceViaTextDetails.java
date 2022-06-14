@@ -28,18 +28,33 @@ public final class InstanceAgentCommandSourceViaTextDetails
         extends InstanceAgentCommandSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The plain text command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
+        /**
+         * The plain text command.
+         * @param text the value to set
+         * @return this builder
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-
+        /**
+         * SHA-256 checksum value of the text content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
         private String textSha256;
 
+        /**
+         * SHA-256 checksum value of the text content.
+         * @param textSha256 the value to set
+         * @return this builder
+         **/
         public Builder textSha256(String textSha256) {
             this.textSha256 = textSha256;
             this.__explicitlySet__.add("textSha256");
@@ -89,6 +104,10 @@ public final class InstanceAgentCommandSourceViaTextDetails
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
+    /**
+     * The plain text command.
+     * @return the value
+     **/
     public String getText() {
         return text;
     }
@@ -99,6 +118,10 @@ public final class InstanceAgentCommandSourceViaTextDetails
     @com.fasterxml.jackson.annotation.JsonProperty("textSha256")
     private final String textSha256;
 
+    /**
+     * SHA-256 checksum value of the text content.
+     * @return the value
+     **/
     public String getTextSha256() {
         return textSha256;
     }

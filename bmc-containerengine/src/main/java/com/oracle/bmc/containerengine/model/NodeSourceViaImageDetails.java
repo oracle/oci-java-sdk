@@ -27,18 +27,33 @@ package com.oracle.bmc.containerengine.model;
 public final class NodeSourceViaImageDetails extends NodeSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the image used to boot the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The OCID of the image used to boot the node.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
         private Long bootVolumeSizeInGBs;
 
+        /**
+         * The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
+         * @param bootVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeSizeInGBs(Long bootVolumeSizeInGBs) {
             this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
             this.__explicitlySet__.add("bootVolumeSizeInGBs");
@@ -89,6 +104,10 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The OCID of the image used to boot the node.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -99,6 +118,10 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
     private final Long bootVolumeSizeInGBs;
 
+    /**
+     * The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
+     * @return the value
+     **/
     public Long getBootVolumeSizeInGBs() {
         return bootVolumeSizeInGBs;
     }

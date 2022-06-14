@@ -27,9 +27,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class OracleReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The fetch size for reading.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
         private Integer fetchSize;
 
+        /**
+         * The fetch size for reading.
+         * @param fetchSize the value to set
+         * @return this builder
+         **/
         public Builder fetchSize(Integer fetchSize) {
             this.fetchSize = fetchSize;
             this.__explicitlySet__.add("fetchSize");
@@ -77,6 +85,10 @@ public final class OracleReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
     private final Integer fetchSize;
 
+    /**
+     * The fetch size for reading.
+     * @return the value
+     **/
     public Integer getFetchSize() {
         return fetchSize;
     }

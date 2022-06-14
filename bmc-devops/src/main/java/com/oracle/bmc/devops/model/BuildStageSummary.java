@@ -154,28 +154,49 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Image for the build environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("image")
         private BuildStage.Image image;
 
+        /**
+         * Image for the build environment.
+         * @param image the value to set
+         * @return this builder
+         **/
         public Builder image(BuildStage.Image image) {
             this.image = image;
             this.__explicitlySet__.add("image");
             return this;
         }
-
+        /**
+         * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
         private String buildSpecFile;
 
+        /**
+         * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
+         * @param buildSpecFile the value to set
+         * @return this builder
+         **/
         public Builder buildSpecFile(String buildSpecFile) {
             this.buildSpecFile = buildSpecFile;
             this.__explicitlySet__.add("buildSpecFile");
             return this;
         }
-
+        /**
+         * Timeout for the build stage execution. Specify value in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
         private Integer stageExecutionTimeoutInSeconds;
 
+        /**
+         * Timeout for the build stage execution. Specify value in seconds.
+         * @param stageExecutionTimeoutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder stageExecutionTimeoutInSeconds(Integer stageExecutionTimeoutInSeconds) {
             this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
             this.__explicitlySet__.add("stageExecutionTimeoutInSeconds");
@@ -190,10 +211,17 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             this.__explicitlySet__.add("buildSourceCollection");
             return this;
         }
-
+        /**
+         * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
         private String primaryBuildSource;
 
+        /**
+         * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+         * @param primaryBuildSource the value to set
+         * @return this builder
+         **/
         public Builder primaryBuildSource(String primaryBuildSource) {
             this.primaryBuildSource = primaryBuildSource;
             this.__explicitlySet__.add("primaryBuildSource");
@@ -318,6 +346,10 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("image")
     private final BuildStage.Image image;
 
+    /**
+     * Image for the build environment.
+     * @return the value
+     **/
     public BuildStage.Image getImage() {
         return image;
     }
@@ -328,6 +360,10 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
     private final String buildSpecFile;
 
+    /**
+     * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
+     * @return the value
+     **/
     public String getBuildSpecFile() {
         return buildSpecFile;
     }
@@ -338,6 +374,10 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
     private final Integer stageExecutionTimeoutInSeconds;
 
+    /**
+     * Timeout for the build stage execution. Specify value in seconds.
+     * @return the value
+     **/
     public Integer getStageExecutionTimeoutInSeconds() {
         return stageExecutionTimeoutInSeconds;
     }
@@ -355,6 +395,10 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
     private final String primaryBuildSource;
 
+    /**
+     * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+     * @return the value
+     **/
     public String getPrimaryBuildSource() {
         return primaryBuildSource;
     }

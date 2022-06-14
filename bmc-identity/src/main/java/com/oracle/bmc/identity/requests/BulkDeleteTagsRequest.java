@@ -18,6 +18,9 @@ public class BulkDeleteTagsRequest
      */
     private com.oracle.bmc.identity.model.BulkDeleteTagsDetails bulkDeleteTagsDetails;
 
+    /**
+     * Request object for deleting tags in bulk.
+     */
     public com.oracle.bmc.identity.model.BulkDeleteTagsDetails getBulkDeleteTagsDetails() {
         return bulkDeleteTagsDetails;
     }
@@ -28,6 +31,11 @@ public class BulkDeleteTagsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,8 +49,27 @@ public class BulkDeleteTagsRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -62,10 +89,14 @@ public class BulkDeleteTagsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for deleting tags in bulk.
+         */
         private com.oracle.bmc.identity.model.BulkDeleteTagsDetails bulkDeleteTagsDetails = null;
 
         /**
          * Request object for deleting tags in bulk.
+         * @param bulkDeleteTagsDetails the value to set
          * @return this builder instance
          */
         public Builder bulkDeleteTagsDetails(
@@ -74,12 +105,18 @@ public class BulkDeleteTagsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -87,6 +124,14 @@ public class BulkDeleteTagsRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -96,10 +141,26 @@ public class BulkDeleteTagsRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
             this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -134,6 +195,7 @@ public class BulkDeleteTagsRequest
             bulkDeleteTagsDetails(o.getBulkDeleteTagsDetails());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -180,21 +242,28 @@ public class BulkDeleteTagsRequest
             request.bulkDeleteTagsDetails = bulkDeleteTagsDetails;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new BulkDeleteTagsRequest(bulkDeleteTagsDetails, opcRequestId, opcRetryToken);
+            // new BulkDeleteTagsRequest(bulkDeleteTagsDetails, opcRequestId, opcRetryToken, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .bulkDeleteTagsDetails(bulkDeleteTagsDetails)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,6 +276,7 @@ public class BulkDeleteTagsRequest
         sb.append(",bulkDeleteTagsDetails=").append(String.valueOf(this.bulkDeleteTagsDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +294,8 @@ public class BulkDeleteTagsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.bulkDeleteTagsDetails, other.bulkDeleteTagsDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -240,6 +311,9 @@ public class BulkDeleteTagsRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

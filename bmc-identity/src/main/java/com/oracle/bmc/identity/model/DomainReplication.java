@@ -34,27 +34,49 @@ public final class DomainReplication {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
         private java.math.BigDecimal opcWaterMark;
 
+        /**
+         * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
+         * @param opcWaterMark the value to set
+         * @return this builder
+         **/
         public Builder opcWaterMark(java.math.BigDecimal opcWaterMark) {
             this.opcWaterMark = opcWaterMark;
             this.__explicitlySet__.add("opcWaterMark");
             return this;
         }
-
+        /**
+         * A custom value defining the order of records with the same kievTxnId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("txnSeqNumber")
         private java.math.BigDecimal txnSeqNumber;
 
+        /**
+         * A custom value defining the order of records with the same kievTxnId.
+         * @param txnSeqNumber the value to set
+         * @return this builder
+         **/
         public Builder txnSeqNumber(java.math.BigDecimal txnSeqNumber) {
             this.txnSeqNumber = txnSeqNumber;
             this.__explicitlySet__.add("txnSeqNumber");
             return this;
         }
-
+        /**
+         * The identity domain's replication state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainReplicationStates")
         private java.util.List<DomainReplicationStates> domainReplicationStates;
 
+        /**
+         * The identity domain's replication state.
+         * @param domainReplicationStates the value to set
+         * @return this builder
+         **/
         public Builder domainReplicationStates(
                 java.util.List<DomainReplicationStates> domainReplicationStates) {
             this.domainReplicationStates = domainReplicationStates;
@@ -101,6 +123,10 @@ public final class DomainReplication {
     @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
     private final java.math.BigDecimal opcWaterMark;
 
+    /**
+     * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
+     * @return the value
+     **/
     public java.math.BigDecimal getOpcWaterMark() {
         return opcWaterMark;
     }
@@ -111,6 +137,10 @@ public final class DomainReplication {
     @com.fasterxml.jackson.annotation.JsonProperty("txnSeqNumber")
     private final java.math.BigDecimal txnSeqNumber;
 
+    /**
+     * A custom value defining the order of records with the same kievTxnId.
+     * @return the value
+     **/
     public java.math.BigDecimal getTxnSeqNumber() {
         return txnSeqNumber;
     }
@@ -121,6 +151,10 @@ public final class DomainReplication {
     @com.fasterxml.jackson.annotation.JsonProperty("domainReplicationStates")
     private final java.util.List<DomainReplicationStates> domainReplicationStates;
 
+    /**
+     * The identity domain's replication state.
+     * @return the value
+     **/
     public java.util.List<DomainReplicationStates> getDomainReplicationStates() {
         return domainReplicationStates;
     }

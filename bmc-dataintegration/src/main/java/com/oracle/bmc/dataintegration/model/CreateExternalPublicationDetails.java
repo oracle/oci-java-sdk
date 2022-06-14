@@ -47,36 +47,65 @@ public final class CreateExternalPublicationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
+        /**
+         * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+         * @param applicationId the value to set
+         * @return this builder
+         **/
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
-
+        /**
+         * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
         private String applicationCompartmentId;
 
+        /**
+         * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+         * @param applicationCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder applicationCompartmentId(String applicationCompartmentId) {
             this.applicationCompartmentId = applicationCompartmentId;
             this.__explicitlySet__.add("applicationCompartmentId");
             return this;
         }
-
+        /**
+         * The name of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name of the application.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The details of the data flow or the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The details of the data flow or the application.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -149,6 +178,10 @@ public final class CreateExternalPublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
+    /**
+     * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+     * @return the value
+     **/
     public String getApplicationId() {
         return applicationId;
     }
@@ -159,6 +192,10 @@ public final class CreateExternalPublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
     private final String applicationCompartmentId;
 
+    /**
+     * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+     * @return the value
+     **/
     public String getApplicationCompartmentId() {
         return applicationCompartmentId;
     }
@@ -169,6 +206,10 @@ public final class CreateExternalPublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name of the application.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -179,6 +220,10 @@ public final class CreateExternalPublicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The details of the data flow or the application.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

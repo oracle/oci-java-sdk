@@ -16,6 +16,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String workRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -24,6 +27,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +40,11 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -42,6 +53,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -87,6 +101,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -95,6 +113,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -106,10 +127,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         */
         private String workRequestId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -117,10 +142,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,12 +157,18 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -141,10 +176,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -152,11 +191,16 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -164,10 +208,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -253,7 +301,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -265,6 +314,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

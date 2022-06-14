@@ -18,6 +18,9 @@ public class CreateDataProfileRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -26,6 +29,9 @@ public class CreateDataProfileRequest
      */
     private com.oracle.bmc.dataconnectivity.model.CreateDataProfileDetails createDataProfileDetails;
 
+    /**
+     * Request body parameters to execute data profiling
+     */
     public com.oracle.bmc.dataconnectivity.model.CreateDataProfileDetails
             getCreateDataProfileDetails() {
         return createDataProfileDetails;
@@ -38,6 +44,12 @@ public class CreateDataProfileRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +59,10 @@ public class CreateDataProfileRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -58,6 +74,12 @@ public class CreateDataProfileRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -66,6 +88,9 @@ public class CreateDataProfileRequest
      */
     private String endpointId;
 
+    /**
+     * Endpoint Id used for getDataAssetFullDetails.
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -88,10 +113,14 @@ public class CreateDataProfileRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -99,11 +128,15 @@ public class CreateDataProfileRequest
             return this;
         }
 
+        /**
+         * Request body parameters to execute data profiling
+         */
         private com.oracle.bmc.dataconnectivity.model.CreateDataProfileDetails
                 createDataProfileDetails = null;
 
         /**
          * Request body parameters to execute data profiling
+         * @param createDataProfileDetails the value to set
          * @return this builder instance
          */
         public Builder createDataProfileDetails(
@@ -113,6 +146,12 @@ public class CreateDataProfileRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -120,6 +159,7 @@ public class CreateDataProfileRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,11 +167,16 @@ public class CreateDataProfileRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -139,6 +184,12 @@ public class CreateDataProfileRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -146,6 +197,7 @@ public class CreateDataProfileRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -153,10 +205,14 @@ public class CreateDataProfileRequest
             return this;
         }
 
+        /**
+         * Endpoint Id used for getDataAssetFullDetails.
+         */
         private String endpointId = null;
 
         /**
          * Endpoint Id used for getDataAssetFullDetails.
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -253,7 +309,8 @@ public class CreateDataProfileRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -265,6 +322,10 @@ public class CreateDataProfileRequest
                 .endpointId(endpointId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

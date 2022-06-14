@@ -29,27 +29,49 @@ public final class ProxyUserSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of a proxy user or the name of the client user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of a proxy user or the name of the client user.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authentication")
         private Authentication authentication;
 
+        /**
+         * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
+         * @param authentication the value to set
+         * @return this builder
+         **/
         public Builder authentication(Authentication authentication) {
             this.authentication = authentication;
             this.__explicitlySet__.add("authentication");
             return this;
         }
-
+        /**
+         * The flags associated with the proxy/client pair.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flags")
         private Flags flags;
 
+        /**
+         * The flags associated with the proxy/client pair.
+         * @param flags the value to set
+         * @return this builder
+         **/
         public Builder flags(Flags flags) {
             this.flags = flags;
             this.__explicitlySet__.add("flags");
@@ -92,6 +114,10 @@ public final class ProxyUserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of a proxy user or the name of the client user.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -150,6 +176,10 @@ public final class ProxyUserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
     private final Authentication authentication;
 
+    /**
+     * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
+     * @return the value
+     **/
     public Authentication getAuthentication() {
         return authentication;
     }
@@ -209,6 +239,10 @@ public final class ProxyUserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("flags")
     private final Flags flags;
 
+    /**
+     * The flags associated with the proxy/client pair.
+     * @return the value
+     **/
     public Flags getFlags() {
         return flags;
     }

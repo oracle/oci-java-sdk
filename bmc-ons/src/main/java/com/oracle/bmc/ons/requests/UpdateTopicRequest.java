@@ -19,6 +19,10 @@ public class UpdateTopicRequest
      */
     private String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
+     *
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -27,6 +31,9 @@ public class UpdateTopicRequest
      */
     private com.oracle.bmc.ons.model.TopicAttributesDetails topicAttributesDetails;
 
+    /**
+     * TopicAttributes
+     */
     public com.oracle.bmc.ons.model.TopicAttributesDetails getTopicAttributesDetails() {
         return topicAttributesDetails;
     }
@@ -37,6 +44,11 @@ public class UpdateTopicRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +60,12 @@ public class UpdateTopicRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -69,11 +87,16 @@ public class UpdateTopicRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
+         *
+         */
         private String topicId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
          *
+         * @param topicId the value to set
          * @return this builder instance
          */
         public Builder topicId(String topicId) {
@@ -81,10 +104,14 @@ public class UpdateTopicRequest
             return this;
         }
 
+        /**
+         * TopicAttributes
+         */
         private com.oracle.bmc.ons.model.TopicAttributesDetails topicAttributesDetails = null;
 
         /**
          * TopicAttributes
+         * @param topicAttributesDetails the value to set
          * @return this builder instance
          */
         public Builder topicAttributesDetails(
@@ -93,12 +120,18 @@ public class UpdateTopicRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -106,6 +139,12 @@ public class UpdateTopicRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -113,6 +152,7 @@ public class UpdateTopicRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -205,7 +245,8 @@ public class UpdateTopicRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +256,10 @@ public class UpdateTopicRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

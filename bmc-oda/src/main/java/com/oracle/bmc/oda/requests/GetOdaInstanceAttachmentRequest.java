@@ -17,6 +17,9 @@ public class GetOdaInstanceAttachmentRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -25,6 +28,9 @@ public class GetOdaInstanceAttachmentRequest
      */
     private String attachmentId;
 
+    /**
+     * Unique Digital Assistant instance attachment identifier.
+     */
     public String getAttachmentId() {
         return attachmentId;
     }
@@ -33,6 +39,9 @@ public class GetOdaInstanceAttachmentRequest
      */
     private Boolean includeOwnerMetadata;
 
+    /**
+     * Whether to send attachment owner info during get/list call.
+     */
     public Boolean getIncludeOwnerMetadata() {
         return includeOwnerMetadata;
     }
@@ -41,6 +50,9 @@ public class GetOdaInstanceAttachmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,10 +64,14 @@ public class GetOdaInstanceAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -63,10 +79,14 @@ public class GetOdaInstanceAttachmentRequest
             return this;
         }
 
+        /**
+         * Unique Digital Assistant instance attachment identifier.
+         */
         private String attachmentId = null;
 
         /**
          * Unique Digital Assistant instance attachment identifier.
+         * @param attachmentId the value to set
          * @return this builder instance
          */
         public Builder attachmentId(String attachmentId) {
@@ -74,10 +94,14 @@ public class GetOdaInstanceAttachmentRequest
             return this;
         }
 
+        /**
+         * Whether to send attachment owner info during get/list call.
+         */
         private Boolean includeOwnerMetadata = null;
 
         /**
          * Whether to send attachment owner info during get/list call.
+         * @param includeOwnerMetadata the value to set
          * @return this builder instance
          */
         public Builder includeOwnerMetadata(Boolean includeOwnerMetadata) {
@@ -85,10 +109,14 @@ public class GetOdaInstanceAttachmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -170,7 +198,8 @@ public class GetOdaInstanceAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -180,6 +209,10 @@ public class GetOdaInstanceAttachmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

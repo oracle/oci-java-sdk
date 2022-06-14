@@ -72,10 +72,17 @@ public final class CreateFunctionDeployEnvironmentDetails extends CreateDeployEn
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The OCID of the Function.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
+        /**
+         * The OCID of the Function.
+         * @param functionId the value to set
+         * @return this builder
+         **/
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
@@ -142,6 +149,10 @@ public final class CreateFunctionDeployEnvironmentDetails extends CreateDeployEn
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
+    /**
+     * The OCID of the Function.
+     * @return the value
+     **/
     public String getFunctionId() {
         return functionId;
     }

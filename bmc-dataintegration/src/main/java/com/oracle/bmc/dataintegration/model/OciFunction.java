@@ -42,18 +42,33 @@ public final class OciFunction {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Ocid of the OCI Function.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
+        /**
+         * Ocid of the OCI Function.
+         * @param functionId the value to set
+         * @return this builder
+         **/
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
             return this;
         }
-
+        /**
+         * Region where the OCI Function is deployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionId")
         private String regionId;
 
+        /**
+         * Region where the OCI Function is deployed.
+         * @param regionId the value to set
+         * @return this builder
+         **/
         public Builder regionId(String regionId) {
             this.regionId = regionId;
             this.__explicitlySet__.add("regionId");
@@ -129,6 +144,10 @@ public final class OciFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
+    /**
+     * Ocid of the OCI Function.
+     * @return the value
+     **/
     public String getFunctionId() {
         return functionId;
     }
@@ -139,6 +158,10 @@ public final class OciFunction {
     @com.fasterxml.jackson.annotation.JsonProperty("regionId")
     private final String regionId;
 
+    /**
+     * Region where the OCI Function is deployed.
+     * @return the value
+     **/
     public String getRegionId() {
         return regionId;
     }

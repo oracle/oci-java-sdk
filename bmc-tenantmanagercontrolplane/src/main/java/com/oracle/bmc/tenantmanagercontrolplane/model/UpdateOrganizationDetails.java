@@ -29,9 +29,17 @@ public final class UpdateOrganizationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
         private String defaultUcmSubscriptionId;
 
+        /**
+         * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
+         * @param defaultUcmSubscriptionId the value to set
+         * @return this builder
+         **/
         public Builder defaultUcmSubscriptionId(String defaultUcmSubscriptionId) {
             this.defaultUcmSubscriptionId = defaultUcmSubscriptionId;
             this.__explicitlySet__.add("defaultUcmSubscriptionId");
@@ -74,6 +82,10 @@ public final class UpdateOrganizationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     private final String defaultUcmSubscriptionId;
 
+    /**
+     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
+     * @return the value
+     **/
     public String getDefaultUcmSubscriptionId() {
         return defaultUcmSubscriptionId;
     }

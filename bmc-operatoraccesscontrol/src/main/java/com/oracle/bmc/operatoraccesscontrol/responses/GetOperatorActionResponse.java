@@ -15,6 +15,12 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction;
 
+    /**
+     * The returned OperatorAction instance.
+     * @return the value
+     */
     public com.oracle.bmc.operatoraccesscontrol.model.OperatorAction getOperatorAction() {
         return operatorAction;
     }
@@ -46,15 +56,35 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned OperatorAction instance.
+         */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction;
 
+        /**
+         * The returned OperatorAction instance.
+         * @param operatorAction the value to set
+         * @return this builder
+         */
         public Builder operatorAction(
                 com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction) {
             this.operatorAction = operatorAction;
@@ -73,11 +103,19 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetOperatorActionResponse build() {
             return new GetOperatorActionResponse(__httpStatusCode__, opcRequestId, operatorAction);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -13,6 +13,10 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
      */
     private String etag;
 
+    /**
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider;
 
+    /**
+     * The returned AuthenticationProvider instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.AuthenticationProvider getAuthenticationProvider() {
         return authenticationProvider;
     }
@@ -62,22 +76,50 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         */
         private String etag;
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AuthenticationProvider instance.
+         */
         private com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider;
 
+        /**
+         * The returned AuthenticationProvider instance.
+         * @param authenticationProvider the value to set
+         * @return this builder
+         */
         public Builder authenticationProvider(
                 com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider) {
             this.authenticationProvider = authenticationProvider;
@@ -97,12 +139,20 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateAuthenticationProviderResponse build() {
             return new UpdateAuthenticationProviderResponse(
                     __httpStatusCode__, etag, opcRequestId, authenticationProvider);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

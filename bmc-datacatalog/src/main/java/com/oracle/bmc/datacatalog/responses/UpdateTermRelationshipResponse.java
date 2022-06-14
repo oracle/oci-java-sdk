@@ -14,6 +14,11 @@ public class UpdateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class UpdateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.datacatalog.model.TermRelationship termRelationship;
 
+    /**
+     * The returned TermRelationship instance.
+     * @return the value
+     */
     public com.oracle.bmc.datacatalog.model.TermRelationship getTermRelationship() {
         return termRelationship;
     }
@@ -63,22 +78,52 @@ public class UpdateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned TermRelationship instance.
+         */
         private com.oracle.bmc.datacatalog.model.TermRelationship termRelationship;
 
+        /**
+         * The returned TermRelationship instance.
+         * @param termRelationship the value to set
+         * @return this builder
+         */
         public Builder termRelationship(
                 com.oracle.bmc.datacatalog.model.TermRelationship termRelationship) {
             this.termRelationship = termRelationship;
@@ -98,12 +143,20 @@ public class UpdateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateTermRelationshipResponse build() {
             return new UpdateTermRelationshipResponse(
                     __httpStatusCode__, etag, opcRequestId, termRelationship);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

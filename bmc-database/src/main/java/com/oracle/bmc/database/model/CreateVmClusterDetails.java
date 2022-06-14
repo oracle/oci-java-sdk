@@ -91,171 +91,323 @@ public final class CreateVmClusterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The user-friendly name for the VM cluster. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the VM cluster. The name does not need to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * @param exadataInfrastructureId the value to set
+         * @return this builder
+         **/
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
-
+        /**
+         * The number of CPU cores to enable for the VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
+        /**
+         * The number of CPU cores to enable for the VM cluster.
+         * @param cpuCoreCount the value to set
+         * @return this builder
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-
+        /**
+         * The number of OCPU cores to enable for the VM cluster. Only one decimal place is allowed for the fractional part.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
+        /**
+         * The number of OCPU cores to enable for the VM cluster. Only one decimal place is allowed for the fractional part.
+         * @param ocpuCount the value to set
+         * @return this builder
+         **/
         public Builder ocpuCount(Float ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-
+        /**
+         * The memory to be allocated in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
+        /**
+         * The memory to be allocated in GBs.
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-
+        /**
+         * The local node storage to be allocated in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
         private Integer dbNodeStorageSizeInGBs;
 
+        /**
+         * The local node storage to be allocated in GBs.
+         * @param dbNodeStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
             this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * The data disk group size to be allocated in TBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Double dataStorageSizeInTBs;
 
+        /**
+         * The data disk group size to be allocated in TBs.
+         * @param dataStorageSizeInTBs the value to set
+         * @return this builder
+         **/
         public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-
+        /**
+         * The data disk group size to be allocated in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Double dataStorageSizeInGBs;
 
+        /**
+         * The data disk group size to be allocated in GBs.
+         * @param dataStorageSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder dataStorageSizeInGBs(Double dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
-
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the VM cluster.
+         * @param sshPublicKeys the value to set
+         * @return this builder
+         **/
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
         private String vmClusterNetworkId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+         * @param vmClusterNetworkId the value to set
+         * @return this builder
+         **/
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
             this.vmClusterNetworkId = vmClusterNetworkId;
             this.__explicitlySet__.add("vmClusterNetworkId");
             return this;
         }
-
+        /**
+         * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-
+        /**
+         * If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
         private Boolean isSparseDiskgroupEnabled;
 
+        /**
+         * If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+         *
+         * @param isSparseDiskgroupEnabled the value to set
+         * @return this builder
+         **/
         public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
             this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             this.__explicitlySet__.add("isSparseDiskgroupEnabled");
             return this;
         }
-
+        /**
+         * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
         private Boolean isLocalBackupEnabled;
 
+        /**
+         * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+         *
+         * @param isLocalBackupEnabled the value to set
+         * @return this builder
+         **/
         public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
             this.isLocalBackupEnabled = isLocalBackupEnabled;
             this.__explicitlySet__.add("isLocalBackupEnabled");
             return this;
         }
-
+        /**
+         * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
+        /**
+         * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * @param timeZone the value to set
+         * @return this builder
+         **/
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
-
+        /**
+         * The Oracle Grid Infrastructure software version for the VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
         private String giVersion;
 
+        /**
+         * The Oracle Grid Infrastructure software version for the VM cluster.
+         * @param giVersion the value to set
+         * @return this builder
+         **/
         public Builder giVersion(String giVersion) {
             this.giVersion = giVersion;
             this.__explicitlySet__.add("giVersion");
             return this;
         }
-
+        /**
+         * The list of Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<String> dbServers;
 
+        /**
+         * The list of Db server.
+         * @param dbServers the value to set
+         * @return this builder
+         **/
         public Builder dbServers(java.util.List<String> dbServers) {
             this.dbServers = dbServers;
             this.__explicitlySet__.add("dbServers");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -348,6 +500,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -358,6 +514,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the VM cluster. The name does not need to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -368,6 +528,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * @return the value
+     **/
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -378,6 +542,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
+    /**
+     * The number of CPU cores to enable for the VM cluster.
+     * @return the value
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
@@ -388,6 +556,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Float ocpuCount;
 
+    /**
+     * The number of OCPU cores to enable for the VM cluster. Only one decimal place is allowed for the fractional part.
+     * @return the value
+     **/
     public Float getOcpuCount() {
         return ocpuCount;
     }
@@ -398,6 +570,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
+    /**
+     * The memory to be allocated in GBs.
+     * @return the value
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
@@ -408,6 +584,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
     private final Integer dbNodeStorageSizeInGBs;
 
+    /**
+     * The local node storage to be allocated in GBs.
+     * @return the value
+     **/
     public Integer getDbNodeStorageSizeInGBs() {
         return dbNodeStorageSizeInGBs;
     }
@@ -418,6 +598,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     private final Double dataStorageSizeInTBs;
 
+    /**
+     * The data disk group size to be allocated in TBs.
+     * @return the value
+     **/
     public Double getDataStorageSizeInTBs() {
         return dataStorageSizeInTBs;
     }
@@ -428,6 +612,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Double dataStorageSizeInGBs;
 
+    /**
+     * The data disk group size to be allocated in GBs.
+     * @return the value
+     **/
     public Double getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
     }
@@ -438,6 +626,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     private final java.util.List<String> sshPublicKeys;
 
+    /**
+     * The public key portion of one or more key pairs used for SSH access to the VM cluster.
+     * @return the value
+     **/
     public java.util.List<String> getSshPublicKeys() {
         return sshPublicKeys;
     }
@@ -448,6 +640,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
     private final String vmClusterNetworkId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     * @return the value
+     **/
     public String getVmClusterNetworkId() {
         return vmClusterNetworkId;
     }
@@ -495,6 +691,11 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -506,6 +707,11 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSparseDiskgroupEnabled")
     private final Boolean isSparseDiskgroupEnabled;
 
+    /**
+     * If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+     *
+     * @return the value
+     **/
     public Boolean getIsSparseDiskgroupEnabled() {
         return isSparseDiskgroupEnabled;
     }
@@ -517,6 +723,11 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isLocalBackupEnabled")
     private final Boolean isLocalBackupEnabled;
 
+    /**
+     * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+     *
+     * @return the value
+     **/
     public Boolean getIsLocalBackupEnabled() {
         return isLocalBackupEnabled;
     }
@@ -527,6 +738,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
+    /**
+     * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * @return the value
+     **/
     public String getTimeZone() {
         return timeZone;
     }
@@ -537,6 +752,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
     private final String giVersion;
 
+    /**
+     * The Oracle Grid Infrastructure software version for the VM cluster.
+     * @return the value
+     **/
     public String getGiVersion() {
         return giVersion;
     }
@@ -547,6 +766,10 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
 
+    /**
+     * The list of Db server.
+     * @return the value
+     **/
     public java.util.List<String> getDbServers() {
         return dbServers;
     }
@@ -561,6 +784,14 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -573,6 +804,12 @@ public final class CreateVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

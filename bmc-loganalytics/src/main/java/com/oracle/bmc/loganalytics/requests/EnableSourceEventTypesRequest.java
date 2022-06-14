@@ -19,6 +19,10 @@ public class EnableSourceEventTypesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class EnableSourceEventTypesRequest
      */
     private String sourceName;
 
+    /**
+     * The source name.
+     */
     public String getSourceName() {
         return sourceName;
     }
@@ -35,6 +42,9 @@ public class EnableSourceEventTypesRequest
      */
     private com.oracle.bmc.loganalytics.model.EventTypeDetails enableEventTypeDetails;
 
+    /**
+     * Details of event types to be enabled in the source.
+     */
     public com.oracle.bmc.loganalytics.model.EventTypeDetails getEnableEventTypeDetails() {
         return enableEventTypeDetails;
     }
@@ -48,6 +58,14 @@ public class EnableSourceEventTypesRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -56,6 +74,9 @@ public class EnableSourceEventTypesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -83,11 +104,16 @@ public class EnableSourceEventTypesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -95,10 +121,14 @@ public class EnableSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The source name.
+         */
         private String sourceName = null;
 
         /**
          * The source name.
+         * @param sourceName the value to set
          * @return this builder instance
          */
         public Builder sourceName(String sourceName) {
@@ -106,10 +136,14 @@ public class EnableSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * Details of event types to be enabled in the source.
+         */
         private com.oracle.bmc.loganalytics.model.EventTypeDetails enableEventTypeDetails = null;
 
         /**
          * Details of event types to be enabled in the source.
+         * @param enableEventTypeDetails the value to set
          * @return this builder instance
          */
         public Builder enableEventTypeDetails(
@@ -118,6 +152,14 @@ public class EnableSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -127,6 +169,7 @@ public class EnableSourceEventTypesRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -134,10 +177,14 @@ public class EnableSourceEventTypesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -232,7 +279,8 @@ public class EnableSourceEventTypesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -243,6 +291,10 @@ public class EnableSourceEventTypesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

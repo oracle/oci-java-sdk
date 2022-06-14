@@ -81,163 +81,330 @@ public final class AuditProfile {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the audit profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the audit profile.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the audit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the audit.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The display name of the audit profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the audit profile.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The date and time the audit profile was created, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the audit profile was created, in the format defined by RFC3339.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the audit profile was updated, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the audit profile was updated, in the format defined by RFC3339.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the audit profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AuditProfileLifecycleState lifecycleState;
 
+        /**
+         * The current state of the audit profile.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(AuditProfileLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Details about the current state of the audit profile in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Details about the current state of the audit profile in Data Safe.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The OCID of the Data Safe target for which the audit profile is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the Data Safe target for which the audit profile is created.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The description of the audit profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the audit profile.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Indicates the list of available audit trails on the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditTrails")
         private java.util.List<AuditTrail> auditTrails;
 
+        /**
+         * Indicates the list of available audit trails on the target.
+         * @param auditTrails the value to set
+         * @return this builder
+         **/
         public Builder auditTrails(java.util.List<AuditTrail> auditTrails) {
             this.auditTrails = auditTrails;
             this.__explicitlySet__.add("auditTrails");
             return this;
         }
-
+        /**
+         * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. The default value is inherited from the global settings.
+         * You can change at the global level or at the target level.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
         private Boolean isPaidUsageEnabled;
 
+        /**
+         * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. The default value is inherited from the global settings.
+         * You can change at the global level or at the target level.
+         *
+         * @param isPaidUsageEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
             this.isPaidUsageEnabled = isPaidUsageEnabled;
             this.__explicitlySet__.add("isPaidUsageEnabled");
             return this;
         }
-
+        /**
+         * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+         * Minimum: 1; Maximum:12 months
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
         private Integer onlineMonths;
 
+        /**
+         * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+         * Minimum: 1; Maximum:12 months
+         *
+         * @param onlineMonths the value to set
+         * @return this builder
+         **/
         public Builder onlineMonths(Integer onlineMonths) {
             this.onlineMonths = onlineMonths;
             this.__explicitlySet__.add("onlineMonths");
             return this;
         }
-
+        /**
+         * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+         * Minimum: 0; Maximum: 72 months.
+         * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
         private Integer offlineMonths;
 
+        /**
+         * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+         * Minimum: 0; Maximum: 72 months.
+         * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+         *
+         * @param offlineMonths the value to set
+         * @return this builder
+         **/
         public Builder offlineMonths(Integer offlineMonths) {
             this.offlineMonths = offlineMonths;
             this.__explicitlySet__.add("offlineMonths");
             return this;
         }
-
+        /**
+         * Indicates number of audit records collected by Data Safe in the current calendar month.
+         * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditCollectedVolume")
         private Long auditCollectedVolume;
 
+        /**
+         * Indicates number of audit records collected by Data Safe in the current calendar month.
+         * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+         *
+         * @param auditCollectedVolume the value to set
+         * @return this builder
+         **/
         public Builder auditCollectedVolume(Long auditCollectedVolume) {
             this.auditCollectedVolume = auditCollectedVolume;
             this.__explicitlySet__.add("auditCollectedVolume");
             return this;
         }
-
+        /**
+         * Indicates whether audit retention settings like online and offline months is set at the
+         * target level overriding the global audit retention settings.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
         private Boolean isOverrideGlobalRetentionSetting;
 
+        /**
+         * Indicates whether audit retention settings like online and offline months is set at the
+         * target level overriding the global audit retention settings.
+         *
+         * @param isOverrideGlobalRetentionSetting the value to set
+         * @return this builder
+         **/
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
             this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             this.__explicitlySet__.add("isOverrideGlobalRetentionSetting");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -317,6 +484,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the audit profile.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -327,6 +498,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the audit.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -337,6 +512,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the audit profile.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -347,6 +526,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the audit profile was created, in the format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -357,6 +540,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the audit profile was updated, in the format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -367,6 +554,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AuditProfileLifecycleState lifecycleState;
 
+    /**
+     * The current state of the audit profile.
+     * @return the value
+     **/
     public AuditProfileLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -377,6 +568,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Details about the current state of the audit profile in Data Safe.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -387,6 +582,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the Data Safe target for which the audit profile is created.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -397,6 +596,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the audit profile.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -407,6 +610,10 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("auditTrails")
     private final java.util.List<AuditTrail> auditTrails;
 
+    /**
+     * Indicates the list of available audit trails on the target.
+     * @return the value
+     **/
     public java.util.List<AuditTrail> getAuditTrails() {
         return auditTrails;
     }
@@ -420,6 +627,13 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
     private final Boolean isPaidUsageEnabled;
 
+    /**
+     * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+     * potentially incurring additional charges. The default value is inherited from the global settings.
+     * You can change at the global level or at the target level.
+     *
+     * @return the value
+     **/
     public Boolean getIsPaidUsageEnabled() {
         return isPaidUsageEnabled;
     }
@@ -432,6 +646,12 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
     private final Integer onlineMonths;
 
+    /**
+     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+     * Minimum: 1; Maximum:12 months
+     *
+     * @return the value
+     **/
     public Integer getOnlineMonths() {
         return onlineMonths;
     }
@@ -445,6 +665,13 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("offlineMonths")
     private final Integer offlineMonths;
 
+    /**
+     * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+     * Minimum: 0; Maximum: 72 months.
+     * If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     *
+     * @return the value
+     **/
     public Integer getOfflineMonths() {
         return offlineMonths;
     }
@@ -457,6 +684,12 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("auditCollectedVolume")
     private final Long auditCollectedVolume;
 
+    /**
+     * Indicates number of audit records collected by Data Safe in the current calendar month.
+     * Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     *
+     * @return the value
+     **/
     public Long getAuditCollectedVolume() {
         return auditCollectedVolume;
     }
@@ -469,6 +702,12 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideGlobalRetentionSetting")
     private final Boolean isOverrideGlobalRetentionSetting;
 
+    /**
+     * Indicates whether audit retention settings like online and offline months is set at the
+     * target level overriding the global audit retention settings.
+     *
+     * @return the value
+     **/
     public Boolean getIsOverrideGlobalRetentionSetting() {
         return isOverrideGlobalRetentionSetting;
     }
@@ -482,6 +721,13 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -495,6 +741,13 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -507,6 +760,12 @@ public final class AuditProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

@@ -45,47 +45,99 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the compute global image capability schema version
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the compute global image capability schema version
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The ocid of the compute global image capability schema
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeGlobalImageCapabilitySchemaId")
         private String computeGlobalImageCapabilitySchemaId;
 
+        /**
+         * The ocid of the compute global image capability schema
+         *
+         * @param computeGlobalImageCapabilitySchemaId the value to set
+         * @return this builder
+         **/
         public Builder computeGlobalImageCapabilitySchemaId(
                 String computeGlobalImageCapabilitySchemaId) {
             this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             this.__explicitlySet__.add("computeGlobalImageCapabilitySchemaId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The map of each capability name to its ImageCapabilityDescriptor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
         private java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
 
+        /**
+         * The map of each capability name to its ImageCapabilityDescriptor.
+         * @param schemaData the value to set
+         * @return this builder
+         **/
         public Builder schemaData(
                 java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData) {
             this.schemaData = schemaData;
             this.__explicitlySet__.add("schemaData");
             return this;
         }
-
+        /**
+         * The date and time the compute global image capability schema version was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the compute global image capability schema version was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -140,6 +192,11 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the compute global image capability schema version
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -151,6 +208,11 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("computeGlobalImageCapabilitySchemaId")
     private final String computeGlobalImageCapabilitySchemaId;
 
+    /**
+     * The ocid of the compute global image capability schema
+     *
+     * @return the value
+     **/
     public String getComputeGlobalImageCapabilitySchemaId() {
         return computeGlobalImageCapabilitySchemaId;
     }
@@ -163,6 +225,12 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -173,6 +241,10 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
     private final java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
 
+    /**
+     * The map of each capability name to its ImageCapabilityDescriptor.
+     * @return the value
+     **/
     public java.util.Map<String, ImageCapabilitySchemaDescriptor> getSchemaData() {
         return schemaData;
     }
@@ -187,6 +259,14 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the compute global image capability schema version was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

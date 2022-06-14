@@ -13,6 +13,10 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcNextPage;
 
+    /**
+     * Pagination token
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -24,6 +28,12 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection resourceSummaryCollection;
 
+    /**
+     * The returned ResourceSummaryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
             getResourceSummaryCollection() {
         return resourceSummaryCollection;
@@ -64,23 +78,51 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Pagination token
+         */
         private String opcNextPage;
 
+        /**
+         * Pagination token
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ResourceSummaryCollection instance.
+         */
         private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
                 resourceSummaryCollection;
 
+        /**
+         * The returned ResourceSummaryCollection instance.
+         * @param resourceSummaryCollection the value to set
+         * @return this builder
+         */
         public Builder resourceSummaryCollection(
                 com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
                         resourceSummaryCollection) {
@@ -101,12 +143,20 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public SearchResourcesResponse build() {
             return new SearchResourcesResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, resourceSummaryCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -68,117 +68,249 @@ public final class UpdateNodePoolDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The new name for the cluster. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The new name for the cluster. Avoid entering confidential information.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The version of Kubernetes to which the nodes in the node pool should be upgraded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
         private String kubernetesVersion;
 
+        /**
+         * The version of Kubernetes to which the nodes in the node pool should be upgraded.
+         * @param kubernetesVersion the value to set
+         * @return this builder
+         **/
         public Builder kubernetesVersion(String kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
             this.__explicitlySet__.add("kubernetesVersion");
             return this;
         }
-
+        /**
+         * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
         private java.util.List<KeyValue> initialNodeLabels;
 
+        /**
+         * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+         * @param initialNodeLabels the value to set
+         * @return this builder
+         **/
         public Builder initialNodeLabels(java.util.List<KeyValue> initialNodeLabels) {
             this.initialNodeLabels = initialNodeLabels;
             this.__explicitlySet__.add("initialNodeLabels");
             return this;
         }
-
+        /**
+         * The number of nodes to have in each subnet specified in the subnetIds property. This property is deprecated,
+         * use nodeConfigDetails instead. If the current value of quantityPerSubnet is greater than 0, you can only
+         * use quantityPerSubnet to scale the node pool. If the current value of quantityPerSubnet is equal to 0 and
+         * the current value of size in nodeConfigDetails is greater than 0, before you can use quantityPerSubnet,
+         * you must first scale the node pool to 0 nodes using nodeConfigDetails.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
         private Integer quantityPerSubnet;
 
+        /**
+         * The number of nodes to have in each subnet specified in the subnetIds property. This property is deprecated,
+         * use nodeConfigDetails instead. If the current value of quantityPerSubnet is greater than 0, you can only
+         * use quantityPerSubnet to scale the node pool. If the current value of quantityPerSubnet is equal to 0 and
+         * the current value of size in nodeConfigDetails is greater than 0, before you can use quantityPerSubnet,
+         * you must first scale the node pool to 0 nodes using nodeConfigDetails.
+         *
+         * @param quantityPerSubnet the value to set
+         * @return this builder
+         **/
         public Builder quantityPerSubnet(Integer quantityPerSubnet) {
             this.quantityPerSubnet = quantityPerSubnet;
             this.__explicitlySet__.add("quantityPerSubnet");
             return this;
         }
-
+        /**
+         * The OCIDs of the subnets in which to place nodes for this node pool. This property is deprecated,
+         * use nodeConfigDetails instead. Only one of the subnetIds or nodeConfigDetails
+         * properties can be specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
+        /**
+         * The OCIDs of the subnets in which to place nodes for this node pool. This property is deprecated,
+         * use nodeConfigDetails instead. Only one of the subnetIds or nodeConfigDetails
+         * properties can be specified.
+         *
+         * @param subnetIds the value to set
+         * @return this builder
+         **/
         public Builder subnetIds(java.util.List<String> subnetIds) {
             this.subnetIds = subnetIds;
             this.__explicitlySet__.add("subnetIds");
             return this;
         }
-
+        /**
+         * The configuration of nodes in the node pool. Only one of the subnetIds or nodeConfigDetails
+         * properties should be specified. If the current value of quantityPerSubnet is greater than 0, the node
+         * pool may still be scaled using quantityPerSubnet. Before you can use nodeConfigDetails,
+         * you must first scale the node pool to 0 nodes using quantityPerSubnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
         private UpdateNodePoolNodeConfigDetails nodeConfigDetails;
 
+        /**
+         * The configuration of nodes in the node pool. Only one of the subnetIds or nodeConfigDetails
+         * properties should be specified. If the current value of quantityPerSubnet is greater than 0, the node
+         * pool may still be scaled using quantityPerSubnet. Before you can use nodeConfigDetails,
+         * you must first scale the node pool to 0 nodes using quantityPerSubnet.
+         *
+         * @param nodeConfigDetails the value to set
+         * @return this builder
+         **/
         public Builder nodeConfigDetails(UpdateNodePoolNodeConfigDetails nodeConfigDetails) {
             this.nodeConfigDetails = nodeConfigDetails;
             this.__explicitlySet__.add("nodeConfigDetails");
             return this;
         }
-
+        /**
+         * A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
         private java.util.Map<String, String> nodeMetadata;
 
+        /**
+         * A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
+         * @param nodeMetadata the value to set
+         * @return this builder
+         **/
         public Builder nodeMetadata(java.util.Map<String, String> nodeMetadata) {
             this.nodeMetadata = nodeMetadata;
             this.__explicitlySet__.add("nodeMetadata");
             return this;
         }
-
+        /**
+         * Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
         private NodeSourceDetails nodeSourceDetails;
 
+        /**
+         * Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+         *
+         * @param nodeSourceDetails the value to set
+         * @return this builder
+         **/
         public Builder nodeSourceDetails(NodeSourceDetails nodeSourceDetails) {
             this.nodeSourceDetails = nodeSourceDetails;
             this.__explicitlySet__.add("nodeSourceDetails");
             return this;
         }
-
+        /**
+         * The SSH public key to add to each node in the node pool on launch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
         private String sshPublicKey;
 
+        /**
+         * The SSH public key to add to each node in the node pool on launch.
+         * @param sshPublicKey the value to set
+         * @return this builder
+         **/
         public Builder sshPublicKey(String sshPublicKey) {
             this.sshPublicKey = sshPublicKey;
             this.__explicitlySet__.add("sshPublicKey");
             return this;
         }
-
+        /**
+         * The name of the node shape of the nodes in the node pool used on launch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
         private String nodeShape;
 
+        /**
+         * The name of the node shape of the nodes in the node pool used on launch.
+         * @param nodeShape the value to set
+         * @return this builder
+         **/
         public Builder nodeShape(String nodeShape) {
             this.nodeShape = nodeShape;
             this.__explicitlySet__.add("nodeShape");
             return this;
         }
-
+        /**
+         * Specify the configuration of the shape to launch nodes in the node pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
         private UpdateNodeShapeConfigDetails nodeShapeConfig;
 
+        /**
+         * Specify the configuration of the shape to launch nodes in the node pool.
+         *
+         * @param nodeShapeConfig the value to set
+         * @return this builder
+         **/
         public Builder nodeShapeConfig(UpdateNodeShapeConfigDetails nodeShapeConfig) {
             this.nodeShapeConfig = nodeShapeConfig;
             this.__explicitlySet__.add("nodeShapeConfig");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -248,6 +380,10 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The new name for the cluster. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -258,6 +394,10 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     private final String kubernetesVersion;
 
+    /**
+     * The version of Kubernetes to which the nodes in the node pool should be upgraded.
+     * @return the value
+     **/
     public String getKubernetesVersion() {
         return kubernetesVersion;
     }
@@ -268,6 +408,10 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
     private final java.util.List<KeyValue> initialNodeLabels;
 
+    /**
+     * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+     * @return the value
+     **/
     public java.util.List<KeyValue> getInitialNodeLabels() {
         return initialNodeLabels;
     }
@@ -283,6 +427,15 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
     private final Integer quantityPerSubnet;
 
+    /**
+     * The number of nodes to have in each subnet specified in the subnetIds property. This property is deprecated,
+     * use nodeConfigDetails instead. If the current value of quantityPerSubnet is greater than 0, you can only
+     * use quantityPerSubnet to scale the node pool. If the current value of quantityPerSubnet is equal to 0 and
+     * the current value of size in nodeConfigDetails is greater than 0, before you can use quantityPerSubnet,
+     * you must first scale the node pool to 0 nodes using nodeConfigDetails.
+     *
+     * @return the value
+     **/
     public Integer getQuantityPerSubnet() {
         return quantityPerSubnet;
     }
@@ -296,6 +449,13 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
+    /**
+     * The OCIDs of the subnets in which to place nodes for this node pool. This property is deprecated,
+     * use nodeConfigDetails instead. Only one of the subnetIds or nodeConfigDetails
+     * properties can be specified.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getSubnetIds() {
         return subnetIds;
     }
@@ -310,6 +470,14 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
     private final UpdateNodePoolNodeConfigDetails nodeConfigDetails;
 
+    /**
+     * The configuration of nodes in the node pool. Only one of the subnetIds or nodeConfigDetails
+     * properties should be specified. If the current value of quantityPerSubnet is greater than 0, the node
+     * pool may still be scaled using quantityPerSubnet. Before you can use nodeConfigDetails,
+     * you must first scale the node pool to 0 nodes using quantityPerSubnet.
+     *
+     * @return the value
+     **/
     public UpdateNodePoolNodeConfigDetails getNodeConfigDetails() {
         return nodeConfigDetails;
     }
@@ -320,6 +488,10 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
     private final java.util.Map<String, String> nodeMetadata;
 
+    /**
+     * A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
+     * @return the value
+     **/
     public java.util.Map<String, String> getNodeMetadata() {
         return nodeMetadata;
     }
@@ -331,6 +503,11 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
     private final NodeSourceDetails nodeSourceDetails;
 
+    /**
+     * Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+     *
+     * @return the value
+     **/
     public NodeSourceDetails getNodeSourceDetails() {
         return nodeSourceDetails;
     }
@@ -341,6 +518,10 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
     private final String sshPublicKey;
 
+    /**
+     * The SSH public key to add to each node in the node pool on launch.
+     * @return the value
+     **/
     public String getSshPublicKey() {
         return sshPublicKey;
     }
@@ -351,6 +532,10 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
     private final String nodeShape;
 
+    /**
+     * The name of the node shape of the nodes in the node pool used on launch.
+     * @return the value
+     **/
     public String getNodeShape() {
         return nodeShape;
     }
@@ -362,6 +547,11 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
     private final UpdateNodeShapeConfigDetails nodeShapeConfig;
 
+    /**
+     * Specify the configuration of the shape to launch nodes in the node pool.
+     *
+     * @return the value
+     **/
     public UpdateNodeShapeConfigDetails getNodeShapeConfig() {
         return nodeShapeConfig;
     }
@@ -375,6 +565,13 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -388,6 +585,13 @@ public final class UpdateNodePoolDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

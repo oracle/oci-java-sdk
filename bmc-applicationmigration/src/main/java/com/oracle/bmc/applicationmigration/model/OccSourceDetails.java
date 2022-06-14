@@ -26,9 +26,23 @@ package com.oracle.bmc.applicationmigration.model;
 public final class OccSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
+         * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
+         * then enter 567890123.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
         private String computeAccount;
 
+        /**
+         * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
+         * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
+         * then enter 567890123.
+         *
+         * @param computeAccount the value to set
+         * @return this builder
+         **/
         public Builder computeAccount(String computeAccount) {
             this.computeAccount = computeAccount;
             this.__explicitlySet__.add("computeAccount");
@@ -79,6 +93,13 @@ public final class OccSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
     private final String computeAccount;
 
+    /**
+     * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
+     * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
+     * then enter 567890123.
+     *
+     * @return the value
+     **/
     public String getComputeAccount() {
         return computeAccount;
     }

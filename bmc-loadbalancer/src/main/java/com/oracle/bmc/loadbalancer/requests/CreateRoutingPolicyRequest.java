@@ -18,6 +18,9 @@ public class CreateRoutingPolicyRequest
      */
     private com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails createRoutingPolicyDetails;
 
+    /**
+     * The details of the routing policy rules to add.
+     */
     public com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails
             getCreateRoutingPolicyDetails() {
         return createRoutingPolicyDetails;
@@ -27,6 +30,9 @@ public class CreateRoutingPolicyRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -37,6 +43,11 @@ public class CreateRoutingPolicyRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +61,14 @@ public class CreateRoutingPolicyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -72,11 +91,15 @@ public class CreateRoutingPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details of the routing policy rules to add.
+         */
         private com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails
                 createRoutingPolicyDetails = null;
 
         /**
          * The details of the routing policy rules to add.
+         * @param createRoutingPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder createRoutingPolicyDetails(
@@ -86,10 +109,14 @@ public class CreateRoutingPolicyRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -97,12 +124,18 @@ public class CreateRoutingPolicyRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -110,6 +143,14 @@ public class CreateRoutingPolicyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -119,6 +160,7 @@ public class CreateRoutingPolicyRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -211,7 +253,8 @@ public class CreateRoutingPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +264,10 @@ public class CreateRoutingPolicyRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

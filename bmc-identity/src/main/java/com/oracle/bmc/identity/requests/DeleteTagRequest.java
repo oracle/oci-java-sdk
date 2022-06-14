@@ -17,6 +17,10 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -26,6 +30,10 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String tagName;
 
+    /**
+     * The name of the tag.
+     *
+     */
     public String getTagName() {
         return tagName;
     }
@@ -37,8 +45,25 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     public static class Builder
@@ -48,11 +73,16 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -60,11 +90,16 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The name of the tag.
+         *
+         */
         private String tagName = null;
 
         /**
          * The name of the tag.
          *
+         * @param tagName the value to set
          * @return this builder instance
          */
         public Builder tagName(String tagName) {
@@ -72,6 +107,12 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -79,10 +120,26 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
             this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -117,6 +174,7 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             tagNamespaceId(o.getTagNamespaceId());
             tagName(o.getTagName());
             ifMatch(o.getIfMatch());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -152,18 +210,28 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.tagNamespaceId = tagNamespaceId;
             request.tagName = tagName;
             request.ifMatch = ifMatch;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteTagRequest(tagNamespaceId, tagName, ifMatch);
+            // new DeleteTagRequest(tagNamespaceId, tagName, ifMatch, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().tagNamespaceId(tagNamespaceId).tagName(tagName).ifMatch(ifMatch);
+        return new Builder()
+                .tagNamespaceId(tagNamespaceId)
+                .tagName(tagName)
+                .ifMatch(ifMatch)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,6 +244,7 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
         sb.append(",tagName=").append(String.valueOf(this.tagName));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +262,8 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return super.equals(o)
                 && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
                 && java.util.Objects.equals(this.tagName, other.tagName)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -205,6 +275,9 @@ public class DeleteTagRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                         + (this.tagNamespaceId == null ? 43 : this.tagNamespaceId.hashCode());
         result = (result * PRIME) + (this.tagName == null ? 43 : this.tagName.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

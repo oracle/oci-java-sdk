@@ -82,153 +82,279 @@ public final class BackupSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * The user-friendly name for the backup. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the backup. The name does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The type of backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of backup.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The date and time the backup started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time the backup started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time the backup was completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * The date and time the backup was completed.
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycle state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The name of the availability domain where the database backup is stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availability domain where the database backup is stored.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The current state of the backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the backup.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The Oracle Database edition of the DB system from which the database backup was taken.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
+        /**
+         * The Oracle Database edition of the DB system from which the database backup was taken.
+         *
+         * @param databaseEdition the value to set
+         * @return this builder
+         **/
         public Builder databaseEdition(DatabaseEdition databaseEdition) {
             this.databaseEdition = databaseEdition;
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-
+        /**
+         * The size of the database in gigabytes at the time the backup was taken.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
         private Double databaseSizeInGBs;
 
+        /**
+         * The size of the database in gigabytes at the time the backup was taken.
+         *
+         * @param databaseSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder databaseSizeInGBs(Double databaseSizeInGBs) {
             this.databaseSizeInGBs = databaseSizeInGBs;
             this.__explicitlySet__.add("databaseSizeInGBs");
             return this;
         }
-
+        /**
+         * Shape of the backup's source database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * Shape of the backup's source database.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * Version of the backup's source database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of the backup's source database
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
@@ -305,6 +431,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -315,6 +445,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -325,6 +459,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -335,6 +473,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the backup. The name does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -392,6 +534,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of backup.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -402,6 +548,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time the backup started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -412,6 +562,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * The date and time the backup was completed.
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -422,6 +576,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycle state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -432,6 +590,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availability domain where the database backup is stored.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -494,6 +656,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the backup.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -556,6 +722,11 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
+    /**
+     * The Oracle Database edition of the DB system from which the database backup was taken.
+     *
+     * @return the value
+     **/
     public DatabaseEdition getDatabaseEdition() {
         return databaseEdition;
     }
@@ -567,6 +738,11 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
     private final Double databaseSizeInGBs;
 
+    /**
+     * The size of the database in gigabytes at the time the backup was taken.
+     *
+     * @return the value
+     **/
     public Double getDatabaseSizeInGBs() {
         return databaseSizeInGBs;
     }
@@ -577,6 +753,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * Shape of the backup's source database.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -587,6 +767,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of the backup's source database
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -597,6 +781,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -608,6 +796,11 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -618,6 +811,10 @@ public final class BackupSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }

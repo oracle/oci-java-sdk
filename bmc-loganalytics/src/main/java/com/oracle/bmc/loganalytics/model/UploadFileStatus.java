@@ -28,18 +28,33 @@ public final class UploadFileStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileName")
         private String fileName;
 
+        /**
+         * Name of the file.
+         * @param fileName the value to set
+         * @return this builder
+         **/
         public Builder fileName(String fileName) {
             this.fileName = fileName;
             this.__explicitlySet__.add("fileName");
             return this;
         }
-
+        /**
+         * Is Valid flag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValid")
         private Boolean isValid;
 
+        /**
+         * Is Valid flag.
+         * @param isValid the value to set
+         * @return this builder
+         **/
         public Builder isValid(Boolean isValid) {
             this.isValid = isValid;
             this.__explicitlySet__.add("isValid");
@@ -81,6 +96,10 @@ public final class UploadFileStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
     private final String fileName;
 
+    /**
+     * Name of the file.
+     * @return the value
+     **/
     public String getFileName() {
         return fileName;
     }
@@ -91,6 +110,10 @@ public final class UploadFileStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("isValid")
     private final Boolean isValid;
 
+    /**
+     * Is Valid flag.
+     * @return the value
+     **/
     public Boolean getIsValid() {
         return isValid;
     }

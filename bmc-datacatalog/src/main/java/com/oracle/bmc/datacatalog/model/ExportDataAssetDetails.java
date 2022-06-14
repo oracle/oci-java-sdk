@@ -29,9 +29,17 @@ public final class ExportDataAssetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of objects and their child types to be selected for export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportScope")
         private java.util.List<DataAssetExportScope> exportScope;
 
+        /**
+         * Array of objects and their child types to be selected for export.
+         * @param exportScope the value to set
+         * @return this builder
+         **/
         public Builder exportScope(java.util.List<DataAssetExportScope> exportScope) {
             this.exportScope = exportScope;
             this.__explicitlySet__.add("exportScope");
@@ -73,6 +81,10 @@ public final class ExportDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("exportScope")
     private final java.util.List<DataAssetExportScope> exportScope;
 
+    /**
+     * Array of objects and their child types to be selected for export.
+     * @return the value
+     **/
     public java.util.List<DataAssetExportScope> getExportScope() {
         return exportScope;
     }

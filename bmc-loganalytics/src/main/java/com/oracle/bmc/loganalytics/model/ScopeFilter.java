@@ -29,18 +29,37 @@ public final class ScopeFilter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Field must be a valid logging-analytics out-of-the-box field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Field must be a valid logging-analytics out-of-the-box field.
+         *
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * Field values that will be used to filter the query scope. Please note all values should reflect the fields data type otherwise the query is subject to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<Object> values;
 
+        /**
+         * Field values that will be used to filter the query scope. Please note all values should reflect the fields data type otherwise the query is subject to fail.
+         *
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<Object> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -83,6 +102,11 @@ public final class ScopeFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Field must be a valid logging-analytics out-of-the-box field.
+     *
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -94,6 +118,11 @@ public final class ScopeFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<Object> values;
 
+    /**
+     * Field values that will be used to filter the query scope. Please note all values should reflect the fields data type otherwise the query is subject to fail.
+     *
+     * @return the value
+     **/
     public java.util.List<Object> getValues() {
         return values;
     }

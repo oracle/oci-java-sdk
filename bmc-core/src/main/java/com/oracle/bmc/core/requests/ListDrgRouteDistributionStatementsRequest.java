@@ -17,6 +17,9 @@ public class ListDrgRouteDistributionStatementsRequest
      */
     private String drgRouteDistributionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+     */
     public String getDrgRouteDistributionId() {
         return drgRouteDistributionId;
     }
@@ -30,6 +33,14 @@ public class ListDrgRouteDistributionStatementsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +52,12 @@ public class ListDrgRouteDistributionStatementsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -84,6 +101,9 @@ public class ListDrgRouteDistributionStatementsRequest
         }
     };
 
+    /**
+     * The field to sort by.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -132,6 +152,11 @@ public class ListDrgRouteDistributionStatementsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -143,10 +168,14 @@ public class ListDrgRouteDistributionStatementsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         */
         private String drgRouteDistributionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         * @param drgRouteDistributionId the value to set
          * @return this builder instance
          */
         public Builder drgRouteDistributionId(String drgRouteDistributionId) {
@@ -154,6 +183,14 @@ public class ListDrgRouteDistributionStatementsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -163,6 +200,7 @@ public class ListDrgRouteDistributionStatementsRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -170,6 +208,12 @@ public class ListDrgRouteDistributionStatementsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -177,6 +221,7 @@ public class ListDrgRouteDistributionStatementsRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -184,10 +229,14 @@ public class ListDrgRouteDistributionStatementsRequest
             return this;
         }
 
+        /**
+         * The field to sort by.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -195,12 +244,18 @@ public class ListDrgRouteDistributionStatementsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -285,7 +340,8 @@ public class ListDrgRouteDistributionStatementsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -296,6 +352,10 @@ public class ListDrgRouteDistributionStatementsRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

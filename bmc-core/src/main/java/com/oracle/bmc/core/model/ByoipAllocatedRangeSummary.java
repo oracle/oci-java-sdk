@@ -30,18 +30,35 @@ public final class ByoipAllocatedRangeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
+         *
+         * @param publicIpPoolId the value to set
+         * @return this builder
+         **/
         public Builder publicIpPoolId(String publicIpPoolId) {
             this.publicIpPoolId = publicIpPoolId;
             this.__explicitlySet__.add("publicIpPoolId");
@@ -85,6 +102,10 @@ public final class ByoipAllocatedRangeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
@@ -96,6 +117,11 @@ public final class ByoipAllocatedRangeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
+     *
+     * @return the value
+     **/
     public String getPublicIpPoolId() {
         return publicIpPoolId;
     }

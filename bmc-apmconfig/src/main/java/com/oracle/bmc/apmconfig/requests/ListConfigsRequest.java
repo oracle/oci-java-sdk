@@ -17,6 +17,10 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,11 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +46,11 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String configType;
 
+    /**
+     * A filter to match configuration items of a given type.
+     * Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     *
+     */
     public String getConfigType() {
         return configType;
     }
@@ -45,6 +59,9 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayName;
 
+    /**
+     * A filter to return resources that match the given display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -53,6 +70,9 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -64,6 +84,12 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The maximum number of results per page, or items to return in a paginated "List" call. For information on
+     * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -74,6 +100,11 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.apmconfig.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The displayName sort order
+     * is case-sensitive.
+     *
+     */
     public com.oracle.bmc.apmconfig.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -123,8 +154,102 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
+     * and timeUpdated is ascending. The displayName sort by is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
+    }
+    /**
+     * A filter to return OPTIONS resources that match the given group.
+     */
+    private String optionsGroup;
+
+    /**
+     * A filter to return OPTIONS resources that match the given group.
+     */
+    public String getOptionsGroup() {
+        return optionsGroup;
+    }
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> definedTagEquals;
+
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
+    public java.util.List<String> getDefinedTagEquals() {
+        return definedTagEquals;
+    }
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> freeformTagEquals;
+
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
+    public java.util.List<String> getFreeformTagEquals() {
+        return freeformTagEquals;
+    }
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> definedTagExists;
+
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
+    public java.util.List<String> getDefinedTagExists() {
+        return definedTagExists;
+    }
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
+    private java.util.List<String> freeformTagExists;
+
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
+    public java.util.List<String> getFreeformTagExists() {
+        return freeformTagExists;
     }
 
     public static class Builder
@@ -134,11 +259,16 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -146,12 +276,18 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -159,12 +295,18 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to match configuration items of a given type.
+         * Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+         *
+         */
         private String configType = null;
 
         /**
          * A filter to match configuration items of a given type.
          * Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
          *
+         * @param configType the value to set
          * @return this builder instance
          */
         public Builder configType(String configType) {
@@ -172,10 +314,14 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return resources that match the given display name.
+         */
         private String displayName = null;
 
         /**
          * A filter to return resources that match the given display name.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -183,10 +329,14 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -194,6 +344,12 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of results per page, or items to return in a paginated "List" call. For information on
+         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private String page = null;
 
         /**
@@ -201,6 +357,7 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -208,12 +365,18 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The displayName sort order
+         * is case-sensitive.
+         *
+         */
         private com.oracle.bmc.apmconfig.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The displayName sort order
          * is case-sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.apmconfig.model.SortOrders sortOrder) {
@@ -221,17 +384,185 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
+         * and timeUpdated is ascending. The displayName sort by is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
          * and timeUpdated is ascending. The displayName sort by is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             return this;
+        }
+
+        /**
+         * A filter to return OPTIONS resources that match the given group.
+         */
+        private String optionsGroup = null;
+
+        /**
+         * A filter to return OPTIONS resources that match the given group.
+         * @param optionsGroup the value to set
+         * @return this builder instance
+         */
+        public Builder optionsGroup(String optionsGroup) {
+            this.optionsGroup = optionsGroup;
+            return this;
+        }
+
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
+        private java.util.List<String> definedTagEquals = null;
+
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param definedTagEquals the value to set
+         * @return this builder instance
+         */
+        public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
+            this.definedTagEquals = definedTagEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder definedTagEquals(String singularValue) {
+            return this.definedTagEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         */
+        private java.util.List<String> freeformTagEquals = null;
+
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         * @param freeformTagEquals the value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
+            this.freeformTagEquals = freeformTagEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagEquals(String singularValue) {
+            return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
+        private java.util.List<String> definedTagExists = null;
+
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param definedTagExists the value to set
+         * @return this builder instance
+         */
+        public Builder definedTagExists(java.util.List<String> definedTagExists) {
+            this.definedTagExists = definedTagExists;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder definedTagExists(String singularValue) {
+            return this.definedTagExists(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         */
+        private java.util.List<String> freeformTagExists = null;
+
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         * @param freeformTagExists the value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
+            this.freeformTagExists = freeformTagExists;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder freeformTagExists(String singularValue) {
+            return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -270,6 +601,11 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            optionsGroup(o.getOptionsGroup());
+            definedTagEquals(o.getDefinedTagEquals());
+            freeformTagEquals(o.getFreeformTagEquals());
+            definedTagExists(o.getDefinedTagExists());
+            freeformTagExists(o.getFreeformTagExists());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -310,13 +646,19 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.optionsGroup = optionsGroup;
+            request.definedTagEquals = definedTagEquals;
+            request.freeformTagEquals = freeformTagEquals;
+            request.definedTagExists = definedTagExists;
+            request.freeformTagExists = freeformTagExists;
             return request;
-            // new ListConfigsRequest(apmDomainId, opcRequestId, configType, displayName, limit, page, sortOrder, sortBy);
+            // new ListConfigsRequest(apmDomainId, opcRequestId, configType, displayName, limit, page, sortOrder, sortBy, optionsGroup, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -327,9 +669,18 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .sortBy(sortBy);
+                .sortBy(sortBy)
+                .optionsGroup(optionsGroup)
+                .definedTagEquals(definedTagEquals)
+                .freeformTagEquals(freeformTagEquals)
+                .definedTagExists(definedTagExists)
+                .freeformTagExists(freeformTagExists);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -347,6 +698,11 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",optionsGroup=").append(String.valueOf(this.optionsGroup));
+        sb.append(",definedTagEquals=").append(String.valueOf(this.definedTagEquals));
+        sb.append(",freeformTagEquals=").append(String.valueOf(this.freeformTagEquals));
+        sb.append(",definedTagExists=").append(String.valueOf(this.definedTagExists));
+        sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
         sb.append(")");
         return sb.toString();
     }
@@ -369,7 +725,12 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.sortBy, other.sortBy);
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.optionsGroup, other.optionsGroup)
+                && java.util.Objects.equals(this.definedTagEquals, other.definedTagEquals)
+                && java.util.Objects.equals(this.freeformTagEquals, other.freeformTagEquals)
+                && java.util.Objects.equals(this.definedTagExists, other.definedTagExists)
+                && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists);
     }
 
     @Override
@@ -384,6 +745,19 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.optionsGroup == null ? 43 : this.optionsGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedTagEquals == null ? 43 : this.definedTagEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagEquals == null ? 43 : this.freeformTagEquals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedTagExists == null ? 43 : this.definedTagExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagExists == null ? 43 : this.freeformTagExists.hashCode());
         return result;
     }
 }

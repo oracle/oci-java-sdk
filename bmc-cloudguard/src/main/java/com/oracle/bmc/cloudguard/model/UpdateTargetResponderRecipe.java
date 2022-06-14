@@ -32,18 +32,33 @@ public final class UpdateTargetResponderRecipe {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Identifier for ResponderRecipe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipeId")
         private String targetResponderRecipeId;
 
+        /**
+         * Identifier for ResponderRecipe.
+         * @param targetResponderRecipeId the value to set
+         * @return this builder
+         **/
         public Builder targetResponderRecipeId(String targetResponderRecipeId) {
             this.targetResponderRecipeId = targetResponderRecipeId;
             this.__explicitlySet__.add("targetResponderRecipeId");
             return this;
         }
-
+        /**
+         * Update responder rules associated with reponder recipe in a target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
+        /**
+         * Update responder rules associated with reponder recipe in a target.
+         * @param responderRules the value to set
+         * @return this builder
+         **/
         public Builder responderRules(
                 java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules) {
             this.responderRules = responderRules;
@@ -89,6 +104,10 @@ public final class UpdateTargetResponderRecipe {
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipeId")
     private final String targetResponderRecipeId;
 
+    /**
+     * Identifier for ResponderRecipe.
+     * @return the value
+     **/
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
@@ -99,6 +118,10 @@ public final class UpdateTargetResponderRecipe {
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
+    /**
+     * Update responder rules associated with reponder recipe in a target.
+     * @return the value
+     **/
     public java.util.List<UpdateTargetRecipeResponderRuleDetails> getResponderRules() {
         return responderRules;
     }

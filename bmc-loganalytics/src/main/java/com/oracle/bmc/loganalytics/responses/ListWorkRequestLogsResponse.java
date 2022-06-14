@@ -16,6 +16,13 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -26,6 +33,11 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +47,10 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.loganalytics.model.WorkRequestLogCollection workRequestLogCollection;
 
+    /**
+     * The returned WorkRequestLogCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.WorkRequestLogCollection
             getWorkRequestLogCollection() {
         return workRequestLogCollection;
@@ -65,22 +81,54 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned WorkRequestLogCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.WorkRequestLogCollection workRequestLogCollection;
 
+        /**
+         * The returned WorkRequestLogCollection instance.
+         * @param workRequestLogCollection the value to set
+         * @return this builder
+         */
         public Builder workRequestLogCollection(
                 com.oracle.bmc.loganalytics.model.WorkRequestLogCollection
                         workRequestLogCollection) {
@@ -101,12 +149,20 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
                     __httpStatusCode__, opcNextPage, opcRequestId, workRequestLogCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

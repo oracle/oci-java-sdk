@@ -16,6 +16,9 @@ public class GetSoftwareSourceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String softwareSourceId;
 
+    /**
+     * The OCID of the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -24,6 +27,9 @@ public class GetSoftwareSourceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetSoftwareSourceRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
          * The OCID of the software source.
+         * @param softwareSourceId the value to set
          * @return this builder instance
          */
         public Builder softwareSourceId(String softwareSourceId) {
@@ -46,10 +56,14 @@ public class GetSoftwareSourceRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetSoftwareSourceRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().softwareSourceId(softwareSourceId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

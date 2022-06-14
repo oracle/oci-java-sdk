@@ -44,27 +44,49 @@ public final class UpdateAutoScalingConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Whether the autoscale configuration is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Whether the autoscale configuration is enabled.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -131,6 +153,10 @@ public final class UpdateAutoScalingConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -141,6 +167,10 @@ public final class UpdateAutoScalingConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether the autoscale configuration is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -151,6 +181,10 @@ public final class UpdateAutoScalingConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }

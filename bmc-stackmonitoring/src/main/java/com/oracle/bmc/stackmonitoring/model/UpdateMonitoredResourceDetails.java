@@ -50,36 +50,65 @@ public final class UpdateMonitoredResourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Monitored resource display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Monitored resource display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Host name of the monitored resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * Host name of the monitored resource
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * Time zone in the form of tz database canonical zone ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
+        /**
+         * Time zone in the form of tz database canonical zone ID.
+         * @param resourceTimeZone the value to set
+         * @return this builder
+         **/
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = resourceTimeZone;
             this.__explicitlySet__.add("resourceTimeZone");
             return this;
         }
-
+        /**
+         * List of monitored resource properties
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
 
+        /**
+         * List of monitored resource properties
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.List<MonitoredResourceProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -163,6 +192,10 @@ public final class UpdateMonitoredResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Monitored resource display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -173,6 +206,10 @@ public final class UpdateMonitoredResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * Host name of the monitored resource
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -183,6 +220,10 @@ public final class UpdateMonitoredResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
+    /**
+     * Time zone in the form of tz database canonical zone ID.
+     * @return the value
+     **/
     public String getResourceTimeZone() {
         return resourceTimeZone;
     }
@@ -193,6 +234,10 @@ public final class UpdateMonitoredResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
 
+    /**
+     * List of monitored resource properties
+     * @return the value
+     **/
     public java.util.List<MonitoredResourceProperty> getProperties() {
         return properties;
     }

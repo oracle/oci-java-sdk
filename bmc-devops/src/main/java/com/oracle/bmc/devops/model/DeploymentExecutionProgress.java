@@ -38,27 +38,49 @@ public final class DeploymentExecutionProgress {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * Map of stage OCIDs to deploy stage execution progress model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageExecutionProgress")
         private java.util.Map<String, DeployStageExecutionProgress> deployStageExecutionProgress;
 
+        /**
+         * Map of stage OCIDs to deploy stage execution progress model.
+         * @param deployStageExecutionProgress the value to set
+         * @return this builder
+         **/
         public Builder deployStageExecutionProgress(
                 java.util.Map<String, DeployStageExecutionProgress> deployStageExecutionProgress) {
             this.deployStageExecutionProgress = deployStageExecutionProgress;
@@ -106,6 +128,10 @@ public final class DeploymentExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -116,6 +142,10 @@ public final class DeploymentExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -126,6 +156,10 @@ public final class DeploymentExecutionProgress {
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageExecutionProgress")
     private final java.util.Map<String, DeployStageExecutionProgress> deployStageExecutionProgress;
 
+    /**
+     * Map of stage OCIDs to deploy stage execution progress model.
+     * @return the value
+     **/
     public java.util.Map<String, DeployStageExecutionProgress> getDeployStageExecutionProgress() {
         return deployStageExecutionProgress;
     }

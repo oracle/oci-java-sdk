@@ -30,18 +30,33 @@ public final class AutoAssociationState {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A flag indicating whether or not auto association is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * A flag indicating whether or not auto association is enabled.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The unique identifier of the log group to use for auto association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
+        /**
+         * The unique identifier of the log group to use for auto association.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
@@ -83,6 +98,10 @@ public final class AutoAssociationState {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * A flag indicating whether or not auto association is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -93,6 +112,10 @@ public final class AutoAssociationState {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
+    /**
+     * The unique identifier of the log group to use for auto association.
+     * @return the value
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }

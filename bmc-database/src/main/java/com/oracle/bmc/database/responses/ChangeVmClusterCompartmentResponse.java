@@ -13,6 +13,10 @@ public class ChangeVmClusterCompartmentResponse extends com.oracle.bmc.responses
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier of the work request.
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -24,6 +28,12 @@ public class ChangeVmClusterCompartmentResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,15 +54,35 @@ public class ChangeVmClusterCompartmentResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier of the work request.
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier of the work request.
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -70,12 +100,20 @@ public class ChangeVmClusterCompartmentResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ChangeVmClusterCompartmentResponse build() {
             return new ChangeVmClusterCompartmentResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

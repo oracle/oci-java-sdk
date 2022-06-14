@@ -17,6 +17,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -25,6 +28,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private Long sqlTuningAdvisorTaskId;
 
+    /**
+     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
@@ -33,6 +39,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private Long sqlObjectId;
 
+    /**
+     * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public Long getSqlObjectId() {
         return sqlObjectId;
     }
@@ -42,6 +51,10 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private Long executionId;
 
+    /**
+     * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public Long getExecutionId() {
         return executionId;
     }
@@ -86,6 +99,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
         }
     };
 
+    /**
+     * The possible sortBy values of an object's recommendations.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -94,6 +110,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -104,6 +123,11 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -112,6 +136,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -120,6 +147,9 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -131,10 +161,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -142,10 +176,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private Long sqlTuningAdvisorTaskId = null;
 
         /**
          * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder instance
          */
         public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
@@ -153,10 +191,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private Long sqlObjectId = null;
 
         /**
          * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlObjectId the value to set
          * @return this builder instance
          */
         public Builder sqlObjectId(Long sqlObjectId) {
@@ -164,11 +206,16 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private Long executionId = null;
 
         /**
          * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
+         * @param executionId the value to set
          * @return this builder instance
          */
         public Builder executionId(Long executionId) {
@@ -176,10 +223,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The possible sortBy values of an object's recommendations.
+         */
         private SortBy sortBy = null;
 
         /**
          * The possible sortBy values of an object's recommendations.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -187,10 +238,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -198,12 +253,18 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -211,10 +272,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -222,10 +287,14 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -319,7 +388,8 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -334,6 +404,10 @@ public class ListSqlTuningAdvisorTaskRecommendationsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

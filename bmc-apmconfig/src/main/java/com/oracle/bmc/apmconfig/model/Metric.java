@@ -31,36 +31,65 @@ public final class Metric {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the metric. This must be a known metric name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the metric. This must be a known metric name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * This must not be set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
         private String valueSource;
 
+        /**
+         * This must not be set.
+         * @param valueSource the value to set
+         * @return this builder
+         **/
         public Builder valueSource(String valueSource) {
             this.valueSource = valueSource;
             this.__explicitlySet__.add("valueSource");
             return this;
         }
-
+        /**
+         * The unit of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
+        /**
+         * The unit of the metric.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-
+        /**
+         * A description of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the metric.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -106,6 +135,10 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the metric. This must be a known metric name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -116,6 +149,10 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
     private final String valueSource;
 
+    /**
+     * This must not be set.
+     * @return the value
+     **/
     public String getValueSource() {
         return valueSource;
     }
@@ -126,6 +163,10 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
+    /**
+     * The unit of the metric.
+     * @return the value
+     **/
     public String getUnit() {
         return unit;
     }
@@ -136,6 +177,10 @@ public final class Metric {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the metric.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

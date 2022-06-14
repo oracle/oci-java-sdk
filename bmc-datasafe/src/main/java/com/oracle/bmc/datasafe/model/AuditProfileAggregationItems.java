@@ -30,6 +30,7 @@ public final class AuditProfileAggregationItems {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private AuditProfileDimensions dimensions;
 
@@ -38,10 +39,17 @@ public final class AuditProfileAggregationItems {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * Total count of aggregated metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
+        /**
+         * Total count of aggregated metric.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Long count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -91,6 +99,10 @@ public final class AuditProfileAggregationItems {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
+    /**
+     * Total count of aggregated metric.
+     * @return the value
+     **/
     public Long getCount() {
         return count;
     }

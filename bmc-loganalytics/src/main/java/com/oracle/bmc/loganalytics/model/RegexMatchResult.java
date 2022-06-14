@@ -42,45 +42,81 @@ public final class RegexMatchResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The matched log entry end index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchedLogEntryEndIndex")
         private Integer matchedLogEntryEndIndex;
 
+        /**
+         * The matched log entry end index.
+         * @param matchedLogEntryEndIndex the value to set
+         * @return this builder
+         **/
         public Builder matchedLogEntryEndIndex(Integer matchedLogEntryEndIndex) {
             this.matchedLogEntryEndIndex = matchedLogEntryEndIndex;
             this.__explicitlySet__.add("matchedLogEntryEndIndex");
             return this;
         }
-
+        /**
+         * The regular expression score.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
         private Integer regexScore;
 
+        /**
+         * The regular expression score.
+         * @param regexScore the value to set
+         * @return this builder
+         **/
         public Builder regexScore(Integer regexScore) {
             this.regexScore = regexScore;
             this.__explicitlySet__.add("regexScore");
             return this;
         }
-
+        /**
+         * The regular expression steps information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regexStepsInfo")
         private java.util.List<StepInfo> regexStepsInfo;
 
+        /**
+         * The regular expression steps information.
+         * @param regexStepsInfo the value to set
+         * @return this builder
+         **/
         public Builder regexStepsInfo(java.util.List<StepInfo> regexStepsInfo) {
             this.regexStepsInfo = regexStepsInfo;
             this.__explicitlySet__.add("regexStepsInfo");
             return this;
         }
-
+        /**
+         * The regular expression step count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
         private Integer stepCount;
 
+        /**
+         * The regular expression step count.
+         * @param stepCount the value to set
+         * @return this builder
+         **/
         public Builder stepCount(Integer stepCount) {
             this.stepCount = stepCount;
             this.__explicitlySet__.add("stepCount");
             return this;
         }
-
+        /**
+         * The regular expression match information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subRegexesMatchInfo")
         private java.util.Map<String, MatchInfo> subRegexesMatchInfo;
 
+        /**
+         * The regular expression match information.
+         * @param subRegexesMatchInfo the value to set
+         * @return this builder
+         **/
         public Builder subRegexesMatchInfo(java.util.Map<String, MatchInfo> subRegexesMatchInfo) {
             this.subRegexesMatchInfo = subRegexesMatchInfo;
             this.__explicitlySet__.add("subRegexesMatchInfo");
@@ -133,6 +169,10 @@ public final class RegexMatchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("matchedLogEntryEndIndex")
     private final Integer matchedLogEntryEndIndex;
 
+    /**
+     * The matched log entry end index.
+     * @return the value
+     **/
     public Integer getMatchedLogEntryEndIndex() {
         return matchedLogEntryEndIndex;
     }
@@ -143,6 +183,10 @@ public final class RegexMatchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
     private final Integer regexScore;
 
+    /**
+     * The regular expression score.
+     * @return the value
+     **/
     public Integer getRegexScore() {
         return regexScore;
     }
@@ -153,6 +197,10 @@ public final class RegexMatchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("regexStepsInfo")
     private final java.util.List<StepInfo> regexStepsInfo;
 
+    /**
+     * The regular expression steps information.
+     * @return the value
+     **/
     public java.util.List<StepInfo> getRegexStepsInfo() {
         return regexStepsInfo;
     }
@@ -163,6 +211,10 @@ public final class RegexMatchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     private final Integer stepCount;
 
+    /**
+     * The regular expression step count.
+     * @return the value
+     **/
     public Integer getStepCount() {
         return stepCount;
     }
@@ -173,6 +225,10 @@ public final class RegexMatchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("subRegexesMatchInfo")
     private final java.util.Map<String, MatchInfo> subRegexesMatchInfo;
 
+    /**
+     * The regular expression match information.
+     * @return the value
+     **/
     public java.util.Map<String, MatchInfo> getSubRegexesMatchInfo() {
         return subRegexesMatchInfo;
     }

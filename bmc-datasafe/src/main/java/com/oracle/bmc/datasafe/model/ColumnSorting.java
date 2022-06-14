@@ -29,27 +29,49 @@ public final class ColumnSorting {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the column that must be sorted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Name of the column that must be sorted.
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAscending")
         private Boolean isAscending;
 
+        /**
+         * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
+         * @param isAscending the value to set
+         * @return this builder
+         **/
         public Builder isAscending(Boolean isAscending) {
             this.isAscending = isAscending;
             this.__explicitlySet__.add("isAscending");
             return this;
         }
-
+        /**
+         * Indicates the order at which column must be sorted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortingOrder")
         private Integer sortingOrder;
 
+        /**
+         * Indicates the order at which column must be sorted.
+         * @param sortingOrder the value to set
+         * @return this builder
+         **/
         public Builder sortingOrder(Integer sortingOrder) {
             this.sortingOrder = sortingOrder;
             this.__explicitlySet__.add("sortingOrder");
@@ -94,6 +116,10 @@ public final class ColumnSorting {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Name of the column that must be sorted.
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -104,6 +130,10 @@ public final class ColumnSorting {
     @com.fasterxml.jackson.annotation.JsonProperty("isAscending")
     private final Boolean isAscending;
 
+    /**
+     * Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
+     * @return the value
+     **/
     public Boolean getIsAscending() {
         return isAscending;
     }
@@ -114,6 +144,10 @@ public final class ColumnSorting {
     @com.fasterxml.jackson.annotation.JsonProperty("sortingOrder")
     private final Integer sortingOrder;
 
+    /**
+     * Indicates the order at which column must be sorted.
+     * @return the value
+     **/
     public Integer getSortingOrder() {
         return sortingOrder;
     }

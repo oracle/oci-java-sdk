@@ -16,6 +16,9 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String waasPolicyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
@@ -24,6 +27,9 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -51,10 +63,14 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         */
         private String waasPolicyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * @param waasPolicyId the value to set
          * @return this builder instance
          */
         public Builder waasPolicyId(String waasPolicyId) {
@@ -62,10 +78,14 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -73,10 +93,14 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -84,10 +108,14 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -169,7 +197,8 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -179,6 +208,10 @@ public class ListThreatFeedsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

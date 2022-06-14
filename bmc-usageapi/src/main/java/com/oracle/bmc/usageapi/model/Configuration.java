@@ -28,18 +28,33 @@ public final class Configuration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The configuration key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The configuration key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The configuration value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
+        /**
+         * The configuration value.
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -81,6 +96,10 @@ public final class Configuration {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The configuration key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -91,6 +110,10 @@ public final class Configuration {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
+    /**
+     * The configuration value.
+     * @return the value
+     **/
     public java.util.List<String> getValues() {
         return values;
     }

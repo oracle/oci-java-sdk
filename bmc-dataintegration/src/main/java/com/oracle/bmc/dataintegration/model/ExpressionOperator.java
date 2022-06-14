@@ -134,10 +134,25 @@ public final class ExpressionOperator extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * The merge condition. The conditions are
+         * ALL_SUCCESS - All the preceeding operators need to be successful.
+         * ALL_FAILED - All the preceeding operators should have failed.
+         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
         private TriggerRule triggerRule;
 
+        /**
+         * The merge condition. The conditions are
+         * ALL_SUCCESS - All the preceeding operators need to be successful.
+         * ALL_FAILED - All the preceeding operators should have failed.
+         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+         *
+         * @param triggerRule the value to set
+         * @return this builder
+         **/
         public Builder triggerRule(TriggerRule triggerRule) {
             this.triggerRule = triggerRule;
             this.__explicitlySet__.add("triggerRule");
@@ -307,6 +322,14 @@ public final class ExpressionOperator extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
     private final TriggerRule triggerRule;
 
+    /**
+     * The merge condition. The conditions are
+     * ALL_SUCCESS - All the preceeding operators need to be successful.
+     * ALL_FAILED - All the preceeding operators should have failed.
+     * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+     *
+     * @return the value
+     **/
     public TriggerRule getTriggerRule() {
         return triggerRule;
     }

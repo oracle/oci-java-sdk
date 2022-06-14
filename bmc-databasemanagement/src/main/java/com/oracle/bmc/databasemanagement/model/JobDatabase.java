@@ -48,63 +48,113 @@ public final class JobDatabase {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Managed Database.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The type of Oracle Database installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
+        /**
+         * The type of Oracle Database installation.
+         * @param databaseType the value to set
+         * @return this builder
+         **/
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
         private DatabaseSubType databaseSubType;
 
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+         * @param databaseSubType the value to set
+         * @return this builder
+         **/
         public Builder databaseSubType(DatabaseSubType databaseSubType) {
             this.databaseSubType = databaseSubType;
             this.__explicitlySet__.add("databaseSubType");
             return this;
         }
-
+        /**
+         * A list of the supported infrastructure that can be used to deploy the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
+        /**
+         * A list of the supported infrastructure that can be used to deploy the database.
+         * @param deploymentType the value to set
+         * @return this builder
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-
+        /**
+         * Indicates whether the Oracle Database is part of a cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
+        /**
+         * Indicates whether the Oracle Database is part of a cluster.
+         * @param isCluster the value to set
+         * @return this builder
+         **/
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = isCluster;
             this.__explicitlySet__.add("isCluster");
             return this;
         }
-
+        /**
+         * The workload type of the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private WorkloadType workloadType;
 
+        /**
+         * The workload type of the Autonomous Database.
+         * @param workloadType the value to set
+         * @return this builder
+         **/
         public Builder workloadType(WorkloadType workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
@@ -161,6 +211,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -171,6 +225,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Managed Database.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -181,6 +239,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
+    /**
+     * The type of Oracle Database installation.
+     * @return the value
+     **/
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
@@ -191,6 +253,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     * @return the value
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
@@ -201,6 +267,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
+    /**
+     * A list of the supported infrastructure that can be used to deploy the database.
+     * @return the value
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
@@ -211,6 +281,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     private final Boolean isCluster;
 
+    /**
+     * Indicates whether the Oracle Database is part of a cluster.
+     * @return the value
+     **/
     public Boolean getIsCluster() {
         return isCluster;
     }
@@ -221,6 +295,10 @@ public final class JobDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final WorkloadType workloadType;
 
+    /**
+     * The workload type of the Autonomous Database.
+     * @return the value
+     **/
     public WorkloadType getWorkloadType() {
         return workloadType;
     }

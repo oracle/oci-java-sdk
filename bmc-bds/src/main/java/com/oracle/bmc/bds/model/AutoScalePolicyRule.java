@@ -30,9 +30,17 @@ public final class AutoScalePolicyRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -130,6 +138,10 @@ public final class AutoScalePolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

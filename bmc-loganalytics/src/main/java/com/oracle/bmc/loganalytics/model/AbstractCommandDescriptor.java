@@ -235,6 +235,11 @@ public class AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
     private final String displayQueryString;
 
+    /**
+     * Command fragment display string from user specified query string formatted by query builder.
+     *
+     * @return the value
+     **/
     public String getDisplayQueryString() {
         return displayQueryString;
     }
@@ -246,6 +251,11 @@ public class AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
     private final String internalQueryString;
 
+    /**
+     * Command fragment internal string from user specified query string formatted by query builder.
+     *
+     * @return the value
+     **/
     public String getInternalQueryString() {
         return internalQueryString;
     }
@@ -257,6 +267,11 @@ public class AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * querylanguage command designation for example; reporting vs filtering
+     *
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -268,6 +283,11 @@ public class AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFields")
     private final java.util.List<AbstractField> referencedFields;
 
+    /**
+     * Fields referenced in command fragment from user specified query string.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractField> getReferencedFields() {
         return referencedFields;
     }
@@ -279,6 +299,11 @@ public class AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("declaredFields")
     private final java.util.List<AbstractField> declaredFields;
 
+    /**
+     * Fields declared in command fragment from user specified query string.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractField> getDeclaredFields() {
         return declaredFields;
     }

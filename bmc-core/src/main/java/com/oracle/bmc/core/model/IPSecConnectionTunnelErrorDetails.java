@@ -47,54 +47,97 @@ public final class IPSecConnectionTunnelErrorDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique ID generated for each error report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique ID generated for each error report.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Unique code describes the error type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
+        /**
+         * Unique code describes the error type.
+         * @param errorCode the value to set
+         * @return this builder
+         **/
         public Builder errorCode(String errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-
+        /**
+         * A detailed description of the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorDescription")
         private String errorDescription;
 
+        /**
+         * A detailed description of the error.
+         * @param errorDescription the value to set
+         * @return this builder
+         **/
         public Builder errorDescription(String errorDescription) {
             this.errorDescription = errorDescription;
             this.__explicitlySet__.add("errorDescription");
             return this;
         }
-
+        /**
+         * Resolution for the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("solution")
         private String solution;
 
+        /**
+         * Resolution for the error.
+         * @param solution the value to set
+         * @return this builder
+         **/
         public Builder solution(String solution) {
             this.solution = solution;
             this.__explicitlySet__.add("solution");
             return this;
         }
-
+        /**
+         * Link to more Oracle resources or relevant documentation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociResourcesLink")
         private String ociResourcesLink;
 
+        /**
+         * Link to more Oracle resources or relevant documentation.
+         * @param ociResourcesLink the value to set
+         * @return this builder
+         **/
         public Builder ociResourcesLink(String ociResourcesLink) {
             this.ociResourcesLink = ociResourcesLink;
             this.__explicitlySet__.add("ociResourcesLink");
             return this;
         }
-
+        /**
+         * Timestamp when the error occurred.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * Timestamp when the error occurred.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -144,6 +187,10 @@ public final class IPSecConnectionTunnelErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique ID generated for each error report.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -154,6 +201,10 @@ public final class IPSecConnectionTunnelErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final String errorCode;
 
+    /**
+     * Unique code describes the error type.
+     * @return the value
+     **/
     public String getErrorCode() {
         return errorCode;
     }
@@ -164,6 +215,10 @@ public final class IPSecConnectionTunnelErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("errorDescription")
     private final String errorDescription;
 
+    /**
+     * A detailed description of the error.
+     * @return the value
+     **/
     public String getErrorDescription() {
         return errorDescription;
     }
@@ -174,6 +229,10 @@ public final class IPSecConnectionTunnelErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("solution")
     private final String solution;
 
+    /**
+     * Resolution for the error.
+     * @return the value
+     **/
     public String getSolution() {
         return solution;
     }
@@ -184,6 +243,10 @@ public final class IPSecConnectionTunnelErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ociResourcesLink")
     private final String ociResourcesLink;
 
+    /**
+     * Link to more Oracle resources or relevant documentation.
+     * @return the value
+     **/
     public String getOciResourcesLink() {
         return ociResourcesLink;
     }
@@ -194,6 +257,10 @@ public final class IPSecConnectionTunnelErrorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * Timestamp when the error occurred.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

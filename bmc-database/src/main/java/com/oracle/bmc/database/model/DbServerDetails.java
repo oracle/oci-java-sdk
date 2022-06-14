@@ -28,9 +28,17 @@ public final class DbServerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exacc Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
         private String dbServerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exacc Db server.
+         * @param dbServerId the value to set
+         * @return this builder
+         **/
         public Builder dbServerId(String dbServerId) {
             this.dbServerId = dbServerId;
             this.__explicitlySet__.add("dbServerId");
@@ -72,6 +80,10 @@ public final class DbServerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
     private final String dbServerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exacc Db server.
+     * @return the value
+     **/
     public String getDbServerId() {
         return dbServerId;
     }

@@ -17,6 +17,9 @@ public class ListResourceActionQueryableFieldsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,6 +31,12 @@ public class ListResourceActionQueryableFieldsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+     * <p>
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -36,6 +45,9 @@ public class ListResourceActionQueryableFieldsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -45,6 +57,10 @@ public class ListResourceActionQueryableFieldsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -55,6 +71,11 @@ public class ListResourceActionQueryableFieldsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -66,10 +87,14 @@ public class ListResourceActionQueryableFieldsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -77,6 +102,12 @@ public class ListResourceActionQueryableFieldsRequest
             return this;
         }
 
+        /**
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+         * <p>
+         * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -84,6 +115,7 @@ public class ListResourceActionQueryableFieldsRequest
          * <p>
          * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -91,10 +123,14 @@ public class ListResourceActionQueryableFieldsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -102,11 +138,16 @@ public class ListResourceActionQueryableFieldsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -114,12 +155,18 @@ public class ListResourceActionQueryableFieldsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -204,7 +251,8 @@ public class ListResourceActionQueryableFieldsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +263,10 @@ public class ListResourceActionQueryableFieldsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -42,45 +42,81 @@ public final class RegistryMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The owning object's key for this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
         private String aggregatorKey;
 
+        /**
+         * The owning object's key for this object.
+         * @param aggregatorKey the value to set
+         * @return this builder
+         **/
         public Builder aggregatorKey(String aggregatorKey) {
             this.aggregatorKey = aggregatorKey;
             this.__explicitlySet__.add("aggregatorKey");
             return this;
         }
-
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-
+        /**
+         * The registry version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
         private Integer registryVersion;
 
+        /**
+         * The registry version.
+         * @param registryVersion the value to set
+         * @return this builder
+         **/
         public Builder registryVersion(Integer registryVersion) {
             this.registryVersion = registryVersion;
             this.__explicitlySet__.add("registryVersion");
             return this;
         }
-
+        /**
+         * The identifying key for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The identifying key for the object.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Specifies whether this object is a favorite or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
         private Boolean isFavorite;
 
+        /**
+         * Specifies whether this object is a favorite or not.
+         * @param isFavorite the value to set
+         * @return this builder
+         **/
         public Builder isFavorite(Boolean isFavorite) {
             this.isFavorite = isFavorite;
             this.__explicitlySet__.add("isFavorite");
@@ -128,6 +164,10 @@ public final class RegistryMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
     private final String aggregatorKey;
 
+    /**
+     * The owning object's key for this object.
+     * @return the value
+     **/
     public String getAggregatorKey() {
         return aggregatorKey;
     }
@@ -138,6 +178,10 @@ public final class RegistryMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -148,6 +192,10 @@ public final class RegistryMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
     private final Integer registryVersion;
 
+    /**
+     * The registry version.
+     * @return the value
+     **/
     public Integer getRegistryVersion() {
         return registryVersion;
     }
@@ -158,6 +206,10 @@ public final class RegistryMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The identifying key for the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -168,6 +220,10 @@ public final class RegistryMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     private final Boolean isFavorite;
 
+    /**
+     * Specifies whether this object is a favorite or not.
+     * @return the value
+     **/
     public Boolean getIsFavorite() {
         return isFavorite;
     }

@@ -28,54 +28,101 @@ package com.oracle.bmc.database.model;
 public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
         private String cdbName;
 
+        /**
+         * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+         * @param cdbName the value to set
+         * @return this builder
+         **/
         public Builder cdbName(String cdbName) {
             this.cdbName = cdbName;
             this.__explicitlySet__.add("cdbName");
             return this;
         }
-
+        /**
+         * A strong password for SYS, SYSTEM, and the plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdbAdminPassword")
         private String cdbAdminPassword;
 
+        /**
+         * A strong password for SYS, SYSTEM, and the plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         * @param cdbAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder cdbAdminPassword(String cdbAdminPassword) {
             this.cdbAdminPassword = cdbAdminPassword;
             this.__explicitlySet__.add("cdbAdminPassword");
             return this;
         }
-
+        /**
+         * A strong password for plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
         private String pdbAdminPassword;
 
+        /**
+         * A strong password for plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         * @param pdbAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder pdbAdminPassword(String pdbAdminPassword) {
             this.pdbAdminPassword = pdbAdminPassword;
             this.__explicitlySet__.add("pdbAdminPassword");
             return this;
         }
-
+        /**
+         * The password to open the TDE wallet of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdbTdeWalletPassword")
         private String cdbTdeWalletPassword;
 
+        /**
+         * The password to open the TDE wallet of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         * @param cdbTdeWalletPassword the value to set
+         * @return this builder
+         **/
         public Builder cdbTdeWalletPassword(String cdbTdeWalletPassword) {
             this.cdbTdeWalletPassword = cdbTdeWalletPassword;
             this.__explicitlySet__.add("cdbTdeWalletPassword");
             return this;
         }
-
+        /**
+         * The existing TDE wallet password of the non-container database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonCdbTdeWalletPassword")
         private String nonCdbTdeWalletPassword;
 
+        /**
+         * The existing TDE wallet password of the non-container database.
+         * @param nonCdbTdeWalletPassword the value to set
+         * @return this builder
+         **/
         public Builder nonCdbTdeWalletPassword(String nonCdbTdeWalletPassword) {
             this.nonCdbTdeWalletPassword = nonCdbTdeWalletPassword;
             this.__explicitlySet__.add("nonCdbTdeWalletPassword");
             return this;
         }
-
+        /**
+         * Additional container database parameters.
+         * Example: "_pdb_name_case_sensitive=true"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalCdbParams")
         private String additionalCdbParams;
 
+        /**
+         * Additional container database parameters.
+         * Example: "_pdb_name_case_sensitive=true"
+         *
+         * @param additionalCdbParams the value to set
+         * @return this builder
+         **/
         public Builder additionalCdbParams(String additionalCdbParams) {
             this.additionalCdbParams = additionalCdbParams;
             this.__explicitlySet__.add("additionalCdbParams");
@@ -147,6 +194,10 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
     @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
     private final String cdbName;
 
+    /**
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     * @return the value
+     **/
     public String getCdbName() {
         return cdbName;
     }
@@ -157,6 +208,10 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
     @com.fasterxml.jackson.annotation.JsonProperty("cdbAdminPassword")
     private final String cdbAdminPassword;
 
+    /**
+     * A strong password for SYS, SYSTEM, and the plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     * @return the value
+     **/
     public String getCdbAdminPassword() {
         return cdbAdminPassword;
     }
@@ -167,6 +222,10 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
     private final String pdbAdminPassword;
 
+    /**
+     * A strong password for plugbable database ADMIN user of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     * @return the value
+     **/
     public String getPdbAdminPassword() {
         return pdbAdminPassword;
     }
@@ -177,6 +236,10 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
     @com.fasterxml.jackson.annotation.JsonProperty("cdbTdeWalletPassword")
     private final String cdbTdeWalletPassword;
 
+    /**
+     * The password to open the TDE wallet of the container database after conversion. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     * @return the value
+     **/
     public String getCdbTdeWalletPassword() {
         return cdbTdeWalletPassword;
     }
@@ -187,6 +250,10 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
     @com.fasterxml.jackson.annotation.JsonProperty("nonCdbTdeWalletPassword")
     private final String nonCdbTdeWalletPassword;
 
+    /**
+     * The existing TDE wallet password of the non-container database.
+     * @return the value
+     **/
     public String getNonCdbTdeWalletPassword() {
         return nonCdbTdeWalletPassword;
     }
@@ -199,6 +266,12 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
     @com.fasterxml.jackson.annotation.JsonProperty("additionalCdbParams")
     private final String additionalCdbParams;
 
+    /**
+     * Additional container database parameters.
+     * Example: "_pdb_name_case_sensitive=true"
+     *
+     * @return the value
+     **/
     public String getAdditionalCdbParams() {
         return additionalCdbParams;
     }

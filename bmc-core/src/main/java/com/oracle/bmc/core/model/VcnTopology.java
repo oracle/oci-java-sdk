@@ -51,10 +51,17 @@ public final class VcnTopology extends Topology {
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for which the topology is generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for which the topology is generated.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -110,6 +117,10 @@ public final class VcnTopology extends Topology {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for which the topology is generated.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }

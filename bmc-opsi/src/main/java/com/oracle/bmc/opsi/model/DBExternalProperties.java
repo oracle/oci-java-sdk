@@ -35,91 +35,161 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Name of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the database.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Archive log mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logMode")
         private String logMode;
 
+        /**
+         * Archive log mode.
+         * @param logMode the value to set
+         * @return this builder
+         **/
         public Builder logMode(String logMode) {
             this.logMode = logMode;
             this.__explicitlySet__.add("logMode");
             return this;
         }
-
+        /**
+         * Indicates if it is a CDB or not. This would be 'yes' or 'no'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdb")
         private String cdb;
 
+        /**
+         * Indicates if it is a CDB or not. This would be 'yes' or 'no'.
+         * @param cdb the value to set
+         * @return this builder
+         **/
         public Builder cdb(String cdb) {
             this.cdb = cdb;
             this.__explicitlySet__.add("cdb");
             return this;
         }
-
+        /**
+         * Open mode information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("openMode")
         private String openMode;
 
+        /**
+         * Open mode information.
+         * @param openMode the value to set
+         * @return this builder
+         **/
         public Builder openMode(String openMode) {
             this.openMode = openMode;
             this.__explicitlySet__.add("openMode");
             return this;
         }
-
+        /**
+         * Current role of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseRole")
         private String databaseRole;
 
+        /**
+         * Current role of the database.
+         * @param databaseRole the value to set
+         * @return this builder
+         **/
         public Builder databaseRole(String databaseRole) {
             this.databaseRole = databaseRole;
             this.__explicitlySet__.add("databaseRole");
             return this;
         }
-
+        /**
+         * Data protection policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("guardStatus")
         private String guardStatus;
 
+        /**
+         * Data protection policy.
+         * @param guardStatus the value to set
+         * @return this builder
+         **/
         public Builder guardStatus(String guardStatus) {
             this.guardStatus = guardStatus;
             this.__explicitlySet__.add("guardStatus");
             return this;
         }
-
+        /**
+         * Platform name of the database, OS with architecture.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformName")
         private String platformName;
 
+        /**
+         * Platform name of the database, OS with architecture.
+         * @param platformName the value to set
+         * @return this builder
+         **/
         public Builder platformName(String platformName) {
             this.platformName = platformName;
             this.__explicitlySet__.add("platformName");
             return this;
         }
-
+        /**
+         * Type of control file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("controlFileType")
         private String controlFileType;
 
+        /**
+         * Type of control file.
+         * @param controlFileType the value to set
+         * @return this builder
+         **/
         public Builder controlFileType(String controlFileType) {
             this.controlFileType = controlFileType;
             this.__explicitlySet__.add("controlFileType");
             return this;
         }
-
+        /**
+         * Indicates whether switchover is allowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("switchoverStatus")
         private String switchoverStatus;
 
+        /**
+         * Indicates whether switchover is allowed.
+         * @param switchoverStatus the value to set
+         * @return this builder
+         **/
         public Builder switchoverStatus(String switchoverStatus) {
             this.switchoverStatus = switchoverStatus;
             this.__explicitlySet__.add("switchoverStatus");
             return this;
         }
-
+        /**
+         * Creation time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("created")
         private java.util.Date created;
 
+        /**
+         * Creation time.
+         * @param created the value to set
+         * @return this builder
+         **/
         public Builder created(java.util.Date created) {
             this.created = created;
             this.__explicitlySet__.add("created");
@@ -210,6 +280,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the database.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -220,6 +294,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("logMode")
     private final String logMode;
 
+    /**
+     * Archive log mode.
+     * @return the value
+     **/
     public String getLogMode() {
         return logMode;
     }
@@ -230,6 +308,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("cdb")
     private final String cdb;
 
+    /**
+     * Indicates if it is a CDB or not. This would be 'yes' or 'no'.
+     * @return the value
+     **/
     public String getCdb() {
         return cdb;
     }
@@ -240,6 +322,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     private final String openMode;
 
+    /**
+     * Open mode information.
+     * @return the value
+     **/
     public String getOpenMode() {
         return openMode;
     }
@@ -250,6 +336,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("databaseRole")
     private final String databaseRole;
 
+    /**
+     * Current role of the database.
+     * @return the value
+     **/
     public String getDatabaseRole() {
         return databaseRole;
     }
@@ -260,6 +350,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("guardStatus")
     private final String guardStatus;
 
+    /**
+     * Data protection policy.
+     * @return the value
+     **/
     public String getGuardStatus() {
         return guardStatus;
     }
@@ -270,6 +364,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
     private final String platformName;
 
+    /**
+     * Platform name of the database, OS with architecture.
+     * @return the value
+     **/
     public String getPlatformName() {
         return platformName;
     }
@@ -280,6 +378,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("controlFileType")
     private final String controlFileType;
 
+    /**
+     * Type of control file.
+     * @return the value
+     **/
     public String getControlFileType() {
         return controlFileType;
     }
@@ -290,6 +392,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("switchoverStatus")
     private final String switchoverStatus;
 
+    /**
+     * Indicates whether switchover is allowed.
+     * @return the value
+     **/
     public String getSwitchoverStatus() {
         return switchoverStatus;
     }
@@ -300,6 +406,10 @@ public final class DBExternalProperties extends DatabaseConfigurationMetricGroup
     @com.fasterxml.jackson.annotation.JsonProperty("created")
     private final java.util.Date created;
 
+    /**
+     * Creation time.
+     * @return the value
+     **/
     public java.util.Date getCreated() {
         return created;
     }

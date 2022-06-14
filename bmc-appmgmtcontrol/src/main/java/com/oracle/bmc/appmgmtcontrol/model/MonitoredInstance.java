@@ -56,81 +56,153 @@ public final class MonitoredInstance {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+         * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+         * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Used to invoke manage operations on Management Agent Cloud Service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Used to invoke manage operations on Management Agent Cloud Service.
+         *
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The time the MonitoredInstance was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the MonitoredInstance was created. An RFC3339 formatted datetime string
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Monitoring status. Can be either enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitoringState")
         private MonitoringState monitoringState;
 
+        /**
+         * Monitoring status. Can be either enabled or disabled.
+         * @param monitoringState the value to set
+         * @return this builder
+         **/
         public Builder monitoringState(MonitoringState monitoringState) {
             this.monitoringState = monitoringState;
             this.__explicitlySet__.add("monitoringState");
             return this;
         }
-
+        /**
+         * The current state of the monitored instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the monitored instance.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -191,6 +263,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -201,6 +277,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -213,6 +293,12 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+     * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -225,6 +311,12 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Used to invoke manage operations on Management Agent Cloud Service.
+     *
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -235,6 +327,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the MonitoredInstance was created. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -245,6 +341,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -303,6 +403,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("monitoringState")
     private final MonitoringState monitoringState;
 
+    /**
+     * Monitoring status. Can be either enabled or disabled.
+     * @return the value
+     **/
     public MonitoringState getMonitoringState() {
         return monitoringState;
     }
@@ -366,6 +470,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the monitored instance.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -376,6 +484,10 @@ public final class MonitoredInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

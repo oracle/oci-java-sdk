@@ -31,18 +31,37 @@ public final class VirtualCloudNetwork {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Virtual Cloud Network OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The Virtual Cloud Network OCID.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Source IP addresses or IP address ranges igress rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
 
+        /**
+         * Source IP addresses or IP address ranges igress rules.
+         *
+         * @param whitelistedIps the value to set
+         * @return this builder
+         **/
         public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
             this.whitelistedIps = whitelistedIps;
             this.__explicitlySet__.add("whitelistedIps");
@@ -85,6 +104,11 @@ public final class VirtualCloudNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The Virtual Cloud Network OCID.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -96,6 +120,11 @@ public final class VirtualCloudNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     private final java.util.List<String> whitelistedIps;
 
+    /**
+     * Source IP addresses or IP address ranges igress rules.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getWhitelistedIps() {
         return whitelistedIps;
     }

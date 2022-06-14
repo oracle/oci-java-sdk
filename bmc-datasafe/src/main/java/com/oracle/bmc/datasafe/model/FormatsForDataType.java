@@ -30,18 +30,45 @@ public final class FormatsForDataType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The data type category, which can be one of the following -
+         *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+         *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+         *   Date - Includes DATE and TIMESTAMP
+         *   LOB - Includes BLOB, CLOB, and NCLOB
+         *   All - Includes all the supported data types
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * The data type category, which can be one of the following -
+         *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+         *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+         *   Date - Includes DATE and TIMESTAMP
+         *   LOB - Includes BLOB, CLOB, and NCLOB
+         *   All - Includes all the supported data types
+         *
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * An array of the basic masking formats compatible with the data type category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
         private java.util.List<FormatSummary> maskingFormats;
 
+        /**
+         * An array of the basic masking formats compatible with the data type category.
+         * @param maskingFormats the value to set
+         * @return this builder
+         **/
         public Builder maskingFormats(java.util.List<FormatSummary> maskingFormats) {
             this.maskingFormats = maskingFormats;
             this.__explicitlySet__.add("maskingFormats");
@@ -89,6 +116,16 @@ public final class FormatsForDataType {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * The data type category, which can be one of the following -
+     *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+     *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+     *   Date - Includes DATE and TIMESTAMP
+     *   LOB - Includes BLOB, CLOB, and NCLOB
+     *   All - Includes all the supported data types
+     *
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -99,6 +136,10 @@ public final class FormatsForDataType {
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
     private final java.util.List<FormatSummary> maskingFormats;
 
+    /**
+     * An array of the basic masking formats compatible with the data type category.
+     * @return the value
+     **/
     public java.util.List<FormatSummary> getMaskingFormats() {
         return maskingFormats;
     }

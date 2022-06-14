@@ -30,9 +30,17 @@ package com.oracle.bmc.core.model;
 public final class VolumeGroupSourceFromVolumeGroupReplicaDetails extends VolumeGroupSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the volume group replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
         private String volumeGroupReplicaId;
 
+        /**
+         * The OCID of the volume group replica.
+         * @param volumeGroupReplicaId the value to set
+         * @return this builder
+         **/
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             this.__explicitlySet__.add("volumeGroupReplicaId");
@@ -81,6 +89,10 @@ public final class VolumeGroupSourceFromVolumeGroupReplicaDetails extends Volume
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
     private final String volumeGroupReplicaId;
 
+    /**
+     * The OCID of the volume group replica.
+     * @return the value
+     **/
     public String getVolumeGroupReplicaId() {
         return volumeGroupReplicaId;
     }

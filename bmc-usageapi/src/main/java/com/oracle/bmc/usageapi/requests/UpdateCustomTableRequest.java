@@ -18,6 +18,9 @@ public class UpdateCustomTableRequest
      */
     private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.usageapi.model.UpdateCustomTableDetails getUpdateCustomTableDetails() {
         return updateCustomTableDetails;
     }
@@ -26,6 +29,9 @@ public class UpdateCustomTableRequest
      */
     private String customTableId;
 
+    /**
+     * The custom table unique OCID.
+     */
     public String getCustomTableId() {
         return customTableId;
     }
@@ -36,6 +42,11 @@ public class UpdateCustomTableRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +60,14 @@ public class UpdateCustomTableRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted, only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -71,11 +90,15 @@ public class UpdateCustomTableRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails =
                 null;
 
         /**
          * The information to be updated.
+         * @param updateCustomTableDetails the value to set
          * @return this builder instance
          */
         public Builder updateCustomTableDetails(
@@ -84,10 +107,14 @@ public class UpdateCustomTableRequest
             return this;
         }
 
+        /**
+         * The custom table unique OCID.
+         */
         private String customTableId = null;
 
         /**
          * The custom table unique OCID.
+         * @param customTableId the value to set
          * @return this builder instance
          */
         public Builder customTableId(String customTableId) {
@@ -95,12 +122,18 @@ public class UpdateCustomTableRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,6 +141,14 @@ public class UpdateCustomTableRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -117,6 +158,7 @@ public class UpdateCustomTableRequest
          * The resource will be updated or deleted, only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -209,7 +251,8 @@ public class UpdateCustomTableRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +262,10 @@ public class UpdateCustomTableRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

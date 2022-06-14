@@ -13,6 +13,10 @@ public class GetAlertRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +29,13 @@ public class GetAlertRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetAlertRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.budget.model.AlertRule alertRule;
 
+    /**
+     * The returned AlertRule instance.
+     * @return the value
+     */
     public com.oracle.bmc.budget.model.AlertRule getAlertRule() {
         return alertRule;
     }
@@ -58,22 +73,52 @@ public class GetAlertRuleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AlertRule instance.
+         */
         private com.oracle.bmc.budget.model.AlertRule alertRule;
 
+        /**
+         * The returned AlertRule instance.
+         * @param alertRule the value to set
+         * @return this builder
+         */
         public Builder alertRule(com.oracle.bmc.budget.model.AlertRule alertRule) {
             this.alertRule = alertRule;
             return this;
@@ -92,11 +137,19 @@ public class GetAlertRuleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAlertRuleResponse build() {
             return new GetAlertRuleResponse(__httpStatusCode__, etag, opcRequestId, alertRule);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

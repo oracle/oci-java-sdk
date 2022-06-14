@@ -30,27 +30,59 @@ package com.oracle.bmc.apigateway.model;
 public final class RemoteJsonWebKeySet extends PublicKeySet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The uri from which to retrieve the key. It must be accessible
+         * without authentication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * The uri from which to retrieve the key. It must be accessible
+         * without authentication.
+         *
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * Defines whether or not to uphold SSL verification.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
         private Boolean isSslVerifyDisabled;
 
+        /**
+         * Defines whether or not to uphold SSL verification.
+         *
+         * @param isSslVerifyDisabled the value to set
+         * @return this builder
+         **/
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             this.__explicitlySet__.add("isSslVerifyDisabled");
             return this;
         }
-
+        /**
+         * The duration for which the JWKS should be cached before it is
+         * fetched again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxCacheDurationInHours")
         private Integer maxCacheDurationInHours;
 
+        /**
+         * The duration for which the JWKS should be cached before it is
+         * fetched again.
+         *
+         * @param maxCacheDurationInHours the value to set
+         * @return this builder
+         **/
         public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
             this.maxCacheDurationInHours = maxCacheDurationInHours;
             this.__explicitlySet__.add("maxCacheDurationInHours");
@@ -107,6 +139,12 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * The uri from which to retrieve the key. It must be accessible
+     * without authentication.
+     *
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -118,6 +156,11 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
     private final Boolean isSslVerifyDisabled;
 
+    /**
+     * Defines whether or not to uphold SSL verification.
+     *
+     * @return the value
+     **/
     public Boolean getIsSslVerifyDisabled() {
         return isSslVerifyDisabled;
     }
@@ -130,6 +173,12 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
     @com.fasterxml.jackson.annotation.JsonProperty("maxCacheDurationInHours")
     private final Integer maxCacheDurationInHours;
 
+    /**
+     * The duration for which the JWKS should be cached before it is
+     * fetched again.
+     *
+     * @return the value
+     **/
     public Integer getMaxCacheDurationInHours() {
         return maxCacheDurationInHours;
     }

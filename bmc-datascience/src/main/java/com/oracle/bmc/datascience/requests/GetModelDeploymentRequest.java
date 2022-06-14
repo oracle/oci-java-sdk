@@ -16,6 +16,9 @@ public class GetModelDeploymentRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String modelDeploymentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+     */
     public String getModelDeploymentId() {
         return modelDeploymentId;
     }
@@ -25,6 +28,10 @@ public class GetModelDeploymentRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,10 +43,14 @@ public class GetModelDeploymentRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+         */
         private String modelDeploymentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
+         * @param modelDeploymentId the value to set
          * @return this builder instance
          */
         public Builder modelDeploymentId(String modelDeploymentId) {
@@ -47,11 +58,16 @@ public class GetModelDeploymentRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -129,12 +145,17 @@ public class GetModelDeploymentRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().modelDeploymentId(modelDeploymentId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

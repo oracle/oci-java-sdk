@@ -19,6 +19,9 @@ public class CreateIngressGatewayRouteTableRequest
     private com.oracle.bmc.servicemesh.model.CreateIngressGatewayRouteTableDetails
             createIngressGatewayRouteTableDetails;
 
+    /**
+     * Details for the new IngressGatewayRouteTable.
+     */
     public com.oracle.bmc.servicemesh.model.CreateIngressGatewayRouteTableDetails
             getCreateIngressGatewayRouteTableDetails() {
         return createIngressGatewayRouteTableDetails;
@@ -33,6 +36,14 @@ public class CreateIngressGatewayRouteTableRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -41,6 +52,9 @@ public class CreateIngressGatewayRouteTableRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,11 +77,15 @@ public class CreateIngressGatewayRouteTableRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new IngressGatewayRouteTable.
+         */
         private com.oracle.bmc.servicemesh.model.CreateIngressGatewayRouteTableDetails
                 createIngressGatewayRouteTableDetails = null;
 
         /**
          * Details for the new IngressGatewayRouteTable.
+         * @param createIngressGatewayRouteTableDetails the value to set
          * @return this builder instance
          */
         public Builder createIngressGatewayRouteTableDetails(
@@ -77,6 +95,14 @@ public class CreateIngressGatewayRouteTableRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -86,6 +112,7 @@ public class CreateIngressGatewayRouteTableRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -93,10 +120,14 @@ public class CreateIngressGatewayRouteTableRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -189,7 +220,8 @@ public class CreateIngressGatewayRouteTableRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -198,6 +230,10 @@ public class CreateIngressGatewayRouteTableRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

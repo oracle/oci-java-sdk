@@ -69,118 +69,248 @@ public final class ApplicationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of a compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of a compartment.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. This name is not necessarily unique.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. This name is not necessarily unique.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The application ID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The application ID.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The Spark language.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private ApplicationLanguage language;
 
+        /**
+         * The Spark language.
+         *
+         * @param language the value to set
+         * @return this builder
+         **/
         public Builder language(ApplicationLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-
+        /**
+         * The current state of this application.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ApplicationLifecycleState lifecycleState;
 
+        /**
+         * The current state of this application.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(ApplicationLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The OCID of the user who created the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
         private String ownerPrincipalId;
 
+        /**
+         * The OCID of the user who created the resource.
+         *
+         * @param ownerPrincipalId the value to set
+         * @return this builder
+         **/
         public Builder ownerPrincipalId(String ownerPrincipalId) {
             this.ownerPrincipalId = ownerPrincipalId;
             this.__explicitlySet__.add("ownerPrincipalId");
             return this;
         }
-
+        /**
+         * The username of the user who created the resource.  If the username of the owner does not exist,
+         * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
         private String ownerUserName;
 
+        /**
+         * The username of the user who created the resource.  If the username of the owner does not exist,
+         * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
+         *
+         * @param ownerUserName the value to set
+         * @return this builder
+         **/
         public Builder ownerUserName(String ownerUserName) {
             this.ownerUserName = ownerUserName;
             this.__explicitlySet__.add("ownerUserName");
             return this;
         }
-
+        /**
+         * The Spark version utilized to run the application.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
 
+        /**
+         * The Spark version utilized to run the application.
+         *
+         * @param sparkVersion the value to set
+         * @return this builder
+         **/
         public Builder sparkVersion(String sparkVersion) {
             this.sparkVersion = sparkVersion;
             this.__explicitlySet__.add("sparkVersion");
             return this;
         }
-
+        /**
+         * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The Spark application processing type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ApplicationType type;
 
+        /**
+         * The Spark application processing type.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(ApplicationType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -250,6 +380,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of a compartment.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -262,6 +397,12 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -273,6 +414,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. This name is not necessarily unique.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -286,6 +432,13 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -297,6 +450,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The application ID.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -308,6 +466,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final ApplicationLanguage language;
 
+    /**
+     * The Spark language.
+     *
+     * @return the value
+     **/
     public ApplicationLanguage getLanguage() {
         return language;
     }
@@ -319,6 +482,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ApplicationLifecycleState lifecycleState;
 
+    /**
+     * The current state of this application.
+     *
+     * @return the value
+     **/
     public ApplicationLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -330,6 +498,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
     private final String ownerPrincipalId;
 
+    /**
+     * The OCID of the user who created the resource.
+     *
+     * @return the value
+     **/
     public String getOwnerPrincipalId() {
         return ownerPrincipalId;
     }
@@ -342,6 +515,12 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
     private final String ownerUserName;
 
+    /**
+     * The username of the user who created the resource.  If the username of the owner does not exist,
+     * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
+     *
+     * @return the value
+     **/
     public String getOwnerUserName() {
         return ownerUserName;
     }
@@ -353,6 +532,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
     private final String sparkVersion;
 
+    /**
+     * The Spark version utilized to run the application.
+     *
+     * @return the value
+     **/
     public String getSparkVersion() {
         return sparkVersion;
     }
@@ -365,6 +549,12 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -377,6 +567,12 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -388,6 +584,11 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ApplicationType type;
 
+    /**
+     * The Spark application processing type.
+     *
+     * @return the value
+     **/
     public ApplicationType getType() {
         return type;
     }

@@ -32,9 +32,23 @@ public final class LoadBalancerPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of a load balancing policy.
+         * <p>
+         * Example: 'LEAST_CONNECTIONS'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of a load balancing policy.
+         * <p>
+         * Example: 'LEAST_CONNECTIONS'
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -79,6 +93,13 @@ public final class LoadBalancerPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of a load balancing policy.
+     * <p>
+     * Example: 'LEAST_CONNECTIONS'
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

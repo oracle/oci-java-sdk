@@ -76,6 +76,10 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -86,6 +90,10 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the configuration source provider is located.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -96,6 +104,10 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Human-readable display name for the configuration source provider.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -106,6 +118,10 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the configuration source provider.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -119,6 +135,13 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time when the configuration source provider was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -182,6 +205,13 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the configuration source provider.
+     * For more information about configuration source provider lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates).
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -202,6 +232,13 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -215,6 +252,13 @@ public class ConfigurationSourceProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

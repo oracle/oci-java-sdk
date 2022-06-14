@@ -35,19 +35,33 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
             this.__explicitlySet__.add("frequency");
             return this;
         }
-
+        /**
+         * This holds the week of the month in which the schedule should be triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weekOfMonth")
         private WeekOfMonth weekOfMonth;
 
+        /**
+         * This holds the week of the month in which the schedule should be triggered.
+         * @param weekOfMonth the value to set
+         * @return this builder
+         **/
         public Builder weekOfMonth(WeekOfMonth weekOfMonth) {
             this.weekOfMonth = weekOfMonth;
             this.__explicitlySet__.add("weekOfMonth");
             return this;
         }
-
+        /**
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
+        /**
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         * @param interval the value to set
+         * @return this builder
+         **/
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -62,10 +76,17 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
             this.__explicitlySet__.add("time");
             return this;
         }
-
+        /**
+         * This holds the day of the week on which the schedule should be triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
+        /**
+         * This holds the day of the week on which the schedule should be triggered.
+         * @param dayOfWeek the value to set
+         * @return this builder
+         **/
         public Builder dayOfWeek(DayOfWeek dayOfWeek) {
             this.dayOfWeek = dayOfWeek;
             this.__explicitlySet__.add("dayOfWeek");
@@ -180,6 +201,10 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("weekOfMonth")
     private final WeekOfMonth weekOfMonth;
 
+    /**
+     * This holds the week of the month in which the schedule should be triggered.
+     * @return the value
+     **/
     public WeekOfMonth getWeekOfMonth() {
         return weekOfMonth;
     }
@@ -190,6 +215,10 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
+    /**
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+     * @return the value
+     **/
     public Integer getInterval() {
         return interval;
     }
@@ -260,6 +289,10 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     private final DayOfWeek dayOfWeek;
 
+    /**
+     * This holds the day of the week on which the schedule should be triggered.
+     * @return the value
+     **/
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }

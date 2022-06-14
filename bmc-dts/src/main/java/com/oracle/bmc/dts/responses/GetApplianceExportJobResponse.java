@@ -13,6 +13,10 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
+    /**
+     * The returned ApplianceExportJob instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.ApplianceExportJob getApplianceExportJob() {
         return applianceExportJob;
     }
@@ -60,22 +72,46 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned ApplianceExportJob instance.
+         */
         private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
+        /**
+         * The returned ApplianceExportJob instance.
+         * @param applianceExportJob the value to set
+         * @return this builder
+         */
         public Builder applianceExportJob(
                 com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob) {
             this.applianceExportJob = applianceExportJob;
@@ -95,12 +131,20 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetApplianceExportJobResponse build() {
             return new GetApplianceExportJobResponse(
                     __httpStatusCode__, opcRequestId, etag, applianceExportJob);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

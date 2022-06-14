@@ -17,6 +17,9 @@ public class GetExternalBackupJobRequest
      */
     private String backupId;
 
+    /**
+     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getBackupId() {
         return backupId;
     }
@@ -28,10 +31,14 @@ public class GetExternalBackupJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String backupId = null;
 
         /**
          * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param backupId the value to set
          * @return this builder instance
          */
         public Builder backupId(String backupId) {
@@ -107,12 +114,17 @@ public class GetExternalBackupJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().backupId(backupId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,9 +28,17 @@ public final class LogSetsCount {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the total number of log sets the tenancy has configured.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
+        /**
+         * This is the total number of log sets the tenancy has configured.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Long count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -72,6 +80,10 @@ public final class LogSetsCount {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
+    /**
+     * This is the total number of log sets the tenancy has configured.
+     * @return the value
+     **/
     public Long getCount() {
         return count;
     }

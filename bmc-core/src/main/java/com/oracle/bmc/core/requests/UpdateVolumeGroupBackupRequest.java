@@ -19,6 +19,10 @@ public class UpdateVolumeGroupBackupRequest
      */
     private String volumeGroupBackupId;
 
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+     *
+     */
     public String getVolumeGroupBackupId() {
         return volumeGroupBackupId;
     }
@@ -27,6 +31,9 @@ public class UpdateVolumeGroupBackupRequest
      */
     private com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails updateVolumeGroupBackupDetails;
 
+    /**
+     * Update volume group backup fields
+     */
     public com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails
             getUpdateVolumeGroupBackupDetails() {
         return updateVolumeGroupBackupDetails;
@@ -39,6 +46,12 @@ public class UpdateVolumeGroupBackupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,11 +74,16 @@ public class UpdateVolumeGroupBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+         *
+         */
         private String volumeGroupBackupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
          *
+         * @param volumeGroupBackupId the value to set
          * @return this builder instance
          */
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
@@ -73,11 +91,15 @@ public class UpdateVolumeGroupBackupRequest
             return this;
         }
 
+        /**
+         * Update volume group backup fields
+         */
         private com.oracle.bmc.core.model.UpdateVolumeGroupBackupDetails
                 updateVolumeGroupBackupDetails = null;
 
         /**
          * Update volume group backup fields
+         * @param updateVolumeGroupBackupDetails the value to set
          * @return this builder instance
          */
         public Builder updateVolumeGroupBackupDetails(
@@ -87,6 +109,12 @@ public class UpdateVolumeGroupBackupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -94,6 +122,7 @@ public class UpdateVolumeGroupBackupRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -184,7 +213,8 @@ public class UpdateVolumeGroupBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +223,10 @@ public class UpdateVolumeGroupBackupRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

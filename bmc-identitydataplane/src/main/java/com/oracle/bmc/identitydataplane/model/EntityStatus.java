@@ -28,18 +28,45 @@ public final class EntityStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The entity status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The entity status.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * A bit mask showing the reason why the entity is inactive:
+         * - bit 0: ACTIVE
+         * - bit 1: SUSPENDED
+         * - bit 2: DISABLED
+         * - bit 3: BLOCKED
+         * - bit 4: LOCKED
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveBitMask")
         private Long inactiveBitMask;
 
+        /**
+         * A bit mask showing the reason why the entity is inactive:
+         * - bit 0: ACTIVE
+         * - bit 1: SUSPENDED
+         * - bit 2: DISABLED
+         * - bit 3: BLOCKED
+         * - bit 4: LOCKED
+         *
+         * @param inactiveBitMask the value to set
+         * @return this builder
+         **/
         public Builder inactiveBitMask(Long inactiveBitMask) {
             this.inactiveBitMask = inactiveBitMask;
             this.__explicitlySet__.add("inactiveBitMask");
@@ -81,6 +108,10 @@ public final class EntityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The entity status.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -97,6 +128,16 @@ public final class EntityStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveBitMask")
     private final Long inactiveBitMask;
 
+    /**
+     * A bit mask showing the reason why the entity is inactive:
+     * - bit 0: ACTIVE
+     * - bit 1: SUSPENDED
+     * - bit 2: DISABLED
+     * - bit 3: BLOCKED
+     * - bit 4: LOCKED
+     *
+     * @return the value
+     **/
     public Long getInactiveBitMask() {
         return inactiveBitMask;
     }

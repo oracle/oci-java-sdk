@@ -16,6 +16,9 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,6 +83,10 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * Return shapes that are supported by the service feature.
+     *
+     */
     public java.util.List<IsSupportedFor> getIsSupportedFor() {
         return isSupportedFor;
     }
@@ -82,6 +95,9 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String availabilityDomain;
 
+    /**
+     * The name of the Availability Domain.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -90,6 +106,9 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String name;
 
+    /**
+     * Name
+     */
     public String getName() {
         return name;
     }
@@ -101,10 +120,14 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -112,6 +135,12 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -119,6 +148,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * contact Oracle about a specific request, please provide the request
          * ID that you supplied in this header with the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -126,11 +156,16 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Return shapes that are supported by the service feature.
+         *
+         */
         private java.util.List<IsSupportedFor> isSupportedFor = null;
 
         /**
          * Return shapes that are supported by the service feature.
          *
+         * @param isSupportedFor the value to set
          * @return this builder instance
          */
         public Builder isSupportedFor(java.util.List<IsSupportedFor> isSupportedFor) {
@@ -141,16 +176,21 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Singular setter. Return shapes that are supported by the service feature.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder isSupportedFor(IsSupportedFor singularValue) {
             return this.isSupportedFor(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The name of the Availability Domain.
+         */
         private String availabilityDomain = null;
 
         /**
          * The name of the Availability Domain.
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -158,10 +198,14 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Name
+         */
         private String name = null;
 
         /**
          * Name
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -245,7 +289,8 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -256,6 +301,10 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .name(name);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

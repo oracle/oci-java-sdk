@@ -30,9 +30,17 @@ public final class BatchDetectLanguageTextClassificationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Documents for detect text classification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<TextClassificationDocument> documents;
 
+        /**
+         * List of Documents for detect text classification.
+         * @param documents the value to set
+         * @return this builder
+         **/
         public Builder documents(java.util.List<TextClassificationDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
@@ -75,6 +83,10 @@ public final class BatchDetectLanguageTextClassificationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<TextClassificationDocument> documents;
 
+    /**
+     * List of Documents for detect text classification.
+     * @return the value
+     **/
     public java.util.List<TextClassificationDocument> getDocuments() {
         return documents;
     }

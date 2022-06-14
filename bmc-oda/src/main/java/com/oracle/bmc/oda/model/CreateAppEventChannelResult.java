@@ -118,37 +118,73 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The secret key used to verify the authenticity of received messages.
+         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
         private String secretKey;
 
+        /**
+         * The secret key used to verify the authenticity of received messages.
+         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+         *
+         * @param secretKey the value to set
+         * @return this builder
+         **/
         public Builder secretKey(String secretKey) {
             this.secretKey = secretKey;
             this.__explicitlySet__.add("secretKey");
             return this;
         }
-
+        /**
+         * The URL for sending errors and responses to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
         private String outboundUrl;
 
+        /**
+         * The URL for sending errors and responses to.
+         * @param outboundUrl the value to set
+         * @return this builder
+         **/
         public Builder outboundUrl(String outboundUrl) {
             this.outboundUrl = outboundUrl;
             this.__explicitlySet__.add("outboundUrl");
             return this;
         }
-
+        /**
+         * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
         private java.util.List<String> eventSinkBotIds;
 
+        /**
+         * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+         * @param eventSinkBotIds the value to set
+         * @return this builder
+         **/
         public Builder eventSinkBotIds(java.util.List<String> eventSinkBotIds) {
             this.eventSinkBotIds = eventSinkBotIds;
             this.__explicitlySet__.add("eventSinkBotIds");
             return this;
         }
-
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
         private String webhookUrl;
 
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         * @param webhookUrl the value to set
+         * @return this builder
+         **/
         public Builder webhookUrl(String webhookUrl) {
             this.webhookUrl = webhookUrl;
             this.__explicitlySet__.add("webhookUrl");
@@ -255,6 +291,12 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
     private final String secretKey;
 
+    /**
+     * The secret key used to verify the authenticity of received messages.
+     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new key.
+     *
+     * @return the value
+     **/
     public String getSecretKey() {
         return secretKey;
     }
@@ -265,6 +307,10 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
     private final String outboundUrl;
 
+    /**
+     * The URL for sending errors and responses to.
+     * @return the value
+     **/
     public String getOutboundUrl() {
         return outboundUrl;
     }
@@ -275,6 +321,10 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("eventSinkBotIds")
     private final java.util.List<String> eventSinkBotIds;
 
+    /**
+     * The IDs of the Skills and Digital Assistants that the Channel is routed to.
+     * @return the value
+     **/
     public java.util.List<String> getEventSinkBotIds() {
         return eventSinkBotIds;
     }
@@ -287,6 +337,12 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
     private final String webhookUrl;
 
+    /**
+     * The URL to use to send messages to this channel.
+     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+     *
+     * @return the value
+     **/
     public String getWebhookUrl() {
         return webhookUrl;
     }

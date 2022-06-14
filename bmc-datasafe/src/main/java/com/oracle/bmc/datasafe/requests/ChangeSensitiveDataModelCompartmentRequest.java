@@ -18,6 +18,9 @@ public class ChangeSensitiveDataModelCompartmentRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -27,6 +30,9 @@ public class ChangeSensitiveDataModelCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeSensitiveDataModelCompartmentDetails
             changeSensitiveDataModelCompartmentDetails;
 
+    /**
+     * Details to change the compartment of a sensitive data model.
+     */
     public com.oracle.bmc.datasafe.model.ChangeSensitiveDataModelCompartmentDetails
             getChangeSensitiveDataModelCompartmentDetails() {
         return changeSensitiveDataModelCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeSensitiveDataModelCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeSensitiveDataModelCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +78,13 @@ public class ChangeSensitiveDataModelCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -83,10 +107,14 @@ public class ChangeSensitiveDataModelCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -94,11 +122,15 @@ public class ChangeSensitiveDataModelCompartmentRequest
             return this;
         }
 
+        /**
+         * Details to change the compartment of a sensitive data model.
+         */
         private com.oracle.bmc.datasafe.model.ChangeSensitiveDataModelCompartmentDetails
                 changeSensitiveDataModelCompartmentDetails = null;
 
         /**
          * Details to change the compartment of a sensitive data model.
+         * @param changeSensitiveDataModelCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeSensitiveDataModelCompartmentDetails(
@@ -109,6 +141,14 @@ public class ChangeSensitiveDataModelCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +158,7 @@ public class ChangeSensitiveDataModelCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,10 +166,14 @@ public class ChangeSensitiveDataModelCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +181,13 @@ public class ChangeSensitiveDataModelCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -144,6 +196,7 @@ public class ChangeSensitiveDataModelCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -242,7 +295,8 @@ public class ChangeSensitiveDataModelCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -254,6 +308,10 @@ public class ChangeSensitiveDataModelCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

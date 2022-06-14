@@ -34,27 +34,49 @@ public final class SecurityScoreAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key-value pairs of dimensions and their names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
+        /**
+         * The key-value pairs of dimensions and their names.
+         * @param dimensionsMap the value to set
+         * @return this builder
+         **/
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-
+        /**
+         * The security rating with given dimension/s
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityRating")
         private SecurityRating securityRating;
 
+        /**
+         * The security rating with given dimension/s
+         * @param securityRating the value to set
+         * @return this builder
+         **/
         public Builder securityRating(SecurityRating securityRating) {
             this.securityRating = securityRating;
             this.__explicitlySet__.add("securityRating");
             return this;
         }
-
+        /**
+         * The security score with given dimension/s
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityScore")
         private Integer securityScore;
 
+        /**
+         * The security score with given dimension/s
+         * @param securityScore the value to set
+         * @return this builder
+         **/
         public Builder securityScore(Integer securityScore) {
             this.securityScore = securityScore;
             this.__explicitlySet__.add("securityScore");
@@ -100,6 +122,10 @@ public final class SecurityScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
+    /**
+     * The key-value pairs of dimensions and their names.
+     * @return the value
+     **/
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
@@ -110,6 +136,10 @@ public final class SecurityScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("securityRating")
     private final SecurityRating securityRating;
 
+    /**
+     * The security rating with given dimension/s
+     * @return the value
+     **/
     public SecurityRating getSecurityRating() {
         return securityRating;
     }
@@ -120,6 +150,10 @@ public final class SecurityScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("securityScore")
     private final Integer securityScore;
 
+    /**
+     * The security score with given dimension/s
+     * @return the value
+     **/
     public Integer getSecurityScore() {
         return securityScore;
     }

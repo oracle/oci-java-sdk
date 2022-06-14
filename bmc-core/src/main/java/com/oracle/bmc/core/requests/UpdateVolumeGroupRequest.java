@@ -18,6 +18,9 @@ public class UpdateVolumeGroupRequest
      */
     private String volumeGroupId;
 
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+     */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
@@ -26,6 +29,9 @@ public class UpdateVolumeGroupRequest
      */
     private com.oracle.bmc.core.model.UpdateVolumeGroupDetails updateVolumeGroupDetails;
 
+    /**
+     * Update volume group's set of volumes and/or display name
+     */
     public com.oracle.bmc.core.model.UpdateVolumeGroupDetails getUpdateVolumeGroupDetails() {
         return updateVolumeGroupDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateVolumeGroupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +60,12 @@ public class UpdateVolumeGroupRequest
      */
     private Boolean preserveVolumeReplica;
 
+    /**
+     * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
+     * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
+     * value is {@code true}.
+     *
+     */
     public Boolean getPreserveVolumeReplica() {
         return preserveVolumeReplica;
     }
@@ -69,10 +87,14 @@ public class UpdateVolumeGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         */
         private String volumeGroupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         * @param volumeGroupId the value to set
          * @return this builder instance
          */
         public Builder volumeGroupId(String volumeGroupId) {
@@ -80,10 +102,14 @@ public class UpdateVolumeGroupRequest
             return this;
         }
 
+        /**
+         * Update volume group's set of volumes and/or display name
+         */
         private com.oracle.bmc.core.model.UpdateVolumeGroupDetails updateVolumeGroupDetails = null;
 
         /**
          * Update volume group's set of volumes and/or display name
+         * @param updateVolumeGroupDetails the value to set
          * @return this builder instance
          */
         public Builder updateVolumeGroupDetails(
@@ -92,6 +118,12 @@ public class UpdateVolumeGroupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -99,6 +131,7 @@ public class UpdateVolumeGroupRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -106,6 +139,12 @@ public class UpdateVolumeGroupRequest
             return this;
         }
 
+        /**
+         * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
+         * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
+         * value is {@code true}.
+         *
+         */
         private Boolean preserveVolumeReplica = null;
 
         /**
@@ -113,6 +152,7 @@ public class UpdateVolumeGroupRequest
          * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
          * value is {@code true}.
          *
+         * @param preserveVolumeReplica the value to set
          * @return this builder instance
          */
         public Builder preserveVolumeReplica(Boolean preserveVolumeReplica) {
@@ -205,7 +245,8 @@ public class UpdateVolumeGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +256,10 @@ public class UpdateVolumeGroupRequest
                 .preserveVolumeReplica(preserveVolumeReplica);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

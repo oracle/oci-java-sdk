@@ -32,6 +32,7 @@ public final class HostInsightResourceStatisticsAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("hostDetails")
         private HostDetails hostDetails;
 

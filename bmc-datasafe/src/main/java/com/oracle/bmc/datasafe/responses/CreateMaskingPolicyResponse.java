@@ -14,6 +14,11 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +59,11 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String location;
 
+    /**
+     * The URI of the masking policy.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -53,6 +73,10 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.datasafe.model.MaskingPolicy maskingPolicy;
 
+    /**
+     * The returned MaskingPolicy instance.
+     * @return the value
+     */
     public com.oracle.bmc.datasafe.model.MaskingPolicy getMaskingPolicy() {
         return maskingPolicy;
     }
@@ -88,36 +112,84 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The URI of the masking policy.
+         *
+         */
         private String location;
 
+        /**
+         * The URI of the masking policy.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned MaskingPolicy instance.
+         */
         private com.oracle.bmc.datasafe.model.MaskingPolicy maskingPolicy;
 
+        /**
+         * The returned MaskingPolicy instance.
+         * @param maskingPolicy the value to set
+         * @return this builder
+         */
         public Builder maskingPolicy(com.oracle.bmc.datasafe.model.MaskingPolicy maskingPolicy) {
             this.maskingPolicy = maskingPolicy;
             return this;
@@ -138,6 +210,10 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateMaskingPolicyResponse build() {
             return new CreateMaskingPolicyResponse(
                     __httpStatusCode__,
@@ -149,6 +225,10 @@ public class CreateMaskingPolicyResponse extends com.oracle.bmc.responses.BmcRes
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

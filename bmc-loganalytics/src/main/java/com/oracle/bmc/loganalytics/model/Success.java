@@ -27,9 +27,17 @@ public final class Success {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A human-readable success string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A human-readable success string.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -71,6 +79,10 @@ public final class Success {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human-readable success string.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

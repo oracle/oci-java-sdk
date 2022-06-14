@@ -13,6 +13,10 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +48,15 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcMultipartMd5;
 
+    /**
+     * Base-64 representation of the multipart object hash.
+     * The multipart object hash is calculated by taking the MD5 hashes of the parts passed to this call,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the MD5 hash of the concatenated values. The multipart object hash is followed
+     * by a hyphen and the total number of parts (for example, '-6').
+     *
+     * @return the value
+     */
     public String getOpcMultipartMd5() {
         return opcMultipartMd5;
     }
@@ -47,6 +66,10 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private String eTag;
 
+    /**
+     * The entity tag (ETag) for the object.
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -56,6 +79,10 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.Date lastModified;
 
+    /**
+     * The time the object was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -65,6 +92,10 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private String versionId;
 
+    /**
+     * VersionId of the newly created object
+     * @return the value
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -103,43 +134,105 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Base-64 representation of the multipart object hash.
+         * The multipart object hash is calculated by taking the MD5 hashes of the parts passed to this call,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the MD5 hash of the concatenated values. The multipart object hash is followed
+         * by a hyphen and the total number of parts (for example, '-6').
+         *
+         */
         private String opcMultipartMd5;
 
+        /**
+         * Base-64 representation of the multipart object hash.
+         * The multipart object hash is calculated by taking the MD5 hashes of the parts passed to this call,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the MD5 hash of the concatenated values. The multipart object hash is followed
+         * by a hyphen and the total number of parts (for example, '-6').
+         *
+         * @param opcMultipartMd5 the value to set
+         * @return this builder
+         */
         public Builder opcMultipartMd5(String opcMultipartMd5) {
             this.opcMultipartMd5 = opcMultipartMd5;
             return this;
         }
 
+        /**
+         * The entity tag (ETag) for the object.
+         */
         private String eTag;
 
+        /**
+         * The entity tag (ETag) for the object.
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The time the object was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The time the object was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * VersionId of the newly created object
+         */
         private String versionId;
 
+        /**
+         * VersionId of the newly created object
+         * @param versionId the value to set
+         * @return this builder
+         */
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             return this;
@@ -161,6 +254,10 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CommitMultipartUploadResponse build() {
             return new CommitMultipartUploadResponse(
                     __httpStatusCode__,
@@ -173,6 +270,10 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

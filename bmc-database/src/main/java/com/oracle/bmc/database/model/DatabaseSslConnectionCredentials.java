@@ -28,45 +28,99 @@ package com.oracle.bmc.database.model;
 public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCredentials {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
+         * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
+         * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
+         * the "." character that separates the "x" and "y" portions of the name.
+         * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
+         * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
+         * using the name.
+         * <p>
+         * For example: inventorydb.abc112233445566778899
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
 
+        /**
+         * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
+         * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
+         * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
+         * the "." character that separates the "x" and "y" portions of the name.
+         * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
+         * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
+         * using the name.
+         * <p>
+         * For example: inventorydb.abc112233445566778899
+         *
+         * @param credentialName the value to set
+         * @return this builder
+         **/
         public Builder credentialName(String credentialName) {
             this.credentialName = credentialName;
             this.__explicitlySet__.add("credentialName");
             return this;
         }
-
+        /**
+         * The username that will be used to connect to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The username that will be used to connect to the database.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * The password that will be used to connect to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password that will be used to connect to the database.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-
+        /**
+         * The role of the user that will be connecting to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
+        /**
+         * The role of the user that will be connecting to the database.
+         * @param role the value to set
+         * @return this builder
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param sslSecretId the value to set
+         * @return this builder
+         **/
         public Builder sslSecretId(String sslSecretId) {
             this.sslSecretId = sslSecretId;
             this.__explicitlySet__.add("sslSecretId");
@@ -139,6 +193,19 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
     private final String credentialName;
 
+    /**
+     * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
+     * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
+     * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
+     * the "." character that separates the "x" and "y" portions of the name.
+     * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
+     * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
+     * using the name.
+     * <p>
+     * For example: inventorydb.abc112233445566778899
+     *
+     * @return the value
+     **/
     public String getCredentialName() {
         return credentialName;
     }
@@ -149,6 +216,10 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The username that will be used to connect to the database.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -159,6 +230,10 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password that will be used to connect to the database.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }
@@ -215,6 +290,10 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * The role of the user that will be connecting to the database.
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }
@@ -225,6 +304,10 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getSslSecretId() {
         return sslSecretId;
     }

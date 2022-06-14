@@ -18,6 +18,9 @@ public class ChangeModelCompartmentRequest
      */
     private String modelId;
 
+    /**
+     * The OCID of the Model.
+     */
     public String getModelId() {
         return modelId;
     }
@@ -27,6 +30,9 @@ public class ChangeModelCompartmentRequest
     private com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails
             changeModelCompartmentDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails
             getChangeModelCompartmentDetails() {
         return changeModelCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeModelCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeModelCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangeModelCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangeModelCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Model.
+         */
         private String modelId = null;
 
         /**
          * The OCID of the Model.
+         * @param modelId the value to set
          * @return this builder instance
          */
         public Builder modelId(String modelId) {
@@ -95,11 +124,15 @@ public class ChangeModelCompartmentRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.aianomalydetection.model.ChangeModelCompartmentDetails
                 changeModelCompartmentDetails = null;
 
         /**
          * The information to be updated.
+         * @param changeModelCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeModelCompartmentDetails(
@@ -109,6 +142,14 @@ public class ChangeModelCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +159,7 @@ public class ChangeModelCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,10 +167,14 @@ public class ChangeModelCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,14 @@ public class ChangeModelCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeModelCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -240,7 +295,8 @@ public class ChangeModelCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -251,6 +307,10 @@ public class ChangeModelCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

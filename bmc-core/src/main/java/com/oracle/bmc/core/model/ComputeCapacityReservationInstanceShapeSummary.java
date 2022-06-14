@@ -32,18 +32,37 @@ public final class ComputeCapacityReservationInstanceShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape's availability domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The shape's availability domain.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The name of the available shape used to launch instances in a compute capacity reservation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
+        /**
+         * The name of the available shape used to launch instances in a compute capacity reservation.
+         *
+         * @param instanceShape the value to set
+         * @return this builder
+         **/
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -90,6 +109,11 @@ public final class ComputeCapacityReservationInstanceShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The shape's availability domain.
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -101,6 +125,11 @@ public final class ComputeCapacityReservationInstanceShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
+    /**
+     * The name of the available shape used to launch instances in a compute capacity reservation.
+     *
+     * @return the value
+     **/
     public String getInstanceShape() {
         return instanceShape;
     }

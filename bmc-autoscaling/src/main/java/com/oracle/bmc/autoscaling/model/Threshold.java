@@ -28,9 +28,21 @@ public final class Threshold {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+         * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
+        /**
+         * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+         * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+         *
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -135,6 +147,12 @@ public final class Threshold {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
+    /**
+     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+     * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+     *
+     * @return the value
+     **/
     public Operator getOperator() {
         return operator;
     }

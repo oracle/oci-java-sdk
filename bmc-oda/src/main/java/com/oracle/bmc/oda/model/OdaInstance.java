@@ -96,208 +96,386 @@ public final class OdaInstance {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique immutable identifier that was assigned when the instance was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique immutable identifier that was assigned when the instance was created.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * User-defined name for the Digital Assistant instance. Avoid entering confidential information.
+         * You can change this value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User-defined name for the Digital Assistant instance. Avoid entering confidential information.
+         * You can change this value.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the Digital Assistant instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the Digital Assistant instance.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Identifier of the compartment that the instance belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Identifier of the compartment that the instance belongs to.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Shape or size of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private ShapeName shapeName;
 
+        /**
+         * Shape or size of the instance.
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(ShapeName shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * URL for the Digital Assistant web application that's associated with the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("webAppUrl")
         private String webAppUrl;
 
+        /**
+         * URL for the Digital Assistant web application that's associated with the instance.
+         * @param webAppUrl the value to set
+         * @return this builder
+         **/
         public Builder webAppUrl(String webAppUrl) {
             this.webAppUrl = webAppUrl;
             this.__explicitlySet__.add("webAppUrl");
             return this;
         }
-
+        /**
+         * URL for the connector's endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorUrl")
         private String connectorUrl;
 
+        /**
+         * URL for the connector's endpoint.
+         * @param connectorUrl the value to set
+         * @return this builder
+         **/
         public Builder connectorUrl(String connectorUrl) {
             this.connectorUrl = connectorUrl;
             this.__explicitlySet__.add("connectorUrl");
             return this;
         }
-
+        /**
+         * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the Digital Assistant instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Digital Assistant instance.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The current sub-state of the Digital Assistant instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
         private LifecycleSubState lifecycleSubState;
 
+        /**
+         * The current sub-state of the Digital Assistant instance.
+         * @param lifecycleSubState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleSubState(LifecycleSubState lifecycleSubState) {
             this.lifecycleSubState = lifecycleSubState;
             this.__explicitlySet__.add("lifecycleSubState");
             return this;
         }
-
+        /**
+         * A message that describes the current state in more detail.
+         * For example, actionable information about an instance that's in the {@code FAILED} state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
+        /**
+         * A message that describes the current state in more detail.
+         * For example, actionable information about an instance that's in the {@code FAILED} state.
+         *
+         * @param stateMessage the value to set
+         * @return this builder
+         **/
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = stateMessage;
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
         private Boolean isRoleBasedAccess;
 
+        /**
+         * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         * @param isRoleBasedAccess the value to set
+         * @return this builder
+         **/
         public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
             this.isRoleBasedAccess = isRoleBasedAccess;
             this.__explicitlySet__.add("isRoleBasedAccess");
             return this;
         }
-
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
         private String identityDomain;
 
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         * @param identityDomain the value to set
+         * @return this builder
+         **/
         public Builder identityDomain(String identityDomain) {
             this.identityDomain = identityDomain;
             this.__explicitlySet__.add("identityDomain");
             return this;
         }
-
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
         private String identityAppGuid;
 
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+         * @param identityAppGuid the value to set
+         * @return this builder
+         **/
         public Builder identityAppGuid(String identityAppGuid) {
             this.identityAppGuid = identityAppGuid;
             this.__explicitlySet__.add("identityAppGuid");
             return this;
         }
-
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityAppConsoleUrl")
         private String identityAppConsoleUrl;
 
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+         * @param identityAppConsoleUrl the value to set
+         * @return this builder
+         **/
         public Builder identityAppConsoleUrl(String identityAppConsoleUrl) {
             this.identityAppConsoleUrl = identityAppConsoleUrl;
             this.__explicitlySet__.add("identityAppConsoleUrl");
             return this;
         }
-
+        /**
+         * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
         private java.util.List<String> importedPackageNames;
 
+        /**
+         * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+         * @param importedPackageNames the value to set
+         * @return this builder
+         **/
         public Builder importedPackageNames(java.util.List<String> importedPackageNames) {
             this.importedPackageNames = importedPackageNames;
             this.__explicitlySet__.add("importedPackageNames");
             return this;
         }
-
+        /**
+         * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importedPackageIds")
         private java.util.List<String> importedPackageIds;
 
+        /**
+         * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+         * @param importedPackageIds the value to set
+         * @return this builder
+         **/
         public Builder importedPackageIds(java.util.List<String> importedPackageIds) {
             this.importedPackageIds = importedPackageIds;
             this.__explicitlySet__.add("importedPackageIds");
             return this;
         }
-
+        /**
+         * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
         private java.util.List<String> attachmentTypes;
 
+        /**
+         * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+         * @param attachmentTypes the value to set
+         * @return this builder
+         **/
         public Builder attachmentTypes(java.util.List<String> attachmentTypes) {
             this.attachmentTypes = attachmentTypes;
             this.__explicitlySet__.add("attachmentTypes");
             return this;
         }
-
+        /**
+         * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentIds")
         private java.util.List<String> attachmentIds;
 
+        /**
+         * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * @param attachmentIds the value to set
+         * @return this builder
+         **/
         public Builder attachmentIds(java.util.List<String> attachmentIds) {
             this.attachmentIds = attachmentIds;
             this.__explicitlySet__.add("attachmentIds");
             return this;
         }
-
+        /**
+         * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
         private java.util.List<RestrictedOperation> restrictedOperations;
 
+        /**
+         * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * @param restrictedOperations the value to set
+         * @return this builder
+         **/
         public Builder restrictedOperations(
                 java.util.List<RestrictedOperation> restrictedOperations) {
             this.restrictedOperations = restrictedOperations;
@@ -387,6 +565,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique immutable identifier that was assigned when the instance was created.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -399,6 +581,12 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User-defined name for the Digital Assistant instance. Avoid entering confidential information.
+     * You can change this value.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -409,6 +597,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the Digital Assistant instance.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -419,6 +611,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Identifier of the compartment that the instance belongs to.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -477,6 +673,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final ShapeName shapeName;
 
+    /**
+     * Shape or size of the instance.
+     * @return the value
+     **/
     public ShapeName getShapeName() {
         return shapeName;
     }
@@ -487,6 +687,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("webAppUrl")
     private final String webAppUrl;
 
+    /**
+     * URL for the Digital Assistant web application that's associated with the instance.
+     * @return the value
+     **/
     public String getWebAppUrl() {
         return webAppUrl;
     }
@@ -497,6 +701,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("connectorUrl")
     private final String connectorUrl;
 
+    /**
+     * URL for the connector's endpoint.
+     * @return the value
+     **/
     public String getConnectorUrl() {
         return connectorUrl;
     }
@@ -507,6 +715,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -517,6 +729,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -580,6 +796,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Digital Assistant instance.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -649,6 +869,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
     private final LifecycleSubState lifecycleSubState;
 
+    /**
+     * The current sub-state of the Digital Assistant instance.
+     * @return the value
+     **/
     public LifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
@@ -661,6 +885,12 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     private final String stateMessage;
 
+    /**
+     * A message that describes the current state in more detail.
+     * For example, actionable information about an instance that's in the {@code FAILED} state.
+     *
+     * @return the value
+     **/
     public String getStateMessage() {
         return stateMessage;
     }
@@ -673,6 +903,12 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -685,6 +921,12 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -695,6 +937,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isRoleBasedAccess")
     private final Boolean isRoleBasedAccess;
 
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * @return the value
+     **/
     public Boolean getIsRoleBasedAccess() {
         return isRoleBasedAccess;
     }
@@ -705,6 +951,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomain")
     private final String identityDomain;
 
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * @return the value
+     **/
     public String getIdentityDomain() {
         return identityDomain;
     }
@@ -715,6 +965,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
     private final String identityAppGuid;
 
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * @return the value
+     **/
     public String getIdentityAppGuid() {
         return identityAppGuid;
     }
@@ -725,6 +979,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppConsoleUrl")
     private final String identityAppConsoleUrl;
 
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * @return the value
+     **/
     public String getIdentityAppConsoleUrl() {
         return identityAppConsoleUrl;
     }
@@ -735,6 +993,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("importedPackageNames")
     private final java.util.List<String> importedPackageNames;
 
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * @return the value
+     **/
     public java.util.List<String> getImportedPackageNames() {
         return importedPackageNames;
     }
@@ -745,6 +1007,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("importedPackageIds")
     private final java.util.List<String> importedPackageIds;
 
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * @return the value
+     **/
     public java.util.List<String> getImportedPackageIds() {
         return importedPackageIds;
     }
@@ -755,6 +1021,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentTypes")
     private final java.util.List<String> attachmentTypes;
 
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * @return the value
+     **/
     public java.util.List<String> getAttachmentTypes() {
         return attachmentTypes;
     }
@@ -765,6 +1035,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentIds")
     private final java.util.List<String> attachmentIds;
 
+    /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * @return the value
+     **/
     public java.util.List<String> getAttachmentIds() {
         return attachmentIds;
     }
@@ -775,6 +1049,10 @@ public final class OdaInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
     private final java.util.List<RestrictedOperation> restrictedOperations;
 
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * @return the value
+     **/
     public java.util.List<RestrictedOperation> getRestrictedOperations() {
         return restrictedOperations;
     }

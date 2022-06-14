@@ -31,18 +31,33 @@ public final class MonitorScriptParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paramName")
         private String paramName;
 
+        /**
+         * Name of the parameter.
+         * @param paramName the value to set
+         * @return this builder
+         **/
         public Builder paramName(String paramName) {
             this.paramName = paramName;
             this.__explicitlySet__.add("paramName");
             return this;
         }
-
+        /**
+         * Value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paramValue")
         private String paramValue;
 
+        /**
+         * Value of the parameter.
+         * @param paramValue the value to set
+         * @return this builder
+         **/
         public Builder paramValue(String paramValue) {
             this.paramValue = paramValue;
             this.__explicitlySet__.add("paramValue");
@@ -84,6 +99,10 @@ public final class MonitorScriptParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("paramName")
     private final String paramName;
 
+    /**
+     * Name of the parameter.
+     * @return the value
+     **/
     public String getParamName() {
         return paramName;
     }
@@ -94,6 +113,10 @@ public final class MonitorScriptParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("paramValue")
     private final String paramValue;
 
+    /**
+     * Value of the parameter.
+     * @return the value
+     **/
     public String getParamValue() {
         return paramValue;
     }

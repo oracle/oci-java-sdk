@@ -45,54 +45,97 @@ public final class Message {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the stream that the message belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stream")
         private String stream;
 
+        /**
+         * The name of the stream that the message belongs to.
+         * @param stream the value to set
+         * @return this builder
+         **/
         public Builder stream(String stream) {
             this.stream = stream;
             this.__explicitlySet__.add("stream");
             return this;
         }
-
+        /**
+         * The ID of the partition where the message is stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
 
+        /**
+         * The ID of the partition where the message is stored.
+         * @param partition the value to set
+         * @return this builder
+         **/
         public Builder partition(String partition) {
             this.partition = partition;
             this.__explicitlySet__.add("partition");
             return this;
         }
-
+        /**
+         * The key associated with the message, expressed as a byte array.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private byte[] key;
 
+        /**
+         * The key associated with the message, expressed as a byte array.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(byte[] key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The value associated with the message, expressed as a byte array.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private byte[] value;
 
+        /**
+         * The value associated with the message, expressed as a byte array.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(byte[] value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The offset of the message, which uniquely identifies it within the partition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Long offset;
 
+        /**
+         * The offset of the message, which uniquely identifies it within the partition.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(Long offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * The timestamp indicating when the server appended the message to the stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The timestamp indicating when the server appended the message to the stream.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -140,6 +183,10 @@ public final class Message {
     @com.fasterxml.jackson.annotation.JsonProperty("stream")
     private final String stream;
 
+    /**
+     * The name of the stream that the message belongs to.
+     * @return the value
+     **/
     public String getStream() {
         return stream;
     }
@@ -150,6 +197,10 @@ public final class Message {
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
     private final String partition;
 
+    /**
+     * The ID of the partition where the message is stored.
+     * @return the value
+     **/
     public String getPartition() {
         return partition;
     }
@@ -160,6 +211,10 @@ public final class Message {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final byte[] key;
 
+    /**
+     * The key associated with the message, expressed as a byte array.
+     * @return the value
+     **/
     public byte[] getKey() {
         return key;
     }
@@ -170,6 +225,10 @@ public final class Message {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final byte[] value;
 
+    /**
+     * The value associated with the message, expressed as a byte array.
+     * @return the value
+     **/
     public byte[] getValue() {
         return value;
     }
@@ -180,6 +239,10 @@ public final class Message {
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Long offset;
 
+    /**
+     * The offset of the message, which uniquely identifies it within the partition.
+     * @return the value
+     **/
     public Long getOffset() {
         return offset;
     }
@@ -190,6 +253,10 @@ public final class Message {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The timestamp indicating when the server appended the message to the stream.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

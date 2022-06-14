@@ -54,81 +54,145 @@ public final class AwrSourceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * AWR Hub OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awrHubId")
         private String awrHubId;
 
+        /**
+         * AWR Hub OCID
+         * @param awrHubId the value to set
+         * @return this builder
+         **/
         public Builder awrHubId(String awrHubId) {
             this.awrHubId = awrHubId;
             this.__explicitlySet__.add("awrHubId");
             return this;
         }
-
+        /**
+         * Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseId")
         private String awrSourceDatabaseId;
 
+        /**
+         * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+         * @param awrSourceDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
             this.awrSourceDatabaseId = awrSourceDatabaseId;
             this.__explicitlySet__.add("awrSourceDatabaseId");
             return this;
         }
-
+        /**
+         * Number of AWR snapshots uploaded from the Source database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotsUploaded")
         private java.math.BigDecimal snapshotsUploaded;
 
+        /**
+         * Number of AWR snapshots uploaded from the Source database.
+         * @param snapshotsUploaded the value to set
+         * @return this builder
+         **/
         public Builder snapshotsUploaded(java.math.BigDecimal snapshotsUploaded) {
             this.snapshotsUploaded = snapshotsUploaded;
             this.__explicitlySet__.add("snapshotsUploaded");
             return this;
         }
-
+        /**
+         * The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minSnapshotIdentifier")
         private java.math.BigDecimal minSnapshotIdentifier;
 
+        /**
+         * The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+         * @param minSnapshotIdentifier the value to set
+         * @return this builder
+         **/
         public Builder minSnapshotIdentifier(java.math.BigDecimal minSnapshotIdentifier) {
             this.minSnapshotIdentifier = minSnapshotIdentifier;
             this.__explicitlySet__.add("minSnapshotIdentifier");
             return this;
         }
-
+        /**
+         * The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSnapshotIdentifier")
         private java.math.BigDecimal maxSnapshotIdentifier;
 
+        /**
+         * The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+         * @param maxSnapshotIdentifier the value to set
+         * @return this builder
+         **/
         public Builder maxSnapshotIdentifier(java.math.BigDecimal maxSnapshotIdentifier) {
             this.maxSnapshotIdentifier = maxSnapshotIdentifier;
             this.__explicitlySet__.add("maxSnapshotIdentifier");
             return this;
         }
-
+        /**
+         * The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotGenerated")
         private java.util.Date timeFirstSnapshotGenerated;
 
+        /**
+         * The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+         * @param timeFirstSnapshotGenerated the value to set
+         * @return this builder
+         **/
         public Builder timeFirstSnapshotGenerated(java.util.Date timeFirstSnapshotGenerated) {
             this.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
             this.__explicitlySet__.add("timeFirstSnapshotGenerated");
             return this;
         }
-
+        /**
+         * The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSnapshotGenerated")
         private java.util.Date timeLastSnapshotGenerated;
 
+        /**
+         * The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+         * @param timeLastSnapshotGenerated the value to set
+         * @return this builder
+         **/
         public Builder timeLastSnapshotGenerated(java.util.Date timeLastSnapshotGenerated) {
             this.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
             this.__explicitlySet__.add("timeLastSnapshotGenerated");
             return this;
         }
-
+        /**
+         * Number of hours since last AWR snapshots import happened from the Source database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hoursSinceLastImport")
         private Double hoursSinceLastImport;
 
+        /**
+         * Number of hours since last AWR snapshots import happened from the Source database.
+         * @param hoursSinceLastImport the value to set
+         * @return this builder
+         **/
         public Builder hoursSinceLastImport(Double hoursSinceLastImport) {
             this.hoursSinceLastImport = hoursSinceLastImport;
             this.__explicitlySet__.add("hoursSinceLastImport");
@@ -189,6 +253,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("awrHubId")
     private final String awrHubId;
 
+    /**
+     * AWR Hub OCID
+     * @return the value
+     **/
     public String getAwrHubId() {
         return awrHubId;
     }
@@ -199,6 +267,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -209,6 +281,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseId")
     private final String awrSourceDatabaseId;
 
+    /**
+     * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+     * @return the value
+     **/
     public String getAwrSourceDatabaseId() {
         return awrSourceDatabaseId;
     }
@@ -219,6 +295,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotsUploaded")
     private final java.math.BigDecimal snapshotsUploaded;
 
+    /**
+     * Number of AWR snapshots uploaded from the Source database.
+     * @return the value
+     **/
     public java.math.BigDecimal getSnapshotsUploaded() {
         return snapshotsUploaded;
     }
@@ -229,6 +309,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("minSnapshotIdentifier")
     private final java.math.BigDecimal minSnapshotIdentifier;
 
+    /**
+     * The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+     * @return the value
+     **/
     public java.math.BigDecimal getMinSnapshotIdentifier() {
         return minSnapshotIdentifier;
     }
@@ -239,6 +323,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("maxSnapshotIdentifier")
     private final java.math.BigDecimal maxSnapshotIdentifier;
 
+    /**
+     * The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+     * @return the value
+     **/
     public java.math.BigDecimal getMaxSnapshotIdentifier() {
         return maxSnapshotIdentifier;
     }
@@ -249,6 +337,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotGenerated")
     private final java.util.Date timeFirstSnapshotGenerated;
 
+    /**
+     * The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeFirstSnapshotGenerated() {
         return timeFirstSnapshotGenerated;
     }
@@ -259,6 +351,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSnapshotGenerated")
     private final java.util.Date timeLastSnapshotGenerated;
 
+    /**
+     * The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeLastSnapshotGenerated() {
         return timeLastSnapshotGenerated;
     }
@@ -269,6 +365,10 @@ public final class AwrSourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("hoursSinceLastImport")
     private final Double hoursSinceLastImport;
 
+    /**
+     * Number of hours since last AWR snapshots import happened from the Source database.
+     * @return the value
+     **/
     public Double getHoursSinceLastImport() {
         return hoursSinceLastImport;
     }

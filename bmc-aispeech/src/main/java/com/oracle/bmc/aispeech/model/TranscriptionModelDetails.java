@@ -30,18 +30,33 @@ public final class TranscriptionModelDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Domain for input files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private Domain domain;
 
+        /**
+         * Domain for input files.
+         * @param domain the value to set
+         * @return this builder
+         **/
         public Builder domain(Domain domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-
+        /**
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private LanguageCode languageCode;
 
+        /**
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(LanguageCode languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -130,6 +145,10 @@ public final class TranscriptionModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final Domain domain;
 
+    /**
+     * Domain for input files.
+     * @return the value
+     **/
     public Domain getDomain() {
         return domain;
     }
@@ -189,6 +208,10 @@ public final class TranscriptionModelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final LanguageCode languageCode;
 
+    /**
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * @return the value
+     **/
     public LanguageCode getLanguageCode() {
         return languageCode;
     }

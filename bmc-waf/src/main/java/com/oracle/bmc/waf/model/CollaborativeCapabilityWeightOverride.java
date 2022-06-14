@@ -30,18 +30,33 @@ public final class CollaborativeCapabilityWeightOverride {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of collaborative capability for which weight will be overridden.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique key of collaborative capability for which weight will be overridden.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The value of weight to set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
+        /**
+         * The value of weight to set.
+         * @param weight the value to set
+         * @return this builder
+         **/
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -84,6 +99,10 @@ public final class CollaborativeCapabilityWeightOverride {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique key of collaborative capability for which weight will be overridden.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -94,6 +113,10 @@ public final class CollaborativeCapabilityWeightOverride {
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
+    /**
+     * The value of weight to set.
+     * @return the value
+     **/
     public Integer getWeight() {
         return weight;
     }

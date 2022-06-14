@@ -29,9 +29,17 @@ public final class GenerateOnPremConnectorConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -74,6 +82,10 @@ public final class GenerateOnPremConnectorConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

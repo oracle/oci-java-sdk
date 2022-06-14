@@ -16,6 +16,9 @@ public class GetTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String tagDefaultId;
 
+    /**
+     * The OCID of the tag default.
+     */
     public String getTagDefaultId() {
         return tagDefaultId;
     }
@@ -27,10 +30,14 @@ public class GetTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag default.
+         */
         private String tagDefaultId = null;
 
         /**
          * The OCID of the tag default.
+         * @param tagDefaultId the value to set
          * @return this builder instance
          */
         public Builder tagDefaultId(String tagDefaultId) {
@@ -106,12 +113,17 @@ public class GetTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().tagDefaultId(tagDefaultId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

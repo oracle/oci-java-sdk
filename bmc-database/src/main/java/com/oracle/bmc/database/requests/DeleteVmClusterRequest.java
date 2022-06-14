@@ -16,6 +16,9 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String vmClusterId;
 
+    /**
+     * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -27,6 +30,12 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -36,6 +45,10 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,10 +60,14 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String vmClusterId = null;
 
         /**
          * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param vmClusterId the value to set
          * @return this builder instance
          */
         public Builder vmClusterId(String vmClusterId) {
@@ -58,6 +75,12 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -65,6 +88,7 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -72,11 +96,16 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -156,12 +185,17 @@ public class DeleteVmClusterRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().vmClusterId(vmClusterId).ifMatch(ifMatch).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

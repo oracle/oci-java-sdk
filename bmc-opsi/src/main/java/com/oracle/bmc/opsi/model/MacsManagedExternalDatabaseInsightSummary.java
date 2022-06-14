@@ -189,28 +189,49 @@ public final class MacsManagedExternalDatabaseInsightSummary extends DatabaseIns
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
+        /**
+         * OCI database resource type
+         * @param databaseResourceType the value to set
+         * @return this builder
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         * @param connectorId the value to set
+         * @return this builder
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
@@ -342,6 +363,10 @@ public final class MacsManagedExternalDatabaseInsightSummary extends DatabaseIns
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
+    /**
+     * OCI database resource type
+     * @return the value
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }
@@ -352,6 +377,10 @@ public final class MacsManagedExternalDatabaseInsightSummary extends DatabaseIns
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -362,6 +391,10 @@ public final class MacsManagedExternalDatabaseInsightSummary extends DatabaseIns
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * @return the value
+     **/
     public String getConnectorId() {
         return connectorId;
     }

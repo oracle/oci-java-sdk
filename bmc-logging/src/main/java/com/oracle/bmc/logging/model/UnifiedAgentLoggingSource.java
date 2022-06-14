@@ -46,6 +46,10 @@ public class UnifiedAgentLoggingSource {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * unique name for the source
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

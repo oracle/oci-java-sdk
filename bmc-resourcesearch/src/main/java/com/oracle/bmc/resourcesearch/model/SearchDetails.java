@@ -83,6 +83,11 @@ public class SearchDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("matchingContextType")
     private final MatchingContextType matchingContextType;
 
+    /**
+     * The type of matching context returned in the response. If you specify {@code HIGHLIGHTS}, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is {@code NONE}.
+     *
+     * @return the value
+     **/
     public MatchingContextType getMatchingContextType() {
         return matchingContextType;
     }

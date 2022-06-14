@@ -54,72 +54,131 @@ public final class UpdateHistoryEntrySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         * @param updateId the value to set
+         * @return this builder
+         **/
         public Builder updateId(String updateId) {
             this.updateId = updateId;
             this.__explicitlySet__.add("updateId");
             return this;
         }
-
+        /**
+         * The update action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
         private UpdateAction updateAction;
 
+        /**
+         * The update action.
+         * @param updateAction the value to set
+         * @return this builder
+         **/
         public Builder updateAction(UpdateAction updateAction) {
             this.updateAction = updateAction;
             this.__explicitlySet__.add("updateAction");
             return this;
         }
-
+        /**
+         * The type of cloud VM cluster maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateType updateType;
 
+        /**
+         * The type of cloud VM cluster maintenance update.
+         * @param updateType the value to set
+         * @return this builder
+         **/
         public Builder updateType(UpdateType updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the maintenance update operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the maintenance update operation.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Descriptive text providing additional details about the lifecycle state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Descriptive text providing additional details about the lifecycle state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The date and time when the maintenance update action started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time when the maintenance update action started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time when the maintenance update action completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
+        /**
+         * The date and time when the maintenance update action completed.
+         * @param timeCompleted the value to set
+         * @return this builder
+         **/
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
@@ -178,6 +237,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -188,6 +251,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
     private final String updateId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     * @return the value
+     **/
     public String getUpdateId() {
         return updateId;
     }
@@ -248,6 +315,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
     private final UpdateAction updateAction;
 
+    /**
+     * The update action.
+     * @return the value
+     **/
     public UpdateAction getUpdateAction() {
         return updateAction;
     }
@@ -307,6 +378,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateType updateType;
 
+    /**
+     * The type of cloud VM cluster maintenance update.
+     * @return the value
+     **/
     public UpdateType getUpdateType() {
         return updateType;
     }
@@ -366,6 +441,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the maintenance update operation.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -377,6 +456,11 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Descriptive text providing additional details about the lifecycle state.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -387,6 +471,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time when the maintenance update action started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -397,6 +485,10 @@ public final class UpdateHistoryEntrySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
+    /**
+     * The date and time when the maintenance update action completed.
+     * @return the value
+     **/
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }

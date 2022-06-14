@@ -18,6 +18,9 @@ public class TestBdsObjectStorageConnectionRequest
      */
     private String bdsInstanceId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
@@ -26,6 +29,9 @@ public class TestBdsObjectStorageConnectionRequest
      */
     private String apiKeyId;
 
+    /**
+     * The API key identifier.
+     */
     public String getApiKeyId() {
         return apiKeyId;
     }
@@ -35,6 +41,9 @@ public class TestBdsObjectStorageConnectionRequest
     private com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
             testBdsObjectStorageConnectionDetails;
 
+    /**
+     * Parameters required to validate access to the specified Object Storage bucket using the API key.
+     */
     public com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
             getTestBdsObjectStorageConnectionDetails() {
         return testBdsObjectStorageConnectionDetails;
@@ -44,6 +53,9 @@ public class TestBdsObjectStorageConnectionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -66,10 +78,14 @@ public class TestBdsObjectStorageConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
+         * @param bdsInstanceId the value to set
          * @return this builder instance
          */
         public Builder bdsInstanceId(String bdsInstanceId) {
@@ -77,10 +93,14 @@ public class TestBdsObjectStorageConnectionRequest
             return this;
         }
 
+        /**
+         * The API key identifier.
+         */
         private String apiKeyId = null;
 
         /**
          * The API key identifier.
+         * @param apiKeyId the value to set
          * @return this builder instance
          */
         public Builder apiKeyId(String apiKeyId) {
@@ -88,11 +108,15 @@ public class TestBdsObjectStorageConnectionRequest
             return this;
         }
 
+        /**
+         * Parameters required to validate access to the specified Object Storage bucket using the API key.
+         */
         private com.oracle.bmc.bds.model.TestBdsObjectStorageConnectionDetails
                 testBdsObjectStorageConnectionDetails = null;
 
         /**
          * Parameters required to validate access to the specified Object Storage bucket using the API key.
+         * @param testBdsObjectStorageConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder testBdsObjectStorageConnectionDetails(
@@ -102,10 +126,14 @@ public class TestBdsObjectStorageConnectionRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -199,7 +227,8 @@ public class TestBdsObjectStorageConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -209,6 +238,10 @@ public class TestBdsObjectStorageConnectionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

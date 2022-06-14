@@ -28,18 +28,33 @@ public final class ParentReference {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key of the parent object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parent")
         private String parent;
 
+        /**
+         * Key of the parent object.
+         * @param parent the value to set
+         * @return this builder
+         **/
         public Builder parent(String parent) {
             this.parent = parent;
             this.__explicitlySet__.add("parent");
             return this;
         }
-
+        /**
+         * Key of the root document object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootDocId")
         private String rootDocId;
 
+        /**
+         * Key of the root document object.
+         * @param rootDocId the value to set
+         * @return this builder
+         **/
         public Builder rootDocId(String rootDocId) {
             this.rootDocId = rootDocId;
             this.__explicitlySet__.add("rootDocId");
@@ -81,6 +96,10 @@ public final class ParentReference {
     @com.fasterxml.jackson.annotation.JsonProperty("parent")
     private final String parent;
 
+    /**
+     * Key of the parent object.
+     * @return the value
+     **/
     public String getParent() {
         return parent;
     }
@@ -91,6 +110,10 @@ public final class ParentReference {
     @com.fasterxml.jackson.annotation.JsonProperty("rootDocId")
     private final String rootDocId;
 
+    /**
+     * Key of the root document object.
+     * @return the value
+     **/
     public String getRootDocId() {
         return rootDocId;
     }

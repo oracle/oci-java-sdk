@@ -32,27 +32,49 @@ public final class HcxLicenseSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * HCX on-premise license key value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
         private String activationKey;
 
+        /**
+         * HCX on-premise license key value.
+         * @param activationKey the value to set
+         * @return this builder
+         **/
         public Builder activationKey(String activationKey) {
             this.activationKey = activationKey;
             this.__explicitlySet__.add("activationKey");
             return this;
         }
-
+        /**
+         * status of HCX on-premise license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private HcxLicenseStatus status;
 
+        /**
+         * status of HCX on-premise license.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(HcxLicenseStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Name of the system that consumed the HCX on-premise license
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemName")
         private String systemName;
 
+        /**
+         * Name of the system that consumed the HCX on-premise license
+         * @param systemName the value to set
+         * @return this builder
+         **/
         public Builder systemName(String systemName) {
             this.systemName = systemName;
             this.__explicitlySet__.add("systemName");
@@ -98,6 +120,10 @@ public final class HcxLicenseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
     private final String activationKey;
 
+    /**
+     * HCX on-premise license key value.
+     * @return the value
+     **/
     public String getActivationKey() {
         return activationKey;
     }
@@ -108,6 +134,10 @@ public final class HcxLicenseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final HcxLicenseStatus status;
 
+    /**
+     * status of HCX on-premise license.
+     * @return the value
+     **/
     public HcxLicenseStatus getStatus() {
         return status;
     }
@@ -118,6 +148,10 @@ public final class HcxLicenseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemName")
     private final String systemName;
 
+    /**
+     * Name of the system that consumed the HCX on-premise license
+     * @return the value
+     **/
     public String getSystemName() {
         return systemName;
     }

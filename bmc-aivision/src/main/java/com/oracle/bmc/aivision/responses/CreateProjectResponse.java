@@ -14,6 +14,11 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcWorkRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -35,6 +45,12 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +60,10 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.aivision.model.Project project;
 
+    /**
+     * The returned Project instance.
+     * @return the value
+     */
     public com.oracle.bmc.aivision.model.Project getProject() {
         return project;
     }
@@ -76,29 +96,69 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Project instance.
+         */
         private com.oracle.bmc.aivision.model.Project project;
 
+        /**
+         * The returned Project instance.
+         * @param project the value to set
+         * @return this builder
+         */
         public Builder project(com.oracle.bmc.aivision.model.Project project) {
             this.project = project;
             return this;
@@ -118,12 +178,20 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateProjectResponse build() {
             return new CreateProjectResponse(
                     __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, project);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,18 +27,33 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ObjectStorageJobExecutionResultLocation extends JobExecutionResultLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Object Storage namespace used for job execution result storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
+        /**
+         * The Object Storage namespace used for job execution result storage.
+         * @param namespaceName the value to set
+         * @return this builder
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-
+        /**
+         * The name of the bucket used for job execution result storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * The name of the bucket used for job execution result storage.
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
@@ -89,6 +104,10 @@ public final class ObjectStorageJobExecutionResultLocation extends JobExecutionR
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
+    /**
+     * The Object Storage namespace used for job execution result storage.
+     * @return the value
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -99,6 +118,10 @@ public final class ObjectStorageJobExecutionResultLocation extends JobExecutionR
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * The name of the bucket used for job execution result storage.
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }

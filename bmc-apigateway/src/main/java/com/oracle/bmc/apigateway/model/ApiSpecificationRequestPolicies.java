@@ -44,6 +44,7 @@ public final class ApiSpecificationRequestPolicies {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("authentication")
         private AuthenticationPolicy authentication;
 

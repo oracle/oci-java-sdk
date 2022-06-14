@@ -26,6 +26,7 @@ package com.oracle.bmc.loganalytics.model;
 public final class FieldArgument extends Argument {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private AbstractField value;
 

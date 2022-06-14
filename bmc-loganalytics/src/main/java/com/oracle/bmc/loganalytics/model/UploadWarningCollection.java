@@ -29,9 +29,17 @@ public final class UploadWarningCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * list of UploadWarningSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<UploadWarningSummary> items;
 
+        /**
+         * list of UploadWarningSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<UploadWarningSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class UploadWarningCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<UploadWarningSummary> items;
 
+    /**
+     * list of UploadWarningSummary objects.
+     * @return the value
+     **/
     public java.util.List<UploadWarningSummary> getItems() {
         return items;
     }

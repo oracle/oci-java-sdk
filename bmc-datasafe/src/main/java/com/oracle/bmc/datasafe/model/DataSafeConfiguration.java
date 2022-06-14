@@ -56,54 +56,99 @@ public final class DataSafeConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates if Data Safe is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Indicates if Data Safe is enabled.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The URL of the Data Safe service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The URL of the Data Safe service.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy used to enable Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the tenancy used to enable Data Safe.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnabled")
         private java.util.Date timeEnabled;
 
+        /**
+         * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeEnabled the value to set
+         * @return this builder
+         **/
         public Builder timeEnabled(java.util.Date timeEnabled) {
             this.timeEnabled = timeEnabled;
             this.__explicitlySet__.add("timeEnabled");
             return this;
         }
-
+        /**
+         * The current state of Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of Data Safe.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The Oracle Data Safe's NAT Gateway IP Address.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataSafeNatGatewayIpAddress")
         private String dataSafeNatGatewayIpAddress;
 
+        /**
+         * The Oracle Data Safe's NAT Gateway IP Address.
+         *
+         * @param dataSafeNatGatewayIpAddress the value to set
+         * @return this builder
+         **/
         public Builder dataSafeNatGatewayIpAddress(String dataSafeNatGatewayIpAddress) {
             this.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
             this.__explicitlySet__.add("dataSafeNatGatewayIpAddress");
@@ -118,19 +163,45 @@ public final class DataSafeConfiguration {
             this.__explicitlySet__.add("globalSettings");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -192,6 +263,10 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Indicates if Data Safe is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -202,6 +277,10 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The URL of the Data Safe service.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -212,6 +291,10 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the tenancy used to enable Data Safe.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -222,6 +305,10 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnabled")
     private final java.util.Date timeEnabled;
 
+    /**
+     * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeEnabled() {
         return timeEnabled;
     }
@@ -232,6 +319,10 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of Data Safe.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -243,6 +334,11 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("dataSafeNatGatewayIpAddress")
     private final String dataSafeNatGatewayIpAddress;
 
+    /**
+     * The Oracle Data Safe's NAT Gateway IP Address.
+     *
+     * @return the value
+     **/
     public String getDataSafeNatGatewayIpAddress() {
         return dataSafeNatGatewayIpAddress;
     }
@@ -263,6 +359,13 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -276,6 +379,13 @@ public final class DataSafeConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

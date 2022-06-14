@@ -39,36 +39,69 @@ public final class ClusterEndpoints {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The non-native networking Kubernetes API server endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
         private String kubernetes;
 
+        /**
+         * The non-native networking Kubernetes API server endpoint.
+         * @param kubernetes the value to set
+         * @return this builder
+         **/
         public Builder kubernetes(String kubernetes) {
             this.kubernetes = kubernetes;
             this.__explicitlySet__.add("kubernetes");
             return this;
         }
-
+        /**
+         * The public native networking Kubernetes API server endpoint, if one was requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
         private String publicEndpoint;
 
+        /**
+         * The public native networking Kubernetes API server endpoint, if one was requested.
+         * @param publicEndpoint the value to set
+         * @return this builder
+         **/
         public Builder publicEndpoint(String publicEndpoint) {
             this.publicEndpoint = publicEndpoint;
             this.__explicitlySet__.add("publicEndpoint");
             return this;
         }
-
+        /**
+         * The private native networking Kubernetes API server endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
         private String privateEndpoint;
 
+        /**
+         * The private native networking Kubernetes API server endpoint.
+         * @param privateEndpoint the value to set
+         * @return this builder
+         **/
         public Builder privateEndpoint(String privateEndpoint) {
             this.privateEndpoint = privateEndpoint;
             this.__explicitlySet__.add("privateEndpoint");
             return this;
         }
-
+        /**
+         * The FQDN assigned to the Kubernetes API private endpoint.
+         * Example: 'https://yourVcnHostnameEndpoint'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
         private String vcnHostnameEndpoint;
 
+        /**
+         * The FQDN assigned to the Kubernetes API private endpoint.
+         * Example: 'https://yourVcnHostnameEndpoint'
+         *
+         * @param vcnHostnameEndpoint the value to set
+         * @return this builder
+         **/
         public Builder vcnHostnameEndpoint(String vcnHostnameEndpoint) {
             this.vcnHostnameEndpoint = vcnHostnameEndpoint;
             this.__explicitlySet__.add("vcnHostnameEndpoint");
@@ -116,6 +149,10 @@ public final class ClusterEndpoints {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
     private final String kubernetes;
 
+    /**
+     * The non-native networking Kubernetes API server endpoint.
+     * @return the value
+     **/
     public String getKubernetes() {
         return kubernetes;
     }
@@ -126,6 +163,10 @@ public final class ClusterEndpoints {
     @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
     private final String publicEndpoint;
 
+    /**
+     * The public native networking Kubernetes API server endpoint, if one was requested.
+     * @return the value
+     **/
     public String getPublicEndpoint() {
         return publicEndpoint;
     }
@@ -136,6 +177,10 @@ public final class ClusterEndpoints {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
     private final String privateEndpoint;
 
+    /**
+     * The private native networking Kubernetes API server endpoint.
+     * @return the value
+     **/
     public String getPrivateEndpoint() {
         return privateEndpoint;
     }
@@ -148,6 +193,12 @@ public final class ClusterEndpoints {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
     private final String vcnHostnameEndpoint;
 
+    /**
+     * The FQDN assigned to the Kubernetes API private endpoint.
+     * Example: 'https://yourVcnHostnameEndpoint'
+     *
+     * @return the value
+     **/
     public String getVcnHostnameEndpoint() {
         return vcnHostnameEndpoint;
     }

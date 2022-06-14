@@ -30,18 +30,41 @@ public final class SteeringPolicyPriorityAnswerData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
         private String answerCondition;
 
+        /**
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         * @param answerCondition the value to set
+         * @return this builder
+         **/
         public Builder answerCondition(String answerCondition) {
             this.answerCondition = answerCondition;
             this.__explicitlySet__.add("answerCondition");
             return this;
         }
-
+        /**
+         * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
+         * Answers with the lowest values move to the beginning of the list without changing the
+         * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
+         * Answers with the lowest values move to the beginning of the list without changing the
+         * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -85,6 +108,11 @@ public final class SteeringPolicyPriorityAnswerData {
     @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
     private final String answerCondition;
 
+    /**
+     * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+     *
+     * @return the value
+     **/
     public String getAnswerCondition() {
         return answerCondition;
     }
@@ -98,6 +126,13 @@ public final class SteeringPolicyPriorityAnswerData {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
+     * Answers with the lowest values move to the beginning of the list without changing the
+     * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
+     *
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }

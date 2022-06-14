@@ -28,18 +28,33 @@ public final class ImageText {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The words recognized in an image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("words")
         private java.util.List<Word> words;
 
+        /**
+         * The words recognized in an image.
+         * @param words the value to set
+         * @return this builder
+         **/
         public Builder words(java.util.List<Word> words) {
             this.words = words;
             this.__explicitlySet__.add("words");
             return this;
         }
-
+        /**
+         * The lines of text recognized in an image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<Line> lines;
 
+        /**
+         * The lines of text recognized in an image.
+         * @param lines the value to set
+         * @return this builder
+         **/
         public Builder lines(java.util.List<Line> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
@@ -81,6 +96,10 @@ public final class ImageText {
     @com.fasterxml.jackson.annotation.JsonProperty("words")
     private final java.util.List<Word> words;
 
+    /**
+     * The words recognized in an image.
+     * @return the value
+     **/
     public java.util.List<Word> getWords() {
         return words;
     }
@@ -91,6 +110,10 @@ public final class ImageText {
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<Line> lines;
 
+    /**
+     * The lines of text recognized in an image.
+     * @return the value
+     **/
     public java.util.List<Line> getLines() {
         return lines;
     }

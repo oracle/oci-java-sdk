@@ -31,9 +31,23 @@ public final class UpdateConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The retention period setting, specified in days. The minimum is 90, the maximum 365.
+         * <p>
+         * Example: {@code 90}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodDays")
         private Integer retentionPeriodDays;
 
+        /**
+         * The retention period setting, specified in days. The minimum is 90, the maximum 365.
+         * <p>
+         * Example: {@code 90}
+         *
+         * @param retentionPeriodDays the value to set
+         * @return this builder
+         **/
         public Builder retentionPeriodDays(Integer retentionPeriodDays) {
             this.retentionPeriodDays = retentionPeriodDays;
             this.__explicitlySet__.add("retentionPeriodDays");
@@ -79,6 +93,13 @@ public final class UpdateConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodDays")
     private final Integer retentionPeriodDays;
 
+    /**
+     * The retention period setting, specified in days. The minimum is 90, the maximum 365.
+     * <p>
+     * Example: {@code 90}
+     *
+     * @return the value
+     **/
     public Integer getRetentionPeriodDays() {
         return retentionPeriodDays;
     }

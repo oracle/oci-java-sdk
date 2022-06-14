@@ -31,18 +31,45 @@ public final class CrossConnectPortSpeedShape {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the port speed shape.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the port speed shape.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The port speed in Gbps.
+         * <p>
+         * Example: {@code 10}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")
         private Integer portSpeedInGbps;
 
+        /**
+         * The port speed in Gbps.
+         * <p>
+         * Example: {@code 10}
+         *
+         * @param portSpeedInGbps the value to set
+         * @return this builder
+         **/
         public Builder portSpeedInGbps(Integer portSpeedInGbps) {
             this.portSpeedInGbps = portSpeedInGbps;
             this.__explicitlySet__.add("portSpeedInGbps");
@@ -88,6 +115,13 @@ public final class CrossConnectPortSpeedShape {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the port speed shape.
+     * <p>
+     * Example: {@code 10 Gbps}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -101,6 +135,13 @@ public final class CrossConnectPortSpeedShape {
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")
     private final Integer portSpeedInGbps;
 
+    /**
+     * The port speed in Gbps.
+     * <p>
+     * Example: {@code 10}
+     *
+     * @return the value
+     **/
     public Integer getPortSpeedInGbps() {
         return portSpeedInGbps;
     }

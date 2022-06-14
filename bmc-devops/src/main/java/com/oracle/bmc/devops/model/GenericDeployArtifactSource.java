@@ -27,27 +27,49 @@ package com.oracle.bmc.devops.model;
 public final class GenericDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of a repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
+        /**
+         * The OCID of a repository.
+         * @param repositoryId the value to set
+         * @return this builder
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
             return this;
         }
-
+        /**
+         * Specifies the artifact path in the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactPath")
         private String deployArtifactPath;
 
+        /**
+         * Specifies the artifact path in the repository.
+         * @param deployArtifactPath the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactPath(String deployArtifactPath) {
             this.deployArtifactPath = deployArtifactPath;
             this.__explicitlySet__.add("deployArtifactPath");
             return this;
         }
-
+        /**
+         * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
         private String deployArtifactVersion;
 
+        /**
+         * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+         * @param deployArtifactVersion the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactVersion(String deployArtifactVersion) {
             this.deployArtifactVersion = deployArtifactVersion;
             this.__explicitlySet__.add("deployArtifactVersion");
@@ -103,6 +125,10 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
+    /**
+     * The OCID of a repository.
+     * @return the value
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -113,6 +139,10 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactPath")
     private final String deployArtifactPath;
 
+    /**
+     * Specifies the artifact path in the repository.
+     * @return the value
+     **/
     public String getDeployArtifactPath() {
         return deployArtifactPath;
     }
@@ -123,6 +153,10 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
     private final String deployArtifactVersion;
 
+    /**
+     * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+     * @return the value
+     **/
     public String getDeployArtifactVersion() {
         return deployArtifactVersion;
     }

@@ -16,6 +16,9 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String jobKey;
 
+    /**
+     * Unique job key.
+     */
     public String getJobKey() {
         return jobKey;
     }
@@ -37,6 +43,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -45,6 +59,9 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,10 +73,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -67,10 +88,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique job key.
+         */
         private String jobKey = null;
 
         /**
          * Unique job key.
+         * @param jobKey the value to set
          * @return this builder instance
          */
         public Builder jobKey(String jobKey) {
@@ -78,6 +103,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -87,6 +120,7 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -94,10 +128,14 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -179,7 +217,8 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +228,10 @@ public class DeleteJobRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

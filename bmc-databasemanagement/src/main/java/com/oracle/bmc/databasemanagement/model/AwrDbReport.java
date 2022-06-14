@@ -60,19 +60,33 @@ public final class AwrDbReport extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-
+        /**
+         * The content of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
+        /**
+         * The content of the report.
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-
+        /**
+         * The format of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private Format format;
 
+        /**
+         * The format of the report.
+         * @param format the value to set
+         * @return this builder
+         **/
         public Builder format(Format format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -134,6 +148,10 @@ public final class AwrDbReport extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
+    /**
+     * The content of the report.
+     * @return the value
+     **/
     public String getContent() {
         return content;
     }
@@ -192,6 +210,10 @@ public final class AwrDbReport extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final Format format;
 
+    /**
+     * The format of the report.
+     * @return the value
+     **/
     public Format getFormat() {
         return format;
     }

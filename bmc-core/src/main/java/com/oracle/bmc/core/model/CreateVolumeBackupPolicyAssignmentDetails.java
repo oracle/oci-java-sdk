@@ -30,18 +30,33 @@ public final class CreateVolumeBackupPolicyAssignmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the volume to assign the policy to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assetId")
         private String assetId;
 
+        /**
+         * The OCID of the volume to assign the policy to.
+         * @param assetId the value to set
+         * @return this builder
+         **/
         public Builder assetId(String assetId) {
             this.assetId = assetId;
             this.__explicitlySet__.add("assetId");
             return this;
         }
-
+        /**
+         * The OCID of the volume backup policy to assign to the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
+        /**
+         * The OCID of the volume backup policy to assign to the volume.
+         * @param policyId the value to set
+         * @return this builder
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
@@ -84,6 +99,10 @@ public final class CreateVolumeBackupPolicyAssignmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("assetId")
     private final String assetId;
 
+    /**
+     * The OCID of the volume to assign the policy to.
+     * @return the value
+     **/
     public String getAssetId() {
         return assetId;
     }
@@ -94,6 +113,10 @@ public final class CreateVolumeBackupPolicyAssignmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
+    /**
+     * The OCID of the volume backup policy to assign to the volume.
+     * @return the value
+     **/
     public String getPolicyId() {
         return policyId;
     }

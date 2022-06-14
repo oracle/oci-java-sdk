@@ -55,28 +55,49 @@ public final class CreateEmManagedExternalExadataInsightDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
+        /**
+         * Enterprise Manager Unique Identifier
+         * @param enterpriseManagerIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         * @param enterpriseManagerBridgeId the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         * @param enterpriseManagerEntityIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
@@ -94,10 +115,17 @@ public final class CreateEmManagedExternalExadataInsightDetails
             this.__explicitlySet__.add("memberEntityDetails");
             return this;
         }
-
+        /**
+         * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoSyncEnabled")
         private Boolean isAutoSyncEnabled;
 
+        /**
+         * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
+         * @param isAutoSyncEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAutoSyncEnabled(Boolean isAutoSyncEnabled) {
             this.isAutoSyncEnabled = isAutoSyncEnabled;
             this.__explicitlySet__.add("isAutoSyncEnabled");
@@ -175,6 +203,10 @@ public final class CreateEmManagedExternalExadataInsightDetails
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
+    /**
+     * Enterprise Manager Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -185,6 +217,10 @@ public final class CreateEmManagedExternalExadataInsightDetails
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
+    /**
+     * OPSI Enterprise Manager Bridge OCID
+     * @return the value
+     **/
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -195,6 +231,10 @@ public final class CreateEmManagedExternalExadataInsightDetails
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
@@ -214,6 +254,10 @@ public final class CreateEmManagedExternalExadataInsightDetails
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoSyncEnabled")
     private final Boolean isAutoSyncEnabled;
 
+    /**
+     * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
+     * @return the value
+     **/
     public Boolean getIsAutoSyncEnabled() {
         return isAutoSyncEnabled;
     }

@@ -77,135 +77,251 @@ public final class FolderSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique folder key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique folder key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("businessName")
         private String businessName;
 
+        /**
+         * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+         * @param businessName the value to set
+         * @return this builder
+         **/
         public Builder businessName(String businessName) {
             this.businessName = businessName;
             this.__explicitlySet__.add("businessName");
             return this;
         }
-
+        /**
+         * Detailed description of a folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of a folder.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The unique key of the parent data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * The unique key of the parent data asset.
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-
+        /**
+         * The key of the containing folder or null if there is no parent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
         private String parentFolderKey;
 
+        /**
+         * The key of the containing folder or null if there is no parent.
+         * @param parentFolderKey the value to set
+         * @return this builder
+         **/
         public Builder parentFolderKey(String parentFolderKey) {
             this.parentFolderKey = parentFolderKey;
             this.__explicitlySet__.add("parentFolderKey");
             return this;
         }
-
+        /**
+         * The type of folder object. Type keys can be found via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
         private String typeKey;
 
+        /**
+         * The type of folder object. Type keys can be found via the '/types' endpoint.
+         * @param typeKey the value to set
+         * @return this builder
+         **/
         public Builder typeKey(String typeKey) {
             this.typeKey = typeKey;
             this.__explicitlySet__.add("typeKey");
             return this;
         }
-
+        /**
+         * Full path of the folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Full path of the folder.
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * Unique external key of this object from the source systems.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
+        /**
+         * Unique external key of this object from the source systems.
+         * @param externalKey the value to set
+         * @return this builder
+         **/
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
             return this;
         }
-
+        /**
+         * Last modified timestamp of this object in the external system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
         private java.util.Date timeExternal;
 
+        /**
+         * Last modified timestamp of this object in the external system.
+         * @param timeExternal the value to set
+         * @return this builder
+         **/
         public Builder timeExternal(java.util.Date timeExternal) {
             this.timeExternal = timeExternal;
             this.__explicitlySet__.add("timeExternal");
             return this;
         }
-
+        /**
+         * The date and time the folder was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the folder was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the folder was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-03-25T21:10:29.600Z
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the folder was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-03-25T21:10:29.600Z
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * URI of the folder resource within the data catalog API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * URI of the folder resource within the data catalog API.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * URL of the folder in the object store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
         private String objectStorageUrl;
 
+        /**
+         * URL of the folder in the object store.
+         * @param objectStorageUrl the value to set
+         * @return this builder
+         **/
         public Builder objectStorageUrl(String objectStorageUrl) {
             this.objectStorageUrl = objectStorageUrl;
             this.__explicitlySet__.add("objectStorageUrl");
             return this;
         }
-
+        /**
+         * State of the folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * State of the folder.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -278,6 +394,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique folder key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -290,6 +410,12 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -300,6 +426,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
     private final String businessName;
 
+    /**
+     * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+     * @return the value
+     **/
     public String getBusinessName() {
         return businessName;
     }
@@ -310,6 +440,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of a folder.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -320,6 +454,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * The unique key of the parent data asset.
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -330,6 +468,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
     private final String parentFolderKey;
 
+    /**
+     * The key of the containing folder or null if there is no parent.
+     * @return the value
+     **/
     public String getParentFolderKey() {
         return parentFolderKey;
     }
@@ -340,6 +482,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     private final String typeKey;
 
+    /**
+     * The type of folder object. Type keys can be found via the '/types' endpoint.
+     * @return the value
+     **/
     public String getTypeKey() {
         return typeKey;
     }
@@ -350,6 +496,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Full path of the folder.
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -360,6 +510,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
+    /**
+     * Unique external key of this object from the source systems.
+     * @return the value
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -370,6 +524,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
     private final java.util.Date timeExternal;
 
+    /**
+     * Last modified timestamp of this object in the external system.
+     * @return the value
+     **/
     public java.util.Date getTimeExternal() {
         return timeExternal;
     }
@@ -382,6 +540,12 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the folder was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -393,6 +557,11 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the folder was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-03-25T21:10:29.600Z
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -403,6 +572,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * URI of the folder resource within the data catalog API.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -413,6 +586,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
     private final String objectStorageUrl;
 
+    /**
+     * URL of the folder in the object store.
+     * @return the value
+     **/
     public String getObjectStorageUrl() {
         return objectStorageUrl;
     }
@@ -423,6 +600,10 @@ public final class FolderSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * State of the folder.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

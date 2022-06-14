@@ -66,45 +66,89 @@ public final class TableSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier that is immutable on creation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Human-friendly table name, also immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Human-friendly table name, also immutable.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The time the the table was created. An RFC3339 formatted
+         * datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the the table was created. An RFC3339 formatted
+         * datetime string.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the the table's metadata was last updated. An
+         * RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the the table's metadata was last updated. An
+         * RFC3339 formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -119,65 +163,144 @@ public final class TableSummary {
             this.__explicitlySet__.add("tableLimits");
             return this;
         }
-
+        /**
+         * The state of a table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Table.LifecycleState lifecycleState;
 
+        /**
+         * The state of a table.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Table.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * True if this table can be reclaimed after an idle period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
         private Boolean isAutoReclaimable;
 
+        /**
+         * True if this table can be reclaimed after an idle period.
+         * @param isAutoReclaimable the value to set
+         * @return this builder
+         **/
         public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
             this.isAutoReclaimable = isAutoReclaimable;
             this.__explicitlySet__.add("isAutoReclaimable");
             return this;
         }
-
+        /**
+         * If lifecycleState is INACTIVE, indicates when
+         * this table will be automatically removed.
+         * An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
         private java.util.Date timeOfExpiration;
 
+        /**
+         * If lifecycleState is INACTIVE, indicates when
+         * this table will be automatically removed.
+         * An RFC3339 formatted datetime string.
+         *
+         * @param timeOfExpiration the value to set
+         * @return this builder
+         **/
         public Builder timeOfExpiration(java.util.Date timeOfExpiration) {
             this.timeOfExpiration = timeOfExpiration;
             this.__explicitlySet__.add("timeOfExpiration");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Read-only system tag. These predefined keys are scoped to
+         * namespaces.  At present the only supported namespace is
+         * {@code "orcl-cloud"}; and the only key in that namespace is
+         * {@code "free-tier-retained"}.
+         * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Read-only system tag. These predefined keys are scoped to
+         * namespaces.  At present the only supported namespace is
+         * {@code "orcl-cloud"}; and the only key in that namespace is
+         * {@code "free-tier-retained"}.
+         * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -246,6 +369,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier that is immutable on creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -256,6 +383,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -266,6 +397,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Human-friendly table name, also immutable.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -278,6 +413,12 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the the table was created. An RFC3339 formatted
+     * datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -290,6 +431,12 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the the table's metadata was last updated. An
+     * RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -307,6 +454,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Table.LifecycleState lifecycleState;
 
+    /**
+     * The state of a table.
+     * @return the value
+     **/
     public Table.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -318,6 +469,11 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -328,6 +484,10 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
     private final Boolean isAutoReclaimable;
 
+    /**
+     * True if this table can be reclaimed after an idle period.
+     * @return the value
+     **/
     public Boolean getIsAutoReclaimable() {
         return isAutoReclaimable;
     }
@@ -341,6 +501,13 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
     private final java.util.Date timeOfExpiration;
 
+    /**
+     * If lifecycleState is INACTIVE, indicates when
+     * this table will be automatically removed.
+     * An RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfExpiration() {
         return timeOfExpiration;
     }
@@ -354,6 +521,13 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined
+     * name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -367,6 +541,13 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and
+     * scoped to a namespace.  Example: {@code {"foo-namespace":
+     * {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -382,6 +563,15 @@ public final class TableSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Read-only system tag. These predefined keys are scoped to
+     * namespaces.  At present the only supported namespace is
+     * {@code "orcl-cloud"}; and the only key in that namespace is
+     * {@code "free-tier-retained"}.
+     * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

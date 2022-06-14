@@ -34,9 +34,17 @@ public final class IndicatorRelationship {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the attribute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the attribute
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -51,10 +59,17 @@ public final class IndicatorRelationship {
             this.__explicitlySet__.add("relatedEntity");
             return this;
         }
-
+        /**
+         * The array of attribution data that support this SourcedRelationship
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attribution")
         private java.util.List<DataAttribution> attribution;
 
+        /**
+         * The array of attribution data that support this SourcedRelationship
+         * @param attribution the value to set
+         * @return this builder
+         **/
         public Builder attribution(java.util.List<DataAttribution> attribution) {
             this.attribution = attribution;
             this.__explicitlySet__.add("attribution");
@@ -100,6 +115,10 @@ public final class IndicatorRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the attribute
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -117,6 +136,10 @@ public final class IndicatorRelationship {
     @com.fasterxml.jackson.annotation.JsonProperty("attribution")
     private final java.util.List<DataAttribution> attribution;
 
+    /**
+     * The array of attribution data that support this SourcedRelationship
+     * @return the value
+     **/
     public java.util.List<DataAttribution> getAttribution() {
         return attribution;
     }

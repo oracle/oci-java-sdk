@@ -18,6 +18,9 @@ public class ExportDigitalAssistantRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -26,6 +29,9 @@ public class ExportDigitalAssistantRequest
      */
     private String digitalAssistantId;
 
+    /**
+     * Unique Digital Assistant identifier.
+     */
     public String getDigitalAssistantId() {
         return digitalAssistantId;
     }
@@ -34,6 +40,9 @@ public class ExportDigitalAssistantRequest
      */
     private com.oracle.bmc.oda.model.ExportDigitalAssistantDetails exportDigitalAssistantDetails;
 
+    /**
+     * Where in Object Storage to export the Digital Assistant to.
+     */
     public com.oracle.bmc.oda.model.ExportDigitalAssistantDetails
             getExportDigitalAssistantDetails() {
         return exportDigitalAssistantDetails;
@@ -43,6 +52,9 @@ public class ExportDigitalAssistantRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,10 +77,14 @@ public class ExportDigitalAssistantRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -76,10 +92,14 @@ public class ExportDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * Unique Digital Assistant identifier.
+         */
         private String digitalAssistantId = null;
 
         /**
          * Unique Digital Assistant identifier.
+         * @param digitalAssistantId the value to set
          * @return this builder instance
          */
         public Builder digitalAssistantId(String digitalAssistantId) {
@@ -87,11 +107,15 @@ public class ExportDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * Where in Object Storage to export the Digital Assistant to.
+         */
         private com.oracle.bmc.oda.model.ExportDigitalAssistantDetails
                 exportDigitalAssistantDetails = null;
 
         /**
          * Where in Object Storage to export the Digital Assistant to.
+         * @param exportDigitalAssistantDetails the value to set
          * @return this builder instance
          */
         public Builder exportDigitalAssistantDetails(
@@ -101,10 +125,14 @@ public class ExportDigitalAssistantRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,7 +225,8 @@ public class ExportDigitalAssistantRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +236,10 @@ public class ExportDigitalAssistantRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

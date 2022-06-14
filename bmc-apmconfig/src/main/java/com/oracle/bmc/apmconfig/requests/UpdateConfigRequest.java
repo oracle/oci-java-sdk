@@ -19,6 +19,10 @@ public class UpdateConfigRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -28,6 +32,10 @@ public class UpdateConfigRequest
      */
     private String configId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
+     *
+     */
     public String getConfigId() {
         return configId;
     }
@@ -36,6 +44,9 @@ public class UpdateConfigRequest
      */
     private com.oracle.bmc.apmconfig.model.UpdateConfigDetails updateConfigDetails;
 
+    /**
+     * The configuration details to be updated.
+     */
     public com.oracle.bmc.apmconfig.model.UpdateConfigDetails getUpdateConfigDetails() {
         return updateConfigDetails;
     }
@@ -49,6 +60,14 @@ public class UpdateConfigRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,6 +78,11 @@ public class UpdateConfigRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,6 +93,11 @@ public class UpdateConfigRequest
      */
     private String opcDryRun;
 
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+     * configuration item details and is used only to perform validation on the submitted data.
+     *
+     */
     public String getOpcDryRun() {
         return opcDryRun;
     }
@@ -90,11 +119,16 @@ public class UpdateConfigRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -102,11 +136,16 @@ public class UpdateConfigRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
+         *
+         */
         private String configId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
          *
+         * @param configId the value to set
          * @return this builder instance
          */
         public Builder configId(String configId) {
@@ -114,10 +153,14 @@ public class UpdateConfigRequest
             return this;
         }
 
+        /**
+         * The configuration details to be updated.
+         */
         private com.oracle.bmc.apmconfig.model.UpdateConfigDetails updateConfigDetails = null;
 
         /**
          * The configuration details to be updated.
+         * @param updateConfigDetails the value to set
          * @return this builder instance
          */
         public Builder updateConfigDetails(
@@ -126,6 +169,14 @@ public class UpdateConfigRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -135,6 +186,7 @@ public class UpdateConfigRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -142,12 +194,18 @@ public class UpdateConfigRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -155,12 +213,18 @@ public class UpdateConfigRequest
             return this;
         }
 
+        /**
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+         * configuration item details and is used only to perform validation on the submitted data.
+         *
+         */
         private String opcDryRun = null;
 
         /**
          * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
          * configuration item details and is used only to perform validation on the submitted data.
          *
+         * @param opcDryRun the value to set
          * @return this builder instance
          */
         public Builder opcDryRun(String opcDryRun) {
@@ -257,7 +321,8 @@ public class UpdateConfigRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -269,6 +334,10 @@ public class UpdateConfigRequest
                 .opcDryRun(opcDryRun);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

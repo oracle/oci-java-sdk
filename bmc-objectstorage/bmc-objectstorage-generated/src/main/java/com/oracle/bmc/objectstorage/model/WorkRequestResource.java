@@ -44,45 +44,81 @@ public final class WorkRequestResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
+        /**
+         * The status of the work request.
+         * @param actionType the value to set
+         * @return this builder
+         **/
         public Builder actionType(ActionType actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-
+        /**
+         * The resource type the work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The resource type the work request affects.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The resource type identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The resource type identifier.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The URI path that you can use for a GET request to access the resource metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
+        /**
+         * The URI path that you can use for a GET request to access the resource metadata.
+         * @param entityUri the value to set
+         * @return this builder
+         **/
         public Builder entityUri(String entityUri) {
             this.entityUri = entityUri;
             this.__explicitlySet__.add("entityUri");
             return this;
         }
-
+        /**
+         * The metadata of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        /**
+         * The metadata of the resource.
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -184,6 +220,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
+    /**
+     * The status of the work request.
+     * @return the value
+     **/
     public ActionType getActionType() {
         return actionType;
     }
@@ -194,6 +234,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The resource type the work request affects.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -204,6 +248,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The resource type identifier.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -214,6 +262,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
+    /**
+     * The URI path that you can use for a GET request to access the resource metadata.
+     * @return the value
+     **/
     public String getEntityUri() {
         return entityUri;
     }
@@ -224,6 +276,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
+    /**
+     * The metadata of the resource.
+     * @return the value
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }

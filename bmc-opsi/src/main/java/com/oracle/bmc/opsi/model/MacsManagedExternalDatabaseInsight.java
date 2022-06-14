@@ -153,19 +153,33 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         * @param connectorId the value to set
+         * @return this builder
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
@@ -189,46 +203,83 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             this.__explicitlySet__.add("connectionCredentialDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * Name of database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * Name of database
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * Display name of database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
         private String databaseDisplayName;
 
+        /**
+         * Display name of database
+         * @param databaseDisplayName the value to set
+         * @return this builder
+         **/
         public Builder databaseDisplayName(String databaseDisplayName) {
             this.databaseDisplayName = databaseDisplayName;
             this.__explicitlySet__.add("databaseDisplayName");
             return this;
         }
-
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
+        /**
+         * OCI database resource type
+         * @param databaseResourceType the value to set
+         * @return this builder
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
-
+        /**
+         * Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbAdditionalDetails")
         private Object dbAdditionalDetails;
 
+        /**
+         * Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+         *
+         * @param dbAdditionalDetails the value to set
+         * @return this builder
+         **/
         public Builder dbAdditionalDetails(Object dbAdditionalDetails) {
             this.dbAdditionalDetails = dbAdditionalDetails;
             this.__explicitlySet__.add("dbAdditionalDetails");
@@ -368,6 +419,10 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -378,6 +433,10 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * @return the value
+     **/
     public String getConnectorId() {
         return connectorId;
     }
@@ -402,6 +461,10 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -412,6 +475,10 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * Name of database
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -422,6 +489,10 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
     private final String databaseDisplayName;
 
+    /**
+     * Display name of database
+     * @return the value
+     **/
     public String getDatabaseDisplayName() {
         return databaseDisplayName;
     }
@@ -432,6 +503,10 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
+    /**
+     * OCI database resource type
+     * @return the value
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }
@@ -443,6 +518,11 @@ public final class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("dbAdditionalDetails")
     private final Object dbAdditionalDetails;
 
+    /**
+     * Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+     *
+     * @return the value
+     **/
     public Object getDbAdditionalDetails() {
         return dbAdditionalDetails;
     }

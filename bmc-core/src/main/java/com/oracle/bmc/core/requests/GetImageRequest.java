@@ -16,6 +16,9 @@ public class GetImageRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String imageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+     */
     public String getImageId() {
         return imageId;
     }
@@ -26,10 +29,14 @@ public class GetImageRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         */
         private String imageId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -105,12 +112,17 @@ public class GetImageRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().imageId(imageId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

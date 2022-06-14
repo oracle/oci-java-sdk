@@ -13,6 +13,10 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -26,6 +30,14 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then there are additional items still to get. Include this value as the {@code page} parameter for the
+     * subsequent GET request. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +49,12 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +64,10 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
+    /**
+     * A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> getItems() {
         return items;
     }
@@ -78,29 +100,73 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances.
+         */
         private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
+        /**
+         * A list of com.oracle.bmc.keymanagement.model.VaultReplicaSummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items) {
             this.items = items;
@@ -121,12 +187,20 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListVaultReplicasResponse build() {
             return new ListVaultReplicasResponse(
                     __httpStatusCode__, etag, opcNextPage, opcRequestId, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

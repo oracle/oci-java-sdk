@@ -29,9 +29,17 @@ public final class LogAnalyticsCategoryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of categories.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsCategory> items;
 
+        /**
+         * An array of categories.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsCategory> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class LogAnalyticsCategoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsCategory> items;
 
+    /**
+     * An array of categories.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsCategory> getItems() {
         return items;
     }

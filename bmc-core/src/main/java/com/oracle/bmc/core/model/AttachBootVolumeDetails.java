@@ -41,36 +41,73 @@ public final class AttachBootVolumeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the  boot volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
 
+        /**
+         * The OCID of the  boot volume.
+         * @param bootVolumeId the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             this.__explicitlySet__.add("bootVolumeId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The OCID of the instance.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         * @param encryptionInTransitType the value to set
+         * @return this builder
+         **/
         public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
             this.encryptionInTransitType = encryptionInTransitType;
             this.__explicitlySet__.add("encryptionInTransitType");
@@ -118,6 +155,10 @@ public final class AttachBootVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
     private final String bootVolumeId;
 
+    /**
+     * The OCID of the  boot volume.
+     * @return the value
+     **/
     public String getBootVolumeId() {
         return bootVolumeId;
     }
@@ -130,6 +171,12 @@ public final class AttachBootVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -140,6 +187,10 @@ public final class AttachBootVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -152,6 +203,12 @@ public final class AttachBootVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     * @return the value
+     **/
     public EncryptionInTransitType getEncryptionInTransitType() {
         return encryptionInTransitType;
     }

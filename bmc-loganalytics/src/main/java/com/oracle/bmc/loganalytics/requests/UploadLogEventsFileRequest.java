@@ -18,6 +18,10 @@ public class UploadLogEventsFileRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,10 @@ public class UploadLogEventsFileRequest
      */
     private String logGroupId;
 
+    /**
+     * The log group OCID that gets mapped to the uploaded logs.
+     *
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -40,6 +48,14 @@ public class UploadLogEventsFileRequest
      */
     private java.io.InputStream uploadLogEventsFileDetails;
 
+    /**
+     * Log events data to be uploaded. The data could be uploaded with or without logSet information depending on whether logSet is enabled for the tenancy or not. Supported formats include
+     * 1. json file : logSet (if needed) should be sent as "logSet" query parameter
+     * 2. gzip file : logSet (if needed) should be sent as "logSet" query parameter
+     * 3. zip file : containing multiple json files. LogSet information (if needed) should be appended to every filename in the zip.
+     *    Supported filename format with logSet detail is &lt;filename&gt;_logSet=&lt;logset&gt;.json
+     *
+     */
     public java.io.InputStream getUploadLogEventsFileDetails() {
         return uploadLogEventsFileDetails;
     }
@@ -48,6 +64,9 @@ public class UploadLogEventsFileRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,6 +76,10 @@ public class UploadLogEventsFileRequest
      */
     private String logSet;
 
+    /**
+     * The log set that gets associated with the uploaded logs.
+     *
+     */
     public String getLogSet() {
         return logSet;
     }
@@ -66,6 +89,10 @@ public class UploadLogEventsFileRequest
      */
     private com.oracle.bmc.loganalytics.model.PayloadType payloadType;
 
+    /**
+     * Identifies the type of request payload.
+     *
+     */
     public com.oracle.bmc.loganalytics.model.PayloadType getPayloadType() {
         return payloadType;
     }
@@ -74,6 +101,9 @@ public class UploadLogEventsFileRequest
      */
     private String contentType;
 
+    /**
+     * The content type of the log data.
+     */
     public String getContentType() {
         return contentType;
     }
@@ -87,6 +117,14 @@ public class UploadLogEventsFileRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -98,6 +136,12 @@ public class UploadLogEventsFileRequest
      */
     private String expect;
 
+    /**
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
+     */
     public String getExpect() {
         return expect;
     }
@@ -124,11 +168,16 @@ public class UploadLogEventsFileRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -136,11 +185,16 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * The log group OCID that gets mapped to the uploaded logs.
+         *
+         */
         private String logGroupId = null;
 
         /**
          * The log group OCID that gets mapped to the uploaded logs.
          *
+         * @param logGroupId the value to set
          * @return this builder instance
          */
         public Builder logGroupId(String logGroupId) {
@@ -148,6 +202,14 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * Log events data to be uploaded. The data could be uploaded with or without logSet information depending on whether logSet is enabled for the tenancy or not. Supported formats include
+         * 1. json file : logSet (if needed) should be sent as "logSet" query parameter
+         * 2. gzip file : logSet (if needed) should be sent as "logSet" query parameter
+         * 3. zip file : containing multiple json files. LogSet information (if needed) should be appended to every filename in the zip.
+         *    Supported filename format with logSet detail is &lt;filename&gt;_logSet=&lt;logset&gt;.json
+         *
+         */
         private java.io.InputStream uploadLogEventsFileDetails = null;
 
         /**
@@ -157,6 +219,7 @@ public class UploadLogEventsFileRequest
          * 3. zip file : containing multiple json files. LogSet information (if needed) should be appended to every filename in the zip.
          *    Supported filename format with logSet detail is &lt;filename&gt;_logSet=&lt;logset&gt;.json
          *
+         * @param uploadLogEventsFileDetails the value to set
          * @return this builder instance
          */
         public Builder uploadLogEventsFileDetails(java.io.InputStream uploadLogEventsFileDetails) {
@@ -164,10 +227,14 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -175,11 +242,16 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * The log set that gets associated with the uploaded logs.
+         *
+         */
         private String logSet = null;
 
         /**
          * The log set that gets associated with the uploaded logs.
          *
+         * @param logSet the value to set
          * @return this builder instance
          */
         public Builder logSet(String logSet) {
@@ -187,11 +259,16 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * Identifies the type of request payload.
+         *
+         */
         private com.oracle.bmc.loganalytics.model.PayloadType payloadType = null;
 
         /**
          * Identifies the type of request payload.
          *
+         * @param payloadType the value to set
          * @return this builder instance
          */
         public Builder payloadType(com.oracle.bmc.loganalytics.model.PayloadType payloadType) {
@@ -199,10 +276,14 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * The content type of the log data.
+         */
         private String contentType = null;
 
         /**
          * The content type of the log data.
+         * @param contentType the value to set
          * @return this builder instance
          */
         public Builder contentType(String contentType) {
@@ -210,6 +291,14 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -219,6 +308,7 @@ public class UploadLogEventsFileRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -226,6 +316,12 @@ public class UploadLogEventsFileRequest
             return this;
         }
 
+        /**
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
+         */
         private String expect = null;
 
         /**
@@ -233,6 +329,7 @@ public class UploadLogEventsFileRequest
          * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
          * The only allowed value for this parameter is "100-Continue" (case-insensitive).
          *
+         * @param expect the value to set
          * @return this builder instance
          */
         public Builder expect(String expect) {
@@ -335,7 +432,8 @@ public class UploadLogEventsFileRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -350,6 +448,10 @@ public class UploadLogEventsFileRequest
                 .expect(expect);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class SearchListingsRequest
      */
     private com.oracle.bmc.marketplace.model.SearchListingsDetails searchListingsDetails;
 
+    /**
+     * Details related to the search query
+     */
     public com.oracle.bmc.marketplace.model.SearchListingsDetails getSearchListingsDetails() {
         return searchListingsDetails;
     }
@@ -28,6 +31,11 @@ public class SearchListingsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +44,9 @@ public class SearchListingsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -45,6 +56,10 @@ public class SearchListingsRequest
      */
     private Integer limit;
 
+    /**
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -66,10 +81,14 @@ public class SearchListingsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details related to the search query
+         */
         private com.oracle.bmc.marketplace.model.SearchListingsDetails searchListingsDetails = null;
 
         /**
          * Details related to the search query
+         * @param searchListingsDetails the value to set
          * @return this builder instance
          */
         public Builder searchListingsDetails(
@@ -78,12 +97,18 @@ public class SearchListingsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -91,10 +116,14 @@ public class SearchListingsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -102,11 +131,16 @@ public class SearchListingsRequest
             return this;
         }
 
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         */
         private Integer limit = null;
 
         /**
          * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -199,7 +233,8 @@ public class SearchListingsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -209,6 +244,10 @@ public class SearchListingsRequest
                 .limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

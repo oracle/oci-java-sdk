@@ -31,18 +31,37 @@ public final class IngressGatewayHostRef {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the ingress gateway host that this route should apply to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the ingress gateway host that this route should apply to.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -85,6 +104,11 @@ public final class IngressGatewayHostRef {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the ingress gateway host that this route should apply to.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -96,6 +120,11 @@ public final class IngressGatewayHostRef {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }

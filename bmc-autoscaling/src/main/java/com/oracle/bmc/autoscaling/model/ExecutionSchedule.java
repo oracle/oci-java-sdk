@@ -90,6 +90,10 @@ public class ExecutionSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final Timezone timezone;
 
+    /**
+     * The time zone for the execution schedule.
+     * @return the value
+     **/
     public Timezone getTimezone() {
         return timezone;
     }

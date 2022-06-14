@@ -76,6 +76,11 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -88,6 +93,12 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("forwardingAddress")
     private final String forwardingAddress;
 
+    /**
+     * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part
+     * of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+     *
+     * @return the value
+     **/
     public String getForwardingAddress() {
         return forwardingAddress;
     }
@@ -99,6 +110,11 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("isForwarding")
     private final Boolean isForwarding;
 
+    /**
+     * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+     *
+     * @return the value
+     **/
     public Boolean getIsForwarding() {
         return isForwarding;
     }
@@ -110,6 +126,11 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("isListening")
     private final Boolean isListening;
 
+    /**
+     * A Boolean flag indicating whether or not the resolver endpoint is for listening.
+     *
+     * @return the value
+     **/
     public Boolean getIsListening() {
         return isListening;
     }
@@ -122,6 +143,12 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("listeningAddress")
     private final String listeningAddress;
 
+    /**
+     * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
+     * subnet and will be assigned by the system if unspecified when isListening is true.
+     *
+     * @return the value
+     **/
     public String getListeningAddress() {
         return listeningAddress;
     }
@@ -134,6 +161,12 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under
+     * and will be updated if the resolver's compartment is changed.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -148,6 +181,14 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
+     * with a Z offset, as defined by RFC 3339.
+     * <p>
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -162,6 +203,14 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ"
+     * format with a Z offset, as defined by RFC 3339.
+     * <p>
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -224,6 +273,10 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the resource.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -234,6 +287,10 @@ public class ResolverEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("self")
     private final String self;
 
+    /**
+     * The canonical absolute URL of the resource.
+     * @return the value
+     **/
     public String getSelf() {
         return self;
     }

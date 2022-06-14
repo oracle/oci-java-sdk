@@ -16,6 +16,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String workRequestId;
 
+    /**
+     * The ID of the asynchronous work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -32,6 +38,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.aivision.model.OperationStatus status;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given OperationStatus.
+     */
     public com.oracle.bmc.aivision.model.OperationStatus getStatus() {
         return status;
     }
@@ -40,6 +49,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String resourceId;
 
+    /**
+     * The ID of the resource affected by the work request.
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -48,6 +60,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,6 +71,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -64,6 +82,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -72,6 +93,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private com.oracle.bmc.aivision.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.aivision.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -117,6 +141,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -128,10 +156,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -139,10 +171,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The ID of the asynchronous work request.
+         */
         private String workRequestId = null;
 
         /**
          * The ID of the asynchronous work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -150,10 +186,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given OperationStatus.
+         */
         private com.oracle.bmc.aivision.model.OperationStatus status = null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given OperationStatus.
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(com.oracle.bmc.aivision.model.OperationStatus status) {
@@ -161,10 +201,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The ID of the resource affected by the work request.
+         */
         private String resourceId = null;
 
         /**
          * The ID of the resource affected by the work request.
+         * @param resourceId the value to set
          * @return this builder instance
          */
         public Builder resourceId(String resourceId) {
@@ -172,10 +216,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -183,10 +231,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * The position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -194,10 +246,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -205,10 +261,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.aivision.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.aivision.model.SortOrder sortOrder) {
@@ -216,11 +276,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -312,7 +377,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -327,6 +393,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

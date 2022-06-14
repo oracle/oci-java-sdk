@@ -16,6 +16,9 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String serviceCatalogId;
 
+    /**
+     * The unique identifier for the service catalog.
+     */
     public String getServiceCatalogId() {
         return serviceCatalogId;
     }
@@ -34,6 +40,11 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +54,10 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -51,6 +66,9 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -94,6 +112,9 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * Default is {@code TIMECREATED}
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -138,6 +159,9 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -146,6 +170,9 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String displayName;
 
+    /**
+     * Exact match name filter.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -157,10 +184,14 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -168,10 +199,14 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The unique identifier for the service catalog.
+         */
         private String serviceCatalogId = null;
 
         /**
          * The unique identifier for the service catalog.
+         * @param serviceCatalogId the value to set
          * @return this builder instance
          */
         public Builder serviceCatalogId(String serviceCatalogId) {
@@ -179,12 +214,18 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -192,11 +233,16 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         */
         private Integer limit = null;
 
         /**
          * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -204,10 +250,14 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -215,10 +265,14 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Default is {@code TIMECREATED}
+         */
         private SortBy sortBy = null;
 
         /**
          * Default is {@code TIMECREATED}
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -226,10 +280,14 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -237,10 +295,14 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Exact match name filter.
+         */
         private String displayName = null;
 
         /**
          * Exact match name filter.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -330,7 +392,8 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -344,6 +407,10 @@ public class ListServiceCatalogsRequest extends com.oracle.bmc.requests.BmcReque
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

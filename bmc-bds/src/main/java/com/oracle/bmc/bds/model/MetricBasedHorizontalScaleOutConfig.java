@@ -32,6 +32,7 @@ public final class MetricBasedHorizontalScaleOutConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private AutoScalePolicyMetricRule metric;
 
@@ -40,19 +41,33 @@ public final class MetricBasedHorizontalScaleOutConfig {
             this.__explicitlySet__.add("metric");
             return this;
         }
-
+        /**
+         * This value is the maximum number of nodes the cluster can be scaled-out to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxNodeCount")
         private Integer maxNodeCount;
 
+        /**
+         * This value is the maximum number of nodes the cluster can be scaled-out to.
+         * @param maxNodeCount the value to set
+         * @return this builder
+         **/
         public Builder maxNodeCount(Integer maxNodeCount) {
             this.maxNodeCount = maxNodeCount;
             this.__explicitlySet__.add("maxNodeCount");
             return this;
         }
-
+        /**
+         * This value is the number of nodes to add during a scale-out event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
         private Integer stepSize;
 
+        /**
+         * This value is the number of nodes to add during a scale-out event.
+         * @param stepSize the value to set
+         * @return this builder
+         **/
         public Builder stepSize(Integer stepSize) {
             this.stepSize = stepSize;
             this.__explicitlySet__.add("stepSize");
@@ -105,6 +120,10 @@ public final class MetricBasedHorizontalScaleOutConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("maxNodeCount")
     private final Integer maxNodeCount;
 
+    /**
+     * This value is the maximum number of nodes the cluster can be scaled-out to.
+     * @return the value
+     **/
     public Integer getMaxNodeCount() {
         return maxNodeCount;
     }
@@ -115,6 +134,10 @@ public final class MetricBasedHorizontalScaleOutConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
     private final Integer stepSize;
 
+    /**
+     * This value is the number of nodes to add during a scale-out event.
+     * @return the value
+     **/
     public Integer getStepSize() {
         return stepSize;
     }

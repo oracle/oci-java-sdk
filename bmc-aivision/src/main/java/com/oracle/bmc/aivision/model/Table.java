@@ -48,54 +48,97 @@ public final class Table {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
         private Integer rowCount;
 
+        /**
+         * The number of rows.
+         * @param rowCount the value to set
+         * @return this builder
+         **/
         public Builder rowCount(Integer rowCount) {
             this.rowCount = rowCount;
             this.__explicitlySet__.add("rowCount");
             return this;
         }
-
+        /**
+         * The number of columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnCount")
         private Integer columnCount;
 
+        /**
+         * The number of columns.
+         * @param columnCount the value to set
+         * @return this builder
+         **/
         public Builder columnCount(Integer columnCount) {
             this.columnCount = columnCount;
             this.__explicitlySet__.add("columnCount");
             return this;
         }
-
+        /**
+         * The header rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerRows")
         private java.util.List<TableRow> headerRows;
 
+        /**
+         * The header rows.
+         * @param headerRows the value to set
+         * @return this builder
+         **/
         public Builder headerRows(java.util.List<TableRow> headerRows) {
             this.headerRows = headerRows;
             this.__explicitlySet__.add("headerRows");
             return this;
         }
-
+        /**
+         * The body rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bodyRows")
         private java.util.List<TableRow> bodyRows;
 
+        /**
+         * The body rows.
+         * @param bodyRows the value to set
+         * @return this builder
+         **/
         public Builder bodyRows(java.util.List<TableRow> bodyRows) {
             this.bodyRows = bodyRows;
             this.__explicitlySet__.add("bodyRows");
             return this;
         }
-
+        /**
+         * the footer rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("footerRows")
         private java.util.List<TableRow> footerRows;
 
+        /**
+         * the footer rows.
+         * @param footerRows the value to set
+         * @return this builder
+         **/
         public Builder footerRows(java.util.List<TableRow> footerRows) {
             this.footerRows = footerRows;
             this.__explicitlySet__.add("footerRows");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -161,6 +204,10 @@ public final class Table {
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
     private final Integer rowCount;
 
+    /**
+     * The number of rows.
+     * @return the value
+     **/
     public Integer getRowCount() {
         return rowCount;
     }
@@ -171,6 +218,10 @@ public final class Table {
     @com.fasterxml.jackson.annotation.JsonProperty("columnCount")
     private final Integer columnCount;
 
+    /**
+     * The number of columns.
+     * @return the value
+     **/
     public Integer getColumnCount() {
         return columnCount;
     }
@@ -181,6 +232,10 @@ public final class Table {
     @com.fasterxml.jackson.annotation.JsonProperty("headerRows")
     private final java.util.List<TableRow> headerRows;
 
+    /**
+     * The header rows.
+     * @return the value
+     **/
     public java.util.List<TableRow> getHeaderRows() {
         return headerRows;
     }
@@ -191,6 +246,10 @@ public final class Table {
     @com.fasterxml.jackson.annotation.JsonProperty("bodyRows")
     private final java.util.List<TableRow> bodyRows;
 
+    /**
+     * The body rows.
+     * @return the value
+     **/
     public java.util.List<TableRow> getBodyRows() {
         return bodyRows;
     }
@@ -201,6 +260,10 @@ public final class Table {
     @com.fasterxml.jackson.annotation.JsonProperty("footerRows")
     private final java.util.List<TableRow> footerRows;
 
+    /**
+     * the footer rows.
+     * @return the value
+     **/
     public java.util.List<TableRow> getFooterRows() {
         return footerRows;
     }
@@ -211,6 +274,10 @@ public final class Table {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }

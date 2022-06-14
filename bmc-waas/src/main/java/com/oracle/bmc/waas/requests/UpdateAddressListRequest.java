@@ -18,6 +18,9 @@ public class UpdateAddressListRequest
      */
     private String addressListId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
+     */
     public String getAddressListId() {
         return addressListId;
     }
@@ -26,6 +29,9 @@ public class UpdateAddressListRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +40,9 @@ public class UpdateAddressListRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -42,6 +51,9 @@ public class UpdateAddressListRequest
      */
     private com.oracle.bmc.waas.model.UpdateAddressListDetails updateAddressListDetails;
 
+    /**
+     * The details of the address list to update.
+     */
     public com.oracle.bmc.waas.model.UpdateAddressListDetails getUpdateAddressListDetails() {
         return updateAddressListDetails;
     }
@@ -63,10 +75,14 @@ public class UpdateAddressListRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
+         */
         private String addressListId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
+         * @param addressListId the value to set
          * @return this builder instance
          */
         public Builder addressListId(String addressListId) {
@@ -74,10 +90,14 @@ public class UpdateAddressListRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -85,10 +105,14 @@ public class UpdateAddressListRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -96,10 +120,14 @@ public class UpdateAddressListRequest
             return this;
         }
 
+        /**
+         * The details of the address list to update.
+         */
         private com.oracle.bmc.waas.model.UpdateAddressListDetails updateAddressListDetails = null;
 
         /**
          * The details of the address list to update.
+         * @param updateAddressListDetails the value to set
          * @return this builder instance
          */
         public Builder updateAddressListDetails(
@@ -193,7 +221,8 @@ public class UpdateAddressListRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -203,6 +232,10 @@ public class UpdateAddressListRequest
                 .updateAddressListDetails(updateAddressListDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

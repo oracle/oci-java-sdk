@@ -15,6 +15,12 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.core.model.AllowedIkeIPSecParameters allowedIkeIPSecParameters;
 
+    /**
+     * The returned AllowedIkeIPSecParameters instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.AllowedIkeIPSecParameters getAllowedIkeIPSecParameters() {
         return allowedIkeIPSecParameters;
     }
@@ -50,15 +60,35 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AllowedIkeIPSecParameters instance.
+         */
         private com.oracle.bmc.core.model.AllowedIkeIPSecParameters allowedIkeIPSecParameters;
 
+        /**
+         * The returned AllowedIkeIPSecParameters instance.
+         * @param allowedIkeIPSecParameters the value to set
+         * @return this builder
+         */
         public Builder allowedIkeIPSecParameters(
                 com.oracle.bmc.core.model.AllowedIkeIPSecParameters allowedIkeIPSecParameters) {
             this.allowedIkeIPSecParameters = allowedIkeIPSecParameters;
@@ -77,12 +107,20 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAllowedIkeIPSecParametersResponse build() {
             return new GetAllowedIkeIPSecParametersResponse(
                     __httpStatusCode__, opcRequestId, allowedIkeIPSecParameters);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

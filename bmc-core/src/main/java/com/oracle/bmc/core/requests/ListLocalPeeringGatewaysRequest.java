@@ -17,6 +17,9 @@ public class ListLocalPeeringGatewaysRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -30,6 +33,14 @@ public class ListLocalPeeringGatewaysRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +52,12 @@ public class ListLocalPeeringGatewaysRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -49,6 +66,9 @@ public class ListLocalPeeringGatewaysRequest
      */
     private String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     */
     public String getVcnId() {
         return vcnId;
     }
@@ -60,10 +80,14 @@ public class ListLocalPeeringGatewaysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -71,6 +95,14 @@ public class ListLocalPeeringGatewaysRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -80,6 +112,7 @@ public class ListLocalPeeringGatewaysRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -87,6 +120,12 @@ public class ListLocalPeeringGatewaysRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -94,6 +133,7 @@ public class ListLocalPeeringGatewaysRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -101,10 +141,14 @@ public class ListLocalPeeringGatewaysRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         */
         private String vcnId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId the value to set
          * @return this builder instance
          */
         public Builder vcnId(String vcnId) {
@@ -186,12 +230,17 @@ public class ListLocalPeeringGatewaysRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().compartmentId(compartmentId).limit(limit).page(page).vcnId(vcnId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

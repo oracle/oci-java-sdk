@@ -30,9 +30,19 @@ package com.oracle.bmc.sch.model;
 public final class LoggingSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The logs for this Logging source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logSources")
         private java.util.List<LogSource> logSources;
 
+        /**
+         * The logs for this Logging source.
+         *
+         * @param logSources the value to set
+         * @return this builder
+         **/
         public Builder logSources(java.util.List<LogSource> logSources) {
             this.logSources = logSources;
             this.__explicitlySet__.add("logSources");
@@ -81,6 +91,11 @@ public final class LoggingSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logSources")
     private final java.util.List<LogSource> logSources;
 
+    /**
+     * The logs for this Logging source.
+     *
+     * @return the value
+     **/
     public java.util.List<LogSource> getLogSources() {
         return logSources;
     }

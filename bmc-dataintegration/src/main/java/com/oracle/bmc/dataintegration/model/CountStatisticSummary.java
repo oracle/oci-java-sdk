@@ -30,18 +30,33 @@ public final class CountStatisticSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of object for the count statistic object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
 
+        /**
+         * The type of object for the count statistic object.
+         * @param objectType the value to set
+         * @return this builder
+         **/
         public Builder objectType(ObjectType objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-
+        /**
+         * The value for the count statistic object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
         private Long objectCount;
 
+        /**
+         * The value for the count statistic object.
+         * @param objectCount the value to set
+         * @return this builder
+         **/
         public Builder objectCount(Long objectCount) {
             this.objectCount = objectCount;
             this.__explicitlySet__.add("objectCount");
@@ -138,6 +153,10 @@ public final class CountStatisticSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final ObjectType objectType;
 
+    /**
+     * The type of object for the count statistic object.
+     * @return the value
+     **/
     public ObjectType getObjectType() {
         return objectType;
     }
@@ -148,6 +167,10 @@ public final class CountStatisticSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
     private final Long objectCount;
 
+    /**
+     * The value for the count statistic object.
+     * @return the value
+     **/
     public Long getObjectCount() {
         return objectCount;
     }

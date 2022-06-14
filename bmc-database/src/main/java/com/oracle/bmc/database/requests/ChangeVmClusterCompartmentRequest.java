@@ -19,6 +19,9 @@ public class ChangeVmClusterCompartmentRequest
     private com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails
             changeVmClusterCompartmentDetails;
 
+    /**
+     * Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
+     */
     public com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails
             getChangeVmClusterCompartmentDetails() {
         return changeVmClusterCompartmentDetails;
@@ -28,6 +31,9 @@ public class ChangeVmClusterCompartmentRequest
      */
     private String vmClusterId;
 
+    /**
+     * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -41,6 +47,14 @@ public class ChangeVmClusterCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +64,10 @@ public class ChangeVmClusterCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +79,12 @@ public class ChangeVmClusterCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -83,11 +107,15 @@ public class ChangeVmClusterCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
+         */
         private com.oracle.bmc.database.model.ChangeVmClusterCompartmentDetails
                 changeVmClusterCompartmentDetails = null;
 
         /**
          * Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
+         * @param changeVmClusterCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeVmClusterCompartmentDetails(
@@ -97,10 +125,14 @@ public class ChangeVmClusterCompartmentRequest
             return this;
         }
 
+        /**
+         * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String vmClusterId = null;
 
         /**
          * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param vmClusterId the value to set
          * @return this builder instance
          */
         public Builder vmClusterId(String vmClusterId) {
@@ -108,6 +140,14 @@ public class ChangeVmClusterCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -117,6 +157,7 @@ public class ChangeVmClusterCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -124,11 +165,16 @@ public class ChangeVmClusterCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,12 @@ public class ChangeVmClusterCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -143,6 +195,7 @@ public class ChangeVmClusterCompartmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -237,7 +290,8 @@ public class ChangeVmClusterCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +302,10 @@ public class ChangeVmClusterCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

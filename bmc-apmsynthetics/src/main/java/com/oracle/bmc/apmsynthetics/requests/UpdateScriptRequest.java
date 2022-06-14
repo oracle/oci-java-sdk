@@ -19,6 +19,10 @@ public class UpdateScriptRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +31,9 @@ public class UpdateScriptRequest
      */
     private String scriptId;
 
+    /**
+     * The OCID of the script.
+     */
     public String getScriptId() {
         return scriptId;
     }
@@ -35,6 +42,9 @@ public class UpdateScriptRequest
      */
     private com.oracle.bmc.apmsynthetics.model.UpdateScriptDetails updateScriptDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.apmsynthetics.model.UpdateScriptDetails getUpdateScriptDetails() {
         return updateScriptDetails;
     }
@@ -48,6 +58,14 @@ public class UpdateScriptRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,6 +76,11 @@ public class UpdateScriptRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -79,11 +102,16 @@ public class UpdateScriptRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -91,10 +119,14 @@ public class UpdateScriptRequest
             return this;
         }
 
+        /**
+         * The OCID of the script.
+         */
         private String scriptId = null;
 
         /**
          * The OCID of the script.
+         * @param scriptId the value to set
          * @return this builder instance
          */
         public Builder scriptId(String scriptId) {
@@ -102,10 +134,14 @@ public class UpdateScriptRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.apmsynthetics.model.UpdateScriptDetails updateScriptDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateScriptDetails the value to set
          * @return this builder instance
          */
         public Builder updateScriptDetails(
@@ -114,6 +150,14 @@ public class UpdateScriptRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +167,7 @@ public class UpdateScriptRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,12 +175,18 @@ public class UpdateScriptRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -230,7 +281,8 @@ public class UpdateScriptRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -241,6 +293,10 @@ public class UpdateScriptRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

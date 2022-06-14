@@ -20,6 +20,10 @@ public class CreateDatabaseRegistrationRequest
     private com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails
             createDatabaseRegistrationDetails;
 
+    /**
+     * Specification of the DatabaseRegistration to create.
+     *
+     */
     public com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails
             getCreateDatabaseRegistrationDetails() {
         return createDatabaseRegistrationDetails;
@@ -30,6 +34,10 @@ public class CreateDatabaseRegistrationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +47,10 @@ public class CreateDatabaseRegistrationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,12 +73,17 @@ public class CreateDatabaseRegistrationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Specification of the DatabaseRegistration to create.
+         *
+         */
         private com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails
                 createDatabaseRegistrationDetails = null;
 
         /**
          * Specification of the DatabaseRegistration to create.
          *
+         * @param createDatabaseRegistrationDetails the value to set
          * @return this builder instance
          */
         public Builder createDatabaseRegistrationDetails(
@@ -76,11 +93,16 @@ public class CreateDatabaseRegistrationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -88,11 +110,16 @@ public class CreateDatabaseRegistrationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,7 +211,8 @@ public class CreateDatabaseRegistrationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +221,10 @@ public class CreateDatabaseRegistrationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

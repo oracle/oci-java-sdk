@@ -29,9 +29,17 @@ public final class ReportDefinitionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of report definition summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ReportDefinitionSummary> items;
 
+        /**
+         * Array of report definition summary.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ReportDefinitionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ReportDefinitionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ReportDefinitionSummary> items;
 
+    /**
+     * Array of report definition summary.
+     * @return the value
+     **/
     public java.util.List<ReportDefinitionSummary> getItems() {
         return items;
     }

@@ -17,6 +17,9 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
      */
     private String databaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -25,6 +28,9 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
      */
     private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.Action upgradeAction;
 
+    /**
+     * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+     */
     public com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.Action
             getUpgradeAction() {
         return upgradeAction;
@@ -35,6 +41,9 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
     private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -81,6 +90,10 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -125,6 +138,9 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -134,6 +150,10 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -142,6 +162,9 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -150,6 +173,9 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -161,10 +187,14 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String databaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -172,11 +202,15 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+         */
         private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.Action
                 upgradeAction = null;
 
         /**
          * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+         * @param upgradeAction the value to set
          * @return this builder instance
          */
         public Builder upgradeAction(
@@ -186,11 +220,15 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -200,11 +238,16 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -212,10 +255,14 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -223,11 +270,16 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -235,10 +287,14 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -246,10 +302,14 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -340,7 +400,8 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -354,6 +415,10 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

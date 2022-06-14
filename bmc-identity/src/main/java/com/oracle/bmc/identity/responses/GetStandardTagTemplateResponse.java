@@ -15,6 +15,12 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.identity.model.StandardTagNamespaceTemplate standardTagNamespaceTemplate;
 
+    /**
+     * The returned StandardTagNamespaceTemplate instance.
+     * @return the value
+     */
     public com.oracle.bmc.identity.model.StandardTagNamespaceTemplate
             getStandardTagNamespaceTemplate() {
         return standardTagNamespaceTemplate;
@@ -52,16 +62,36 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned StandardTagNamespaceTemplate instance.
+         */
         private com.oracle.bmc.identity.model.StandardTagNamespaceTemplate
                 standardTagNamespaceTemplate;
 
+        /**
+         * The returned StandardTagNamespaceTemplate instance.
+         * @param standardTagNamespaceTemplate the value to set
+         * @return this builder
+         */
         public Builder standardTagNamespaceTemplate(
                 com.oracle.bmc.identity.model.StandardTagNamespaceTemplate
                         standardTagNamespaceTemplate) {
@@ -81,12 +111,20 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetStandardTagTemplateResponse build() {
             return new GetStandardTagTemplateResponse(
                     __httpStatusCode__, opcRequestId, standardTagNamespaceTemplate);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

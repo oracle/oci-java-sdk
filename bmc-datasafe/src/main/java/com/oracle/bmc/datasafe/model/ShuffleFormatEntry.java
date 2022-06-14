@@ -43,10 +43,23 @@ public final class ShuffleFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * One or more reference columns to be used to group column values so that
+         * they can be shuffled within their own group. The grouping columns and
+         * the column to be masked must belong to the same table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupingColumns")
         private java.util.List<String> groupingColumns;
 
+        /**
+         * One or more reference columns to be used to group column values so that
+         * they can be shuffled within their own group. The grouping columns and
+         * the column to be masked must belong to the same table.
+         *
+         * @param groupingColumns the value to set
+         * @return this builder
+         **/
         public Builder groupingColumns(java.util.List<String> groupingColumns) {
             this.groupingColumns = groupingColumns;
             this.__explicitlySet__.add("groupingColumns");
@@ -98,6 +111,13 @@ public final class ShuffleFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("groupingColumns")
     private final java.util.List<String> groupingColumns;
 
+    /**
+     * One or more reference columns to be used to group column values so that
+     * they can be shuffled within their own group. The grouping columns and
+     * the column to be masked must belong to the same table.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getGroupingColumns() {
         return groupingColumns;
     }

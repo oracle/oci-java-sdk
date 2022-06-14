@@ -32,27 +32,49 @@ public final class InternationalMarketPrice {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The currency of the pricing model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private PricingCurrencyEnum currencyCode;
 
+        /**
+         * The currency of the pricing model.
+         * @param currencyCode the value to set
+         * @return this builder
+         **/
         public Builder currencyCode(PricingCurrencyEnum currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-
+        /**
+         * The symbol of the currency
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencySymbol")
         private String currencySymbol;
 
+        /**
+         * The symbol of the currency
+         * @param currencySymbol the value to set
+         * @return this builder
+         **/
         public Builder currencySymbol(String currencySymbol) {
             this.currencySymbol = currencySymbol;
             this.__explicitlySet__.add("currencySymbol");
             return this;
         }
-
+        /**
+         * The pricing rate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rate")
         private Double rate;
 
+        /**
+         * The pricing rate.
+         * @param rate the value to set
+         * @return this builder
+         **/
         public Builder rate(Double rate) {
             this.rate = rate;
             this.__explicitlySet__.add("rate");
@@ -98,6 +120,10 @@ public final class InternationalMarketPrice {
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final PricingCurrencyEnum currencyCode;
 
+    /**
+     * The currency of the pricing model.
+     * @return the value
+     **/
     public PricingCurrencyEnum getCurrencyCode() {
         return currencyCode;
     }
@@ -108,6 +134,10 @@ public final class InternationalMarketPrice {
     @com.fasterxml.jackson.annotation.JsonProperty("currencySymbol")
     private final String currencySymbol;
 
+    /**
+     * The symbol of the currency
+     * @return the value
+     **/
     public String getCurrencySymbol() {
         return currencySymbol;
     }
@@ -118,6 +148,10 @@ public final class InternationalMarketPrice {
     @com.fasterxml.jackson.annotation.JsonProperty("rate")
     private final Double rate;
 
+    /**
+     * The pricing rate.
+     * @return the value
+     **/
     public Double getRate() {
         return rate;
     }

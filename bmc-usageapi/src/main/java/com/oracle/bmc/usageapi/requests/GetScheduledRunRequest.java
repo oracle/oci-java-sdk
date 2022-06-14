@@ -16,6 +16,9 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String scheduledRunId;
 
+    /**
+     * The scheduledRun unique OCID.
+     */
     public String getScheduledRunId() {
         return scheduledRunId;
     }
@@ -26,6 +29,11 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +45,14 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The scheduledRun unique OCID.
+         */
         private String scheduledRunId = null;
 
         /**
          * The scheduledRun unique OCID.
+         * @param scheduledRunId the value to set
          * @return this builder instance
          */
         public Builder scheduledRunId(String scheduledRunId) {
@@ -48,12 +60,18 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,12 +149,17 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().scheduledRunId(scheduledRunId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,9 +27,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class ParquetFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compression for the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compression")
         private String compression;
 
+        /**
+         * The compression for the file.
+         * @param compression the value to set
+         * @return this builder
+         **/
         public Builder compression(String compression) {
             this.compression = compression;
             this.__explicitlySet__.add("compression");
@@ -77,6 +85,10 @@ public final class ParquetFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("compression")
     private final String compression;
 
+    /**
+     * The compression for the file.
+     * @return the value
+     **/
     public String getCompression() {
         return compression;
     }

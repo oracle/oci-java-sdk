@@ -35,10 +35,17 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The IPSec connection that contains the attached IPSec tunnel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
         private String ipsecConnectionId;
 
+        /**
+         * The IPSec connection that contains the attached IPSec tunnel.
+         * @param ipsecConnectionId the value to set
+         * @return this builder
+         **/
         public Builder ipsecConnectionId(String ipsecConnectionId) {
             this.ipsecConnectionId = ipsecConnectionId;
             this.__explicitlySet__.add("ipsecConnectionId");
@@ -87,6 +94,10 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
     @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
     private final String ipsecConnectionId;
 
+    /**
+     * The IPSec connection that contains the attached IPSec tunnel.
+     * @return the value
+     **/
     public String getIpsecConnectionId() {
         return ipsecConnectionId;
     }

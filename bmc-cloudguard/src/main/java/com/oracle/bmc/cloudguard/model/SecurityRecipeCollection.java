@@ -29,9 +29,17 @@ public final class SecurityRecipeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of security zone recipe summaries
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SecurityRecipeSummary> items;
 
+        /**
+         * A list of security zone recipe summaries
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SecurityRecipeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class SecurityRecipeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SecurityRecipeSummary> items;
 
+    /**
+     * A list of security zone recipe summaries
+     * @return the value
+     **/
     public java.util.List<SecurityRecipeSummary> getItems() {
         return items;
     }

@@ -18,6 +18,9 @@ public class CreateBackendSetRequest
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -27,6 +30,9 @@ public class CreateBackendSetRequest
     private com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails
             createBackendSetDetails;
 
+    /**
+     * The details for adding a backend set.
+     */
     public com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails
             getCreateBackendSetDetails() {
         return createBackendSetDetails;
@@ -38,6 +44,11 @@ public class CreateBackendSetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class CreateBackendSetRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -64,6 +83,14 @@ public class CreateBackendSetRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -86,10 +113,14 @@ public class CreateBackendSetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -97,11 +128,15 @@ public class CreateBackendSetRequest
             return this;
         }
 
+        /**
+         * The details for adding a backend set.
+         */
         private com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails
                 createBackendSetDetails = null;
 
         /**
          * The details for adding a backend set.
+         * @param createBackendSetDetails the value to set
          * @return this builder instance
          */
         public Builder createBackendSetDetails(
@@ -111,12 +146,18 @@ public class CreateBackendSetRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -124,6 +165,14 @@ public class CreateBackendSetRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -133,6 +182,7 @@ public class CreateBackendSetRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -140,6 +190,14 @@ public class CreateBackendSetRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -149,6 +207,7 @@ public class CreateBackendSetRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the current etag value of the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -244,7 +303,8 @@ public class CreateBackendSetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -255,6 +315,10 @@ public class CreateBackendSetRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

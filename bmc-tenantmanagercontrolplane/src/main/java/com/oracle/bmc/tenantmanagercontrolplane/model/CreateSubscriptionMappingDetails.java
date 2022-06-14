@@ -30,18 +30,33 @@ public final class CreateSubscriptionMappingDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the compartment. Always a tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment. Always a tenancy OCID.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * OCID of subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
+        /**
+         * OCID of subscription.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -85,6 +100,10 @@ public final class CreateSubscriptionMappingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment. Always a tenancy OCID.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -95,6 +114,10 @@ public final class CreateSubscriptionMappingDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
+    /**
+     * OCID of subscription.
+     * @return the value
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }

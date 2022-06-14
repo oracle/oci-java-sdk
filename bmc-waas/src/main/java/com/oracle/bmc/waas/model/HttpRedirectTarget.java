@@ -34,45 +34,81 @@ public final class HttpRedirectTarget {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The protocol used for the target, http or https.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * The protocol used for the target, http or https.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * The host portion of the redirect.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The host portion of the redirect.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Port number of the target destination of the redirect, default to match protocol
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Port number of the target destination of the redirect, default to match protocol
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
+        /**
+         * The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+         * @param query the value to set
+         * @return this builder
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -168,6 +204,10 @@ public final class HttpRedirectTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * The protocol used for the target, http or https.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -178,6 +218,10 @@ public final class HttpRedirectTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The host portion of the redirect.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -188,6 +232,10 @@ public final class HttpRedirectTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Port number of the target destination of the redirect, default to match protocol
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -198,6 +246,10 @@ public final class HttpRedirectTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -208,6 +260,10 @@ public final class HttpRedirectTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
+    /**
+     * The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+     * @return the value
+     **/
     public String getQuery() {
         return query;
     }

@@ -42,45 +42,127 @@ public final class BackupPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * If automated backups are enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * If automated backups are enabled or disabled.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The start of a 30-minute window of time in which daily, automated backups occur.
+         * <p>
+         * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * <p>
+         * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+         * <p>
+         * If not defined, a window is selected from the following Region-based time-spans:
+         * - eu-frankfurt-1: 20:00 - 04:00 UTC
+         * - us-ashburn-1: 03:00 - 11:00 UTC
+         * - uk-london-1: 06:00 - 14:00 UTC
+         * - ap-tokyo-1: 13:00 - 21:00
+         * - us-phoenix-1: 06:00 - 14:00
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
         private String windowStartTime;
 
+        /**
+         * The start of a 30-minute window of time in which daily, automated backups occur.
+         * <p>
+         * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * <p>
+         * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+         * <p>
+         * If not defined, a window is selected from the following Region-based time-spans:
+         * - eu-frankfurt-1: 20:00 - 04:00 UTC
+         * - us-ashburn-1: 03:00 - 11:00 UTC
+         * - uk-london-1: 06:00 - 14:00 UTC
+         * - ap-tokyo-1: 13:00 - 21:00
+         * - us-phoenix-1: 06:00 - 14:00
+         *
+         * @param windowStartTime the value to set
+         * @return this builder
+         **/
         public Builder windowStartTime(String windowStartTime) {
             this.windowStartTime = windowStartTime;
             this.__explicitlySet__.add("windowStartTime");
             return this;
         }
-
+        /**
+         * The number of days automated backups are retained.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
         private Integer retentionInDays;
 
+        /**
+         * The number of days automated backups are retained.
+         *
+         * @param retentionInDays the value to set
+         * @return this builder
+         **/
         public Builder retentionInDays(Integer retentionInDays) {
             this.retentionInDays = retentionInDays;
             this.__explicitlySet__.add("retentionInDays");
             return this;
         }
-
+        /**
+         * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -130,6 +212,10 @@ public final class BackupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * If automated backups are enabled or disabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -152,6 +238,22 @@ public final class BackupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
     private final String windowStartTime;
 
+    /**
+     * The start of a 30-minute window of time in which daily, automated backups occur.
+     * <p>
+     * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * <p>
+     * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+     * <p>
+     * If not defined, a window is selected from the following Region-based time-spans:
+     * - eu-frankfurt-1: 20:00 - 04:00 UTC
+     * - us-ashburn-1: 03:00 - 11:00 UTC
+     * - uk-london-1: 06:00 - 14:00 UTC
+     * - ap-tokyo-1: 13:00 - 21:00
+     * - us-phoenix-1: 06:00 - 14:00
+     *
+     * @return the value
+     **/
     public String getWindowStartTime() {
         return windowStartTime;
     }
@@ -163,6 +265,11 @@ public final class BackupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
     private final Integer retentionInDays;
 
+    /**
+     * The number of days automated backups are retained.
+     *
+     * @return the value
+     **/
     public Integer getRetentionInDays() {
         return retentionInDays;
     }
@@ -178,6 +285,15 @@ public final class BackupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -193,6 +309,15 @@ public final class BackupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

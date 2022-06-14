@@ -31,18 +31,37 @@ public final class AgentImageSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ODMS Agent Image version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * ODMS Agent Image version.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * URL to download Agent Image of the ODMS Agent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadUrl")
         private String downloadUrl;
 
+        /**
+         * URL to download Agent Image of the ODMS Agent.
+         *
+         * @param downloadUrl the value to set
+         * @return this builder
+         **/
         public Builder downloadUrl(String downloadUrl) {
             this.downloadUrl = downloadUrl;
             this.__explicitlySet__.add("downloadUrl");
@@ -85,6 +104,11 @@ public final class AgentImageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * ODMS Agent Image version.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -96,6 +120,11 @@ public final class AgentImageSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("downloadUrl")
     private final String downloadUrl;
 
+    /**
+     * URL to download Agent Image of the ODMS Agent.
+     *
+     * @return the value
+     **/
     public String getDownloadUrl() {
         return downloadUrl;
     }

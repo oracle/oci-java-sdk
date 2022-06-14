@@ -17,6 +17,14 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of audit events. When this header appears in the response,
+     * it means you received a partial list and there are more results. Include this value as the {@code page}
+     * parameter for the subsequent ListEvents request to get the next batch of events. For important
+     * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -28,6 +36,12 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +51,10 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.audit.model.AuditEvent> items;
 
+    /**
+     * A list of com.oracle.bmc.audit.model.AuditEvent instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.audit.model.AuditEvent> getItems() {
         return items;
     }
@@ -66,22 +84,58 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * For pagination of a list of audit events. When this header appears in the response,
+         * it means you received a partial list and there are more results. Include this value as the {@code page}
+         * parameter for the subsequent ListEvents request to get the next batch of events. For important
+         * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of audit events. When this header appears in the response,
+         * it means you received a partial list and there are more results. Include this value as the {@code page}
+         * parameter for the subsequent ListEvents request to get the next batch of events. For important
+         * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.audit.model.AuditEvent instances.
+         */
         private java.util.List<com.oracle.bmc.audit.model.AuditEvent> items;
 
+        /**
+         * A list of com.oracle.bmc.audit.model.AuditEvent instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(java.util.List<com.oracle.bmc.audit.model.AuditEvent> items) {
             this.items = items;
             return this;
@@ -100,11 +154,19 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListEventsResponse build() {
             return new ListEventsResponse(__httpStatusCode__, opcNextPage, opcRequestId, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

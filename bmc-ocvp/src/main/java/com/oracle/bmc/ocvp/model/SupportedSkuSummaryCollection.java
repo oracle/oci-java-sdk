@@ -30,9 +30,17 @@ public final class SupportedSkuSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of the supported SKUs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SupportedSkuSummary> items;
 
+        /**
+         * A list of the supported SKUs.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SupportedSkuSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class SupportedSkuSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SupportedSkuSummary> items;
 
+    /**
+     * A list of the supported SKUs.
+     * @return the value
+     **/
     public java.util.List<SupportedSkuSummary> getItems() {
         return items;
     }

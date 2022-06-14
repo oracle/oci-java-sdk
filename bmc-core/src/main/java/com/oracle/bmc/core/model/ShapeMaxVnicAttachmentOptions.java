@@ -34,27 +34,55 @@ public final class ShapeMaxVnicAttachmentOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The lowest maximum value of VNIC attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
+        /**
+         * The lowest maximum value of VNIC attachments.
+         *
+         * @param min the value to set
+         * @return this builder
+         **/
         public Builder min(Integer min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-
+        /**
+         * The highest maximum value of VNIC attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Float max;
 
+        /**
+         * The highest maximum value of VNIC attachments.
+         *
+         * @param max the value to set
+         * @return this builder
+         **/
         public Builder max(Float max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-
+        /**
+         * The default number of VNIC attachments allowed per OCPU.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpu")
         private Float defaultPerOcpu;
 
+        /**
+         * The default number of VNIC attachments allowed per OCPU.
+         *
+         * @param defaultPerOcpu the value to set
+         * @return this builder
+         **/
         public Builder defaultPerOcpu(Float defaultPerOcpu) {
             this.defaultPerOcpu = defaultPerOcpu;
             this.__explicitlySet__.add("defaultPerOcpu");
@@ -99,6 +127,11 @@ public final class ShapeMaxVnicAttachmentOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Integer min;
 
+    /**
+     * The lowest maximum value of VNIC attachments.
+     *
+     * @return the value
+     **/
     public Integer getMin() {
         return min;
     }
@@ -110,6 +143,11 @@ public final class ShapeMaxVnicAttachmentOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Float max;
 
+    /**
+     * The highest maximum value of VNIC attachments.
+     *
+     * @return the value
+     **/
     public Float getMax() {
         return max;
     }
@@ -121,6 +159,11 @@ public final class ShapeMaxVnicAttachmentOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpu")
     private final Float defaultPerOcpu;
 
+    /**
+     * The default number of VNIC attachments allowed per OCPU.
+     *
+     * @return the value
+     **/
     public Float getDefaultPerOcpu() {
         return defaultPerOcpu;
     }

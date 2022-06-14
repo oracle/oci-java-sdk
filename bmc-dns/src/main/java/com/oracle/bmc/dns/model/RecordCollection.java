@@ -27,6 +27,7 @@ public final class RecordCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<Record> items;
 

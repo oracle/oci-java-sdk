@@ -28,18 +28,33 @@ public final class Client {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the client. Must be unique within a subscriber.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the client. Must be unique within a subscriber.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The token for the client. Must be unique within a tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
+        /**
+         * The token for the client. Must be unique within a tenancy.
+         * @param token the value to set
+         * @return this builder
+         **/
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
@@ -81,6 +96,10 @@ public final class Client {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the client. Must be unique within a subscriber.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -91,6 +110,10 @@ public final class Client {
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
+    /**
+     * The token for the client. Must be unique within a tenancy.
+     * @return the value
+     **/
     public String getToken() {
         return token;
     }

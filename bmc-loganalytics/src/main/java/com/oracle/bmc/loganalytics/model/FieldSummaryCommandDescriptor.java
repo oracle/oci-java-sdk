@@ -72,10 +72,19 @@ public final class FieldSummaryCommandDescriptor extends AbstractCommandDescript
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Limit on number of distinct values to process for each field specified in the field summary command in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxValues")
         private Integer maxValues;
 
+        /**
+         * Limit on number of distinct values to process for each field specified in the field summary command in the query string.
+         *
+         * @param maxValues the value to set
+         * @return this builder
+         **/
         public Builder maxValues(Integer maxValues) {
             this.maxValues = maxValues;
             this.__explicitlySet__.add("maxValues");
@@ -143,6 +152,11 @@ public final class FieldSummaryCommandDescriptor extends AbstractCommandDescript
     @com.fasterxml.jackson.annotation.JsonProperty("maxValues")
     private final Integer maxValues;
 
+    /**
+     * Limit on number of distinct values to process for each field specified in the field summary command in the query string.
+     *
+     * @return the value
+     **/
     public Integer getMaxValues() {
         return maxValues;
     }

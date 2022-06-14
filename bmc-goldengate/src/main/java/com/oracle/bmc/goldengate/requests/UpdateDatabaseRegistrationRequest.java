@@ -19,6 +19,10 @@ public class UpdateDatabaseRegistrationRequest
      */
     private String databaseRegistrationId;
 
+    /**
+     * A unique DatabaseRegistration identifier.
+     *
+     */
     public String getDatabaseRegistrationId() {
         return databaseRegistrationId;
     }
@@ -29,6 +33,10 @@ public class UpdateDatabaseRegistrationRequest
     private com.oracle.bmc.goldengate.model.UpdateDatabaseRegistrationDetails
             updateDatabaseRegistrationDetails;
 
+    /**
+     * The new DatabaseRegistration specifications to apply.
+     *
+     */
     public com.oracle.bmc.goldengate.model.UpdateDatabaseRegistrationDetails
             getUpdateDatabaseRegistrationDetails() {
         return updateDatabaseRegistrationDetails;
@@ -39,6 +47,10 @@ public class UpdateDatabaseRegistrationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +60,10 @@ public class UpdateDatabaseRegistrationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,11 +86,16 @@ public class UpdateDatabaseRegistrationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique DatabaseRegistration identifier.
+         *
+         */
         private String databaseRegistrationId = null;
 
         /**
          * A unique DatabaseRegistration identifier.
          *
+         * @param databaseRegistrationId the value to set
          * @return this builder instance
          */
         public Builder databaseRegistrationId(String databaseRegistrationId) {
@@ -82,12 +103,17 @@ public class UpdateDatabaseRegistrationRequest
             return this;
         }
 
+        /**
+         * The new DatabaseRegistration specifications to apply.
+         *
+         */
         private com.oracle.bmc.goldengate.model.UpdateDatabaseRegistrationDetails
                 updateDatabaseRegistrationDetails = null;
 
         /**
          * The new DatabaseRegistration specifications to apply.
          *
+         * @param updateDatabaseRegistrationDetails the value to set
          * @return this builder instance
          */
         public Builder updateDatabaseRegistrationDetails(
@@ -97,11 +123,16 @@ public class UpdateDatabaseRegistrationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,11 +140,16 @@ public class UpdateDatabaseRegistrationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -207,7 +243,8 @@ public class UpdateDatabaseRegistrationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +254,10 @@ public class UpdateDatabaseRegistrationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

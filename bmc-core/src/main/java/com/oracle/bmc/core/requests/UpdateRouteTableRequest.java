@@ -18,6 +18,9 @@ public class UpdateRouteTableRequest
      */
     private String rtId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+     */
     public String getRtId() {
         return rtId;
     }
@@ -26,6 +29,9 @@ public class UpdateRouteTableRequest
      */
     private com.oracle.bmc.core.model.UpdateRouteTableDetails updateRouteTableDetails;
 
+    /**
+     * Details object for updating a route table.
+     */
     public com.oracle.bmc.core.model.UpdateRouteTableDetails getUpdateRouteTableDetails() {
         return updateRouteTableDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateRouteTableRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,10 +70,14 @@ public class UpdateRouteTableRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+         */
         private String rtId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+         * @param rtId the value to set
          * @return this builder instance
          */
         public Builder rtId(String rtId) {
@@ -69,10 +85,14 @@ public class UpdateRouteTableRequest
             return this;
         }
 
+        /**
+         * Details object for updating a route table.
+         */
         private com.oracle.bmc.core.model.UpdateRouteTableDetails updateRouteTableDetails = null;
 
         /**
          * Details object for updating a route table.
+         * @param updateRouteTableDetails the value to set
          * @return this builder instance
          */
         public Builder updateRouteTableDetails(
@@ -81,6 +101,12 @@ public class UpdateRouteTableRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -88,6 +114,7 @@ public class UpdateRouteTableRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -178,7 +205,8 @@ public class UpdateRouteTableRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +215,10 @@ public class UpdateRouteTableRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

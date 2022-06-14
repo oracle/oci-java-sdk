@@ -32,18 +32,35 @@ public final class BackoffRetryPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
         private Integer maxRetryDuration;
 
+        /**
+         * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
+         * @param maxRetryDuration the value to set
+         * @return this builder
+         **/
         public Builder maxRetryDuration(Integer maxRetryDuration) {
             this.maxRetryDuration = maxRetryDuration;
             this.__explicitlySet__.add("maxRetryDuration");
             return this;
         }
-
+        /**
+         * The type of delivery policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyType")
         private PolicyType policyType;
 
+        /**
+         * The type of delivery policy.
+         *
+         * @param policyType the value to set
+         * @return this builder
+         **/
         public Builder policyType(PolicyType policyType) {
             this.policyType = policyType;
             this.__explicitlySet__.add("policyType");
@@ -86,6 +103,10 @@ public final class BackoffRetryPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
     private final Integer maxRetryDuration;
 
+    /**
+     * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
+     * @return the value
+     **/
     public Integer getMaxRetryDuration() {
         return maxRetryDuration;
     }
@@ -145,6 +166,11 @@ public final class BackoffRetryPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     private final PolicyType policyType;
 
+    /**
+     * The type of delivery policy.
+     *
+     * @return the value
+     **/
     public PolicyType getPolicyType() {
         return policyType;
     }

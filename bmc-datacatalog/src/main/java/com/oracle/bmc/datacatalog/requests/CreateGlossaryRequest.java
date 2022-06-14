@@ -18,6 +18,9 @@ public class CreateGlossaryRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class CreateGlossaryRequest
      */
     private com.oracle.bmc.datacatalog.model.CreateGlossaryDetails createGlossaryDetails;
 
+    /**
+     * The information used to create the glossary.
+     */
     public com.oracle.bmc.datacatalog.model.CreateGlossaryDetails getCreateGlossaryDetails() {
         return createGlossaryDetails;
     }
@@ -34,6 +40,9 @@ public class CreateGlossaryRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +56,14 @@ public class CreateGlossaryRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -68,10 +85,14 @@ public class CreateGlossaryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -79,10 +100,14 @@ public class CreateGlossaryRequest
             return this;
         }
 
+        /**
+         * The information used to create the glossary.
+         */
         private com.oracle.bmc.datacatalog.model.CreateGlossaryDetails createGlossaryDetails = null;
 
         /**
          * The information used to create the glossary.
+         * @param createGlossaryDetails the value to set
          * @return this builder instance
          */
         public Builder createGlossaryDetails(
@@ -91,10 +116,14 @@ public class CreateGlossaryRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -102,6 +131,14 @@ public class CreateGlossaryRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -111,6 +148,7 @@ public class CreateGlossaryRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -203,7 +241,8 @@ public class CreateGlossaryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +252,10 @@ public class CreateGlossaryRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

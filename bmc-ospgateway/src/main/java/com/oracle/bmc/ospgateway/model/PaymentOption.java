@@ -47,6 +47,10 @@ public class PaymentOption {
     @com.fasterxml.jackson.annotation.JsonProperty("walletInstrumentId")
     private final String walletInstrumentId;
 
+    /**
+     * Wallet instrument internal id.
+     * @return the value
+     **/
     public String getWalletInstrumentId() {
         return walletInstrumentId;
     }
@@ -57,6 +61,10 @@ public class PaymentOption {
     @com.fasterxml.jackson.annotation.JsonProperty("walletTransactionId")
     private final String walletTransactionId;
 
+    /**
+     * Wallet transaction id.
+     * @return the value
+     **/
     public String getWalletTransactionId() {
         return walletTransactionId;
     }

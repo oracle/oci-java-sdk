@@ -16,6 +16,9 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String roverNodeId;
 
+    /**
+     * Unique RoverNode identifier
+     */
     public String getRoverNodeId() {
         return roverNodeId;
     }
@@ -26,6 +29,11 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String jwt;
 
+    /**
+     * The Java Web Token which is a signature of the request that is signed with the resource's private key
+     * This is meant solely in the context of getRpt
+     *
+     */
     public String getJwt() {
         return jwt;
     }
@@ -34,6 +42,9 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,10 +56,14 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique RoverNode identifier
+         */
         private String roverNodeId = null;
 
         /**
          * Unique RoverNode identifier
+         * @param roverNodeId the value to set
          * @return this builder instance
          */
         public Builder roverNodeId(String roverNodeId) {
@@ -56,12 +71,18 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The Java Web Token which is a signature of the request that is signed with the resource's private key
+         * This is meant solely in the context of getRpt
+         *
+         */
         private String jwt = null;
 
         /**
          * The Java Web Token which is a signature of the request that is signed with the resource's private key
          * This is meant solely in the context of getRpt
          *
+         * @param jwt the value to set
          * @return this builder instance
          */
         public Builder jwt(String jwt) {
@@ -69,10 +90,14 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -152,12 +177,17 @@ public class GetRoverNodeGetRptRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().roverNodeId(roverNodeId).jwt(jwt).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

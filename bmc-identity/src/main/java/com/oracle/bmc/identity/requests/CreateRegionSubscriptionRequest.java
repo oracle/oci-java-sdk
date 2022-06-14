@@ -19,6 +19,9 @@ public class CreateRegionSubscriptionRequest
     private com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails
             createRegionSubscriptionDetails;
 
+    /**
+     * Request object for activate a new region.
+     */
     public com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails
             getCreateRegionSubscriptionDetails() {
         return createRegionSubscriptionDetails;
@@ -28,6 +31,9 @@ public class CreateRegionSubscriptionRequest
      */
     private String tenancyId;
 
+    /**
+     * The OCID of the tenancy.
+     */
     public String getTenancyId() {
         return tenancyId;
     }
@@ -41,6 +47,14 @@ public class CreateRegionSubscriptionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,11 +77,15 @@ public class CreateRegionSubscriptionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for activate a new region.
+         */
         private com.oracle.bmc.identity.model.CreateRegionSubscriptionDetails
                 createRegionSubscriptionDetails = null;
 
         /**
          * Request object for activate a new region.
+         * @param createRegionSubscriptionDetails the value to set
          * @return this builder instance
          */
         public Builder createRegionSubscriptionDetails(
@@ -77,10 +95,14 @@ public class CreateRegionSubscriptionRequest
             return this;
         }
 
+        /**
+         * The OCID of the tenancy.
+         */
         private String tenancyId = null;
 
         /**
          * The OCID of the tenancy.
+         * @param tenancyId the value to set
          * @return this builder instance
          */
         public Builder tenancyId(String tenancyId) {
@@ -88,6 +110,14 @@ public class CreateRegionSubscriptionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -97,6 +127,7 @@ public class CreateRegionSubscriptionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -187,7 +218,8 @@ public class CreateRegionSubscriptionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -196,6 +228,10 @@ public class CreateRegionSubscriptionRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -55,72 +55,143 @@ public final class UpdateBackupDestinationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
         private java.util.List<String> vpcUsers;
 
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+         * @param vpcUsers the value to set
+         * @return this builder
+         **/
         public Builder vpcUsers(java.util.List<String> vpcUsers) {
             this.vpcUsers = vpcUsers;
             this.__explicitlySet__.add("vpcUsers");
             return this;
         }
-
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+         * @param connectionString the value to set
+         * @return this builder
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-
+        /**
+         * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
         private String localMountPointPath;
 
+        /**
+         * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         *
+         * @param localMountPointPath the value to set
+         * @return this builder
+         **/
         public Builder localMountPointPath(String localMountPointPath) {
             this.localMountPointPath = localMountPointPath;
             this.__explicitlySet__.add("localMountPointPath");
             return this;
         }
-
+        /**
+         * NFS Mount type for backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
         private NfsMountType nfsMountType;
 
+        /**
+         * NFS Mount type for backup destination.
+         * @param nfsMountType the value to set
+         * @return this builder
+         **/
         public Builder nfsMountType(NfsMountType nfsMountType) {
             this.nfsMountType = nfsMountType;
             this.__explicitlySet__.add("nfsMountType");
             return this;
         }
-
+        /**
+         * IP addresses for NFS Auto mount.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
         private java.util.List<String> nfsServer;
 
+        /**
+         * IP addresses for NFS Auto mount.
+         * @param nfsServer the value to set
+         * @return this builder
+         **/
         public Builder nfsServer(java.util.List<String> nfsServer) {
             this.nfsServer = nfsServer;
             this.__explicitlySet__.add("nfsServer");
             return this;
         }
-
+        /**
+         * Specifies the directory on which to mount the file system
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
         private String nfsServerExport;
 
+        /**
+         * Specifies the directory on which to mount the file system
+         * @param nfsServerExport the value to set
+         * @return this builder
+         **/
         public Builder nfsServerExport(String nfsServerExport) {
             this.nfsServerExport = nfsServerExport;
             this.__explicitlySet__.add("nfsServerExport");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -180,6 +251,10 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
     private final java.util.List<String> vpcUsers;
 
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     * @return the value
+     **/
     public java.util.List<String> getVpcUsers() {
         return vpcUsers;
     }
@@ -190,6 +265,10 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+     * @return the value
+     **/
     public String getConnectionString() {
         return connectionString;
     }
@@ -201,6 +280,11 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     private final String localMountPointPath;
 
+    /**
+     * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     *
+     * @return the value
+     **/
     public String getLocalMountPointPath() {
         return localMountPointPath;
     }
@@ -246,6 +330,10 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
     private final NfsMountType nfsMountType;
 
+    /**
+     * NFS Mount type for backup destination.
+     * @return the value
+     **/
     public NfsMountType getNfsMountType() {
         return nfsMountType;
     }
@@ -256,6 +344,10 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
     private final java.util.List<String> nfsServer;
 
+    /**
+     * IP addresses for NFS Auto mount.
+     * @return the value
+     **/
     public java.util.List<String> getNfsServer() {
         return nfsServer;
     }
@@ -266,6 +358,10 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
     private final String nfsServerExport;
 
+    /**
+     * Specifies the directory on which to mount the file system
+     * @return the value
+     **/
     public String getNfsServerExport() {
         return nfsServerExport;
     }
@@ -280,6 +376,14 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -292,6 +396,12 @@ public final class UpdateBackupDestinationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

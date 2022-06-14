@@ -28,18 +28,33 @@ package com.oracle.bmc.applicationmigration.model;
 public final class OacDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
         private String serviceInstanceUser;
 
+        /**
+         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+         * @param serviceInstanceUser the value to set
+         * @return this builder
+         **/
         public Builder serviceInstanceUser(String serviceInstanceUser) {
             this.serviceInstanceUser = serviceInstanceUser;
             this.__explicitlySet__.add("serviceInstanceUser");
             return this;
         }
-
+        /**
+         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
         private String serviceInstancePassword;
 
+        /**
+         * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+         * @param serviceInstancePassword the value to set
+         * @return this builder
+         **/
         public Builder serviceInstancePassword(String serviceInstancePassword) {
             this.serviceInstancePassword = serviceInstancePassword;
             this.__explicitlySet__.add("serviceInstancePassword");
@@ -91,6 +106,10 @@ public final class OacDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
     private final String serviceInstanceUser;
 
+    /**
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+     * @return the value
+     **/
     public String getServiceInstanceUser() {
         return serviceInstanceUser;
     }
@@ -101,6 +120,10 @@ public final class OacDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
     private final String serviceInstancePassword;
 
+    /**
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
+     * @return the value
+     **/
     public String getServiceInstancePassword() {
         return serviceInstancePassword;
     }

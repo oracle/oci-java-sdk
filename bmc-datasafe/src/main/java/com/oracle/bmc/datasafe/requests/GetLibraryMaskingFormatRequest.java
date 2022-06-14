@@ -17,6 +17,9 @@ public class GetLibraryMaskingFormatRequest
      */
     private String libraryMaskingFormatId;
 
+    /**
+     * The OCID of the library masking format.
+     */
     public String getLibraryMaskingFormatId() {
         return libraryMaskingFormatId;
     }
@@ -25,6 +28,9 @@ public class GetLibraryMaskingFormatRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,10 +42,14 @@ public class GetLibraryMaskingFormatRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the library masking format.
+         */
         private String libraryMaskingFormatId = null;
 
         /**
          * The OCID of the library masking format.
+         * @param libraryMaskingFormatId the value to set
          * @return this builder instance
          */
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
@@ -47,10 +57,14 @@ public class GetLibraryMaskingFormatRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,7 +142,8 @@ public class GetLibraryMaskingFormatRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -136,6 +151,10 @@ public class GetLibraryMaskingFormatRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

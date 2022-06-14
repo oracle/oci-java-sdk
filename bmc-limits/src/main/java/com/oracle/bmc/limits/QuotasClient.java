@@ -469,6 +469,44 @@ public class QuotasClient implements Quotas {
     }
 
     @Override
+    public AddQuotaLockResponse addQuotaLock(AddQuotaLockRequest request) {
+        LOG.trace("Called addQuotaLock");
+        final AddQuotaLockRequest interceptedRequest =
+                AddQuotaLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddQuotaLockConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddQuotaLockResponse>
+                transformer = AddQuotaLockConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "AddQuotaLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/AddQuotaLock");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateQuotaResponse createQuota(CreateQuotaRequest request) {
         LOG.trace("Called createQuota");
         final CreateQuotaRequest interceptedRequest =
@@ -603,6 +641,44 @@ public class QuotasClient implements Quotas {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveQuotaLockResponse removeQuotaLock(RemoveQuotaLockRequest request) {
+        LOG.trace("Called removeQuotaLock");
+        final RemoveQuotaLockRequest interceptedRequest =
+                RemoveQuotaLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveQuotaLockConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveQuotaLockResponse>
+                transformer = RemoveQuotaLockConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "RemoveQuotaLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/RemoveQuotaLock");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveLockDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

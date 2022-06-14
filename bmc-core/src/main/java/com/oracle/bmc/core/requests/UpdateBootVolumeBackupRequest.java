@@ -18,6 +18,9 @@ public class UpdateBootVolumeBackupRequest
      */
     private String bootVolumeBackupId;
 
+    /**
+     * The OCID of the boot volume backup.
+     */
     public String getBootVolumeBackupId() {
         return bootVolumeBackupId;
     }
@@ -26,6 +29,9 @@ public class UpdateBootVolumeBackupRequest
      */
     private com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails updateBootVolumeBackupDetails;
 
+    /**
+     * Update boot volume backup fields
+     */
     public com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails
             getUpdateBootVolumeBackupDetails() {
         return updateBootVolumeBackupDetails;
@@ -38,6 +44,12 @@ public class UpdateBootVolumeBackupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -60,10 +72,14 @@ public class UpdateBootVolumeBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the boot volume backup.
+         */
         private String bootVolumeBackupId = null;
 
         /**
          * The OCID of the boot volume backup.
+         * @param bootVolumeBackupId the value to set
          * @return this builder instance
          */
         public Builder bootVolumeBackupId(String bootVolumeBackupId) {
@@ -71,11 +87,15 @@ public class UpdateBootVolumeBackupRequest
             return this;
         }
 
+        /**
+         * Update boot volume backup fields
+         */
         private com.oracle.bmc.core.model.UpdateBootVolumeBackupDetails
                 updateBootVolumeBackupDetails = null;
 
         /**
          * Update boot volume backup fields
+         * @param updateBootVolumeBackupDetails the value to set
          * @return this builder instance
          */
         public Builder updateBootVolumeBackupDetails(
@@ -85,6 +105,12 @@ public class UpdateBootVolumeBackupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -92,6 +118,7 @@ public class UpdateBootVolumeBackupRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -182,7 +209,8 @@ public class UpdateBootVolumeBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +219,10 @@ public class UpdateBootVolumeBackupRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

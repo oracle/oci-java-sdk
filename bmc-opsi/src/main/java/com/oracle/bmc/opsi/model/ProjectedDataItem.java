@@ -35,36 +35,67 @@ public final class ProjectedDataItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The timestamp in which the current sampling period ends in RFC 3339 format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
 
+        /**
+         * The timestamp in which the current sampling period ends in RFC 3339 format.
+         * @param endTimestamp the value to set
+         * @return this builder
+         **/
         public Builder endTimestamp(java.util.Date endTimestamp) {
             this.endTimestamp = endTimestamp;
             this.__explicitlySet__.add("endTimestamp");
             return this;
         }
-
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         * @param usage the value to set
+         * @return this builder
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
-
+        /**
+         * Upper uncertainty bound of the current usage value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("highValue")
         private Double highValue;
 
+        /**
+         * Upper uncertainty bound of the current usage value.
+         * @param highValue the value to set
+         * @return this builder
+         **/
         public Builder highValue(Double highValue) {
             this.highValue = highValue;
             this.__explicitlySet__.add("highValue");
             return this;
         }
-
+        /**
+         * Lower uncertainty bound of the current usage value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowValue")
         private Double lowValue;
 
+        /**
+         * Lower uncertainty bound of the current usage value.
+         * @param lowValue the value to set
+         * @return this builder
+         **/
         public Builder lowValue(Double lowValue) {
             this.lowValue = lowValue;
             this.__explicitlySet__.add("lowValue");
@@ -111,6 +142,10 @@ public final class ProjectedDataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
     private final java.util.Date endTimestamp;
 
+    /**
+     * The timestamp in which the current sampling period ends in RFC 3339 format.
+     * @return the value
+     **/
     public java.util.Date getEndTimestamp() {
         return endTimestamp;
     }
@@ -122,6 +157,11 @@ public final class ProjectedDataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -132,6 +172,10 @@ public final class ProjectedDataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("highValue")
     private final Double highValue;
 
+    /**
+     * Upper uncertainty bound of the current usage value.
+     * @return the value
+     **/
     public Double getHighValue() {
         return highValue;
     }
@@ -142,6 +186,10 @@ public final class ProjectedDataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("lowValue")
     private final Double lowValue;
 
+    /**
+     * Lower uncertainty bound of the current usage value.
+     * @return the value
+     **/
     public Double getLowValue() {
         return lowValue;
     }

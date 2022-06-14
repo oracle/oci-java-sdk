@@ -17,6 +17,10 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +40,9 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +51,9 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -87,6 +100,10 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -96,6 +113,10 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private java.util.List<String> logSetNameContains;
 
+    /**
+     * If this filter is present, each of the logsets returned must contain the value of this filter.
+     *
+     */
     public java.util.List<String> getLogSetNameContains() {
         return logSetNameContains;
     }
@@ -107,11 +128,16 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -119,10 +145,14 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -130,10 +160,14 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -141,10 +175,14 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -152,11 +190,16 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -164,11 +207,16 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * If this filter is present, each of the logsets returned must contain the value of this filter.
+         *
+         */
         private java.util.List<String> logSetNameContains = null;
 
         /**
          * If this filter is present, each of the logsets returned must contain the value of this filter.
          *
+         * @param logSetNameContains the value to set
          * @return this builder instance
          */
         public Builder logSetNameContains(java.util.List<String> logSetNameContains) {
@@ -179,6 +227,7 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Singular setter. If this filter is present, each of the logsets returned must contain the value of this filter.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder logSetNameContains(String singularValue) {
@@ -263,7 +312,8 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -275,6 +325,10 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .logSetNameContains(logSetNameContains);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

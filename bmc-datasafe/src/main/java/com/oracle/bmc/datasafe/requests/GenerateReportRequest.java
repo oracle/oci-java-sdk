@@ -18,6 +18,9 @@ public class GenerateReportRequest
      */
     private String reportDefinitionId;
 
+    /**
+     * Unique report definition identifier
+     */
     public String getReportDefinitionId() {
         return reportDefinitionId;
     }
@@ -26,6 +29,9 @@ public class GenerateReportRequest
      */
     private com.oracle.bmc.datasafe.model.GenerateReportDetails generateReportDetails;
 
+    /**
+     * Details for report generation. It contains details such as PDF/XLS and filter parameters like audit event time limits, number of rows and target databases etc
+     */
     public com.oracle.bmc.datasafe.model.GenerateReportDetails getGenerateReportDetails() {
         return generateReportDetails;
     }
@@ -39,6 +45,14 @@ public class GenerateReportRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class GenerateReportRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,6 +76,13 @@ public class GenerateReportRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -74,6 +98,16 @@ public class GenerateReportRequest
      */
     private String scimQuery;
 
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
+     *
+     */
     public String getScimQuery() {
         return scimQuery;
     }
@@ -95,10 +129,14 @@ public class GenerateReportRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique report definition identifier
+         */
         private String reportDefinitionId = null;
 
         /**
          * Unique report definition identifier
+         * @param reportDefinitionId the value to set
          * @return this builder instance
          */
         public Builder reportDefinitionId(String reportDefinitionId) {
@@ -106,10 +144,14 @@ public class GenerateReportRequest
             return this;
         }
 
+        /**
+         * Details for report generation. It contains details such as PDF/XLS and filter parameters like audit event time limits, number of rows and target databases etc
+         */
         private com.oracle.bmc.datasafe.model.GenerateReportDetails generateReportDetails = null;
 
         /**
          * Details for report generation. It contains details such as PDF/XLS and filter parameters like audit event time limits, number of rows and target databases etc
+         * @param generateReportDetails the value to set
          * @return this builder instance
          */
         public Builder generateReportDetails(
@@ -118,6 +160,14 @@ public class GenerateReportRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -127,6 +177,7 @@ public class GenerateReportRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -134,10 +185,14 @@ public class GenerateReportRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -145,6 +200,13 @@ public class GenerateReportRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -153,6 +215,7 @@ public class GenerateReportRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -160,6 +223,16 @@ public class GenerateReportRequest
             return this;
         }
 
+        /**
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
+         *
+         */
         private String scimQuery = null;
 
         /**
@@ -171,6 +244,7 @@ public class GenerateReportRequest
          * <p>
          **Example:** query=(dateGenerated ge '2021-12-18T01-00-26') and (ilmTarget eq 'dscs-target')
          *
+         * @param scimQuery the value to set
          * @return this builder instance
          */
         public Builder scimQuery(String scimQuery) {
@@ -267,7 +341,8 @@ public class GenerateReportRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -279,6 +354,10 @@ public class GenerateReportRequest
                 .scimQuery(scimQuery);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

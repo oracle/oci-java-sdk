@@ -18,6 +18,9 @@ public class CreateWebAppFirewallRequest
      */
     private com.oracle.bmc.waf.model.CreateWebAppFirewallDetails createWebAppFirewallDetails;
 
+    /**
+     * Details for the new Web App Firewall.
+     */
     public com.oracle.bmc.waf.model.CreateWebAppFirewallDetails getCreateWebAppFirewallDetails() {
         return createWebAppFirewallDetails;
     }
@@ -30,6 +33,13 @@ public class CreateWebAppFirewallRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -38,6 +48,9 @@ public class CreateWebAppFirewallRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,11 +73,15 @@ public class CreateWebAppFirewallRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new Web App Firewall.
+         */
         private com.oracle.bmc.waf.model.CreateWebAppFirewallDetails createWebAppFirewallDetails =
                 null;
 
         /**
          * Details for the new Web App Firewall.
+         * @param createWebAppFirewallDetails the value to set
          * @return this builder instance
          */
         public Builder createWebAppFirewallDetails(
@@ -73,6 +90,13 @@ public class CreateWebAppFirewallRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -81,6 +105,7 @@ public class CreateWebAppFirewallRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -88,10 +113,14 @@ public class CreateWebAppFirewallRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +211,8 @@ public class CreateWebAppFirewallRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +221,10 @@ public class CreateWebAppFirewallRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

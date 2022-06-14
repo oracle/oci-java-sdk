@@ -153,74 +153,136 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
+        /**
+         * Enterprise Manager Unique Identifier
+         * @param enterpriseManagerIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
         private String enterpriseManagerEntityName;
 
+        /**
+         * Enterprise Manager Entity Name
+         * @param enterpriseManagerEntityName the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
             this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             this.__explicitlySet__.add("enterpriseManagerEntityName");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
         private String enterpriseManagerEntityType;
 
+        /**
+         * Enterprise Manager Entity Type
+         * @param enterpriseManagerEntityType the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
             this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             this.__explicitlySet__.add("enterpriseManagerEntityType");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         * @param enterpriseManagerEntityIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
-
+        /**
+         * Enterprise Manager Entity Display Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityDisplayName")
         private String enterpriseManagerEntityDisplayName;
 
+        /**
+         * Enterprise Manager Entity Display Name
+         * @param enterpriseManagerEntityDisplayName the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerEntityDisplayName(
                 String enterpriseManagerEntityDisplayName) {
             this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             this.__explicitlySet__.add("enterpriseManagerEntityDisplayName");
             return this;
         }
-
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         * @param enterpriseManagerBridgeId the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
             return this;
         }
-
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
+        /**
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         *
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         * @param exadataInsightId the value to set
+         * @return this builder
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
@@ -358,6 +420,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
+    /**
+     * Enterprise Manager Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -368,6 +434,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
     private final String enterpriseManagerEntityName;
 
+    /**
+     * Enterprise Manager Entity Name
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityName() {
         return enterpriseManagerEntityName;
     }
@@ -378,6 +448,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
     private final String enterpriseManagerEntityType;
 
+    /**
+     * Enterprise Manager Entity Type
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityType() {
         return enterpriseManagerEntityType;
     }
@@ -388,6 +462,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
@@ -398,6 +476,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityDisplayName")
     private final String enterpriseManagerEntityDisplayName;
 
+    /**
+     * Enterprise Manager Entity Display Name
+     * @return the value
+     **/
     public String getEnterpriseManagerEntityDisplayName() {
         return enterpriseManagerEntityDisplayName;
     }
@@ -408,6 +490,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
+    /**
+     * OPSI Enterprise Manager Bridge OCID
+     * @return the value
+     **/
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -474,6 +560,13 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
+    /**
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     *
+     * @return the value
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -484,6 +577,10 @@ public final class EmManagedExternalHostInsightSummary extends HostInsightSummar
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * @return the value
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }

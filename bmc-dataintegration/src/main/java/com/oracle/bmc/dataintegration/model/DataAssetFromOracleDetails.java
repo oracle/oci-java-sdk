@@ -143,55 +143,97 @@ public final class DataAssetFromOracleDetails extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-
+        /**
+         * The Oracle Database hostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The Oracle Database hostname.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The Oracle Database port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
+        /**
+         * The Oracle Database port.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The Oracle Database service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The Oracle Database service name.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * The Oracle Database driver class.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
+        /**
+         * The Oracle Database driver class.
+         * @param driverClass the value to set
+         * @return this builder
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
             return this;
         }
-
+        /**
+         * The Oracle Database SID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sid")
         private String sid;
 
+        /**
+         * The Oracle Database SID.
+         * @param sid the value to set
+         * @return this builder
+         **/
         public Builder sid(String sid) {
             this.sid = sid;
             this.__explicitlySet__.add("sid");
             return this;
         }
-
+        /**
+         * The credential file content from a wallet for the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
         private String credentialFileContent;
 
+        /**
+         * The credential file content from a wallet for the data asset.
+         * @param credentialFileContent the value to set
+         * @return this builder
+         **/
         public Builder credentialFileContent(String credentialFileContent) {
             this.credentialFileContent = credentialFileContent;
             this.__explicitlySet__.add("credentialFileContent");
@@ -354,6 +396,10 @@ public final class DataAssetFromOracleDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The Oracle Database hostname.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -364,6 +410,10 @@ public final class DataAssetFromOracleDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
+    /**
+     * The Oracle Database port.
+     * @return the value
+     **/
     public String getPort() {
         return port;
     }
@@ -374,6 +424,10 @@ public final class DataAssetFromOracleDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The Oracle Database service name.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -384,6 +438,10 @@ public final class DataAssetFromOracleDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
+    /**
+     * The Oracle Database driver class.
+     * @return the value
+     **/
     public String getDriverClass() {
         return driverClass;
     }
@@ -394,6 +452,10 @@ public final class DataAssetFromOracleDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
     private final String sid;
 
+    /**
+     * The Oracle Database SID.
+     * @return the value
+     **/
     public String getSid() {
         return sid;
     }
@@ -404,6 +466,10 @@ public final class DataAssetFromOracleDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     private final String credentialFileContent;
 
+    /**
+     * The credential file content from a wallet for the data asset.
+     * @return the value
+     **/
     public String getCredentialFileContent() {
         return credentialFileContent;
     }

@@ -59,55 +59,118 @@ public final class CreateSecretDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment where you want to create the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment where you want to create the secret.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A brief description of the secret. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A brief description of the secret. Avoid entering confidential information.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+         *
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * Additional metadata that you can use to provide context about how to use the secret during rotation or
+         * other administrative tasks. For example, for a secret that you use to connect to a database, the additional
+         * metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, Object> metadata;
 
+        /**
+         * Additional metadata that you can use to provide context about how to use the secret during rotation or
+         * other administrative tasks. For example, for a secret that you use to connect to a database, the additional
+         * metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, Object> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -122,28 +185,51 @@ public final class CreateSecretDetails {
             this.__explicitlySet__.add("secretContent");
             return this;
         }
-
+        /**
+         * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretName")
         private String secretName;
 
+        /**
+         * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         *
+         * @param secretName the value to set
+         * @return this builder
+         **/
         public Builder secretName(String secretName) {
             this.secretName = secretName;
             this.__explicitlySet__.add("secretName");
             return this;
         }
-
+        /**
+         * A list of rules to control how the secret is used and managed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretRules")
         private java.util.List<SecretRule> secretRules;
 
+        /**
+         * A list of rules to control how the secret is used and managed.
+         * @param secretRules the value to set
+         * @return this builder
+         **/
         public Builder secretRules(java.util.List<SecretRule> secretRules) {
             this.secretRules = secretRules;
             this.__explicitlySet__.add("secretRules");
             return this;
         }
-
+        /**
+         * The OCID of the vault where you want to create the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The OCID of the vault where you want to create the secret.
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
@@ -206,6 +292,10 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment where you want to create the secret.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -219,6 +309,13 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -229,6 +326,10 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A brief description of the secret. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -242,6 +343,13 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -253,6 +361,11 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+     *
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -266,6 +379,13 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, Object> metadata;
 
+    /**
+     * Additional metadata that you can use to provide context about how to use the secret during rotation or
+     * other administrative tasks. For example, for a secret that you use to connect to a database, the additional
+     * metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Object> getMetadata() {
         return metadata;
     }
@@ -284,6 +404,11 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
     private final String secretName;
 
+    /**
+     * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     *
+     * @return the value
+     **/
     public String getSecretName() {
         return secretName;
     }
@@ -294,6 +419,10 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("secretRules")
     private final java.util.List<SecretRule> secretRules;
 
+    /**
+     * A list of rules to control how the secret is used and managed.
+     * @return the value
+     **/
     public java.util.List<SecretRule> getSecretRules() {
         return secretRules;
     }
@@ -304,6 +433,10 @@ public final class CreateSecretDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The OCID of the vault where you want to create the secret.
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }

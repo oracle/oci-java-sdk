@@ -32,18 +32,41 @@ public final class PutMessagesResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of messages that failed to be added to the stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failures")
         private Integer failures;
 
+        /**
+         * The number of messages that failed to be added to the stream.
+         * @param failures the value to set
+         * @return this builder
+         **/
         public Builder failures(Integer failures) {
             this.failures = failures;
             this.__explicitlySet__.add("failures");
             return this;
         }
-
+        /**
+         * An array of items representing the result of each message.
+         * The order is guaranteed to be the same as in the {@code PutMessagesDetails} object.
+         * If a message was successfully appended to the stream, the entry includes the {@code offset}, {@code partition}, and {@code timestamp}.
+         * If a message failed to be appended to the stream, the entry includes the {@code error} and {@code errorMessage}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entries")
         private java.util.List<PutMessagesResultEntry> entries;
 
+        /**
+         * An array of items representing the result of each message.
+         * The order is guaranteed to be the same as in the {@code PutMessagesDetails} object.
+         * If a message was successfully appended to the stream, the entry includes the {@code offset}, {@code partition}, and {@code timestamp}.
+         * If a message failed to be appended to the stream, the entry includes the {@code error} and {@code errorMessage}.
+         *
+         * @param entries the value to set
+         * @return this builder
+         **/
         public Builder entries(java.util.List<PutMessagesResultEntry> entries) {
             this.entries = entries;
             this.__explicitlySet__.add("entries");
@@ -85,6 +108,10 @@ public final class PutMessagesResult {
     @com.fasterxml.jackson.annotation.JsonProperty("failures")
     private final Integer failures;
 
+    /**
+     * The number of messages that failed to be added to the stream.
+     * @return the value
+     **/
     public Integer getFailures() {
         return failures;
     }
@@ -99,6 +126,14 @@ public final class PutMessagesResult {
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
     private final java.util.List<PutMessagesResultEntry> entries;
 
+    /**
+     * An array of items representing the result of each message.
+     * The order is guaranteed to be the same as in the {@code PutMessagesDetails} object.
+     * If a message was successfully appended to the stream, the entry includes the {@code offset}, {@code partition}, and {@code timestamp}.
+     * If a message failed to be appended to the stream, the entry includes the {@code error} and {@code errorMessage}.
+     *
+     * @return the value
+     **/
     public java.util.List<PutMessagesResultEntry> getEntries() {
         return entries;
     }

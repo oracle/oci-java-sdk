@@ -53,19 +53,33 @@ public final class PaypalPaymentDetail extends PaymentDetail {
             this.__explicitlySet__.add("amountPaid");
             return this;
         }
-
+        /**
+         * The id (email address) of the paypal payment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paypalId")
         private String paypalId;
 
+        /**
+         * The id (email address) of the paypal payment
+         * @param paypalId the value to set
+         * @return this builder
+         **/
         public Builder paypalId(String paypalId) {
             this.paypalId = paypalId;
             this.__explicitlySet__.add("paypalId");
             return this;
         }
-
+        /**
+         * paypal payment reference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paypalReference")
         private String paypalReference;
 
+        /**
+         * paypal payment reference
+         * @param paypalReference the value to set
+         * @return this builder
+         **/
         public Builder paypalReference(String paypalReference) {
             this.paypalReference = paypalReference;
             this.__explicitlySet__.add("paypalReference");
@@ -126,6 +140,10 @@ public final class PaypalPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("paypalId")
     private final String paypalId;
 
+    /**
+     * The id (email address) of the paypal payment
+     * @return the value
+     **/
     public String getPaypalId() {
         return paypalId;
     }
@@ -136,6 +154,10 @@ public final class PaypalPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("paypalReference")
     private final String paypalReference;
 
+    /**
+     * paypal payment reference
+     * @return the value
+     **/
     public String getPaypalReference() {
         return paypalReference;
     }

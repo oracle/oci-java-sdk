@@ -19,6 +19,9 @@ public class CreateOnDemandPingProbeRequest
     private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
             createOnDemandPingProbeDetails;
 
+    /**
+     * Configuration details for creating an on-demand ping probe.
+     */
     public com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
             getCreateOnDemandPingProbeDetails() {
         return createOnDemandPingProbeDetails;
@@ -30,6 +33,11 @@ public class CreateOnDemandPingProbeRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,11 +60,15 @@ public class CreateOnDemandPingProbeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Configuration details for creating an on-demand ping probe.
+         */
         private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
                 createOnDemandPingProbeDetails = null;
 
         /**
          * Configuration details for creating an on-demand ping probe.
+         * @param createOnDemandPingProbeDetails the value to set
          * @return this builder instance
          */
         public Builder createOnDemandPingProbeDetails(
@@ -66,12 +78,18 @@ public class CreateOnDemandPingProbeRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -161,7 +179,8 @@ public class CreateOnDemandPingProbeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +188,10 @@ public class CreateOnDemandPingProbeRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

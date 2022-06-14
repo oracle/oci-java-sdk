@@ -30,18 +30,47 @@ package com.oracle.bmc.loadbalancer.model;
 public final class HttpHeaderRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether or not invalid characters in client header fields will be allowed.
+         * Valid names are composed of English letters, digits, hyphens and underscores.
+         * If "true", invalid characters are allowed in the HTTP header.
+         * If "false", invalid characters are not allowed in the HTTP header
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areInvalidCharactersAllowed")
         private Boolean areInvalidCharactersAllowed;
 
+        /**
+         * Indicates whether or not invalid characters in client header fields will be allowed.
+         * Valid names are composed of English letters, digits, hyphens and underscores.
+         * If "true", invalid characters are allowed in the HTTP header.
+         * If "false", invalid characters are not allowed in the HTTP header
+         *
+         * @param areInvalidCharactersAllowed the value to set
+         * @return this builder
+         **/
         public Builder areInvalidCharactersAllowed(Boolean areInvalidCharactersAllowed) {
             this.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
             this.__explicitlySet__.add("areInvalidCharactersAllowed");
             return this;
         }
-
+        /**
+         * The maximum size of each buffer used for reading http client request header.
+         * This value indicates the maximum size allowed for each buffer.
+         * The allowed values for buffer size are 8, 16, 32 and 64.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpLargeHeaderSizeInKB")
         private Integer httpLargeHeaderSizeInKB;
 
+        /**
+         * The maximum size of each buffer used for reading http client request header.
+         * This value indicates the maximum size allowed for each buffer.
+         * The allowed values for buffer size are 8, 16, 32 and 64.
+         *
+         * @param httpLargeHeaderSizeInKB the value to set
+         * @return this builder
+         **/
         public Builder httpLargeHeaderSizeInKB(Integer httpLargeHeaderSizeInKB) {
             this.httpLargeHeaderSizeInKB = httpLargeHeaderSizeInKB;
             this.__explicitlySet__.add("httpLargeHeaderSizeInKB");
@@ -97,6 +126,14 @@ public final class HttpHeaderRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("areInvalidCharactersAllowed")
     private final Boolean areInvalidCharactersAllowed;
 
+    /**
+     * Indicates whether or not invalid characters in client header fields will be allowed.
+     * Valid names are composed of English letters, digits, hyphens and underscores.
+     * If "true", invalid characters are allowed in the HTTP header.
+     * If "false", invalid characters are not allowed in the HTTP header
+     *
+     * @return the value
+     **/
     public Boolean getAreInvalidCharactersAllowed() {
         return areInvalidCharactersAllowed;
     }
@@ -110,6 +147,13 @@ public final class HttpHeaderRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("httpLargeHeaderSizeInKB")
     private final Integer httpLargeHeaderSizeInKB;
 
+    /**
+     * The maximum size of each buffer used for reading http client request header.
+     * This value indicates the maximum size allowed for each buffer.
+     * The allowed values for buffer size are 8, 16, 32 and 64.
+     *
+     * @return the value
+     **/
     public Integer getHttpLargeHeaderSizeInKB() {
         return httpLargeHeaderSizeInKB;
     }

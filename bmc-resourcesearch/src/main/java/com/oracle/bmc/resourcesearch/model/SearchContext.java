@@ -27,9 +27,23 @@ public final class SearchContext {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Describes what in each field matched the search criteria by showing highlighted values, but only for free text searches or for structured
+         * queries that use a MATCHING clause. The list of strings represents fragments of values that matched the query conditions. Highlighted
+         * values are wrapped with &lt;h1&gt;..&lt;/h1&gt; tags. All values are HTML-encoded (except &lt;h1&gt; tags).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("highlights")
         private java.util.Map<String, java.util.List<String>> highlights;
 
+        /**
+         * Describes what in each field matched the search criteria by showing highlighted values, but only for free text searches or for structured
+         * queries that use a MATCHING clause. The list of strings represents fragments of values that matched the query conditions. Highlighted
+         * values are wrapped with &lt;h1&gt;..&lt;/h1&gt; tags. All values are HTML-encoded (except &lt;h1&gt; tags).
+         *
+         * @param highlights the value to set
+         * @return this builder
+         **/
         public Builder highlights(java.util.Map<String, java.util.List<String>> highlights) {
             this.highlights = highlights;
             this.__explicitlySet__.add("highlights");
@@ -74,6 +88,13 @@ public final class SearchContext {
     @com.fasterxml.jackson.annotation.JsonProperty("highlights")
     private final java.util.Map<String, java.util.List<String>> highlights;
 
+    /**
+     * Describes what in each field matched the search criteria by showing highlighted values, but only for free text searches or for structured
+     * queries that use a MATCHING clause. The list of strings represents fragments of values that matched the query conditions. Highlighted
+     * values are wrapped with &lt;h1&gt;..&lt;/h1&gt; tags. All values are HTML-encoded (except &lt;h1&gt; tags).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<String>> getHighlights() {
         return highlights;
     }

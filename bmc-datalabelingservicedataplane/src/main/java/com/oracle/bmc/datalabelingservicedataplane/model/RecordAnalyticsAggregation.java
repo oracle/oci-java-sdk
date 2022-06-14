@@ -44,9 +44,17 @@ public final class RecordAnalyticsAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the count of the matching results
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private java.math.BigDecimal count;
 
+        /**
+         * the count of the matching results
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(java.math.BigDecimal count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -61,28 +69,49 @@ public final class RecordAnalyticsAggregation {
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * ocid of the dataset the annotation belongs to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
         private String datasetId;
 
+        /**
+         * ocid of the dataset the annotation belongs to
+         * @param datasetId the value to set
+         * @return this builder
+         **/
         public Builder datasetId(String datasetId) {
             this.datasetId = datasetId;
             this.__explicitlySet__.add("datasetId");
             return this;
         }
-
+        /**
+         * ocid of the compartment the records
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * ocid of the compartment the records
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Describes the lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Record.LifecycleState lifecycleState;
 
+        /**
+         * Describes the lifecycle state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Record.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -131,6 +160,10 @@ public final class RecordAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final java.math.BigDecimal count;
 
+    /**
+     * the count of the matching results
+     * @return the value
+     **/
     public java.math.BigDecimal getCount() {
         return count;
     }
@@ -148,6 +181,10 @@ public final class RecordAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     private final String datasetId;
 
+    /**
+     * ocid of the dataset the annotation belongs to
+     * @return the value
+     **/
     public String getDatasetId() {
         return datasetId;
     }
@@ -158,6 +195,10 @@ public final class RecordAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * ocid of the compartment the records
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -168,6 +209,10 @@ public final class RecordAnalyticsAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Record.LifecycleState lifecycleState;
 
+    /**
+     * Describes the lifecycle state.
+     * @return the value
+     **/
     public Record.LifecycleState getLifecycleState() {
         return lifecycleState;
     }

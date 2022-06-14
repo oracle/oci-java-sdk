@@ -44,37 +44,65 @@ public final class GenericDeliveredArtifact extends DeliveredArtifact {
             this.__explicitlySet__.add("outputArtifactName");
             return this;
         }
-
+        /**
+         * The OCID of the artifact registry repository used by the DeliverArtifactStage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactRepositoryId")
         private String artifactRepositoryId;
 
+        /**
+         * The OCID of the artifact registry repository used by the DeliverArtifactStage
+         * @param artifactRepositoryId the value to set
+         * @return this builder
+         **/
         public Builder artifactRepositoryId(String artifactRepositoryId) {
             this.artifactRepositoryId = artifactRepositoryId;
             this.__explicitlySet__.add("artifactRepositoryId");
             return this;
         }
-
+        /**
+         * The OCID of the artifact pushed by the Deliver Artifacts stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactId")
         private String deliveredArtifactId;
 
+        /**
+         * The OCID of the artifact pushed by the Deliver Artifacts stage.
+         * @param deliveredArtifactId the value to set
+         * @return this builder
+         **/
         public Builder deliveredArtifactId(String deliveredArtifactId) {
             this.deliveredArtifactId = deliveredArtifactId;
             this.__explicitlySet__.add("deliveredArtifactId");
             return this;
         }
-
+        /**
+         * Path of the repository where artifact was pushed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Path of the repository where artifact was pushed
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * Version of the artifact pushed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of the artifact pushed
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -144,6 +172,10 @@ public final class GenericDeliveredArtifact extends DeliveredArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("artifactRepositoryId")
     private final String artifactRepositoryId;
 
+    /**
+     * The OCID of the artifact registry repository used by the DeliverArtifactStage
+     * @return the value
+     **/
     public String getArtifactRepositoryId() {
         return artifactRepositoryId;
     }
@@ -154,6 +186,10 @@ public final class GenericDeliveredArtifact extends DeliveredArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactId")
     private final String deliveredArtifactId;
 
+    /**
+     * The OCID of the artifact pushed by the Deliver Artifacts stage.
+     * @return the value
+     **/
     public String getDeliveredArtifactId() {
         return deliveredArtifactId;
     }
@@ -164,6 +200,10 @@ public final class GenericDeliveredArtifact extends DeliveredArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Path of the repository where artifact was pushed
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -174,6 +214,10 @@ public final class GenericDeliveredArtifact extends DeliveredArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of the artifact pushed
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

@@ -16,6 +16,9 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String erratumId;
 
+    /**
+     * The OCID of the erratum.
+     */
     public String getErratumId() {
         return erratumId;
     }
@@ -24,6 +27,9 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the erratum.
+         */
         private String erratumId = null;
 
         /**
          * The OCID of the erratum.
+         * @param erratumId the value to set
          * @return this builder instance
          */
         public Builder erratumId(String erratumId) {
@@ -46,10 +56,14 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().erratumId(erratumId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

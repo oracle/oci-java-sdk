@@ -39,36 +39,65 @@ public final class EnableConditions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The entity include or exclude selection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitySelection")
         private EntitySelection entitySelection;
 
+        /**
+         * The entity include or exclude selection.
+         * @param entitySelection the value to set
+         * @return this builder
+         **/
         public Builder entitySelection(EntitySelection entitySelection) {
             this.entitySelection = entitySelection;
             this.__explicitlySet__.add("entitySelection");
             return this;
         }
-
+        /**
+         * The entity type that the policy must be enabled for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
+        /**
+         * The entity type that the policy must be enabled for.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The operation status that the policy must be enabled for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
+        /**
+         * The operation status that the policy must be enabled for.
+         * @param operationStatus the value to set
+         * @return this builder
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-
+        /**
+         * List of users or roles that the policy must be enabled for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityNames")
         private java.util.List<String> entityNames;
 
+        /**
+         * List of users or roles that the policy must be enabled for.
+         * @param entityNames the value to set
+         * @return this builder
+         **/
         public Builder entityNames(java.util.List<String> entityNames) {
             this.entityNames = entityNames;
             this.__explicitlySet__.add("entityNames");
@@ -163,6 +192,10 @@ public final class EnableConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("entitySelection")
     private final EntitySelection entitySelection;
 
+    /**
+     * The entity include or exclude selection.
+     * @return the value
+     **/
     public EntitySelection getEntitySelection() {
         return entitySelection;
     }
@@ -222,6 +255,10 @@ public final class EnableConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
+    /**
+     * The entity type that the policy must be enabled for.
+     * @return the value
+     **/
     public EntityType getEntityType() {
         return entityType;
     }
@@ -281,6 +318,10 @@ public final class EnableConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
+    /**
+     * The operation status that the policy must be enabled for.
+     * @return the value
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
@@ -291,6 +332,10 @@ public final class EnableConditions {
     @com.fasterxml.jackson.annotation.JsonProperty("entityNames")
     private final java.util.List<String> entityNames;
 
+    /**
+     * List of users or roles that the policy must be enabled for.
+     * @return the value
+     **/
     public java.util.List<String> getEntityNames() {
         return entityNames;
     }

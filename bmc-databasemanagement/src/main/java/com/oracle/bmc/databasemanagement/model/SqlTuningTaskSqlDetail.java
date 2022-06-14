@@ -29,9 +29,17 @@ public final class SqlTuningTaskSqlDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of a SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
         private String sqlId;
 
+        /**
+         * The identifier of a SQL statement.
+         * @param sqlId the value to set
+         * @return this builder
+         **/
         public Builder sqlId(String sqlId) {
             this.sqlId = sqlId;
             this.__explicitlySet__.add("sqlId");
@@ -73,6 +81,10 @@ public final class SqlTuningTaskSqlDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
     private final String sqlId;
 
+    /**
+     * The identifier of a SQL statement.
+     * @return the value
+     **/
     public String getSqlId() {
         return sqlId;
     }

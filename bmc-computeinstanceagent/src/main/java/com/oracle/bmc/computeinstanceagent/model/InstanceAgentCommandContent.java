@@ -31,18 +31,33 @@ public final class InstanceAgentCommandContent {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The source of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private InstanceAgentCommandSourceDetails source;
 
+        /**
+         * The source of the command.
+         * @param source the value to set
+         * @return this builder
+         **/
         public Builder source(InstanceAgentCommandSourceDetails source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * The output destination for the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("output")
         private InstanceAgentCommandOutputDetails output;
 
+        /**
+         * The output destination for the command.
+         * @param output the value to set
+         * @return this builder
+         **/
         public Builder output(InstanceAgentCommandOutputDetails output) {
             this.output = output;
             this.__explicitlySet__.add("output");
@@ -85,6 +100,10 @@ public final class InstanceAgentCommandContent {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final InstanceAgentCommandSourceDetails source;
 
+    /**
+     * The source of the command.
+     * @return the value
+     **/
     public InstanceAgentCommandSourceDetails getSource() {
         return source;
     }
@@ -95,6 +114,10 @@ public final class InstanceAgentCommandContent {
     @com.fasterxml.jackson.annotation.JsonProperty("output")
     private final InstanceAgentCommandOutputDetails output;
 
+    /**
+     * The output destination for the command.
+     * @return the value
+     **/
     public InstanceAgentCommandOutputDetails getOutput() {
         return output;
     }

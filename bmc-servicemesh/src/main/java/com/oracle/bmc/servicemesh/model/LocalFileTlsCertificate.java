@@ -27,9 +27,23 @@ package com.oracle.bmc.servicemesh.model;
 public final class LocalFileTlsCertificate extends TlsCertificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the secret.
+         * For Kubernetes this is the name of the Kubernetes secret of type tls.
+         * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretName")
         private String secretName;
 
+        /**
+         * Name of the secret.
+         * For Kubernetes this is the name of the Kubernetes secret of type tls.
+         * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         *
+         * @param secretName the value to set
+         * @return this builder
+         **/
         public Builder secretName(String secretName) {
             this.secretName = secretName;
             this.__explicitlySet__.add("secretName");
@@ -80,6 +94,13 @@ public final class LocalFileTlsCertificate extends TlsCertificate {
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
     private final String secretName;
 
+    /**
+     * Name of the secret.
+     * For Kubernetes this is the name of the Kubernetes secret of type tls.
+     * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+     *
+     * @return the value
+     **/
     public String getSecretName() {
         return secretName;
     }

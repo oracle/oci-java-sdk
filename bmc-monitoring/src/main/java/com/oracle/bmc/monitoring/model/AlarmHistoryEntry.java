@@ -34,27 +34,73 @@ public final class AlarmHistoryEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Description for this alarm history entry.
+         * <p>
+         * Example 1 - alarm state history entry: {@code The alarm state is FIRING}
+         * <p>
+         * Example 2 - alarm state transition history entry: {@code State transitioned from OK to Firing}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
+        /**
+         * Description for this alarm history entry.
+         * <p>
+         * Example 1 - alarm state history entry: {@code The alarm state is FIRING}
+         * <p>
+         * Example 2 - alarm state transition history entry: {@code State transitioned from OK to Firing}
+         *
+         * @param summary the value to set
+         * @return this builder
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-
+        /**
+         * Timestamp for this alarm history entry. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * Timestamp for this alarm history entry. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
+         * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
+         * <p>
+         * Example: {@code 2019-02-01T0:59:00.789Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
         private java.util.Date timestampTriggered;
 
+        /**
+         * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
+         * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
+         * <p>
+         * Example: {@code 2019-02-01T0:59:00.789Z}
+         *
+         * @param timestampTriggered the value to set
+         * @return this builder
+         **/
         public Builder timestampTriggered(java.util.Date timestampTriggered) {
             this.timestampTriggered = timestampTriggered;
             this.__explicitlySet__.add("timestampTriggered");
@@ -105,6 +151,15 @@ public final class AlarmHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * Description for this alarm history entry.
+     * <p>
+     * Example 1 - alarm state history entry: {@code The alarm state is FIRING}
+     * <p>
+     * Example 2 - alarm state transition history entry: {@code State transitioned from OK to Firing}
+     *
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }
@@ -118,6 +173,13 @@ public final class AlarmHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * Timestamp for this alarm history entry. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-02-01T01:02:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -132,6 +194,14 @@ public final class AlarmHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
     private final java.util.Date timestampTriggered;
 
+    /**
+     * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
+     * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
+     * <p>
+     * Example: {@code 2019-02-01T0:59:00.789Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestampTriggered() {
         return timestampTriggered;
     }

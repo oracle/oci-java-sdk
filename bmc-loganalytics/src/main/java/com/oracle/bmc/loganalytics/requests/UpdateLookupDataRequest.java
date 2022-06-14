@@ -18,6 +18,10 @@ public class UpdateLookupDataRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class UpdateLookupDataRequest
      */
     private String lookupName;
 
+    /**
+     * The name of the lookup to operate on.
+     */
     public String getLookupName() {
         return lookupName;
     }
@@ -34,6 +41,9 @@ public class UpdateLookupDataRequest
      */
     private java.io.InputStream updateLookupFileBody;
 
+    /**
+     * The file to use for the lookup update.
+     */
     public java.io.InputStream getUpdateLookupFileBody() {
         return updateLookupFileBody;
     }
@@ -42,6 +52,9 @@ public class UpdateLookupDataRequest
      */
     private Boolean isForce;
 
+    /**
+     * is force
+     */
     public Boolean getIsForce() {
         return isForce;
     }
@@ -50,6 +63,9 @@ public class UpdateLookupDataRequest
      */
     private String charEncoding;
 
+    /**
+     * The character encoding of the uploaded file.
+     */
     public String getCharEncoding() {
         return charEncoding;
     }
@@ -63,6 +79,14 @@ public class UpdateLookupDataRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -71,6 +95,9 @@ public class UpdateLookupDataRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -84,6 +111,14 @@ public class UpdateLookupDataRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -95,6 +130,12 @@ public class UpdateLookupDataRequest
      */
     private String expect;
 
+    /**
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
+     */
     public String getExpect() {
         return expect;
     }
@@ -121,11 +162,16 @@ public class UpdateLookupDataRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -133,10 +179,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * The name of the lookup to operate on.
+         */
         private String lookupName = null;
 
         /**
          * The name of the lookup to operate on.
+         * @param lookupName the value to set
          * @return this builder instance
          */
         public Builder lookupName(String lookupName) {
@@ -144,10 +194,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * The file to use for the lookup update.
+         */
         private java.io.InputStream updateLookupFileBody = null;
 
         /**
          * The file to use for the lookup update.
+         * @param updateLookupFileBody the value to set
          * @return this builder instance
          */
         public Builder updateLookupFileBody(java.io.InputStream updateLookupFileBody) {
@@ -155,10 +209,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * is force
+         */
         private Boolean isForce = null;
 
         /**
          * is force
+         * @param isForce the value to set
          * @return this builder instance
          */
         public Builder isForce(Boolean isForce) {
@@ -166,10 +224,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * The character encoding of the uploaded file.
+         */
         private String charEncoding = null;
 
         /**
          * The character encoding of the uploaded file.
+         * @param charEncoding the value to set
          * @return this builder instance
          */
         public Builder charEncoding(String charEncoding) {
@@ -177,6 +239,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -186,6 +256,7 @@ public class UpdateLookupDataRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -193,10 +264,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -204,6 +279,14 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -213,6 +296,7 @@ public class UpdateLookupDataRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -220,6 +304,12 @@ public class UpdateLookupDataRequest
             return this;
         }
 
+        /**
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
+         */
         private String expect = null;
 
         /**
@@ -227,6 +317,7 @@ public class UpdateLookupDataRequest
          * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
          * The only allowed value for this parameter is "100-Continue" (case-insensitive).
          *
+         * @param expect the value to set
          * @return this builder instance
          */
         public Builder expect(String expect) {
@@ -329,7 +420,8 @@ public class UpdateLookupDataRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -344,6 +436,10 @@ public class UpdateLookupDataRequest
                 .expect(expect);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

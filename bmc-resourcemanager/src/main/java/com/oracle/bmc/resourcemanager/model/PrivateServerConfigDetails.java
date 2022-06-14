@@ -31,18 +31,37 @@ public final class PrivateServerConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a private endpoint associated with the configuration source provider.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a private endpoint associated with the configuration source provider.
+         *
+         * @param privateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a certificate associated with the configuration source provider.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a certificate associated with the configuration source provider.
+         *
+         * @param certificateId the value to set
+         * @return this builder
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
@@ -87,6 +106,11 @@ public final class PrivateServerConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a private endpoint associated with the configuration source provider.
+     *
+     * @return the value
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -98,6 +122,11 @@ public final class PrivateServerConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a certificate associated with the configuration source provider.
+     *
+     * @return the value
+     **/
     public String getCertificateId() {
         return certificateId;
     }

@@ -143,37 +143,65 @@ public final class DataAssetFromObjectStorageDetails extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-
+        /**
+         * The Oracle Object storage Region ie. us-ashburn-1
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
         private String ociRegion;
 
+        /**
+         * The Oracle Object storage Region ie. us-ashburn-1
+         * @param ociRegion the value to set
+         * @return this builder
+         **/
         public Builder ociRegion(String ociRegion) {
             this.ociRegion = ociRegion;
             this.__explicitlySet__.add("ociRegion");
             return this;
         }
-
+        /**
+         * The Oracle Object storage URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The Oracle Object storage URL.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * The OCI tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * The OCI tenancy OCID.
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-
+        /**
+         * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -302,6 +330,10 @@ public final class DataAssetFromObjectStorageDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
     private final String ociRegion;
 
+    /**
+     * The Oracle Object storage Region ie. us-ashburn-1
+     * @return the value
+     **/
     public String getOciRegion() {
         return ociRegion;
     }
@@ -312,6 +344,10 @@ public final class DataAssetFromObjectStorageDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The Oracle Object storage URL.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -322,6 +358,10 @@ public final class DataAssetFromObjectStorageDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * The OCI tenancy OCID.
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -332,6 +372,10 @@ public final class DataAssetFromObjectStorageDetails extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

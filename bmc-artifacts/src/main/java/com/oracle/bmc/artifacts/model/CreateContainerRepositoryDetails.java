@@ -44,36 +44,67 @@ public final class CreateContainerRepositoryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The container repository name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The container repository name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
         private Boolean isImmutable;
 
+        /**
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         * @param isImmutable the value to set
+         * @return this builder
+         **/
         public Builder isImmutable(Boolean isImmutable) {
             this.isImmutable = isImmutable;
             this.__explicitlySet__.add("isImmutable");
             return this;
         }
-
+        /**
+         * Whether the repository is public. A public repository allows unauthenticated access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
+        /**
+         * Whether the repository is public. A public repository allows unauthenticated access.
+         * @param isPublic the value to set
+         * @return this builder
+         **/
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
@@ -132,6 +163,11 @@ public final class CreateContainerRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -142,6 +178,10 @@ public final class CreateContainerRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The container repository name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -152,6 +192,10 @@ public final class CreateContainerRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
     private final Boolean isImmutable;
 
+    /**
+     * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * @return the value
+     **/
     public Boolean getIsImmutable() {
         return isImmutable;
     }
@@ -162,6 +206,10 @@ public final class CreateContainerRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
+    /**
+     * Whether the repository is public. A public repository allows unauthenticated access.
+     * @return the value
+     **/
     public Boolean getIsPublic() {
         return isPublic;
     }

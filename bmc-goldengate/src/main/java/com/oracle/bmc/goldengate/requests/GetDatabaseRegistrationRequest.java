@@ -18,6 +18,10 @@ public class GetDatabaseRegistrationRequest
      */
     private String databaseRegistrationId;
 
+    /**
+     * A unique DatabaseRegistration identifier.
+     *
+     */
     public String getDatabaseRegistrationId() {
         return databaseRegistrationId;
     }
@@ -27,6 +31,10 @@ public class GetDatabaseRegistrationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,11 +46,16 @@ public class GetDatabaseRegistrationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique DatabaseRegistration identifier.
+         *
+         */
         private String databaseRegistrationId = null;
 
         /**
          * A unique DatabaseRegistration identifier.
          *
+         * @param databaseRegistrationId the value to set
          * @return this builder instance
          */
         public Builder databaseRegistrationId(String databaseRegistrationId) {
@@ -50,11 +63,16 @@ public class GetDatabaseRegistrationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -132,7 +150,8 @@ public class GetDatabaseRegistrationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -140,6 +159,10 @@ public class GetDatabaseRegistrationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

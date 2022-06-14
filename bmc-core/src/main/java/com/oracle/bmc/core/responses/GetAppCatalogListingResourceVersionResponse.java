@@ -15,6 +15,11 @@ public class GetAppCatalogListingResourceVersionResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -26,6 +31,12 @@ public class GetAppCatalogListingResourceVersionResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +47,10 @@ public class GetAppCatalogListingResourceVersionResponse
     private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
             appCatalogListingResourceVersion;
 
+    /**
+     * The returned AppCatalogListingResourceVersion instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.AppCatalogListingResourceVersion
             getAppCatalogListingResourceVersion() {
         return appCatalogListingResourceVersion;
@@ -67,23 +82,53 @@ public class GetAppCatalogListingResourceVersionResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AppCatalogListingResourceVersion instance.
+         */
         private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
                 appCatalogListingResourceVersion;
 
+        /**
+         * The returned AppCatalogListingResourceVersion instance.
+         * @param appCatalogListingResourceVersion the value to set
+         * @return this builder
+         */
         public Builder appCatalogListingResourceVersion(
                 com.oracle.bmc.core.model.AppCatalogListingResourceVersion
                         appCatalogListingResourceVersion) {
@@ -104,12 +149,20 @@ public class GetAppCatalogListingResourceVersionResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAppCatalogListingResourceVersionResponse build() {
             return new GetAppCatalogListingResourceVersionResponse(
                     __httpStatusCode__, etag, opcRequestId, appCatalogListingResourceVersion);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

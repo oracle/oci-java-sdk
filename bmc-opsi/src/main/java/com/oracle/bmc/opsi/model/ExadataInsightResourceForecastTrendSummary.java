@@ -47,54 +47,97 @@ public final class ExadataInsightResourceForecastTrendSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the resource.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Days to reach capacity for a storage server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReachCapacity")
         private Integer daysToReachCapacity;
 
+        /**
+         * Days to reach capacity for a storage server
+         * @param daysToReachCapacity the value to set
+         * @return this builder
+         **/
         public Builder daysToReachCapacity(Integer daysToReachCapacity) {
             this.daysToReachCapacity = daysToReachCapacity;
             this.__explicitlySet__.add("daysToReachCapacity");
             return this;
         }
-
+        /**
+         * Time series patterns used in the forecasting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private Pattern pattern;
 
+        /**
+         * Time series patterns used in the forecasting.
+         * @param pattern the value to set
+         * @return this builder
+         **/
         public Builder pattern(Pattern pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
             return this;
         }
-
+        /**
+         * Time series data used for the forecast analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
         private java.util.List<HistoricalDataItem> historicalData;
 
+        /**
+         * Time series data used for the forecast analysis.
+         * @param historicalData the value to set
+         * @return this builder
+         **/
         public Builder historicalData(java.util.List<HistoricalDataItem> historicalData) {
             this.historicalData = historicalData;
             this.__explicitlySet__.add("historicalData");
             return this;
         }
-
+        /**
+         * Time series data result of the forecasting analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
         private java.util.List<ProjectedDataItem> projectedData;
 
+        /**
+         * Time series data result of the forecasting analysis.
+         * @param projectedData the value to set
+         * @return this builder
+         **/
         public Builder projectedData(java.util.List<ProjectedDataItem> projectedData) {
             this.projectedData = projectedData;
             this.__explicitlySet__.add("projectedData");
@@ -144,6 +187,10 @@ public final class ExadataInsightResourceForecastTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -154,6 +201,10 @@ public final class ExadataInsightResourceForecastTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the resource.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -164,6 +215,10 @@ public final class ExadataInsightResourceForecastTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachCapacity")
     private final Integer daysToReachCapacity;
 
+    /**
+     * Days to reach capacity for a storage server
+     * @return the value
+     **/
     public Integer getDaysToReachCapacity() {
         return daysToReachCapacity;
     }
@@ -228,6 +283,10 @@ public final class ExadataInsightResourceForecastTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final Pattern pattern;
 
+    /**
+     * Time series patterns used in the forecasting.
+     * @return the value
+     **/
     public Pattern getPattern() {
         return pattern;
     }
@@ -238,6 +297,10 @@ public final class ExadataInsightResourceForecastTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
     private final java.util.List<HistoricalDataItem> historicalData;
 
+    /**
+     * Time series data used for the forecast analysis.
+     * @return the value
+     **/
     public java.util.List<HistoricalDataItem> getHistoricalData() {
         return historicalData;
     }
@@ -248,6 +311,10 @@ public final class ExadataInsightResourceForecastTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
     private final java.util.List<ProjectedDataItem> projectedData;
 
+    /**
+     * Time series data result of the forecasting analysis.
+     * @return the value
+     **/
     public java.util.List<ProjectedDataItem> getProjectedData() {
         return projectedData;
     }

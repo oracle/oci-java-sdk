@@ -30,18 +30,33 @@ public final class ActualBuildRunnerShapeConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs set for the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Double ocpus;
 
+        /**
+         * The total number of OCPUs set for the instance.
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Double ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The total amount of memory set for the instance in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Double memoryInGBs;
 
+        /**
+         * The total amount of memory set for the instance in gigabytes.
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Double memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -84,6 +99,10 @@ public final class ActualBuildRunnerShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Double ocpus;
 
+    /**
+     * The total number of OCPUs set for the instance.
+     * @return the value
+     **/
     public Double getOcpus() {
         return ocpus;
     }
@@ -94,6 +113,10 @@ public final class ActualBuildRunnerShapeConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Double memoryInGBs;
 
+    /**
+     * The total amount of memory set for the instance in gigabytes.
+     * @return the value
+     **/
     public Double getMemoryInGBs() {
         return memoryInGBs;
     }

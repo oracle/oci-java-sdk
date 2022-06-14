@@ -49,45 +49,159 @@ public final class CertificateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
+        /**
+         * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
+         *
+         * @param passphrase the value to set
+         * @return this builder
+         **/
         public Builder passphrase(String passphrase) {
             this.passphrase = passphrase;
             this.__explicitlySet__.add("passphrase");
             return this;
         }
-
+        /**
+         * The SSL private key for your certificate, in PEM format.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN RSA PRIVATE KEY-----
+         *     jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+         *     tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+         *     +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+         *     /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+         *     ...
+         *     -----END RSA PRIVATE KEY-----
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
         private String privateKey;
 
+        /**
+         * The SSL private key for your certificate, in PEM format.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN RSA PRIVATE KEY-----
+         *     jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+         *     tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+         *     +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+         *     /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+         *     ...
+         *     -----END RSA PRIVATE KEY-----
+         *
+         * @param privateKey the value to set
+         * @return this builder
+         **/
         public Builder privateKey(String privateKey) {
             this.privateKey = privateKey;
             this.__explicitlySet__.add("privateKey");
             return this;
         }
-
+        /**
+         * The public certificate, in PEM format, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+         *     A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+         *     MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+         *     YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
+        /**
+         * The public certificate, in PEM format, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+         *     A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+         *     MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+         *     YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         * @param publicCertificate the value to set
+         * @return this builder
+         **/
         public Builder publicCertificate(String publicCertificate) {
             this.publicCertificate = publicCertificate;
             this.__explicitlySet__.add("publicCertificate");
             return this;
         }
-
+        /**
+         * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+         *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+         *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+         *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
+        /**
+         * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+         * <p>
+         * Example:
+         * <p>
+         * -----BEGIN CERTIFICATE-----
+         *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+         *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+         *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+         *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+         *     ...
+         *     -----END CERTIFICATE-----
+         *
+         * @param caCertificate the value to set
+         * @return this builder
+         **/
         public Builder caCertificate(String caCertificate) {
             this.caCertificate = caCertificate;
             this.__explicitlySet__.add("caCertificate");
             return this;
         }
-
+        /**
+         * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+         * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+         * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_certificate_bundle}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
+        /**
+         * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+         * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+         * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_certificate_bundle}
+         *
+         * @param certificateName the value to set
+         * @return this builder
+         **/
         public Builder certificateName(String certificateName) {
             this.certificateName = certificateName;
             this.__explicitlySet__.add("certificateName");
@@ -141,6 +255,11 @@ public final class CertificateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     private final String passphrase;
 
+    /**
+     * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
+     *
+     * @return the value
+     **/
     public String getPassphrase() {
         return passphrase;
     }
@@ -162,6 +281,21 @@ public final class CertificateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
     private final String privateKey;
 
+    /**
+     * The SSL private key for your certificate, in PEM format.
+     * <p>
+     * Example:
+     * <p>
+     * -----BEGIN RSA PRIVATE KEY-----
+     *     jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+     *     tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+     *     +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+     *     /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+     *     ...
+     *     -----END RSA PRIVATE KEY-----
+     *
+     * @return the value
+     **/
     public String getPrivateKey() {
         return privateKey;
     }
@@ -183,6 +317,21 @@ public final class CertificateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     private final String publicCertificate;
 
+    /**
+     * The public certificate, in PEM format, that you received from your SSL certificate provider.
+     * <p>
+     * Example:
+     * <p>
+     * -----BEGIN CERTIFICATE-----
+     *     MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+     *     A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+     *     MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+     *     YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+     *     ...
+     *     -----END CERTIFICATE-----
+     *
+     * @return the value
+     **/
     public String getPublicCertificate() {
         return publicCertificate;
     }
@@ -204,6 +353,21 @@ public final class CertificateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
+    /**
+     * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     * <p>
+     * Example:
+     * <p>
+     * -----BEGIN CERTIFICATE-----
+     *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     *     ...
+     *     -----END CERTIFICATE-----
+     *
+     * @return the value
+     **/
     public String getCaCertificate() {
         return caCertificate;
     }
@@ -219,6 +383,15 @@ public final class CertificateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     private final String certificateName;
 
+    /**
+     * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+     * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+     * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_certificate_bundle}
+     *
+     * @return the value
+     **/
     public String getCertificateName() {
         return certificateName;
     }

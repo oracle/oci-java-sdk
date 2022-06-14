@@ -30,18 +30,33 @@ public final class FacetedSearchStringFilterRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * String/boolean/numerical field name that needs to filtered with
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private String field;
 
+        /**
+         * String/boolean/numerical field name that needs to filtered with
+         * @param field the value to set
+         * @return this builder
+         **/
         public Builder field(String field) {
             this.field = field;
             this.__explicitlySet__.add("field");
             return this;
         }
-
+        /**
+         * Array of values that the search results needs to be filtered by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
+        /**
+         * Array of values that the search results needs to be filtered by.
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -84,6 +99,10 @@ public final class FacetedSearchStringFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("field")
     private final String field;
 
+    /**
+     * String/boolean/numerical field name that needs to filtered with
+     * @return the value
+     **/
     public String getField() {
         return field;
     }
@@ -94,6 +113,10 @@ public final class FacetedSearchStringFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
+    /**
+     * Array of values that the search results needs to be filtered by.
+     * @return the value
+     **/
     public java.util.List<String> getValues() {
         return values;
     }

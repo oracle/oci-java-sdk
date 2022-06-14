@@ -18,6 +18,9 @@ public class UpdateHostnameRequest
      */
     private com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails updateHostnameDetails;
 
+    /**
+     * The configuration details to update a virtual hostname.
+     */
     public com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails getUpdateHostnameDetails() {
         return updateHostnameDetails;
     }
@@ -28,6 +31,11 @@ public class UpdateHostnameRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the virtual hostname
+     * to update.
+     *
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -39,6 +47,12 @@ public class UpdateHostnameRequest
      */
     private String name;
 
+    /**
+     * The name of the hostname resource to update.
+     * <p>
+     * Example: {@code example_hostname_001}
+     *
+     */
     public String getName() {
         return name;
     }
@@ -49,6 +63,11 @@ public class UpdateHostnameRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,11 +90,15 @@ public class UpdateHostnameRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The configuration details to update a virtual hostname.
+         */
         private com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails updateHostnameDetails =
                 null;
 
         /**
          * The configuration details to update a virtual hostname.
+         * @param updateHostnameDetails the value to set
          * @return this builder instance
          */
         public Builder updateHostnameDetails(
@@ -84,12 +107,18 @@ public class UpdateHostnameRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the virtual hostname
+         * to update.
+         *
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the virtual hostname
          * to update.
          *
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -97,6 +126,12 @@ public class UpdateHostnameRequest
             return this;
         }
 
+        /**
+         * The name of the hostname resource to update.
+         * <p>
+         * Example: {@code example_hostname_001}
+         *
+         */
         private String name = null;
 
         /**
@@ -104,6 +139,7 @@ public class UpdateHostnameRequest
          * <p>
          * Example: {@code example_hostname_001}
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -111,12 +147,18 @@ public class UpdateHostnameRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +251,8 @@ public class UpdateHostnameRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +262,10 @@ public class UpdateHostnameRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

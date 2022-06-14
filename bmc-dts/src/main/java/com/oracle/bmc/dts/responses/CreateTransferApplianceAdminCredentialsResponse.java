@@ -14,6 +14,10 @@ public class CreateTransferApplianceAdminCredentialsResponse
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +27,10 @@ public class CreateTransferApplianceAdminCredentialsResponse
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -32,6 +40,10 @@ public class CreateTransferApplianceAdminCredentialsResponse
      */
     private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
+    /**
+     * The returned TransferApplianceCertificate instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.TransferApplianceCertificate getTransferApplianceCertificate() {
         return transferApplianceCertificate;
     }
@@ -61,22 +73,46 @@ public class CreateTransferApplianceAdminCredentialsResponse
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned TransferApplianceCertificate instance.
+         */
         private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
+        /**
+         * The returned TransferApplianceCertificate instance.
+         * @param transferApplianceCertificate the value to set
+         * @return this builder
+         */
         public Builder transferApplianceCertificate(
                 com.oracle.bmc.dts.model.TransferApplianceCertificate
                         transferApplianceCertificate) {
@@ -97,12 +133,20 @@ public class CreateTransferApplianceAdminCredentialsResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateTransferApplianceAdminCredentialsResponse build() {
             return new CreateTransferApplianceAdminCredentialsResponse(
                     __httpStatusCode__, opcRequestId, etag, transferApplianceCertificate);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

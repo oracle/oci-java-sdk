@@ -17,6 +17,9 @@ public class DeleteImportedPackageRequest
      */
     private String odaInstanceId;
 
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -25,6 +28,9 @@ public class DeleteImportedPackageRequest
      */
     private String packageId;
 
+    /**
+     * Unique Digital Assistant package identifier.
+     */
     public String getPackageId() {
         return packageId;
     }
@@ -39,6 +45,15 @@ public class DeleteImportedPackageRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * conflicting operations. For example, if an instance was deleted and purged from the system,
+     * then the service might reject a retry of the original creation request.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -53,6 +68,15 @@ public class DeleteImportedPackageRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,6 +85,9 @@ public class DeleteImportedPackageRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -72,10 +99,14 @@ public class DeleteImportedPackageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -83,10 +114,14 @@ public class DeleteImportedPackageRequest
             return this;
         }
 
+        /**
+         * Unique Digital Assistant package identifier.
+         */
         private String packageId = null;
 
         /**
          * Unique Digital Assistant package identifier.
+         * @param packageId the value to set
          * @return this builder instance
          */
         public Builder packageId(String packageId) {
@@ -94,6 +129,15 @@ public class DeleteImportedPackageRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -104,6 +148,7 @@ public class DeleteImportedPackageRequest
          * conflicting operations. For example, if an instance was deleted and purged from the system,
          * then the service might reject a retry of the original creation request.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -111,6 +156,15 @@ public class DeleteImportedPackageRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +175,7 @@ public class DeleteImportedPackageRequest
          * instance only if the etag that you provide matches the instance's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,10 +183,14 @@ public class DeleteImportedPackageRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -215,7 +274,8 @@ public class DeleteImportedPackageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +286,10 @@ public class DeleteImportedPackageRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

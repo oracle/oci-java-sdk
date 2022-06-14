@@ -18,6 +18,9 @@ public class CreateVolumeGroupBackupRequest
      */
     private com.oracle.bmc.core.model.CreateVolumeGroupBackupDetails createVolumeGroupBackupDetails;
 
+    /**
+     * Request to create a new backup group of given volume group.
+     */
     public com.oracle.bmc.core.model.CreateVolumeGroupBackupDetails
             getCreateVolumeGroupBackupDetails() {
         return createVolumeGroupBackupDetails;
@@ -32,6 +35,14 @@ public class CreateVolumeGroupBackupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -54,11 +65,15 @@ public class CreateVolumeGroupBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a new backup group of given volume group.
+         */
         private com.oracle.bmc.core.model.CreateVolumeGroupBackupDetails
                 createVolumeGroupBackupDetails = null;
 
         /**
          * Request to create a new backup group of given volume group.
+         * @param createVolumeGroupBackupDetails the value to set
          * @return this builder instance
          */
         public Builder createVolumeGroupBackupDetails(
@@ -68,6 +83,14 @@ public class CreateVolumeGroupBackupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -77,6 +100,7 @@ public class CreateVolumeGroupBackupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -165,7 +189,8 @@ public class CreateVolumeGroupBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -173,6 +198,10 @@ public class CreateVolumeGroupBackupRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

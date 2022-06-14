@@ -14,6 +14,11 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private Integer retryAfter;
 
+    /**
+     * Indicates the number of seconds to wait before making a follow-up request.
+     * @return the value
+     */
     public Integer getRetryAfter() {
         return retryAfter;
     }
@@ -43,6 +58,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datascience.model.WorkRequest workRequest;
 
+    /**
+     * The returned WorkRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.datascience.model.WorkRequest getWorkRequest() {
         return workRequest;
     }
@@ -75,29 +94,67 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Indicates the number of seconds to wait before making a follow-up request.
+         */
         private Integer retryAfter;
 
+        /**
+         * Indicates the number of seconds to wait before making a follow-up request.
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Integer retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned WorkRequest instance.
+         */
         private com.oracle.bmc.datascience.model.WorkRequest workRequest;
 
+        /**
+         * The returned WorkRequest instance.
+         * @param workRequest the value to set
+         * @return this builder
+         */
         public Builder workRequest(com.oracle.bmc.datascience.model.WorkRequest workRequest) {
             this.workRequest = workRequest;
             return this;
@@ -117,12 +174,20 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetWorkRequestResponse build() {
             return new GetWorkRequestResponse(
                     __httpStatusCode__, etag, opcRequestId, retryAfter, workRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

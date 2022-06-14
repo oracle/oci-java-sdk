@@ -17,6 +17,9 @@ public class ListDbSystemComputePerformancesRequest
      */
     private String dbSystemShape;
 
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the given shape.
+     */
     public String getDbSystemShape() {
         return dbSystemShape;
     }
@@ -26,6 +29,10 @@ public class ListDbSystemComputePerformancesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +44,14 @@ public class ListDbSystemComputePerformancesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * If provided, filters the results to the set of database versions which are supported for the given shape.
+         */
         private String dbSystemShape = null;
 
         /**
          * If provided, filters the results to the set of database versions which are supported for the given shape.
+         * @param dbSystemShape the value to set
          * @return this builder instance
          */
         public Builder dbSystemShape(String dbSystemShape) {
@@ -48,11 +59,16 @@ public class ListDbSystemComputePerformancesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,12 +147,17 @@ public class ListDbSystemComputePerformancesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbSystemShape(dbSystemShape).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

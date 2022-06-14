@@ -44,45 +44,91 @@ public final class AttachmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The role of the target attachment.
+         *    * {@code PARENT} - The target instance is the parent of this attachment.
+         *    * {@code CHILD} - The target instance is the child of this attachment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetRole")
         private TargetRole targetRole;
 
+        /**
+         * The role of the target attachment.
+         *    * {@code PARENT} - The target instance is the parent of this attachment.
+         *    * {@code CHILD} - The target instance is the child of this attachment.
+         *
+         * @param targetRole the value to set
+         * @return this builder
+         **/
         public Builder targetRole(TargetRole targetRole) {
             this.targetRole = targetRole;
             this.__explicitlySet__.add("targetRole");
             return this;
         }
-
+        /**
+         * * If role == {@code PARENT}, the attached instance was created by this service instance
+         * * If role == {@code CHILD}, this instance was created from attached instance on behalf of a user
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isImplicit")
         private Boolean isImplicit;
 
+        /**
+         * * If role == {@code PARENT}, the attached instance was created by this service instance
+         * * If role == {@code CHILD}, this instance was created from attached instance on behalf of a user
+         *
+         * @param isImplicit the value to set
+         * @return this builder
+         **/
         public Builder isImplicit(Boolean isImplicit) {
             this.isImplicit = isImplicit;
             this.__explicitlySet__.add("isImplicit");
             return this;
         }
-
+        /**
+         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this instance is attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this instance is attached.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The dataplane instance URL of the attached instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetInstanceUrl")
         private String targetInstanceUrl;
 
+        /**
+         * The dataplane instance URL of the attached instance
+         * @param targetInstanceUrl the value to set
+         * @return this builder
+         **/
         public Builder targetInstanceUrl(String targetInstanceUrl) {
             this.targetInstanceUrl = targetInstanceUrl;
             this.__explicitlySet__.add("targetInstanceUrl");
             return this;
         }
-
+        /**
+         * The type of the target instance, such as "FUSION".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetServiceType")
         private String targetServiceType;
 
+        /**
+         * The type of the target instance, such as "FUSION".
+         * @param targetServiceType the value to set
+         * @return this builder
+         **/
         public Builder targetServiceType(String targetServiceType) {
             this.targetServiceType = targetServiceType;
             this.__explicitlySet__.add("targetServiceType");
@@ -185,6 +231,13 @@ public final class AttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetRole")
     private final TargetRole targetRole;
 
+    /**
+     * The role of the target attachment.
+     *    * {@code PARENT} - The target instance is the parent of this attachment.
+     *    * {@code CHILD} - The target instance is the child of this attachment.
+     *
+     * @return the value
+     **/
     public TargetRole getTargetRole() {
         return targetRole;
     }
@@ -197,6 +250,12 @@ public final class AttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isImplicit")
     private final Boolean isImplicit;
 
+    /**
+     * * If role == {@code PARENT}, the attached instance was created by this service instance
+     * * If role == {@code CHILD}, this instance was created from attached instance on behalf of a user
+     *
+     * @return the value
+     **/
     public Boolean getIsImplicit() {
         return isImplicit;
     }
@@ -207,6 +266,10 @@ public final class AttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which this instance is attached.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -217,6 +280,10 @@ public final class AttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetInstanceUrl")
     private final String targetInstanceUrl;
 
+    /**
+     * The dataplane instance URL of the attached instance
+     * @return the value
+     **/
     public String getTargetInstanceUrl() {
         return targetInstanceUrl;
     }
@@ -227,6 +294,10 @@ public final class AttachmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetServiceType")
     private final String targetServiceType;
 
+    /**
+     * The type of the target instance, such as "FUSION".
+     * @return the value
+     **/
     public String getTargetServiceType() {
         return targetServiceType;
     }

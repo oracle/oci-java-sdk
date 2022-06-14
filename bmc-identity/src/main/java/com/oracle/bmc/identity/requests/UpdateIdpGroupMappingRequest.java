@@ -18,6 +18,9 @@ public class UpdateIdpGroupMappingRequest
      */
     private String identityProviderId;
 
+    /**
+     * The OCID of the identity provider.
+     */
     public String getIdentityProviderId() {
         return identityProviderId;
     }
@@ -26,6 +29,9 @@ public class UpdateIdpGroupMappingRequest
      */
     private String mappingId;
 
+    /**
+     * The OCID of the group mapping.
+     */
     public String getMappingId() {
         return mappingId;
     }
@@ -34,6 +40,9 @@ public class UpdateIdpGroupMappingRequest
      */
     private com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails updateIdpGroupMappingDetails;
 
+    /**
+     * Request object for updating an identity provider group mapping
+     */
     public com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails
             getUpdateIdpGroupMappingDetails() {
         return updateIdpGroupMappingDetails;
@@ -46,6 +55,12 @@ public class UpdateIdpGroupMappingRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -68,10 +83,14 @@ public class UpdateIdpGroupMappingRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the identity provider.
+         */
         private String identityProviderId = null;
 
         /**
          * The OCID of the identity provider.
+         * @param identityProviderId the value to set
          * @return this builder instance
          */
         public Builder identityProviderId(String identityProviderId) {
@@ -79,10 +98,14 @@ public class UpdateIdpGroupMappingRequest
             return this;
         }
 
+        /**
+         * The OCID of the group mapping.
+         */
         private String mappingId = null;
 
         /**
          * The OCID of the group mapping.
+         * @param mappingId the value to set
          * @return this builder instance
          */
         public Builder mappingId(String mappingId) {
@@ -90,11 +113,15 @@ public class UpdateIdpGroupMappingRequest
             return this;
         }
 
+        /**
+         * Request object for updating an identity provider group mapping
+         */
         private com.oracle.bmc.identity.model.UpdateIdpGroupMappingDetails
                 updateIdpGroupMappingDetails = null;
 
         /**
          * Request object for updating an identity provider group mapping
+         * @param updateIdpGroupMappingDetails the value to set
          * @return this builder instance
          */
         public Builder updateIdpGroupMappingDetails(
@@ -104,6 +131,12 @@ public class UpdateIdpGroupMappingRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -111,6 +144,7 @@ public class UpdateIdpGroupMappingRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -203,7 +237,8 @@ public class UpdateIdpGroupMappingRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +248,10 @@ public class UpdateIdpGroupMappingRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

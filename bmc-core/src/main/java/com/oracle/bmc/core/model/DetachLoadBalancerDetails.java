@@ -30,18 +30,33 @@ public final class DetachLoadBalancerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the load balancer to detach from the instance pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        /**
+         * The OCID of the load balancer to detach from the instance pool.
+         * @param loadBalancerId the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-
+        /**
+         * The name of the backend set on the load balancer to detach from the instance pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
+        /**
+         * The name of the backend set on the load balancer to detach from the instance pool.
+         * @param backendSetName the value to set
+         * @return this builder
+         **/
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
@@ -85,6 +100,10 @@ public final class DetachLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
+    /**
+     * The OCID of the load balancer to detach from the instance pool.
+     * @return the value
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -95,6 +114,10 @@ public final class DetachLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
+    /**
+     * The name of the backend set on the load balancer to detach from the instance pool.
+     * @return the value
+     **/
     public String getBackendSetName() {
         return backendSetName;
     }

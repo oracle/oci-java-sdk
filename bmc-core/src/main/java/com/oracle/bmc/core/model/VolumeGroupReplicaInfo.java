@@ -32,27 +32,59 @@ public final class VolumeGroupReplicaInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The volume group replica's Oracle ID (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
         private String volumeGroupReplicaId;
 
+        /**
+         * The volume group replica's Oracle ID (OCID).
+         * @param volumeGroupReplicaId the value to set
+         * @return this builder
+         **/
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             this.__explicitlySet__.add("volumeGroupReplicaId");
             return this;
         }
-
+        /**
+         * The availability domain of the boot volume replica replica.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain of the boot volume replica replica.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
@@ -101,6 +133,12 @@ public final class VolumeGroupReplicaInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -111,6 +149,10 @@ public final class VolumeGroupReplicaInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
     private final String volumeGroupReplicaId;
 
+    /**
+     * The volume group replica's Oracle ID (OCID).
+     * @return the value
+     **/
     public String getVolumeGroupReplicaId() {
         return volumeGroupReplicaId;
     }
@@ -124,6 +166,13 @@ public final class VolumeGroupReplicaInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain of the boot volume replica replica.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }

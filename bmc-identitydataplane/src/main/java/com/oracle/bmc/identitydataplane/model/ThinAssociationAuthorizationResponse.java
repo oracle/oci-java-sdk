@@ -34,27 +34,49 @@ public final class ThinAssociationAuthorizationResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The authorization responses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responses")
         private java.util.List<ThinAuthorizationResponse> responses;
 
+        /**
+         * The authorization responses.
+         * @param responses the value to set
+         * @return this builder
+         **/
         public Builder responses(java.util.List<ThinAuthorizationResponse> responses) {
             this.responses = responses;
             this.__explicitlySet__.add("responses");
             return this;
         }
-
+        /**
+         * The association verification result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationResult")
         private AssociationResult associationResult;
 
+        /**
+         * The association verification result.
+         * @param associationResult the value to set
+         * @return this builder
+         **/
         public Builder associationResult(AssociationResult associationResult) {
             this.associationResult = associationResult;
             this.__explicitlySet__.add("associationResult");
             return this;
         }
-
+        /**
+         * The decision cache duration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
         private String decisionCacheDuration;
 
+        /**
+         * The decision cache duration.
+         * @param decisionCacheDuration the value to set
+         * @return this builder
+         **/
         public Builder decisionCacheDuration(String decisionCacheDuration) {
             this.decisionCacheDuration = decisionCacheDuration;
             this.__explicitlySet__.add("decisionCacheDuration");
@@ -101,6 +123,10 @@ public final class ThinAssociationAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("responses")
     private final java.util.List<ThinAuthorizationResponse> responses;
 
+    /**
+     * The authorization responses.
+     * @return the value
+     **/
     public java.util.List<ThinAuthorizationResponse> getResponses() {
         return responses;
     }
@@ -149,6 +175,10 @@ public final class ThinAssociationAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("associationResult")
     private final AssociationResult associationResult;
 
+    /**
+     * The association verification result.
+     * @return the value
+     **/
     public AssociationResult getAssociationResult() {
         return associationResult;
     }
@@ -159,6 +189,10 @@ public final class ThinAssociationAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
     private final String decisionCacheDuration;
 
+    /**
+     * The decision cache duration.
+     * @return the value
+     **/
     public String getDecisionCacheDuration() {
         return decisionCacheDuration;
     }

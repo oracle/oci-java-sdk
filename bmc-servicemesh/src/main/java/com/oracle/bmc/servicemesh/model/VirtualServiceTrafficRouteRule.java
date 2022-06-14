@@ -51,6 +51,10 @@ public class VirtualServiceTrafficRouteRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<VirtualDeploymentTrafficRuleTarget> destinations;
 
+    /**
+     * The destination of the request.
+     * @return the value
+     **/
     public java.util.List<VirtualDeploymentTrafficRuleTarget> getDestinations() {
         return destinations;
     }

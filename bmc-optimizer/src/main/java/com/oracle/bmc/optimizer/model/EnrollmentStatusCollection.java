@@ -30,9 +30,17 @@ public final class EnrollmentStatusCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A collection of enrollment status summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EnrollmentStatusSummary> items;
 
+        /**
+         * A collection of enrollment status summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<EnrollmentStatusSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class EnrollmentStatusCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EnrollmentStatusSummary> items;
 
+    /**
+     * A collection of enrollment status summaries.
+     * @return the value
+     **/
     public java.util.List<EnrollmentStatusSummary> getItems() {
         return items;
     }

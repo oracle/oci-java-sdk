@@ -16,6 +16,9 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String exadataInfrastructureId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+     */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -24,6 +27,9 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String dbServerId;
 
+    /**
+     * The DB server [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbServerId() {
         return dbServerId;
     }
@@ -33,6 +39,10 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +54,14 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+         */
         private String exadataInfrastructureId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+         * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
@@ -55,10 +69,14 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The DB server [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbServerId = null;
 
         /**
          * The DB server [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbServerId the value to set
          * @return this builder instance
          */
         public Builder dbServerId(String dbServerId) {
@@ -66,11 +84,16 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,7 +173,8 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -159,6 +183,10 @@ public class GetDbServerRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

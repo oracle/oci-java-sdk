@@ -30,9 +30,17 @@ public final class IngestSqlPlanLinesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of SQL Plan Line Entries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlPlanLine> items;
 
+        /**
+         * List of SQL Plan Line Entries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SqlPlanLine> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class IngestSqlPlanLinesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlPlanLine> items;
 
+    /**
+     * List of SQL Plan Line Entries.
+     * @return the value
+     **/
     public java.util.List<SqlPlanLine> getItems() {
         return items;
     }

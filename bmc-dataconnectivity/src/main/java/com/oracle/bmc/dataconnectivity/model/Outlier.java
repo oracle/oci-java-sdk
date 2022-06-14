@@ -30,36 +30,65 @@ public final class Outlier {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * low value of outlier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private String low;
 
+        /**
+         * low value of outlier
+         * @param low the value to set
+         * @return this builder
+         **/
         public Builder low(String low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
-
+        /**
+         * high value of outlier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
+        /**
+         * high value of outlier
+         * @param high the value to set
+         * @return this builder
+         **/
         public Builder high(String high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
-
+        /**
+         * lowCount value of outlier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowCount")
         private String lowCount;
 
+        /**
+         * lowCount value of outlier
+         * @param lowCount the value to set
+         * @return this builder
+         **/
         public Builder lowCount(String lowCount) {
             this.lowCount = lowCount;
             this.__explicitlySet__.add("lowCount");
             return this;
         }
-
+        /**
+         * highCount value of outlier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("highCount")
         private String highCount;
 
+        /**
+         * highCount value of outlier
+         * @param highCount the value to set
+         * @return this builder
+         **/
         public Builder highCount(String highCount) {
             this.highCount = highCount;
             this.__explicitlySet__.add("highCount");
@@ -105,6 +134,10 @@ public final class Outlier {
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final String low;
 
+    /**
+     * low value of outlier
+     * @return the value
+     **/
     public String getLow() {
         return low;
     }
@@ -115,6 +148,10 @@ public final class Outlier {
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final String high;
 
+    /**
+     * high value of outlier
+     * @return the value
+     **/
     public String getHigh() {
         return high;
     }
@@ -125,6 +162,10 @@ public final class Outlier {
     @com.fasterxml.jackson.annotation.JsonProperty("lowCount")
     private final String lowCount;
 
+    /**
+     * lowCount value of outlier
+     * @return the value
+     **/
     public String getLowCount() {
         return lowCount;
     }
@@ -135,6 +176,10 @@ public final class Outlier {
     @com.fasterxml.jackson.annotation.JsonProperty("highCount")
     private final String highCount;
 
+    /**
+     * highCount value of outlier
+     * @return the value
+     **/
     public String getHighCount() {
         return highCount;
     }

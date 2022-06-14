@@ -30,18 +30,33 @@ public final class InstanceCredentials {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The password for the username.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password for the username.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-
+        /**
+         * The username.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The username.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
@@ -83,6 +98,10 @@ public final class InstanceCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password for the username.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }
@@ -93,6 +112,10 @@ public final class InstanceCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The username.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }

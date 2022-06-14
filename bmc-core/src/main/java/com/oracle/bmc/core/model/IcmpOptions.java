@@ -38,18 +38,33 @@ public final class IcmpOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ICMP code (optional).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Integer code;
 
+        /**
+         * The ICMP code (optional).
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(Integer code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * The ICMP type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Integer type;
 
+        /**
+         * The ICMP type.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Integer type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -91,6 +106,10 @@ public final class IcmpOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final Integer code;
 
+    /**
+     * The ICMP code (optional).
+     * @return the value
+     **/
     public Integer getCode() {
         return code;
     }
@@ -101,6 +120,10 @@ public final class IcmpOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Integer type;
 
+    /**
+     * The ICMP type.
+     * @return the value
+     **/
     public Integer getType() {
         return type;
     }

@@ -48,6 +48,10 @@ public class DetectAnomaliesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
+    /**
+     * The OCID of the trained model\u3002
+     * @return the value
+     **/
     public String getModelId() {
         return modelId;
     }

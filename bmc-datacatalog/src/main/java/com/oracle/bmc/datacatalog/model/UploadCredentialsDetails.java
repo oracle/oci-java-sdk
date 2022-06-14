@@ -31,6 +31,7 @@ public final class UploadCredentialsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("connectionDetail")
         private UpdateConnectionDetails connectionDetail;
 
@@ -39,10 +40,17 @@ public final class UploadCredentialsDetails {
             this.__explicitlySet__.add("connectionDetail");
             return this;
         }
-
+        /**
+         * Information used in updating connection credentials.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialPayload")
         private byte[] credentialPayload;
 
+        /**
+         * Information used in updating connection credentials.
+         * @param credentialPayload the value to set
+         * @return this builder
+         **/
         public Builder credentialPayload(byte[] credentialPayload) {
             this.credentialPayload = credentialPayload;
             this.__explicitlySet__.add("credentialPayload");
@@ -94,6 +102,10 @@ public final class UploadCredentialsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialPayload")
     private final byte[] credentialPayload;
 
+    /**
+     * Information used in updating connection credentials.
+     * @return the value
+     **/
     public byte[] getCredentialPayload() {
         return credentialPayload;
     }

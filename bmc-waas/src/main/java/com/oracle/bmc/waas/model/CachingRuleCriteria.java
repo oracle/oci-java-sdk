@@ -30,18 +30,51 @@ public final class CachingRuleCriteria {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The condition of the caching rule criteria.
+         * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field.
+         * <p>
+         * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the {@code value} field.
+         * <p>
+         * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the {@code value} field.
+         * <p>
+         * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the {@code value} field.
+         * <p>
+         * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private Condition condition;
 
+        /**
+         * The condition of the caching rule criteria.
+         * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field.
+         * <p>
+         * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the {@code value} field.
+         * <p>
+         * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the {@code value} field.
+         * <p>
+         * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the {@code value} field.
+         * <p>
+         * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
+         * @param condition the value to set
+         * @return this builder
+         **/
         public Builder condition(Condition condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * The value of the caching rule criteria.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of the caching rule criteria.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -151,6 +184,19 @@ public final class CachingRuleCriteria {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final Condition condition;
 
+    /**
+     * The condition of the caching rule criteria.
+     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the {@code value} field.
+     * <p>
+     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the {@code value} field.
+     * <p>
+     * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the {@code value} field.
+     * <p>
+     * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the {@code value} field.
+     * <p>
+     * URLs must start with a {@code /}. URLs can't contain restricted double slashes {@code //}. URLs can't contain the restricted {@code '} {@code &} {@code ?} symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
+     * @return the value
+     **/
     public Condition getCondition() {
         return condition;
     }
@@ -161,6 +207,10 @@ public final class CachingRuleCriteria {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of the caching rule criteria.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

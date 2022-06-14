@@ -27,27 +27,49 @@ package com.oracle.bmc.devops.model;
 public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Namespace A for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceA")
         private String namespaceA;
 
+        /**
+         * Namespace A for deployment.
+         * @param namespaceA the value to set
+         * @return this builder
+         **/
         public Builder namespaceA(String namespaceA) {
             this.namespaceA = namespaceA;
             this.__explicitlySet__.add("namespaceA");
             return this;
         }
-
+        /**
+         * Namespace B for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceB")
         private String namespaceB;
 
+        /**
+         * Namespace B for deployment.
+         * @param namespaceB the value to set
+         * @return this builder
+         **/
         public Builder namespaceB(String namespaceB) {
             this.namespaceB = namespaceB;
             this.__explicitlySet__.add("namespaceB");
             return this;
         }
-
+        /**
+         * Name of the Ingress resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ingressName")
         private String ingressName;
 
+        /**
+         * Name of the Ingress resource.
+         * @param ingressName the value to set
+         * @return this builder
+         **/
         public Builder ingressName(String ingressName) {
             this.ingressName = ingressName;
             this.__explicitlySet__.add("ingressName");
@@ -101,6 +123,10 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceA")
     private final String namespaceA;
 
+    /**
+     * Namespace A for deployment.
+     * @return the value
+     **/
     public String getNamespaceA() {
         return namespaceA;
     }
@@ -111,6 +137,10 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceB")
     private final String namespaceB;
 
+    /**
+     * Namespace B for deployment.
+     * @return the value
+     **/
     public String getNamespaceB() {
         return namespaceB;
     }
@@ -121,6 +151,10 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     @com.fasterxml.jackson.annotation.JsonProperty("ingressName")
     private final String ingressName;
 
+    /**
+     * Name of the Ingress resource.
+     * @return the value
+     **/
     public String getIngressName() {
         return ingressName;
     }

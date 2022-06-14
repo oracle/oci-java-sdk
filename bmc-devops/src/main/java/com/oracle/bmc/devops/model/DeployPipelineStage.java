@@ -30,18 +30,33 @@ public final class DeployPipelineStage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of a stage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
+        /**
+         * The OCID of a stage
+         * @param deployStageId the value to set
+         * @return this builder
+         **/
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = deployStageId;
             this.__explicitlySet__.add("deployStageId");
             return this;
         }
-
+        /**
+         * Display name of the stage. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the stage. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -84,6 +99,10 @@ public final class DeployPipelineStage {
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
+    /**
+     * The OCID of a stage
+     * @return the value
+     **/
     public String getDeployStageId() {
         return deployStageId;
     }
@@ -94,6 +113,10 @@ public final class DeployPipelineStage {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the stage. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

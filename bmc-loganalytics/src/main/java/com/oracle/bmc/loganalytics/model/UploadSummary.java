@@ -48,63 +48,113 @@ public final class UploadSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique internal identifier to refer the upload container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reference")
         private String reference;
 
+        /**
+         * Unique internal identifier to refer the upload container.
+         * @param reference the value to set
+         * @return this builder
+         **/
         public Builder reference(String reference) {
             this.reference = reference;
             this.__explicitlySet__.add("reference");
             return this;
         }
-
+        /**
+         * The name of the upload container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the upload container.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The time when this upload container is created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time when this upload container is created. An RFC3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The latest time when this upload container is modified. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The latest time when this upload container is modified. An RFC3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestLogEntry")
         private java.util.Date timeEarliestLogEntry;
 
+        /**
+         * This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
+         * @param timeEarliestLogEntry the value to set
+         * @return this builder
+         **/
         public Builder timeEarliestLogEntry(java.util.Date timeEarliestLogEntry) {
             this.timeEarliestLogEntry = timeEarliestLogEntry;
             this.__explicitlySet__.add("timeEarliestLogEntry");
             return this;
         }
-
+        /**
+         * This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLatestLogEntry")
         private java.util.Date timeLatestLogEntry;
 
+        /**
+         * This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
+         * @param timeLatestLogEntry the value to set
+         * @return this builder
+         **/
         public Builder timeLatestLogEntry(java.util.Date timeLatestLogEntry) {
             this.timeLatestLogEntry = timeLatestLogEntry;
             this.__explicitlySet__.add("timeLatestLogEntry");
             return this;
         }
-
+        /**
+         * Number of warnings associated to the upload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningsCount")
         private Integer warningsCount;
 
+        /**
+         * Number of warnings associated to the upload.
+         * @param warningsCount the value to set
+         * @return this builder
+         **/
         public Builder warningsCount(Integer warningsCount) {
             this.warningsCount = warningsCount;
             this.__explicitlySet__.add("warningsCount");
@@ -161,6 +211,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     private final String reference;
 
+    /**
+     * Unique internal identifier to refer the upload container.
+     * @return the value
+     **/
     public String getReference() {
         return reference;
     }
@@ -171,6 +225,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the upload container.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -181,6 +239,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time when this upload container is created. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -191,6 +253,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The latest time when this upload container is modified. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -201,6 +267,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestLogEntry")
     private final java.util.Date timeEarliestLogEntry;
 
+    /**
+     * This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeEarliestLogEntry() {
         return timeEarliestLogEntry;
     }
@@ -211,6 +281,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestLogEntry")
     private final java.util.Date timeLatestLogEntry;
 
+    /**
+     * This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeLatestLogEntry() {
         return timeLatestLogEntry;
     }
@@ -221,6 +295,10 @@ public final class UploadSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("warningsCount")
     private final Integer warningsCount;
 
+    /**
+     * Number of warnings associated to the upload.
+     * @return the value
+     **/
     public Integer getWarningsCount() {
         return warningsCount;
     }

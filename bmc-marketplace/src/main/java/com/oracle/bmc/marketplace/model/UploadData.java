@@ -30,36 +30,65 @@ public final class UploadData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name used to refer to the upload data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name used to refer to the upload data.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The content URL of the upload data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
+        /**
+         * The content URL of the upload data.
+         * @param contentUrl the value to set
+         * @return this builder
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-
+        /**
+         * The MIME type of the upload data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
+        /**
+         * The MIME type of the upload data.
+         * @param mimeType the value to set
+         * @return this builder
+         **/
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-
+        /**
+         * The file extension of the upload data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileExtension")
         private String fileExtension;
 
+        /**
+         * The file extension of the upload data.
+         * @param fileExtension the value to set
+         * @return this builder
+         **/
         public Builder fileExtension(String fileExtension) {
             this.fileExtension = fileExtension;
             this.__explicitlySet__.add("fileExtension");
@@ -105,6 +134,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name used to refer to the upload data.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -115,6 +148,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
+    /**
+     * The content URL of the upload data.
+     * @return the value
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
@@ -125,6 +162,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
+    /**
+     * The MIME type of the upload data.
+     * @return the value
+     **/
     public String getMimeType() {
         return mimeType;
     }
@@ -135,6 +176,10 @@ public final class UploadData {
     @com.fasterxml.jackson.annotation.JsonProperty("fileExtension")
     private final String fileExtension;
 
+    /**
+     * The file extension of the upload data.
+     * @return the value
+     **/
     public String getFileExtension() {
         return fileExtension;
     }

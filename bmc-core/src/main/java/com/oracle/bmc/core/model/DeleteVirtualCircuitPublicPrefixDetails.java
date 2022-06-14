@@ -29,9 +29,19 @@ public final class DeleteVirtualCircuitPublicPrefixDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An individual public IP prefix (CIDR) to remove from the public virtual circuit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * An individual public IP prefix (CIDR) to remove from the public virtual circuit.
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
@@ -75,6 +85,11 @@ public final class DeleteVirtualCircuitPublicPrefixDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * An individual public IP prefix (CIDR) to remove from the public virtual circuit.
+     *
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }

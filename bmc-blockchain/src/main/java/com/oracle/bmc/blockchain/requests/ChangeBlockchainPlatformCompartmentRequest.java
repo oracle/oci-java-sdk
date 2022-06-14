@@ -18,6 +18,9 @@ public class ChangeBlockchainPlatformCompartmentRequest
      */
     private String blockchainPlatformId;
 
+    /**
+     * Unique service identifier.
+     */
     public String getBlockchainPlatformId() {
         return blockchainPlatformId;
     }
@@ -28,6 +31,10 @@ public class ChangeBlockchainPlatformCompartmentRequest
     private com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails
             changeBlockchainPlatformCompartmentDetails;
 
+    /**
+     * Input payload to move the resource to a different compartment.
+     *
+     */
     public com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails
             getChangeBlockchainPlatformCompartmentDetails() {
         return changeBlockchainPlatformCompartmentDetails;
@@ -42,6 +49,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +65,9 @@ public class ChangeBlockchainPlatformCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +81,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -85,10 +111,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique service identifier.
+         */
         private String blockchainPlatformId = null;
 
         /**
          * Unique service identifier.
+         * @param blockchainPlatformId the value to set
          * @return this builder instance
          */
         public Builder blockchainPlatformId(String blockchainPlatformId) {
@@ -96,12 +126,17 @@ public class ChangeBlockchainPlatformCompartmentRequest
             return this;
         }
 
+        /**
+         * Input payload to move the resource to a different compartment.
+         *
+         */
         private com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails
                 changeBlockchainPlatformCompartmentDetails = null;
 
         /**
          * Input payload to move the resource to a different compartment.
          *
+         * @param changeBlockchainPlatformCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeBlockchainPlatformCompartmentDetails(
@@ -112,6 +147,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +164,7 @@ public class ChangeBlockchainPlatformCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,10 +172,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -139,6 +187,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -148,6 +204,7 @@ public class ChangeBlockchainPlatformCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -246,7 +303,8 @@ public class ChangeBlockchainPlatformCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -258,6 +316,10 @@ public class ChangeBlockchainPlatformCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

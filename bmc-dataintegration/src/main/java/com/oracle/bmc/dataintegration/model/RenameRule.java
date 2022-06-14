@@ -87,28 +87,49 @@ public final class RenameRule extends ProjectionRule {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Specifies whether to skip remaining rules when a match is found.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
         private Boolean isSkipRemainingRulesOnMatch;
 
+        /**
+         * Specifies whether to skip remaining rules when a match is found.
+         * @param isSkipRemainingRulesOnMatch the value to set
+         * @return this builder
+         **/
         public Builder isSkipRemainingRulesOnMatch(Boolean isSkipRemainingRulesOnMatch) {
             this.isSkipRemainingRulesOnMatch = isSkipRemainingRulesOnMatch;
             this.__explicitlySet__.add("isSkipRemainingRulesOnMatch");
             return this;
         }
-
+        /**
+         * The attribute name that needs to be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fromName")
         private String fromName;
 
+        /**
+         * The attribute name that needs to be renamed.
+         * @param fromName the value to set
+         * @return this builder
+         **/
         public Builder fromName(String fromName) {
             this.fromName = fromName;
             this.__explicitlySet__.add("fromName");
             return this;
         }
-
+        /**
+         * The new attribute name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toName")
         private String toName;
 
+        /**
+         * The new attribute name.
+         * @param toName the value to set
+         * @return this builder
+         **/
         public Builder toName(String toName) {
             this.toName = toName;
             this.__explicitlySet__.add("toName");
@@ -196,6 +217,10 @@ public final class RenameRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     private final Boolean isSkipRemainingRulesOnMatch;
 
+    /**
+     * Specifies whether to skip remaining rules when a match is found.
+     * @return the value
+     **/
     public Boolean getIsSkipRemainingRulesOnMatch() {
         return isSkipRemainingRulesOnMatch;
     }
@@ -206,6 +231,10 @@ public final class RenameRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("fromName")
     private final String fromName;
 
+    /**
+     * The attribute name that needs to be renamed.
+     * @return the value
+     **/
     public String getFromName() {
         return fromName;
     }
@@ -216,6 +245,10 @@ public final class RenameRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("toName")
     private final String toName;
 
+    /**
+     * The new attribute name.
+     * @return the value
+     **/
     public String getToName() {
         return toName;
     }

@@ -18,6 +18,9 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
      */
     private String networkSecurityGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+     */
     public String getNetworkSecurityGroupId() {
         return networkSecurityGroupId;
     }
@@ -27,6 +30,9 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
     private com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails
             addNetworkSecurityGroupSecurityRulesDetails;
 
+    /**
+     * Request with one or more security rules to be associated with the network security group.
+     */
     public com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails
             getAddNetworkSecurityGroupSecurityRulesDetails() {
         return addNetworkSecurityGroupSecurityRulesDetails;
@@ -50,10 +56,14 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         */
         private String networkSecurityGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
+         * @param networkSecurityGroupId the value to set
          * @return this builder instance
          */
         public Builder networkSecurityGroupId(String networkSecurityGroupId) {
@@ -61,11 +71,15 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
             return this;
         }
 
+        /**
+         * Request with one or more security rules to be associated with the network security group.
+         */
         private com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails
                 addNetworkSecurityGroupSecurityRulesDetails = null;
 
         /**
          * Request with one or more security rules to be associated with the network security group.
+         * @param addNetworkSecurityGroupSecurityRulesDetails the value to set
          * @return this builder instance
          */
         public Builder addNetworkSecurityGroupSecurityRulesDetails(
@@ -161,7 +175,8 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -170,6 +185,10 @@ public class AddNetworkSecurityGroupSecurityRulesRequest
                         addNetworkSecurityGroupSecurityRulesDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

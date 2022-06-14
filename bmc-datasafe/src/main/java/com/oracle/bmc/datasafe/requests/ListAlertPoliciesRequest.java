@@ -16,6 +16,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String alertPolicyId;
 
+    /**
+     * A filter to return policy by it's OCID.
+     */
     public String getAlertPolicyId() {
         return alertPolicyId;
     }
@@ -32,6 +38,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.datasafe.model.AlertPolicyType type;
 
+    /**
+     * An optional filter to return only alert policies of a certain type.
+     */
     public com.oracle.bmc.datasafe.model.AlertPolicyType getType() {
         return type;
     }
@@ -40,6 +49,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean isUserDefined;
 
+    /**
+     * An optional filter to return only alert policies that are user-defined or not.
+     */
     public Boolean getIsUserDefined() {
         return isUserDefined;
     }
@@ -49,6 +61,10 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +73,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState lifecycleState;
 
+    /**
+     * An optional filter to return only alert policies that have the given life-cycle state.
+     */
     public com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -65,6 +84,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -73,6 +95,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -117,6 +142,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -163,6 +191,10 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -171,6 +203,9 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -183,6 +218,13 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -198,6 +240,16 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -208,6 +260,11 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -260,6 +317,13 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -271,10 +335,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -282,10 +350,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return policy by it's OCID.
+         */
         private String alertPolicyId = null;
 
         /**
          * A filter to return policy by it's OCID.
+         * @param alertPolicyId the value to set
          * @return this builder instance
          */
         public Builder alertPolicyId(String alertPolicyId) {
@@ -293,10 +365,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * An optional filter to return only alert policies of a certain type.
+         */
         private com.oracle.bmc.datasafe.model.AlertPolicyType type = null;
 
         /**
          * An optional filter to return only alert policies of a certain type.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(com.oracle.bmc.datasafe.model.AlertPolicyType type) {
@@ -304,10 +380,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * An optional filter to return only alert policies that are user-defined or not.
+         */
         private Boolean isUserDefined = null;
 
         /**
          * An optional filter to return only alert policies that are user-defined or not.
+         * @param isUserDefined the value to set
          * @return this builder instance
          */
         public Builder isUserDefined(Boolean isUserDefined) {
@@ -315,11 +395,16 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -327,10 +412,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * An optional filter to return only alert policies that have the given life-cycle state.
+         */
         private com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState lifecycleState = null;
 
         /**
          * An optional filter to return only alert policies that have the given life-cycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -339,10 +428,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -350,10 +443,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -361,10 +458,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -372,11 +473,16 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -384,10 +490,14 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -395,6 +505,13 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
@@ -403,6 +520,7 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -411,6 +529,16 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
@@ -422,6 +550,7 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -429,12 +558,18 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -442,6 +577,13 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -450,6 +592,7 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -553,7 +696,8 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -574,6 +718,10 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
                 .accessLevel(accessLevel);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

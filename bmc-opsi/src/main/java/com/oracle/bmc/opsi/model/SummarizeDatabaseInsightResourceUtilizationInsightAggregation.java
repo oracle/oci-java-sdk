@@ -45,27 +45,51 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
+        /**
+         * The start timestamp that was passed into the request.
+         * @param timeIntervalStart the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
+        /**
+         * The end timestamp that was passed into the request.
+         * @param timeIntervalEnd the value to set
+         * @return this builder
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-
+        /**
+         * Defines the type of resource metric (example: CPU, STORAGE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
         private ResourceMetric resourceMetric;
 
+        /**
+         * Defines the type of resource metric (example: CPU, STORAGE)
+         *
+         * @param resourceMetric the value to set
+         * @return this builder
+         **/
         public Builder resourceMetric(ResourceMetric resourceMetric) {
             this.resourceMetric = resourceMetric;
             this.__explicitlySet__.add("resourceMetric");
@@ -137,6 +161,10 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
+    /**
+     * The start timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -147,6 +175,10 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
+    /**
+     * The end timestamp that was passed into the request.
+     * @return the value
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -211,6 +243,11 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
     private final ResourceMetric resourceMetric;
 
+    /**
+     * Defines the type of resource metric (example: CPU, STORAGE)
+     *
+     * @return the value
+     **/
     public ResourceMetric getResourceMetric() {
         return resourceMetric;
     }

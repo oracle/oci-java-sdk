@@ -33,18 +33,33 @@ public final class TimeSeriesMetricDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the metric the time series data corresponds to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
+        /**
+         * The name of the metric the time series data corresponds to.
+         * @param metricName the value to set
+         * @return this builder
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-
+        /**
+         * The time series metric data for the given metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
         private java.util.List<TimeSeriesMetricDataPoint> datapoints;
 
+        /**
+         * The time series metric data for the given metric.
+         * @param datapoints the value to set
+         * @return this builder
+         **/
         public Builder datapoints(java.util.List<TimeSeriesMetricDataPoint> datapoints) {
             this.datapoints = datapoints;
             this.__explicitlySet__.add("datapoints");
@@ -87,6 +102,10 @@ public final class TimeSeriesMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
+    /**
+     * The name of the metric the time series data corresponds to.
+     * @return the value
+     **/
     public String getMetricName() {
         return metricName;
     }
@@ -97,6 +116,10 @@ public final class TimeSeriesMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
     private final java.util.List<TimeSeriesMetricDataPoint> datapoints;
 
+    /**
+     * The time series metric data for the given metric.
+     * @return the value
+     **/
     public java.util.List<TimeSeriesMetricDataPoint> getDatapoints() {
         return datapoints;
     }

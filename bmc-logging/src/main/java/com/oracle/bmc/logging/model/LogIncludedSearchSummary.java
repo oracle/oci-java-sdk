@@ -37,36 +37,69 @@ public final class LogIncludedSearchSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The user-friendly display name. This must be unique within the enclosing resource,
+         * and it's changeable. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly display name. This must be unique within the enclosing resource,
+         * and it's changeable. Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Time the resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Time the resource was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Time the resource was last modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
+        /**
+         * Time the resource was last modified.
+         * @param timeLastModified the value to set
+         * @return this builder
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
@@ -113,6 +146,10 @@ public final class LogIncludedSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -125,6 +162,12 @@ public final class LogIncludedSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly display name. This must be unique within the enclosing resource,
+     * and it's changeable. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -135,6 +178,10 @@ public final class LogIncludedSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Time the resource was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -145,6 +192,10 @@ public final class LogIncludedSearchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
+    /**
+     * Time the resource was last modified.
+     * @return the value
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }

@@ -39,45 +39,81 @@ public final class TunnelRouteSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The BGP network layer reachability information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * The BGP network layer reachability information.
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
             return this;
         }
-
+        /**
+         * The age of the route.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("age")
         private Long age;
 
+        /**
+         * The age of the route.
+         * @param age the value to set
+         * @return this builder
+         **/
         public Builder age(Long age) {
             this.age = age;
             this.__explicitlySet__.add("age");
             return this;
         }
-
+        /**
+         * Indicates this is the best route.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBestPath")
         private Boolean isBestPath;
 
+        /**
+         * Indicates this is the best route.
+         * @param isBestPath the value to set
+         * @return this builder
+         **/
         public Builder isBestPath(Boolean isBestPath) {
             this.isBestPath = isBestPath;
             this.__explicitlySet__.add("isBestPath");
             return this;
         }
-
+        /**
+         * A list of ASNs in AS_Path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asPath")
         private java.util.List<Integer> asPath;
 
+        /**
+         * A list of ASNs in AS_Path.
+         * @param asPath the value to set
+         * @return this builder
+         **/
         public Builder asPath(java.util.List<Integer> asPath) {
             this.asPath = asPath;
             this.__explicitlySet__.add("asPath");
             return this;
         }
-
+        /**
+         * The source of the route advertisement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advertiser")
         private Advertiser advertiser;
 
+        /**
+         * The source of the route advertisement.
+         * @param advertiser the value to set
+         * @return this builder
+         **/
         public Builder advertiser(Advertiser advertiser) {
             this.advertiser = advertiser;
             this.__explicitlySet__.add("advertiser");
@@ -125,6 +161,10 @@ public final class TunnelRouteSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * The BGP network layer reachability information.
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }
@@ -135,6 +175,10 @@ public final class TunnelRouteSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("age")
     private final Long age;
 
+    /**
+     * The age of the route.
+     * @return the value
+     **/
     public Long getAge() {
         return age;
     }
@@ -145,6 +189,10 @@ public final class TunnelRouteSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isBestPath")
     private final Boolean isBestPath;
 
+    /**
+     * Indicates this is the best route.
+     * @return the value
+     **/
     public Boolean getIsBestPath() {
         return isBestPath;
     }
@@ -155,6 +203,10 @@ public final class TunnelRouteSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("asPath")
     private final java.util.List<Integer> asPath;
 
+    /**
+     * A list of ASNs in AS_Path.
+     * @return the value
+     **/
     public java.util.List<Integer> getAsPath() {
         return asPath;
     }
@@ -213,6 +265,10 @@ public final class TunnelRouteSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("advertiser")
     private final Advertiser advertiser;
 
+    /**
+     * The source of the route advertisement.
+     * @return the value
+     **/
     public Advertiser getAdvertiser() {
         return advertiser;
     }

@@ -31,18 +31,37 @@ public final class FailedMetricRecord {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An error message indicating the reason that the indicated metric object failed input validation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * An error message indicating the reason that the indicated metric object failed input validation.
+         *
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * Identifier of a metric object that failed input validation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricData")
         private MetricDataDetails metricData;
 
+        /**
+         * Identifier of a metric object that failed input validation.
+         *
+         * @param metricData the value to set
+         * @return this builder
+         **/
         public Builder metricData(MetricDataDetails metricData) {
             this.metricData = metricData;
             this.__explicitlySet__.add("metricData");
@@ -85,6 +104,11 @@ public final class FailedMetricRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * An error message indicating the reason that the indicated metric object failed input validation.
+     *
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -96,6 +120,11 @@ public final class FailedMetricRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("metricData")
     private final MetricDataDetails metricData;
 
+    /**
+     * Identifier of a metric object that failed input validation.
+     *
+     * @return the value
+     **/
     public MetricDataDetails getMetricData() {
         return metricData;
     }

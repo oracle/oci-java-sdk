@@ -17,6 +17,9 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    /**
+     * OCID for the managed instance
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -25,6 +28,9 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String moduleName;
 
+    /**
+     * The name of a module.
+     */
     public String getModuleName() {
         return moduleName;
     }
@@ -33,6 +39,9 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +55,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -59,6 +76,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -69,6 +94,11 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String streamName;
 
+    /**
+     * The name of the stream of the containing module.  This parameter
+     * is required if a profileName is specified.
+     *
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -77,6 +107,9 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
      */
     private String profileName;
 
+    /**
+     * The name of the profile of the containing module stream
+     */
     public String getProfileName() {
         return profileName;
     }
@@ -88,10 +121,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance
+         */
         private String managedInstanceId = null;
 
         /**
          * OCID for the managed instance
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -99,10 +136,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The name of a module.
+         */
         private String moduleName = null;
 
         /**
          * The name of a module.
+         * @param moduleName the value to set
          * @return this builder instance
          */
         public Builder moduleName(String moduleName) {
@@ -110,10 +151,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -121,6 +166,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -130,6 +183,7 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -137,6 +191,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -146,6 +208,7 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -153,12 +216,18 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The name of the stream of the containing module.  This parameter
+         * is required if a profileName is specified.
+         *
+         */
         private String streamName = null;
 
         /**
          * The name of the stream of the containing module.  This parameter
          * is required if a profileName is specified.
          *
+         * @param streamName the value to set
          * @return this builder instance
          */
         public Builder streamName(String streamName) {
@@ -166,10 +235,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The name of the profile of the containing module stream
+         */
         private String profileName = null;
 
         /**
          * The name of the profile of the containing module stream
+         * @param profileName the value to set
          * @return this builder instance
          */
         public Builder profileName(String profileName) {
@@ -260,7 +333,8 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -273,6 +347,10 @@ public class RemoveModuleStreamProfileFromManagedInstanceRequest
                 .profileName(profileName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,9 +27,17 @@ public final class RoverNodeSetKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether the node's resource principal public key was set correctly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSuccessful")
         private Boolean isSuccessful;
 
+        /**
+         * Whether the node's resource principal public key was set correctly
+         * @param isSuccessful the value to set
+         * @return this builder
+         **/
         public Builder isSuccessful(Boolean isSuccessful) {
             this.isSuccessful = isSuccessful;
             this.__explicitlySet__.add("isSuccessful");
@@ -71,6 +79,10 @@ public final class RoverNodeSetKey {
     @com.fasterxml.jackson.annotation.JsonProperty("isSuccessful")
     private final Boolean isSuccessful;
 
+    /**
+     * Whether the node's resource principal public key was set correctly
+     * @return the value
+     **/
     public Boolean getIsSuccessful() {
         return isSuccessful;
     }

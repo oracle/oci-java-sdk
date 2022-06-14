@@ -73,46 +73,81 @@ public final class UpdateFunctionDeployStageDetails extends UpdateDeployStageDet
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Function environment OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
         private String functionDeployEnvironmentId;
 
+        /**
+         * Function environment OCID.
+         * @param functionDeployEnvironmentId the value to set
+         * @return this builder
+         **/
         public Builder functionDeployEnvironmentId(String functionDeployEnvironmentId) {
             this.functionDeployEnvironmentId = functionDeployEnvironmentId;
             this.__explicitlySet__.add("functionDeployEnvironmentId");
             return this;
         }
-
+        /**
+         * A Docker image artifact OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dockerImageDeployArtifactId")
         private String dockerImageDeployArtifactId;
 
+        /**
+         * A Docker image artifact OCID.
+         * @param dockerImageDeployArtifactId the value to set
+         * @return this builder
+         **/
         public Builder dockerImageDeployArtifactId(String dockerImageDeployArtifactId) {
             this.dockerImageDeployArtifactId = dockerImageDeployArtifactId;
             this.__explicitlySet__.add("dockerImageDeployArtifactId");
             return this;
         }
-
+        /**
+         * User provided key and value pair configuration, which is assigned through constants or parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.Map<String, String> config;
 
+        /**
+         * User provided key and value pair configuration, which is assigned through constants or parameter.
+         * @param config the value to set
+         * @return this builder
+         **/
         public Builder config(java.util.Map<String, String> config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-
+        /**
+         * Maximum usable memory for the Function (in MB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInMBs")
         private Long maxMemoryInMBs;
 
+        /**
+         * Maximum usable memory for the Function (in MB).
+         * @param maxMemoryInMBs the value to set
+         * @return this builder
+         **/
         public Builder maxMemoryInMBs(Long maxMemoryInMBs) {
             this.maxMemoryInMBs = maxMemoryInMBs;
             this.__explicitlySet__.add("maxMemoryInMBs");
             return this;
         }
-
+        /**
+         * Timeout for execution of the Function. Value in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionTimeoutInSeconds")
         private Integer functionTimeoutInSeconds;
 
+        /**
+         * Timeout for execution of the Function. Value in seconds.
+         * @param functionTimeoutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder functionTimeoutInSeconds(Integer functionTimeoutInSeconds) {
             this.functionTimeoutInSeconds = functionTimeoutInSeconds;
             this.__explicitlySet__.add("functionTimeoutInSeconds");
@@ -201,6 +236,10 @@ public final class UpdateFunctionDeployStageDetails extends UpdateDeployStageDet
     @com.fasterxml.jackson.annotation.JsonProperty("functionDeployEnvironmentId")
     private final String functionDeployEnvironmentId;
 
+    /**
+     * Function environment OCID.
+     * @return the value
+     **/
     public String getFunctionDeployEnvironmentId() {
         return functionDeployEnvironmentId;
     }
@@ -211,6 +250,10 @@ public final class UpdateFunctionDeployStageDetails extends UpdateDeployStageDet
     @com.fasterxml.jackson.annotation.JsonProperty("dockerImageDeployArtifactId")
     private final String dockerImageDeployArtifactId;
 
+    /**
+     * A Docker image artifact OCID.
+     * @return the value
+     **/
     public String getDockerImageDeployArtifactId() {
         return dockerImageDeployArtifactId;
     }
@@ -221,6 +264,10 @@ public final class UpdateFunctionDeployStageDetails extends UpdateDeployStageDet
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final java.util.Map<String, String> config;
 
+    /**
+     * User provided key and value pair configuration, which is assigned through constants or parameter.
+     * @return the value
+     **/
     public java.util.Map<String, String> getConfig() {
         return config;
     }
@@ -231,6 +278,10 @@ public final class UpdateFunctionDeployStageDetails extends UpdateDeployStageDet
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInMBs")
     private final Long maxMemoryInMBs;
 
+    /**
+     * Maximum usable memory for the Function (in MB).
+     * @return the value
+     **/
     public Long getMaxMemoryInMBs() {
         return maxMemoryInMBs;
     }
@@ -241,6 +292,10 @@ public final class UpdateFunctionDeployStageDetails extends UpdateDeployStageDet
     @com.fasterxml.jackson.annotation.JsonProperty("functionTimeoutInSeconds")
     private final Integer functionTimeoutInSeconds;
 
+    /**
+     * Timeout for execution of the Function. Value in seconds.
+     * @return the value
+     **/
     public Integer getFunctionTimeoutInSeconds() {
         return functionTimeoutInSeconds;
     }

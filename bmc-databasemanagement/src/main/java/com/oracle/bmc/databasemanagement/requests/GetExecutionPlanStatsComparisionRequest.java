@@ -17,6 +17,9 @@ public class GetExecutionPlanStatsComparisionRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -25,6 +28,9 @@ public class GetExecutionPlanStatsComparisionRequest
      */
     private Long sqlTuningAdvisorTaskId;
 
+    /**
+     * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
@@ -33,6 +39,9 @@ public class GetExecutionPlanStatsComparisionRequest
      */
     private Long sqlObjectId;
 
+    /**
+     * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public Long getSqlObjectId() {
         return sqlObjectId;
     }
@@ -42,6 +51,10 @@ public class GetExecutionPlanStatsComparisionRequest
      */
     private Long executionId;
 
+    /**
+     * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public Long getExecutionId() {
         return executionId;
     }
@@ -50,6 +63,9 @@ public class GetExecutionPlanStatsComparisionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,10 +77,14 @@ public class GetExecutionPlanStatsComparisionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -72,10 +92,14 @@ public class GetExecutionPlanStatsComparisionRequest
             return this;
         }
 
+        /**
+         * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private Long sqlTuningAdvisorTaskId = null;
 
         /**
          * The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder instance
          */
         public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
@@ -83,10 +107,14 @@ public class GetExecutionPlanStatsComparisionRequest
             return this;
         }
 
+        /**
+         * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private Long sqlObjectId = null;
 
         /**
          * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlObjectId the value to set
          * @return this builder instance
          */
         public Builder sqlObjectId(Long sqlObjectId) {
@@ -94,11 +122,16 @@ public class GetExecutionPlanStatsComparisionRequest
             return this;
         }
 
+        /**
+         * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private Long executionId = null;
 
         /**
          * The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
+         * @param executionId the value to set
          * @return this builder instance
          */
         public Builder executionId(Long executionId) {
@@ -106,10 +139,14 @@ public class GetExecutionPlanStatsComparisionRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -194,7 +231,8 @@ public class GetExecutionPlanStatsComparisionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -205,6 +243,10 @@ public class GetExecutionPlanStatsComparisionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

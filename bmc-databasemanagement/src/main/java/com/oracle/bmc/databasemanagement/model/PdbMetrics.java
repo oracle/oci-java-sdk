@@ -27,9 +27,17 @@ public final class PdbMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A summary of PDBs and their resource usage metrics such as CPU, User I/O, and Storage, within a specific CDB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseUsageMetrics")
         private java.util.List<DatabaseUsageMetrics> databaseUsageMetrics;
 
+        /**
+         * A summary of PDBs and their resource usage metrics such as CPU, User I/O, and Storage, within a specific CDB.
+         * @param databaseUsageMetrics the value to set
+         * @return this builder
+         **/
         public Builder databaseUsageMetrics(
                 java.util.List<DatabaseUsageMetrics> databaseUsageMetrics) {
             this.databaseUsageMetrics = databaseUsageMetrics;
@@ -72,6 +80,10 @@ public final class PdbMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseUsageMetrics")
     private final java.util.List<DatabaseUsageMetrics> databaseUsageMetrics;
 
+    /**
+     * A summary of PDBs and their resource usage metrics such as CPU, User I/O, and Storage, within a specific CDB.
+     * @return the value
+     **/
     public java.util.List<DatabaseUsageMetrics> getDatabaseUsageMetrics() {
         return databaseUsageMetrics;
     }

@@ -16,6 +16,9 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String indicatorId;
 
+    /**
+     * unique indicator identifier
+     */
     public String getIndicatorId() {
         return indicatorId;
     }
@@ -24,6 +27,9 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The ID of the tenancy to use to filter results.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -32,6 +38,9 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,10 +52,14 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * unique indicator identifier
+         */
         private String indicatorId = null;
 
         /**
          * unique indicator identifier
+         * @param indicatorId the value to set
          * @return this builder instance
          */
         public Builder indicatorId(String indicatorId) {
@@ -54,10 +67,14 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The ID of the tenancy to use to filter results.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the tenancy to use to filter results.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -65,10 +82,14 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -148,7 +169,8 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -157,6 +179,10 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

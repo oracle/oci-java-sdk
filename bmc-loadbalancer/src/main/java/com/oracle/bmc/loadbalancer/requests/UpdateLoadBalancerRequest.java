@@ -18,6 +18,9 @@ public class UpdateLoadBalancerRequest
      */
     private com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails updateLoadBalancerDetails;
 
+    /**
+     * The details for updating a load balancer's configuration.
+     */
     public com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails
             getUpdateLoadBalancerDetails() {
         return updateLoadBalancerDetails;
@@ -27,6 +30,9 @@ public class UpdateLoadBalancerRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to update.
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -37,6 +43,11 @@ public class UpdateLoadBalancerRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +61,14 @@ public class UpdateLoadBalancerRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -72,11 +91,15 @@ public class UpdateLoadBalancerRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details for updating a load balancer's configuration.
+         */
         private com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails
                 updateLoadBalancerDetails = null;
 
         /**
          * The details for updating a load balancer's configuration.
+         * @param updateLoadBalancerDetails the value to set
          * @return this builder instance
          */
         public Builder updateLoadBalancerDetails(
@@ -86,10 +109,14 @@ public class UpdateLoadBalancerRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to update.
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to update.
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -97,12 +124,18 @@ public class UpdateLoadBalancerRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -110,6 +143,14 @@ public class UpdateLoadBalancerRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -119,6 +160,7 @@ public class UpdateLoadBalancerRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -211,7 +253,8 @@ public class UpdateLoadBalancerRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +264,10 @@ public class UpdateLoadBalancerRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

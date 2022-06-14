@@ -16,6 +16,9 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String taskKey;
 
+    /**
+     * The task key.
+     */
     public String getTaskKey() {
         return taskKey;
     }
@@ -35,6 +41,12 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +55,9 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String expandReferences;
 
+    /**
+     * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+     */
     public String getExpandReferences() {
         return expandReferences;
     }
@@ -53,10 +68,14 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -64,10 +83,14 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * The task key.
+         */
         private String taskKey = null;
 
         /**
          * The task key.
+         * @param taskKey the value to set
          * @return this builder instance
          */
         public Builder taskKey(String taskKey) {
@@ -75,6 +98,12 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -82,6 +111,7 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -89,10 +119,14 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+         */
         private String expandReferences = null;
 
         /**
          * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+         * @param expandReferences the value to set
          * @return this builder instance
          */
         public Builder expandReferences(String expandReferences) {
@@ -174,7 +208,8 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -184,6 +219,10 @@ public class GetTaskRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 .expandReferences(expandReferences);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

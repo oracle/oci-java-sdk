@@ -28,6 +28,7 @@ public final class ExadataStorageServerStatisticsSummary
         extends ExadataInsightResourceStatisticsAggregation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceDetails")
         private StorageServerDetails resourceDetails;
 

@@ -54,81 +54,145 @@ public final class Ticket {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
         private String ticketNumber;
 
+        /**
+         * Unique identifier for the ticket.
+         * @param ticketNumber the value to set
+         * @return this builder
+         **/
         public Builder ticketNumber(String ticketNumber) {
             this.ticketNumber = ticketNumber;
             this.__explicitlySet__.add("ticketNumber");
             return this;
         }
-
+        /**
+         * The severity assigned to the ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
+        /**
+         * The severity assigned to the ticket.
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * The list of resources associated with the ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
         private java.util.List<Resource> resourceList;
 
+        /**
+         * The list of resources associated with the ticket.
+         * @param resourceList the value to set
+         * @return this builder
+         **/
         public Builder resourceList(java.util.List<Resource> resourceList) {
             this.resourceList = resourceList;
             this.__explicitlySet__.add("resourceList");
             return this;
         }
-
+        /**
+         * The title of the ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
+        /**
+         * The title of the ticket.
+         * @param title the value to set
+         * @return this builder
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
-
+        /**
+         * The description of the issue addressed in the ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the issue addressed in the ticket.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The time when the ticket was created, in milliseconds since epoch time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private Integer timeCreated;
 
+        /**
+         * The time when the ticket was created, in milliseconds since epoch time.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(Integer timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time when the ticket was updated, in milliseconds since epoch time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private Integer timeUpdated;
 
+        /**
+         * The time when the ticket was updated, in milliseconds since epoch time.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(Integer timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the ticket.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current {@code lifecycleState}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
+        /**
+         * Additional information about the current {@code lifecycleState}.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -189,6 +253,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
     private final String ticketNumber;
 
+    /**
+     * Unique identifier for the ticket.
+     * @return the value
+     **/
     public String getTicketNumber() {
         return ticketNumber;
     }
@@ -248,6 +316,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
+    /**
+     * The severity assigned to the ticket.
+     * @return the value
+     **/
     public Severity getSeverity() {
         return severity;
     }
@@ -258,6 +330,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
     private final java.util.List<Resource> resourceList;
 
+    /**
+     * The list of resources associated with the ticket.
+     * @return the value
+     **/
     public java.util.List<Resource> getResourceList() {
         return resourceList;
     }
@@ -268,6 +344,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
+    /**
+     * The title of the ticket.
+     * @return the value
+     **/
     public String getTitle() {
         return title;
     }
@@ -278,6 +358,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the issue addressed in the ticket.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -288,6 +372,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final Integer timeCreated;
 
+    /**
+     * The time when the ticket was created, in milliseconds since epoch time.
+     * @return the value
+     **/
     public Integer getTimeCreated() {
         return timeCreated;
     }
@@ -298,6 +386,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final Integer timeUpdated;
 
+    /**
+     * The time when the ticket was updated, in milliseconds since epoch time.
+     * @return the value
+     **/
     public Integer getTimeUpdated() {
         return timeUpdated;
     }
@@ -308,6 +400,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the ticket.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -318,6 +414,10 @@ public final class Ticket {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
+    /**
+     * Additional information about the current {@code lifecycleState}.
+     * @return the value
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }

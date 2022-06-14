@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Reverse connection configuration details of Private Endpoint.
+ * Reverse connection configuration details of the private endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,10 +31,22 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets
+         * traveling from the service's VCN to the customer's VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionsSourceIps")
         private java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
                 reverseConnectionsSourceIps;
 
+        /**
+         * A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets
+         * traveling from the service's VCN to the customer's VCN.
+         *
+         * @param reverseConnectionsSourceIps the value to set
+         * @return this builder
+         **/
         public Builder reverseConnectionsSourceIps(
                 java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
                         reverseConnectionsSourceIps) {
@@ -83,6 +95,12 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
     private final java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
             reverseConnectionsSourceIps;
 
+    /**
+     * A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets
+     * traveling from the service's VCN to the customer's VCN.
+     *
+     * @return the value
+     **/
     public java.util.List<DatabaseToolsPrivateEndpointReverseConnectionsSourceIp>
             getReverseConnectionsSourceIps() {
         return reverseConnectionsSourceIps;

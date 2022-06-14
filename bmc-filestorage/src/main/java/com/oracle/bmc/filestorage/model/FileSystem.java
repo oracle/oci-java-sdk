@@ -81,91 +81,212 @@ public final class FileSystem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain the file system is in. May be unset
+         * as a blank or NULL value.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain the file system is in. May be unset
+         * as a blank or NULL value.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The number of bytes consumed by the file system, including
+         * any snapshots. This number reflects the metered size of the file
+         * system and is updated asynchronously with respect to
+         * updates to the file system.
+         * For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("meteredBytes")
         private Long meteredBytes;
 
+        /**
+         * The number of bytes consumed by the file system, including
+         * any snapshots. This number reflects the metered size of the file
+         * system and is updated asynchronously with respect to
+         * updates to the file system.
+         * For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+         *
+         * @param meteredBytes the value to set
+         * @return this builder
+         **/
         public Builder meteredBytes(Long meteredBytes) {
             this.meteredBytes = meteredBytes;
             this.__explicitlySet__.add("meteredBytes");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My file system}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My file system}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The current state of the file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the file system.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the file system was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the file system was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair
+         *  with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair
+         *  with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key which is the master encryption key for the file system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key which is the master encryption key for the file system.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -180,28 +301,61 @@ public final class FileSystem {
             this.__explicitlySet__.add("sourceDetails");
             return this;
         }
-
+        /**
+         * Specifies whether the file system has been cloned.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
         private Boolean isCloneParent;
 
+        /**
+         * Specifies whether the file system has been cloned.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         * @param isCloneParent the value to set
+         * @return this builder
+         **/
         public Builder isCloneParent(Boolean isCloneParent) {
             this.isCloneParent = isCloneParent;
             this.__explicitlySet__.add("isCloneParent");
             return this;
         }
-
+        /**
+         * Specifies whether the data has finished copying from the source to the clone.
+         * Hydration can take up to several hours to complete depending on the size of the source.
+         * The source and clone remain available during hydration, but there may be some performance impact.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
         private Boolean isHydrated;
 
+        /**
+         * Specifies whether the data has finished copying from the source to the clone.
+         * Hydration can take up to several hours to complete depending on the size of the source.
+         * The source and clone remain available during hydration, but there may be some performance impact.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         *
+         * @param isHydrated the value to set
+         * @return this builder
+         **/
         public Builder isHydrated(Boolean isHydrated) {
             this.isHydrated = isHydrated;
             this.__explicitlySet__.add("isHydrated");
             return this;
         }
-
+        /**
+         * Additional information about the current 'lifecycleState'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current 'lifecycleState'.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -276,6 +430,14 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain the file system is in. May be unset
+     * as a blank or NULL value.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -291,6 +453,15 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("meteredBytes")
     private final Long meteredBytes;
 
+    /**
+     * The number of bytes consumed by the file system, including
+     * any snapshots. This number reflects the metered size of the file
+     * system and is updated asynchronously with respect to
+     * updates to the file system.
+     * For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+     *
+     * @return the value
+     **/
     public Long getMeteredBytes() {
         return meteredBytes;
     }
@@ -301,6 +472,10 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -315,6 +490,14 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My file system}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -325,6 +508,10 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -385,6 +572,10 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the file system.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -399,6 +590,14 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the file system was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -413,6 +612,14 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair
+     *  with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -426,6 +633,13 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -437,6 +651,11 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key which is the master encryption key for the file system.
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -456,6 +675,12 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
     private final Boolean isCloneParent;
 
+    /**
+     * Specifies whether the file system has been cloned.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     *
+     * @return the value
+     **/
     public Boolean getIsCloneParent() {
         return isCloneParent;
     }
@@ -470,6 +695,14 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     private final Boolean isHydrated;
 
+    /**
+     * Specifies whether the data has finished copying from the source to the clone.
+     * Hydration can take up to several hours to complete depending on the size of the source.
+     * The source and clone remain available during hydration, but there may be some performance impact.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     *
+     * @return the value
+     **/
     public Boolean getIsHydrated() {
         return isHydrated;
     }
@@ -480,6 +713,10 @@ public final class FileSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current 'lifecycleState'.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

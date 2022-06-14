@@ -17,6 +17,9 @@ public class MaskDataRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -25,6 +28,9 @@ public class MaskDataRequest
      */
     private com.oracle.bmc.datasafe.model.MaskDataDetails maskDataDetails;
 
+    /**
+     * Details to mask data.
+     */
     public com.oracle.bmc.datasafe.model.MaskDataDetails getMaskDataDetails() {
         return maskDataDetails;
     }
@@ -33,6 +39,9 @@ public class MaskDataRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -54,10 +63,14 @@ public class MaskDataRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -65,10 +78,14 @@ public class MaskDataRequest
             return this;
         }
 
+        /**
+         * Details to mask data.
+         */
         private com.oracle.bmc.datasafe.model.MaskDataDetails maskDataDetails = null;
 
         /**
          * Details to mask data.
+         * @param maskDataDetails the value to set
          * @return this builder instance
          */
         public Builder maskDataDetails(
@@ -77,10 +94,14 @@ public class MaskDataRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -171,7 +192,8 @@ public class MaskDataRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -180,6 +202,10 @@ public class MaskDataRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -84,172 +84,306 @@ public final class SqlStatistics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Database Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseTimeInSec")
         private Double databaseTimeInSec;
 
+        /**
+         * Database Time in seconds
+         * @param databaseTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder databaseTimeInSec(Double databaseTimeInSec) {
             this.databaseTimeInSec = databaseTimeInSec;
             this.__explicitlySet__.add("databaseTimeInSec");
             return this;
         }
-
+        /**
+         * Number of executions per hour
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionsPerHour")
         private Double executionsPerHour;
 
+        /**
+         * Number of executions per hour
+         * @param executionsPerHour the value to set
+         * @return this builder
+         **/
         public Builder executionsPerHour(Double executionsPerHour) {
             this.executionsPerHour = executionsPerHour;
             this.__explicitlySet__.add("executionsPerHour");
             return this;
         }
-
+        /**
+         * Total number of executions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
         private Long executionsCount;
 
+        /**
+         * Total number of executions
+         * @param executionsCount the value to set
+         * @return this builder
+         **/
         public Builder executionsCount(Long executionsCount) {
             this.executionsCount = executionsCount;
             this.__explicitlySet__.add("executionsCount");
             return this;
         }
-
+        /**
+         * CPU Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
         private Double cpuTimeInSec;
 
+        /**
+         * CPU Time in seconds
+         * @param cpuTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder cpuTimeInSec(Double cpuTimeInSec) {
             this.cpuTimeInSec = cpuTimeInSec;
             this.__explicitlySet__.add("cpuTimeInSec");
             return this;
         }
-
+        /**
+         * I/O Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
         private Double ioTimeInSec;
 
+        /**
+         * I/O Time in seconds
+         * @param ioTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder ioTimeInSec(Double ioTimeInSec) {
             this.ioTimeInSec = ioTimeInSec;
             this.__explicitlySet__.add("ioTimeInSec");
             return this;
         }
-
+        /**
+         * Inefficient Wait Time in seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
         private Double inefficientWaitTimeInSec;
 
+        /**
+         * Inefficient Wait Time in seconds
+         * @param inefficientWaitTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder inefficientWaitTimeInSec(Double inefficientWaitTimeInSec) {
             this.inefficientWaitTimeInSec = inefficientWaitTimeInSec;
             this.__explicitlySet__.add("inefficientWaitTimeInSec");
             return this;
         }
-
+        /**
+         * Response time is the average elaspsed time per execution. It is the ratio of Total Database Time to the number of executions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInSec")
         private Double responseTimeInSec;
 
+        /**
+         * Response time is the average elaspsed time per execution. It is the ratio of Total Database Time to the number of executions
+         * @param responseTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder responseTimeInSec(Double responseTimeInSec) {
             this.responseTimeInSec = responseTimeInSec;
             this.__explicitlySet__.add("responseTimeInSec");
             return this;
         }
-
+        /**
+         * Number of SQL execution plans used by the SQL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planCount")
         private Long planCount;
 
+        /**
+         * Number of SQL execution plans used by the SQL
+         * @param planCount the value to set
+         * @return this builder
+         **/
         public Builder planCount(Long planCount) {
             this.planCount = planCount;
             this.__explicitlySet__.add("planCount");
             return this;
         }
-
+        /**
+         * Variability is the ratio of the standard deviation in response time to the mean of response time of the SQL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variability")
         private Double variability;
 
+        /**
+         * Variability is the ratio of the standard deviation in response time to the mean of response time of the SQL
+         * @param variability the value to set
+         * @return this builder
+         **/
         public Builder variability(Double variability) {
             this.variability = variability;
             this.__explicitlySet__.add("variability");
             return this;
         }
-
+        /**
+         * Average Active Sessions represent the average active sessions at a point in time. It is the number of sessions that are either working or waiting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("averageActiveSessions")
         private Double averageActiveSessions;
 
+        /**
+         * Average Active Sessions represent the average active sessions at a point in time. It is the number of sessions that are either working or waiting.
+         * @param averageActiveSessions the value to set
+         * @return this builder
+         **/
         public Builder averageActiveSessions(Double averageActiveSessions) {
             this.averageActiveSessions = averageActiveSessions;
             this.__explicitlySet__.add("averageActiveSessions");
             return this;
         }
-
+        /**
+         * Percentage of Database Time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseTimePct")
         private Double databaseTimePct;
 
+        /**
+         * Percentage of Database Time
+         * @param databaseTimePct the value to set
+         * @return this builder
+         **/
         public Builder databaseTimePct(Double databaseTimePct) {
             this.databaseTimePct = databaseTimePct;
             this.__explicitlySet__.add("databaseTimePct");
             return this;
         }
-
+        /**
+         * Percentage of Inefficiency. It is calculated by Total Database Time divided by Total Wait Time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inefficiencyInPct")
         private Double inefficiencyInPct;
 
+        /**
+         * Percentage of Inefficiency. It is calculated by Total Database Time divided by Total Wait Time
+         * @param inefficiencyInPct the value to set
+         * @return this builder
+         **/
         public Builder inefficiencyInPct(Double inefficiencyInPct) {
             this.inefficiencyInPct = inefficiencyInPct;
             this.__explicitlySet__.add("inefficiencyInPct");
             return this;
         }
-
+        /**
+         * Percent change in CPU Time based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInCpuTimeInPct")
         private Double changeInCpuTimeInPct;
 
+        /**
+         * Percent change in CPU Time based on linear regression
+         * @param changeInCpuTimeInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInCpuTimeInPct(Double changeInCpuTimeInPct) {
             this.changeInCpuTimeInPct = changeInCpuTimeInPct;
             this.__explicitlySet__.add("changeInCpuTimeInPct");
             return this;
         }
-
+        /**
+         * Percent change in IO Time based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInIoTimeInPct")
         private Double changeInIoTimeInPct;
 
+        /**
+         * Percent change in IO Time based on linear regression
+         * @param changeInIoTimeInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInIoTimeInPct(Double changeInIoTimeInPct) {
             this.changeInIoTimeInPct = changeInIoTimeInPct;
             this.__explicitlySet__.add("changeInIoTimeInPct");
             return this;
         }
-
+        /**
+         * Percent change in Inefficient Wait Time based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInInefficientWaitTimeInPct")
         private Double changeInInefficientWaitTimeInPct;
 
+        /**
+         * Percent change in Inefficient Wait Time based on linear regression
+         * @param changeInInefficientWaitTimeInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInInefficientWaitTimeInPct(Double changeInInefficientWaitTimeInPct) {
             this.changeInInefficientWaitTimeInPct = changeInInefficientWaitTimeInPct;
             this.__explicitlySet__.add("changeInInefficientWaitTimeInPct");
             return this;
         }
-
+        /**
+         * Percent change in Response Time based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInResponseTimeInPct")
         private Double changeInResponseTimeInPct;
 
+        /**
+         * Percent change in Response Time based on linear regression
+         * @param changeInResponseTimeInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInResponseTimeInPct(Double changeInResponseTimeInPct) {
             this.changeInResponseTimeInPct = changeInResponseTimeInPct;
             this.__explicitlySet__.add("changeInResponseTimeInPct");
             return this;
         }
-
+        /**
+         * Percent change in Average Active Sessions based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInAverageActiveSessionsInPct")
         private Double changeInAverageActiveSessionsInPct;
 
+        /**
+         * Percent change in Average Active Sessions based on linear regression
+         * @param changeInAverageActiveSessionsInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInAverageActiveSessionsInPct(
                 Double changeInAverageActiveSessionsInPct) {
             this.changeInAverageActiveSessionsInPct = changeInAverageActiveSessionsInPct;
             this.__explicitlySet__.add("changeInAverageActiveSessionsInPct");
             return this;
         }
-
+        /**
+         * Percent change in Executions per hour based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInExecutionsPerHourInPct")
         private Double changeInExecutionsPerHourInPct;
 
+        /**
+         * Percent change in Executions per hour based on linear regression
+         * @param changeInExecutionsPerHourInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInExecutionsPerHourInPct(Double changeInExecutionsPerHourInPct) {
             this.changeInExecutionsPerHourInPct = changeInExecutionsPerHourInPct;
             this.__explicitlySet__.add("changeInExecutionsPerHourInPct");
             return this;
         }
-
+        /**
+         * Percent change in Inefficiency based on linear regression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeInInefficiencyInPct")
         private Double changeInInefficiencyInPct;
 
+        /**
+         * Percent change in Inefficiency based on linear regression
+         * @param changeInInefficiencyInPct the value to set
+         * @return this builder
+         **/
         public Builder changeInInefficiencyInPct(Double changeInInefficiencyInPct) {
             this.changeInInefficiencyInPct = changeInInefficiencyInPct;
             this.__explicitlySet__.add("changeInInefficiencyInPct");
@@ -332,6 +466,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTimeInSec")
     private final Double databaseTimeInSec;
 
+    /**
+     * Database Time in seconds
+     * @return the value
+     **/
     public Double getDatabaseTimeInSec() {
         return databaseTimeInSec;
     }
@@ -342,6 +480,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("executionsPerHour")
     private final Double executionsPerHour;
 
+    /**
+     * Number of executions per hour
+     * @return the value
+     **/
     public Double getExecutionsPerHour() {
         return executionsPerHour;
     }
@@ -352,6 +494,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
     private final Long executionsCount;
 
+    /**
+     * Total number of executions
+     * @return the value
+     **/
     public Long getExecutionsCount() {
         return executionsCount;
     }
@@ -362,6 +508,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
     private final Double cpuTimeInSec;
 
+    /**
+     * CPU Time in seconds
+     * @return the value
+     **/
     public Double getCpuTimeInSec() {
         return cpuTimeInSec;
     }
@@ -372,6 +522,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
     private final Double ioTimeInSec;
 
+    /**
+     * I/O Time in seconds
+     * @return the value
+     **/
     public Double getIoTimeInSec() {
         return ioTimeInSec;
     }
@@ -382,6 +536,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("inefficientWaitTimeInSec")
     private final Double inefficientWaitTimeInSec;
 
+    /**
+     * Inefficient Wait Time in seconds
+     * @return the value
+     **/
     public Double getInefficientWaitTimeInSec() {
         return inefficientWaitTimeInSec;
     }
@@ -392,6 +550,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInSec")
     private final Double responseTimeInSec;
 
+    /**
+     * Response time is the average elaspsed time per execution. It is the ratio of Total Database Time to the number of executions
+     * @return the value
+     **/
     public Double getResponseTimeInSec() {
         return responseTimeInSec;
     }
@@ -402,6 +564,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("planCount")
     private final Long planCount;
 
+    /**
+     * Number of SQL execution plans used by the SQL
+     * @return the value
+     **/
     public Long getPlanCount() {
         return planCount;
     }
@@ -412,6 +578,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("variability")
     private final Double variability;
 
+    /**
+     * Variability is the ratio of the standard deviation in response time to the mean of response time of the SQL
+     * @return the value
+     **/
     public Double getVariability() {
         return variability;
     }
@@ -422,6 +592,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("averageActiveSessions")
     private final Double averageActiveSessions;
 
+    /**
+     * Average Active Sessions represent the average active sessions at a point in time. It is the number of sessions that are either working or waiting.
+     * @return the value
+     **/
     public Double getAverageActiveSessions() {
         return averageActiveSessions;
     }
@@ -432,6 +606,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTimePct")
     private final Double databaseTimePct;
 
+    /**
+     * Percentage of Database Time
+     * @return the value
+     **/
     public Double getDatabaseTimePct() {
         return databaseTimePct;
     }
@@ -442,6 +620,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("inefficiencyInPct")
     private final Double inefficiencyInPct;
 
+    /**
+     * Percentage of Inefficiency. It is calculated by Total Database Time divided by Total Wait Time
+     * @return the value
+     **/
     public Double getInefficiencyInPct() {
         return inefficiencyInPct;
     }
@@ -452,6 +634,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInCpuTimeInPct")
     private final Double changeInCpuTimeInPct;
 
+    /**
+     * Percent change in CPU Time based on linear regression
+     * @return the value
+     **/
     public Double getChangeInCpuTimeInPct() {
         return changeInCpuTimeInPct;
     }
@@ -462,6 +648,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInIoTimeInPct")
     private final Double changeInIoTimeInPct;
 
+    /**
+     * Percent change in IO Time based on linear regression
+     * @return the value
+     **/
     public Double getChangeInIoTimeInPct() {
         return changeInIoTimeInPct;
     }
@@ -472,6 +662,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInInefficientWaitTimeInPct")
     private final Double changeInInefficientWaitTimeInPct;
 
+    /**
+     * Percent change in Inefficient Wait Time based on linear regression
+     * @return the value
+     **/
     public Double getChangeInInefficientWaitTimeInPct() {
         return changeInInefficientWaitTimeInPct;
     }
@@ -482,6 +676,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInResponseTimeInPct")
     private final Double changeInResponseTimeInPct;
 
+    /**
+     * Percent change in Response Time based on linear regression
+     * @return the value
+     **/
     public Double getChangeInResponseTimeInPct() {
         return changeInResponseTimeInPct;
     }
@@ -492,6 +690,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInAverageActiveSessionsInPct")
     private final Double changeInAverageActiveSessionsInPct;
 
+    /**
+     * Percent change in Average Active Sessions based on linear regression
+     * @return the value
+     **/
     public Double getChangeInAverageActiveSessionsInPct() {
         return changeInAverageActiveSessionsInPct;
     }
@@ -502,6 +704,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInExecutionsPerHourInPct")
     private final Double changeInExecutionsPerHourInPct;
 
+    /**
+     * Percent change in Executions per hour based on linear regression
+     * @return the value
+     **/
     public Double getChangeInExecutionsPerHourInPct() {
         return changeInExecutionsPerHourInPct;
     }
@@ -512,6 +718,10 @@ public final class SqlStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("changeInInefficiencyInPct")
     private final Double changeInInefficiencyInPct;
 
+    /**
+     * Percent change in Inefficiency based on linear regression
+     * @return the value
+     **/
     public Double getChangeInInefficiencyInPct() {
         return changeInInefficiencyInPct;
     }

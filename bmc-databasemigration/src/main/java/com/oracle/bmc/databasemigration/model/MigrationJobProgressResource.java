@@ -35,27 +35,55 @@ public final class MigrationJobProgressResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Current status of the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
         private JobPhaseStatus currentStatus;
 
+        /**
+         * Current status of the job.
+         *
+         * @param currentStatus the value to set
+         * @return this builder
+         **/
         public Builder currentStatus(JobPhaseStatus currentStatus) {
             this.currentStatus = currentStatus;
             this.__explicitlySet__.add("currentStatus");
             return this;
         }
-
+        /**
+         * Current phase of the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
         private OdmsJobPhases currentPhase;
 
+        /**
+         * Current phase of the job.
+         *
+         * @param currentPhase the value to set
+         * @return this builder
+         **/
         public Builder currentPhase(OdmsJobPhases currentPhase) {
             this.currentPhase = currentPhase;
             this.__explicitlySet__.add("currentPhase");
             return this;
         }
-
+        /**
+         * List of phase status for the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phases")
         private java.util.List<PhaseStatus> phases;
 
+        /**
+         * List of phase status for the job.
+         *
+         * @param phases the value to set
+         * @return this builder
+         **/
         public Builder phases(java.util.List<PhaseStatus> phases) {
             this.phases = phases;
             this.__explicitlySet__.add("phases");
@@ -102,6 +130,11 @@ public final class MigrationJobProgressResource {
     @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
     private final JobPhaseStatus currentStatus;
 
+    /**
+     * Current status of the job.
+     *
+     * @return the value
+     **/
     public JobPhaseStatus getCurrentStatus() {
         return currentStatus;
     }
@@ -113,6 +146,11 @@ public final class MigrationJobProgressResource {
     @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
     private final OdmsJobPhases currentPhase;
 
+    /**
+     * Current phase of the job.
+     *
+     * @return the value
+     **/
     public OdmsJobPhases getCurrentPhase() {
         return currentPhase;
     }
@@ -124,6 +162,11 @@ public final class MigrationJobProgressResource {
     @com.fasterxml.jackson.annotation.JsonProperty("phases")
     private final java.util.List<PhaseStatus> phases;
 
+    /**
+     * List of phase status for the job.
+     *
+     * @return the value
+     **/
     public java.util.List<PhaseStatus> getPhases() {
         return phases;
     }

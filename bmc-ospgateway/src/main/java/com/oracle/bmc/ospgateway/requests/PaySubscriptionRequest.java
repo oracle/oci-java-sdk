@@ -19,6 +19,10 @@ public class PaySubscriptionRequest
      */
     private String ospHomeRegion;
 
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
@@ -27,6 +31,9 @@ public class PaySubscriptionRequest
      */
     private String subscriptionId;
 
+    /**
+     * Subscription id(OCID).
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -36,6 +43,10 @@ public class PaySubscriptionRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -44,6 +55,9 @@ public class PaySubscriptionRequest
      */
     private com.oracle.bmc.ospgateway.model.PaySubscriptionDetails paySubscriptionDetails;
 
+    /**
+     * subscription payment request.
+     */
     public com.oracle.bmc.ospgateway.model.PaySubscriptionDetails getPaySubscriptionDetails() {
         return paySubscriptionDetails;
     }
@@ -57,6 +71,14 @@ public class PaySubscriptionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -67,6 +89,11 @@ public class PaySubscriptionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+     * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -77,6 +104,11 @@ public class PaySubscriptionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -99,11 +131,16 @@ public class PaySubscriptionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
          * The home region's public name of the logged in user.
          *
+         * @param ospHomeRegion the value to set
          * @return this builder instance
          */
         public Builder ospHomeRegion(String ospHomeRegion) {
@@ -111,10 +148,14 @@ public class PaySubscriptionRequest
             return this;
         }
 
+        /**
+         * Subscription id(OCID).
+         */
         private String subscriptionId = null;
 
         /**
          * Subscription id(OCID).
+         * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
@@ -122,11 +163,16 @@ public class PaySubscriptionRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -134,11 +180,15 @@ public class PaySubscriptionRequest
             return this;
         }
 
+        /**
+         * subscription payment request.
+         */
         private com.oracle.bmc.ospgateway.model.PaySubscriptionDetails paySubscriptionDetails =
                 null;
 
         /**
          * subscription payment request.
+         * @param paySubscriptionDetails the value to set
          * @return this builder instance
          */
         public Builder paySubscriptionDetails(
@@ -147,6 +197,14 @@ public class PaySubscriptionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -156,6 +214,7 @@ public class PaySubscriptionRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -163,12 +222,18 @@ public class PaySubscriptionRequest
             return this;
         }
 
+        /**
+         * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+         * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
          * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -176,12 +241,18 @@ public class PaySubscriptionRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -280,7 +351,8 @@ public class PaySubscriptionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -293,6 +365,10 @@ public class PaySubscriptionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

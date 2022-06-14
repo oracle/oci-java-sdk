@@ -27,9 +27,17 @@ public final class SortKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of sort key rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortRules")
         private java.util.List<SortKeyRule> sortRules;
 
+        /**
+         * The list of sort key rules.
+         * @param sortRules the value to set
+         * @return this builder
+         **/
         public Builder sortRules(java.util.List<SortKeyRule> sortRules) {
             this.sortRules = sortRules;
             this.__explicitlySet__.add("sortRules");
@@ -71,6 +79,10 @@ public final class SortKey {
     @com.fasterxml.jackson.annotation.JsonProperty("sortRules")
     private final java.util.List<SortKeyRule> sortRules;
 
+    /**
+     * The list of sort key rules.
+     * @return the value
+     **/
     public java.util.List<SortKeyRule> getSortRules() {
         return sortRules;
     }

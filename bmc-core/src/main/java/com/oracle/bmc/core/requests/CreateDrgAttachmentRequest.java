@@ -18,6 +18,9 @@ public class CreateDrgAttachmentRequest
      */
     private com.oracle.bmc.core.model.CreateDrgAttachmentDetails createDrgAttachmentDetails;
 
+    /**
+     * Details for creating a {@code DrgAttachment}.
+     */
     public com.oracle.bmc.core.model.CreateDrgAttachmentDetails getCreateDrgAttachmentDetails() {
         return createDrgAttachmentDetails;
     }
@@ -31,6 +34,14 @@ public class CreateDrgAttachmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -53,11 +64,15 @@ public class CreateDrgAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for creating a {@code DrgAttachment}.
+         */
         private com.oracle.bmc.core.model.CreateDrgAttachmentDetails createDrgAttachmentDetails =
                 null;
 
         /**
          * Details for creating a {@code DrgAttachment}.
+         * @param createDrgAttachmentDetails the value to set
          * @return this builder instance
          */
         public Builder createDrgAttachmentDetails(
@@ -66,6 +81,14 @@ public class CreateDrgAttachmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -75,6 +98,7 @@ public class CreateDrgAttachmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -163,7 +187,8 @@ public class CreateDrgAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -171,6 +196,10 @@ public class CreateDrgAttachmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

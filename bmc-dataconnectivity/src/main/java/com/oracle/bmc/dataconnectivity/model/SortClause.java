@@ -28,6 +28,7 @@ public final class SortClause {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private ShapeField field;
 
@@ -36,10 +37,17 @@ public final class SortClause {
             this.__explicitlySet__.add("field");
             return this;
         }
-
+        /**
+         * The sort order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("order")
         private Order order;
 
+        /**
+         * The sort order.
+         * @param order the value to set
+         * @return this builder
+         **/
         public Builder order(Order order) {
             this.order = order;
             this.__explicitlySet__.add("order");
@@ -123,6 +131,10 @@ public final class SortClause {
     @com.fasterxml.jackson.annotation.JsonProperty("order")
     private final Order order;
 
+    /**
+     * The sort order.
+     * @return the value
+     **/
     public Order getOrder() {
         return order;
     }

@@ -51,72 +51,129 @@ public final class ErratumSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Advisory name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Advisory name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * OCID for the Erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID for the Erratum.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID for the Compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID for the Compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Summary description of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
         private String synopsis;
 
+        /**
+         * Summary description of the erratum.
+         * @param synopsis the value to set
+         * @return this builder
+         **/
         public Builder synopsis(String synopsis) {
             this.synopsis = synopsis;
             this.__explicitlySet__.add("synopsis");
             return this;
         }
-
+        /**
+         * date the erratum was issued
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issued")
         private String issued;
 
+        /**
+         * date the erratum was issued
+         * @param issued the value to set
+         * @return this builder
+         **/
         public Builder issued(String issued) {
             this.issued = issued;
             this.__explicitlySet__.add("issued");
             return this;
         }
-
+        /**
+         * most recent date the erratum was updated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updated")
         private String updated;
 
+        /**
+         * most recent date the erratum was updated
+         * @param updated the value to set
+         * @return this builder
+         **/
         public Builder updated(String updated) {
             this.updated = updated;
             this.__explicitlySet__.add("updated");
             return this;
         }
-
+        /**
+         * Type of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
         private UpdateTypes advisoryType;
 
+        /**
+         * Type of the erratum.
+         * @param advisoryType the value to set
+         * @return this builder
+         **/
         public Builder advisoryType(UpdateTypes advisoryType) {
             this.advisoryType = advisoryType;
             this.__explicitlySet__.add("advisoryType");
             return this;
         }
-
+        /**
+         * list of CVEs applicable to this erratum
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
         private java.util.List<String> relatedCves;
 
+        /**
+         * list of CVEs applicable to this erratum
+         * @param relatedCves the value to set
+         * @return this builder
+         **/
         public Builder relatedCves(java.util.List<String> relatedCves) {
             this.relatedCves = relatedCves;
             this.__explicitlySet__.add("relatedCves");
@@ -175,6 +232,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Advisory name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -185,6 +246,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID for the Erratum.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -195,6 +260,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID for the Compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -205,6 +274,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
     private final String synopsis;
 
+    /**
+     * Summary description of the erratum.
+     * @return the value
+     **/
     public String getSynopsis() {
         return synopsis;
     }
@@ -215,6 +288,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("issued")
     private final String issued;
 
+    /**
+     * date the erratum was issued
+     * @return the value
+     **/
     public String getIssued() {
         return issued;
     }
@@ -225,6 +302,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updated")
     private final String updated;
 
+    /**
+     * most recent date the erratum was updated
+     * @return the value
+     **/
     public String getUpdated() {
         return updated;
     }
@@ -235,6 +316,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
     private final UpdateTypes advisoryType;
 
+    /**
+     * Type of the erratum.
+     * @return the value
+     **/
     public UpdateTypes getAdvisoryType() {
         return advisoryType;
     }
@@ -245,6 +330,10 @@ public final class ErratumSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
     private final java.util.List<String> relatedCves;
 
+    /**
+     * list of CVEs applicable to this erratum
+     * @return the value
+     **/
     public java.util.List<String> getRelatedCves() {
         return relatedCves;
     }

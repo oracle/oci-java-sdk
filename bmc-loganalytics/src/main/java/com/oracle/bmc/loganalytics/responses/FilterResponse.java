@@ -14,6 +14,11 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.FilterOutput filterOutput;
 
+    /**
+     * The returned FilterOutput instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.FilterOutput getFilterOutput() {
         return filterOutput;
     }
@@ -45,15 +54,33 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned FilterOutput instance.
+         */
         private com.oracle.bmc.loganalytics.model.FilterOutput filterOutput;
 
+        /**
+         * The returned FilterOutput instance.
+         * @param filterOutput the value to set
+         * @return this builder
+         */
         public Builder filterOutput(com.oracle.bmc.loganalytics.model.FilterOutput filterOutput) {
             this.filterOutput = filterOutput;
             return this;
@@ -71,11 +98,19 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public FilterResponse build() {
             return new FilterResponse(__httpStatusCode__, opcRequestId, filterOutput);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

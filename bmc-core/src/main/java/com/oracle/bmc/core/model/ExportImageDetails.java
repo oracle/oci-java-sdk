@@ -113,6 +113,20 @@ public class ExportImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
     private final ExportFormat exportFormat;
 
+    /**
+     * The format to export the image to. The default value is {@code OCI}.
+     * <p>
+     * The following image formats are available:
+     * <p>
+     * - {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+     * Use this format to export a custom image that you want to import into other tenancies or regions.
+     * - {@code QCOW2} - QEMU Copy On Write (.qcow2)
+     * - {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+     * - {@code VHD} - Virtual Hard Disk (.vhd) for Hyper-V
+     * - {@code VMDK} - Virtual Machine Disk (.vmdk)
+     *
+     * @return the value
+     **/
     public ExportFormat getExportFormat() {
         return exportFormat;
     }

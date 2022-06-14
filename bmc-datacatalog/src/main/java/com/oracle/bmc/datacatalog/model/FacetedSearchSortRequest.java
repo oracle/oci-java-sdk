@@ -30,18 +30,33 @@ public final class FacetedSearchSortRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Filed name that needs to be sorted by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private String sortBy;
 
+        /**
+         * Filed name that needs to be sorted by.
+         * @param sortBy the value to set
+         * @return this builder
+         **/
         public Builder sortBy(String sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-
+        /**
+         * Sort order for search results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
+        /**
+         * Sort order for search results.
+         * @param sortOrder the value to set
+         * @return this builder
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
@@ -83,6 +98,10 @@ public final class FacetedSearchSortRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final String sortBy;
 
+    /**
+     * Filed name that needs to be sorted by.
+     * @return the value
+     **/
     public String getSortBy() {
         return sortBy;
     }
@@ -128,6 +147,10 @@ public final class FacetedSearchSortRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
+    /**
+     * Sort order for search results.
+     * @return the value
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }

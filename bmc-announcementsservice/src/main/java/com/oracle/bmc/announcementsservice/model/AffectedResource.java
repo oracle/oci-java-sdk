@@ -40,36 +40,65 @@ public final class AffectedResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the affected resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The OCID of the affected resource.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The friendly name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The friendly name of the resource.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * The region where the affected resource exists.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The region where the affected resource exists.
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * Additional properties associated with the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
         private java.util.List<Property> additionalProperties;
 
+        /**
+         * Additional properties associated with the resource.
+         * @param additionalProperties the value to set
+         * @return this builder
+         **/
         public Builder additionalProperties(java.util.List<Property> additionalProperties) {
             this.additionalProperties = additionalProperties;
             this.__explicitlySet__.add("additionalProperties");
@@ -116,6 +145,10 @@ public final class AffectedResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The OCID of the affected resource.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -126,6 +159,10 @@ public final class AffectedResource {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The friendly name of the resource.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -136,6 +173,10 @@ public final class AffectedResource {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The region where the affected resource exists.
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -146,6 +187,10 @@ public final class AffectedResource {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
     private final java.util.List<Property> additionalProperties;
 
+    /**
+     * Additional properties associated with the resource.
+     * @return the value
+     **/
     public java.util.List<Property> getAdditionalProperties() {
         return additionalProperties;
     }

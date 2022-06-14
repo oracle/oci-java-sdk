@@ -14,6 +14,11 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
+    /**
+     * The returned ExtractLogFieldResults instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.ExtractLogFieldResults getExtractLogFieldResults() {
         return extractLogFieldResults;
     }
@@ -49,15 +58,33 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ExtractLogFieldResults instance.
+         */
         private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
+        /**
+         * The returned ExtractLogFieldResults instance.
+         * @param extractLogFieldResults the value to set
+         * @return this builder
+         */
         public Builder extractLogFieldResults(
                 com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults) {
             this.extractLogFieldResults = extractLogFieldResults;
@@ -76,12 +103,20 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ExtractStructuredLogFieldPathsResponse build() {
             return new ExtractStructuredLogFieldPathsResponse(
                     __httpStatusCode__, opcRequestId, extractLogFieldResults);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

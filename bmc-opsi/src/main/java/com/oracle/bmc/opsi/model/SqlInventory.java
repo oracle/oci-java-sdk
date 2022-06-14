@@ -29,27 +29,49 @@ public final class SqlInventory {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of sqls. Example {@code 2000}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
         private Long totalSqls;
 
+        /**
+         * Total number of sqls. Example {@code 2000}
+         * @param totalSqls the value to set
+         * @return this builder
+         **/
         public Builder totalSqls(Long totalSqls) {
             this.totalSqls = totalSqls;
             this.__explicitlySet__.add("totalSqls");
             return this;
         }
-
+        /**
+         * Total number of Databases. Example {@code 400}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalDatabases")
         private Integer totalDatabases;
 
+        /**
+         * Total number of Databases. Example {@code 400}
+         * @param totalDatabases the value to set
+         * @return this builder
+         **/
         public Builder totalDatabases(Integer totalDatabases) {
             this.totalDatabases = totalDatabases;
             this.__explicitlySet__.add("totalDatabases");
             return this;
         }
-
+        /**
+         * Total number of sqls analyzed by the query. Example {@code 120}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlsAnalyzed")
         private Long sqlsAnalyzed;
 
+        /**
+         * Total number of sqls analyzed by the query. Example {@code 120}
+         * @param sqlsAnalyzed the value to set
+         * @return this builder
+         **/
         public Builder sqlsAnalyzed(Long sqlsAnalyzed) {
             this.sqlsAnalyzed = sqlsAnalyzed;
             this.__explicitlySet__.add("sqlsAnalyzed");
@@ -94,6 +116,10 @@ public final class SqlInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
     private final Long totalSqls;
 
+    /**
+     * Total number of sqls. Example {@code 2000}
+     * @return the value
+     **/
     public Long getTotalSqls() {
         return totalSqls;
     }
@@ -104,6 +130,10 @@ public final class SqlInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("totalDatabases")
     private final Integer totalDatabases;
 
+    /**
+     * Total number of Databases. Example {@code 400}
+     * @return the value
+     **/
     public Integer getTotalDatabases() {
         return totalDatabases;
     }
@@ -114,6 +144,10 @@ public final class SqlInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlsAnalyzed")
     private final Long sqlsAnalyzed;
 
+    /**
+     * Total number of sqls analyzed by the query. Example {@code 120}
+     * @return the value
+     **/
     public Long getSqlsAnalyzed() {
         return sqlsAnalyzed;
     }

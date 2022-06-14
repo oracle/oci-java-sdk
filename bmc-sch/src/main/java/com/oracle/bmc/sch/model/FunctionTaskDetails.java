@@ -31,27 +31,55 @@ package com.oracle.bmc.sch.model;
 public final class FunctionTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+         *
+         * @param functionId the value to set
+         * @return this builder
+         **/
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
             return this;
         }
-
+        /**
+         * Size limit (kilobytes) for batch sent to invoke the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
         private Integer batchSizeInKbs;
 
+        /**
+         * Size limit (kilobytes) for batch sent to invoke the function.
+         *
+         * @param batchSizeInKbs the value to set
+         * @return this builder
+         **/
         public Builder batchSizeInKbs(Integer batchSizeInKbs) {
             this.batchSizeInKbs = batchSizeInKbs;
             this.__explicitlySet__.add("batchSizeInKbs");
             return this;
         }
-
+        /**
+         * Time limit (seconds) for batch sent to invoke the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchTimeInSec")
         private Integer batchTimeInSec;
 
+        /**
+         * Time limit (seconds) for batch sent to invoke the function.
+         *
+         * @param batchTimeInSec the value to set
+         * @return this builder
+         **/
         public Builder batchTimeInSec(Integer batchTimeInSec) {
             this.batchTimeInSec = batchTimeInSec;
             this.__explicitlySet__.add("batchTimeInSec");
@@ -106,6 +134,11 @@ public final class FunctionTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+     *
+     * @return the value
+     **/
     public String getFunctionId() {
         return functionId;
     }
@@ -117,6 +150,11 @@ public final class FunctionTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
     private final Integer batchSizeInKbs;
 
+    /**
+     * Size limit (kilobytes) for batch sent to invoke the function.
+     *
+     * @return the value
+     **/
     public Integer getBatchSizeInKbs() {
         return batchSizeInKbs;
     }
@@ -128,6 +166,11 @@ public final class FunctionTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("batchTimeInSec")
     private final Integer batchTimeInSec;
 
+    /**
+     * Time limit (seconds) for batch sent to invoke the function.
+     *
+     * @return the value
+     **/
     public Integer getBatchTimeInSec() {
         return batchTimeInSec;
     }

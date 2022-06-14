@@ -31,18 +31,33 @@ public final class TranscriptionNormalization {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to add punctuation in generated transcription. By default it is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
         private Boolean isPunctuationEnabled;
 
+        /**
+         * Whether to add punctuation in generated transcription. By default it is enabled.
+         * @param isPunctuationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPunctuationEnabled(Boolean isPunctuationEnabled) {
             this.isPunctuationEnabled = isPunctuationEnabled;
             this.__explicitlySet__.add("isPunctuationEnabled");
             return this;
         }
-
+        /**
+         * List of filters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<TranscriptionFilter> filters;
 
+        /**
+         * List of filters.
+         * @param filters the value to set
+         * @return this builder
+         **/
         public Builder filters(java.util.List<TranscriptionFilter> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
@@ -86,6 +101,10 @@ public final class TranscriptionNormalization {
     @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
     private final Boolean isPunctuationEnabled;
 
+    /**
+     * Whether to add punctuation in generated transcription. By default it is enabled.
+     * @return the value
+     **/
     public Boolean getIsPunctuationEnabled() {
         return isPunctuationEnabled;
     }
@@ -96,6 +115,10 @@ public final class TranscriptionNormalization {
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<TranscriptionFilter> filters;
 
+    /**
+     * List of filters.
+     * @return the value
+     **/
     public java.util.List<TranscriptionFilter> getFilters() {
         return filters;
     }

@@ -113,6 +113,10 @@ public class AbstractFrequencyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("frequency")
     private final Frequency frequency;
 
+    /**
+     * the frequency of the schedule.
+     * @return the value
+     **/
     public Frequency getFrequency() {
         return frequency;
     }

@@ -16,6 +16,9 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -31,6 +34,16 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date startTime;
 
+    /**
+     * Returns events that were processed at or after this start date and time, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * For example, a start value of {@code 2017-01-15T11:30:00Z} will retrieve a list of all events processed
+     * since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC).
+     * You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must
+     * be set to {@code 0}.
+     *
+     */
     public java.util.Date getStartTime() {
         return startTime;
     }
@@ -47,6 +60,17 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private java.util.Date endTime;
 
+    /**
+     * Returns events that were processed before this end date and time, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * For example, a start value of {@code 2017-01-01T00:00:00Z} and an end value of {@code 2017-01-02T00:00:00Z}
+     * will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of
+     * {@code 2017-01-01T00:00:00Z} and an end value of {@code 2017-02-01T00:00:00Z} will result in a list of all
+     * events processed between January 1, 2017 and January 31, 2017. You can specify a value with
+     * granularity to the minute. Seconds (and milliseconds, if included) must be set to {@code 0}.
+     *
+     */
     public java.util.Date getEndTime() {
         return endTime;
     }
@@ -57,6 +81,11 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -67,6 +96,11 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -78,10 +112,14 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -89,6 +127,16 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Returns events that were processed at or after this start date and time, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * For example, a start value of {@code 2017-01-15T11:30:00Z} will retrieve a list of all events processed
+         * since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC).
+         * You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must
+         * be set to {@code 0}.
+         *
+         */
         private java.util.Date startTime = null;
 
         /**
@@ -100,6 +148,7 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must
          * be set to {@code 0}.
          *
+         * @param startTime the value to set
          * @return this builder instance
          */
         public Builder startTime(java.util.Date startTime) {
@@ -107,6 +156,17 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Returns events that were processed before this end date and time, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * For example, a start value of {@code 2017-01-01T00:00:00Z} and an end value of {@code 2017-01-02T00:00:00Z}
+         * will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of
+         * {@code 2017-01-01T00:00:00Z} and an end value of {@code 2017-02-01T00:00:00Z} will result in a list of all
+         * events processed between January 1, 2017 and January 31, 2017. You can specify a value with
+         * granularity to the minute. Seconds (and milliseconds, if included) must be set to {@code 0}.
+         *
+         */
         private java.util.Date endTime = null;
 
         /**
@@ -119,6 +179,7 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * events processed between January 1, 2017 and January 31, 2017. You can specify a value with
          * granularity to the minute. Seconds (and milliseconds, if included) must be set to {@code 0}.
          *
+         * @param endTime the value to set
          * @return this builder instance
          */
         public Builder endTime(java.util.Date endTime) {
@@ -126,12 +187,18 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -139,12 +206,18 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -228,7 +301,8 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +313,10 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

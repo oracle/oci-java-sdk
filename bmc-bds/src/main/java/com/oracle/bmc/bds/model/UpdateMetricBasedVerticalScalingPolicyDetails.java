@@ -31,6 +31,7 @@ public final class UpdateMetricBasedVerticalScalingPolicyDetails
         extends UpdateAutoScalePolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("scaleUpConfig")
         private MetricBasedVerticalScaleUpConfig scaleUpConfig;
 

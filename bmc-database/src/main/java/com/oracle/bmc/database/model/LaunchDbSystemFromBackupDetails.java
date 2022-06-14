@@ -272,28 +272,61 @@ public final class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             this.__explicitlySet__.add("dbHome");
             return this;
         }
-
+        /**
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
+        /**
+         * The Oracle Database Edition that applies to all the databases on the DB system.
+         * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+         *
+         * @param databaseEdition the value to set
+         * @return this builder
+         **/
         public Builder databaseEdition(DatabaseEdition databaseEdition) {
             this.databaseEdition = databaseEdition;
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-
+        /**
+         * The type of redundancy configured for the DB system.
+         * NORMAL 2-way redundancy, recommended for test and development systems.
+         * HIGH is 3-way redundancy, recommended for production systems.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
         private DiskRedundancy diskRedundancy;
 
+        /**
+         * The type of redundancy configured for the DB system.
+         * NORMAL 2-way redundancy, recommended for test and development systems.
+         * HIGH is 3-way redundancy, recommended for production systems.
+         *
+         * @param diskRedundancy the value to set
+         * @return this builder
+         **/
         public Builder diskRedundancy(DiskRedundancy diskRedundancy) {
             this.diskRedundancy = diskRedundancy;
             this.__explicitlySet__.add("diskRedundancy");
             return this;
         }
-
+        /**
+         * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -509,6 +542,12 @@ public final class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
+    /**
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+     *
+     * @return the value
+     **/
     public DatabaseEdition getDatabaseEdition() {
         return databaseEdition;
     }
@@ -560,6 +599,13 @@ public final class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
     private final DiskRedundancy diskRedundancy;
 
+    /**
+     * The type of redundancy configured for the DB system.
+     * NORMAL 2-way redundancy, recommended for test and development systems.
+     * HIGH is 3-way redundancy, recommended for production systems.
+     *
+     * @return the value
+     **/
     public DiskRedundancy getDiskRedundancy() {
         return diskRedundancy;
     }
@@ -607,6 +653,11 @@ public final class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }

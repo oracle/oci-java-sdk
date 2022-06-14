@@ -33,27 +33,71 @@ public final class AddDrgRouteRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+         * Allowed values:
+         *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
 
+        /**
+         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+         * Allowed values:
+         *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         *
+         * @param destinationType the value to set
+         * @return this builder
+         **/
         public Builder destinationType(DestinationType destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
             return this;
         }
-
+        /**
+         * This is the range of IP addresses used for matching when routing
+         * traffic. Only CIDR_BLOCK values are allowed.
+         * <p>
+         * Potential values:
+         *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
+        /**
+         * This is the range of IP addresses used for matching when routing
+         * traffic. Only CIDR_BLOCK values are allowed.
+         * <p>
+         * Potential values:
+         *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}.
+         *
+         * @param destination the value to set
+         * @return this builder
+         **/
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+         * for reaching the network destination.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
         private String nextHopDrgAttachmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+         * for reaching the network destination.
+         *
+         * @param nextHopDrgAttachmentId the value to set
+         * @return this builder
+         **/
         public Builder nextHopDrgAttachmentId(String nextHopDrgAttachmentId) {
             this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
             this.__explicitlySet__.add("nextHopDrgAttachmentId");
@@ -140,6 +184,13 @@ public final class AddDrgRouteRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
 
+    /**
+     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Allowed values:
+     *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     *
+     * @return the value
+     **/
     public DestinationType getDestinationType() {
         return destinationType;
     }
@@ -156,6 +207,16 @@ public final class AddDrgRouteRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
+    /**
+     * This is the range of IP addresses used for matching when routing
+     * traffic. Only CIDR_BLOCK values are allowed.
+     * <p>
+     * Potential values:
+     *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}.
+     *
+     * @return the value
+     **/
     public String getDestination() {
         return destination;
     }
@@ -168,6 +229,12 @@ public final class AddDrgRouteRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
     private final String nextHopDrgAttachmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+     * for reaching the network destination.
+     *
+     * @return the value
+     **/
     public String getNextHopDrgAttachmentId() {
         return nextHopDrgAttachmentId;
     }

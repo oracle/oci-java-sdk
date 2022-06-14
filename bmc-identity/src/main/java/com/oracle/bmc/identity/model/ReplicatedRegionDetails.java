@@ -31,27 +31,57 @@ public final class ReplicatedRegionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
+         * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
+         * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * Region-agnostic identity domain URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * Region-agnostic identity domain URL.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * The IDCS-replicated region state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * The IDCS-replicated region state.
+         *
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -96,6 +126,13 @@ public final class ReplicatedRegionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
+     * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -106,6 +143,10 @@ public final class ReplicatedRegionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * Region-agnostic identity domain URL.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -168,6 +209,11 @@ public final class ReplicatedRegionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * The IDCS-replicated region state.
+     *
+     * @return the value
+     **/
     public State getState() {
         return state;
     }

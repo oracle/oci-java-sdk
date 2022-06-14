@@ -42,45 +42,81 @@ public final class Violation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The indices associated with regular expression violations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexes")
         private java.util.List<Indexes> indexes;
 
+        /**
+         * The indices associated with regular expression violations.
+         * @param indexes the value to set
+         * @return this builder
+         **/
         public Builder indexes(java.util.List<Indexes> indexes) {
             this.indexes = indexes;
             this.__explicitlySet__.add("indexes");
             return this;
         }
-
+        /**
+         * The rule description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleDescription")
         private String ruleDescription;
 
+        /**
+         * The rule description.
+         * @param ruleDescription the value to set
+         * @return this builder
+         **/
         public Builder ruleDescription(String ruleDescription) {
             this.ruleDescription = ruleDescription;
             this.__explicitlySet__.add("ruleDescription");
             return this;
         }
-
+        /**
+         * The rule name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
         private String ruleName;
 
+        /**
+         * The rule name.
+         * @param ruleName the value to set
+         * @return this builder
+         **/
         public Builder ruleName(String ruleName) {
             this.ruleName = ruleName;
             this.__explicitlySet__.add("ruleName");
             return this;
         }
-
+        /**
+         * The rule remediation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleRemediation")
         private String ruleRemediation;
 
+        /**
+         * The rule remediation.
+         * @param ruleRemediation the value to set
+         * @return this builder
+         **/
         public Builder ruleRemediation(String ruleRemediation) {
             this.ruleRemediation = ruleRemediation;
             this.__explicitlySet__.add("ruleRemediation");
             return this;
         }
-
+        /**
+         * The rule type.  Either WARN or ERROR.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
         private RuleType ruleType;
 
+        /**
+         * The rule type.  Either WARN or ERROR.
+         * @param ruleType the value to set
+         * @return this builder
+         **/
         public Builder ruleType(RuleType ruleType) {
             this.ruleType = ruleType;
             this.__explicitlySet__.add("ruleType");
@@ -128,6 +164,10 @@ public final class Violation {
     @com.fasterxml.jackson.annotation.JsonProperty("indexes")
     private final java.util.List<Indexes> indexes;
 
+    /**
+     * The indices associated with regular expression violations.
+     * @return the value
+     **/
     public java.util.List<Indexes> getIndexes() {
         return indexes;
     }
@@ -138,6 +178,10 @@ public final class Violation {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleDescription")
     private final String ruleDescription;
 
+    /**
+     * The rule description.
+     * @return the value
+     **/
     public String getRuleDescription() {
         return ruleDescription;
     }
@@ -148,6 +192,10 @@ public final class Violation {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
     private final String ruleName;
 
+    /**
+     * The rule name.
+     * @return the value
+     **/
     public String getRuleName() {
         return ruleName;
     }
@@ -158,6 +206,10 @@ public final class Violation {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleRemediation")
     private final String ruleRemediation;
 
+    /**
+     * The rule remediation.
+     * @return the value
+     **/
     public String getRuleRemediation() {
         return ruleRemediation;
     }
@@ -216,6 +268,10 @@ public final class Violation {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     private final RuleType ruleType;
 
+    /**
+     * The rule type.  Either WARN or ERROR.
+     * @return the value
+     **/
     public RuleType getRuleType() {
         return ruleType;
     }

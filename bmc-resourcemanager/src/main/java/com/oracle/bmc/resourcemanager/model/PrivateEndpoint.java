@@ -70,127 +70,248 @@ public final class PrivateEndpoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the private endpoint. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the private endpoint. Avoid entering confidential information.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIps")
         private java.util.List<String> sourceIps;
 
+        /**
+         * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+         * @param sourceIps the value to set
+         * @return this builder
+         **/
         public Builder sourceIps(java.util.List<String> sourceIps) {
             this.sourceIps = sourceIps;
             this.__explicitlySet__.add("sourceIps");
             return this;
         }
-
+        /**
+         * An array of network security groups (NSG) that the customer can optionally provide.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIdList")
         private java.util.List<String> nsgIdList;
 
+        /**
+         * An array of network security groups (NSG) that the customer can optionally provide.
+         * @param nsgIdList the value to set
+         * @return this builder
+         **/
         public Builder nsgIdList(java.util.List<String> nsgIdList) {
             this.nsgIdList = nsgIdList;
             this.__explicitlySet__.add("nsgIdList");
             return this;
         }
-
+        /**
+         * When {@code true}, allows the private endpoint to be used with a configuration source provider.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUsedWithConfigurationSourceProvider")
         private Boolean isUsedWithConfigurationSourceProvider;
 
+        /**
+         * When {@code true}, allows the private endpoint to be used with a configuration source provider.
+         * @param isUsedWithConfigurationSourceProvider the value to set
+         * @return this builder
+         **/
         public Builder isUsedWithConfigurationSourceProvider(
                 Boolean isUsedWithConfigurationSourceProvider) {
             this.isUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
             this.__explicitlySet__.add("isUsedWithConfigurationSourceProvider");
             return this;
         }
-
+        /**
+         * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
+        /**
+         * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+         *
+         * @param dnsZones the value to set
+         * @return this builder
+         **/
         public Builder dnsZones(java.util.List<String> dnsZones) {
             this.dnsZones = dnsZones;
             this.__explicitlySet__.add("dnsZones");
             return this;
         }
-
+        /**
+         * The date and time at which the private endpoint was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-11-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time at which the private endpoint was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-11-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the private endpoint.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -263,6 +384,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -273,6 +398,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -283,6 +412,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -293,6 +426,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the private endpoint. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -303,6 +440,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -313,6 +454,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -323,6 +468,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIps")
     private final java.util.List<String> sourceIps;
 
+    /**
+     * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+     * @return the value
+     **/
     public java.util.List<String> getSourceIps() {
         return sourceIps;
     }
@@ -333,6 +482,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIdList")
     private final java.util.List<String> nsgIdList;
 
+    /**
+     * An array of network security groups (NSG) that the customer can optionally provide.
+     * @return the value
+     **/
     public java.util.List<String> getNsgIdList() {
         return nsgIdList;
     }
@@ -343,6 +496,10 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("isUsedWithConfigurationSourceProvider")
     private final Boolean isUsedWithConfigurationSourceProvider;
 
+    /**
+     * When {@code true}, allows the private endpoint to be used with a configuration source provider.
+     * @return the value
+     **/
     public Boolean getIsUsedWithConfigurationSourceProvider() {
         return isUsedWithConfigurationSourceProvider;
     }
@@ -354,6 +511,11 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
+    /**
+     * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDnsZones() {
         return dnsZones;
     }
@@ -367,6 +529,13 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time at which the private endpoint was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-11-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -430,6 +599,11 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the private endpoint.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -443,6 +617,13 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -456,6 +637,13 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -30,9 +30,17 @@ public final class DeployArtifactOverrideArgumentCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of artifact override arguments at the time of deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DeployArtifactOverrideArgument> items;
 
+        /**
+         * List of artifact override arguments at the time of deployment.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DeployArtifactOverrideArgument> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class DeployArtifactOverrideArgumentCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DeployArtifactOverrideArgument> items;
 
+    /**
+     * List of artifact override arguments at the time of deployment.
+     * @return the value
+     **/
     public java.util.List<DeployArtifactOverrideArgument> getItems() {
         return items;
     }

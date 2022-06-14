@@ -34,36 +34,65 @@ public final class ReportSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportType")
         private String reportType;
 
+        /**
+         * The type of report.
+         * @param reportType the value to set
+         * @return this builder
+         **/
         public Builder reportType(String reportType) {
             this.reportType = reportType;
             this.__explicitlySet__.add("reportType");
             return this;
         }
-
+        /**
+         * The date of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("date")
         private java.util.Date date;
 
+        /**
+         * The date of the report.
+         * @param date the value to set
+         * @return this builder
+         **/
         public Builder date(java.util.Date date) {
             this.date = date;
             this.__explicitlySet__.add("date");
             return this;
         }
-
+        /**
+         * The columns in the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<String> columns;
 
+        /**
+         * The columns in the report.
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<String> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-
+        /**
+         * The contents of the report in comma-separated values (CSV) file format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
+        /**
+         * The contents of the report in comma-separated values (CSV) file format.
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -109,6 +138,10 @@ public final class ReportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reportType")
     private final String reportType;
 
+    /**
+     * The type of report.
+     * @return the value
+     **/
     public String getReportType() {
         return reportType;
     }
@@ -119,6 +152,10 @@ public final class ReportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("date")
     private final java.util.Date date;
 
+    /**
+     * The date of the report.
+     * @return the value
+     **/
     public java.util.Date getDate() {
         return date;
     }
@@ -129,6 +166,10 @@ public final class ReportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<String> columns;
 
+    /**
+     * The columns in the report.
+     * @return the value
+     **/
     public java.util.List<String> getColumns() {
         return columns;
     }
@@ -139,6 +180,10 @@ public final class ReportSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
+    /**
+     * The contents of the report in comma-separated values (CSV) file format.
+     * @return the value
+     **/
     public String getContent() {
         return content;
     }

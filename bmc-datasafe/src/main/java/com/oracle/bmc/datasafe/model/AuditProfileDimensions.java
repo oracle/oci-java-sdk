@@ -29,9 +29,23 @@ public final class AuditProfileDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. The default value is inherited from the global settings.
+         * You can change at the global level or at the target level.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
         private Boolean isPaidUsageEnabled;
 
+        /**
+         * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+         * potentially incurring additional charges. The default value is inherited from the global settings.
+         * You can change at the global level or at the target level.
+         *
+         * @param isPaidUsageEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
             this.isPaidUsageEnabled = isPaidUsageEnabled;
             this.__explicitlySet__.add("isPaidUsageEnabled");
@@ -76,6 +90,13 @@ public final class AuditProfileDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsageEnabled")
     private final Boolean isPaidUsageEnabled;
 
+    /**
+     * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database,
+     * potentially incurring additional charges. The default value is inherited from the global settings.
+     * You can change at the global level or at the target level.
+     *
+     * @return the value
+     **/
     public Boolean getIsPaidUsageEnabled() {
         return isPaidUsageEnabled;
     }

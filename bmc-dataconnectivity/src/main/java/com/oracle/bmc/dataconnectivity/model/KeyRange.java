@@ -28,6 +28,7 @@ public final class KeyRange {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private ShapeField key;
 
@@ -36,10 +37,17 @@ public final class KeyRange {
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The key range.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("range")
         private java.util.List<String> range;
 
+        /**
+         * The key range.
+         * @param range the value to set
+         * @return this builder
+         **/
         public Builder range(java.util.List<String> range) {
             this.range = range;
             this.__explicitlySet__.add("range");
@@ -88,6 +96,10 @@ public final class KeyRange {
     @com.fasterxml.jackson.annotation.JsonProperty("range")
     private final java.util.List<String> range;
 
+    /**
+     * The key range.
+     * @return the value
+     **/
     public java.util.List<String> getRange() {
         return range;
     }

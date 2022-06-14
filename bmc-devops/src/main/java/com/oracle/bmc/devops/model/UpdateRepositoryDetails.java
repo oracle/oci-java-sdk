@@ -50,36 +50,65 @@ public final class UpdateRepositoryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name of a repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Unique name of a repository.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Details of the repository. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Details of the repository. Avoid entering confidential information.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The default branch of the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
         private String defaultBranch;
 
+        /**
+         * The default branch of the repository.
+         * @param defaultBranch the value to set
+         * @return this builder
+         **/
         public Builder defaultBranch(String defaultBranch) {
             this.defaultBranch = defaultBranch;
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
-
+        /**
+         * Type of repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private Repository.RepositoryType repositoryType;
 
+        /**
+         * Type of repository.
+         * @param repositoryType the value to set
+         * @return this builder
+         **/
         public Builder repositoryType(Repository.RepositoryType repositoryType) {
             this.repositoryType = repositoryType;
             this.__explicitlySet__.add("repositoryType");
@@ -94,19 +123,33 @@ public final class UpdateRepositoryDetails {
             this.__explicitlySet__.add("mirrorRepositoryConfig");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -164,6 +207,10 @@ public final class UpdateRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Unique name of a repository.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -174,6 +221,10 @@ public final class UpdateRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Details of the repository. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -184,6 +235,10 @@ public final class UpdateRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
     private final String defaultBranch;
 
+    /**
+     * The default branch of the repository.
+     * @return the value
+     **/
     public String getDefaultBranch() {
         return defaultBranch;
     }
@@ -194,6 +249,10 @@ public final class UpdateRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final Repository.RepositoryType repositoryType;
 
+    /**
+     * Type of repository.
+     * @return the value
+     **/
     public Repository.RepositoryType getRepositoryType() {
         return repositoryType;
     }
@@ -211,6 +270,10 @@ public final class UpdateRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -221,6 +284,10 @@ public final class UpdateRepositoryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

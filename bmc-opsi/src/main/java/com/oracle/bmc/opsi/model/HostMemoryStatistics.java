@@ -81,37 +81,73 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
             this.__explicitlySet__.add("availableMemory");
             return this;
         }
-
+        /**
+         * Total number of huge pages.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
         private Integer hugePagesTotal;
 
+        /**
+         * Total number of huge pages.
+         *
+         * @param hugePagesTotal the value to set
+         * @return this builder
+         **/
         public Builder hugePagesTotal(Integer hugePagesTotal) {
             this.hugePagesTotal = hugePagesTotal;
             this.__explicitlySet__.add("hugePagesTotal");
             return this;
         }
-
+        /**
+         * Size of huge pages in megabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInMB")
         private Double hugePageSizeInMB;
 
+        /**
+         * Size of huge pages in megabytes.
+         *
+         * @param hugePageSizeInMB the value to set
+         * @return this builder
+         **/
         public Builder hugePageSizeInMB(Double hugePageSizeInMB) {
             this.hugePageSizeInMB = hugePageSizeInMB;
             this.__explicitlySet__.add("hugePageSizeInMB");
             return this;
         }
-
+        /**
+         * Total number of available huge pages.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
         private Integer hugePagesFree;
 
+        /**
+         * Total number of available huge pages.
+         *
+         * @param hugePagesFree the value to set
+         * @return this builder
+         **/
         public Builder hugePagesFree(Integer hugePagesFree) {
             this.hugePagesFree = hugePagesFree;
             this.__explicitlySet__.add("hugePagesFree");
             return this;
         }
-
+        /**
+         * Total number of huge pages which are used or reserved.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
         private Integer hugePagesReserved;
 
+        /**
+         * Total number of huge pages which are used or reserved.
+         *
+         * @param hugePagesReserved the value to set
+         * @return this builder
+         **/
         public Builder hugePagesReserved(Integer hugePagesReserved) {
             this.hugePagesReserved = hugePagesReserved;
             this.__explicitlySet__.add("hugePagesReserved");
@@ -223,6 +259,11 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
     private final Integer hugePagesTotal;
 
+    /**
+     * Total number of huge pages.
+     *
+     * @return the value
+     **/
     public Integer getHugePagesTotal() {
         return hugePagesTotal;
     }
@@ -234,6 +275,11 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInMB")
     private final Double hugePageSizeInMB;
 
+    /**
+     * Size of huge pages in megabytes.
+     *
+     * @return the value
+     **/
     public Double getHugePageSizeInMB() {
         return hugePageSizeInMB;
     }
@@ -245,6 +291,11 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
     private final Integer hugePagesFree;
 
+    /**
+     * Total number of available huge pages.
+     *
+     * @return the value
+     **/
     public Integer getHugePagesFree() {
         return hugePagesFree;
     }
@@ -256,6 +307,11 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
     private final Integer hugePagesReserved;
 
+    /**
+     * Total number of huge pages which are used or reserved.
+     *
+     * @return the value
+     **/
     public Integer getHugePagesReserved() {
         return hugePagesReserved;
     }

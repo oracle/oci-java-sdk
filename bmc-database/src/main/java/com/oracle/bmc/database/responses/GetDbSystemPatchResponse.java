@@ -15,6 +15,12 @@ public class GetDbSystemPatchResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetDbSystemPatchResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.database.model.Patch patch;
 
+    /**
+     * The returned Patch instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.Patch getPatch() {
         return patch;
     }
@@ -46,15 +56,35 @@ public class GetDbSystemPatchResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Patch instance.
+         */
         private com.oracle.bmc.database.model.Patch patch;
 
+        /**
+         * The returned Patch instance.
+         * @param patch the value to set
+         * @return this builder
+         */
         public Builder patch(com.oracle.bmc.database.model.Patch patch) {
             this.patch = patch;
             return this;
@@ -72,11 +102,19 @@ public class GetDbSystemPatchResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetDbSystemPatchResponse build() {
             return new GetDbSystemPatchResponse(__httpStatusCode__, opcRequestId, patch);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

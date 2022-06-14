@@ -17,6 +17,9 @@ public class RemoveImageShapeCompatibilityEntryRequest
      */
     private String imageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+     */
     public String getImageId() {
         return imageId;
     }
@@ -25,6 +28,9 @@ public class RemoveImageShapeCompatibilityEntryRequest
      */
     private String shapeName;
 
+    /**
+     * Shape name.
+     */
     public String getShapeName() {
         return shapeName;
     }
@@ -36,10 +42,14 @@ public class RemoveImageShapeCompatibilityEntryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         */
         private String imageId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -47,10 +57,14 @@ public class RemoveImageShapeCompatibilityEntryRequest
             return this;
         }
 
+        /**
+         * Shape name.
+         */
         private String shapeName = null;
 
         /**
          * Shape name.
+         * @param shapeName the value to set
          * @return this builder instance
          */
         public Builder shapeName(String shapeName) {
@@ -129,12 +143,17 @@ public class RemoveImageShapeCompatibilityEntryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().imageId(imageId).shapeName(shapeName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

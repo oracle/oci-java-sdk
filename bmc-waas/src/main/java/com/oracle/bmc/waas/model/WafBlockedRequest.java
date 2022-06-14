@@ -36,36 +36,65 @@ public final class WafBlockedRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the blocked requests were observed, expressed in RFC 3339 timestamp format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
         private java.util.Date timeObserved;
 
+        /**
+         * The date and time the blocked requests were observed, expressed in RFC 3339 timestamp format.
+         * @param timeObserved the value to set
+         * @return this builder
+         **/
         public Builder timeObserved(java.util.Date timeObserved) {
             this.timeObserved = timeObserved;
             this.__explicitlySet__.add("timeObserved");
             return this;
         }
-
+        /**
+         * The number of seconds the data covers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
         private Integer timeRangeInSeconds;
 
+        /**
+         * The number of seconds the data covers.
+         * @param timeRangeInSeconds the value to set
+         * @return this builder
+         **/
         public Builder timeRangeInSeconds(Integer timeRangeInSeconds) {
             this.timeRangeInSeconds = timeRangeInSeconds;
             this.__explicitlySet__.add("timeRangeInSeconds");
             return this;
         }
-
+        /**
+         * The specific Web Application Firewall feature that blocked the requests, such as JavaScript Challenge or Access Control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wafFeature")
         private WafFeature wafFeature;
 
+        /**
+         * The specific Web Application Firewall feature that blocked the requests, such as JavaScript Challenge or Access Control.
+         * @param wafFeature the value to set
+         * @return this builder
+         **/
         public Builder wafFeature(WafFeature wafFeature) {
             this.wafFeature = wafFeature;
             this.__explicitlySet__.add("wafFeature");
             return this;
         }
-
+        /**
+         * The count of blocked requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The count of blocked requests.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -112,6 +141,10 @@ public final class WafBlockedRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
     private final java.util.Date timeObserved;
 
+    /**
+     * The date and time the blocked requests were observed, expressed in RFC 3339 timestamp format.
+     * @return the value
+     **/
     public java.util.Date getTimeObserved() {
         return timeObserved;
     }
@@ -122,6 +155,10 @@ public final class WafBlockedRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
     private final Integer timeRangeInSeconds;
 
+    /**
+     * The number of seconds the data covers.
+     * @return the value
+     **/
     public Integer getTimeRangeInSeconds() {
         return timeRangeInSeconds;
     }
@@ -186,6 +223,10 @@ public final class WafBlockedRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("wafFeature")
     private final WafFeature wafFeature;
 
+    /**
+     * The specific Web Application Firewall feature that blocked the requests, such as JavaScript Challenge or Access Control.
+     * @return the value
+     **/
     public WafFeature getWafFeature() {
         return wafFeature;
     }
@@ -196,6 +237,10 @@ public final class WafBlockedRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The count of blocked requests.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

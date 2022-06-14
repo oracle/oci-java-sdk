@@ -18,6 +18,9 @@ public class CreateKubeconfigRequest
      */
     private String clusterId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -28,6 +31,11 @@ public class CreateKubeconfigRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +45,9 @@ public class CreateKubeconfigRequest
     private com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
             createClusterKubeconfigContentDetails;
 
+    /**
+     * The details of the cluster kubeconfig to create.
+     */
     public com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
             getCreateClusterKubeconfigContentDetails() {
         return createClusterKubeconfigContentDetails;
@@ -60,10 +71,14 @@ public class CreateKubeconfigRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String clusterId = null;
 
         /**
          * The OCID of the cluster.
+         * @param clusterId the value to set
          * @return this builder instance
          */
         public Builder clusterId(String clusterId) {
@@ -71,12 +86,18 @@ public class CreateKubeconfigRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -84,11 +105,15 @@ public class CreateKubeconfigRequest
             return this;
         }
 
+        /**
+         * The details of the cluster kubeconfig to create.
+         */
         private com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
                 createClusterKubeconfigContentDetails = null;
 
         /**
          * The details of the cluster kubeconfig to create.
+         * @param createClusterKubeconfigContentDetails the value to set
          * @return this builder instance
          */
         public Builder createClusterKubeconfigContentDetails(
@@ -182,7 +207,8 @@ public class CreateKubeconfigRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +217,10 @@ public class CreateKubeconfigRequest
                 .createClusterKubeconfigContentDetails(createClusterKubeconfigContentDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -31,18 +31,41 @@ public final class HealthCheckResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time the data was retrieved, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2020-05-01T18:28:11+00:00}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the data was retrieved, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2020-05-01T18:28:11+00:00}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The result of the most recent health check.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
         private HealthCheckStatus healthCheckStatus;
 
+        /**
+         * The result of the most recent health check.
+         *
+         * @param healthCheckStatus the value to set
+         * @return this builder
+         **/
         public Builder healthCheckStatus(HealthCheckStatus healthCheckStatus) {
             this.healthCheckStatus = healthCheckStatus;
             this.__explicitlySet__.add("healthCheckStatus");
@@ -88,6 +111,13 @@ public final class HealthCheckResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the data was retrieved, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2020-05-01T18:28:11+00:00}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -152,6 +182,11 @@ public final class HealthCheckResult {
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
     private final HealthCheckStatus healthCheckStatus;
 
+    /**
+     * The result of the most recent health check.
+     *
+     * @return the value
+     **/
     public HealthCheckStatus getHealthCheckStatus() {
         return healthCheckStatus;
     }

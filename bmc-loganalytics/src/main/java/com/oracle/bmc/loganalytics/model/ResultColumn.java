@@ -30,27 +30,55 @@ public final class ResultColumn {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Internal identifier for the column.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalName")
         private String internalName;
 
+        /**
+         * Internal identifier for the column.
+         *
+         * @param internalName the value to set
+         * @return this builder
+         **/
         public Builder internalName(String internalName) {
             this.internalName = internalName;
             this.__explicitlySet__.add("internalName");
             return this;
         }
-
+        /**
+         * Display name - will be alias if result column is renamed by queryString.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name - will be alias if result column is renamed by queryString.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Field denoting column data type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
+        /**
+         * Field denoting column data type.
+         *
+         * @param valueType the value to set
+         * @return this builder
+         **/
         public Builder valueType(ValueType valueType) {
             this.valueType = valueType;
             this.__explicitlySet__.add("valueType");
@@ -96,6 +124,11 @@ public final class ResultColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
+    /**
+     * Internal identifier for the column.
+     *
+     * @return the value
+     **/
     public String getInternalName() {
         return internalName;
     }
@@ -107,6 +140,11 @@ public final class ResultColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name - will be alias if result column is renamed by queryString.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -118,6 +156,11 @@ public final class ResultColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
+    /**
+     * Field denoting column data type.
+     *
+     * @return the value
+     **/
     public ValueType getValueType() {
         return valueType;
     }

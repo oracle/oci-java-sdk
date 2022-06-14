@@ -30,18 +30,33 @@ public final class ValidationMessage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * level of validation messages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private String level;
 
+        /**
+         * level of validation messages
+         * @param level the value to set
+         * @return this builder
+         **/
         public Builder level(String level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
-
+        /**
+         * The message itself.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationMessage")
         private String validationMessage;
 
+        /**
+         * The message itself.
+         * @param validationMessage the value to set
+         * @return this builder
+         **/
         public Builder validationMessage(String validationMessage) {
             this.validationMessage = validationMessage;
             this.__explicitlySet__.add("validationMessage");
@@ -83,6 +98,10 @@ public final class ValidationMessage {
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final String level;
 
+    /**
+     * level of validation messages
+     * @return the value
+     **/
     public String getLevel() {
         return level;
     }
@@ -93,6 +112,10 @@ public final class ValidationMessage {
     @com.fasterxml.jackson.annotation.JsonProperty("validationMessage")
     private final String validationMessage;
 
+    /**
+     * The message itself.
+     * @return the value
+     **/
     public String getValidationMessage() {
         return validationMessage;
     }

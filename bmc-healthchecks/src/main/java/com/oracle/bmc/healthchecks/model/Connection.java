@@ -28,18 +28,33 @@ public final class Connection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The connection IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
+        /**
+         * The connection IP address.
+         * @param address the value to set
+         * @return this builder
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
-
+        /**
+         * The port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -81,6 +96,10 @@ public final class Connection {
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
+    /**
+     * The connection IP address.
+     * @return the value
+     **/
     public String getAddress() {
         return address;
     }
@@ -91,6 +110,10 @@ public final class Connection {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }

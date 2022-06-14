@@ -32,18 +32,53 @@ public final class UpdateAnalyticsClusterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A change to the shape of the nodes in the Analytics Cluster will
+         * result in the entire cluster being torn down and re-created with
+         * Compute instances of the new Shape. This may result in significant
+         * downtime for the analytics capability while the Analytics Cluster is
+         * re-provisioned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * A change to the shape of the nodes in the Analytics Cluster will
+         * result in the entire cluster being torn down and re-created with
+         * Compute instances of the new Shape. This may result in significant
+         * downtime for the analytics capability while the Analytics Cluster is
+         * re-provisioned.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * A change to the number of nodes in the Analytics Cluster will result
+         * in the entire cluster being torn down and re-created with the new
+         * cluster of nodes. This may result in a significant downtime for the
+         * analytics capability while the Analytics Cluster is
+         * re-provisioned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
+        /**
+         * A change to the number of nodes in the Analytics Cluster will result
+         * in the entire cluster being torn down and re-created with the new
+         * cluster of nodes. This may result in a significant downtime for the
+         * analytics capability while the Analytics Cluster is
+         * re-provisioned.
+         *
+         * @param clusterSize the value to set
+         * @return this builder
+         **/
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
@@ -91,6 +126,15 @@ public final class UpdateAnalyticsClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * A change to the shape of the nodes in the Analytics Cluster will
+     * result in the entire cluster being torn down and re-created with
+     * Compute instances of the new Shape. This may result in significant
+     * downtime for the analytics capability while the Analytics Cluster is
+     * re-provisioned.
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -106,6 +150,15 @@ public final class UpdateAnalyticsClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
+    /**
+     * A change to the number of nodes in the Analytics Cluster will result
+     * in the entire cluster being torn down and re-created with the new
+     * cluster of nodes. This may result in a significant downtime for the
+     * analytics capability while the Analytics Cluster is
+     * re-provisioned.
+     *
+     * @return the value
+     **/
     public Integer getClusterSize() {
         return clusterSize;
     }

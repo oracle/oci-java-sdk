@@ -74,135 +74,277 @@ public final class DiscoveryJobResultSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key that identifies the discovery result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique key that identifies the discovery result.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The type of the discovery result. It can be one of the following three types:
+         * NEW: A new sensitive column in the target database that is not in the sensitive data model.
+         * DELETED: A column that is present in the sensitive data model but has been deleted from the target database.
+         * MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryJobResult.DiscoveryType discoveryType;
 
+        /**
+         * The type of the discovery result. It can be one of the following three types:
+         * NEW: A new sensitive column in the target database that is not in the sensitive data model.
+         * DELETED: A column that is present in the sensitive data model but has been deleted from the target database.
+         * MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+         *
+         * @param discoveryType the value to set
+         * @return this builder
+         **/
         public Builder discoveryType(DiscoveryJobResult.DiscoveryType discoveryType) {
             this.discoveryType = discoveryType;
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-
+        /**
+         * The unique key that identifies the sensitive column represented by the discovery result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveColumnkey")
         private String sensitiveColumnkey;
 
+        /**
+         * The unique key that identifies the sensitive column represented by the discovery result.
+         * @param sensitiveColumnkey the value to set
+         * @return this builder
+         **/
         public Builder sensitiveColumnkey(String sensitiveColumnkey) {
             this.sensitiveColumnkey = sensitiveColumnkey;
             this.__explicitlySet__.add("sensitiveColumnkey");
             return this;
         }
-
+        /**
+         * The database schema that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * The database schema that contains the sensitive column.
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-
+        /**
+         * The database object that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * The database object that contains the sensitive column.
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * The name of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
+        /**
+         * The name of the sensitive column.
+         * @param columnName the value to set
+         * @return this builder
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-
+        /**
+         * The type of the database object that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
 
+        /**
+         * The type of the database object that contains the sensitive column.
+         * @param objectType the value to set
+         * @return this builder
+         **/
         public Builder objectType(ObjectType objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-
+        /**
+         * The data type of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * The data type of the sensitive column.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * The OCID of the sensitive type associated with the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
+        /**
+         * The OCID of the sensitive type associated with the sensitive column.
+         * @param sensitiveTypeId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
-
+        /**
+         * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
         private java.util.List<String> parentColumnKeys;
 
+        /**
+         * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
+         * @param parentColumnKeys the value to set
+         * @return this builder
+         **/
         public Builder parentColumnKeys(java.util.List<String> parentColumnKeys) {
             this.parentColumnKeys = parentColumnKeys;
             this.__explicitlySet__.add("parentColumnKeys");
             return this;
         }
-
+        /**
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
+         * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
+         * APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relationType")
         private RelationType relationType;
 
+        /**
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
+         * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
+         * APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+         *
+         * @param relationType the value to set
+         * @return this builder
+         **/
         public Builder relationType(RelationType relationType) {
             this.relationType = relationType;
             this.__explicitlySet__.add("relationType");
             return this;
         }
-
+        /**
+         * The estimated number of data values the column has in the associated database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedDataValueCount")
         private Long estimatedDataValueCount;
 
+        /**
+         * The estimated number of data values the column has in the associated database.
+         * @param estimatedDataValueCount the value to set
+         * @return this builder
+         **/
         public Builder estimatedDataValueCount(Long estimatedDataValueCount) {
             this.estimatedDataValueCount = estimatedDataValueCount;
             this.__explicitlySet__.add("estimatedDataValueCount");
             return this;
         }
-
+        /**
+         * Original data values collected for the sensitive column from the associated database. Sample data helps review
+         * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+         * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+         * value is collected per sensitive column.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleDataValues")
         private java.util.List<String> sampleDataValues;
 
+        /**
+         * Original data values collected for the sensitive column from the associated database. Sample data helps review
+         * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+         * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+         * value is collected per sensitive column.
+         *
+         * @param sampleDataValues the value to set
+         * @return this builder
+         **/
         public Builder sampleDataValues(java.util.List<String> sampleDataValues) {
             this.sampleDataValues = sampleDataValues;
             this.__explicitlySet__.add("sampleDataValues");
             return this;
         }
-
+        /**
+         * Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options:
+         * ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes.
+         * REJECT: To reject the discovery result so that it doesn't change the sensitive data model.
+         * INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs.
+         * After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plannedAction")
         private DiscoveryJobResult.PlannedAction plannedAction;
 
+        /**
+         * Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options:
+         * ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes.
+         * REJECT: To reject the discovery result so that it doesn't change the sensitive data model.
+         * INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs.
+         * After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
+         *
+         * @param plannedAction the value to set
+         * @return this builder
+         **/
         public Builder plannedAction(DiscoveryJobResult.PlannedAction plannedAction) {
             this.plannedAction = plannedAction;
             this.__explicitlySet__.add("plannedAction");
             return this;
         }
-
+        /**
+         * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults
+         * operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isResultApplied")
         private Boolean isResultApplied;
 
+        /**
+         * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults
+         * operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+         *
+         * @param isResultApplied the value to set
+         * @return this builder
+         **/
         public Builder isResultApplied(Boolean isResultApplied) {
             this.isResultApplied = isResultApplied;
             this.__explicitlySet__.add("isResultApplied");
@@ -275,6 +417,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique key that identifies the discovery result.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -289,6 +435,14 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryJobResult.DiscoveryType discoveryType;
 
+    /**
+     * The type of the discovery result. It can be one of the following three types:
+     * NEW: A new sensitive column in the target database that is not in the sensitive data model.
+     * DELETED: A column that is present in the sensitive data model but has been deleted from the target database.
+     * MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
+     *
+     * @return the value
+     **/
     public DiscoveryJobResult.DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
@@ -299,6 +453,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveColumnkey")
     private final String sensitiveColumnkey;
 
+    /**
+     * The unique key that identifies the sensitive column represented by the discovery result.
+     * @return the value
+     **/
     public String getSensitiveColumnkey() {
         return sensitiveColumnkey;
     }
@@ -309,6 +467,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * The database schema that contains the sensitive column.
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }
@@ -319,6 +481,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * The database object that contains the sensitive column.
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -329,6 +495,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
+    /**
+     * The name of the sensitive column.
+     * @return the value
+     **/
     public String getColumnName() {
         return columnName;
     }
@@ -387,6 +557,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final ObjectType objectType;
 
+    /**
+     * The type of the database object that contains the sensitive column.
+     * @return the value
+     **/
     public ObjectType getObjectType() {
         return objectType;
     }
@@ -397,6 +571,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * The data type of the sensitive column.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -407,6 +585,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
+    /**
+     * The OCID of the sensitive type associated with the sensitive column.
+     * @return the value
+     **/
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -417,6 +599,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
     private final java.util.List<String> parentColumnKeys;
 
+    /**
+     * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
+     * @return the value
+     **/
     public java.util.List<String> getParentColumnKeys() {
         return parentColumnKeys;
     }
@@ -482,6 +668,13 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("relationType")
     private final RelationType relationType;
 
+    /**
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
+     * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
+     * APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+     *
+     * @return the value
+     **/
     public RelationType getRelationType() {
         return relationType;
     }
@@ -492,6 +685,10 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedDataValueCount")
     private final Long estimatedDataValueCount;
 
+    /**
+     * The estimated number of data values the column has in the associated database.
+     * @return the value
+     **/
     public Long getEstimatedDataValueCount() {
         return estimatedDataValueCount;
     }
@@ -506,6 +703,14 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataValues")
     private final java.util.List<String> sampleDataValues;
 
+    /**
+     * Original data values collected for the sensitive column from the associated database. Sample data helps review
+     * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+     * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+     * value is collected per sensitive column.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getSampleDataValues() {
         return sampleDataValues;
     }
@@ -521,6 +726,15 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("plannedAction")
     private final DiscoveryJobResult.PlannedAction plannedAction;
 
+    /**
+     * Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options:
+     * ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes.
+     * REJECT: To reject the discovery result so that it doesn't change the sensitive data model.
+     * INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs.
+     * After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
+     *
+     * @return the value
+     **/
     public DiscoveryJobResult.PlannedAction getPlannedAction() {
         return plannedAction;
     }
@@ -533,6 +747,12 @@ public final class DiscoveryJobResultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isResultApplied")
     private final Boolean isResultApplied;
 
+    /**
+     * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults
+     * operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+     *
+     * @return the value
+     **/
     public Boolean getIsResultApplied() {
         return isResultApplied;
     }

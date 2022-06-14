@@ -21,6 +21,12 @@ public class UpdateGenericArtifactRequest
      */
     private String artifactId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+     * <p>
+     * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
+     *
+     */
     public String getArtifactId() {
         return artifactId;
     }
@@ -30,6 +36,9 @@ public class UpdateGenericArtifactRequest
     private com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
             updateGenericArtifactDetails;
 
+    /**
+     * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+     */
     public com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
             getUpdateGenericArtifactDetails() {
         return updateGenericArtifactDetails;
@@ -42,6 +51,12 @@ public class UpdateGenericArtifactRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +67,11 @@ public class UpdateGenericArtifactRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,6 +94,12 @@ public class UpdateGenericArtifactRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+         * <p>
+         * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
+         *
+         */
         private String artifactId = null;
 
         /**
@@ -81,6 +107,7 @@ public class UpdateGenericArtifactRequest
          * <p>
          * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          *
+         * @param artifactId the value to set
          * @return this builder instance
          */
         public Builder artifactId(String artifactId) {
@@ -88,11 +115,15 @@ public class UpdateGenericArtifactRequest
             return this;
         }
 
+        /**
+         * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+         */
         private com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
                 updateGenericArtifactDetails = null;
 
         /**
          * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+         * @param updateGenericArtifactDetails the value to set
          * @return this builder instance
          */
         public Builder updateGenericArtifactDetails(
@@ -102,6 +133,12 @@ public class UpdateGenericArtifactRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -109,6 +146,7 @@ public class UpdateGenericArtifactRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -116,12 +154,18 @@ public class UpdateGenericArtifactRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -214,7 +258,8 @@ public class UpdateGenericArtifactRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +269,10 @@ public class UpdateGenericArtifactRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

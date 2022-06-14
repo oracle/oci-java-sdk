@@ -35,10 +35,17 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
             this.__explicitlySet__.add("filter");
             return this;
         }
-
+        /**
+         * The OCID of the build pipeline to be triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
         private String buildPipelineId;
 
+        /**
+         * The OCID of the build pipeline to be triggered.
+         * @param buildPipelineId the value to set
+         * @return this builder
+         **/
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = buildPipelineId;
             this.__explicitlySet__.add("buildPipelineId");
@@ -87,6 +94,10 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     private final String buildPipelineId;
 
+    /**
+     * The OCID of the build pipeline to be triggered.
+     * @return the value
+     **/
     public String getBuildPipelineId() {
         return buildPipelineId;
     }

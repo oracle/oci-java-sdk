@@ -86,63 +86,171 @@ public final class CreateLoadBalancerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_load_balancer}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_load_balancer}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+         * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+         * operation.
+         * <p>
+         * Example: {@code 100Mbps}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+         * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+         * operation.
+         * <p>
+         * Example: {@code 100Mbps}
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The configuration details to create load balancer using Flexible shape. This is required only if shapeName is {@code Flexible}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
         private ShapeDetails shapeDetails;
 
+        /**
+         * The configuration details to create load balancer using Flexible shape. This is required only if shapeName is {@code Flexible}.
+         *
+         * @param shapeDetails the value to set
+         * @return this builder
+         **/
         public Builder shapeDetails(ShapeDetails shapeDetails) {
             this.shapeDetails = shapeDetails;
             this.__explicitlySet__.add("shapeDetails");
             return this;
         }
-
+        /**
+         * Whether the load balancer has a VCN-local (private) IP address.
+         * <p>
+         * If "true", the service assigns a private IP address to the load balancer.
+         * <p>
+         * If "false", the service assigns a public IP address to the load balancer.
+         * <p>
+         * A public load balancer is accessible from the internet, depending on your VCN's
+         * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
+         * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
+        /**
+         * Whether the load balancer has a VCN-local (private) IP address.
+         * <p>
+         * If "true", the service assigns a private IP address to the load balancer.
+         * <p>
+         * If "false", the service assigns a public IP address to the load balancer.
+         * <p>
+         * A public load balancer is accessible from the internet, depending on your VCN's
+         * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
+         * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isPrivate the value to set
+         * @return this builder
+         **/
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = isPrivate;
             this.__explicitlySet__.add("isPrivate");
             return this;
         }
-
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         * <p>
+         * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * <p>
+         * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * <p>
+         * Example: "ipMode":"IPV6"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
         private IpMode ipMode;
 
+        /**
+         * Whether the load balancer has an IPv4 or IPv6 IP address.
+         * <p>
+         * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * <p>
+         * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * <p>
+         * Example: "ipMode":"IPV6"
+         *
+         * @param ipMode the value to set
+         * @return this builder
+         **/
         public Builder ipMode(IpMode ipMode) {
             this.ipMode = ipMode;
             this.__explicitlySet__.add("ipMode");
             return this;
         }
-
+        /**
+         * An array of reserved Ips.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
         private java.util.List<ReservedIP> reservedIps;
 
+        /**
+         * An array of reserved Ips.
+         *
+         * @param reservedIps the value to set
+         * @return this builder
+         **/
         public Builder reservedIps(java.util.List<ReservedIP> reservedIps) {
             this.reservedIps = reservedIps;
             this.__explicitlySet__.add("reservedIps");
@@ -175,19 +283,57 @@ public final class CreateLoadBalancerDetails {
             this.__explicitlySet__.add("backendSets");
             return this;
         }
-
+        /**
+         * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of using NSGs with the load balancer include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
+         * <p>
+         * Example: {@code ["ocid1.nsg.oc1.phx.unique_ID"]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
+        /**
+         * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of using NSGs with the load balancer include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
+         * <p>
+         * Example: {@code ["ocid1.nsg.oc1.phx.unique_ID"]}
+         *
+         * @param networkSecurityGroupIds the value to set
+         * @return this builder
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
             return this;
         }
-
+        /**
+         * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
+        /**
+         * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param subnetIds the value to set
+         * @return this builder
+         **/
         public Builder subnetIds(java.util.List<String> subnetIds) {
             this.subnetIds = subnetIds;
             this.__explicitlySet__.add("subnetIds");
@@ -221,19 +367,49 @@ public final class CreateLoadBalancerDetails {
             this.__explicitlySet__.add("pathRouteSets");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -322,6 +498,10 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -336,6 +516,14 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_load_balancer}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -351,6 +539,15 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+     * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+     * operation.
+     * <p>
+     * Example: {@code 100Mbps}
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -362,6 +559,11 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
     private final ShapeDetails shapeDetails;
 
+    /**
+     * The configuration details to create load balancer using Flexible shape. This is required only if shapeName is {@code Flexible}.
+     *
+     * @return the value
+     **/
     public ShapeDetails getShapeDetails() {
         return shapeDetails;
     }
@@ -383,6 +585,21 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     private final Boolean isPrivate;
 
+    /**
+     * Whether the load balancer has a VCN-local (private) IP address.
+     * <p>
+     * If "true", the service assigns a private IP address to the load balancer.
+     * <p>
+     * If "false", the service assigns a public IP address to the load balancer.
+     * <p>
+     * A public load balancer is accessible from the internet, depending on your VCN's
+     * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
+     * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getIsPrivate() {
         return isPrivate;
     }
@@ -442,6 +659,17 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
     private final IpMode ipMode;
 
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: "ipMode":"IPV6"
+     *
+     * @return the value
+     **/
     public IpMode getIpMode() {
         return ipMode;
     }
@@ -453,6 +681,11 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
     private final java.util.List<ReservedIP> reservedIps;
 
+    /**
+     * An array of reserved Ips.
+     *
+     * @return the value
+     **/
     public java.util.List<ReservedIP> getReservedIps() {
         return reservedIps;
     }
@@ -496,6 +729,22 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
+    /**
+     * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of using NSGs with the load balancer include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
+     * <p>
+     * Example: {@code ["ocid1.nsg.oc1.phx.unique_ID"]}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
@@ -506,6 +755,10 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
+    /**
+     * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public java.util.List<String> getSubnetIds() {
         return subnetIds;
     }
@@ -541,6 +794,14 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -555,6 +816,14 @@ public final class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -47,54 +47,105 @@ public final class ModuleStreamProfile {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the module that contains the stream profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
+        /**
+         * The name of the module that contains the stream profile
+         * @param moduleName the value to set
+         * @return this builder
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-
+        /**
+         * The name of the stream that contains the profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
+        /**
+         * The name of the stream that contains the profile
+         * @param streamName the value to set
+         * @return this builder
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-
+        /**
+         * The name of the profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
+        /**
+         * The name of the profile
+         * @param profileName the value to set
+         * @return this builder
+         **/
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
             return this;
         }
-
+        /**
+         * Indicates if this profile is the default for its module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates if this profile is the default for its module stream.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * A description of the contents of the module stream profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the contents of the module stream profile
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A list of packages that constitute the profile.  Each element
+         * in the list is the name of a package.  The name is suitable to
+         * use as an argument to other OS Management APIs that interact
+         * directly with packages.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<String> packages;
 
+        /**
+         * A list of packages that constitute the profile.  Each element
+         * in the list is the name of a package.  The name is suitable to
+         * use as an argument to other OS Management APIs that interact
+         * directly with packages.
+         *
+         * @param packages the value to set
+         * @return this builder
+         **/
         public Builder packages(java.util.List<String> packages) {
             this.packages = packages;
             this.__explicitlySet__.add("packages");
@@ -144,6 +195,10 @@ public final class ModuleStreamProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
+    /**
+     * The name of the module that contains the stream profile
+     * @return the value
+     **/
     public String getModuleName() {
         return moduleName;
     }
@@ -154,6 +209,10 @@ public final class ModuleStreamProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
+    /**
+     * The name of the stream that contains the profile
+     * @return the value
+     **/
     public String getStreamName() {
         return streamName;
     }
@@ -164,6 +223,10 @@ public final class ModuleStreamProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
+    /**
+     * The name of the profile
+     * @return the value
+     **/
     public String getProfileName() {
         return profileName;
     }
@@ -174,6 +237,10 @@ public final class ModuleStreamProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates if this profile is the default for its module stream.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -184,6 +251,10 @@ public final class ModuleStreamProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the contents of the module stream profile
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -198,6 +269,14 @@ public final class ModuleStreamProfile {
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<String> packages;
 
+    /**
+     * A list of packages that constitute the profile.  Each element
+     * in the list is the name of a package.  The name is suitable to
+     * use as an argument to other OS Management APIs that interact
+     * directly with packages.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPackages() {
         return packages;
     }

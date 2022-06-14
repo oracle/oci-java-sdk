@@ -16,6 +16,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String resourceName;
 
+    /**
+     * A filter to return only resources that match the given ResourceName.
+     */
     public String getResourceName() {
         return resourceName;
     }
@@ -32,6 +38,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String resourceType;
 
+    /**
+     * A filter to return only lists of resources that match the entire given service type.
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -40,6 +49,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
+     */
     public com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates
             getLifecycleState() {
         return lifecycleState;
@@ -52,6 +64,12 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private java.util.Date timeStart;
 
+    /**
+     * Query start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     *
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -63,6 +81,12 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private java.util.Date timeEnd;
 
+    /**
+     * Query start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     *
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -71,6 +95,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -79,6 +106,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -87,6 +117,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.operatoraccesscontrol.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -133,6 +166,10 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -141,6 +178,9 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -152,10 +192,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -163,10 +207,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given ResourceName.
+         */
         private String resourceName = null;
 
         /**
          * A filter to return only resources that match the given ResourceName.
+         * @param resourceName the value to set
          * @return this builder instance
          */
         public Builder resourceName(String resourceName) {
@@ -174,10 +222,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only lists of resources that match the entire given service type.
+         */
         private String resourceType = null;
 
         /**
          * A filter to return only lists of resources that match the entire given service type.
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -185,11 +237,15 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
+         */
         private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates
                 lifecycleState = null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -199,6 +255,12 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Query start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         *
+         */
         private java.util.Date timeStart = null;
 
         /**
@@ -206,6 +268,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
          * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          *
+         * @param timeStart the value to set
          * @return this builder instance
          */
         public Builder timeStart(java.util.Date timeStart) {
@@ -213,6 +276,12 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Query start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         *
+         */
         private java.util.Date timeEnd = null;
 
         /**
@@ -220,6 +289,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
          * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          *
+         * @param timeEnd the value to set
          * @return this builder instance
          */
         public Builder timeEnd(java.util.Date timeEnd) {
@@ -227,10 +297,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -238,10 +312,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -249,10 +327,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.operatoraccesscontrol.model.SortOrders sortOrder) {
@@ -260,11 +342,16 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -272,10 +359,14 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -371,7 +462,8 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -388,6 +480,10 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

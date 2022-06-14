@@ -19,6 +19,9 @@ public class CreateTransferApplianceEntitlementRequest
     private com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails
             createTransferApplianceEntitlementDetails;
 
+    /**
+     * Creates a Transfer Appliance Entitlement
+     */
     public com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails
             getCreateTransferApplianceEntitlementDetails() {
         return createTransferApplianceEntitlementDetails;
@@ -33,6 +36,14 @@ public class CreateTransferApplianceEntitlementRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -43,6 +54,11 @@ public class CreateTransferApplianceEntitlementRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,11 +81,15 @@ public class CreateTransferApplianceEntitlementRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Creates a Transfer Appliance Entitlement
+         */
         private com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails
                 createTransferApplianceEntitlementDetails = null;
 
         /**
          * Creates a Transfer Appliance Entitlement
+         * @param createTransferApplianceEntitlementDetails the value to set
          * @return this builder instance
          */
         public Builder createTransferApplianceEntitlementDetails(
@@ -80,6 +100,14 @@ public class CreateTransferApplianceEntitlementRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -89,6 +117,7 @@ public class CreateTransferApplianceEntitlementRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -96,12 +125,18 @@ public class CreateTransferApplianceEntitlementRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -196,7 +231,8 @@ public class CreateTransferApplianceEntitlementRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -206,6 +242,10 @@ public class CreateTransferApplianceEntitlementRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

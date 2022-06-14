@@ -32,36 +32,65 @@ public final class ConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the listener host that will be used to create the connect string to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * Name of the listener host that will be used to create the connect string to the database.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * Protocol used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Protocol used for connection requests.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Listener port number used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Listener port number used for connection requests.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Database service name used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * Database service name used for connection requests.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -108,6 +137,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * Name of the listener host that will be used to create the connect string to the database.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -166,6 +199,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Protocol used for connection requests.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -176,6 +213,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Listener port number used for connection requests.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -186,6 +227,10 @@ public final class ConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * Database service name used for connection requests.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

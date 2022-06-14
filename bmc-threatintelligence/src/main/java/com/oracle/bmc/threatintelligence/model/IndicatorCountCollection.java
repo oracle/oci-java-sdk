@@ -29,9 +29,17 @@ public final class IndicatorCountCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of aggregated indicator counts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<IndicatorCountSummary> items;
 
+        /**
+         * The list of aggregated indicator counts.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<IndicatorCountSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class IndicatorCountCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<IndicatorCountSummary> items;
 
+    /**
+     * The list of aggregated indicator counts.
+     * @return the value
+     **/
     public java.util.List<IndicatorCountSummary> getItems() {
         return items;
     }

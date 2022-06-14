@@ -16,6 +16,9 @@ public class GetReportDefinitionRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String reportDefinitionId;
 
+    /**
+     * Unique report definition identifier
+     */
     public String getReportDefinitionId() {
         return reportDefinitionId;
     }
@@ -24,6 +27,9 @@ public class GetReportDefinitionRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetReportDefinitionRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique report definition identifier
+         */
         private String reportDefinitionId = null;
 
         /**
          * Unique report definition identifier
+         * @param reportDefinitionId the value to set
          * @return this builder instance
          */
         public Builder reportDefinitionId(String reportDefinitionId) {
@@ -46,10 +56,14 @@ public class GetReportDefinitionRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetReportDefinitionRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().reportDefinitionId(reportDefinitionId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

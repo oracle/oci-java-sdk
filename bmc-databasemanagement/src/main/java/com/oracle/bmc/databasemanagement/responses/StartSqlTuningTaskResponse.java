@@ -15,6 +15,12 @@ public class StartSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class StartSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn;
 
+    /**
+     * The returned SqlTuningTaskReturn instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn getSqlTuningTaskReturn() {
         return sqlTuningTaskReturn;
     }
@@ -46,15 +56,35 @@ public class StartSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SqlTuningTaskReturn instance.
+         */
         private com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn;
 
+        /**
+         * The returned SqlTuningTaskReturn instance.
+         * @param sqlTuningTaskReturn the value to set
+         * @return this builder
+         */
         public Builder sqlTuningTaskReturn(
                 com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn) {
             this.sqlTuningTaskReturn = sqlTuningTaskReturn;
@@ -73,12 +103,20 @@ public class StartSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public StartSqlTuningTaskResponse build() {
             return new StartSqlTuningTaskResponse(
                     __httpStatusCode__, opcRequestId, sqlTuningTaskReturn);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

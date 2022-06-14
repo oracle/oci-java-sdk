@@ -15,6 +15,12 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
+    /**
+     * The returned ExadataIormConfig instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.ExadataIormConfig getExadataIormConfig() {
         return exadataIormConfig;
     }
@@ -46,15 +56,35 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ExadataIormConfig instance.
+         */
         private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
+        /**
+         * The returned ExadataIormConfig instance.
+         * @param exadataIormConfig the value to set
+         * @return this builder
+         */
         public Builder exadataIormConfig(
                 com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig) {
             this.exadataIormConfig = exadataIormConfig;
@@ -73,12 +103,20 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetExadataIormConfigResponse build() {
             return new GetExadataIormConfigResponse(
                     __httpStatusCode__, opcRequestId, exadataIormConfig);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

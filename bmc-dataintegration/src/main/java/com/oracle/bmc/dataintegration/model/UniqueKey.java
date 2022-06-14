@@ -64,6 +64,10 @@ public class UniqueKey {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -74,6 +78,10 @@ public class UniqueKey {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -91,6 +99,10 @@ public class UniqueKey {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -101,6 +113,10 @@ public class UniqueKey {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeRefs")
     private final java.util.List<KeyAttribute> attributeRefs;
 
+    /**
+     * An array of attribute references.
+     * @return the value
+     **/
     public java.util.List<KeyAttribute> getAttributeRefs() {
         return attributeRefs;
     }
@@ -111,6 +127,10 @@ public class UniqueKey {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }

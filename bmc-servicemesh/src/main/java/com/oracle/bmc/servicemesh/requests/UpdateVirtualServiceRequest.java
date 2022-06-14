@@ -18,6 +18,9 @@ public class UpdateVirtualServiceRequest
      */
     private String virtualServiceId;
 
+    /**
+     * Unique VirtualService identifier.
+     */
     public String getVirtualServiceId() {
         return virtualServiceId;
     }
@@ -27,6 +30,9 @@ public class UpdateVirtualServiceRequest
     private com.oracle.bmc.servicemesh.model.UpdateVirtualServiceDetails
             updateVirtualServiceDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.servicemesh.model.UpdateVirtualServiceDetails
             getUpdateVirtualServiceDetails() {
         return updateVirtualServiceDetails;
@@ -41,6 +47,14 @@ public class UpdateVirtualServiceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -54,6 +68,14 @@ public class UpdateVirtualServiceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,6 +84,9 @@ public class UpdateVirtualServiceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -84,10 +109,14 @@ public class UpdateVirtualServiceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique VirtualService identifier.
+         */
         private String virtualServiceId = null;
 
         /**
          * Unique VirtualService identifier.
+         * @param virtualServiceId the value to set
          * @return this builder instance
          */
         public Builder virtualServiceId(String virtualServiceId) {
@@ -95,11 +124,15 @@ public class UpdateVirtualServiceRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.servicemesh.model.UpdateVirtualServiceDetails
                 updateVirtualServiceDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateVirtualServiceDetails the value to set
          * @return this builder instance
          */
         public Builder updateVirtualServiceDetails(
@@ -109,6 +142,14 @@ public class UpdateVirtualServiceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +159,7 @@ public class UpdateVirtualServiceRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,6 +167,14 @@ public class UpdateVirtualServiceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -134,6 +184,7 @@ public class UpdateVirtualServiceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -141,10 +192,14 @@ public class UpdateVirtualServiceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -239,7 +294,8 @@ public class UpdateVirtualServiceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -250,6 +306,10 @@ public class UpdateVirtualServiceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

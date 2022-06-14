@@ -44,45 +44,91 @@ public final class SdkLanguageTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the programming language.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the programming language.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Display name of the target programming language.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the target programming language.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Version string of the programming language defined in name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version string of the programming language defined in name.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Additional details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Additional details.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * List of optional configurations that can be used while generating SDK for the given target language.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<SdkLanguageOptionalParameters> parameters;
 
+        /**
+         * List of optional configurations that can be used while generating SDK for the given target language.
+         *
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<SdkLanguageOptionalParameters> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -131,6 +177,11 @@ public final class SdkLanguageTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the programming language.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -142,6 +193,11 @@ public final class SdkLanguageTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the target programming language.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -153,6 +209,11 @@ public final class SdkLanguageTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version string of the programming language defined in name.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -164,6 +225,11 @@ public final class SdkLanguageTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Additional details.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -175,6 +241,11 @@ public final class SdkLanguageTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<SdkLanguageOptionalParameters> parameters;
 
+    /**
+     * List of optional configurations that can be used while generating SDK for the given target language.
+     *
+     * @return the value
+     **/
     public java.util.List<SdkLanguageOptionalParameters> getParameters() {
         return parameters;
     }

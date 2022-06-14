@@ -15,6 +15,12 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
+    /**
+     * The returned EntityCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.datacatalog.model.EntityCollection getEntityCollection() {
         return entityCollection;
     }
@@ -46,15 +56,35 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned EntityCollection instance.
+         */
         private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
+        /**
+         * The returned EntityCollection instance.
+         * @param entityCollection the value to set
+         * @return this builder
+         */
         public Builder entityCollection(
                 com.oracle.bmc.datacatalog.model.EntityCollection entityCollection) {
             this.entityCollection = entityCollection;
@@ -73,12 +103,20 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListDerivedLogicalEntitiesResponse build() {
             return new ListDerivedLogicalEntitiesResponse(
                     __httpStatusCode__, opcRequestId, entityCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

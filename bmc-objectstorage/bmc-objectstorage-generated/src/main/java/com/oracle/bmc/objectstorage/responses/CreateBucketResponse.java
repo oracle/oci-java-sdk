@@ -13,6 +13,10 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    /**
+     * The entity tag (ETag) for the bucket that was created.
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -42,6 +56,10 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String location;
 
+    /**
+     * The full path to the bucket that was created.
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -51,6 +69,10 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
+    /**
+     * The returned Bucket instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.Bucket getBucket() {
         return bucket;
     }
@@ -86,36 +108,80 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The entity tag (ETag) for the bucket that was created.
+         */
         private String eTag;
 
+        /**
+         * The entity tag (ETag) for the bucket that was created.
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The full path to the bucket that was created.
+         */
         private String location;
 
+        /**
+         * The full path to the bucket that was created.
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned Bucket instance.
+         */
         private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
+        /**
+         * The returned Bucket instance.
+         * @param bucket the value to set
+         * @return this builder
+         */
         public Builder bucket(com.oracle.bmc.objectstorage.model.Bucket bucket) {
             this.bucket = bucket;
             return this;
@@ -136,12 +202,20 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateBucketResponse build() {
             return new CreateBucketResponse(
                     __httpStatusCode__, opcClientRequestId, opcRequestId, eTag, location, bucket);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

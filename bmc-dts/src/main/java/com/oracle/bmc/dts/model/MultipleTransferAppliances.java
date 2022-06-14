@@ -30,9 +30,17 @@ public final class MultipleTransferAppliances {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of TransferAppliance summary's
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transferApplianceObjects")
         private java.util.List<TransferApplianceSummary> transferApplianceObjects;
 
+        /**
+         * List of TransferAppliance summary's
+         * @param transferApplianceObjects the value to set
+         * @return this builder
+         **/
         public Builder transferApplianceObjects(
                 java.util.List<TransferApplianceSummary> transferApplianceObjects) {
             this.transferApplianceObjects = transferApplianceObjects;
@@ -76,6 +84,10 @@ public final class MultipleTransferAppliances {
     @com.fasterxml.jackson.annotation.JsonProperty("transferApplianceObjects")
     private final java.util.List<TransferApplianceSummary> transferApplianceObjects;
 
+    /**
+     * List of TransferAppliance summary's
+     * @return the value
+     **/
     public java.util.List<TransferApplianceSummary> getTransferApplianceObjects() {
         return transferApplianceObjects;
     }

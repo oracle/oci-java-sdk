@@ -18,6 +18,9 @@ public class ChangeNotebookSessionCompartmentRequest
      */
     private String notebookSessionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+     */
     public String getNotebookSessionId() {
         return notebookSessionId;
     }
@@ -27,6 +30,9 @@ public class ChangeNotebookSessionCompartmentRequest
     private com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails
             changeNotebookSessionCompartmentDetails;
 
+    /**
+     * Details for changing the compartment of a notebook session.
+     */
     public com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails
             getChangeNotebookSessionCompartmentDetails() {
         return changeNotebookSessionCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeNotebookSessionCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,10 @@ public class ChangeNotebookSessionCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,6 +77,10 @@ public class ChangeNotebookSessionCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -81,10 +103,14 @@ public class ChangeNotebookSessionCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+         */
         private String notebookSessionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+         * @param notebookSessionId the value to set
          * @return this builder instance
          */
         public Builder notebookSessionId(String notebookSessionId) {
@@ -92,11 +118,15 @@ public class ChangeNotebookSessionCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for changing the compartment of a notebook session.
+         */
         private com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails
                 changeNotebookSessionCompartmentDetails = null;
 
         /**
          * Details for changing the compartment of a notebook session.
+         * @param changeNotebookSessionCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeNotebookSessionCompartmentDetails(
@@ -106,6 +136,14 @@ public class ChangeNotebookSessionCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -115,6 +153,7 @@ public class ChangeNotebookSessionCompartmentRequest
          * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -122,11 +161,16 @@ public class ChangeNotebookSessionCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -134,11 +178,16 @@ public class ChangeNotebookSessionCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -236,7 +285,8 @@ public class ChangeNotebookSessionCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -247,6 +297,10 @@ public class ChangeNotebookSessionCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

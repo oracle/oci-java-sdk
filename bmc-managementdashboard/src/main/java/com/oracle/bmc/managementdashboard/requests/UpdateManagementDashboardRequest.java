@@ -18,6 +18,9 @@ public class UpdateManagementDashboardRequest
      */
     private String managementDashboardId;
 
+    /**
+     * A unique dashboard identifier.
+     */
     public String getManagementDashboardId() {
         return managementDashboardId;
     }
@@ -27,6 +30,9 @@ public class UpdateManagementDashboardRequest
     private com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails
             updateManagementDashboardDetails;
 
+    /**
+     * JSON metadata for changed dashboard properties.
+     */
     public com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails
             getUpdateManagementDashboardDetails() {
         return updateManagementDashboardDetails;
@@ -41,6 +47,14 @@ public class UpdateManagementDashboardRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -54,6 +68,14 @@ public class UpdateManagementDashboardRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,6 +84,9 @@ public class UpdateManagementDashboardRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -84,10 +109,14 @@ public class UpdateManagementDashboardRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique dashboard identifier.
+         */
         private String managementDashboardId = null;
 
         /**
          * A unique dashboard identifier.
+         * @param managementDashboardId the value to set
          * @return this builder instance
          */
         public Builder managementDashboardId(String managementDashboardId) {
@@ -95,11 +124,15 @@ public class UpdateManagementDashboardRequest
             return this;
         }
 
+        /**
+         * JSON metadata for changed dashboard properties.
+         */
         private com.oracle.bmc.managementdashboard.model.UpdateManagementDashboardDetails
                 updateManagementDashboardDetails = null;
 
         /**
          * JSON metadata for changed dashboard properties.
+         * @param updateManagementDashboardDetails the value to set
          * @return this builder instance
          */
         public Builder updateManagementDashboardDetails(
@@ -109,6 +142,14 @@ public class UpdateManagementDashboardRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +159,7 @@ public class UpdateManagementDashboardRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,6 +167,14 @@ public class UpdateManagementDashboardRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -134,6 +184,7 @@ public class UpdateManagementDashboardRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -141,10 +192,14 @@ public class UpdateManagementDashboardRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -240,7 +295,8 @@ public class UpdateManagementDashboardRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -251,6 +307,10 @@ public class UpdateManagementDashboardRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -72,128 +72,263 @@ public final class ConnectionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the resource
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the resource
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * OCID of the compartment
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Database connection type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseConnectionTypes databaseType;
 
+        /**
+         * Database connection type.
+         *
+         * @param databaseType the value to set
+         * @return this builder
+         **/
         public Builder databaseType(DatabaseConnectionTypes databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-
+        /**
+         * Database manual connection subtype. This value can only be specified for manual connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
         private DatabaseManualConnectionSubTypes manualDatabaseSubType;
 
+        /**
+         * Database manual connection subtype. This value can only be specified for manual connections.
+         *
+         * @param manualDatabaseSubType the value to set
+         * @return this builder
+         **/
         public Builder manualDatabaseSubType(
                 DatabaseManualConnectionSubTypes manualDatabaseSubType) {
             this.manualDatabaseSubType = manualDatabaseSubType;
             this.__explicitlySet__.add("manualDatabaseSubType");
             return this;
         }
-
+        /**
+         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
+        /**
+         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+         *
+         * @param isDedicated the value to set
+         * @return this builder
+         **/
         public Builder isDedicated(Boolean isDedicated) {
             this.isDedicated = isDedicated;
             this.__explicitlySet__.add("isDedicated");
             return this;
         }
-
+        /**
+         * Database Connection display name identifier.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Database Connection display name identifier.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the cloud database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The OCID of the cloud database.
+         *
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * The time the Connection resource was created. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the Connection resource was created. An RFC3339 formatted datetime string.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the Connection resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
+        /**
+         * The current state of the Connection resource.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information
+         * for a resource in Failed state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information
+         * for a resource in Failed state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -265,6 +400,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the resource
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -276,6 +416,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -287,6 +432,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseConnectionTypes databaseType;
 
+    /**
+     * Database connection type.
+     *
+     * @return the value
+     **/
     public DatabaseConnectionTypes getDatabaseType() {
         return databaseType;
     }
@@ -298,6 +448,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
     private final DatabaseManualConnectionSubTypes manualDatabaseSubType;
 
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     *
+     * @return the value
+     **/
     public DatabaseManualConnectionSubTypes getManualDatabaseSubType() {
         return manualDatabaseSubType;
     }
@@ -309,6 +464,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
     private final Boolean isDedicated;
 
+    /**
+     * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+     *
+     * @return the value
+     **/
     public Boolean getIsDedicated() {
         return isDedicated;
     }
@@ -320,6 +480,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Database Connection display name identifier.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -331,6 +496,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The OCID of the cloud database.
+     *
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -342,6 +512,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the Connection resource was created. An RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -353,6 +528,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -364,6 +544,11 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
+    /**
+     * The current state of the Connection resource.
+     *
+     * @return the value
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -376,6 +561,12 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -388,6 +579,12 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -400,6 +597,12 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -412,6 +615,12 @@ public final class ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

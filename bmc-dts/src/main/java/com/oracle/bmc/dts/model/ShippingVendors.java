@@ -27,9 +27,17 @@ public final class ShippingVendors {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of available shipping vendors for package delivery
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendors")
         private java.util.List<String> vendors;
 
+        /**
+         * List of available shipping vendors for package delivery
+         * @param vendors the value to set
+         * @return this builder
+         **/
         public Builder vendors(java.util.List<String> vendors) {
             this.vendors = vendors;
             this.__explicitlySet__.add("vendors");
@@ -71,6 +79,10 @@ public final class ShippingVendors {
     @com.fasterxml.jackson.annotation.JsonProperty("vendors")
     private final java.util.List<String> vendors;
 
+    /**
+     * List of available shipping vendors for package delivery
+     * @return the value
+     **/
     public java.util.List<String> getVendors() {
         return vendors;
     }

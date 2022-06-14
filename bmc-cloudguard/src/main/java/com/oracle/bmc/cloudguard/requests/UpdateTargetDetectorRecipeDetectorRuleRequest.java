@@ -18,6 +18,9 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
      */
     private String targetId;
 
+    /**
+     * OCID of target
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -26,6 +29,9 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
      */
     private String targetDetectorRecipeId;
 
+    /**
+     * OCID of TargetDetectorRecipe
+     */
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
@@ -34,6 +40,9 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
      */
     private String detectorRuleId;
 
+    /**
+     * The id of DetectorRule
+     */
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
@@ -43,6 +52,9 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
     private com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails
             updateTargetDetectorRecipeDetectorRuleDetails;
 
+    /**
+     * The details to be updated for DetectorRule.
+     */
     public com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails
             getUpdateTargetDetectorRecipeDetectorRuleDetails() {
         return updateTargetDetectorRecipeDetectorRuleDetails;
@@ -57,6 +69,14 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -65,6 +85,9 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -88,10 +111,14 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of target
+         */
         private String targetId = null;
 
         /**
          * OCID of target
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -99,10 +126,14 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
+        /**
+         * OCID of TargetDetectorRecipe
+         */
         private String targetDetectorRecipeId = null;
 
         /**
          * OCID of TargetDetectorRecipe
+         * @param targetDetectorRecipeId the value to set
          * @return this builder instance
          */
         public Builder targetDetectorRecipeId(String targetDetectorRecipeId) {
@@ -110,10 +141,14 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
+        /**
+         * The id of DetectorRule
+         */
         private String detectorRuleId = null;
 
         /**
          * The id of DetectorRule
+         * @param detectorRuleId the value to set
          * @return this builder instance
          */
         public Builder detectorRuleId(String detectorRuleId) {
@@ -121,11 +156,15 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
+        /**
+         * The details to be updated for DetectorRule.
+         */
         private com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails
                 updateTargetDetectorRecipeDetectorRuleDetails = null;
 
         /**
          * The details to be updated for DetectorRule.
+         * @param updateTargetDetectorRecipeDetectorRuleDetails the value to set
          * @return this builder instance
          */
         public Builder updateTargetDetectorRecipeDetectorRuleDetails(
@@ -136,6 +175,14 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -145,6 +192,7 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -152,10 +200,14 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -258,7 +310,8 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -271,6 +324,10 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

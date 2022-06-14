@@ -38,27 +38,49 @@ public final class ResourcePrincipalSessionTokenRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource principal token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
         private String resourcePrincipalToken;
 
+        /**
+         * The resource principal token.
+         * @param resourcePrincipalToken the value to set
+         * @return this builder
+         **/
         public Builder resourcePrincipalToken(String resourcePrincipalToken) {
             this.resourcePrincipalToken = resourcePrincipalToken;
             this.__explicitlySet__.add("resourcePrincipalToken");
             return this;
         }
-
+        /**
+         * The service principal session token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
         private String servicePrincipalSessionToken;
 
+        /**
+         * The service principal session token.
+         * @param servicePrincipalSessionToken the value to set
+         * @return this builder
+         **/
         public Builder servicePrincipalSessionToken(String servicePrincipalSessionToken) {
             this.servicePrincipalSessionToken = servicePrincipalSessionToken;
             this.__explicitlySet__.add("servicePrincipalSessionToken");
             return this;
         }
-
+        /**
+         * The session public key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionPublicKey")
         private String sessionPublicKey;
 
+        /**
+         * The session public key.
+         * @param sessionPublicKey the value to set
+         * @return this builder
+         **/
         public Builder sessionPublicKey(String sessionPublicKey) {
             this.sessionPublicKey = sessionPublicKey;
             this.__explicitlySet__.add("sessionPublicKey");
@@ -105,6 +127,10 @@ public final class ResourcePrincipalSessionTokenRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
     private final String resourcePrincipalToken;
 
+    /**
+     * The resource principal token.
+     * @return the value
+     **/
     public String getResourcePrincipalToken() {
         return resourcePrincipalToken;
     }
@@ -115,6 +141,10 @@ public final class ResourcePrincipalSessionTokenRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
     private final String servicePrincipalSessionToken;
 
+    /**
+     * The service principal session token.
+     * @return the value
+     **/
     public String getServicePrincipalSessionToken() {
         return servicePrincipalSessionToken;
     }
@@ -125,6 +155,10 @@ public final class ResourcePrincipalSessionTokenRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("sessionPublicKey")
     private final String sessionPublicKey;
 
+    /**
+     * The session public key.
+     * @return the value
+     **/
     public String getSessionPublicKey() {
         return sessionPublicKey;
     }

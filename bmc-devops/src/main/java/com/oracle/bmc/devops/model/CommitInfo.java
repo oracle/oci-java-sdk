@@ -29,27 +29,49 @@ public final class CommitInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Repository URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
+        /**
+         * Repository URL.
+         * @param repositoryUrl the value to set
+         * @return this builder
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-
+        /**
+         * Name of the repository branch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryBranch")
         private String repositoryBranch;
 
+        /**
+         * Name of the repository branch.
+         * @param repositoryBranch the value to set
+         * @return this builder
+         **/
         public Builder repositoryBranch(String repositoryBranch) {
             this.repositoryBranch = repositoryBranch;
             this.__explicitlySet__.add("repositoryBranch");
             return this;
         }
-
+        /**
+         * Commit hash pertinent to the repository URL and the specified branch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitHash")
         private String commitHash;
 
+        /**
+         * Commit hash pertinent to the repository URL and the specified branch.
+         * @param commitHash the value to set
+         * @return this builder
+         **/
         public Builder commitHash(String commitHash) {
             this.commitHash = commitHash;
             this.__explicitlySet__.add("commitHash");
@@ -94,6 +116,10 @@ public final class CommitInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
+    /**
+     * Repository URL.
+     * @return the value
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
@@ -104,6 +130,10 @@ public final class CommitInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryBranch")
     private final String repositoryBranch;
 
+    /**
+     * Name of the repository branch.
+     * @return the value
+     **/
     public String getRepositoryBranch() {
         return repositoryBranch;
     }
@@ -114,6 +144,10 @@ public final class CommitInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("commitHash")
     private final String commitHash;
 
+    /**
+     * Commit hash pertinent to the repository URL and the specified branch.
+     * @return the value
+     **/
     public String getCommitHash() {
         return commitHash;
     }

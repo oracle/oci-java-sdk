@@ -81,163 +81,306 @@ public final class JreUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The internal identifier of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The internal identifier of the Java Runtime.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+         * @param fleetId the value to set
+         * @return this builder
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+         * @param managedInstanceId the value to set
+         * @return this builder
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
-
+        /**
+         * The security status of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
         private JreSecurityStatus securityStatus;
 
+        /**
+         * The security status of the Java Runtime.
+         * @param securityStatus the value to set
+         * @return this builder
+         **/
         public Builder securityStatus(JreSecurityStatus securityStatus) {
             this.securityStatus = securityStatus;
             this.__explicitlySet__.add("securityStatus");
             return this;
         }
-
+        /**
+         * The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
         private java.util.Date releaseDate;
 
+        /**
+         * The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param releaseDate the value to set
+         * @return this builder
+         **/
         public Builder releaseDate(java.util.Date releaseDate) {
             this.releaseDate = releaseDate;
             this.__explicitlySet__.add("releaseDate");
             return this;
         }
-
+        /**
+         * The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endOfSupportLifeDate")
         private java.util.Date endOfSupportLifeDate;
 
+        /**
+         * The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param endOfSupportLifeDate the value to set
+         * @return this builder
+         **/
         public Builder endOfSupportLifeDate(java.util.Date endOfSupportLifeDate) {
             this.endOfSupportLifeDate = endOfSupportLifeDate;
             this.__explicitlySet__.add("endOfSupportLifeDate");
             return this;
         }
-
+        /**
+         * The vendor of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
+        /**
+         * The vendor of the Java Runtime.
+         * @param vendor the value to set
+         * @return this builder
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-
+        /**
+         * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("distribution")
         private String distribution;
 
+        /**
+         * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+         * @param distribution the value to set
+         * @return this builder
+         **/
         public Builder distribution(String distribution) {
             this.distribution = distribution;
             this.__explicitlySet__.add("distribution");
             return this;
         }
-
+        /**
+         * The version of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the Java Runtime.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The operating systems that have this Java Runtime installed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
         private java.util.List<OperatingSystem> operatingSystems;
 
+        /**
+         * The operating systems that have this Java Runtime installed.
+         * @param operatingSystems the value to set
+         * @return this builder
+         **/
         public Builder operatingSystems(java.util.List<OperatingSystem> operatingSystems) {
             this.operatingSystems = operatingSystems;
             this.__explicitlySet__.add("operatingSystems");
             return this;
         }
-
+        /**
+         * The approximate count of installations that are installations of this Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
         private Integer approximateInstallationCount;
 
+        /**
+         * The approximate count of installations that are installations of this Java Runtime.
+         * @param approximateInstallationCount the value to set
+         * @return this builder
+         **/
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
             this.approximateInstallationCount = approximateInstallationCount;
             this.__explicitlySet__.add("approximateInstallationCount");
             return this;
         }
-
+        /**
+         * The approximate count of the applications running on this Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
         private Integer approximateApplicationCount;
 
+        /**
+         * The approximate count of the applications running on this Java Runtime.
+         * @param approximateApplicationCount the value to set
+         * @return this builder
+         **/
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
             this.approximateApplicationCount = approximateApplicationCount;
             this.__explicitlySet__.add("approximateApplicationCount");
             return this;
         }
-
+        /**
+         * The approximate count of the managed instances that report this Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
         private Integer approximateManagedInstanceCount;
 
+        /**
+         * The approximate count of the managed instances that report this Java Runtime.
+         * @param approximateManagedInstanceCount the value to set
+         * @return this builder
+         **/
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
             this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             this.__explicitlySet__.add("approximateManagedInstanceCount");
             return this;
         }
-
+        /**
+         * The approximate count of work requests working on this Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximatePendingWorkRequestCount")
         private Integer approximatePendingWorkRequestCount;
 
+        /**
+         * The approximate count of work requests working on this Java Runtime.
+         * @param approximatePendingWorkRequestCount the value to set
+         * @return this builder
+         **/
         public Builder approximatePendingWorkRequestCount(
                 Integer approximatePendingWorkRequestCount) {
             this.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
             this.__explicitlySet__.add("approximatePendingWorkRequestCount");
             return this;
         }
-
+        /**
+         * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
+        /**
+         * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * The date and time the resource was _first_ reported to JMS.
+         * This is potentially _before_ the specified time period provided by the filters.
+         * For example, a resource can be first reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
         private java.util.Date timeFirstSeen;
 
+        /**
+         * The date and time the resource was _first_ reported to JMS.
+         * This is potentially _before_ the specified time period provided by the filters.
+         * For example, a resource can be first reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         * @param timeFirstSeen the value to set
+         * @return this builder
+         **/
         public Builder timeFirstSeen(java.util.Date timeFirstSeen) {
             this.timeFirstSeen = timeFirstSeen;
             this.__explicitlySet__.add("timeFirstSeen");
             return this;
         }
-
+        /**
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
+        /**
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         * @param timeLastSeen the value to set
+         * @return this builder
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -317,6 +460,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The internal identifier of the Java Runtime.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -327,6 +474,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+     * @return the value
+     **/
     public String getFleetId() {
         return fleetId;
     }
@@ -337,6 +488,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+     * @return the value
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -347,6 +502,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
     private final JreSecurityStatus securityStatus;
 
+    /**
+     * The security status of the Java Runtime.
+     * @return the value
+     **/
     public JreSecurityStatus getSecurityStatus() {
         return securityStatus;
     }
@@ -357,6 +516,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
     private final java.util.Date releaseDate;
 
+    /**
+     * The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return the value
+     **/
     public java.util.Date getReleaseDate() {
         return releaseDate;
     }
@@ -367,6 +530,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("endOfSupportLifeDate")
     private final java.util.Date endOfSupportLifeDate;
 
+    /**
+     * The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return the value
+     **/
     public java.util.Date getEndOfSupportLifeDate() {
         return endOfSupportLifeDate;
     }
@@ -377,6 +544,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
+    /**
+     * The vendor of the Java Runtime.
+     * @return the value
+     **/
     public String getVendor() {
         return vendor;
     }
@@ -387,6 +558,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     private final String distribution;
 
+    /**
+     * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
+     * @return the value
+     **/
     public String getDistribution() {
         return distribution;
     }
@@ -397,6 +572,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the Java Runtime.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -407,6 +586,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
     private final java.util.List<OperatingSystem> operatingSystems;
 
+    /**
+     * The operating systems that have this Java Runtime installed.
+     * @return the value
+     **/
     public java.util.List<OperatingSystem> getOperatingSystems() {
         return operatingSystems;
     }
@@ -417,6 +600,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
     private final Integer approximateInstallationCount;
 
+    /**
+     * The approximate count of installations that are installations of this Java Runtime.
+     * @return the value
+     **/
     public Integer getApproximateInstallationCount() {
         return approximateInstallationCount;
     }
@@ -427,6 +614,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
     private final Integer approximateApplicationCount;
 
+    /**
+     * The approximate count of the applications running on this Java Runtime.
+     * @return the value
+     **/
     public Integer getApproximateApplicationCount() {
         return approximateApplicationCount;
     }
@@ -437,6 +628,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
     private final Integer approximateManagedInstanceCount;
 
+    /**
+     * The approximate count of the managed instances that report this Java Runtime.
+     * @return the value
+     **/
     public Integer getApproximateManagedInstanceCount() {
         return approximateManagedInstanceCount;
     }
@@ -447,6 +642,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximatePendingWorkRequestCount")
     private final Integer approximatePendingWorkRequestCount;
 
+    /**
+     * The approximate count of work requests working on this Java Runtime.
+     * @return the value
+     **/
     public Integer getApproximatePendingWorkRequestCount() {
         return approximatePendingWorkRequestCount;
     }
@@ -457,6 +656,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
+    /**
+     * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return the value
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -467,6 +670,10 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -481,6 +688,14 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
     private final java.util.Date timeFirstSeen;
 
+    /**
+     * The date and time the resource was _first_ reported to JMS.
+     * This is potentially _before_ the specified time period provided by the filters.
+     * For example, a resource can be first reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFirstSeen() {
         return timeFirstSeen;
     }
@@ -495,6 +710,14 @@ public final class JreUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
+    /**
+     * The date and time the resource was _last_ reported to JMS.
+     * This is potentially _after_ the specified time period provided by the filters.
+     * For example, a resource can be last reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }

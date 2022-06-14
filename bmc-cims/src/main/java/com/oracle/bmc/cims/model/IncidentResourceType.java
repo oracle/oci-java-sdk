@@ -44,45 +44,81 @@ public final class IncidentResourceType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeKey")
         private String resourceTypeKey;
 
+        /**
+         * Unique identifier of the resource.
+         * @param resourceTypeKey the value to set
+         * @return this builder
+         **/
         public Builder resourceTypeKey(String resourceTypeKey) {
             this.resourceTypeKey = resourceTypeKey;
             this.__explicitlySet__.add("resourceTypeKey");
             return this;
         }
-
+        /**
+         * The display name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The display name of the resource.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label associated with the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * The label associated with the resource.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-
+        /**
+         * The description of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the resource.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The service category list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceCategoryList")
         private java.util.List<ServiceCategory> serviceCategoryList;
 
+        /**
+         * The service category list.
+         * @param serviceCategoryList the value to set
+         * @return this builder
+         **/
         public Builder serviceCategoryList(java.util.List<ServiceCategory> serviceCategoryList) {
             this.serviceCategoryList = serviceCategoryList;
             this.__explicitlySet__.add("serviceCategoryList");
@@ -131,6 +167,10 @@ public final class IncidentResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeKey")
     private final String resourceTypeKey;
 
+    /**
+     * Unique identifier of the resource.
+     * @return the value
+     **/
     public String getResourceTypeKey() {
         return resourceTypeKey;
     }
@@ -141,6 +181,10 @@ public final class IncidentResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the resource.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -151,6 +195,10 @@ public final class IncidentResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * The label associated with the resource.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }
@@ -161,6 +209,10 @@ public final class IncidentResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the resource.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -171,6 +223,10 @@ public final class IncidentResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCategoryList")
     private final java.util.List<ServiceCategory> serviceCategoryList;
 
+    /**
+     * The service category list.
+     * @return the value
+     **/
     public java.util.List<ServiceCategory> getServiceCategoryList() {
         return serviceCategoryList;
     }

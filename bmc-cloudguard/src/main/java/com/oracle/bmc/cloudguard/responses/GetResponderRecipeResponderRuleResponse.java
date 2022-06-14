@@ -14,6 +14,11 @@ public class GetResponderRecipeResponderRuleResponse extends com.oracle.bmc.resp
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetResponderRecipeResponderRuleResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,10 @@ public class GetResponderRecipeResponderRuleResponse extends com.oracle.bmc.resp
     private com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRule
             responderRecipeResponderRule;
 
+    /**
+     * The returned ResponderRecipeResponderRule instance.
+     * @return the value
+     */
     public com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRule
             getResponderRecipeResponderRule() {
         return responderRecipeResponderRule;
@@ -66,23 +81,53 @@ public class GetResponderRecipeResponderRuleResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ResponderRecipeResponderRule instance.
+         */
         private com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRule
                 responderRecipeResponderRule;
 
+        /**
+         * The returned ResponderRecipeResponderRule instance.
+         * @param responderRecipeResponderRule the value to set
+         * @return this builder
+         */
         public Builder responderRecipeResponderRule(
                 com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRule
                         responderRecipeResponderRule) {
@@ -103,12 +148,20 @@ public class GetResponderRecipeResponderRuleResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetResponderRecipeResponderRuleResponse build() {
             return new GetResponderRecipeResponderRuleResponse(
                     __httpStatusCode__, etag, opcRequestId, responderRecipeResponderRule);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

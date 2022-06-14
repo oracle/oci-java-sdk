@@ -28,9 +28,17 @@ public final class AttachedView {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the view.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewId")
         private String viewId;
 
+        /**
+         * The OCID of the view.
+         * @param viewId the value to set
+         * @return this builder
+         **/
         public Builder viewId(String viewId) {
             this.viewId = viewId;
             this.__explicitlySet__.add("viewId");
@@ -72,6 +80,10 @@ public final class AttachedView {
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
     private final String viewId;
 
+    /**
+     * The OCID of the view.
+     * @return the value
+     **/
     public String getViewId() {
         return viewId;
     }

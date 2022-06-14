@@ -20,6 +20,12 @@ public class PutGenericArtifactContentByPathRequest
      */
     private String repositoryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+     * <p>
+     * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -31,6 +37,12 @@ public class PutGenericArtifactContentByPathRequest
      */
     private String artifactPath;
 
+    /**
+     * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+     * <p>
+     * Example: {@code project01/my-web-app/artifact-abc}
+     *
+     */
     public String getArtifactPath() {
         return artifactPath;
     }
@@ -42,6 +54,12 @@ public class PutGenericArtifactContentByPathRequest
      */
     private String version;
 
+    /**
+     * A user-defined string to describe the artifact version.
+     * <p>
+     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+     *
+     */
     public String getVersion() {
         return version;
     }
@@ -50,6 +68,9 @@ public class PutGenericArtifactContentByPathRequest
      */
     private java.io.InputStream genericArtifactContentBody;
 
+    /**
+     * Uploads an artifact. Provide artifact path, version and content. Avoid entering confidential information when you define the path and version.
+     */
     public java.io.InputStream getGenericArtifactContentBody() {
         return genericArtifactContentBody;
     }
@@ -59,6 +80,10 @@ public class PutGenericArtifactContentByPathRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value. When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -71,6 +96,13 @@ public class PutGenericArtifactContentByPathRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * <p>
+     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+     * If you contact Oracle about a request, provide this request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -92,6 +124,12 @@ public class PutGenericArtifactContentByPathRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+         * <p>
+         * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+         *
+         */
         private String repositoryId = null;
 
         /**
@@ -99,6 +137,7 @@ public class PutGenericArtifactContentByPathRequest
          * <p>
          * Example: {@code ocid1.repository.oc1..exampleuniqueID}
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -106,6 +145,12 @@ public class PutGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+         * <p>
+         * Example: {@code project01/my-web-app/artifact-abc}
+         *
+         */
         private String artifactPath = null;
 
         /**
@@ -113,6 +158,7 @@ public class PutGenericArtifactContentByPathRequest
          * <p>
          * Example: {@code project01/my-web-app/artifact-abc}
          *
+         * @param artifactPath the value to set
          * @return this builder instance
          */
         public Builder artifactPath(String artifactPath) {
@@ -120,6 +166,12 @@ public class PutGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * A user-defined string to describe the artifact version.
+         * <p>
+         * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+         *
+         */
         private String version = null;
 
         /**
@@ -127,6 +179,7 @@ public class PutGenericArtifactContentByPathRequest
          * <p>
          * Example: {@code 1.1.2} or {@code 1.2-beta-2}
          *
+         * @param version the value to set
          * @return this builder instance
          */
         public Builder version(String version) {
@@ -134,10 +187,14 @@ public class PutGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * Uploads an artifact. Provide artifact path, version and content. Avoid entering confidential information when you define the path and version.
+         */
         private java.io.InputStream genericArtifactContentBody = null;
 
         /**
          * Uploads an artifact. Provide artifact path, version and content. Avoid entering confidential information when you define the path and version.
+         * @param genericArtifactContentBody the value to set
          * @return this builder instance
          */
         public Builder genericArtifactContentBody(java.io.InputStream genericArtifactContentBody) {
@@ -145,11 +202,16 @@ public class PutGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value. When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value. When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -157,6 +219,13 @@ public class PutGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * <p>
+         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+         * If you contact Oracle about a request, provide this request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -165,6 +234,7 @@ public class PutGenericArtifactContentByPathRequest
          * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
          * If you contact Oracle about a request, provide this request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -262,7 +332,8 @@ public class PutGenericArtifactContentByPathRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -274,6 +345,10 @@ public class PutGenericArtifactContentByPathRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

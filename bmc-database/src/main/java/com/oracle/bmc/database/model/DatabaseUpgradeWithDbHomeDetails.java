@@ -36,10 +36,17 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
             this.__explicitlySet__.add("options");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+         * @param dbHomeId the value to set
+         * @return this builder
+         **/
         public Builder dbHomeId(String dbHomeId) {
             this.dbHomeId = dbHomeId;
             this.__explicitlySet__.add("dbHomeId");
@@ -88,6 +95,10 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * @return the value
+     **/
     public String getDbHomeId() {
         return dbHomeId;
     }

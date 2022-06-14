@@ -19,6 +19,9 @@ public class CreateExternalNonContainerDatabaseRequest
     private com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails
             createExternalNonContainerDatabaseDetails;
 
+    /**
+     * Request to create a new external non-container database.
+     */
     public com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails
             getCreateExternalNonContainerDatabaseDetails() {
         return createExternalNonContainerDatabaseDetails;
@@ -33,6 +36,14 @@ public class CreateExternalNonContainerDatabaseRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -42,6 +53,10 @@ public class CreateExternalNonContainerDatabaseRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,11 +79,15 @@ public class CreateExternalNonContainerDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a new external non-container database.
+         */
         private com.oracle.bmc.database.model.CreateExternalNonContainerDatabaseDetails
                 createExternalNonContainerDatabaseDetails = null;
 
         /**
          * Request to create a new external non-container database.
+         * @param createExternalNonContainerDatabaseDetails the value to set
          * @return this builder instance
          */
         public Builder createExternalNonContainerDatabaseDetails(
@@ -79,6 +98,14 @@ public class CreateExternalNonContainerDatabaseRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -88,6 +115,7 @@ public class CreateExternalNonContainerDatabaseRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -95,11 +123,16 @@ public class CreateExternalNonContainerDatabaseRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -194,7 +227,8 @@ public class CreateExternalNonContainerDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -204,6 +238,10 @@ public class CreateExternalNonContainerDatabaseRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

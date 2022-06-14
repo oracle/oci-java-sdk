@@ -27,9 +27,17 @@ public final class DayOfWeek {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the day of the week.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
+        /**
+         * Name of the day of the week.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -122,6 +130,10 @@ public final class DayOfWeek {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
+    /**
+     * Name of the day of the week.
+     * @return the value
+     **/
     public Name getName() {
         return name;
     }

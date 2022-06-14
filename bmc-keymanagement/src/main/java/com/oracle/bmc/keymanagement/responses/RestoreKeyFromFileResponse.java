@@ -13,6 +13,10 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +28,12 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcContentMd5;
 
+    /**
+     * The base64-encoded MD5 hash value of the request body, as computed
+     * by the server.
+     *
+     * @return the value
+     */
     public String getOpcContentMd5() {
         return opcContentMd5;
     }
@@ -35,6 +45,12 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +62,12 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the work request, used to track the progress of the
+     * restore operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -55,6 +77,10 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    /**
+     * The returned Key instance.
+     * @return the value
+     */
     public com.oracle.bmc.keymanagement.model.Key getKey() {
         return key;
     }
@@ -90,36 +116,88 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The base64-encoded MD5 hash value of the request body, as computed
+         * by the server.
+         *
+         */
         private String opcContentMd5;
 
+        /**
+         * The base64-encoded MD5 hash value of the request body, as computed
+         * by the server.
+         *
+         * @param opcContentMd5 the value to set
+         * @return this builder
+         */
         public Builder opcContentMd5(String opcContentMd5) {
             this.opcContentMd5 = opcContentMd5;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the work request, used to track the progress of the
+         * restore operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the work request, used to track the progress of the
+         * restore operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned Key instance.
+         */
         private com.oracle.bmc.keymanagement.model.Key key;
 
+        /**
+         * The returned Key instance.
+         * @param key the value to set
+         * @return this builder
+         */
         public Builder key(com.oracle.bmc.keymanagement.model.Key key) {
             this.key = key;
             return this;
@@ -140,12 +218,20 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public RestoreKeyFromFileResponse build() {
             return new RestoreKeyFromFileResponse(
                     __httpStatusCode__, etag, opcContentMd5, opcRequestId, opcWorkRequestId, key);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

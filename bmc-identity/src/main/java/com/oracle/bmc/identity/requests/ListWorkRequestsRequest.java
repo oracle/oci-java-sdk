@@ -17,6 +17,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +30,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -35,6 +43,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -43,6 +55,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String resourceIdentifier;
 
+    /**
+     * The identifier of the resource the work request affects.
+     */
     public String getResourceIdentifier() {
         return resourceIdentifier;
     }
@@ -54,11 +69,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -66,11 +86,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -78,11 +103,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -90,10 +120,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The identifier of the resource the work request affects.
+         */
         private String resourceIdentifier = null;
 
         /**
          * The identifier of the resource the work request affects.
+         * @param resourceIdentifier the value to set
          * @return this builder instance
          */
         public Builder resourceIdentifier(String resourceIdentifier) {
@@ -175,7 +209,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -185,6 +220,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .resourceIdentifier(resourceIdentifier);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

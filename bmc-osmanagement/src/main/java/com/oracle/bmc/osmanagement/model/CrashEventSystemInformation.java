@@ -50,63 +50,113 @@ public final class CrashEventSystemInformation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * system architecture
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private ArchTypes architecture;
 
+        /**
+         * system architecture
+         * @param architecture the value to set
+         * @return this builder
+         **/
         public Builder architecture(ArchTypes architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-
+        /**
+         * Active ksplice kernel version (uptrack-uname -r)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
         private String kspliceEffectiveKernelVersion;
 
+        /**
+         * Active ksplice kernel version (uptrack-uname -r)
+         * @param kspliceEffectiveKernelVersion the value to set
+         * @return this builder
+         **/
         public Builder kspliceEffectiveKernelVersion(String kspliceEffectiveKernelVersion) {
             this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
             this.__explicitlySet__.add("kspliceEffectiveKernelVersion");
             return this;
         }
-
+        /**
+         * The Operating System type of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamilies osFamily;
 
+        /**
+         * The Operating System type of the managed instance.
+         * @param osFamily the value to set
+         * @return this builder
+         **/
         public Builder osFamily(OsFamilies osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-
+        /**
+         * Operating System Name (OCA value)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osName")
         private String osName;
 
+        /**
+         * Operating System Name (OCA value)
+         * @param osName the value to set
+         * @return this builder
+         **/
         public Builder osName(String osName) {
             this.osName = osName;
             this.__explicitlySet__.add("osName");
             return this;
         }
-
+        /**
+         * Operating System Kernel Release (uname -v)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osKernelRelease")
         private String osKernelRelease;
 
+        /**
+         * Operating System Kernel Release (uname -v)
+         * @param osKernelRelease the value to set
+         * @return this builder
+         **/
         public Builder osKernelRelease(String osKernelRelease) {
             this.osKernelRelease = osKernelRelease;
             this.__explicitlySet__.add("osKernelRelease");
             return this;
         }
-
+        /**
+         * Operating System Kernel Version (uname -r)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
         private String osKernelVersion;
 
+        /**
+         * Operating System Kernel Version (uname -r)
+         * @param osKernelVersion the value to set
+         * @return this builder
+         **/
         public Builder osKernelVersion(String osKernelVersion) {
             this.osKernelVersion = osKernelVersion;
             this.__explicitlySet__.add("osKernelVersion");
             return this;
         }
-
+        /**
+         * Version of the OS (VERSION from /etc/os-release)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osSystemVersion")
         private String osSystemVersion;
 
+        /**
+         * Version of the OS (VERSION from /etc/os-release)
+         * @param osSystemVersion the value to set
+         * @return this builder
+         **/
         public Builder osSystemVersion(String osSystemVersion) {
             this.osSystemVersion = osSystemVersion;
             this.__explicitlySet__.add("osSystemVersion");
@@ -163,6 +213,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchTypes architecture;
 
+    /**
+     * system architecture
+     * @return the value
+     **/
     public ArchTypes getArchitecture() {
         return architecture;
     }
@@ -173,6 +227,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
     private final String kspliceEffectiveKernelVersion;
 
+    /**
+     * Active ksplice kernel version (uptrack-uname -r)
+     * @return the value
+     **/
     public String getKspliceEffectiveKernelVersion() {
         return kspliceEffectiveKernelVersion;
     }
@@ -183,6 +241,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamilies osFamily;
 
+    /**
+     * The Operating System type of the managed instance.
+     * @return the value
+     **/
     public OsFamilies getOsFamily() {
         return osFamily;
     }
@@ -193,6 +255,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("osName")
     private final String osName;
 
+    /**
+     * Operating System Name (OCA value)
+     * @return the value
+     **/
     public String getOsName() {
         return osName;
     }
@@ -203,6 +269,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelRelease")
     private final String osKernelRelease;
 
+    /**
+     * Operating System Kernel Release (uname -v)
+     * @return the value
+     **/
     public String getOsKernelRelease() {
         return osKernelRelease;
     }
@@ -213,6 +283,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
     private final String osKernelVersion;
 
+    /**
+     * Operating System Kernel Version (uname -r)
+     * @return the value
+     **/
     public String getOsKernelVersion() {
         return osKernelVersion;
     }
@@ -223,6 +297,10 @@ public final class CrashEventSystemInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("osSystemVersion")
     private final String osSystemVersion;
 
+    /**
+     * Version of the OS (VERSION from /etc/os-release)
+     * @return the value
+     **/
     public String getOsSystemVersion() {
         return osSystemVersion;
     }

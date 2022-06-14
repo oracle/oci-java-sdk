@@ -94,10 +94,17 @@ public final class OkeBlueGreenTrafficShiftDeployStageExecutionProgress
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-
+        /**
+         * Namespace where traffic is going.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Namespace where traffic is going.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -178,6 +185,10 @@ public final class OkeBlueGreenTrafficShiftDeployStageExecutionProgress
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Namespace where traffic is going.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

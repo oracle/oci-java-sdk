@@ -16,6 +16,9 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +29,11 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -34,6 +42,9 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String prefix;
 
+    /**
+     * The string to use for matching against the start of object names in a list query.
+     */
     public String getPrefix() {
         return prefix;
     }
@@ -42,6 +53,9 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String start;
 
+    /**
+     * Object names returned by a list query must be greater or equal to this parameter.
+     */
     public String getStart() {
         return start;
     }
@@ -50,6 +64,9 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String end;
 
+    /**
+     * Object names returned by a list query must be strictly less than this parameter.
+     */
     public String getEnd() {
         return end;
     }
@@ -61,6 +78,12 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -74,6 +97,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String delimiter;
 
+    /**
+     * When this parameter is set, only objects whose names do not contain the delimiter character
+     * (after an optionally specified prefix) are returned in the objects key of the response body.
+     * Scanned objects whose names contain the delimiter have the part of their name up to the first
+     * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+     * Note that only '/' is a supported delimiter character at this time.
+     *
+     */
     public String getDelimiter() {
         return delimiter;
     }
@@ -87,6 +118,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String fields;
 
+    /**
+     * Object summary by default includes only the 'name' field. Use this parameter to also
+     * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+     * 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
+     * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+     * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     *
+     */
     public String getFields() {
         return fields;
     }
@@ -95,6 +134,9 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -103,6 +145,9 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String startAfter;
 
+    /**
+     * Object names returned by a list query must be greater than this parameter.
+     */
     public String getStartAfter() {
         return startAfter;
     }
@@ -113,6 +158,11 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+     * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -124,10 +174,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -135,12 +189,18 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -148,10 +208,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The string to use for matching against the start of object names in a list query.
+         */
         private String prefix = null;
 
         /**
          * The string to use for matching against the start of object names in a list query.
+         * @param prefix the value to set
          * @return this builder instance
          */
         public Builder prefix(String prefix) {
@@ -159,10 +223,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Object names returned by a list query must be greater or equal to this parameter.
+         */
         private String start = null;
 
         /**
          * Object names returned by a list query must be greater or equal to this parameter.
+         * @param start the value to set
          * @return this builder instance
          */
         public Builder start(String start) {
@@ -170,10 +238,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Object names returned by a list query must be strictly less than this parameter.
+         */
         private String end = null;
 
         /**
          * Object names returned by a list query must be strictly less than this parameter.
+         * @param end the value to set
          * @return this builder instance
          */
         public Builder end(String end) {
@@ -181,6 +253,12 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -188,6 +266,7 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
          * "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -195,6 +274,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * When this parameter is set, only objects whose names do not contain the delimiter character
+         * (after an optionally specified prefix) are returned in the objects key of the response body.
+         * Scanned objects whose names contain the delimiter have the part of their name up to the first
+         * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+         * Note that only '/' is a supported delimiter character at this time.
+         *
+         */
         private String delimiter = null;
 
         /**
@@ -204,6 +291,7 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
          * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
          * Note that only '/' is a supported delimiter character at this time.
          *
+         * @param delimiter the value to set
          * @return this builder instance
          */
         public Builder delimiter(String delimiter) {
@@ -211,6 +299,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Object summary by default includes only the 'name' field. Use this parameter to also
+         * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+         * 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
+         * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+         * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         *
+         */
         private String fields = null;
 
         /**
@@ -220,6 +316,7 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
          * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
          * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(String fields) {
@@ -227,10 +324,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -238,10 +339,14 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Object names returned by a list query must be greater than this parameter.
+         */
         private String startAfter = null;
 
         /**
          * Object names returned by a list query must be greater than this parameter.
+         * @param startAfter the value to set
          * @return this builder instance
          */
         public Builder startAfter(String startAfter) {
@@ -249,12 +354,18 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+         * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
          * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -350,7 +461,8 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -367,6 +479,10 @@ public class ListObjectVersionsRequest extends com.oracle.bmc.requests.BmcReques
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

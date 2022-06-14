@@ -30,18 +30,33 @@ public final class BulkUploadCellInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Column index as in the given bulk upload file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
         private String columnIndex;
 
+        /**
+         * Column index as in the given bulk upload file.
+         * @param columnIndex the value to set
+         * @return this builder
+         **/
         public Builder columnIndex(String columnIndex) {
             this.columnIndex = columnIndex;
             this.__explicitlySet__.add("columnIndex");
             return this;
         }
-
+        /**
+         * Error information corresponding to a particular column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorInfo")
         private String errorInfo;
 
+        /**
+         * Error information corresponding to a particular column.
+         * @param errorInfo the value to set
+         * @return this builder
+         **/
         public Builder errorInfo(String errorInfo) {
             this.errorInfo = errorInfo;
             this.__explicitlySet__.add("errorInfo");
@@ -83,6 +98,10 @@ public final class BulkUploadCellInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
     private final String columnIndex;
 
+    /**
+     * Column index as in the given bulk upload file.
+     * @return the value
+     **/
     public String getColumnIndex() {
         return columnIndex;
     }
@@ -93,6 +112,10 @@ public final class BulkUploadCellInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("errorInfo")
     private final String errorInfo;
 
+    /**
+     * Error information corresponding to a particular column.
+     * @return the value
+     **/
     public String getErrorInfo() {
         return errorInfo;
     }

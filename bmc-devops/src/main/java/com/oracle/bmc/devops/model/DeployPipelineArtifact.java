@@ -34,18 +34,33 @@ public final class DeployPipelineArtifact {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of an artifact
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
 
+        /**
+         * The OCID of an artifact
+         * @param deployArtifactId the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             this.__explicitlySet__.add("deployArtifactId");
             return this;
         }
-
+        /**
+         * Display name of the artifact. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the artifact. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -100,6 +115,10 @@ public final class DeployPipelineArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
+    /**
+     * The OCID of an artifact
+     * @return the value
+     **/
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
@@ -110,6 +129,10 @@ public final class DeployPipelineArtifact {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the artifact. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

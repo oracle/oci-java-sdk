@@ -19,6 +19,10 @@ public class UpdateLogAnalyticsLogGroupRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class UpdateLogAnalyticsLogGroupRequest
      */
     private String logAnalyticsLogGroupId;
 
+    /**
+     * unique logAnalytics log group identifier
+     */
     public String getLogAnalyticsLogGroupId() {
         return logAnalyticsLogGroupId;
     }
@@ -36,6 +43,9 @@ public class UpdateLogAnalyticsLogGroupRequest
     private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
             updateLogAnalyticsLogGroupDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
             getUpdateLogAnalyticsLogGroupDetails() {
         return updateLogAnalyticsLogGroupDetails;
@@ -50,6 +60,14 @@ public class UpdateLogAnalyticsLogGroupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,6 +76,9 @@ public class UpdateLogAnalyticsLogGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -85,11 +106,16 @@ public class UpdateLogAnalyticsLogGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -97,10 +123,14 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
+        /**
+         * unique logAnalytics log group identifier
+         */
         private String logAnalyticsLogGroupId = null;
 
         /**
          * unique logAnalytics log group identifier
+         * @param logAnalyticsLogGroupId the value to set
          * @return this builder instance
          */
         public Builder logAnalyticsLogGroupId(String logAnalyticsLogGroupId) {
@@ -108,11 +138,15 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
                 updateLogAnalyticsLogGroupDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateLogAnalyticsLogGroupDetails the value to set
          * @return this builder instance
          */
         public Builder updateLogAnalyticsLogGroupDetails(
@@ -122,6 +156,14 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -131,6 +173,7 @@ public class UpdateLogAnalyticsLogGroupRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -138,10 +181,14 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -237,7 +284,8 @@ public class UpdateLogAnalyticsLogGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +296,10 @@ public class UpdateLogAnalyticsLogGroupRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

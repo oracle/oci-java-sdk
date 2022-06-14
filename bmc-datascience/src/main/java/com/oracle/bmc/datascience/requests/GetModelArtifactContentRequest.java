@@ -17,6 +17,9 @@ public class GetModelArtifactContentRequest
      */
     private String modelId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+     */
     public String getModelId() {
         return modelId;
     }
@@ -26,6 +29,10 @@ public class GetModelArtifactContentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +43,11 @@ public class GetModelArtifactContentRequest
      */
     private com.oracle.bmc.model.Range range;
 
+    /**
+     * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7232#section-2.1), section 2.1.
+     * Note that only a single range of bytes is supported.
+     *
+     */
     public com.oracle.bmc.model.Range getRange() {
         return range;
     }
@@ -47,10 +59,14 @@ public class GetModelArtifactContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         */
         private String modelId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         * @param modelId the value to set
          * @return this builder instance
          */
         public Builder modelId(String modelId) {
@@ -58,11 +74,16 @@ public class GetModelArtifactContentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -70,12 +91,18 @@ public class GetModelArtifactContentRequest
             return this;
         }
 
+        /**
+         * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7232#section-2.1), section 2.1.
+         * Note that only a single range of bytes is supported.
+         *
+         */
         private com.oracle.bmc.model.Range range = null;
 
         /**
          * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7232#section-2.1), section 2.1.
          * Note that only a single range of bytes is supported.
          *
+         * @param range the value to set
          * @return this builder instance
          */
         public Builder range(com.oracle.bmc.model.Range range) {
@@ -155,12 +182,17 @@ public class GetModelArtifactContentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().modelId(modelId).opcRequestId(opcRequestId).range(range);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

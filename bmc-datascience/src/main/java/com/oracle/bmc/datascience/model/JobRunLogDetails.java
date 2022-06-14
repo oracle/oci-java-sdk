@@ -29,18 +29,37 @@ public final class JobRunLogDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log group id for where log objects will be for job runs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
+        /**
+         * The log group id for where log objects will be for job runs.
+         *
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-
+        /**
+         * The log id of the log object the job run logs will be shipped to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logId")
         private String logId;
 
+        /**
+         * The log id of the log object the job run logs will be shipped to.
+         *
+         * @param logId the value to set
+         * @return this builder
+         **/
         public Builder logId(String logId) {
             this.logId = logId;
             this.__explicitlySet__.add("logId");
@@ -83,6 +102,11 @@ public final class JobRunLogDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
+    /**
+     * The log group id for where log objects will be for job runs.
+     *
+     * @return the value
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -94,6 +118,11 @@ public final class JobRunLogDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logId")
     private final String logId;
 
+    /**
+     * The log id of the log object the job run logs will be shipped to.
+     *
+     * @return the value
+     **/
     public String getLogId() {
         return logId;
     }

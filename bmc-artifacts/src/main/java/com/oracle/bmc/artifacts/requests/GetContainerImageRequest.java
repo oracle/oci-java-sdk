@@ -19,6 +19,12 @@ public class GetContainerImageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String imageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+     * <p>
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+     *
+     */
     public String getImageId() {
         return imageId;
     }
@@ -29,6 +35,11 @@ public class GetContainerImageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,6 +51,12 @@ public class GetContainerImageRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         *
+         */
         private String imageId = null;
 
         /**
@@ -47,6 +64,7 @@ public class GetContainerImageRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
          *
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -54,12 +72,18 @@ public class GetContainerImageRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -137,12 +161,17 @@ public class GetContainerImageRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().imageId(imageId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -125,189 +125,347 @@ public final class LogAnalyticsParserSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
+        /**
+         * The content.
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-
+        /**
+         * The parser description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The parser description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The parser display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The parser display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The parser edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
+        /**
+         * The parser edit version.
+         * @param editVersion the value to set
+         * @return this builder
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-
+        /**
+         * The encoding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
+        /**
+         * The encoding.
+         * @param encoding the value to set
+         * @return this builder
+         **/
         public Builder encoding(String encoding) {
             this.encoding = encoding;
             this.__explicitlySet__.add("encoding");
             return this;
         }
-
+        /**
+         * The example content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
         private String exampleContent;
 
+        /**
+         * The example content.
+         * @param exampleContent the value to set
+         * @return this builder
+         **/
         public Builder exampleContent(String exampleContent) {
             this.exampleContent = exampleContent;
             this.__explicitlySet__.add("exampleContent");
             return this;
         }
-
+        /**
+         * The parser fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldMaps")
         private java.util.List<LogAnalyticsParserField> fieldMaps;
 
+        /**
+         * The parser fields.
+         * @param fieldMaps the value to set
+         * @return this builder
+         **/
         public Builder fieldMaps(java.util.List<LogAnalyticsParserField> fieldMaps) {
             this.fieldMaps = fieldMaps;
             this.__explicitlySet__.add("fieldMaps");
             return this;
         }
-
+        /**
+         * The footer regular expression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("footerContent")
         private String footerContent;
 
+        /**
+         * The footer regular expression.
+         * @param footerContent the value to set
+         * @return this builder
+         **/
         public Builder footerContent(String footerContent) {
             this.footerContent = footerContent;
             this.__explicitlySet__.add("footerContent");
             return this;
         }
-
+        /**
+         * The header content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerContent")
         private String headerContent;
 
+        /**
+         * The header content.
+         * @param headerContent the value to set
+         * @return this builder
+         **/
         public Builder headerContent(String headerContent) {
             this.headerContent = headerContent;
             this.__explicitlySet__.add("headerContent");
             return this;
         }
-
+        /**
+         * The parser name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The parser name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A flag indicating if this is a default parser.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * A flag indicating if this is a default parser.
+         *
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * A flag indicating if this is a single line content parser.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleLineContent")
         private Boolean isSingleLineContent;
 
+        /**
+         * A flag indicating if this is a single line content parser.
+         *
+         * @param isSingleLineContent the value to set
+         * @return this builder
+         **/
         public Builder isSingleLineContent(Boolean isSingleLineContent) {
             this.isSingleLineContent = isSingleLineContent;
             this.__explicitlySet__.add("isSingleLineContent");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The language.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private String language;
 
+        /**
+         * The language.
+         * @param language the value to set
+         * @return this builder
+         **/
         public Builder language(String language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-
+        /**
+         * The last updated date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last updated date.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The log type test request version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logTypeTestRequestVersion")
         private Integer logTypeTestRequestVersion;
 
+        /**
+         * The log type test request version.
+         * @param logTypeTestRequestVersion the value to set
+         * @return this builder
+         **/
         public Builder logTypeTestRequestVersion(Integer logTypeTestRequestVersion) {
             this.logTypeTestRequestVersion = logTypeTestRequestVersion;
             this.__explicitlySet__.add("logTypeTestRequestVersion");
             return this;
         }
-
+        /**
+         * The mapped parser list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mappedParsers")
         private java.util.List<LogAnalyticsParser> mappedParsers;
 
+        /**
+         * The mapped parser list.
+         * @param mappedParsers the value to set
+         * @return this builder
+         **/
         public Builder mappedParsers(java.util.List<LogAnalyticsParser> mappedParsers) {
             this.mappedParsers = mappedParsers;
             this.__explicitlySet__.add("mappedParsers");
             return this;
         }
-
+        /**
+         * The line characters for the parser to ignore.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserIgnorelineCharacters")
         private String parserIgnorelineCharacters;
 
+        /**
+         * The line characters for the parser to ignore.
+         * @param parserIgnorelineCharacters the value to set
+         * @return this builder
+         **/
         public Builder parserIgnorelineCharacters(String parserIgnorelineCharacters) {
             this.parserIgnorelineCharacters = parserIgnorelineCharacters;
             this.__explicitlySet__.add("parserIgnorelineCharacters");
             return this;
         }
-
+        /**
+         * A flag indicating if the parser is hidden or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * A flag indicating if the parser is hidden or not.
+         *
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-
+        /**
+         * The parser sequence.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserSequence")
         private Integer parserSequence;
 
+        /**
+         * The parser sequence.
+         * @param parserSequence the value to set
+         * @return this builder
+         **/
         public Builder parserSequence(Integer parserSequence) {
             this.parserSequence = parserSequence;
             this.__explicitlySet__.add("parserSequence");
             return this;
         }
-
+        /**
+         * The time zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserTimezone")
         private String parserTimezone;
 
+        /**
+         * The time zone.
+         * @param parserTimezone the value to set
+         * @return this builder
+         **/
         public Builder parserTimezone(String parserTimezone) {
             this.parserTimezone = parserTimezone;
             this.__explicitlySet__.add("parserTimezone");
@@ -322,91 +480,169 @@ public final class LogAnalyticsParserSummary {
             this.__explicitlySet__.add("parserFilter");
             return this;
         }
-
+        /**
+         * A flag indicating whther or not the parser is write once.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isParserWrittenOnce")
         private Boolean isParserWrittenOnce;
 
+        /**
+         * A flag indicating whther or not the parser is write once.
+         *
+         * @param isParserWrittenOnce the value to set
+         * @return this builder
+         **/
         public Builder isParserWrittenOnce(Boolean isParserWrittenOnce) {
             this.isParserWrittenOnce = isParserWrittenOnce;
             this.__explicitlySet__.add("isParserWrittenOnce");
             return this;
         }
-
+        /**
+         * The parser function list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctions")
         private java.util.List<LogAnalyticsParserFunction> parserFunctions;
 
+        /**
+         * The parser function list.
+         * @param parserFunctions the value to set
+         * @return this builder
+         **/
         public Builder parserFunctions(java.util.List<LogAnalyticsParserFunction> parserFunctions) {
             this.parserFunctions = parserFunctions;
             this.__explicitlySet__.add("parserFunctions");
             return this;
         }
-
+        /**
+         * The number of sources using this parser.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourcesCount")
         private Long sourcesCount;
 
+        /**
+         * The number of sources using this parser.
+         * @param sourcesCount the value to set
+         * @return this builder
+         **/
         public Builder sourcesCount(Long sourcesCount) {
             this.sourcesCount = sourcesCount;
             this.__explicitlySet__.add("sourcesCount");
             return this;
         }
-
+        /**
+         * The list of sources using this parser.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sources")
         private java.util.List<LogAnalyticsSource> sources;
 
+        /**
+         * The list of sources using this parser.
+         * @param sources the value to set
+         * @return this builder
+         **/
         public Builder sources(java.util.List<LogAnalyticsSource> sources) {
             this.sources = sources;
             this.__explicitlySet__.add("sources");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not to tokenize the original text.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldTokenizeOriginalText")
         private Boolean shouldTokenizeOriginalText;
 
+        /**
+         * A flag indicating whether or not to tokenize the original text.
+         *
+         * @param shouldTokenizeOriginalText the value to set
+         * @return this builder
+         **/
         public Builder shouldTokenizeOriginalText(Boolean shouldTokenizeOriginalText) {
             this.shouldTokenizeOriginalText = shouldTokenizeOriginalText;
             this.__explicitlySet__.add("shouldTokenizeOriginalText");
             return this;
         }
-
+        /**
+         * The parser field delimiter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
         private String fieldDelimiter;
 
+        /**
+         * The parser field delimiter.
+         * @param fieldDelimiter the value to set
+         * @return this builder
+         **/
         public Builder fieldDelimiter(String fieldDelimiter) {
             this.fieldDelimiter = fieldDelimiter;
             this.__explicitlySet__.add("fieldDelimiter");
             return this;
         }
-
+        /**
+         * The parser field qualifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
         private String fieldQualifier;
 
+        /**
+         * The parser field qualifier.
+         * @param fieldQualifier the value to set
+         * @return this builder
+         **/
         public Builder fieldQualifier(String fieldQualifier) {
             this.fieldQualifier = fieldQualifier;
             this.__explicitlySet__.add("fieldQualifier");
             return this;
         }
-
+        /**
+         * The parser type.  Default value is REGEX.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The parser type.  Default value is REGEX.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the parser has been deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
         private Boolean isUserDeleted;
 
+        /**
+         * A flag indicating whether or not the parser has been deleted.
+         *
+         * @param isUserDeleted the value to set
+         * @return this builder
+         **/
         public Builder isUserDeleted(Boolean isUserDeleted) {
             this.isUserDeleted = isUserDeleted;
             this.__explicitlySet__.add("isUserDeleted");
             return this;
         }
-
+        /**
+         * A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNamespaceAware")
         private Boolean isNamespaceAware;
 
+        /**
+         * A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+         *
+         * @param isNamespaceAware the value to set
+         * @return this builder
+         **/
         public Builder isNamespaceAware(Boolean isNamespaceAware) {
             this.isNamespaceAware = isNamespaceAware;
             this.__explicitlySet__.add("isNamespaceAware");
@@ -513,6 +749,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
+    /**
+     * The content.
+     * @return the value
+     **/
     public String getContent() {
         return content;
     }
@@ -523,6 +763,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The parser description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -533,6 +777,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The parser display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -543,6 +791,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
+    /**
+     * The parser edit version.
+     * @return the value
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
@@ -553,6 +805,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     private final String encoding;
 
+    /**
+     * The encoding.
+     * @return the value
+     **/
     public String getEncoding() {
         return encoding;
     }
@@ -563,6 +819,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
     private final String exampleContent;
 
+    /**
+     * The example content.
+     * @return the value
+     **/
     public String getExampleContent() {
         return exampleContent;
     }
@@ -573,6 +833,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMaps")
     private final java.util.List<LogAnalyticsParserField> fieldMaps;
 
+    /**
+     * The parser fields.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParserField> getFieldMaps() {
         return fieldMaps;
     }
@@ -583,6 +847,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("footerContent")
     private final String footerContent;
 
+    /**
+     * The footer regular expression.
+     * @return the value
+     **/
     public String getFooterContent() {
         return footerContent;
     }
@@ -593,6 +861,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("headerContent")
     private final String headerContent;
 
+    /**
+     * The header content.
+     * @return the value
+     **/
     public String getHeaderContent() {
         return headerContent;
     }
@@ -603,6 +875,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The parser name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -614,6 +890,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * A flag indicating if this is a default parser.
+     *
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -625,6 +906,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLineContent")
     private final Boolean isSingleLineContent;
 
+    /**
+     * A flag indicating if this is a single line content parser.
+     *
+     * @return the value
+     **/
     public Boolean getIsSingleLineContent() {
         return isSingleLineContent;
     }
@@ -637,6 +923,12 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -647,6 +939,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final String language;
 
+    /**
+     * The language.
+     * @return the value
+     **/
     public String getLanguage() {
         return language;
     }
@@ -657,6 +953,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last updated date.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -667,6 +967,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("logTypeTestRequestVersion")
     private final Integer logTypeTestRequestVersion;
 
+    /**
+     * The log type test request version.
+     * @return the value
+     **/
     public Integer getLogTypeTestRequestVersion() {
         return logTypeTestRequestVersion;
     }
@@ -677,6 +981,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("mappedParsers")
     private final java.util.List<LogAnalyticsParser> mappedParsers;
 
+    /**
+     * The mapped parser list.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParser> getMappedParsers() {
         return mappedParsers;
     }
@@ -687,6 +995,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parserIgnorelineCharacters")
     private final String parserIgnorelineCharacters;
 
+    /**
+     * The line characters for the parser to ignore.
+     * @return the value
+     **/
     public String getParserIgnorelineCharacters() {
         return parserIgnorelineCharacters;
     }
@@ -698,6 +1010,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * A flag indicating if the parser is hidden or not.
+     *
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -708,6 +1025,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parserSequence")
     private final Integer parserSequence;
 
+    /**
+     * The parser sequence.
+     * @return the value
+     **/
     public Integer getParserSequence() {
         return parserSequence;
     }
@@ -718,6 +1039,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parserTimezone")
     private final String parserTimezone;
 
+    /**
+     * The time zone.
+     * @return the value
+     **/
     public String getParserTimezone() {
         return parserTimezone;
     }
@@ -736,6 +1061,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isParserWrittenOnce")
     private final Boolean isParserWrittenOnce;
 
+    /**
+     * A flag indicating whther or not the parser is write once.
+     *
+     * @return the value
+     **/
     public Boolean getIsParserWrittenOnce() {
         return isParserWrittenOnce;
     }
@@ -746,6 +1076,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctions")
     private final java.util.List<LogAnalyticsParserFunction> parserFunctions;
 
+    /**
+     * The parser function list.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParserFunction> getParserFunctions() {
         return parserFunctions;
     }
@@ -756,6 +1090,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourcesCount")
     private final Long sourcesCount;
 
+    /**
+     * The number of sources using this parser.
+     * @return the value
+     **/
     public Long getSourcesCount() {
         return sourcesCount;
     }
@@ -766,6 +1104,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     private final java.util.List<LogAnalyticsSource> sources;
 
+    /**
+     * The list of sources using this parser.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsSource> getSources() {
         return sources;
     }
@@ -777,6 +1119,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldTokenizeOriginalText")
     private final Boolean shouldTokenizeOriginalText;
 
+    /**
+     * A flag indicating whether or not to tokenize the original text.
+     *
+     * @return the value
+     **/
     public Boolean getShouldTokenizeOriginalText() {
         return shouldTokenizeOriginalText;
     }
@@ -787,6 +1134,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDelimiter")
     private final String fieldDelimiter;
 
+    /**
+     * The parser field delimiter.
+     * @return the value
+     **/
     public String getFieldDelimiter() {
         return fieldDelimiter;
     }
@@ -797,6 +1148,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldQualifier")
     private final String fieldQualifier;
 
+    /**
+     * The parser field qualifier.
+     * @return the value
+     **/
     public String getFieldQualifier() {
         return fieldQualifier;
     }
@@ -856,6 +1211,10 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The parser type.  Default value is REGEX.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -867,6 +1226,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isUserDeleted")
     private final Boolean isUserDeleted;
 
+    /**
+     * A flag indicating whether or not the parser has been deleted.
+     *
+     * @return the value
+     **/
     public Boolean getIsUserDeleted() {
         return isUserDeleted;
     }
@@ -878,6 +1242,11 @@ public final class LogAnalyticsParserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isNamespaceAware")
     private final Boolean isNamespaceAware;
 
+    /**
+     * A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+     *
+     * @return the value
+     **/
     public Boolean getIsNamespaceAware() {
         return isNamespaceAware;
     }

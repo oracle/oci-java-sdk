@@ -54,81 +54,145 @@ public final class IndicatorSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the indicator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the indicator.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Type of indicator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private IndicatorType type;
 
+        /**
+         * Type of indicator
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(IndicatorType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The value of indicator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of indicator.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
+        /**
+         * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
         private java.util.List<ThreatType> threatTypes;
 
+        /**
+         * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
+         * @param threatTypes the value to set
+         * @return this builder
+         **/
         public Builder threatTypes(java.util.List<ThreatType> threatTypes) {
             this.threatTypes = threatTypes;
             this.__explicitlySet__.add("threatTypes");
             return this;
         }
-
+        /**
+         * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -189,6 +253,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the indicator.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -199,6 +267,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final IndicatorType type;
 
+    /**
+     * Type of indicator
+     * @return the value
+     **/
     public IndicatorType getType() {
         return type;
     }
@@ -209,6 +281,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of indicator.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -219,6 +295,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
+    /**
+     * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+     * @return the value
+     **/
     public Integer getConfidence() {
         return confidence;
     }
@@ -229,6 +309,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -239,6 +323,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
     private final java.util.List<ThreatType> threatTypes;
 
+    /**
+     * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
+     * @return the value
+     **/
     public java.util.List<ThreatType> getThreatTypes() {
         return threatTypes;
     }
@@ -249,6 +337,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -259,6 +351,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -269,6 +365,10 @@ public final class IndicatorSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

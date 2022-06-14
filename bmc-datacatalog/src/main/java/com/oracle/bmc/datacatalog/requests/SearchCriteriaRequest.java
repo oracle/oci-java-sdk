@@ -18,6 +18,9 @@ public class SearchCriteriaRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class SearchCriteriaRequest
      */
     private com.oracle.bmc.datacatalog.model.SearchCriteria searchCriteriaDetails;
 
+    /**
+     * The information used to create an extended search results.
+     */
     public com.oracle.bmc.datacatalog.model.SearchCriteria getSearchCriteriaDetails() {
         return searchCriteriaDetails;
     }
@@ -34,6 +40,9 @@ public class SearchCriteriaRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -42,6 +51,9 @@ public class SearchCriteriaRequest
      */
     private String name;
 
+    /**
+     * Immutable resource name.
+     */
     public String getName() {
         return name;
     }
@@ -50,6 +62,9 @@ public class SearchCriteriaRequest
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -61,6 +76,12 @@ public class SearchCriteriaRequest
      */
     private String timeout;
 
+    /**
+     * A search timeout string (for example, timeout=4000ms), bounding the search request to be executed within the
+     * specified time value and bail with the hits accumulated up to that point when expired.
+     * Defaults to no timeout.
+     *
+     */
     public String getTimeout() {
         return timeout;
     }
@@ -107,6 +128,10 @@ public class SearchCriteriaRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -151,6 +176,9 @@ public class SearchCriteriaRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -159,6 +187,9 @@ public class SearchCriteriaRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -167,6 +198,9 @@ public class SearchCriteriaRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -175,6 +209,9 @@ public class SearchCriteriaRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -196,10 +233,14 @@ public class SearchCriteriaRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -207,10 +248,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * The information used to create an extended search results.
+         */
         private com.oracle.bmc.datacatalog.model.SearchCriteria searchCriteriaDetails = null;
 
         /**
          * The information used to create an extended search results.
+         * @param searchCriteriaDetails the value to set
          * @return this builder instance
          */
         public Builder searchCriteriaDetails(
@@ -219,10 +264,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -230,10 +279,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * Immutable resource name.
+         */
         private String name = null;
 
         /**
          * Immutable resource name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -241,10 +294,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -253,6 +310,12 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * A search timeout string (for example, timeout=4000ms), bounding the search request to be executed within the
+         * specified time value and bail with the hits accumulated up to that point when expired.
+         * Defaults to no timeout.
+         *
+         */
         private String timeout = null;
 
         /**
@@ -260,6 +323,7 @@ public class SearchCriteriaRequest
          * specified time value and bail with the hits accumulated up to that point when expired.
          * Defaults to no timeout.
          *
+         * @param timeout the value to set
          * @return this builder instance
          */
         public Builder timeout(String timeout) {
@@ -267,11 +331,16 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -279,10 +348,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -290,10 +363,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -301,10 +378,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -312,10 +393,14 @@ public class SearchCriteriaRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -422,7 +507,8 @@ public class SearchCriteriaRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -439,6 +525,10 @@ public class SearchCriteriaRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

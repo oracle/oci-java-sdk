@@ -34,18 +34,33 @@ public final class ExecuteRestCallConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The REST method to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("methodType")
         private MethodType methodType;
 
+        /**
+         * The REST method to use.
+         * @param methodType the value to set
+         * @return this builder
+         **/
         public Builder methodType(MethodType methodType) {
             this.methodType = methodType;
             this.__explicitlySet__.add("methodType");
             return this;
         }
-
+        /**
+         * The headers for the REST call.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.Map<String, String> requestHeaders;
 
+        /**
+         * The headers for the REST call.
+         * @param requestHeaders the value to set
+         * @return this builder
+         **/
         public Builder requestHeaders(java.util.Map<String, String> requestHeaders) {
             this.requestHeaders = requestHeaders;
             this.__explicitlySet__.add("requestHeaders");
@@ -151,6 +166,10 @@ public final class ExecuteRestCallConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("methodType")
     private final MethodType methodType;
 
+    /**
+     * The REST method to use.
+     * @return the value
+     **/
     public MethodType getMethodType() {
         return methodType;
     }
@@ -161,6 +180,10 @@ public final class ExecuteRestCallConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     private final java.util.Map<String, String> requestHeaders;
 
+    /**
+     * The headers for the REST call.
+     * @return the value
+     **/
     public java.util.Map<String, String> getRequestHeaders() {
         return requestHeaders;
     }

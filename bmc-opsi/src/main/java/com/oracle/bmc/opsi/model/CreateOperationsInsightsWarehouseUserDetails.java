@@ -56,81 +56,153 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OPSI Warehouse OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseId")
         private String operationsInsightsWarehouseId;
 
+        /**
+         * OPSI Warehouse OCID
+         * @param operationsInsightsWarehouseId the value to set
+         * @return this builder
+         **/
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             this.__explicitlySet__.add("operationsInsightsWarehouseId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
         private String connectionPassword;
 
+        /**
+         * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param connectionPassword the value to set
+         * @return this builder
+         **/
         public Builder connectionPassword(String connectionPassword) {
             this.connectionPassword = connectionPassword;
             this.__explicitlySet__.add("connectionPassword");
             return this;
         }
-
+        /**
+         * Indicate whether user has access to AWR data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAwrDataAccess")
         private Boolean isAwrDataAccess;
 
+        /**
+         * Indicate whether user has access to AWR data.
+         * @param isAwrDataAccess the value to set
+         * @return this builder
+         **/
         public Builder isAwrDataAccess(Boolean isAwrDataAccess) {
             this.isAwrDataAccess = isAwrDataAccess;
             this.__explicitlySet__.add("isAwrDataAccess");
             return this;
         }
-
+        /**
+         * Indicate whether user has access to EM data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEmDataAccess")
         private Boolean isEmDataAccess;
 
+        /**
+         * Indicate whether user has access to EM data.
+         * @param isEmDataAccess the value to set
+         * @return this builder
+         **/
         public Builder isEmDataAccess(Boolean isEmDataAccess) {
             this.isEmDataAccess = isEmDataAccess;
             this.__explicitlySet__.add("isEmDataAccess");
             return this;
         }
-
+        /**
+         * Indicate whether user has access to OPSI data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOpsiDataAccess")
         private Boolean isOpsiDataAccess;
 
+        /**
+         * Indicate whether user has access to OPSI data.
+         * @param isOpsiDataAccess the value to set
+         * @return this builder
+         **/
         public Builder isOpsiDataAccess(Boolean isOpsiDataAccess) {
             this.isOpsiDataAccess = isOpsiDataAccess;
             this.__explicitlySet__.add("isOpsiDataAccess");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -192,6 +264,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseId")
     private final String operationsInsightsWarehouseId;
 
+    /**
+     * OPSI Warehouse OCID
+     * @return the value
+     **/
     public String getOperationsInsightsWarehouseId() {
         return operationsInsightsWarehouseId;
     }
@@ -202,6 +278,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -212,6 +292,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -222,6 +306,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
     private final String connectionPassword;
 
+    /**
+     * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return the value
+     **/
     public String getConnectionPassword() {
         return connectionPassword;
     }
@@ -232,6 +320,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAwrDataAccess")
     private final Boolean isAwrDataAccess;
 
+    /**
+     * Indicate whether user has access to AWR data.
+     * @return the value
+     **/
     public Boolean getIsAwrDataAccess() {
         return isAwrDataAccess;
     }
@@ -242,6 +334,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEmDataAccess")
     private final Boolean isEmDataAccess;
 
+    /**
+     * Indicate whether user has access to EM data.
+     * @return the value
+     **/
     public Boolean getIsEmDataAccess() {
         return isEmDataAccess;
     }
@@ -252,6 +348,10 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isOpsiDataAccess")
     private final Boolean isOpsiDataAccess;
 
+    /**
+     * Indicate whether user has access to OPSI data.
+     * @return the value
+     **/
     public Boolean getIsOpsiDataAccess() {
         return isOpsiDataAccess;
     }
@@ -264,6 +364,12 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -276,6 +382,12 @@ public final class CreateOperationsInsightsWarehouseUserDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

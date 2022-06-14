@@ -30,18 +30,33 @@ public final class LevelConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique OCID of the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
         private String recommendationId;
 
+        /**
+         * The unique OCID of the recommendation.
+         * @param recommendationId the value to set
+         * @return this builder
+         **/
         public Builder recommendationId(String recommendationId) {
             this.recommendationId = recommendationId;
             this.__explicitlySet__.add("recommendationId");
             return this;
         }
-
+        /**
+         * The pre-defined profile level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private String level;
 
+        /**
+         * The pre-defined profile level.
+         * @param level the value to set
+         * @return this builder
+         **/
         public Builder level(String level) {
             this.level = level;
             this.__explicitlySet__.add("level");
@@ -83,6 +98,10 @@ public final class LevelConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
     private final String recommendationId;
 
+    /**
+     * The unique OCID of the recommendation.
+     * @return the value
+     **/
     public String getRecommendationId() {
         return recommendationId;
     }
@@ -93,6 +112,10 @@ public final class LevelConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final String level;
 
+    /**
+     * The pre-defined profile level.
+     * @return the value
+     **/
     public String getLevel() {
         return level;
     }

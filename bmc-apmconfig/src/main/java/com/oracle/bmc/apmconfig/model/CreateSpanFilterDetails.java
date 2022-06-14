@@ -45,28 +45,51 @@ public final class CreateSpanFilterDetails extends CreateConfigDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The string that defines the Span Filter expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterText")
         private String filterText;
 
+        /**
+         * The string that defines the Span Filter expression.
+         *
+         * @param filterText the value to set
+         * @return this builder
+         **/
         public Builder filterText(String filterText) {
             this.filterText = filterText;
             this.__explicitlySet__.add("filterText");
             return this;
         }
-
+        /**
+         * An optional string that describes what the filter is intended or used for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * An optional string that describes what the filter is intended or used for.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -123,11 +146,15 @@ public final class CreateSpanFilterDetails extends CreateConfigDetails {
     }
 
     /**
-     * The name by which the span filter can be displayed in the UI.
+     * The name by which a configuration entity is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name by which a configuration entity is displayed to the end user.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -139,6 +166,11 @@ public final class CreateSpanFilterDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filterText")
     private final String filterText;
 
+    /**
+     * The string that defines the Span Filter expression.
+     *
+     * @return the value
+     **/
     public String getFilterText() {
         return filterText;
     }
@@ -149,6 +181,10 @@ public final class CreateSpanFilterDetails extends CreateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * An optional string that describes what the filter is intended or used for.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

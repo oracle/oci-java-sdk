@@ -31,27 +31,53 @@ public final class RuleAttribute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Immutable unique key of the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Immutable unique key of the attribute.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Position of the attribute in the record definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
+        /**
+         * Position of the attribute in the record definition.
+         * @param position the value to set
+         * @return this builder
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -94,6 +120,10 @@ public final class RuleAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Immutable unique key of the attribute.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -106,6 +136,12 @@ public final class RuleAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -116,6 +152,10 @@ public final class RuleAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
+    /**
+     * Position of the attribute in the record definition.
+     * @return the value
+     **/
     public Integer getPosition() {
         return position;
     }

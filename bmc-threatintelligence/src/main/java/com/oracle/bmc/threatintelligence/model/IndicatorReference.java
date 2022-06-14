@@ -27,9 +27,17 @@ package com.oracle.bmc.threatintelligence.model;
 public final class IndicatorReference extends EntityReference {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the OCID of the referenced Indicator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indicatorId")
         private String indicatorId;
 
+        /**
+         * the OCID of the referenced Indicator
+         * @param indicatorId the value to set
+         * @return this builder
+         **/
         public Builder indicatorId(String indicatorId) {
             this.indicatorId = indicatorId;
             this.__explicitlySet__.add("indicatorId");
@@ -77,6 +85,10 @@ public final class IndicatorReference extends EntityReference {
     @com.fasterxml.jackson.annotation.JsonProperty("indicatorId")
     private final String indicatorId;
 
+    /**
+     * the OCID of the referenced Indicator
+     * @return the value
+     **/
     public String getIndicatorId() {
         return indicatorId;
     }

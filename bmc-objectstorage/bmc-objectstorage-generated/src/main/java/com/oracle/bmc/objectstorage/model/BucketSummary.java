@@ -54,72 +54,145 @@ public final class BucketSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Object Storage namespace in which the bucket lives.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The Object Storage namespace in which the bucket lives.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: my-new-bucket1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: my-new-bucket1
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The compartment ID in which the bucket is authorized.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment ID in which the bucket is authorized.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
+         * @param createdBy the value to set
+         * @return this builder
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-
+        /**
+         * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The entity tag (ETag) for the bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        /**
+         * The entity tag (ETag) for the bucket.
+         * @param etag the value to set
+         * @return this builder
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -179,6 +252,10 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The Object Storage namespace in which the bucket lives.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -191,6 +268,12 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: my-new-bucket1
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -201,6 +284,10 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment ID in which the bucket is authorized.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -211,6 +298,10 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
+     * @return the value
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
@@ -221,6 +312,10 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -231,6 +326,10 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
+    /**
+     * The entity tag (ETag) for the bucket.
+     * @return the value
+     **/
     public String getEtag() {
         return etag;
     }
@@ -244,6 +343,13 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -257,6 +363,13 @@ public final class BucketSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

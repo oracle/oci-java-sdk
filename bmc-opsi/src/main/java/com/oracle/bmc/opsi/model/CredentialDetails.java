@@ -47,6 +47,10 @@ public class CredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialSourceName")
     private final String credentialSourceName;
 
+    /**
+     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * @return the value
+     **/
     public String getCredentialSourceName() {
         return credentialSourceName;
     }

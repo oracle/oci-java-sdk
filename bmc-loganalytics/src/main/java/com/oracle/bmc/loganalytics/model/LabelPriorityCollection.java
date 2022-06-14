@@ -29,9 +29,17 @@ public final class LabelPriorityCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of label priorities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LabelPriority> items;
 
+        /**
+         * An array of label priorities.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LabelPriority> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class LabelPriorityCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LabelPriority> items;
 
+    /**
+     * An array of label priorities.
+     * @return the value
+     **/
     public java.util.List<LabelPriority> getItems() {
         return items;
     }

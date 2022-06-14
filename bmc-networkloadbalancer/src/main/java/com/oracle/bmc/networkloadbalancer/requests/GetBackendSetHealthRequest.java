@@ -16,6 +16,9 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -27,6 +30,12 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String backendSetName;
 
+    /**
+     * The name of the backend set for which to retrieve the health status.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -37,6 +46,11 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,10 +62,14 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -59,6 +77,12 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The name of the backend set for which to retrieve the health status.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         */
         private String backendSetName = null;
 
         /**
@@ -66,6 +90,7 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
          * <p>
          * Example: {@code example_backend_set}
          *
+         * @param backendSetName the value to set
          * @return this builder instance
          */
         public Builder backendSetName(String backendSetName) {
@@ -73,12 +98,18 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,7 +189,8 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +199,10 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -36,36 +36,71 @@ public final class FacetedSearchAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of data object property
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Name of data object property
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Count of number of data objects having property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
         private java.util.Map<String, Long> aggregation;
 
+        /**
+         * Count of number of data objects having property.
+         * @param aggregation the value to set
+         * @return this builder
+         **/
         public Builder aggregation(java.util.Map<String, Long> aggregation) {
             this.aggregation = aggregation;
             this.__explicitlySet__.add("aggregation");
             return this;
         }
-
+        /**
+         * Data type of object property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * Data type of object property.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Type of property that indicates if it was defined by the user or system.
+         * CUSTOM_PROPERTY is defined by the user on a data object.
+         * DEFAULT_PROPERTY is defined by the system on a data object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyType")
         private PropertyType propertyType;
 
+        /**
+         * Type of property that indicates if it was defined by the user or system.
+         * CUSTOM_PROPERTY is defined by the user on a data object.
+         * DEFAULT_PROPERTY is defined by the system on a data object.
+         *
+         * @param propertyType the value to set
+         * @return this builder
+         **/
         public Builder propertyType(PropertyType propertyType) {
             this.propertyType = propertyType;
             this.__explicitlySet__.add("propertyType");
@@ -112,6 +147,10 @@ public final class FacetedSearchAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Name of data object property
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -122,6 +161,10 @@ public final class FacetedSearchAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
     private final java.util.Map<String, Long> aggregation;
 
+    /**
+     * Count of number of data objects having property.
+     * @return the value
+     **/
     public java.util.Map<String, Long> getAggregation() {
         return aggregation;
     }
@@ -132,6 +175,10 @@ public final class FacetedSearchAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * Data type of object property.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -196,6 +243,13 @@ public final class FacetedSearchAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyType")
     private final PropertyType propertyType;
 
+    /**
+     * Type of property that indicates if it was defined by the user or system.
+     * CUSTOM_PROPERTY is defined by the user on a data object.
+     * DEFAULT_PROPERTY is defined by the system on a data object.
+     *
+     * @return the value
+     **/
     public PropertyType getPropertyType() {
         return propertyType;
     }

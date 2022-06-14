@@ -44,45 +44,83 @@ public final class UpsertLogAnalyticsFieldDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * The data type.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the field is multi-valued.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
+        /**
+         * A flag indicating whether or not the field is multi-valued.
+         *
+         * @param isMultiValued the value to set
+         * @return this builder
+         **/
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-
+        /**
+         * The field description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The field description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The field display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The field display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The field internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The field internal name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -131,6 +169,10 @@ public final class UpsertLogAnalyticsFieldDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * The data type.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -142,6 +184,11 @@ public final class UpsertLogAnalyticsFieldDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
+    /**
+     * A flag indicating whether or not the field is multi-valued.
+     *
+     * @return the value
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
@@ -152,6 +199,10 @@ public final class UpsertLogAnalyticsFieldDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The field description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -162,6 +213,10 @@ public final class UpsertLogAnalyticsFieldDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The field display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -172,6 +227,10 @@ public final class UpsertLogAnalyticsFieldDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The field internal name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

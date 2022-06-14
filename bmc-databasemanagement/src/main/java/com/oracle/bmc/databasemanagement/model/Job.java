@@ -87,6 +87,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the job.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -97,6 +101,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the job resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -107,6 +115,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the job.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -117,6 +129,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the job.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -127,6 +143,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
     private final String managedDatabaseGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the job has to be executed.
+     * @return the value
+     **/
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
@@ -137,6 +157,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the job has to be executed.
+     * @return the value
+     **/
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -147,6 +171,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabasesDetails")
     private final java.util.List<JobDatabase> managedDatabasesDetails;
 
+    /**
+     * The details of the Managed Databases where the job has to be executed.
+     * @return the value
+     **/
     public java.util.List<JobDatabase> getManagedDatabasesDetails() {
         return managedDatabasesDetails;
     }
@@ -157,6 +185,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
+    /**
+     * The subtype of the Oracle Database where the job has to be executed. Applicable only when managedDatabaseGroupId is provided.
+     * @return the value
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
@@ -215,6 +247,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleType scheduleType;
 
+    /**
+     * The schedule type of the job.
+     * @return the value
+     **/
     public ScheduleType getScheduleType() {
         return scheduleType;
     }
@@ -273,6 +309,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the job.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -283,6 +323,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     private final String timeout;
 
+    /**
+     * The job timeout duration, which is expressed like "1h 10m 15s".
+     * @return the value
+     **/
     public String getTimeout() {
         return timeout;
     }
@@ -307,6 +351,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("submissionErrorMessage")
     private final String submissionErrorMessage;
 
+    /**
+     * The error message that is returned if the job submission fails. Null is returned in all other scenarios.
+     * @return the value
+     **/
     public String getSubmissionErrorMessage() {
         return submissionErrorMessage;
     }
@@ -317,6 +365,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time when the job was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -327,6 +379,10 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time when the job was last updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

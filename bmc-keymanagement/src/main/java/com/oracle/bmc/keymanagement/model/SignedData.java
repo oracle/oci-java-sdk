@@ -34,36 +34,79 @@ public final class SignedData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the key used to sign the message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The OCID of the key used to sign the message.
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * The OCID of the key version used to sign the message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
+        /**
+         * The OCID of the key version used to sign the message.
+         * @param keyVersionId the value to set
+         * @return this builder
+         **/
         public Builder keyVersionId(String keyVersionId) {
             this.keyVersionId = keyVersionId;
             this.__explicitlySet__.add("keyVersionId");
             return this;
         }
-
+        /**
+         * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
+        /**
+         * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
+         *
+         * @param signature the value to set
+         * @return this builder
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
             return this;
         }
-
+        /**
+         * The algorithm to use to sign the message or message digest.
+         * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+         * different hashing algorithms.
+         * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+         * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+         * as used when creating the message digest.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
         private SigningAlgorithm signingAlgorithm;
 
+        /**
+         * The algorithm to use to sign the message or message digest.
+         * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+         * different hashing algorithms.
+         * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+         * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+         * as used when creating the message digest.
+         *
+         * @param signingAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder signingAlgorithm(SigningAlgorithm signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             this.__explicitlySet__.add("signingAlgorithm");
@@ -110,6 +153,10 @@ public final class SignedData {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The OCID of the key used to sign the message.
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -120,6 +167,10 @@ public final class SignedData {
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
+    /**
+     * The OCID of the key version used to sign the message.
+     * @return the value
+     **/
     public String getKeyVersionId() {
         return keyVersionId;
     }
@@ -131,6 +182,11 @@ public final class SignedData {
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
+    /**
+     * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
+     *
+     * @return the value
+     **/
     public String getSignature() {
         return signature;
     }
@@ -210,6 +266,16 @@ public final class SignedData {
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
     private final SigningAlgorithm signingAlgorithm;
 
+    /**
+     * The algorithm to use to sign the message or message digest.
+     * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+     * different hashing algorithms.
+     * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+     * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+     * as used when creating the message digest.
+     *
+     * @return the value
+     **/
     public SigningAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }

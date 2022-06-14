@@ -96,100 +96,228 @@ public final class UpdateApplicationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The class for the application.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("className")
         private String className;
 
+        /**
+         * The class for the application.
+         *
+         * @param className the value to set
+         * @return this builder
+         **/
         public Builder className(String className) {
             this.className = className;
             this.__explicitlySet__.add("className");
             return this;
         }
-
+        /**
+         * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
         private String fileUri;
 
+        /**
+         * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         * @param fileUri the value to set
+         * @return this builder
+         **/
         public Builder fileUri(String fileUri) {
             this.fileUri = fileUri;
             this.__explicitlySet__.add("fileUri");
             return this;
         }
-
+        /**
+         * The Spark version utilized to run the application.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
 
+        /**
+         * The Spark version utilized to run the application.
+         *
+         * @param sparkVersion the value to set
+         * @return this builder
+         **/
         public Builder sparkVersion(String sparkVersion) {
             this.sparkVersion = sparkVersion;
             this.__explicitlySet__.add("sparkVersion");
             return this;
         }
-
+        /**
+         * The Spark language.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private ApplicationLanguage language;
 
+        /**
+         * The Spark language.
+         *
+         * @param language the value to set
+         * @return this builder
+         **/
         public Builder language(ApplicationLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-
+        /**
+         * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
         private String archiveUri;
 
+        /**
+         * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         * @param archiveUri the value to set
+         * @return this builder
+         **/
         public Builder archiveUri(String archiveUri) {
             this.archiveUri = archiveUri;
             this.__explicitlySet__.add("archiveUri");
             return this;
         }
-
+        /**
+         * The arguments passed to the running application as command line arguments.  An argument is
+         * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
+         * map.  Each placeholder specified must be represented in the parameters map else the request
+         * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
+         * {@code Service Api Spec}, where {@code name} is the name of the parameter.
+         * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
+         * If "input_file" has a value of "mydata.xml", then the value above will be translated to
+         * {@code --input mydata.xml --name "John Doe"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
+        /**
+         * The arguments passed to the running application as command line arguments.  An argument is
+         * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
+         * map.  Each placeholder specified must be represented in the parameters map else the request
+         * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
+         * {@code Service Api Spec}, where {@code name} is the name of the parameter.
+         * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
+         * If "input_file" has a value of "mydata.xml", then the value above will be translated to
+         * {@code --input mydata.xml --name "John Doe"}
+         *
+         * @param arguments the value to set
+         * @return this builder
+         **/
         public Builder arguments(java.util.List<String> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
             return this;
         }
-
+        /**
+         * The Spark configuration passed to the running process.
+         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+         * not allowed to be overwritten will cause a 400 status to be returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private java.util.Map<String, String> configuration;
 
+        /**
+         * The Spark configuration passed to the running process.
+         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+         * not allowed to be overwritten will cause a 400 status to be returned.
+         *
+         * @param configuration the value to set
+         * @return this builder
+         **/
         public Builder configuration(java.util.Map<String, String> configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly description. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A user-friendly description. Avoid entering confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The VM shape for the driver. Sets the driver cores and memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
         private String driverShape;
 
+        /**
+         * The VM shape for the driver. Sets the driver cores and memory.
+         *
+         * @param driverShape the value to set
+         * @return this builder
+         **/
         public Builder driverShape(String driverShape) {
             this.driverShape = driverShape;
             this.__explicitlySet__.add("driverShape");
@@ -204,19 +332,45 @@ public final class UpdateApplicationDetails {
             this.__explicitlySet__.add("driverShapeConfig");
             return this;
         }
-
+        /**
+         * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+         * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
+         * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
+         * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+         * Data Flow service will use derived information from execute input only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("execute")
         private String execute;
 
+        /**
+         * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+         * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
+         * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
+         * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+         * Data Flow service will use derived information from execute input only.
+         *
+         * @param execute the value to set
+         * @return this builder
+         **/
         public Builder execute(String execute) {
             this.execute = execute;
             this.__explicitlySet__.add("execute");
             return this;
         }
-
+        /**
+         * The VM shape for the executors. Sets the executor cores and memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
         private String executorShape;
 
+        /**
+         * The VM shape for the executors. Sets the executor cores and memory.
+         *
+         * @param executorShape the value to set
+         * @return this builder
+         **/
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
@@ -231,64 +385,143 @@ public final class UpdateApplicationDetails {
             this.__explicitlySet__.add("executorShapeConfig");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
         private String logsBucketUri;
 
+        /**
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         * @param logsBucketUri the value to set
+         * @return this builder
+         **/
         public Builder logsBucketUri(String logsBucketUri) {
             this.logsBucketUri = logsBucketUri;
             this.__explicitlySet__.add("logsBucketUri");
             return this;
         }
-
+        /**
+         * The OCID of OCI Hive Metastore.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
+        /**
+         * The OCID of OCI Hive Metastore.
+         *
+         * @param metastoreId the value to set
+         * @return this builder
+         **/
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-
+        /**
+         * The number of executor VMs requested.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
         private Integer numExecutors;
 
+        /**
+         * The number of executor VMs requested.
+         *
+         * @param numExecutors the value to set
+         * @return this builder
+         **/
         public Builder numExecutors(Integer numExecutors) {
             this.numExecutors = numExecutors;
             this.__explicitlySet__.add("numExecutors");
             return this;
         }
-
+        /**
+         * An array of name/value pairs used to fill placeholders found in properties like
+         * {@code Application.arguments}.  The name must be a string of one or more word characters
+         * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
+         * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<ApplicationParameter> parameters;
 
+        /**
+         * An array of name/value pairs used to fill placeholders found in properties like
+         * {@code Application.arguments}.  The name must be a string of one or more word characters
+         * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
+         * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+         *
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<ApplicationParameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
-
+        /**
+         * The OCID of a private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
+        /**
+         * The OCID of a private endpoint.
+         *
+         * @param privateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
-
+        /**
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
+         * for BATCH SQL runs.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
         private String warehouseBucketUri;
 
+        /**
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
+         * for BATCH SQL runs.
+         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         *
+         * @param warehouseBucketUri the value to set
+         * @return this builder
+         **/
         public Builder warehouseBucketUri(String warehouseBucketUri) {
             this.warehouseBucketUri = warehouseBucketUri;
             this.__explicitlySet__.add("warehouseBucketUri");
@@ -376,6 +609,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("className")
     private final String className;
 
+    /**
+     * The class for the application.
+     *
+     * @return the value
+     **/
     public String getClassName() {
         return className;
     }
@@ -388,6 +626,12 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
     private final String fileUri;
 
+    /**
+     * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     *
+     * @return the value
+     **/
     public String getFileUri() {
         return fileUri;
     }
@@ -399,6 +643,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
     private final String sparkVersion;
 
+    /**
+     * The Spark version utilized to run the application.
+     *
+     * @return the value
+     **/
     public String getSparkVersion() {
         return sparkVersion;
     }
@@ -410,6 +659,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final ApplicationLanguage language;
 
+    /**
+     * The Spark language.
+     *
+     * @return the value
+     **/
     public ApplicationLanguage getLanguage() {
         return language;
     }
@@ -422,6 +676,12 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
     private final String archiveUri;
 
+    /**
+     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     *
+     * @return the value
+     **/
     public String getArchiveUri() {
         return archiveUri;
     }
@@ -440,6 +700,18 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<String> arguments;
 
+    /**
+     * The arguments passed to the running application as command line arguments.  An argument is
+     * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
+     * map.  Each placeholder specified must be represented in the parameters map else the request
+     * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
+     * {@code Service Api Spec}, where {@code name} is the name of the parameter.
+     * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
+     * If "input_file" has a value of "mydata.xml", then the value above will be translated to
+     * {@code --input mydata.xml --name "John Doe"}
+     *
+     * @return the value
+     **/
     public java.util.List<String> getArguments() {
         return arguments;
     }
@@ -455,6 +727,15 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final java.util.Map<String, String> configuration;
 
+    /**
+     * The Spark configuration passed to the running process.
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+     * not allowed to be overwritten will cause a 400 status to be returned.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getConfiguration() {
         return configuration;
     }
@@ -467,6 +748,12 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -478,6 +765,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A user-friendly description. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -489,6 +781,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -500,6 +797,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     private final String driverShape;
 
+    /**
+     * The VM shape for the driver. Sets the driver cores and memory.
+     *
+     * @return the value
+     **/
     public String getDriverShape() {
         return driverShape;
     }
@@ -522,6 +824,15 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("execute")
     private final String execute;
 
+    /**
+     * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+     * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
+     * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
+     * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+     * Data Flow service will use derived information from execute input only.
+     *
+     * @return the value
+     **/
     public String getExecute() {
         return execute;
     }
@@ -533,6 +844,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     private final String executorShape;
 
+    /**
+     * The VM shape for the executors. Sets the executor cores and memory.
+     *
+     * @return the value
+     **/
     public String getExecutorShape() {
         return executorShape;
     }
@@ -553,6 +869,13 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -565,6 +888,12 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
     private final String logsBucketUri;
 
+    /**
+     * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     *
+     * @return the value
+     **/
     public String getLogsBucketUri() {
         return logsBucketUri;
     }
@@ -576,6 +905,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
+    /**
+     * The OCID of OCI Hive Metastore.
+     *
+     * @return the value
+     **/
     public String getMetastoreId() {
         return metastoreId;
     }
@@ -587,6 +921,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
     private final Integer numExecutors;
 
+    /**
+     * The number of executor VMs requested.
+     *
+     * @return the value
+     **/
     public Integer getNumExecutors() {
         return numExecutors;
     }
@@ -601,6 +940,14 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<ApplicationParameter> parameters;
 
+    /**
+     * An array of name/value pairs used to fill placeholders found in properties like
+     * {@code Application.arguments}.  The name must be a string of one or more word characters
+     * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
+     * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+     *
+     * @return the value
+     **/
     public java.util.List<ApplicationParameter> getParameters() {
         return parameters;
     }
@@ -612,6 +959,11 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
+    /**
+     * The OCID of a private endpoint.
+     *
+     * @return the value
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -625,6 +977,13 @@ public final class UpdateApplicationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
     private final String warehouseBucketUri;
 
+    /**
+     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
+     * for BATCH SQL runs.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     *
+     * @return the value
+     **/
     public String getWarehouseBucketUri() {
         return warehouseBucketUri;
     }

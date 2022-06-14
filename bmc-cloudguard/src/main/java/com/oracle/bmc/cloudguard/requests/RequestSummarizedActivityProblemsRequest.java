@@ -17,6 +17,9 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -29,6 +32,13 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -83,6 +93,14 @@ public class RequestSummarizedActivityProblemsRequest
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -91,6 +109,9 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -102,6 +123,12 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private Boolean includeUnknownLocations;
 
+    /**
+     * Default is false.
+     * When set to true, the summary of activity problems that has unknown values for
+     * city, state or country will be included.
+     *
+     */
     public Boolean getIncludeUnknownLocations() {
         return includeUnknownLocations;
     }
@@ -110,6 +137,9 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -118,6 +148,9 @@ public class RequestSummarizedActivityProblemsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -129,10 +162,14 @@ public class RequestSummarizedActivityProblemsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -140,6 +177,13 @@ public class RequestSummarizedActivityProblemsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -148,6 +192,7 @@ public class RequestSummarizedActivityProblemsRequest
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -155,6 +200,14 @@ public class RequestSummarizedActivityProblemsRequest
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -164,6 +217,7 @@ public class RequestSummarizedActivityProblemsRequest
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -171,10 +225,14 @@ public class RequestSummarizedActivityProblemsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -182,6 +240,12 @@ public class RequestSummarizedActivityProblemsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the summary of activity problems that has unknown values for
+         * city, state or country will be included.
+         *
+         */
         private Boolean includeUnknownLocations = null;
 
         /**
@@ -189,6 +253,7 @@ public class RequestSummarizedActivityProblemsRequest
          * When set to true, the summary of activity problems that has unknown values for
          * city, state or country will be included.
          *
+         * @param includeUnknownLocations the value to set
          * @return this builder instance
          */
         public Builder includeUnknownLocations(Boolean includeUnknownLocations) {
@@ -196,10 +261,14 @@ public class RequestSummarizedActivityProblemsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -207,10 +276,14 @@ public class RequestSummarizedActivityProblemsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -299,7 +372,8 @@ public class RequestSummarizedActivityProblemsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -312,6 +386,10 @@ public class RequestSummarizedActivityProblemsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

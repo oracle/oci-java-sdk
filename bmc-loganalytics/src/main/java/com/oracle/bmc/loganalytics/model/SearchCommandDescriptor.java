@@ -72,10 +72,19 @@ public final class SearchCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * List of sub-queries present in search command if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subQueries")
         private java.util.List<ParseQueryOutput> subQueries;
 
+        /**
+         * List of sub-queries present in search command if specified.
+         *
+         * @param subQueries the value to set
+         * @return this builder
+         **/
         public Builder subQueries(java.util.List<ParseQueryOutput> subQueries) {
             this.subQueries = subQueries;
             this.__explicitlySet__.add("subQueries");
@@ -143,6 +152,11 @@ public final class SearchCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("subQueries")
     private final java.util.List<ParseQueryOutput> subQueries;
 
+    /**
+     * List of sub-queries present in search command if specified.
+     *
+     * @return the value
+     **/
     public java.util.List<ParseQueryOutput> getSubQueries() {
         return subQueries;
     }

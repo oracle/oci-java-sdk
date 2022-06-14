@@ -14,6 +14,11 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +47,12 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcWorkRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -45,6 +62,10 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
+    /**
+     * The returned Workspace instance.
+     * @return the value
+     */
     public com.oracle.bmc.dataintegration.model.Workspace getWorkspace() {
         return workspace;
     }
@@ -77,29 +98,71 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The returned Workspace instance.
+         */
         private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
+        /**
+         * The returned Workspace instance.
+         * @param workspace the value to set
+         * @return this builder
+         */
         public Builder workspace(com.oracle.bmc.dataintegration.model.Workspace workspace) {
             this.workspace = workspace;
             return this;
@@ -119,12 +182,20 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateWorkspaceResponse build() {
             return new UpdateWorkspaceResponse(
                     __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, workspace);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,9 +28,17 @@ public final class ComputeInstanceGroupFailurePolicyByCount
         extends ComputeInstanceGroupFailurePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The threshold count of failed instances in the group, which when reached or exceeded sets the stage as Failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failureCount")
         private Integer failureCount;
 
+        /**
+         * The threshold count of failed instances in the group, which when reached or exceeded sets the stage as Failed.
+         * @param failureCount the value to set
+         * @return this builder
+         **/
         public Builder failureCount(Integer failureCount) {
             this.failureCount = failureCount;
             this.__explicitlySet__.add("failureCount");
@@ -79,6 +87,10 @@ public final class ComputeInstanceGroupFailurePolicyByCount
     @com.fasterxml.jackson.annotation.JsonProperty("failureCount")
     private final Integer failureCount;
 
+    /**
+     * The threshold count of failed instances in the group, which when reached or exceeded sets the stage as Failed.
+     * @return the value
+     **/
     public Integer getFailureCount() {
         return failureCount;
     }

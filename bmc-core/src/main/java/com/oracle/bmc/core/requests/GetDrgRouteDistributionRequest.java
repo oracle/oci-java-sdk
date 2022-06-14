@@ -17,6 +17,9 @@ public class GetDrgRouteDistributionRequest
      */
     private String drgRouteDistributionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+     */
     public String getDrgRouteDistributionId() {
         return drgRouteDistributionId;
     }
@@ -28,10 +31,14 @@ public class GetDrgRouteDistributionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         */
         private String drgRouteDistributionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+         * @param drgRouteDistributionId the value to set
          * @return this builder instance
          */
         public Builder drgRouteDistributionId(String drgRouteDistributionId) {
@@ -107,12 +114,17 @@ public class GetDrgRouteDistributionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().drgRouteDistributionId(drgRouteDistributionId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

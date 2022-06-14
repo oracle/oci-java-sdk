@@ -28,18 +28,35 @@ public final class ExportedVariable {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Value of the argument.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * Value of the argument.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -82,6 +99,11 @@ public final class ExportedVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -92,6 +114,10 @@ public final class ExportedVariable {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * Value of the argument.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

@@ -29,9 +29,17 @@ public final class ConnectLocalPeeringGatewaysDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the LPG you want to peer with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerId")
         private String peerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the LPG you want to peer with.
+         * @param peerId the value to set
+         * @return this builder
+         **/
         public Builder peerId(String peerId) {
             this.peerId = peerId;
             this.__explicitlySet__.add("peerId");
@@ -74,6 +82,10 @@ public final class ConnectLocalPeeringGatewaysDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     private final String peerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the LPG you want to peer with.
+     * @return the value
+     **/
     public String getPeerId() {
         return peerId;
     }

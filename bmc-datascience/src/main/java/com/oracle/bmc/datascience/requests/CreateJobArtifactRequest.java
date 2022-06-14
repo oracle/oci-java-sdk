@@ -18,6 +18,9 @@ public class CreateJobArtifactRequest
      */
     private String jobId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     */
     public String getJobId() {
         return jobId;
     }
@@ -26,6 +29,9 @@ public class CreateJobArtifactRequest
      */
     private Long contentLength;
 
+    /**
+     * The content length of the body.
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -34,6 +40,9 @@ public class CreateJobArtifactRequest
      */
     private java.io.InputStream jobArtifact;
 
+    /**
+     * The job artifact to upload.
+     */
     public java.io.InputStream getJobArtifact() {
         return jobArtifact;
     }
@@ -43,6 +52,10 @@ public class CreateJobArtifactRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +65,10 @@ public class CreateJobArtifactRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,6 +79,11 @@ public class CreateJobArtifactRequest
      */
     private String contentDisposition;
 
+    /**
+     * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
+     * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
+     *
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -83,10 +105,14 @@ public class CreateJobArtifactRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         */
         private String jobId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * @param jobId the value to set
          * @return this builder instance
          */
         public Builder jobId(String jobId) {
@@ -94,10 +120,14 @@ public class CreateJobArtifactRequest
             return this;
         }
 
+        /**
+         * The content length of the body.
+         */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
+         * @param contentLength the value to set
          * @return this builder instance
          */
         public Builder contentLength(Long contentLength) {
@@ -105,10 +135,14 @@ public class CreateJobArtifactRequest
             return this;
         }
 
+        /**
+         * The job artifact to upload.
+         */
         private java.io.InputStream jobArtifact = null;
 
         /**
          * The job artifact to upload.
+         * @param jobArtifact the value to set
          * @return this builder instance
          */
         public Builder jobArtifact(java.io.InputStream jobArtifact) {
@@ -116,11 +150,16 @@ public class CreateJobArtifactRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,11 +167,16 @@ public class CreateJobArtifactRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -140,12 +184,18 @@ public class CreateJobArtifactRequest
             return this;
         }
 
+        /**
+         * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
+         * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
+         *
+         */
         private String contentDisposition = null;
 
         /**
          * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
          * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
          *
+         * @param contentDisposition the value to set
          * @return this builder instance
          */
         public Builder contentDisposition(String contentDisposition) {
@@ -242,7 +292,8 @@ public class CreateJobArtifactRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -254,6 +305,10 @@ public class CreateJobArtifactRequest
                 .contentDisposition(contentDisposition);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

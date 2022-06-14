@@ -29,9 +29,19 @@ public final class IPSecConnectionTunnelSharedSecret {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tunnel's shared secret (pre-shared key).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
         private String sharedSecret;
 
+        /**
+         * The tunnel's shared secret (pre-shared key).
+         *
+         * @param sharedSecret the value to set
+         * @return this builder
+         **/
         public Builder sharedSecret(String sharedSecret) {
             this.sharedSecret = sharedSecret;
             this.__explicitlySet__.add("sharedSecret");
@@ -75,6 +85,11 @@ public final class IPSecConnectionTunnelSharedSecret {
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
     private final String sharedSecret;
 
+    /**
+     * The tunnel's shared secret (pre-shared key).
+     *
+     * @return the value
+     **/
     public String getSharedSecret() {
         return sharedSecret;
     }

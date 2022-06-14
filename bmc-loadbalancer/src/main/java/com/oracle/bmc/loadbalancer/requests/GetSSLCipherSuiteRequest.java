@@ -17,6 +17,10 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
+     *
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -28,6 +32,12 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String name;
 
+    /**
+     * The name of the SSL cipher suite to retrieve.
+     * <p>
+     * example: {@code example_cipher_suite}
+     *
+     */
     public String getName() {
         return name;
     }
@@ -38,6 +48,11 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,11 +64,16 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
+         *
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated load balancer.
          *
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -61,6 +81,12 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The name of the SSL cipher suite to retrieve.
+         * <p>
+         * example: {@code example_cipher_suite}
+         *
+         */
         private String name = null;
 
         /**
@@ -68,6 +94,7 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * example: {@code example_cipher_suite}
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -75,12 +102,18 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -160,12 +193,17 @@ public class GetSSLCipherSuiteRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().loadBalancerId(loadBalancerId).name(name).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

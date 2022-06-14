@@ -34,6 +34,7 @@ public final class ResetDatabaseParametersDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("credentials")
         private DatabaseCredentials credentials;
 
@@ -42,19 +43,51 @@ public final class ResetDatabaseParametersDetails {
             this.__explicitlySet__.add("credentials");
             return this;
         }
-
+        /**
+         * The clause used to specify when the parameter change takes effect.
+         * <p>
+         * Use {@code MEMORY} to make the change in memory and ensure that it takes
+         * effect immediately. Use {@code SPFILE} to make the change in the server
+         * parameter file. The change takes effect when the database is next
+         * shut down and started up again. Use {@code BOTH} to make the change in
+         * memory and in the server parameter file. The change takes effect
+         * immediately and persists after the database is shut down and
+         * started up again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private ParameterScope scope;
 
+        /**
+         * The clause used to specify when the parameter change takes effect.
+         * <p>
+         * Use {@code MEMORY} to make the change in memory and ensure that it takes
+         * effect immediately. Use {@code SPFILE} to make the change in the server
+         * parameter file. The change takes effect when the database is next
+         * shut down and started up again. Use {@code BOTH} to make the change in
+         * memory and in the server parameter file. The change takes effect
+         * immediately and persists after the database is shut down and
+         * started up again.
+         *
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(ParameterScope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * A list of database parameter names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<String> parameters;
 
+        /**
+         * A list of database parameter names.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.List<String> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -116,6 +149,19 @@ public final class ResetDatabaseParametersDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final ParameterScope scope;
 
+    /**
+     * The clause used to specify when the parameter change takes effect.
+     * <p>
+     * Use {@code MEMORY} to make the change in memory and ensure that it takes
+     * effect immediately. Use {@code SPFILE} to make the change in the server
+     * parameter file. The change takes effect when the database is next
+     * shut down and started up again. Use {@code BOTH} to make the change in
+     * memory and in the server parameter file. The change takes effect
+     * immediately and persists after the database is shut down and
+     * started up again.
+     *
+     * @return the value
+     **/
     public ParameterScope getScope() {
         return scope;
     }
@@ -126,6 +172,10 @@ public final class ResetDatabaseParametersDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<String> parameters;
 
+    /**
+     * A list of database parameter names.
+     * @return the value
+     **/
     public java.util.List<String> getParameters() {
         return parameters;
     }

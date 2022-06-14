@@ -17,6 +17,9 @@ public class GetTargetAlertPolicyAssociationRequest
      */
     private String targetAlertPolicyAssociationId;
 
+    /**
+     * The OCID of the target-alert policy association.
+     */
     public String getTargetAlertPolicyAssociationId() {
         return targetAlertPolicyAssociationId;
     }
@@ -25,6 +28,9 @@ public class GetTargetAlertPolicyAssociationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,10 +42,14 @@ public class GetTargetAlertPolicyAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target-alert policy association.
+         */
         private String targetAlertPolicyAssociationId = null;
 
         /**
          * The OCID of the target-alert policy association.
+         * @param targetAlertPolicyAssociationId the value to set
          * @return this builder instance
          */
         public Builder targetAlertPolicyAssociationId(String targetAlertPolicyAssociationId) {
@@ -47,10 +57,14 @@ public class GetTargetAlertPolicyAssociationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -129,7 +143,8 @@ public class GetTargetAlertPolicyAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -137,6 +152,10 @@ public class GetTargetAlertPolicyAssociationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

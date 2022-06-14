@@ -44,10 +44,17 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
             this.__explicitlySet__.add("time");
             return this;
         }
-
+        /**
+         * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("days")
         private java.util.List<Days> days;
 
+        /**
+         * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
+         * @param days the value to set
+         * @return this builder
+         **/
         public Builder days(java.util.List<Days> days) {
             this.days = days;
             this.__explicitlySet__.add("days");
@@ -153,6 +160,10 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("days")
     private final java.util.List<Days> days;
 
+    /**
+     * A list of days of the week to be scheduled. i.e. execute on Monday and Thursday.
+     * @return the value
+     **/
     public java.util.List<Days> getDays() {
         return days;
     }

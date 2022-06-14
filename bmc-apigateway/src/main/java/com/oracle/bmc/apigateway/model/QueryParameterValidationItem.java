@@ -30,18 +30,33 @@ public final class QueryParameterValidationItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Determines if the parameter is required in the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
 
+        /**
+         * Determines if the parameter is required in the request.
+         * @param required the value to set
+         * @return this builder
+         **/
         public Builder required(Boolean required) {
             this.required = required;
             this.__explicitlySet__.add("required");
             return this;
         }
-
+        /**
+         * Parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Parameter name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -84,6 +99,10 @@ public final class QueryParameterValidationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("required")
     private final Boolean required;
 
+    /**
+     * Determines if the parameter is required in the request.
+     * @return the value
+     **/
     public Boolean getRequired() {
         return required;
     }
@@ -94,6 +113,10 @@ public final class QueryParameterValidationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Parameter name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

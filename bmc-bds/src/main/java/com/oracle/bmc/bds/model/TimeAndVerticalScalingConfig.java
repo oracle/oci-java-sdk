@@ -41,36 +41,73 @@ public final class TimeAndVerticalScalingConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
         private String timeRecurrence;
 
+        /**
+         * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         *
+         * @param timeRecurrence the value to set
+         * @return this builder
+         **/
         public Builder timeRecurrence(String timeRecurrence) {
             this.timeRecurrence = timeRecurrence;
             this.__explicitlySet__.add("timeRecurrence");
             return this;
         }
-
+        /**
+         * For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetShape")
         private String targetShape;
 
+        /**
+         * For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+         *
+         * @param targetShape the value to set
+         * @return this builder
+         **/
         public Builder targetShape(String targetShape) {
             this.targetShape = targetShape;
             this.__explicitlySet__.add("targetShape");
             return this;
         }
-
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetOcpusPerNode")
         private Integer targetOcpusPerNode;
 
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+         *
+         * @param targetOcpusPerNode the value to set
+         * @return this builder
+         **/
         public Builder targetOcpusPerNode(Integer targetOcpusPerNode) {
             this.targetOcpusPerNode = targetOcpusPerNode;
             this.__explicitlySet__.add("targetOcpusPerNode");
             return this;
         }
-
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetMemoryPerNode")
         private Integer targetMemoryPerNode;
 
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+         *
+         * @param targetMemoryPerNode the value to set
+         * @return this builder
+         **/
         public Builder targetMemoryPerNode(Integer targetMemoryPerNode) {
             this.targetMemoryPerNode = targetMemoryPerNode;
             this.__explicitlySet__.add("targetMemoryPerNode");
@@ -119,6 +156,11 @@ public final class TimeAndVerticalScalingConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRecurrence")
     private final String timeRecurrence;
 
+    /**
+     * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+     *
+     * @return the value
+     **/
     public String getTimeRecurrence() {
         return timeRecurrence;
     }
@@ -130,6 +172,11 @@ public final class TimeAndVerticalScalingConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("targetShape")
     private final String targetShape;
 
+    /**
+     * For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+     *
+     * @return the value
+     **/
     public String getTargetShape() {
         return targetShape;
     }
@@ -141,6 +188,11 @@ public final class TimeAndVerticalScalingConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("targetOcpusPerNode")
     private final Integer targetOcpusPerNode;
 
+    /**
+     * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+     *
+     * @return the value
+     **/
     public Integer getTargetOcpusPerNode() {
         return targetOcpusPerNode;
     }
@@ -152,6 +204,11 @@ public final class TimeAndVerticalScalingConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("targetMemoryPerNode")
     private final Integer targetMemoryPerNode;
 
+    /**
+     * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+     *
+     * @return the value
+     **/
     public Integer getTargetMemoryPerNode() {
         return targetMemoryPerNode;
     }

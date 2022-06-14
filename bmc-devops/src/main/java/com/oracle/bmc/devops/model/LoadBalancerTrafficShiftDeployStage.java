@@ -172,10 +172,17 @@ public final class LoadBalancerTrafficShiftDeployStage extends DeployStage {
             this.__explicitlySet__.add("greenBackendIps");
             return this;
         }
-
+        /**
+         * Specifies the target or destination backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
         private TrafficShiftTarget trafficShiftTarget;
 
+        /**
+         * Specifies the target or destination backend set.
+         * @param trafficShiftTarget the value to set
+         * @return this builder
+         **/
         public Builder trafficShiftTarget(TrafficShiftTarget trafficShiftTarget) {
             this.trafficShiftTarget = trafficShiftTarget;
             this.__explicitlySet__.add("trafficShiftTarget");
@@ -394,6 +401,10 @@ public final class LoadBalancerTrafficShiftDeployStage extends DeployStage {
     @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
     private final TrafficShiftTarget trafficShiftTarget;
 
+    /**
+     * Specifies the target or destination backend set.
+     * @return the value
+     **/
     public TrafficShiftTarget getTrafficShiftTarget() {
         return trafficShiftTarget;
     }

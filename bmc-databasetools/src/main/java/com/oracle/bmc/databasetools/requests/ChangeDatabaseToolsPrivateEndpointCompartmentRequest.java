@@ -15,10 +15,13 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
                         .ChangeDatabaseToolsPrivateEndpointCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      */
     private String databaseToolsPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+     */
     public String getDatabaseToolsPrivateEndpointId() {
         return databaseToolsPrivateEndpointId;
     }
@@ -28,6 +31,9 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
     private com.oracle.bmc.databasetools.model.ChangeDatabaseToolsPrivateEndpointCompartmentDetails
             changeDatabaseToolsPrivateEndpointCompartmentDetails;
 
+    /**
+     * Request to change the compartment of the DatabaseToolsPrivateEndpoint.
+     */
     public com.oracle.bmc.databasetools.model.ChangeDatabaseToolsPrivateEndpointCompartmentDetails
             getChangeDatabaseToolsPrivateEndpointCompartmentDetails() {
         return changeDatabaseToolsPrivateEndpointCompartmentDetails;
@@ -42,6 +48,14 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,9 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +80,14 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -87,10 +112,14 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+         */
         private String databaseToolsPrivateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+         * @param databaseToolsPrivateEndpointId the value to set
          * @return this builder instance
          */
         public Builder databaseToolsPrivateEndpointId(String databaseToolsPrivateEndpointId) {
@@ -98,12 +127,16 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of the DatabaseToolsPrivateEndpoint.
+         */
         private com.oracle.bmc.databasetools.model
                         .ChangeDatabaseToolsPrivateEndpointCompartmentDetails
                 changeDatabaseToolsPrivateEndpointCompartmentDetails = null;
 
         /**
          * Request to change the compartment of the DatabaseToolsPrivateEndpoint.
+         * @param changeDatabaseToolsPrivateEndpointCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeDatabaseToolsPrivateEndpointCompartmentDetails(
@@ -115,6 +148,14 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -124,6 +165,7 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -131,10 +173,14 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -142,6 +188,14 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -151,6 +205,7 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -253,7 +308,8 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -265,6 +321,10 @@ public class ChangeDatabaseToolsPrivateEndpointCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -54,6 +54,7 @@ public final class TransferPackage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
@@ -127,10 +128,17 @@ public final class TransferPackage {
             this.__explicitlySet__.add("transferSiteShippingAddress");
             return this;
         }
-
+        /**
+         * Transfer Devices attached to this Transfer Package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachedTransferDeviceLabels")
         private java.util.List<String> attachedTransferDeviceLabels;
 
+        /**
+         * Transfer Devices attached to this Transfer Package
+         * @param attachedTransferDeviceLabels the value to set
+         * @return this builder
+         **/
         public Builder attachedTransferDeviceLabels(
                 java.util.List<String> attachedTransferDeviceLabels) {
             this.attachedTransferDeviceLabels = attachedTransferDeviceLabels;
@@ -305,6 +313,10 @@ public final class TransferPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("attachedTransferDeviceLabels")
     private final java.util.List<String> attachedTransferDeviceLabels;
 
+    /**
+     * Transfer Devices attached to this Transfer Package
+     * @return the value
+     **/
     public java.util.List<String> getAttachedTransferDeviceLabels() {
         return attachedTransferDeviceLabels;
     }

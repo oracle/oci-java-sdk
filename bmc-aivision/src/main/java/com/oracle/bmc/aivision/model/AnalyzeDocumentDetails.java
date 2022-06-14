@@ -47,9 +47,17 @@ public final class AnalyzeDocumentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The types of document analysis requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<DocumentFeature> features;
 
+        /**
+         * The types of document analysis requested.
+         * @param features the value to set
+         * @return this builder
+         **/
         public Builder features(java.util.List<DocumentFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -64,10 +72,17 @@ public final class AnalyzeDocumentDetails {
             this.__explicitlySet__.add("document");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that calls the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that calls the API.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -82,19 +97,33 @@ public final class AnalyzeDocumentDetails {
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-
+        /**
+         * The document language, abbreviated according to ISO 639-2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private DocumentLanguage language;
 
+        /**
+         * The document language, abbreviated according to ISO 639-2.
+         * @param language the value to set
+         * @return this builder
+         **/
         public Builder language(DocumentLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-
+        /**
+         * The document type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentType")
         private DocumentType documentType;
 
+        /**
+         * The document type.
+         * @param documentType the value to set
+         * @return this builder
+         **/
         public Builder documentType(DocumentType documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
@@ -149,6 +178,10 @@ public final class AnalyzeDocumentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<DocumentFeature> features;
 
+    /**
+     * The types of document analysis requested.
+     * @return the value
+     **/
     public java.util.List<DocumentFeature> getFeatures() {
         return features;
     }
@@ -166,6 +199,10 @@ public final class AnalyzeDocumentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that calls the API.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -183,6 +220,10 @@ public final class AnalyzeDocumentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final DocumentLanguage language;
 
+    /**
+     * The document language, abbreviated according to ISO 639-2.
+     * @return the value
+     **/
     public DocumentLanguage getLanguage() {
         return language;
     }
@@ -193,6 +234,10 @@ public final class AnalyzeDocumentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     private final DocumentType documentType;
 
+    /**
+     * The document type.
+     * @return the value
+     **/
     public DocumentType getDocumentType() {
         return documentType;
     }

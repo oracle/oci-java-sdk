@@ -16,6 +16,9 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String vmClusterId;
 
+    /**
+     * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -24,6 +27,9 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String updateId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     */
     public String getUpdateId() {
         return updateId;
     }
@@ -33,6 +39,10 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +54,14 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String vmClusterId = null;
 
         /**
          * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param vmClusterId the value to set
          * @return this builder instance
          */
         public Builder vmClusterId(String vmClusterId) {
@@ -55,10 +69,14 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         */
         private String updateId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         * @param updateId the value to set
          * @return this builder instance
          */
         public Builder updateId(String updateId) {
@@ -66,11 +84,16 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,12 +173,17 @@ public class GetVmClusterUpdateRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().vmClusterId(vmClusterId).updateId(updateId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

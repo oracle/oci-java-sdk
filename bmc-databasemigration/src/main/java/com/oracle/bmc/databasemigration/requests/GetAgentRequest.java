@@ -17,6 +17,10 @@ public class GetAgentRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String agentId;
 
+    /**
+     * The OCID of the agent
+     *
+     */
     public String getAgentId() {
         return agentId;
     }
@@ -27,6 +31,11 @@ public class GetAgentRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,11 +46,16 @@ public class GetAgentRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the agent
+         *
+         */
         private String agentId = null;
 
         /**
          * The OCID of the agent
          *
+         * @param agentId the value to set
          * @return this builder instance
          */
         public Builder agentId(String agentId) {
@@ -49,12 +63,18 @@ public class GetAgentRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -132,12 +152,17 @@ public class GetAgentRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().agentId(agentId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

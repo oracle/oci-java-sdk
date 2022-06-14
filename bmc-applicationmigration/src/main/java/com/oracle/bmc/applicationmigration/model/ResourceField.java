@@ -30,36 +30,65 @@ public final class ResourceField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name of the resource field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The display name of the resource field.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the group to which this field belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("group")
         private String group;
 
+        /**
+         * The name of the group to which this field belongs to.
+         * @param group the value to set
+         * @return this builder
+         **/
         public Builder group(String group) {
             this.group = group;
             this.__explicitlySet__.add("group");
             return this;
         }
-
+        /**
+         * The type of the resource field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The type of the resource field.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The value of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of the field.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -102,6 +131,10 @@ public final class ResourceField {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the resource field.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -112,6 +145,10 @@ public final class ResourceField {
     @com.fasterxml.jackson.annotation.JsonProperty("group")
     private final String group;
 
+    /**
+     * The name of the group to which this field belongs to.
+     * @return the value
+     **/
     public String getGroup() {
         return group;
     }
@@ -122,6 +159,10 @@ public final class ResourceField {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The type of the resource field.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -132,6 +173,10 @@ public final class ResourceField {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of the field.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

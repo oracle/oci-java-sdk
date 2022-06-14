@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Possible lifecycle states.
+ * The lifecycle state.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum LifecycleState {

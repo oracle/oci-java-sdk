@@ -27,9 +27,17 @@ public final class ContactList {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of contacts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactList")
         private java.util.List<Contact> contactList;
 
+        /**
+         * The list of contacts.
+         * @param contactList the value to set
+         * @return this builder
+         **/
         public Builder contactList(java.util.List<Contact> contactList) {
             this.contactList = contactList;
             this.__explicitlySet__.add("contactList");
@@ -71,6 +79,10 @@ public final class ContactList {
     @com.fasterxml.jackson.annotation.JsonProperty("contactList")
     private final java.util.List<Contact> contactList;
 
+    /**
+     * The list of contacts.
+     * @return the value
+     **/
     public java.util.List<Contact> getContactList() {
         return contactList;
     }

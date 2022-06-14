@@ -14,6 +14,11 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +59,11 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private String location;
 
+    /**
+     * The full URI of the on-premises connector.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -53,6 +73,10 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
+    /**
+     * The returned OnPremConnector instance.
+     * @return the value
+     */
     public com.oracle.bmc.datasafe.model.OnPremConnector getOnPremConnector() {
         return onPremConnector;
     }
@@ -88,36 +112,84 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The full URI of the on-premises connector.
+         *
+         */
         private String location;
 
+        /**
+         * The full URI of the on-premises connector.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned OnPremConnector instance.
+         */
         private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
+        /**
+         * The returned OnPremConnector instance.
+         * @param onPremConnector the value to set
+         * @return this builder
+         */
         public Builder onPremConnector(
                 com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector) {
             this.onPremConnector = onPremConnector;
@@ -139,6 +211,10 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateOnPremConnectorResponse build() {
             return new CreateOnPremConnectorResponse(
                     __httpStatusCode__,
@@ -150,6 +226,10 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

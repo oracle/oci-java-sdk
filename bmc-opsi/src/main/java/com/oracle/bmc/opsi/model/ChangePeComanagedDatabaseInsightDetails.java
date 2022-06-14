@@ -32,9 +32,17 @@ public final class ChangePeComanagedDatabaseInsightDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Database service name used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * Database service name used for connection requests.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -49,10 +57,17 @@ public final class ChangePeComanagedDatabaseInsightDetails {
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * @param opsiPrivateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
@@ -99,6 +114,10 @@ public final class ChangePeComanagedDatabaseInsightDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * Database service name used for connection requests.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -116,6 +135,10 @@ public final class ChangePeComanagedDatabaseInsightDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * @return the value
+     **/
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }

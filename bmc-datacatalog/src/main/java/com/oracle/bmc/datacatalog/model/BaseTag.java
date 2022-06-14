@@ -54,81 +54,149 @@ public final class BaseTag {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique tag key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique tag key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Name of the tag which matches the term name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the tag which matches the term name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Unique key of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termKey")
         private String termKey;
 
+        /**
+         * Unique key of the related term.
+         * @param termKey the value to set
+         * @return this builder
+         **/
         public Builder termKey(String termKey) {
             this.termKey = termKey;
             this.__explicitlySet__.add("termKey");
             return this;
         }
-
+        /**
+         * Path of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termPath")
         private String termPath;
 
+        /**
+         * Path of the related term.
+         * @param termPath the value to set
+         * @return this builder
+         **/
         public Builder termPath(String termPath) {
             this.termPath = termPath;
             this.__explicitlySet__.add("termPath");
             return this;
         }
-
+        /**
+         * Description of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termDescription")
         private String termDescription;
 
+        /**
+         * Description of the related term.
+         * @param termDescription the value to set
+         * @return this builder
+         **/
         public Builder termDescription(String termDescription) {
             this.termDescription = termDescription;
             this.__explicitlySet__.add("termDescription");
             return this;
         }
-
+        /**
+         * The current state of the tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the tag.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the tag was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the tag was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * OCID of the user who created the tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
+        /**
+         * OCID of the user who created the tag.
+         * @param createdById the value to set
+         * @return this builder
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
-
+        /**
+         * URI to the tag instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * URI to the tag instance in the API.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
@@ -189,6 +257,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique tag key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -199,6 +271,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the tag which matches the term name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -209,6 +285,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("termKey")
     private final String termKey;
 
+    /**
+     * Unique key of the related term.
+     * @return the value
+     **/
     public String getTermKey() {
         return termKey;
     }
@@ -219,6 +299,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("termPath")
     private final String termPath;
 
+    /**
+     * Path of the related term.
+     * @return the value
+     **/
     public String getTermPath() {
         return termPath;
     }
@@ -229,6 +313,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("termDescription")
     private final String termDescription;
 
+    /**
+     * Description of the related term.
+     * @return the value
+     **/
     public String getTermDescription() {
         return termDescription;
     }
@@ -239,6 +327,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the tag.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -251,6 +343,12 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the tag was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -261,6 +359,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
+    /**
+     * OCID of the user who created the tag.
+     * @return the value
+     **/
     public String getCreatedById() {
         return createdById;
     }
@@ -271,6 +373,10 @@ public final class BaseTag {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * URI to the tag instance in the API.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }

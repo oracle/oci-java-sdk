@@ -16,6 +16,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String deployPipelineId;
 
+    /**
+     * The ID of the parent pipeline.
+     */
     public String getDeployPipelineId() {
         return deployPipelineId;
     }
@@ -24,6 +27,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String id;
 
+    /**
+     * Unique identifier or OCID for listing a single resource by ID.
+     */
     public String getId() {
         return id;
     }
@@ -32,6 +38,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -40,6 +49,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String projectId;
 
+    /**
+     * unique project identifier
+     */
     public String getProjectId() {
         return projectId;
     }
@@ -48,6 +60,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.devops.model.Deployment.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only Deployments that matches the given lifecycleState.
+     */
     public com.oracle.bmc.devops.model.Deployment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -56,6 +71,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -64,6 +82,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -72,6 +93,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -80,6 +104,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -124,6 +151,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -132,6 +162,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -140,6 +173,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -148,6 +184,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -159,10 +198,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the parent pipeline.
+         */
         private String deployPipelineId = null;
 
         /**
          * The ID of the parent pipeline.
+         * @param deployPipelineId the value to set
          * @return this builder instance
          */
         public Builder deployPipelineId(String deployPipelineId) {
@@ -170,10 +213,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique identifier or OCID for listing a single resource by ID.
+         */
         private String id = null;
 
         /**
          * Unique identifier or OCID for listing a single resource by ID.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -181,10 +228,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The OCID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -192,10 +243,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * unique project identifier
+         */
         private String projectId = null;
 
         /**
          * unique project identifier
+         * @param projectId the value to set
          * @return this builder instance
          */
         public Builder projectId(String projectId) {
@@ -203,10 +258,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to return only Deployments that matches the given lifecycleState.
+         */
         private com.oracle.bmc.devops.model.Deployment.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only Deployments that matches the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -215,10 +274,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -226,10 +289,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -237,10 +304,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -248,10 +319,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.devops.model.SortOrder sortOrder) {
@@ -259,10 +334,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -270,10 +349,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -281,10 +364,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
          * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -292,10 +379,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -396,7 +487,8 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -415,6 +507,10 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -45,45 +45,81 @@ public final class SecurityAssessmentComparison {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the security assessment that is being compared with a baseline security assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the security assessment that is being compared with a baseline security assessment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the security assessment that is set as a baseline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineId")
         private String baselineId;
 
+        /**
+         * The OCID of the security assessment that is set as a baseline.
+         * @param baselineId the value to set
+         * @return this builder
+         **/
         public Builder baselineId(String baselineId) {
             this.baselineId = baselineId;
             this.__explicitlySet__.add("baselineId");
             return this;
         }
-
+        /**
+         * The current state of the security assessment comparison.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the security assessment comparison.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * A target-based comparison between two security assessments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targets")
         private java.util.List<SecurityAssessmentComparisonPerTarget> targets;
 
+        /**
+         * A target-based comparison between two security assessments.
+         * @param targets the value to set
+         * @return this builder
+         **/
         public Builder targets(java.util.List<SecurityAssessmentComparisonPerTarget> targets) {
             this.targets = targets;
             this.__explicitlySet__.add("targets");
@@ -132,6 +168,10 @@ public final class SecurityAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the security assessment that is being compared with a baseline security assessment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -142,6 +182,10 @@ public final class SecurityAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("baselineId")
     private final String baselineId;
 
+    /**
+     * The OCID of the security assessment that is set as a baseline.
+     * @return the value
+     **/
     public String getBaselineId() {
         return baselineId;
     }
@@ -201,6 +245,10 @@ public final class SecurityAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the security assessment comparison.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -211,6 +259,10 @@ public final class SecurityAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -221,6 +273,10 @@ public final class SecurityAssessmentComparison {
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     private final java.util.List<SecurityAssessmentComparisonPerTarget> targets;
 
+    /**
+     * A target-based comparison between two security assessments.
+     * @return the value
+     **/
     public java.util.List<SecurityAssessmentComparisonPerTarget> getTargets() {
         return targets;
     }

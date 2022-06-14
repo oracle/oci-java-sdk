@@ -34,27 +34,49 @@ public final class UpdateReferenceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of options such as {@code ignoreObjectOnError}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private java.util.Map<String, String> options;
 
+        /**
+         * A list of options such as {@code ignoreObjectOnError}.
+         * @param options the value to set
+         * @return this builder
+         **/
         public Builder options(java.util.Map<String, String> options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
-
+        /**
+         * The new target object to reference. This can be of type {@code DataAsset}, {@code Schema} or {@code Task}. In case of {@code DataAsset}, the child references can be of type {@code Connection}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
         private Object targetObject;
 
+        /**
+         * The new target object to reference. This can be of type {@code DataAsset}, {@code Schema} or {@code Task}. In case of {@code DataAsset}, the child references can be of type {@code Connection}.
+         * @param targetObject the value to set
+         * @return this builder
+         **/
         public Builder targetObject(Object targetObject) {
             this.targetObject = targetObject;
             this.__explicitlySet__.add("targetObject");
             return this;
         }
-
+        /**
+         * The list of child references that also need to be updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
         private java.util.List<ChildReferenceDetail> childReferences;
 
+        /**
+         * The list of child references that also need to be updated.
+         * @param childReferences the value to set
+         * @return this builder
+         **/
         public Builder childReferences(java.util.List<ChildReferenceDetail> childReferences) {
             this.childReferences = childReferences;
             this.__explicitlySet__.add("childReferences");
@@ -100,6 +122,10 @@ public final class UpdateReferenceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final java.util.Map<String, String> options;
 
+    /**
+     * A list of options such as {@code ignoreObjectOnError}.
+     * @return the value
+     **/
     public java.util.Map<String, String> getOptions() {
         return options;
     }
@@ -110,6 +136,10 @@ public final class UpdateReferenceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
     private final Object targetObject;
 
+    /**
+     * The new target object to reference. This can be of type {@code DataAsset}, {@code Schema} or {@code Task}. In case of {@code DataAsset}, the child references can be of type {@code Connection}.
+     * @return the value
+     **/
     public Object getTargetObject() {
         return targetObject;
     }
@@ -120,6 +150,10 @@ public final class UpdateReferenceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
     private final java.util.List<ChildReferenceDetail> childReferences;
 
+    /**
+     * The list of child references that also need to be updated.
+     * @return the value
+     **/
     public java.util.List<ChildReferenceDetail> getChildReferences() {
         return childReferences;
     }

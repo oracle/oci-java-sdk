@@ -18,6 +18,9 @@ public class CreateResolverEndpointRequest
      */
     private String resolverId;
 
+    /**
+     * The OCID of the target resolver.
+     */
     public String getResolverId() {
         return resolverId;
     }
@@ -26,6 +29,9 @@ public class CreateResolverEndpointRequest
      */
     private com.oracle.bmc.dns.model.CreateResolverEndpointDetails createResolverEndpointDetails;
 
+    /**
+     * Details for creating a new resolver endpoint.
+     */
     public com.oracle.bmc.dns.model.CreateResolverEndpointDetails
             getCreateResolverEndpointDetails() {
         return createResolverEndpointDetails;
@@ -41,6 +47,15 @@ public class CreateResolverEndpointRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -52,6 +67,12 @@ public class CreateResolverEndpointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +82,10 @@ public class CreateResolverEndpointRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -83,10 +108,14 @@ public class CreateResolverEndpointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target resolver.
+         */
         private String resolverId = null;
 
         /**
          * The OCID of the target resolver.
+         * @param resolverId the value to set
          * @return this builder instance
          */
         public Builder resolverId(String resolverId) {
@@ -94,11 +123,15 @@ public class CreateResolverEndpointRequest
             return this;
         }
 
+        /**
+         * Details for creating a new resolver endpoint.
+         */
         private com.oracle.bmc.dns.model.CreateResolverEndpointDetails
                 createResolverEndpointDetails = null;
 
         /**
          * Details for creating a new resolver endpoint.
+         * @param createResolverEndpointDetails the value to set
          * @return this builder instance
          */
         public Builder createResolverEndpointDetails(
@@ -108,6 +141,15 @@ public class CreateResolverEndpointRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -118,6 +160,7 @@ public class CreateResolverEndpointRequest
          * deleted and purged from the system, then a retry of the original creation
          * request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -125,6 +168,12 @@ public class CreateResolverEndpointRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -132,6 +181,7 @@ public class CreateResolverEndpointRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -139,11 +189,16 @@ public class CreateResolverEndpointRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -238,7 +293,8 @@ public class CreateResolverEndpointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +305,10 @@ public class CreateResolverEndpointRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

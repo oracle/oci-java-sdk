@@ -88,109 +88,234 @@ public final class CrossConnect {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
         private String crossConnectGroupId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
+         *
+         * @param crossConnectGroupId the value to set
+         * @return this builder
+         **/
         public Builder crossConnectGroupId(String crossConnectGroupId) {
             this.crossConnectGroupId = crossConnectGroupId;
             this.__explicitlySet__.add("crossConnectGroupId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The cross-connect's Oracle ID (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The cross-connect's Oracle ID (OCID).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The cross-connect's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The cross-connect's current state.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The name of the FastConnect location where this cross-connect is installed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locationName")
         private String locationName;
 
+        /**
+         * The name of the FastConnect location where this cross-connect is installed.
+         *
+         * @param locationName the value to set
+         * @return this builder
+         **/
         public Builder locationName(String locationName) {
             this.locationName = locationName;
             this.__explicitlySet__.add("locationName");
             return this;
         }
-
+        /**
+         * A string identifying the meet-me room port for this cross-connect.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portName")
         private String portName;
 
+        /**
+         * A string identifying the meet-me room port for this cross-connect.
+         * @param portName the value to set
+         * @return this builder
+         **/
         public Builder portName(String portName) {
             this.portName = portName;
             this.__explicitlySet__.add("portName");
             return this;
         }
-
+        /**
+         * The port speed for this cross-connect.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
         private String portSpeedShapeName;
 
+        /**
+         * The port speed for this cross-connect.
+         * <p>
+         * Example: {@code 10 Gbps}
+         *
+         * @param portSpeedShapeName the value to set
+         * @return this builder
+         **/
         public Builder portSpeedShapeName(String portSpeedShapeName) {
             this.portSpeedShapeName = portSpeedShapeName;
             this.__explicitlySet__.add("portSpeedShapeName");
             return this;
         }
-
+        /**
+         * A reference name or identifier for the physical fiber connection that this cross-connect
+         * uses.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
         private String customerReferenceName;
 
+        /**
+         * A reference name or identifier for the physical fiber connection that this cross-connect
+         * uses.
+         *
+         * @param customerReferenceName the value to set
+         * @return this builder
+         **/
         public Builder customerReferenceName(String customerReferenceName) {
             this.customerReferenceName = customerReferenceName;
             this.__explicitlySet__.add("customerReferenceName");
             return this;
         }
-
+        /**
+         * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -205,19 +330,39 @@ public final class CrossConnect {
             this.__explicitlySet__.add("macsecProperties");
             return this;
         }
-
+        /**
+         * The FastConnect device that terminates the physical connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
         private String ociPhysicalDeviceName;
 
+        /**
+         * The FastConnect device that terminates the physical connection.
+         *
+         * @param ociPhysicalDeviceName the value to set
+         * @return this builder
+         **/
         public Builder ociPhysicalDeviceName(String ociPhysicalDeviceName) {
             this.ociPhysicalDeviceName = ociPhysicalDeviceName;
             this.__explicitlySet__.add("ociPhysicalDeviceName");
             return this;
         }
-
+        /**
+         * The FastConnect device that terminates the logical connection.
+         * This device might be different than the device that terminates the physical connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
         private String ociLogicalDeviceName;
 
+        /**
+         * The FastConnect device that terminates the logical connection.
+         * This device might be different than the device that terminates the physical connection.
+         *
+         * @param ociLogicalDeviceName the value to set
+         * @return this builder
+         **/
         public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
             this.ociLogicalDeviceName = ociLogicalDeviceName;
             this.__explicitlySet__.add("ociLogicalDeviceName");
@@ -290,6 +435,10 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -301,6 +450,11 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
     private final String crossConnectGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
+     *
+     * @return the value
+     **/
     public String getCrossConnectGroupId() {
         return crossConnectGroupId;
     }
@@ -315,6 +469,14 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -327,6 +489,12 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -341,6 +509,14 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -351,6 +527,10 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The cross-connect's Oracle ID (OCID).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -413,6 +593,10 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The cross-connect's current state.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -424,6 +608,11 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("locationName")
     private final String locationName;
 
+    /**
+     * The name of the FastConnect location where this cross-connect is installed.
+     *
+     * @return the value
+     **/
     public String getLocationName() {
         return locationName;
     }
@@ -434,6 +623,10 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("portName")
     private final String portName;
 
+    /**
+     * A string identifying the meet-me room port for this cross-connect.
+     * @return the value
+     **/
     public String getPortName() {
         return portName;
     }
@@ -447,6 +640,13 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
     private final String portSpeedShapeName;
 
+    /**
+     * The port speed for this cross-connect.
+     * <p>
+     * Example: {@code 10 Gbps}
+     *
+     * @return the value
+     **/
     public String getPortSpeedShapeName() {
         return portSpeedShapeName;
     }
@@ -459,6 +659,12 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
     private final String customerReferenceName;
 
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * uses.
+     *
+     * @return the value
+     **/
     public String getCustomerReferenceName() {
         return customerReferenceName;
     }
@@ -472,6 +678,13 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -490,6 +703,11 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
     private final String ociPhysicalDeviceName;
 
+    /**
+     * The FastConnect device that terminates the physical connection.
+     *
+     * @return the value
+     **/
     public String getOciPhysicalDeviceName() {
         return ociPhysicalDeviceName;
     }
@@ -502,6 +720,12 @@ public final class CrossConnect {
     @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
     private final String ociLogicalDeviceName;
 
+    /**
+     * The FastConnect device that terminates the logical connection.
+     * This device might be different than the device that terminates the physical connection.
+     *
+     * @return the value
+     **/
     public String getOciLogicalDeviceName() {
         return ociLogicalDeviceName;
     }

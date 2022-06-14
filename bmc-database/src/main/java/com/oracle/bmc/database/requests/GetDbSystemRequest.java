@@ -16,6 +16,9 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String dbSystemId;
 
+    /**
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -27,10 +30,14 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbSystemId = null;
 
         /**
          * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -106,12 +113,17 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().dbSystemId(dbSystemId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

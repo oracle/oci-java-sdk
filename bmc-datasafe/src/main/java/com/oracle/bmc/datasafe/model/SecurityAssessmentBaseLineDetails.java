@@ -29,9 +29,17 @@ public final class SecurityAssessmentBaseLineDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of security assessment OCIDs that need to be updated while setting the baseline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
         private java.util.List<String> assessmentIds;
 
+        /**
+         * List of security assessment OCIDs that need to be updated while setting the baseline.
+         * @param assessmentIds the value to set
+         * @return this builder
+         **/
         public Builder assessmentIds(java.util.List<String> assessmentIds) {
             this.assessmentIds = assessmentIds;
             this.__explicitlySet__.add("assessmentIds");
@@ -74,6 +82,10 @@ public final class SecurityAssessmentBaseLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
     private final java.util.List<String> assessmentIds;
 
+    /**
+     * List of security assessment OCIDs that need to be updated while setting the baseline.
+     * @return the value
+     **/
     public java.util.List<String> getAssessmentIds() {
         return assessmentIds;
     }

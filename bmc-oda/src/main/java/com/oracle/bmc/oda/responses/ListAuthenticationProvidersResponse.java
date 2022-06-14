@@ -15,6 +15,12 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
      */
     private String opcNextPage;
 
+    /**
+     * When you are paging through a list, if this header appears in the response,
+     * then there might be additional items still to get. Include this value as the
+     * {@code page} query parameter for the subsequent GET request.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +50,11 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
      */
     private Integer opcTotalItems;
 
+    /**
+     * The total number of results that match the query.
+     *
+     * @return the value
+     */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
@@ -47,6 +65,10 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
     private com.oracle.bmc.oda.model.AuthenticationProviderCollection
             authenticationProviderCollection;
 
+    /**
+     * The returned AuthenticationProviderCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.AuthenticationProviderCollection
             getAuthenticationProviderCollection() {
         return authenticationProviderCollection;
@@ -81,30 +103,74 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The total number of results that match the query.
+         *
+         */
         private Integer opcTotalItems;
 
+        /**
+         * The total number of results that match the query.
+         *
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
         public Builder opcTotalItems(Integer opcTotalItems) {
             this.opcTotalItems = opcTotalItems;
             return this;
         }
 
+        /**
+         * The returned AuthenticationProviderCollection instance.
+         */
         private com.oracle.bmc.oda.model.AuthenticationProviderCollection
                 authenticationProviderCollection;
 
+        /**
+         * The returned AuthenticationProviderCollection instance.
+         * @param authenticationProviderCollection the value to set
+         * @return this builder
+         */
         public Builder authenticationProviderCollection(
                 com.oracle.bmc.oda.model.AuthenticationProviderCollection
                         authenticationProviderCollection) {
@@ -126,6 +192,10 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListAuthenticationProvidersResponse build() {
             return new ListAuthenticationProvidersResponse(
                     __httpStatusCode__,
@@ -136,6 +206,10 @@ public class ListAuthenticationProvidersResponse extends com.oracle.bmc.response
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

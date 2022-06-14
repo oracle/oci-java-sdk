@@ -53,27 +53,63 @@ public final class DatabaseInstanceHomeMetricsDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
+        /**
+         * The name of the Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
+         *
+         * @param instanceName the value to set
+         * @return this builder
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
-
+        /**
+         * The number of Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
         private Integer instanceNumber;
 
+        /**
+         * The number of Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
+         *
+         * @param instanceNumber the value to set
+         * @return this builder
+         **/
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = instanceNumber;
             this.__explicitlySet__.add("instanceNumber");
             return this;
         }
-
+        /**
+         * A list of the active session metrics for CPU and Wait time for
+         * a specific Oracle Real Application Clusters (Oracle RAC)
+         * database instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
         private java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
 
+        /**
+         * A list of the active session metrics for CPU and Wait time for
+         * a specific Oracle Real Application Clusters (Oracle RAC)
+         * database instance.
+         *
+         * @param activityTimeSeriesMetrics the value to set
+         * @return this builder
+         **/
         public Builder activityTimeSeriesMetrics(
                 java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics) {
             this.activityTimeSeriesMetrics = activityTimeSeriesMetrics;
@@ -170,6 +206,12 @@ public final class DatabaseInstanceHomeMetricsDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
+    /**
+     * The name of the Oracle Real Application Clusters (Oracle RAC)
+     * database instance to which the corresponding metrics belong.
+     *
+     * @return the value
+     **/
     public String getInstanceName() {
         return instanceName;
     }
@@ -182,6 +224,12 @@ public final class DatabaseInstanceHomeMetricsDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
     private final Integer instanceNumber;
 
+    /**
+     * The number of Oracle Real Application Clusters (Oracle RAC)
+     * database instance to which the corresponding metrics belong.
+     *
+     * @return the value
+     **/
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
@@ -195,6 +243,13 @@ public final class DatabaseInstanceHomeMetricsDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
     private final java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
 
+    /**
+     * A list of the active session metrics for CPU and Wait time for
+     * a specific Oracle Real Application Clusters (Oracle RAC)
+     * database instance.
+     *
+     * @return the value
+     **/
     public java.util.List<ActivityTimeSeriesMetrics> getActivityTimeSeriesMetrics() {
         return activityTimeSeriesMetrics;
     }

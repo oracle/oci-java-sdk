@@ -28,9 +28,19 @@ package com.oracle.bmc.databasemigration.model;
 public final class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of tablespace at target to which the source database tablespace need to be remapped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
         private RemapTarget remapTarget;
 
+        /**
+         * Name of tablespace at target to which the source database tablespace need to be remapped.
+         *
+         * @param remapTarget the value to set
+         * @return this builder
+         **/
         public Builder remapTarget(RemapTarget remapTarget) {
             this.remapTarget = remapTarget;
             this.__explicitlySet__.add("remapTarget");
@@ -128,6 +138,11 @@ public final class ADBServerlesTablespaceDetails extends TargetTypeTablespaceDet
     @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
     private final RemapTarget remapTarget;
 
+    /**
+     * Name of tablespace at target to which the source database tablespace need to be remapped.
+     *
+     * @return the value
+     **/
     public RemapTarget getRemapTarget() {
         return remapTarget;
     }

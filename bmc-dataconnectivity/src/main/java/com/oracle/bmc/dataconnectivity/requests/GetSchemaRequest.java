@@ -16,6 +16,9 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -24,6 +27,9 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String connectionKey;
 
+    /**
+     * The connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -32,6 +38,9 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String schemaResourceName;
 
+    /**
+     * The schema resource name used for retrieving schemas.
+     */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
@@ -43,6 +52,12 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +66,9 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String endpointId;
 
+    /**
+     * Endpoint Id used for getDataAssetFullDetails.
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -62,10 +80,14 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -73,10 +95,14 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The connection key.
+         */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -84,10 +110,14 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The schema resource name used for retrieving schemas.
+         */
         private String schemaResourceName = null;
 
         /**
          * The schema resource name used for retrieving schemas.
+         * @param schemaResourceName the value to set
          * @return this builder instance
          */
         public Builder schemaResourceName(String schemaResourceName) {
@@ -95,6 +125,12 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -102,6 +138,7 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,10 +146,14 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Endpoint Id used for getDataAssetFullDetails.
+         */
         private String endpointId = null;
 
         /**
          * Endpoint Id used for getDataAssetFullDetails.
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -196,7 +237,8 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +249,10 @@ public class GetSchemaRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .endpointId(endpointId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

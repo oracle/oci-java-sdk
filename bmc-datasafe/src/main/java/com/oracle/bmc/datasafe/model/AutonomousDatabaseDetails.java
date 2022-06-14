@@ -35,10 +35,17 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
             this.__explicitlySet__.add("infrastructureType");
             return this;
         }
-
+        /**
+         * The OCID of the autonomous database registered as a target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
+        /**
+         * The OCID of the autonomous database registered as a target database in Data Safe.
+         * @param autonomousDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = autonomousDatabaseId;
             this.__explicitlySet__.add("autonomousDatabaseId");
@@ -90,6 +97,10 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
+    /**
+     * The OCID of the autonomous database registered as a target database in Data Safe.
+     * @return the value
+     **/
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }

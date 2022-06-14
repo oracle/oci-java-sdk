@@ -18,6 +18,9 @@ public class ChangeVirtualDeploymentCompartmentRequest
      */
     private String virtualDeploymentId;
 
+    /**
+     * Unique VirtualDeployment identifier.
+     */
     public String getVirtualDeploymentId() {
         return virtualDeploymentId;
     }
@@ -27,6 +30,9 @@ public class ChangeVirtualDeploymentCompartmentRequest
     private com.oracle.bmc.servicemesh.model.ChangeVirtualDeploymentCompartmentDetails
             changeVirtualDeploymentCompartmentDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.servicemesh.model.ChangeVirtualDeploymentCompartmentDetails
             getChangeVirtualDeploymentCompartmentDetails() {
         return changeVirtualDeploymentCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeVirtualDeploymentCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeVirtualDeploymentCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangeVirtualDeploymentCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangeVirtualDeploymentCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique VirtualDeployment identifier.
+         */
         private String virtualDeploymentId = null;
 
         /**
          * Unique VirtualDeployment identifier.
+         * @param virtualDeploymentId the value to set
          * @return this builder instance
          */
         public Builder virtualDeploymentId(String virtualDeploymentId) {
@@ -95,11 +124,15 @@ public class ChangeVirtualDeploymentCompartmentRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.servicemesh.model.ChangeVirtualDeploymentCompartmentDetails
                 changeVirtualDeploymentCompartmentDetails = null;
 
         /**
          * The information to be updated.
+         * @param changeVirtualDeploymentCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeVirtualDeploymentCompartmentDetails(
@@ -110,6 +143,14 @@ public class ChangeVirtualDeploymentCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +160,7 @@ public class ChangeVirtualDeploymentCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -126,10 +168,14 @@ public class ChangeVirtualDeploymentCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -137,6 +183,14 @@ public class ChangeVirtualDeploymentCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -146,6 +200,7 @@ public class ChangeVirtualDeploymentCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -244,7 +299,8 @@ public class ChangeVirtualDeploymentCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -256,6 +312,10 @@ public class ChangeVirtualDeploymentCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

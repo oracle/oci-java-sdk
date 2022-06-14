@@ -47,54 +47,97 @@ public final class ConsoleConnection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the console connection.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment to contain the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment to contain the console connection.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The OCID of the database node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
         private String dbNodeId;
 
+        /**
+         * The OCID of the database node.
+         * @param dbNodeId the value to set
+         * @return this builder
+         **/
         public Builder dbNodeId(String dbNodeId) {
             this.dbNodeId = dbNodeId;
             this.__explicitlySet__.add("dbNodeId");
             return this;
         }
-
+        /**
+         * The SSH connection string for the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
+        /**
+         * The SSH connection string for the console connection.
+         * @param connectionString the value to set
+         * @return this builder
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-
+        /**
+         * The SSH public key fingerprint for the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
+        /**
+         * The SSH public key fingerprint for the console connection.
+         * @param fingerprint the value to set
+         * @return this builder
+         **/
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
-
+        /**
+         * The current state of the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the console connection.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -149,6 +192,10 @@ public final class ConsoleConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the console connection.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -159,6 +206,10 @@ public final class ConsoleConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment to contain the console connection.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -169,6 +220,10 @@ public final class ConsoleConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
     private final String dbNodeId;
 
+    /**
+     * The OCID of the database node.
+     * @return the value
+     **/
     public String getDbNodeId() {
         return dbNodeId;
     }
@@ -179,6 +234,10 @@ public final class ConsoleConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
+    /**
+     * The SSH connection string for the console connection.
+     * @return the value
+     **/
     public String getConnectionString() {
         return connectionString;
     }
@@ -189,6 +248,10 @@ public final class ConsoleConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
+    /**
+     * The SSH public key fingerprint for the console connection.
+     * @return the value
+     **/
     public String getFingerprint() {
         return fingerprint;
     }
@@ -250,6 +313,10 @@ public final class ConsoleConnection {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the console connection.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

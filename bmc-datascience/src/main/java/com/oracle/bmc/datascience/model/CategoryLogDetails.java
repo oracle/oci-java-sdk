@@ -30,6 +30,7 @@ public final class CategoryLogDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("access")
         private LogDetails access;
 

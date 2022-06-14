@@ -32,27 +32,53 @@ public final class CreateReplicationPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the policy. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the policy. Avoid entering confidential information.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The destination region to replicate to, for example "us-ashburn-1".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
         private String destinationRegionName;
 
+        /**
+         * The destination region to replicate to, for example "us-ashburn-1".
+         * @param destinationRegionName the value to set
+         * @return this builder
+         **/
         public Builder destinationRegionName(String destinationRegionName) {
             this.destinationRegionName = destinationRegionName;
             this.__explicitlySet__.add("destinationRegionName");
             return this;
         }
-
+        /**
+         * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+         * create a destination bucket. Create the destination bucket before creating the policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
         private String destinationBucketName;
 
+        /**
+         * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+         * create a destination bucket. Create the destination bucket before creating the policy.
+         *
+         * @param destinationBucketName the value to set
+         * @return this builder
+         **/
         public Builder destinationBucketName(String destinationBucketName) {
             this.destinationBucketName = destinationBucketName;
             this.__explicitlySet__.add("destinationBucketName");
@@ -99,6 +125,10 @@ public final class CreateReplicationPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the policy. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -109,6 +139,10 @@ public final class CreateReplicationPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
     private final String destinationRegionName;
 
+    /**
+     * The destination region to replicate to, for example "us-ashburn-1".
+     * @return the value
+     **/
     public String getDestinationRegionName() {
         return destinationRegionName;
     }
@@ -121,6 +155,12 @@ public final class CreateReplicationPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
     private final String destinationBucketName;
 
+    /**
+     * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+     * create a destination bucket. Create the destination bucket before creating the policy.
+     *
+     * @return the value
+     **/
     public String getDestinationBucketName() {
         return destinationBucketName;
     }

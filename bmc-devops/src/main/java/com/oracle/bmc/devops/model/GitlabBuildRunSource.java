@@ -27,9 +27,17 @@ package com.oracle.bmc.devops.model;
 public final class GitlabBuildRunSource extends BuildRunSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The trigger that invoked the build run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
         private String triggerId;
 
+        /**
+         * The trigger that invoked the build run.
+         * @param triggerId the value to set
+         * @return this builder
+         **/
         public Builder triggerId(String triggerId) {
             this.triggerId = triggerId;
             this.__explicitlySet__.add("triggerId");
@@ -87,6 +95,10 @@ public final class GitlabBuildRunSource extends BuildRunSource {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
     private final String triggerId;
 
+    /**
+     * The trigger that invoked the build run.
+     * @return the value
+     **/
     public String getTriggerId() {
         return triggerId;
     }

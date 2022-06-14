@@ -30,27 +30,55 @@ public final class TimeRange {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
+        /**
+         * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
+         *
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
+         *
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * Time zone for query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
+        /**
+         * Time zone for query.
+         *
+         * @param timeZone the value to set
+         * @return this builder
+         **/
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -94,6 +122,11 @@ public final class TimeRange {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
+    /**
+     * Time for query to start matching results from. Start time must be less than end time otherwise it will result in error.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -105,6 +138,11 @@ public final class TimeRange {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * Time for query to stop matching results to. End Time must be greater than or equal to start time otherwise it will result in error.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -116,6 +154,11 @@ public final class TimeRange {
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
+    /**
+     * Time zone for query.
+     *
+     * @return the value
+     **/
     public String getTimeZone() {
         return timeZone;
     }

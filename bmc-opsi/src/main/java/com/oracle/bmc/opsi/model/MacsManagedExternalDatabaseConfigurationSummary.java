@@ -118,37 +118,65 @@ public final class MacsManagedExternalDatabaseConfigurationSummary
             this.__explicitlySet__.add("processorCount");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * @param databaseId the value to set
+         * @return this builder
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         * @param connectorId the value to set
+         * @return this builder
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-
+        /**
+         * Array of hostname and instance name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instances")
         private java.util.List<HostInstanceMap> instances;
 
+        /**
+         * Array of hostname and instance name.
+         * @param instances the value to set
+         * @return this builder
+         **/
         public Builder instances(java.util.List<HostInstanceMap> instances) {
             this.instances = instances;
             this.__explicitlySet__.add("instances");
@@ -252,6 +280,10 @@ public final class MacsManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * @return the value
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -262,6 +294,10 @@ public final class MacsManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -272,6 +308,10 @@ public final class MacsManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * @return the value
+     **/
     public String getConnectorId() {
         return connectorId;
     }
@@ -282,6 +322,10 @@ public final class MacsManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("instances")
     private final java.util.List<HostInstanceMap> instances;
 
+    /**
+     * Array of hostname and instance name.
+     * @return the value
+     **/
     public java.util.List<HostInstanceMap> getInstances() {
         return instances;
     }

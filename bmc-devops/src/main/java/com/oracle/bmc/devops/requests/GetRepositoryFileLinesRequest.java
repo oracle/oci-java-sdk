@@ -17,6 +17,9 @@ public class GetRepositoryFileLinesRequest
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -25,6 +28,9 @@ public class GetRepositoryFileLinesRequest
      */
     private String filePath;
 
+    /**
+     * Path to a file within a repository.
+     */
     public String getFilePath() {
         return filePath;
     }
@@ -33,6 +39,9 @@ public class GetRepositoryFileLinesRequest
      */
     private String revision;
 
+    /**
+     * Retrieve file lines from specific revision.
+     */
     public String getRevision() {
         return revision;
     }
@@ -41,6 +50,9 @@ public class GetRepositoryFileLinesRequest
      */
     private Integer startLineNumber;
 
+    /**
+     * Line number from where to start returning file lines.
+     */
     public Integer getStartLineNumber() {
         return startLineNumber;
     }
@@ -49,6 +61,9 @@ public class GetRepositoryFileLinesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -57,6 +72,9 @@ public class GetRepositoryFileLinesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,10 +86,14 @@ public class GetRepositoryFileLinesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -79,10 +101,14 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
+        /**
+         * Path to a file within a repository.
+         */
         private String filePath = null;
 
         /**
          * Path to a file within a repository.
+         * @param filePath the value to set
          * @return this builder instance
          */
         public Builder filePath(String filePath) {
@@ -90,10 +116,14 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
+        /**
+         * Retrieve file lines from specific revision.
+         */
         private String revision = null;
 
         /**
          * Retrieve file lines from specific revision.
+         * @param revision the value to set
          * @return this builder instance
          */
         public Builder revision(String revision) {
@@ -101,10 +131,14 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
+        /**
+         * Line number from where to start returning file lines.
+         */
         private Integer startLineNumber = null;
 
         /**
          * Line number from where to start returning file lines.
+         * @param startLineNumber the value to set
          * @return this builder instance
          */
         public Builder startLineNumber(Integer startLineNumber) {
@@ -112,10 +146,14 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -123,10 +161,14 @@ public class GetRepositoryFileLinesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -212,7 +254,8 @@ public class GetRepositoryFileLinesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +267,10 @@ public class GetRepositoryFileLinesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

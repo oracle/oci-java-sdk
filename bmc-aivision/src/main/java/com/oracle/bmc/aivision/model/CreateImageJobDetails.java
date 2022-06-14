@@ -47,6 +47,7 @@ public final class CreateImageJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
         private InputLocation inputLocation;
 
@@ -55,10 +56,17 @@ public final class CreateImageJobDetails {
             this.__explicitlySet__.add("inputLocation");
             return this;
         }
-
+        /**
+         * The list of requested image analysis types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<ImageFeature> features;
 
+        /**
+         * The list of requested image analysis types.
+         * @param features the value to set
+         * @return this builder
+         **/
         public Builder features(java.util.List<ImageFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -73,28 +81,49 @@ public final class CreateImageJobDetails {
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-
+        /**
+         * The compartment identifier from the requester.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment identifier from the requester.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The image job display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The image job display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
         private Boolean isZipOutputEnabled;
 
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         * @param isZipOutputEnabled the value to set
+         * @return this builder
+         **/
         public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
             this.isZipOutputEnabled = isZipOutputEnabled;
             this.__explicitlySet__.add("isZipOutputEnabled");
@@ -156,6 +185,10 @@ public final class CreateImageJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<ImageFeature> features;
 
+    /**
+     * The list of requested image analysis types.
+     * @return the value
+     **/
     public java.util.List<ImageFeature> getFeatures() {
         return features;
     }
@@ -173,6 +206,10 @@ public final class CreateImageJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment identifier from the requester.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -183,6 +220,10 @@ public final class CreateImageJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The image job display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -193,6 +234,10 @@ public final class CreateImageJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     private final Boolean isZipOutputEnabled;
 
+    /**
+     * Whether or not to generate a ZIP file containing the results.
+     * @return the value
+     **/
     public Boolean getIsZipOutputEnabled() {
         return isZipOutputEnabled;
     }

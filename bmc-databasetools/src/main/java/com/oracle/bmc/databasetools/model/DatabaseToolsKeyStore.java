@@ -34,9 +34,17 @@ public final class DatabaseToolsKeyStore {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key store type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreType")
         private KeyStoreType keyStoreType;
 
+        /**
+         * The key store type.
+         * @param keyStoreType the value to set
+         * @return this builder
+         **/
         public Builder keyStoreType(KeyStoreType keyStoreType) {
             this.keyStoreType = keyStoreType;
             this.__explicitlySet__.add("keyStoreType");
@@ -100,6 +108,10 @@ public final class DatabaseToolsKeyStore {
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreType")
     private final KeyStoreType keyStoreType;
 
+    /**
+     * The key store type.
+     * @return the value
+     **/
     public KeyStoreType getKeyStoreType() {
         return keyStoreType;
     }

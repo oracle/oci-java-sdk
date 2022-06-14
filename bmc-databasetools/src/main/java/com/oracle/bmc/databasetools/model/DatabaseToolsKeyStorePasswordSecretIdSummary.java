@@ -28,9 +28,17 @@ public final class DatabaseToolsKeyStorePasswordSecretIdSummary
         extends DatabaseToolsKeyStorePasswordSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
+         * @param secretId the value to set
+         * @return this builder
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
@@ -79,6 +87,10 @@ public final class DatabaseToolsKeyStorePasswordSecretIdSummary
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
+     * @return the value
+     **/
     public String getSecretId() {
         return secretId;
     }

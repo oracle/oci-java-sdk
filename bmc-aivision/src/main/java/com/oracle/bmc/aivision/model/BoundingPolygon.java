@@ -27,9 +27,21 @@ public final class BoundingPolygon {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
+         * Rectangles are defined with four points. For example, {@code [{"x": 0, "y": 0}, {"x": 1, "y": 0}, {"x": 1, "y": 0.5}, {"x": 0, "y": 0.5}]} represents the top half of an image.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")
         private java.util.List<NormalizedVertex> normalizedVertices;
 
+        /**
+         * An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
+         * Rectangles are defined with four points. For example, {@code [{"x": 0, "y": 0}, {"x": 1, "y": 0}, {"x": 1, "y": 0.5}, {"x": 0, "y": 0.5}]} represents the top half of an image.
+         *
+         * @param normalizedVertices the value to set
+         * @return this builder
+         **/
         public Builder normalizedVertices(java.util.List<NormalizedVertex> normalizedVertices) {
             this.normalizedVertices = normalizedVertices;
             this.__explicitlySet__.add("normalizedVertices");
@@ -73,6 +85,12 @@ public final class BoundingPolygon {
     @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")
     private final java.util.List<NormalizedVertex> normalizedVertices;
 
+    /**
+     * An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
+     * Rectangles are defined with four points. For example, {@code [{"x": 0, "y": 0}, {"x": 1, "y": 0}, {"x": 1, "y": 0.5}, {"x": 0, "y": 0.5}]} represents the top half of an image.
+     *
+     * @return the value
+     **/
     public java.util.List<NormalizedVertex> getNormalizedVertices() {
         return normalizedVertices;
     }

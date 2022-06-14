@@ -18,6 +18,9 @@ public class AddHeatWaveClusterRequest
      */
     private String dbSystemId;
 
+    /**
+     * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -26,6 +29,9 @@ public class AddHeatWaveClusterRequest
      */
     private com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails addHeatWaveClusterDetails;
 
+    /**
+     * Request to add a HeatWave cluster.
+     */
     public com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails getAddHeatWaveClusterDetails() {
         return addHeatWaveClusterDetails;
     }
@@ -39,6 +45,14 @@ public class AddHeatWaveClusterRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code If-Match} header to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +64,12 @@ public class AddHeatWaveClusterRequest
      */
     private String opcRequestId;
 
+    /**
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,6 +84,15 @@ public class AddHeatWaveClusterRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -86,10 +115,14 @@ public class AddHeatWaveClusterRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dbSystemId = null;
 
         /**
          * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dbSystemId the value to set
          * @return this builder instance
          */
         public Builder dbSystemId(String dbSystemId) {
@@ -97,11 +130,15 @@ public class AddHeatWaveClusterRequest
             return this;
         }
 
+        /**
+         * Request to add a HeatWave cluster.
+         */
         private com.oracle.bmc.mysql.model.AddHeatWaveClusterDetails addHeatWaveClusterDetails =
                 null;
 
         /**
          * Request to add a HeatWave cluster.
+         * @param addHeatWaveClusterDetails the value to set
          * @return this builder instance
          */
         public Builder addHeatWaveClusterDetails(
@@ -110,6 +147,14 @@ public class AddHeatWaveClusterRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code If-Match} header to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +164,7 @@ public class AddHeatWaveClusterRequest
          * updated or deleted only if the etag you provide matches the resource's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -126,6 +172,12 @@ public class AddHeatWaveClusterRequest
             return this;
         }
 
+        /**
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -133,6 +185,7 @@ public class AddHeatWaveClusterRequest
          * contact Oracle about a specific request, please provide the request
          * ID that you supplied in this header with the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -140,6 +193,15 @@ public class AddHeatWaveClusterRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -150,6 +212,7 @@ public class AddHeatWaveClusterRequest
          * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -244,7 +307,8 @@ public class AddHeatWaveClusterRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -255,6 +319,10 @@ public class AddHeatWaveClusterRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

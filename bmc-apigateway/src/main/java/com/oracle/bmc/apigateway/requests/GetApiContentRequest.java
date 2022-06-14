@@ -16,6 +16,9 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String apiId;
 
+    /**
+     * The ocid of the API.
+     */
     public String getApiId() {
         return apiId;
     }
@@ -24,6 +27,9 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +43,14 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +62,12 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private com.oracle.bmc.model.Range range;
 
+    /**
+     * The Range HTTP request header indicates the part of a document that the
+     * server should return. [RFC 7233](https://tools.ietf.org/html/rfc7233#section-3.1).
+     * Note that only a single range of bytes is supported.
+     *
+     */
     public com.oracle.bmc.model.Range getRange() {
         return range;
     }
@@ -59,10 +79,14 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ocid of the API.
+         */
         private String apiId = null;
 
         /**
          * The ocid of the API.
+         * @param apiId the value to set
          * @return this builder instance
          */
         public Builder apiId(String apiId) {
@@ -70,10 +94,14 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -81,6 +109,14 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +126,7 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -97,6 +134,12 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The Range HTTP request header indicates the part of a document that the
+         * server should return. [RFC 7233](https://tools.ietf.org/html/rfc7233#section-3.1).
+         * Note that only a single range of bytes is supported.
+         *
+         */
         private com.oracle.bmc.model.Range range = null;
 
         /**
@@ -104,6 +147,7 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * server should return. [RFC 7233](https://tools.ietf.org/html/rfc7233#section-3.1).
          * Note that only a single range of bytes is supported.
          *
+         * @param range the value to set
          * @return this builder instance
          */
         public Builder range(com.oracle.bmc.model.Range range) {
@@ -185,12 +229,17 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().apiId(apiId).opcRequestId(opcRequestId).ifMatch(ifMatch).range(range);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

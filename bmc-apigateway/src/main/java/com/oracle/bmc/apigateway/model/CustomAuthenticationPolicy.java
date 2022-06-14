@@ -37,28 +37,51 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
             this.__explicitlySet__.add("isAnonymousAccessAllowed");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+         *
+         * @param functionId the value to set
+         * @return this builder
+         **/
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
             return this;
         }
-
+        /**
+         * The name of the header containing the authentication token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tokenHeader")
         private String tokenHeader;
 
+        /**
+         * The name of the header containing the authentication token.
+         * @param tokenHeader the value to set
+         * @return this builder
+         **/
         public Builder tokenHeader(String tokenHeader) {
             this.tokenHeader = tokenHeader;
             this.__explicitlySet__.add("tokenHeader");
             return this;
         }
-
+        /**
+         * The name of the query parameter containing the authentication token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tokenQueryParam")
         private String tokenQueryParam;
 
+        /**
+         * The name of the query parameter containing the authentication token.
+         * @param tokenQueryParam the value to set
+         * @return this builder
+         **/
         public Builder tokenQueryParam(String tokenQueryParam) {
             this.tokenQueryParam = tokenQueryParam;
             this.__explicitlySet__.add("tokenQueryParam");
@@ -119,6 +142,11 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+     *
+     * @return the value
+     **/
     public String getFunctionId() {
         return functionId;
     }
@@ -129,6 +157,10 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("tokenHeader")
     private final String tokenHeader;
 
+    /**
+     * The name of the header containing the authentication token.
+     * @return the value
+     **/
     public String getTokenHeader() {
         return tokenHeader;
     }
@@ -139,6 +171,10 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("tokenQueryParam")
     private final String tokenQueryParam;
 
+    /**
+     * The name of the query parameter containing the authentication token.
+     * @return the value
+     **/
     public String getTokenQueryParam() {
         return tokenQueryParam;
     }

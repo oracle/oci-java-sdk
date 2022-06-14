@@ -16,6 +16,9 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -24,6 +27,9 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String refName;
 
+    /**
+     * A filter to return only resources that match the given reference name.
+     */
     public String getRefName() {
         return refName;
     }
@@ -32,6 +38,9 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -56,6 +71,9 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +85,14 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -78,10 +100,14 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given reference name.
+         */
         private String refName = null;
 
         /**
          * A filter to return only resources that match the given reference name.
+         * @param refName the value to set
          * @return this builder instance
          */
         public Builder refName(String refName) {
@@ -89,10 +115,14 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -100,10 +130,14 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -111,10 +145,14 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.devops.model.SortOrder sortOrder) {
@@ -122,10 +160,14 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -211,7 +253,8 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -223,6 +266,10 @@ public class ListAuthorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

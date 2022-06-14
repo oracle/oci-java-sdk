@@ -18,6 +18,9 @@ public class UpdateDeployArtifactRequest
      */
     private String deployArtifactId;
 
+    /**
+     * Unique artifact identifier.
+     */
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
@@ -26,6 +29,9 @@ public class UpdateDeployArtifactRequest
      */
     private com.oracle.bmc.devops.model.UpdateDeployArtifactDetails updateDeployArtifactDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.devops.model.UpdateDeployArtifactDetails
             getUpdateDeployArtifactDetails() {
         return updateDeployArtifactDetails;
@@ -35,6 +41,9 @@ public class UpdateDeployArtifactRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -43,6 +52,9 @@ public class UpdateDeployArtifactRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,10 +77,14 @@ public class UpdateDeployArtifactRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique artifact identifier.
+         */
         private String deployArtifactId = null;
 
         /**
          * Unique artifact identifier.
+         * @param deployArtifactId the value to set
          * @return this builder instance
          */
         public Builder deployArtifactId(String deployArtifactId) {
@@ -76,11 +92,15 @@ public class UpdateDeployArtifactRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.devops.model.UpdateDeployArtifactDetails
                 updateDeployArtifactDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateDeployArtifactDetails the value to set
          * @return this builder instance
          */
         public Builder updateDeployArtifactDetails(
@@ -90,10 +110,14 @@ public class UpdateDeployArtifactRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -101,10 +125,14 @@ public class UpdateDeployArtifactRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,7 +225,8 @@ public class UpdateDeployArtifactRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +236,10 @@ public class UpdateDeployArtifactRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

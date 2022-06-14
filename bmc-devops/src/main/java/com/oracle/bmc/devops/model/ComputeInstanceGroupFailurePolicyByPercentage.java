@@ -28,9 +28,17 @@ public final class ComputeInstanceGroupFailurePolicyByPercentage
         extends ComputeInstanceGroupFailurePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The failure percentage threshold, which when reached or exceeded sets the stage as Failed. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failurePercentage")
         private Integer failurePercentage;
 
+        /**
+         * The failure percentage threshold, which when reached or exceeded sets the stage as Failed. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
+         * @param failurePercentage the value to set
+         * @return this builder
+         **/
         public Builder failurePercentage(Integer failurePercentage) {
             this.failurePercentage = failurePercentage;
             this.__explicitlySet__.add("failurePercentage");
@@ -79,6 +87,10 @@ public final class ComputeInstanceGroupFailurePolicyByPercentage
     @com.fasterxml.jackson.annotation.JsonProperty("failurePercentage")
     private final Integer failurePercentage;
 
+    /**
+     * The failure percentage threshold, which when reached or exceeded sets the stage as Failed. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
+     * @return the value
+     **/
     public Integer getFailurePercentage() {
         return failurePercentage;
     }

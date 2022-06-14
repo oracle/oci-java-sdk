@@ -53,72 +53,137 @@ public final class AppCatalogSubscriptionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the publisher who published this listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
         private String publisherName;
 
+        /**
+         * Name of the publisher who published this listing.
+         * @param publisherName the value to set
+         * @return this builder
+         **/
         public Builder publisherName(String publisherName) {
             this.publisherName = publisherName;
             this.__explicitlySet__.add("publisherName");
             return this;
         }
-
+        /**
+         * The ocid of the listing resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * The ocid of the listing resource.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * Listing resource version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
         private String listingResourceVersion;
 
+        /**
+         * Listing resource version.
+         * @param listingResourceVersion the value to set
+         * @return this builder
+         **/
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = listingResourceVersion;
             this.__explicitlySet__.add("listingResourceVersion");
             return this;
         }
-
+        /**
+         * Listing resource id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
         private String listingResourceId;
 
+        /**
+         * Listing resource id.
+         * @param listingResourceId the value to set
+         * @return this builder
+         **/
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = listingResourceId;
             this.__explicitlySet__.add("listingResourceId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The short summary to the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
+        /**
+         * The short summary to the listing.
+         * @param summary the value to set
+         * @return this builder
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-
+        /**
+         * The compartmentID of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartmentID of the subscription.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+         * Example: {@code 2018-03-20T12:32:53.532Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -177,6 +242,10 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
     private final String publisherName;
 
+    /**
+     * Name of the publisher who published this listing.
+     * @return the value
+     **/
     public String getPublisherName() {
         return publisherName;
     }
@@ -187,6 +256,10 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The ocid of the listing resource.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -197,6 +270,10 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceVersion")
     private final String listingResourceVersion;
 
+    /**
+     * Listing resource version.
+     * @return the value
+     **/
     public String getListingResourceVersion() {
         return listingResourceVersion;
     }
@@ -207,6 +284,10 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("listingResourceId")
     private final String listingResourceId;
 
+    /**
+     * Listing resource id.
+     * @return the value
+     **/
     public String getListingResourceId() {
         return listingResourceId;
     }
@@ -219,6 +300,12 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -229,6 +316,10 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * The short summary to the listing.
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }
@@ -239,6 +330,10 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartmentID of the subscription.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -251,6 +346,12 @@ public final class AppCatalogSubscriptionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format.
+     * Example: {@code 2018-03-20T12:32:53.532Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

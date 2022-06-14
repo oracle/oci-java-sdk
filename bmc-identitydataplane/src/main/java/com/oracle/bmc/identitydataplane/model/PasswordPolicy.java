@@ -46,54 +46,97 @@ public final class PasswordPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Minimum password length required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumPasswordLength")
         private Integer minimumPasswordLength;
 
+        /**
+         * Minimum password length required.
+         * @param minimumPasswordLength the value to set
+         * @return this builder
+         **/
         public Builder minimumPasswordLength(Integer minimumPasswordLength) {
             this.minimumPasswordLength = minimumPasswordLength;
             this.__explicitlySet__.add("minimumPasswordLength");
             return this;
         }
-
+        /**
+         * At least one uppercase character required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUppercaseCharactersRequired")
         private Boolean isUppercaseCharactersRequired;
 
+        /**
+         * At least one uppercase character required.
+         * @param isUppercaseCharactersRequired the value to set
+         * @return this builder
+         **/
         public Builder isUppercaseCharactersRequired(Boolean isUppercaseCharactersRequired) {
             this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
             this.__explicitlySet__.add("isUppercaseCharactersRequired");
             return this;
         }
-
+        /**
+         * At least one lower case character required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLowercaseCharactersRequired")
         private Boolean isLowercaseCharactersRequired;
 
+        /**
+         * At least one lower case character required.
+         * @param isLowercaseCharactersRequired the value to set
+         * @return this builder
+         **/
         public Builder isLowercaseCharactersRequired(Boolean isLowercaseCharactersRequired) {
             this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
             this.__explicitlySet__.add("isLowercaseCharactersRequired");
             return this;
         }
-
+        /**
+         * At least one numeric character required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNumericCharactersRequired")
         private Boolean isNumericCharactersRequired;
 
+        /**
+         * At least one numeric character required.
+         * @param isNumericCharactersRequired the value to set
+         * @return this builder
+         **/
         public Builder isNumericCharactersRequired(Boolean isNumericCharactersRequired) {
             this.isNumericCharactersRequired = isNumericCharactersRequired;
             this.__explicitlySet__.add("isNumericCharactersRequired");
             return this;
         }
-
+        /**
+         * At least one special character required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSpecialCharactersRequired")
         private Boolean isSpecialCharactersRequired;
 
+        /**
+         * At least one special character required.
+         * @param isSpecialCharactersRequired the value to set
+         * @return this builder
+         **/
         public Builder isSpecialCharactersRequired(Boolean isSpecialCharactersRequired) {
             this.isSpecialCharactersRequired = isSpecialCharactersRequired;
             this.__explicitlySet__.add("isSpecialCharactersRequired");
             return this;
         }
-
+        /**
+         * User name is allowed to be part of the password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUsernameContainmentAllowed")
         private Boolean isUsernameContainmentAllowed;
 
+        /**
+         * User name is allowed to be part of the password.
+         * @param isUsernameContainmentAllowed the value to set
+         * @return this builder
+         **/
         public Builder isUsernameContainmentAllowed(Boolean isUsernameContainmentAllowed) {
             this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
             this.__explicitlySet__.add("isUsernameContainmentAllowed");
@@ -148,6 +191,10 @@ public final class PasswordPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("minimumPasswordLength")
     private final Integer minimumPasswordLength;
 
+    /**
+     * Minimum password length required.
+     * @return the value
+     **/
     public Integer getMinimumPasswordLength() {
         return minimumPasswordLength;
     }
@@ -158,6 +205,10 @@ public final class PasswordPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isUppercaseCharactersRequired")
     private final Boolean isUppercaseCharactersRequired;
 
+    /**
+     * At least one uppercase character required.
+     * @return the value
+     **/
     public Boolean getIsUppercaseCharactersRequired() {
         return isUppercaseCharactersRequired;
     }
@@ -168,6 +219,10 @@ public final class PasswordPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isLowercaseCharactersRequired")
     private final Boolean isLowercaseCharactersRequired;
 
+    /**
+     * At least one lower case character required.
+     * @return the value
+     **/
     public Boolean getIsLowercaseCharactersRequired() {
         return isLowercaseCharactersRequired;
     }
@@ -178,6 +233,10 @@ public final class PasswordPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isNumericCharactersRequired")
     private final Boolean isNumericCharactersRequired;
 
+    /**
+     * At least one numeric character required.
+     * @return the value
+     **/
     public Boolean getIsNumericCharactersRequired() {
         return isNumericCharactersRequired;
     }
@@ -188,6 +247,10 @@ public final class PasswordPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isSpecialCharactersRequired")
     private final Boolean isSpecialCharactersRequired;
 
+    /**
+     * At least one special character required.
+     * @return the value
+     **/
     public Boolean getIsSpecialCharactersRequired() {
         return isSpecialCharactersRequired;
     }
@@ -198,6 +261,10 @@ public final class PasswordPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isUsernameContainmentAllowed")
     private final Boolean isUsernameContainmentAllowed;
 
+    /**
+     * User name is allowed to be part of the password.
+     * @return the value
+     **/
     public Boolean getIsUsernameContainmentAllowed() {
         return isUsernameContainmentAllowed;
     }

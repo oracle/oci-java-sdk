@@ -33,27 +33,49 @@ public final class Strategy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the strategy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
         private String strategyName;
 
+        /**
+         * The name of the strategy.
+         * @param strategyName the value to set
+         * @return this builder
+         **/
         public Builder strategyName(String strategyName) {
             this.strategyName = strategyName;
             this.__explicitlySet__.add("strategyName");
             return this;
         }
-
+        /**
+         * Whether this is the default recommendation strategy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Whether this is the default recommendation strategy.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * The list of strategies for the parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parametersDefinition")
         private java.util.List<StrategyParameter> parametersDefinition;
 
+        /**
+         * The list of strategies for the parameters.
+         * @param parametersDefinition the value to set
+         * @return this builder
+         **/
         public Builder parametersDefinition(
                 java.util.List<StrategyParameter> parametersDefinition) {
             this.parametersDefinition = parametersDefinition;
@@ -99,6 +121,10 @@ public final class Strategy {
     @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
     private final String strategyName;
 
+    /**
+     * The name of the strategy.
+     * @return the value
+     **/
     public String getStrategyName() {
         return strategyName;
     }
@@ -109,6 +135,10 @@ public final class Strategy {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Whether this is the default recommendation strategy.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -119,6 +149,10 @@ public final class Strategy {
     @com.fasterxml.jackson.annotation.JsonProperty("parametersDefinition")
     private final java.util.List<StrategyParameter> parametersDefinition;
 
+    /**
+     * The list of strategies for the parameters.
+     * @return the value
+     **/
     public java.util.List<StrategyParameter> getParametersDefinition() {
         return parametersDefinition;
     }

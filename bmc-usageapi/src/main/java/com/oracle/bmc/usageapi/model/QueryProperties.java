@@ -51,18 +51,37 @@ public final class QueryProperties {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
+        /**
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+         *
+         * @param groupBy the value to set
+         * @return this builder
+         **/
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
             return this;
         }
-
+        /**
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
         private java.util.List<Tag> groupByTag;
 
+        /**
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+         *
+         * @param groupByTag the value to set
+         * @return this builder
+         **/
         public Builder groupByTag(java.util.List<Tag> groupByTag) {
             this.groupByTag = groupByTag;
             this.__explicitlySet__.add("groupByTag");
@@ -77,37 +96,83 @@ public final class QueryProperties {
             this.__explicitlySet__.add("filter");
             return this;
         }
-
+        /**
+         * The depth level of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
         private java.math.BigDecimal compartmentDepth;
 
+        /**
+         * The depth level of the compartment.
+         * @param compartmentDepth the value to set
+         * @return this builder
+         **/
         public Builder compartmentDepth(java.math.BigDecimal compartmentDepth) {
             this.compartmentDepth = compartmentDepth;
             this.__explicitlySet__.add("compartmentDepth");
             return this;
         }
-
+        /**
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * Allowed values are:
+         *   DAILY
+         *   MONTHLY
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("granularity")
         private Granularity granularity;
 
+        /**
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * Allowed values are:
+         *   DAILY
+         *   MONTHLY
+         *
+         * @param granularity the value to set
+         * @return this builder
+         **/
         public Builder granularity(Granularity granularity) {
             this.granularity = granularity;
             this.__explicitlySet__.add("granularity");
             return this;
         }
-
+        /**
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
+         * Allowed values are:
+         *   USAGE
+         *   COST
+         *   USAGE_AND_COST
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
+        /**
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
+         * Allowed values are:
+         *   USAGE
+         *   COST
+         *   USAGE_AND_COST
+         *
+         * @param queryType the value to set
+         * @return this builder
+         **/
         public Builder queryType(QueryType queryType) {
             this.queryType = queryType;
             this.__explicitlySet__.add("queryType");
             return this;
         }
-
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime the value to set
+         * @return this builder
+         **/
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
             this.isAggregateByTime = isAggregateByTime;
             this.__explicitlySet__.add("isAggregateByTime");
@@ -176,6 +241,11 @@ public final class QueryProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
+    /**
+     * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+     *
+     * @return the value
+     **/
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
@@ -187,6 +257,11 @@ public final class QueryProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
     private final java.util.List<Tag> groupByTag;
 
+    /**
+     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+     *
+     * @return the value
+     **/
     public java.util.List<Tag> getGroupByTag() {
         return groupByTag;
     }
@@ -204,6 +279,10 @@ public final class QueryProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
     private final java.math.BigDecimal compartmentDepth;
 
+    /**
+     * The depth level of the compartment.
+     * @return the value
+     **/
     public java.math.BigDecimal getCompartmentDepth() {
         return compartmentDepth;
     }
@@ -270,6 +349,14 @@ public final class QueryProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
     private final Granularity granularity;
 
+    /**
+     * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * Allowed values are:
+     *   DAILY
+     *   MONTHLY
+     *
+     * @return the value
+     **/
     public Granularity getGranularity() {
         return granularity;
     }
@@ -339,6 +426,15 @@ public final class QueryProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
     private final QueryType queryType;
 
+    /**
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
+     * Allowed values are:
+     *   USAGE
+     *   COST
+     *   USAGE_AND_COST
+     *
+     * @return the value
+     **/
     public QueryType getQueryType() {
         return queryType;
     }
@@ -349,6 +445,10 @@ public final class QueryProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
+    /**
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return the value
+     **/
     public Boolean getIsAggregateByTime() {
         return isAggregateByTime;
     }

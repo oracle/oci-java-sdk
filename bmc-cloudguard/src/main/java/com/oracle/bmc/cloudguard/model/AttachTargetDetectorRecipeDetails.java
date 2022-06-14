@@ -29,9 +29,17 @@ public final class AttachTargetDetectorRecipeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DetectorRecipe Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
+        /**
+         * DetectorRecipe Identifier
+         * @param detectorRecipeId the value to set
+         * @return this builder
+         **/
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = detectorRecipeId;
             this.__explicitlySet__.add("detectorRecipeId");
@@ -74,6 +82,10 @@ public final class AttachTargetDetectorRecipeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
+    /**
+     * DetectorRecipe Identifier
+     * @return the value
+     **/
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }

@@ -62,10 +62,17 @@ public final class AwrDbWaitEventCollection extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-
+        /**
+         * A list of AWR wait events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrDbWaitEventSummary> items;
 
+        /**
+         * A list of AWR wait events.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AwrDbWaitEventSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -124,6 +131,10 @@ public final class AwrDbWaitEventCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrDbWaitEventSummary> items;
 
+    /**
+     * A list of AWR wait events.
+     * @return the value
+     **/
     public java.util.List<AwrDbWaitEventSummary> getItems() {
         return items;
     }

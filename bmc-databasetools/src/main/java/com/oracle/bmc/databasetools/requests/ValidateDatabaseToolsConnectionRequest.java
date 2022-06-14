@@ -14,10 +14,13 @@ public class ValidateDatabaseToolsConnectionRequest
                 com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      */
     private String databaseToolsConnectionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+     */
     public String getDatabaseToolsConnectionId() {
         return databaseToolsConnectionId;
     }
@@ -27,6 +30,9 @@ public class ValidateDatabaseToolsConnectionRequest
     private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
             validateDatabaseToolsConnectionDetails;
 
+    /**
+     * Request to validate a DatabaseToolsConnection.
+     */
     public com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
             getValidateDatabaseToolsConnectionDetails() {
         return validateDatabaseToolsConnectionDetails;
@@ -41,6 +47,14 @@ public class ValidateDatabaseToolsConnectionRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ValidateDatabaseToolsConnectionRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class ValidateDatabaseToolsConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+         */
         private String databaseToolsConnectionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+         * @param databaseToolsConnectionId the value to set
          * @return this builder instance
          */
         public Builder databaseToolsConnectionId(String databaseToolsConnectionId) {
@@ -82,11 +103,15 @@ public class ValidateDatabaseToolsConnectionRequest
             return this;
         }
 
+        /**
+         * Request to validate a DatabaseToolsConnection.
+         */
         private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails
                 validateDatabaseToolsConnectionDetails = null;
 
         /**
          * Request to validate a DatabaseToolsConnection.
+         * @param validateDatabaseToolsConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder validateDatabaseToolsConnectionDetails(
@@ -96,6 +121,14 @@ public class ValidateDatabaseToolsConnectionRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +138,7 @@ public class ValidateDatabaseToolsConnectionRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,10 +146,14 @@ public class ValidateDatabaseToolsConnectionRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -210,7 +248,8 @@ public class ValidateDatabaseToolsConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +259,10 @@ public class ValidateDatabaseToolsConnectionRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

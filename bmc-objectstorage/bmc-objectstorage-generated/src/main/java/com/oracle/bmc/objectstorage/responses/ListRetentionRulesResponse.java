@@ -15,6 +15,12 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -40,6 +50,17 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcNextPage;
 
+    /**
+     * Paginating a list of retention rules.
+     * If the {@code opc-next-page} header appears in the response, it indicates that this is a partial list
+     * of retention rules and there are additional rules to get. Include the value of this header as
+     * the {@code page} parameter in a subsequent GET request to get the next set of retention rules.
+     * Repeat this process to retrieve the entire list of retention rules.
+     * <p>
+     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -49,6 +70,10 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.objectstorage.model.RetentionRuleCollection retentionRuleCollection;
 
+    /**
+     * The returned RetentionRuleCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.RetentionRuleCollection getRetentionRuleCollection() {
         return retentionRuleCollection;
     }
@@ -81,29 +106,79 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Paginating a list of retention rules.
+         * If the {@code opc-next-page} header appears in the response, it indicates that this is a partial list
+         * of retention rules and there are additional rules to get. Include the value of this header as
+         * the {@code page} parameter in a subsequent GET request to get the next set of retention rules.
+         * Repeat this process to retrieve the entire list of retention rules.
+         * <p>
+         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * Paginating a list of retention rules.
+         * If the {@code opc-next-page} header appears in the response, it indicates that this is a partial list
+         * of retention rules and there are additional rules to get. Include the value of this header as
+         * the {@code page} parameter in a subsequent GET request to get the next set of retention rules.
+         * Repeat this process to retrieve the entire list of retention rules.
+         * <p>
+         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned RetentionRuleCollection instance.
+         */
         private com.oracle.bmc.objectstorage.model.RetentionRuleCollection retentionRuleCollection;
 
+        /**
+         * The returned RetentionRuleCollection instance.
+         * @param retentionRuleCollection the value to set
+         * @return this builder
+         */
         public Builder retentionRuleCollection(
                 com.oracle.bmc.objectstorage.model.RetentionRuleCollection
                         retentionRuleCollection) {
@@ -125,6 +200,10 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListRetentionRulesResponse build() {
             return new ListRetentionRulesResponse(
                     __httpStatusCode__,
@@ -135,6 +214,10 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

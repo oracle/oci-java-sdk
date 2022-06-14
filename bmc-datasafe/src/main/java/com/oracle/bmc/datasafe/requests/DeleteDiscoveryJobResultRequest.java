@@ -17,6 +17,9 @@ public class DeleteDiscoveryJobResultRequest
      */
     private String discoveryJobId;
 
+    /**
+     * The OCID of the discovery job.
+     */
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
@@ -25,6 +28,9 @@ public class DeleteDiscoveryJobResultRequest
      */
     private String resultKey;
 
+    /**
+     * The unique key that identifies the discovery result.
+     */
     public String getResultKey() {
         return resultKey;
     }
@@ -38,6 +44,14 @@ public class DeleteDiscoveryJobResultRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,6 +60,9 @@ public class DeleteDiscoveryJobResultRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,10 +74,14 @@ public class DeleteDiscoveryJobResultRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the discovery job.
+         */
         private String discoveryJobId = null;
 
         /**
          * The OCID of the discovery job.
+         * @param discoveryJobId the value to set
          * @return this builder instance
          */
         public Builder discoveryJobId(String discoveryJobId) {
@@ -68,10 +89,14 @@ public class DeleteDiscoveryJobResultRequest
             return this;
         }
 
+        /**
+         * The unique key that identifies the discovery result.
+         */
         private String resultKey = null;
 
         /**
          * The unique key that identifies the discovery result.
+         * @param resultKey the value to set
          * @return this builder instance
          */
         public Builder resultKey(String resultKey) {
@@ -79,6 +104,14 @@ public class DeleteDiscoveryJobResultRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -88,6 +121,7 @@ public class DeleteDiscoveryJobResultRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -95,10 +129,14 @@ public class DeleteDiscoveryJobResultRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -180,7 +218,8 @@ public class DeleteDiscoveryJobResultRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +229,10 @@ public class DeleteDiscoveryJobResultRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

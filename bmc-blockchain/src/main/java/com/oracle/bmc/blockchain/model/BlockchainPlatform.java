@@ -104,180 +104,321 @@ public final class BlockchainPlatform {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * unique identifier that is immutable on creation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Platform Instance Display name, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Platform Instance Display name, can be renamed
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Platform Instance Description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Platform Instance Description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Bring your own license
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isByol")
         private Boolean isByol;
 
+        /**
+         * Bring your own license
+         * @param isByol the value to set
+         * @return this builder
+         **/
         public Builder isByol(Boolean isByol) {
             this.isByol = isByol;
             this.__explicitlySet__.add("isByol");
             return this;
         }
-
+        /**
+         * The time the the Platform Instance was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the the Platform Instance was created. An RFC3339 formatted datetime string
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the Platform Instance was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the Platform Instance was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Platform Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
         private String platformVersion;
 
+        /**
+         * Platform Version
+         * @param platformVersion the value to set
+         * @return this builder
+         **/
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
             return this;
         }
-
+        /**
+         * The version of the Platform Instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
         private String serviceVersion;
 
+        /**
+         * The version of the Platform Instance.
+         * @param serviceVersion the value to set
+         * @return this builder
+         **/
         public Builder serviceVersion(String serviceVersion) {
             this.serviceVersion = serviceVersion;
             this.__explicitlySet__.add("serviceVersion");
             return this;
         }
-
+        /**
+         * Role of platform - FOUNDER or PARTICIPANT
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformRole")
         private PlatformRole platformRole;
 
+        /**
+         * Role of platform - FOUNDER or PARTICIPANT
+         * @param platformRole the value to set
+         * @return this builder
+         **/
         public Builder platformRole(PlatformRole platformRole) {
             this.platformRole = platformRole;
             this.__explicitlySet__.add("platformRole");
             return this;
         }
-
+        /**
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
         private ComputeShape computeShape;
 
+        /**
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+         * @param computeShape the value to set
+         * @return this builder
+         **/
         public Builder computeShape(ComputeShape computeShape) {
             this.computeShape = computeShape;
             this.__explicitlySet__.add("computeShape");
             return this;
         }
-
+        /**
+         * Type of Platform shape - DEFAULT or CUSTOM
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformShapeType")
         private PlatformShapeType platformShapeType;
 
+        /**
+         * Type of Platform shape - DEFAULT or CUSTOM
+         * @param platformShapeType the value to set
+         * @return this builder
+         **/
         public Builder platformShapeType(PlatformShapeType platformShapeType) {
             this.platformShapeType = platformShapeType;
             this.__explicitlySet__.add("platformShapeType");
             return this;
         }
-
+        /**
+         * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
         private LoadBalancerShape loadBalancerShape;
 
+        /**
+         * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+         * @param loadBalancerShape the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerShape(LoadBalancerShape loadBalancerShape) {
             this.loadBalancerShape = loadBalancerShape;
             this.__explicitlySet__.add("loadBalancerShape");
             return this;
         }
-
+        /**
+         * Service endpoint URL, valid post-provisioning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpoint")
         private String serviceEndpoint;
 
+        /**
+         * Service endpoint URL, valid post-provisioning
+         * @param serviceEndpoint the value to set
+         * @return this builder
+         **/
         public Builder serviceEndpoint(String serviceEndpoint) {
             this.serviceEndpoint = serviceEndpoint;
             this.__explicitlySet__.add("serviceEndpoint");
             return this;
         }
-
+        /**
+         * The current state of the Platform Instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Platform Instance.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Storage size in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
         private Double storageSizeInTBs;
 
+        /**
+         * Storage size in TBs
+         * @param storageSizeInTBs the value to set
+         * @return this builder
+         **/
         public Builder storageSizeInTBs(Double storageSizeInTBs) {
             this.storageSizeInTBs = storageSizeInTBs;
             this.__explicitlySet__.add("storageSizeInTBs");
             return this;
         }
-
+        /**
+         * Storage used in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInTBs")
         private Double storageUsedInTBs;
 
+        /**
+         * Storage used in TBs
+         * @param storageUsedInTBs the value to set
+         * @return this builder
+         **/
         public Builder storageUsedInTBs(Double storageUsedInTBs) {
             this.storageUsedInTBs = storageUsedInTBs;
             this.__explicitlySet__.add("storageUsedInTBs");
             return this;
         }
-
+        /**
+         * True for multi-AD blockchain plaforms, false for single-AD
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiAD")
         private Boolean isMultiAD;
 
+        /**
+         * True for multi-AD blockchain plaforms, false for single-AD
+         * @param isMultiAD the value to set
+         * @return this builder
+         **/
         public Builder isMultiAD(Boolean isMultiAD) {
             this.isMultiAD = isMultiAD;
             this.__explicitlySet__.add("isMultiAD");
             return this;
         }
-
+        /**
+         * Number of total OCPUs allocated to the platform cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
         private Integer totalOcpuCapacity;
 
+        /**
+         * Number of total OCPUs allocated to the platform cluster
+         * @param totalOcpuCapacity the value to set
+         * @return this builder
+         **/
         public Builder totalOcpuCapacity(Integer totalOcpuCapacity) {
             this.totalOcpuCapacity = totalOcpuCapacity;
             this.__explicitlySet__.add("totalOcpuCapacity");
@@ -301,29 +442,58 @@ public final class BlockchainPlatform {
             this.__explicitlySet__.add("replicas");
             return this;
         }
-
+        /**
+         * List of OcpuUtilization for all hosts
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfo")
         private java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
 
+        /**
+         * List of OcpuUtilization for all hosts
+         * @param hostOcpuUtilizationInfo the value to set
+         * @return this builder
+         **/
         public Builder hostOcpuUtilizationInfo(
                 java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo) {
             this.hostOcpuUtilizationInfo = hostOcpuUtilizationInfo;
             this.__explicitlySet__.add("hostOcpuUtilizationInfo");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -417,6 +587,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * unique identifier that is immutable on creation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -427,6 +601,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Platform Instance Display name, can be renamed
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -437,6 +615,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -447,6 +629,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Platform Instance Description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -457,6 +643,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
     private final Boolean isByol;
 
+    /**
+     * Bring your own license
+     * @return the value
+     **/
     public Boolean getIsByol() {
         return isByol;
     }
@@ -467,6 +657,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the the Platform Instance was created. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -477,6 +671,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the Platform Instance was updated. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -487,6 +685,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
+    /**
+     * Platform Version
+     * @return the value
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -497,6 +699,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
     private final String serviceVersion;
 
+    /**
+     * The version of the Platform Instance.
+     * @return the value
+     **/
     public String getServiceVersion() {
         return serviceVersion;
     }
@@ -555,6 +761,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("platformRole")
     private final PlatformRole platformRole;
 
+    /**
+     * Role of platform - FOUNDER or PARTICIPANT
+     * @return the value
+     **/
     public PlatformRole getPlatformRole() {
         return platformRole;
     }
@@ -617,6 +827,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
     private final ComputeShape computeShape;
 
+    /**
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * @return the value
+     **/
     public ComputeShape getComputeShape() {
         return computeShape;
     }
@@ -675,6 +889,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("platformShapeType")
     private final PlatformShapeType platformShapeType;
 
+    /**
+     * Type of Platform shape - DEFAULT or CUSTOM
+     * @return the value
+     **/
     public PlatformShapeType getPlatformShapeType() {
         return platformShapeType;
     }
@@ -733,6 +951,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
     private final LoadBalancerShape loadBalancerShape;
 
+    /**
+     * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     * @return the value
+     **/
     public LoadBalancerShape getLoadBalancerShape() {
         return loadBalancerShape;
     }
@@ -743,6 +965,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpoint")
     private final String serviceEndpoint;
 
+    /**
+     * Service endpoint URL, valid post-provisioning
+     * @return the value
+     **/
     public String getServiceEndpoint() {
         return serviceEndpoint;
     }
@@ -807,6 +1033,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Platform Instance.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -817,6 +1047,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -827,6 +1061,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
     private final Double storageSizeInTBs;
 
+    /**
+     * Storage size in TBs
+     * @return the value
+     **/
     public Double getStorageSizeInTBs() {
         return storageSizeInTBs;
     }
@@ -837,6 +1075,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInTBs")
     private final Double storageUsedInTBs;
 
+    /**
+     * Storage used in TBs
+     * @return the value
+     **/
     public Double getStorageUsedInTBs() {
         return storageUsedInTBs;
     }
@@ -847,6 +1089,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiAD")
     private final Boolean isMultiAD;
 
+    /**
+     * True for multi-AD blockchain plaforms, false for single-AD
+     * @return the value
+     **/
     public Boolean getIsMultiAD() {
         return isMultiAD;
     }
@@ -857,6 +1103,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
     private final Integer totalOcpuCapacity;
 
+    /**
+     * Number of total OCPUs allocated to the platform cluster
+     * @return the value
+     **/
     public Integer getTotalOcpuCapacity() {
         return totalOcpuCapacity;
     }
@@ -881,6 +1131,10 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfo")
     private final java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
 
+    /**
+     * List of OcpuUtilization for all hosts
+     * @return the value
+     **/
     public java.util.List<OcpuUtilizationInfo> getHostOcpuUtilizationInfo() {
         return hostOcpuUtilizationInfo;
     }
@@ -893,6 +1147,12 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -905,6 +1165,12 @@ public final class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

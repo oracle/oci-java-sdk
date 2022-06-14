@@ -66,108 +66,193 @@ public final class ProductLicenseConsumerSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * The display name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The display name of the resource.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * The resource product name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
+        /**
+         * The resource product name.
+         * @param productName the value to set
+         * @return this builder
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
+         * @param resourceCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = resourceCompartmentId;
             this.__explicitlySet__.add("resourceCompartmentId");
             return this;
         }
-
+        /**
+         * The display name of the compartment that contains the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentName")
         private String resourceCompartmentName;
 
+        /**
+         * The display name of the compartment that contains the resource.
+         * @param resourceCompartmentName the value to set
+         * @return this builder
+         **/
         public Builder resourceCompartmentName(String resourceCompartmentName) {
             this.resourceCompartmentName = resourceCompartmentName;
             this.__explicitlySet__.add("resourceCompartmentName");
             return this;
         }
-
+        /**
+         * The unit type for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUnitType")
         private ResourceUnit resourceUnitType;
 
+        /**
+         * The unit type for the resource.
+         * @param resourceUnitType the value to set
+         * @return this builder
+         **/
         public Builder resourceUnitType(ResourceUnit resourceUnitType) {
             this.resourceUnitType = resourceUnitType;
             this.__explicitlySet__.add("resourceUnitType");
             return this;
         }
-
+        /**
+         * Number of units of the resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUnitCount")
         private Double resourceUnitCount;
 
+        /**
+         * Number of units of the resource
+         * @param resourceUnitCount the value to set
+         * @return this builder
+         **/
         public Builder resourceUnitCount(Double resourceUnitCount) {
             this.resourceUnitCount = resourceUnitCount;
             this.__explicitlySet__.add("resourceUnitCount");
             return this;
         }
-
+        /**
+         * The product license unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseUnitType")
         private LicenseUnit licenseUnitType;
 
+        /**
+         * The product license unit.
+         * @param licenseUnitType the value to set
+         * @return this builder
+         **/
         public Builder licenseUnitType(LicenseUnit licenseUnitType) {
             this.licenseUnitType = licenseUnitType;
             this.__explicitlySet__.add("licenseUnitType");
             return this;
         }
-
+        /**
+         * Number of license units consumed by the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseUnitsConsumed")
         private Double licenseUnitsConsumed;
 
+        /**
+         * Number of license units consumed by the resource.
+         * @param licenseUnitsConsumed the value to set
+         * @return this builder
+         **/
         public Builder licenseUnitsConsumed(Double licenseUnitsConsumed) {
             this.licenseUnitsConsumed = licenseUnitsConsumed;
             this.__explicitlySet__.add("licenseUnitsConsumed");
             return this;
         }
-
+        /**
+         * Specifies if the base license is available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBaseLicenseAvailable")
         private Boolean isBaseLicenseAvailable;
 
+        /**
+         * Specifies if the base license is available.
+         * @param isBaseLicenseAvailable the value to set
+         * @return this builder
+         **/
         public Builder isBaseLicenseAvailable(Boolean isBaseLicenseAvailable) {
             this.isBaseLicenseAvailable = isBaseLicenseAvailable;
             this.__explicitlySet__.add("isBaseLicenseAvailable");
             return this;
         }
-
+        /**
+         * Specifies if all options are available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areAllOptionsAvailable")
         private Boolean areAllOptionsAvailable;
 
+        /**
+         * Specifies if all options are available.
+         * @param areAllOptionsAvailable the value to set
+         * @return this builder
+         **/
         public Builder areAllOptionsAvailable(Boolean areAllOptionsAvailable) {
             this.areAllOptionsAvailable = areAllOptionsAvailable;
             this.__explicitlySet__.add("areAllOptionsAvailable");
             return this;
         }
-
+        /**
+         * Collection of missing product licenses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("missingProducts")
         private java.util.List<Product> missingProducts;
 
+        /**
+         * Collection of missing product licenses.
+         * @param missingProducts the value to set
+         * @return this builder
+         **/
         public Builder missingProducts(java.util.List<Product> missingProducts) {
             this.missingProducts = missingProducts;
             this.__explicitlySet__.add("missingProducts");
@@ -234,6 +319,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -244,6 +333,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The display name of the resource.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -254,6 +347,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
+    /**
+     * The resource product name.
+     * @return the value
+     **/
     public String getProductName() {
         return productName;
     }
@@ -264,6 +361,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
     private final String resourceCompartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
+     * @return the value
+     **/
     public String getResourceCompartmentId() {
         return resourceCompartmentId;
     }
@@ -274,6 +375,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentName")
     private final String resourceCompartmentName;
 
+    /**
+     * The display name of the compartment that contains the resource.
+     * @return the value
+     **/
     public String getResourceCompartmentName() {
         return resourceCompartmentName;
     }
@@ -284,6 +389,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUnitType")
     private final ResourceUnit resourceUnitType;
 
+    /**
+     * The unit type for the resource.
+     * @return the value
+     **/
     public ResourceUnit getResourceUnitType() {
         return resourceUnitType;
     }
@@ -294,6 +403,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUnitCount")
     private final Double resourceUnitCount;
 
+    /**
+     * Number of units of the resource
+     * @return the value
+     **/
     public Double getResourceUnitCount() {
         return resourceUnitCount;
     }
@@ -304,6 +417,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnitType")
     private final LicenseUnit licenseUnitType;
 
+    /**
+     * The product license unit.
+     * @return the value
+     **/
     public LicenseUnit getLicenseUnitType() {
         return licenseUnitType;
     }
@@ -314,6 +431,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnitsConsumed")
     private final Double licenseUnitsConsumed;
 
+    /**
+     * Number of license units consumed by the resource.
+     * @return the value
+     **/
     public Double getLicenseUnitsConsumed() {
         return licenseUnitsConsumed;
     }
@@ -324,6 +445,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseLicenseAvailable")
     private final Boolean isBaseLicenseAvailable;
 
+    /**
+     * Specifies if the base license is available.
+     * @return the value
+     **/
     public Boolean getIsBaseLicenseAvailable() {
         return isBaseLicenseAvailable;
     }
@@ -334,6 +459,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("areAllOptionsAvailable")
     private final Boolean areAllOptionsAvailable;
 
+    /**
+     * Specifies if all options are available.
+     * @return the value
+     **/
     public Boolean getAreAllOptionsAvailable() {
         return areAllOptionsAvailable;
     }
@@ -344,6 +473,10 @@ public final class ProductLicenseConsumerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("missingProducts")
     private final java.util.List<Product> missingProducts;
 
+    /**
+     * Collection of missing product licenses.
+     * @return the value
+     **/
     public java.util.List<Product> getMissingProducts() {
         return missingProducts;
     }

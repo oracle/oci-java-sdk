@@ -35,27 +35,49 @@ public final class DatabaseConnectionStrings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Host name based CDB Connection String.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdbDefault")
         private String cdbDefault;
 
+        /**
+         * Host name based CDB Connection String.
+         * @param cdbDefault the value to set
+         * @return this builder
+         **/
         public Builder cdbDefault(String cdbDefault) {
             this.cdbDefault = cdbDefault;
             this.__explicitlySet__.add("cdbDefault");
             return this;
         }
-
+        /**
+         * IP based CDB Connection String.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdbIpDefault")
         private String cdbIpDefault;
 
+        /**
+         * IP based CDB Connection String.
+         * @param cdbIpDefault the value to set
+         * @return this builder
+         **/
         public Builder cdbIpDefault(String cdbIpDefault) {
             this.cdbIpDefault = cdbIpDefault;
             this.__explicitlySet__.add("cdbIpDefault");
             return this;
         }
-
+        /**
+         * All connection strings to use to connect to the Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
+        /**
+         * All connection strings to use to connect to the Database.
+         * @param allConnectionStrings the value to set
+         * @return this builder
+         **/
         public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             this.__explicitlySet__.add("allConnectionStrings");
@@ -101,6 +123,10 @@ public final class DatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("cdbDefault")
     private final String cdbDefault;
 
+    /**
+     * Host name based CDB Connection String.
+     * @return the value
+     **/
     public String getCdbDefault() {
         return cdbDefault;
     }
@@ -111,6 +137,10 @@ public final class DatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("cdbIpDefault")
     private final String cdbIpDefault;
 
+    /**
+     * IP based CDB Connection String.
+     * @return the value
+     **/
     public String getCdbIpDefault() {
         return cdbIpDefault;
     }
@@ -121,6 +151,10 @@ public final class DatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
+    /**
+     * All connection strings to use to connect to the Database.
+     * @return the value
+     **/
     public java.util.Map<String, String> getAllConnectionStrings() {
         return allConnectionStrings;
     }

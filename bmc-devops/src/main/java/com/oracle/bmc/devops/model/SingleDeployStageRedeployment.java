@@ -184,19 +184,33 @@ public final class SingleDeployStageRedeployment extends Deployment {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * Specifies the OCID of the previous deployment to be redeployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
         private String previousDeploymentId;
 
+        /**
+         * Specifies the OCID of the previous deployment to be redeployed.
+         * @param previousDeploymentId the value to set
+         * @return this builder
+         **/
         public Builder previousDeploymentId(String previousDeploymentId) {
             this.previousDeploymentId = previousDeploymentId;
             this.__explicitlySet__.add("previousDeploymentId");
             return this;
         }
-
+        /**
+         * Specifies the OCID of the stage to be redeployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
+        /**
+         * Specifies the OCID of the stage to be redeployed.
+         * @param deployStageId the value to set
+         * @return this builder
+         **/
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = deployStageId;
             this.__explicitlySet__.add("deployStageId");
@@ -320,6 +334,10 @@ public final class SingleDeployStageRedeployment extends Deployment {
     @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
     private final String previousDeploymentId;
 
+    /**
+     * Specifies the OCID of the previous deployment to be redeployed.
+     * @return the value
+     **/
     public String getPreviousDeploymentId() {
         return previousDeploymentId;
     }
@@ -330,6 +348,10 @@ public final class SingleDeployStageRedeployment extends Deployment {
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
+    /**
+     * Specifies the OCID of the stage to be redeployed.
+     * @return the value
+     **/
     public String getDeployStageId() {
         return deployStageId;
     }

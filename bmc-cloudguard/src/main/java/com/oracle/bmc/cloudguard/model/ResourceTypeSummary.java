@@ -31,27 +31,49 @@ public final class ResourceTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * name of the resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * name of the resource
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * display name of the resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * display name of the resource
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * List of rules
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RuleSummary> rules;
 
+        /**
+         * List of rules
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<RuleSummary> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -94,6 +116,10 @@ public final class ResourceTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * name of the resource
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -104,6 +130,10 @@ public final class ResourceTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * display name of the resource
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -114,6 +144,10 @@ public final class ResourceTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RuleSummary> rules;
 
+    /**
+     * List of rules
+     * @return the value
+     **/
     public java.util.List<RuleSummary> getRules() {
         return rules;
     }

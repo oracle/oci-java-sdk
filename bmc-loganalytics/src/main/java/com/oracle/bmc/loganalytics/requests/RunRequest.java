@@ -17,6 +17,10 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,11 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
      */
     private String scheduledTaskId;
 
+    /**
+     * Unique scheduledTask id returned from task create.
+     * If invalid will lead to a 404 not found.
+     *
+     */
     public String getScheduledTaskId() {
         return scheduledTaskId;
     }
@@ -37,6 +46,11 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
      */
     private java.util.Date timeStart;
 
+    /**
+     * Optional parameter to specify start of time range, in the format defined by RFC3339.
+     * Default value is beginning of time.
+     *
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -47,6 +61,11 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
      */
     private java.util.Date timeEnd;
 
+    /**
+     * Optional parameter to specify end of time range, in the format defined by RFC3339.
+     * Default value is end of time.
+     *
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -55,6 +74,9 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,6 +90,14 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -78,11 +108,16 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -90,12 +125,18 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
             return this;
         }
 
+        /**
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
+         *
+         */
         private String scheduledTaskId = null;
 
         /**
          * Unique scheduledTask id returned from task create.
          * If invalid will lead to a 404 not found.
          *
+         * @param scheduledTaskId the value to set
          * @return this builder instance
          */
         public Builder scheduledTaskId(String scheduledTaskId) {
@@ -103,12 +144,18 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
             return this;
         }
 
+        /**
+         * Optional parameter to specify start of time range, in the format defined by RFC3339.
+         * Default value is beginning of time.
+         *
+         */
         private java.util.Date timeStart = null;
 
         /**
          * Optional parameter to specify start of time range, in the format defined by RFC3339.
          * Default value is beginning of time.
          *
+         * @param timeStart the value to set
          * @return this builder instance
          */
         public Builder timeStart(java.util.Date timeStart) {
@@ -116,12 +163,18 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
             return this;
         }
 
+        /**
+         * Optional parameter to specify end of time range, in the format defined by RFC3339.
+         * Default value is end of time.
+         *
+         */
         private java.util.Date timeEnd = null;
 
         /**
          * Optional parameter to specify end of time range, in the format defined by RFC3339.
          * Default value is end of time.
          *
+         * @param timeEnd the value to set
          * @return this builder instance
          */
         public Builder timeEnd(java.util.Date timeEnd) {
@@ -129,10 +182,14 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -140,6 +197,14 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -149,6 +214,7 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -234,7 +300,8 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -246,6 +313,10 @@ public class RunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Voi
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

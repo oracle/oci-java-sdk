@@ -74,135 +74,287 @@ public final class Pattern {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique pattern key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique pattern key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the pattern.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The data catalog's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
+        /**
+         * The data catalog's OCID.
+         * @param catalogId the value to set
+         * @return this builder
+         **/
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
             return this;
         }
-
+        /**
+         * The current state of the pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the pattern.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time the pattern was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the pattern was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The last time that any change was made to the pattern. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last time that any change was made to the pattern. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * OCID of the user who created the pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
+        /**
+         * OCID of the user who created the pattern.
+         * @param createdById the value to set
+         * @return this builder
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
-
+        /**
+         * OCID of the user who last modified the pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
         private String updatedById;
 
+        /**
+         * OCID of the user who last modified the pattern.
+         * @param updatedById the value to set
+         * @return this builder
+         **/
         public Builder updatedById(String updatedById) {
             this.updatedById = updatedById;
             this.__explicitlySet__.add("updatedById");
             return this;
         }
-
+        /**
+         * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
+         *
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * Input string which drives the selection process.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
         private String filePathPrefix;
 
+        /**
+         * Input string which drives the selection process.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
+         *
+         * @param filePathPrefix the value to set
+         * @return this builder
+         **/
         public Builder filePathPrefix(String filePathPrefix) {
             this.filePathPrefix = filePathPrefix;
             this.__explicitlySet__.add("filePathPrefix");
             return this;
         }
-
+        /**
+         * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+         * purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
+         * this will be run as a validation during the request, such that if the check fails the request fails. If
+         * isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
+         * if the check fails, with a lifecycleState of FAILED.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
         private java.util.List<String> checkFilePathList;
 
+        /**
+         * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+         * purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
+         * this will be run as a validation during the request, such that if the check fails the request fails. If
+         * isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
+         * if the check fails, with a lifecycleState of FAILED.
+         *
+         * @param checkFilePathList the value to set
+         * @return this builder
+         **/
         public Builder checkFilePathList(java.util.List<String> checkFilePathList) {
             this.checkFilePathList = checkFilePathList;
             this.__explicitlySet__.add("checkFilePathList");
             return this;
         }
-
+        /**
+         * Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
+         * UNMATCHED files is above the checkFailureLimit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnableCheckFailureLimit")
         private Boolean isEnableCheckFailureLimit;
 
+        /**
+         * Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
+         * UNMATCHED files is above the checkFailureLimit.
+         *
+         * @param isEnableCheckFailureLimit the value to set
+         * @return this builder
+         **/
         public Builder isEnableCheckFailureLimit(Boolean isEnableCheckFailureLimit) {
             this.isEnableCheckFailureLimit = isEnableCheckFailureLimit;
             this.__explicitlySet__.add("isEnableCheckFailureLimit");
             return this;
         }
-
+        /**
+         * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails. Optional, if
+         * checkFilePathList is provided - but if isEnableCheckFailureLimit is set to true it is required.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checkFailureLimit")
         private Integer checkFailureLimit;
 
+        /**
+         * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails. Optional, if
+         * checkFilePathList is provided - but if isEnableCheckFailureLimit is set to true it is required.
+         *
+         * @param checkFailureLimit the value to set
+         * @return this builder
+         **/
         public Builder checkFailureLimit(Integer checkFailureLimit) {
             this.checkFailureLimit = checkFailureLimit;
             this.__explicitlySet__.add("checkFailureLimit");
             return this;
         }
-
+        /**
+         * A map of maps that contains the properties which are specific to the pattern type. Each pattern type
+         * definition defines it's set of required and optional properties.
+         * Example: {@code {"properties": { "default": { "tbd"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains the properties which are specific to the pattern type. Each pattern type
+         * definition defines it's set of required and optional properties.
+         * Example: {@code {"properties": { "default": { "tbd"}}}}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -275,6 +427,10 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique pattern key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -287,6 +443,12 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -297,6 +459,10 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the pattern.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -307,6 +473,10 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
+    /**
+     * The data catalog's OCID.
+     * @return the value
+     **/
     public String getCatalogId() {
         return catalogId;
     }
@@ -317,6 +487,10 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the pattern.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -329,6 +503,12 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the pattern was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -340,6 +520,11 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last time that any change was made to the pattern. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -350,6 +535,10 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
+    /**
+     * OCID of the user who created the pattern.
+     * @return the value
+     **/
     public String getCreatedById() {
         return createdById;
     }
@@ -360,6 +549,10 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     private final String updatedById;
 
+    /**
+     * OCID of the user who last modified the pattern.
+     * @return the value
+     **/
     public String getUpdatedById() {
         return updatedById;
     }
@@ -373,6 +566,13 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
@@ -386,6 +586,13 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
     private final String filePathPrefix;
 
+    /**
+     * Input string which drives the selection process.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     * @return the value
+     **/
     public String getFilePathPrefix() {
         return filePathPrefix;
     }
@@ -401,6 +608,15 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
     private final java.util.List<String> checkFilePathList;
 
+    /**
+     * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+     * purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
+     * this will be run as a validation during the request, such that if the check fails the request fails. If
+     * isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
+     * if the check fails, with a lifecycleState of FAILED.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCheckFilePathList() {
         return checkFilePathList;
     }
@@ -413,6 +629,12 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnableCheckFailureLimit")
     private final Boolean isEnableCheckFailureLimit;
 
+    /**
+     * Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
+     * UNMATCHED files is above the checkFailureLimit.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnableCheckFailureLimit() {
         return isEnableCheckFailureLimit;
     }
@@ -425,6 +647,12 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("checkFailureLimit")
     private final Integer checkFailureLimit;
 
+    /**
+     * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails. Optional, if
+     * checkFilePathList is provided - but if isEnableCheckFailureLimit is set to true it is required.
+     *
+     * @return the value
+     **/
     public Integer getCheckFailureLimit() {
         return checkFailureLimit;
     }
@@ -438,6 +666,13 @@ public final class Pattern {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains the properties which are specific to the pattern type. Each pattern type
+     * definition defines it's set of required and optional properties.
+     * Example: {@code {"properties": { "default": { "tbd"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }

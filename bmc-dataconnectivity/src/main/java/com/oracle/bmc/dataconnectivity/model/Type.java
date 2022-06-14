@@ -30,18 +30,33 @@ public final class Type {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * list of attributes for the dataAsset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetAttributes")
         private java.util.List<Attribute> dataAssetAttributes;
 
+        /**
+         * list of attributes for the dataAsset
+         * @param dataAssetAttributes the value to set
+         * @return this builder
+         **/
         public Builder dataAssetAttributes(java.util.List<Attribute> dataAssetAttributes) {
             this.dataAssetAttributes = dataAssetAttributes;
             this.__explicitlySet__.add("dataAssetAttributes");
             return this;
         }
-
+        /**
+         * Map of connectionType as key and List of attributes as value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionAttributes")
         private java.util.Map<String, java.util.List<Attribute>> connectionAttributes;
 
+        /**
+         * Map of connectionType as key and List of attributes as value
+         * @param connectionAttributes the value to set
+         * @return this builder
+         **/
         public Builder connectionAttributes(
                 java.util.Map<String, java.util.List<Attribute>> connectionAttributes) {
             this.connectionAttributes = connectionAttributes;
@@ -86,6 +101,10 @@ public final class Type {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetAttributes")
     private final java.util.List<Attribute> dataAssetAttributes;
 
+    /**
+     * list of attributes for the dataAsset
+     * @return the value
+     **/
     public java.util.List<Attribute> getDataAssetAttributes() {
         return dataAssetAttributes;
     }
@@ -96,6 +115,10 @@ public final class Type {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionAttributes")
     private final java.util.Map<String, java.util.List<Attribute>> connectionAttributes;
 
+    /**
+     * Map of connectionType as key and List of attributes as value
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<Attribute>> getConnectionAttributes() {
         return connectionAttributes;
     }

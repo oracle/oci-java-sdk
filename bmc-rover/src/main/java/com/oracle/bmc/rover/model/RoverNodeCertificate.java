@@ -29,9 +29,17 @@ public final class RoverNodeCertificate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The certificate that can be installed on a client to do TLS communication to the node
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
+        /**
+         * The certificate that can be installed on a client to do TLS communication to the node
+         * @param certificate the value to set
+         * @return this builder
+         **/
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
@@ -73,6 +81,10 @@ public final class RoverNodeCertificate {
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
+    /**
+     * The certificate that can be installed on a client to do TLS communication to the node
+     * @return the value
+     **/
     public String getCertificate() {
         return certificate;
     }

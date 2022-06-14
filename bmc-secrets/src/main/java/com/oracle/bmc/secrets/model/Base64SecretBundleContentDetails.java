@@ -27,9 +27,17 @@ package com.oracle.bmc.secrets.model;
 public final class Base64SecretBundleContentDetails extends SecretBundleContentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The base64-encoded content of the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
+        /**
+         * The base64-encoded content of the secret.
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -78,6 +86,10 @@ public final class Base64SecretBundleContentDetails extends SecretBundleContentD
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
+    /**
+     * The base64-encoded content of the secret.
+     * @return the value
+     **/
     public String getContent() {
         return content;
     }

@@ -42,36 +42,79 @@ public final class TargetTag {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the tag namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagNamespaceName")
         private String tagNamespaceName;
 
+        /**
+         * The name of the tag namespace.
+         * @param tagNamespaceName the value to set
+         * @return this builder
+         **/
         public Builder tagNamespaceName(String tagNamespaceName) {
             this.tagNamespaceName = tagNamespaceName;
             this.__explicitlySet__.add("tagNamespaceName");
             return this;
         }
-
+        /**
+         * The name you use to refer to the tag, also known as the tag key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
         private String tagDefinitionName;
 
+        /**
+         * The name you use to refer to the tag, also known as the tag key.
+         * @param tagDefinitionName the value to set
+         * @return this builder
+         **/
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = tagDefinitionName;
             this.__explicitlySet__.add("tagDefinitionName");
             return this;
         }
-
+        /**
+         * Specifies which tag value types in the {@code tagValues} field result in overrides of the recommendation criteria.
+         * <p>
+         * When the value for this field is {@code ANY}, the {@code tagValues} field should be empty, which enforces overrides to the recommendation
+         * for resources with any tag values attached to them.
+         * <p>
+         * When the value for this field value is {@code VALUE}, the {@code tagValues} field must include a specific value or list of values.
+         * Overrides to the recommendation criteria only occur for resources that match the values in the {@code tagValues} fields.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagValueType")
         private TagValueType tagValueType;
 
+        /**
+         * Specifies which tag value types in the {@code tagValues} field result in overrides of the recommendation criteria.
+         * <p>
+         * When the value for this field is {@code ANY}, the {@code tagValues} field should be empty, which enforces overrides to the recommendation
+         * for resources with any tag values attached to them.
+         * <p>
+         * When the value for this field value is {@code VALUE}, the {@code tagValues} field must include a specific value or list of values.
+         * Overrides to the recommendation criteria only occur for resources that match the values in the {@code tagValues} fields.
+         *
+         * @param tagValueType the value to set
+         * @return this builder
+         **/
         public Builder tagValueType(TagValueType tagValueType) {
             this.tagValueType = tagValueType;
             this.__explicitlySet__.add("tagValueType");
             return this;
         }
-
+        /**
+         * The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagValues")
         private java.util.List<String> tagValues;
 
+        /**
+         * The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+         * @param tagValues the value to set
+         * @return this builder
+         **/
         public Builder tagValues(java.util.List<String> tagValues) {
             this.tagValues = tagValues;
             this.__explicitlySet__.add("tagValues");
@@ -118,6 +161,10 @@ public final class TargetTag {
     @com.fasterxml.jackson.annotation.JsonProperty("tagNamespaceName")
     private final String tagNamespaceName;
 
+    /**
+     * The name of the tag namespace.
+     * @return the value
+     **/
     public String getTagNamespaceName() {
         return tagNamespaceName;
     }
@@ -128,6 +175,10 @@ public final class TargetTag {
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
     private final String tagDefinitionName;
 
+    /**
+     * The name you use to refer to the tag, also known as the tag key.
+     * @return the value
+     **/
     public String getTagDefinitionName() {
         return tagDefinitionName;
     }
@@ -145,6 +196,17 @@ public final class TargetTag {
     @com.fasterxml.jackson.annotation.JsonProperty("tagValueType")
     private final TagValueType tagValueType;
 
+    /**
+     * Specifies which tag value types in the {@code tagValues} field result in overrides of the recommendation criteria.
+     * <p>
+     * When the value for this field is {@code ANY}, the {@code tagValues} field should be empty, which enforces overrides to the recommendation
+     * for resources with any tag values attached to them.
+     * <p>
+     * When the value for this field value is {@code VALUE}, the {@code tagValues} field must include a specific value or list of values.
+     * Overrides to the recommendation criteria only occur for resources that match the values in the {@code tagValues} fields.
+     *
+     * @return the value
+     **/
     public TagValueType getTagValueType() {
         return tagValueType;
     }
@@ -155,6 +217,10 @@ public final class TargetTag {
     @com.fasterxml.jackson.annotation.JsonProperty("tagValues")
     private final java.util.List<String> tagValues;
 
+    /**
+     * The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+     * @return the value
+     **/
     public java.util.List<String> getTagValues() {
         return tagValues;
     }

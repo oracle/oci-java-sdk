@@ -13,6 +13,10 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -42,15 +50,31 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
@@ -68,12 +92,20 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public AttachDevicesToTransferPackageResponse build() {
             return new AttachDevicesToTransferPackageResponse(
                     __httpStatusCode__, opcRequestId, etag);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

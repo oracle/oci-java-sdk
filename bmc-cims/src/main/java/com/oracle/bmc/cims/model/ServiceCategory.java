@@ -51,72 +51,129 @@ public final class ServiceCategory {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique ID that identifies a classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique ID that identifies a classifier.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The name of the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the classifier.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label for the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
+        /**
+         * The label for the classifier.
+         * @param label the value to set
+         * @return this builder
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-
+        /**
+         * The text describing the classifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The text describing the classifier.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The list of issues.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
         private java.util.List<IssueType> issueTypeList;
 
+        /**
+         * The list of issues.
+         * @param issueTypeList the value to set
+         * @return this builder
+         **/
         public Builder issueTypeList(java.util.List<IssueType> issueTypeList) {
             this.issueTypeList = issueTypeList;
             this.__explicitlySet__.add("issueTypeList");
             return this;
         }
-
+        /**
+         * The scope of the incident.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
+        /**
+         * The scope of the incident.
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * The unit to use to measure the service category or resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * The unit to use to measure the service category or resource.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-
+        /**
+         * The unique ID for the limit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limitId")
         private String limitId;
 
+        /**
+         * The unique ID for the limit.
+         * @param limitId the value to set
+         * @return this builder
+         **/
         public Builder limitId(String limitId) {
             this.limitId = limitId;
             this.__explicitlySet__.add("limitId");
@@ -168,6 +225,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique ID that identifies a classifier.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -178,6 +239,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the classifier.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -188,6 +253,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
+    /**
+     * The label for the classifier.
+     * @return the value
+     **/
     public String getLabel() {
         return label;
     }
@@ -198,6 +267,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The text describing the classifier.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -208,6 +281,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
     private final java.util.List<IssueType> issueTypeList;
 
+    /**
+     * The list of issues.
+     * @return the value
+     **/
     public java.util.List<IssueType> getIssueTypeList() {
         return issueTypeList;
     }
@@ -218,6 +295,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
+    /**
+     * The scope of the incident.
+     * @return the value
+     **/
     public Scope getScope() {
         return scope;
     }
@@ -228,6 +309,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * The unit to use to measure the service category or resource.
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }
@@ -238,6 +323,10 @@ public final class ServiceCategory {
     @com.fasterxml.jackson.annotation.JsonProperty("limitId")
     private final String limitId;
 
+    /**
+     * The unique ID for the limit.
+     * @return the value
+     **/
     public String getLimitId() {
         return limitId;
     }

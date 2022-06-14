@@ -17,6 +17,9 @@ public class GetPluggableDatabaseRequest
      */
     private String pluggableDatabaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getPluggableDatabaseId() {
         return pluggableDatabaseId;
     }
@@ -28,10 +31,14 @@ public class GetPluggableDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String pluggableDatabaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param pluggableDatabaseId the value to set
          * @return this builder instance
          */
         public Builder pluggableDatabaseId(String pluggableDatabaseId) {
@@ -107,12 +114,17 @@ public class GetPluggableDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().pluggableDatabaseId(pluggableDatabaseId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

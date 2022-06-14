@@ -18,6 +18,9 @@ public class CreateModelArtifactRequest
      */
     private String modelId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+     */
     public String getModelId() {
         return modelId;
     }
@@ -26,6 +29,9 @@ public class CreateModelArtifactRequest
      */
     private Long contentLength;
 
+    /**
+     * The content length of the body.
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -34,6 +40,9 @@ public class CreateModelArtifactRequest
      */
     private java.io.InputStream modelArtifact;
 
+    /**
+     * The model artifact to upload.
+     */
     public java.io.InputStream getModelArtifact() {
         return modelArtifact;
     }
@@ -43,6 +52,10 @@ public class CreateModelArtifactRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,6 +65,10 @@ public class CreateModelArtifactRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -67,6 +84,16 @@ public class CreateModelArtifactRequest
      */
     private String contentDisposition;
 
+    /**
+     * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+     * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+     * name when downloading.
+     * Example: {@code {"Content-Disposition": "attachment"
+     *            "filename"="model.tar.gz"
+     *            "Content-Length": "2347"
+     *            "Content-Type": "application/gzip"}}
+     *
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -88,10 +115,14 @@ public class CreateModelArtifactRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         */
         private String modelId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         * @param modelId the value to set
          * @return this builder instance
          */
         public Builder modelId(String modelId) {
@@ -99,10 +130,14 @@ public class CreateModelArtifactRequest
             return this;
         }
 
+        /**
+         * The content length of the body.
+         */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
+         * @param contentLength the value to set
          * @return this builder instance
          */
         public Builder contentLength(Long contentLength) {
@@ -110,10 +145,14 @@ public class CreateModelArtifactRequest
             return this;
         }
 
+        /**
+         * The model artifact to upload.
+         */
         private java.io.InputStream modelArtifact = null;
 
         /**
          * The model artifact to upload.
+         * @param modelArtifact the value to set
          * @return this builder instance
          */
         public Builder modelArtifact(java.io.InputStream modelArtifact) {
@@ -121,11 +160,16 @@ public class CreateModelArtifactRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -133,11 +177,16 @@ public class CreateModelArtifactRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -145,6 +194,16 @@ public class CreateModelArtifactRequest
             return this;
         }
 
+        /**
+         * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+         * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+         * name when downloading.
+         * Example: {@code {"Content-Disposition": "attachment"
+         *            "filename"="model.tar.gz"
+         *            "Content-Length": "2347"
+         *            "Content-Type": "application/gzip"}}
+         *
+         */
         private String contentDisposition = null;
 
         /**
@@ -156,6 +215,7 @@ public class CreateModelArtifactRequest
          *            "Content-Length": "2347"
          *            "Content-Type": "application/gzip"}}
          *
+         * @param contentDisposition the value to set
          * @return this builder instance
          */
         public Builder contentDisposition(String contentDisposition) {
@@ -252,7 +312,8 @@ public class CreateModelArtifactRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -264,6 +325,10 @@ public class CreateModelArtifactRequest
                 .contentDisposition(contentDisposition);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

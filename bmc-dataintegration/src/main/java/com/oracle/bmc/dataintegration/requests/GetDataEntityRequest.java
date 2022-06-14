@@ -16,6 +16,9 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String connectionKey;
 
+    /**
+     * The connection key.
+     */
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -32,6 +38,9 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String schemaResourceName;
 
+    /**
+     * The schema resource name used for retrieving schemas.
+     */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
@@ -40,6 +49,9 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String dataEntityKey;
 
+    /**
+     * The key of the data entity.
+     */
     public String getDataEntityKey() {
         return dataEntityKey;
     }
@@ -51,6 +63,12 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,10 +80,14 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -73,10 +95,14 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The connection key.
+         */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
         public Builder connectionKey(String connectionKey) {
@@ -84,10 +110,14 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The schema resource name used for retrieving schemas.
+         */
         private String schemaResourceName = null;
 
         /**
          * The schema resource name used for retrieving schemas.
+         * @param schemaResourceName the value to set
          * @return this builder instance
          */
         public Builder schemaResourceName(String schemaResourceName) {
@@ -95,10 +125,14 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The key of the data entity.
+         */
         private String dataEntityKey = null;
 
         /**
          * The key of the data entity.
+         * @param dataEntityKey the value to set
          * @return this builder instance
          */
         public Builder dataEntityKey(String dataEntityKey) {
@@ -106,6 +140,12 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -113,6 +153,7 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -196,7 +237,8 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +249,10 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

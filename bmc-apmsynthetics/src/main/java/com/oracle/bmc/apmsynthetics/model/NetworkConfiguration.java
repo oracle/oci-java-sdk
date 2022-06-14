@@ -44,45 +44,81 @@ public final class NetworkConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of hops.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfHops")
         private Integer numberOfHops;
 
+        /**
+         * Number of hops.
+         * @param numberOfHops the value to set
+         * @return this builder
+         **/
         public Builder numberOfHops(Integer numberOfHops) {
             this.numberOfHops = numberOfHops;
             this.__explicitlySet__.add("numberOfHops");
             return this;
         }
-
+        /**
+         * Number of probes per hop.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("probePerHop")
         private Integer probePerHop;
 
+        /**
+         * Number of probes per hop.
+         * @param probePerHop the value to set
+         * @return this builder
+         **/
         public Builder probePerHop(Integer probePerHop) {
             this.probePerHop = probePerHop;
             this.__explicitlySet__.add("probePerHop");
             return this;
         }
-
+        /**
+         * Number of probe packets sent out simultaneously.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transmissionRate")
         private Integer transmissionRate;
 
+        /**
+         * Number of probe packets sent out simultaneously.
+         * @param transmissionRate the value to set
+         * @return this builder
+         **/
         public Builder transmissionRate(Integer transmissionRate) {
             this.transmissionRate = transmissionRate;
             this.__explicitlySet__.add("transmissionRate");
             return this;
         }
-
+        /**
+         * Type of protocol.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Type of protocol.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Type of probe mode when TCP protocol is selected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("probeMode")
         private ProbeMode probeMode;
 
+        /**
+         * Type of probe mode when TCP protocol is selected.
+         * @param probeMode the value to set
+         * @return this builder
+         **/
         public Builder probeMode(ProbeMode probeMode) {
             this.probeMode = probeMode;
             this.__explicitlySet__.add("probeMode");
@@ -131,6 +167,10 @@ public final class NetworkConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfHops")
     private final Integer numberOfHops;
 
+    /**
+     * Number of hops.
+     * @return the value
+     **/
     public Integer getNumberOfHops() {
         return numberOfHops;
     }
@@ -141,6 +181,10 @@ public final class NetworkConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("probePerHop")
     private final Integer probePerHop;
 
+    /**
+     * Number of probes per hop.
+     * @return the value
+     **/
     public Integer getProbePerHop() {
         return probePerHop;
     }
@@ -151,6 +195,10 @@ public final class NetworkConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("transmissionRate")
     private final Integer transmissionRate;
 
+    /**
+     * Number of probe packets sent out simultaneously.
+     * @return the value
+     **/
     public Integer getTransmissionRate() {
         return transmissionRate;
     }
@@ -161,6 +209,10 @@ public final class NetworkConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Type of protocol.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -171,6 +223,10 @@ public final class NetworkConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("probeMode")
     private final ProbeMode probeMode;
 
+    /**
+     * Type of probe mode when TCP protocol is selected.
+     * @return the value
+     **/
     public ProbeMode getProbeMode() {
         return probeMode;
     }

@@ -19,6 +19,10 @@ public class UpdateAlarmRequest
      */
     private String alarmId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+     *
+     */
     public String getAlarmId() {
         return alarmId;
     }
@@ -27,6 +31,9 @@ public class UpdateAlarmRequest
      */
     private com.oracle.bmc.monitoring.model.UpdateAlarmDetails updateAlarmDetails;
 
+    /**
+     * Document for updating an alarm.
+     */
     public com.oracle.bmc.monitoring.model.UpdateAlarmDetails getUpdateAlarmDetails() {
         return updateAlarmDetails;
     }
@@ -38,6 +45,12 @@ public class UpdateAlarmRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +61,11 @@ public class UpdateAlarmRequest
      */
     private String opcRequestId;
 
+    /**
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,11 +87,16 @@ public class UpdateAlarmRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+         *
+         */
         private String alarmId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
          *
+         * @param alarmId the value to set
          * @return this builder instance
          */
         public Builder alarmId(String alarmId) {
@@ -81,10 +104,14 @@ public class UpdateAlarmRequest
             return this;
         }
 
+        /**
+         * Document for updating an alarm.
+         */
         private com.oracle.bmc.monitoring.model.UpdateAlarmDetails updateAlarmDetails = null;
 
         /**
          * Document for updating an alarm.
+         * @param updateAlarmDetails the value to set
          * @return this builder instance
          */
         public Builder updateAlarmDetails(
@@ -93,6 +120,12 @@ public class UpdateAlarmRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -100,6 +133,7 @@ public class UpdateAlarmRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -107,12 +141,18 @@ public class UpdateAlarmRequest
             return this;
         }
 
+        /**
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Customer part of the request identifier token. If you need to contact Oracle about a particular
          * request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +245,8 @@ public class UpdateAlarmRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +256,10 @@ public class UpdateAlarmRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

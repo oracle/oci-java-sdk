@@ -48,63 +48,113 @@ public final class Compartment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The id of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The id of the compartment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the compartment.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The display name of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the compartment.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The full name of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fullName")
         private String fullName;
 
+        /**
+         * The full name of the compartment.
+         * @param fullName the value to set
+         * @return this builder
+         **/
         public Builder fullName(String fullName) {
             this.fullName = fullName;
             this.__explicitlySet__.add("fullName");
             return this;
         }
-
+        /**
+         * The id of the parent compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentCompartmentId")
         private String parentCompartmentId;
 
+        /**
+         * The id of the parent compartment.
+         * @param parentCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder parentCompartmentId(String parentCompartmentId) {
             this.parentCompartmentId = parentCompartmentId;
             this.__explicitlySet__.add("parentCompartmentId");
             return this;
         }
-
+        /**
+         * The status of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private EntityStatus status;
 
+        /**
+         * The status of the compartment.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(EntityStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The extended properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyMap")
         private java.util.Map<String, String> propertyMap;
 
+        /**
+         * The extended properties.
+         * @param propertyMap the value to set
+         * @return this builder
+         **/
         public Builder propertyMap(java.util.Map<String, String> propertyMap) {
             this.propertyMap = propertyMap;
             this.__explicitlySet__.add("propertyMap");
@@ -161,6 +211,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The id of the compartment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -171,6 +225,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the compartment.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -181,6 +239,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the compartment.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -191,6 +253,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("fullName")
     private final String fullName;
 
+    /**
+     * The full name of the compartment.
+     * @return the value
+     **/
     public String getFullName() {
         return fullName;
     }
@@ -201,6 +267,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("parentCompartmentId")
     private final String parentCompartmentId;
 
+    /**
+     * The id of the parent compartment.
+     * @return the value
+     **/
     public String getParentCompartmentId() {
         return parentCompartmentId;
     }
@@ -211,6 +281,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final EntityStatus status;
 
+    /**
+     * The status of the compartment.
+     * @return the value
+     **/
     public EntityStatus getStatus() {
         return status;
     }
@@ -221,6 +295,10 @@ public final class Compartment {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyMap")
     private final java.util.Map<String, String> propertyMap;
 
+    /**
+     * The extended properties.
+     * @return the value
+     **/
     public java.util.Map<String, String> getPropertyMap() {
         return propertyMap;
     }

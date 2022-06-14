@@ -416,10 +416,17 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
@@ -625,6 +632,10 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+     * @return the value
+     **/
     public String getSourceId() {
         return sourceId;
     }

@@ -87,64 +87,113 @@ public final class NamePatternRule extends ProjectionRule {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Specifies whether to skip remaining rules when a match is found.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
         private Boolean isSkipRemainingRulesOnMatch;
 
+        /**
+         * Specifies whether to skip remaining rules when a match is found.
+         * @param isSkipRemainingRulesOnMatch the value to set
+         * @return this builder
+         **/
         public Builder isSkipRemainingRulesOnMatch(Boolean isSkipRemainingRulesOnMatch) {
             this.isSkipRemainingRulesOnMatch = isSkipRemainingRulesOnMatch;
             this.__explicitlySet__.add("isSkipRemainingRulesOnMatch");
             return this;
         }
-
+        /**
+         * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Object scope;
 
+        /**
+         * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(Object scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * Specifies whether to cascade or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
         private Boolean isCascade;
 
+        /**
+         * Specifies whether to cascade or not.
+         * @param isCascade the value to set
+         * @return this builder
+         **/
         public Builder isCascade(Boolean isCascade) {
             this.isCascade = isCascade;
             this.__explicitlySet__.add("isCascade");
             return this;
         }
-
+        /**
+         * The pattern matching strategy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
         private MatchingStrategy matchingStrategy;
 
+        /**
+         * The pattern matching strategy.
+         * @param matchingStrategy the value to set
+         * @return this builder
+         **/
         public Builder matchingStrategy(MatchingStrategy matchingStrategy) {
             this.matchingStrategy = matchingStrategy;
             this.__explicitlySet__.add("matchingStrategy");
             return this;
         }
-
+        /**
+         * Specifies if the rule is case sensitive.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
         private Boolean isCaseSensitive;
 
+        /**
+         * Specifies if the rule is case sensitive.
+         * @param isCaseSensitive the value to set
+         * @return this builder
+         **/
         public Builder isCaseSensitive(Boolean isCaseSensitive) {
             this.isCaseSensitive = isCaseSensitive;
             this.__explicitlySet__.add("isCaseSensitive");
             return this;
         }
-
+        /**
+         * The rule type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
         private RuleType ruleType;
 
+        /**
+         * The rule type.
+         * @param ruleType the value to set
+         * @return this builder
+         **/
         public Builder ruleType(RuleType ruleType) {
             this.ruleType = ruleType;
             this.__explicitlySet__.add("ruleType");
             return this;
         }
-
+        /**
+         * The rule pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
+        /**
+         * The rule pattern.
+         * @param pattern the value to set
+         * @return this builder
+         **/
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
@@ -248,6 +297,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     private final Boolean isSkipRemainingRulesOnMatch;
 
+    /**
+     * Specifies whether to skip remaining rules when a match is found.
+     * @return the value
+     **/
     public Boolean getIsSkipRemainingRulesOnMatch() {
         return isSkipRemainingRulesOnMatch;
     }
@@ -258,6 +311,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Object scope;
 
+    /**
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+     * @return the value
+     **/
     public Object getScope() {
         return scope;
     }
@@ -268,6 +325,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
     private final Boolean isCascade;
 
+    /**
+     * Specifies whether to cascade or not.
+     * @return the value
+     **/
     public Boolean getIsCascade() {
         return isCascade;
     }
@@ -327,6 +388,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
     private final MatchingStrategy matchingStrategy;
 
+    /**
+     * The pattern matching strategy.
+     * @return the value
+     **/
     public MatchingStrategy getMatchingStrategy() {
         return matchingStrategy;
     }
@@ -337,6 +402,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     private final Boolean isCaseSensitive;
 
+    /**
+     * Specifies if the rule is case sensitive.
+     * @return the value
+     **/
     public Boolean getIsCaseSensitive() {
         return isCaseSensitive;
     }
@@ -395,6 +464,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     private final RuleType ruleType;
 
+    /**
+     * The rule type.
+     * @return the value
+     **/
     public RuleType getRuleType() {
         return ruleType;
     }
@@ -405,6 +478,10 @@ public final class NamePatternRule extends ProjectionRule {
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
+    /**
+     * The rule pattern.
+     * @return the value
+     **/
     public String getPattern() {
         return pattern;
     }

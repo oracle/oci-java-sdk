@@ -50,18 +50,33 @@ public final class RetentionRuleSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for the retention rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier for the retention rule.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * User specified name for the retention rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User specified name for the retention rule.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -76,37 +91,69 @@ public final class RetentionRuleSummary {
             this.__explicitlySet__.add("duration");
             return this;
         }
-
+        /**
+         * The entity tag (ETag) for the retention rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        /**
+         * The entity tag (ETag) for the retention rule.
+         * @param etag the value to set
+         * @return this builder
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
             return this;
         }
-
+        /**
+         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked.
+         * and can only be deleted by deleting the bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRuleLocked")
         private java.util.Date timeRuleLocked;
 
+        /**
+         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked.
+         * and can only be deleted by deleting the bucket.
+         *
+         * @param timeRuleLocked the value to set
+         * @return this builder
+         **/
         public Builder timeRuleLocked(java.util.Date timeRuleLocked) {
             this.timeRuleLocked = timeRuleLocked;
             this.__explicitlySet__.add("timeRuleLocked");
             return this;
         }
-
+        /**
+         * The date and time that the retention rule was created as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time that the retention rule was created as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
+        /**
+         * The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeModified the value to set
+         * @return this builder
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
@@ -163,6 +210,10 @@ public final class RetentionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier for the retention rule.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -173,6 +224,10 @@ public final class RetentionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User specified name for the retention rule.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -190,6 +245,10 @@ public final class RetentionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
+    /**
+     * The entity tag (ETag) for the retention rule.
+     * @return the value
+     **/
     public String getEtag() {
         return etag;
     }
@@ -202,6 +261,12 @@ public final class RetentionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRuleLocked")
     private final java.util.Date timeRuleLocked;
 
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked.
+     * and can only be deleted by deleting the bucket.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeRuleLocked() {
         return timeRuleLocked;
     }
@@ -212,6 +277,10 @@ public final class RetentionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time that the retention rule was created as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -222,6 +291,10 @@ public final class RetentionRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
+    /**
+     * The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }

@@ -25,6 +25,7 @@ package com.oracle.bmc.usageapi.model;
 public final class DynamicDateRange extends DateRange {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("dynamicDateRangeType")
         private DynamicDateRangeType dynamicDateRangeType;
 

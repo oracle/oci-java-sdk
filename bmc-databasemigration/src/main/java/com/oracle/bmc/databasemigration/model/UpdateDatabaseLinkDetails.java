@@ -31,9 +31,19 @@ public final class UpdateDatabaseLinkDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of database link from OCI database to on-premise database. ODMS will create link, if the link does not already exist.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of database link from OCI database to on-premise database. ODMS will create link, if the link does not already exist.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -86,6 +96,11 @@ public final class UpdateDatabaseLinkDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of database link from OCI database to on-premise database. ODMS will create link, if the link does not already exist.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

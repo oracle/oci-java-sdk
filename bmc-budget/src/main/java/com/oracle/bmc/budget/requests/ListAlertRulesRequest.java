@@ -16,6 +16,9 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String budgetId;
 
+    /**
+     * The unique budget OCID.
+     */
     public String getBudgetId() {
         return budgetId;
     }
@@ -24,6 +27,9 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -32,6 +38,9 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -40,6 +49,9 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private com.oracle.bmc.budget.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.budget.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -51,6 +63,12 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private com.oracle.bmc.budget.model.SortBy sortBy;
 
+    /**
+     * The field to sort by. If not specified, the default is timeCreated.
+     * The default sort order for timeCreated is DESC.
+     * The default sort order for displayName is ASC in alphanumeric order.
+     *
+     */
     public com.oracle.bmc.budget.model.SortBy getSortBy() {
         return sortBy;
     }
@@ -59,6 +77,9 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private com.oracle.bmc.budget.model.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the resource to filter by.
+     */
     public com.oracle.bmc.budget.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -70,6 +91,12 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. This does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -78,6 +105,9 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -89,10 +119,14 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique budget OCID.
+         */
         private String budgetId = null;
 
         /**
          * The unique budget OCID.
+         * @param budgetId the value to set
          * @return this builder instance
          */
         public Builder budgetId(String budgetId) {
@@ -100,10 +134,14 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -111,10 +149,14 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -122,10 +164,14 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.budget.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.budget.model.SortOrder sortOrder) {
@@ -133,6 +179,12 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The field to sort by. If not specified, the default is timeCreated.
+         * The default sort order for timeCreated is DESC.
+         * The default sort order for displayName is ASC in alphanumeric order.
+         *
+         */
         private com.oracle.bmc.budget.model.SortBy sortBy = null;
 
         /**
@@ -140,6 +192,7 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * The default sort order for timeCreated is DESC.
          * The default sort order for displayName is ASC in alphanumeric order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(com.oracle.bmc.budget.model.SortBy sortBy) {
@@ -147,10 +200,14 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The current state of the resource to filter by.
+         */
         private com.oracle.bmc.budget.model.LifecycleState lifecycleState = null;
 
         /**
          * The current state of the resource to filter by.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.budget.model.LifecycleState lifecycleState) {
@@ -158,6 +215,12 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A user-friendly name. This does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -165,6 +228,7 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -172,10 +236,14 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -265,7 +333,8 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -279,6 +348,10 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

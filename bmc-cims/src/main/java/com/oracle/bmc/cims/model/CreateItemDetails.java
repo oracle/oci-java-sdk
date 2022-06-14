@@ -77,6 +77,10 @@ public class CreateItemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the item.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

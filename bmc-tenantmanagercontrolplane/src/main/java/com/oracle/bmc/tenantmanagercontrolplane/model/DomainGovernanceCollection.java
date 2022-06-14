@@ -29,9 +29,17 @@ public final class DomainGovernanceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array containing DomainGovernanceSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DomainGovernanceSummary> items;
 
+        /**
+         * Array containing DomainGovernanceSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DomainGovernanceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DomainGovernanceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DomainGovernanceSummary> items;
 
+    /**
+     * Array containing DomainGovernanceSummary items.
+     * @return the value
+     **/
     public java.util.List<DomainGovernanceSummary> getItems() {
         return items;
     }

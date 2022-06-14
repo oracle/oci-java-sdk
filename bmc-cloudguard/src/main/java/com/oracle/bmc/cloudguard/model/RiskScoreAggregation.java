@@ -30,18 +30,33 @@ public final class RiskScoreAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key-value pairs of dimensions and their names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
+        /**
+         * The key-value pairs of dimensions and their names.
+         * @param dimensionsMap the value to set
+         * @return this builder
+         **/
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-
+        /**
+         * The risk score with given dimensions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Integer riskScore;
 
+        /**
+         * The risk score with given dimensions
+         * @param riskScore the value to set
+         * @return this builder
+         **/
         public Builder riskScore(Integer riskScore) {
             this.riskScore = riskScore;
             this.__explicitlySet__.add("riskScore");
@@ -83,6 +98,10 @@ public final class RiskScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
+    /**
+     * The key-value pairs of dimensions and their names.
+     * @return the value
+     **/
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
@@ -93,6 +112,10 @@ public final class RiskScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Integer riskScore;
 
+    /**
+     * The risk score with given dimensions
+     * @return the value
+     **/
     public Integer getRiskScore() {
         return riskScore;
     }

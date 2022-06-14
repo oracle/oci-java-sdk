@@ -44,45 +44,103 @@ public final class CompareLineResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A line from the content on the left. This may be empty if there is no matching line on
+         * the left for a line in the right content.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("leftContent")
         private String leftContent;
 
+        /**
+         * A line from the content on the left. This may be empty if there is no matching line on
+         * the left for a line in the right content.
+         *
+         * @param leftContent the value to set
+         * @return this builder
+         **/
         public Builder leftContent(String leftContent) {
             this.leftContent = leftContent;
             this.__explicitlySet__.add("leftContent");
             return this;
         }
-
+        /**
+         * A line from the content on the right. This may be empty if there is no matching line on
+         * the right for a line in the left content.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rightContent")
         private String rightContent;
 
+        /**
+         * A line from the content on the right. This may be empty if there is no matching line on
+         * the right for a line in the left content.
+         *
+         * @param rightContent the value to set
+         * @return this builder
+         **/
         public Builder rightContent(String rightContent) {
             this.rightContent = rightContent;
             this.__explicitlySet__.add("rightContent");
             return this;
         }
-
+        /**
+         * The result of the line comparison. An empty string means the lines being compared are the
+         * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+         * line is only found either on the right or the left.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diffType")
         private String diffType;
 
+        /**
+         * The result of the line comparison. An empty string means the lines being compared are the
+         * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+         * line is only found either on the right or the left.
+         *
+         * @param diffType the value to set
+         * @return this builder
+         **/
         public Builder diffType(String diffType) {
             this.diffType = diffType;
             this.__explicitlySet__.add("diffType");
             return this;
         }
-
+        /**
+         * A comma delimited set of indices that identify which characters are different from those
+         * in the right string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("leftIndices")
         private String leftIndices;
 
+        /**
+         * A comma delimited set of indices that identify which characters are different from those
+         * in the right string.
+         *
+         * @param leftIndices the value to set
+         * @return this builder
+         **/
         public Builder leftIndices(String leftIndices) {
             this.leftIndices = leftIndices;
             this.__explicitlySet__.add("leftIndices");
             return this;
         }
-
+        /**
+         * A comma delimited set of indices that identify which characters are different from those
+         * in the left string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rightIndices")
         private String rightIndices;
 
+        /**
+         * A comma delimited set of indices that identify which characters are different from those
+         * in the left string.
+         *
+         * @param rightIndices the value to set
+         * @return this builder
+         **/
         public Builder rightIndices(String rightIndices) {
             this.rightIndices = rightIndices;
             this.__explicitlySet__.add("rightIndices");
@@ -133,6 +191,12 @@ public final class CompareLineResult {
     @com.fasterxml.jackson.annotation.JsonProperty("leftContent")
     private final String leftContent;
 
+    /**
+     * A line from the content on the left. This may be empty if there is no matching line on
+     * the left for a line in the right content.
+     *
+     * @return the value
+     **/
     public String getLeftContent() {
         return leftContent;
     }
@@ -145,6 +209,12 @@ public final class CompareLineResult {
     @com.fasterxml.jackson.annotation.JsonProperty("rightContent")
     private final String rightContent;
 
+    /**
+     * A line from the content on the right. This may be empty if there is no matching line on
+     * the right for a line in the left content.
+     *
+     * @return the value
+     **/
     public String getRightContent() {
         return rightContent;
     }
@@ -158,6 +228,13 @@ public final class CompareLineResult {
     @com.fasterxml.jackson.annotation.JsonProperty("diffType")
     private final String diffType;
 
+    /**
+     * The result of the line comparison. An empty string means the lines being compared are the
+     * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+     * line is only found either on the right or the left.
+     *
+     * @return the value
+     **/
     public String getDiffType() {
         return diffType;
     }
@@ -170,6 +247,12 @@ public final class CompareLineResult {
     @com.fasterxml.jackson.annotation.JsonProperty("leftIndices")
     private final String leftIndices;
 
+    /**
+     * A comma delimited set of indices that identify which characters are different from those
+     * in the right string.
+     *
+     * @return the value
+     **/
     public String getLeftIndices() {
         return leftIndices;
     }
@@ -182,6 +265,12 @@ public final class CompareLineResult {
     @com.fasterxml.jackson.annotation.JsonProperty("rightIndices")
     private final String rightIndices;
 
+    /**
+     * A comma delimited set of indices that identify which characters are different from those
+     * in the left string.
+     *
+     * @return the value
+     **/
     public String getRightIndices() {
         return rightIndices;
     }

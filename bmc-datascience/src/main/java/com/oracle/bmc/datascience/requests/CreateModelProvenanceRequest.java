@@ -18,6 +18,9 @@ public class CreateModelProvenanceRequest
      */
     private String modelId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+     */
     public String getModelId() {
         return modelId;
     }
@@ -27,6 +30,9 @@ public class CreateModelProvenanceRequest
     private com.oracle.bmc.datascience.model.CreateModelProvenanceDetails
             createModelProvenanceDetails;
 
+    /**
+     * Provenance information for specified model.
+     */
     public com.oracle.bmc.datascience.model.CreateModelProvenanceDetails
             getCreateModelProvenanceDetails() {
         return createModelProvenanceDetails;
@@ -37,6 +43,10 @@ public class CreateModelProvenanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +56,10 @@ public class CreateModelProvenanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -68,10 +82,14 @@ public class CreateModelProvenanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         */
         private String modelId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         * @param modelId the value to set
          * @return this builder instance
          */
         public Builder modelId(String modelId) {
@@ -79,11 +97,15 @@ public class CreateModelProvenanceRequest
             return this;
         }
 
+        /**
+         * Provenance information for specified model.
+         */
         private com.oracle.bmc.datascience.model.CreateModelProvenanceDetails
                 createModelProvenanceDetails = null;
 
         /**
          * Provenance information for specified model.
+         * @param createModelProvenanceDetails the value to set
          * @return this builder instance
          */
         public Builder createModelProvenanceDetails(
@@ -93,11 +115,16 @@ public class CreateModelProvenanceRequest
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -105,11 +132,16 @@ public class CreateModelProvenanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -202,7 +234,8 @@ public class CreateModelProvenanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +245,10 @@ public class CreateModelProvenanceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

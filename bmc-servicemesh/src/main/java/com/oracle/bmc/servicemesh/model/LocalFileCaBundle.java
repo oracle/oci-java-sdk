@@ -27,9 +27,23 @@ package com.oracle.bmc.servicemesh.model;
 public final class LocalFileCaBundle extends CaBundle {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the secret.
+         * For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt.
+         * For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretName")
         private String secretName;
 
+        /**
+         * Name of the secret.
+         * For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt.
+         * For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
+         *
+         * @param secretName the value to set
+         * @return this builder
+         **/
         public Builder secretName(String secretName) {
             this.secretName = secretName;
             this.__explicitlySet__.add("secretName");
@@ -80,6 +94,13 @@ public final class LocalFileCaBundle extends CaBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
     private final String secretName;
 
+    /**
+     * Name of the secret.
+     * For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt.
+     * For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
+     *
+     * @return the value
+     **/
     public String getSecretName() {
         return secretName;
     }

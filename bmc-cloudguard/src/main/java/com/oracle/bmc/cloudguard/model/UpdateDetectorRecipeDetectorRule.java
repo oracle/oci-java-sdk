@@ -31,9 +31,17 @@ public final class UpdateDetectorRecipeDetectorRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DetectorRecipeRule Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
+        /**
+         * DetectorRecipeRule Identifier
+         * @param detectorRuleId the value to set
+         * @return this builder
+         **/
         public Builder detectorRuleId(String detectorRuleId) {
             this.detectorRuleId = detectorRuleId;
             this.__explicitlySet__.add("detectorRuleId");
@@ -85,6 +93,10 @@ public final class UpdateDetectorRecipeDetectorRule {
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
+    /**
+     * DetectorRecipeRule Identifier
+     * @return the value
+     **/
     public String getDetectorRuleId() {
         return detectorRuleId;
     }

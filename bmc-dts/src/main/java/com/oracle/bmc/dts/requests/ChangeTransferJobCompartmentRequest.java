@@ -18,6 +18,9 @@ public class ChangeTransferJobCompartmentRequest
      */
     private String transferJobId;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getTransferJobId() {
         return transferJobId;
     }
@@ -27,6 +30,9 @@ public class ChangeTransferJobCompartmentRequest
     private com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails
             changeTransferJobCompartmentDetails;
 
+    /**
+     * CompartmentId of the destination compartment
+     */
     public com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails
             getChangeTransferJobCompartmentDetails() {
         return changeTransferJobCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeTransferJobCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +59,11 @@ public class ChangeTransferJobCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +77,14 @@ public class ChangeTransferJobCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -83,10 +107,14 @@ public class ChangeTransferJobCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String transferJobId = null;
 
         /**
          * ID of the Transfer Job
+         * @param transferJobId the value to set
          * @return this builder instance
          */
         public Builder transferJobId(String transferJobId) {
@@ -94,11 +122,15 @@ public class ChangeTransferJobCompartmentRequest
             return this;
         }
 
+        /**
+         * CompartmentId of the destination compartment
+         */
         private com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails
                 changeTransferJobCompartmentDetails = null;
 
         /**
          * CompartmentId of the destination compartment
+         * @param changeTransferJobCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeTransferJobCompartmentDetails(
@@ -108,12 +140,18 @@ public class ChangeTransferJobCompartmentRequest
             return this;
         }
 
+        /**
+         * The entity tag to match. Optional, if set, the update will be successful only if the
+         * object's tag matches the tag specified in the request.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -121,12 +159,18 @@ public class ChangeTransferJobCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -134,6 +178,14 @@ public class ChangeTransferJobCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -143,6 +195,7 @@ public class ChangeTransferJobCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -237,7 +290,8 @@ public class ChangeTransferJobCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -248,6 +302,10 @@ public class ChangeTransferJobCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

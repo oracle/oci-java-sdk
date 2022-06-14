@@ -59,81 +59,149 @@ public final class DbSystemUpgradeHistoryEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The operating system upgrade action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The operating system upgrade action.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newGiVersion")
         private String newGiVersion;
 
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         * @param newGiVersion the value to set
+         * @return this builder
+         **/
         public Builder newGiVersion(String newGiVersion) {
             this.newGiVersion = newGiVersion;
             this.__explicitlySet__.add("newGiVersion");
             return this;
         }
-
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldGiVersion")
         private String oldGiVersion;
 
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         * @param oldGiVersion the value to set
+         * @return this builder
+         **/
         public Builder oldGiVersion(String oldGiVersion) {
             this.oldGiVersion = oldGiVersion;
             this.__explicitlySet__.add("oldGiVersion");
             return this;
         }
-
+        /**
+         * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotRetentionPeriodInDays")
         private Integer snapshotRetentionPeriodInDays;
 
+        /**
+         * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+         * @param snapshotRetentionPeriodInDays the value to set
+         * @return this builder
+         **/
         public Builder snapshotRetentionPeriodInDays(Integer snapshotRetentionPeriodInDays) {
             this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
             this.__explicitlySet__.add("snapshotRetentionPeriodInDays");
             return this;
         }
-
+        /**
+         * The current state of the action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the action.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A descriptive text associated with the lifecycleState.
+         * Typically contains additional displayable text.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A descriptive text associated with the lifecycleState.
+         * Typically contains additional displayable text.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The date and time when the upgrade action started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time when the upgrade action started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time when the upgrade action completed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * The date and time when the upgrade action completed
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -194,6 +262,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -253,6 +325,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The operating system upgrade action.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -263,6 +339,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("newGiVersion")
     private final String newGiVersion;
 
+    /**
+     * A valid Oracle Grid Infrastructure (GI) software version.
+     * @return the value
+     **/
     public String getNewGiVersion() {
         return newGiVersion;
     }
@@ -273,6 +353,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("oldGiVersion")
     private final String oldGiVersion;
 
+    /**
+     * A valid Oracle Grid Infrastructure (GI) software version.
+     * @return the value
+     **/
     public String getOldGiVersion() {
         return oldGiVersion;
     }
@@ -283,6 +367,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotRetentionPeriodInDays")
     private final Integer snapshotRetentionPeriodInDays;
 
+    /**
+     * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     * @return the value
+     **/
     public Integer getSnapshotRetentionPeriodInDays() {
         return snapshotRetentionPeriodInDays;
     }
@@ -343,6 +431,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the action.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -355,6 +447,12 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A descriptive text associated with the lifecycleState.
+     * Typically contains additional displayable text.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -365,6 +463,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time when the upgrade action started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -375,6 +477,10 @@ public final class DbSystemUpgradeHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * The date and time when the upgrade action completed
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }

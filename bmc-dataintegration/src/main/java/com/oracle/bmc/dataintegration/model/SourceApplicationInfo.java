@@ -41,36 +41,65 @@ public final class SourceApplicationInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
         private String workspaceId;
 
+        /**
+         * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+         * @param workspaceId the value to set
+         * @return this builder
+         **/
         public Builder workspaceId(String workspaceId) {
             this.workspaceId = workspaceId;
             this.__explicitlySet__.add("workspaceId");
             return this;
         }
-
+        /**
+         * The source application key to use when creating the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
         private String applicationKey;
 
+        /**
+         * The source application key to use when creating the application.
+         * @param applicationKey the value to set
+         * @return this builder
+         **/
         public Builder applicationKey(String applicationKey) {
             this.applicationKey = applicationKey;
             this.__explicitlySet__.add("applicationKey");
             return this;
         }
-
+        /**
+         * The source application version of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationVersion")
         private String applicationVersion;
 
+        /**
+         * The source application version of the application.
+         * @param applicationVersion the value to set
+         * @return this builder
+         **/
         public Builder applicationVersion(String applicationVersion) {
             this.applicationVersion = applicationVersion;
             this.__explicitlySet__.add("applicationVersion");
             return this;
         }
-
+        /**
+         * The last patch key for the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastPatchKey")
         private String lastPatchKey;
 
+        /**
+         * The last patch key for the application.
+         * @param lastPatchKey the value to set
+         * @return this builder
+         **/
         public Builder lastPatchKey(String lastPatchKey) {
             this.lastPatchKey = lastPatchKey;
             this.__explicitlySet__.add("lastPatchKey");
@@ -118,6 +147,10 @@ public final class SourceApplicationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
     private final String workspaceId;
 
+    /**
+     * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+     * @return the value
+     **/
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -128,6 +161,10 @@ public final class SourceApplicationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
     private final String applicationKey;
 
+    /**
+     * The source application key to use when creating the application.
+     * @return the value
+     **/
     public String getApplicationKey() {
         return applicationKey;
     }
@@ -138,6 +175,10 @@ public final class SourceApplicationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationVersion")
     private final String applicationVersion;
 
+    /**
+     * The source application version of the application.
+     * @return the value
+     **/
     public String getApplicationVersion() {
         return applicationVersion;
     }
@@ -148,6 +189,10 @@ public final class SourceApplicationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchKey")
     private final String lastPatchKey;
 
+    /**
+     * The last patch key for the application.
+     * @return the value
+     **/
     public String getLastPatchKey() {
         return lastPatchKey;
     }

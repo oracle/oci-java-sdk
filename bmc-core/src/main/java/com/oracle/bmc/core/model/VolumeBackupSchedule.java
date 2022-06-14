@@ -61,90 +61,213 @@ public final class VolumeBackupSchedule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of volume backup to create.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private BackupType backupType;
 
+        /**
+         * The type of volume backup to create.
+         * @param backupType the value to set
+         * @return this builder
+         **/
         public Builder backupType(BackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
-
+        /**
+         * The number of seconds that the volume backup start
+         * time should be shifted from the default interval boundaries specified by
+         * the period. The volume backup start time is the frequency start time plus the offset.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
         private Integer offsetSeconds;
 
+        /**
+         * The number of seconds that the volume backup start
+         * time should be shifted from the default interval boundaries specified by
+         * the period. The volume backup start time is the frequency start time plus the offset.
+         *
+         * @param offsetSeconds the value to set
+         * @return this builder
+         **/
         public Builder offsetSeconds(Integer offsetSeconds) {
             this.offsetSeconds = offsetSeconds;
             this.__explicitlySet__.add("offsetSeconds");
             return this;
         }
-
+        /**
+         * The volume backup frequency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("period")
         private Period period;
 
+        /**
+         * The volume backup frequency.
+         * @param period the value to set
+         * @return this builder
+         **/
         public Builder period(Period period) {
             this.period = period;
             this.__explicitlySet__.add("period");
             return this;
         }
-
+        /**
+         * Indicates how the offset is defined. If value is {@code STRUCTURED},
+         * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+         * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+         * value from the responses.
+         * <p>
+         * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+         * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * {@code dayOfWeek} is applicable for period
+         * {@code ONE_WEEK}.
+         * <p>
+         * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * 'month' is applicable for period 'ONE_YEAR'.
+         * <p>
+         * They will be ignored in the requests for inapplicable periods.
+         * <p>
+         * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+         * will be used for both requests and responses and the structured fields will be
+         * ignored in the requests and users should ignore their values from the responses.
+         * <p>
+         * For clients using older versions of Apis and not sending {@code offsetType} in their
+         * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
         private OffsetType offsetType;
 
+        /**
+         * Indicates how the offset is defined. If value is {@code STRUCTURED},
+         * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+         * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+         * value from the responses.
+         * <p>
+         * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+         * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * {@code dayOfWeek} is applicable for period
+         * {@code ONE_WEEK}.
+         * <p>
+         * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * 'month' is applicable for period 'ONE_YEAR'.
+         * <p>
+         * They will be ignored in the requests for inapplicable periods.
+         * <p>
+         * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+         * will be used for both requests and responses and the structured fields will be
+         * ignored in the requests and users should ignore their values from the responses.
+         * <p>
+         * For clients using older versions of Apis and not sending {@code offsetType} in their
+         * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
+         *
+         * @param offsetType the value to set
+         * @return this builder
+         **/
         public Builder offsetType(OffsetType offsetType) {
             this.offsetType = offsetType;
             this.__explicitlySet__.add("offsetType");
             return this;
         }
-
+        /**
+         * The hour of the day to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
         private Integer hourOfDay;
 
+        /**
+         * The hour of the day to schedule the volume backup.
+         * @param hourOfDay the value to set
+         * @return this builder
+         **/
         public Builder hourOfDay(Integer hourOfDay) {
             this.hourOfDay = hourOfDay;
             this.__explicitlySet__.add("hourOfDay");
             return this;
         }
-
+        /**
+         * The day of the week to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
+        /**
+         * The day of the week to schedule the volume backup.
+         * @param dayOfWeek the value to set
+         * @return this builder
+         **/
         public Builder dayOfWeek(DayOfWeek dayOfWeek) {
             this.dayOfWeek = dayOfWeek;
             this.__explicitlySet__.add("dayOfWeek");
             return this;
         }
-
+        /**
+         * The day of the month to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
         private Integer dayOfMonth;
 
+        /**
+         * The day of the month to schedule the volume backup.
+         * @param dayOfMonth the value to set
+         * @return this builder
+         **/
         public Builder dayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             this.__explicitlySet__.add("dayOfMonth");
             return this;
         }
-
+        /**
+         * The month of the year to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("month")
         private Month month;
 
+        /**
+         * The month of the year to schedule the volume backup.
+         * @param month the value to set
+         * @return this builder
+         **/
         public Builder month(Month month) {
             this.month = month;
             this.__explicitlySet__.add("month");
             return this;
         }
-
+        /**
+         * How long, in seconds, to keep the volume backups created by this schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
         private Integer retentionSeconds;
 
+        /**
+         * How long, in seconds, to keep the volume backups created by this schedule.
+         * @param retentionSeconds the value to set
+         * @return this builder
+         **/
         public Builder retentionSeconds(Integer retentionSeconds) {
             this.retentionSeconds = retentionSeconds;
             this.__explicitlySet__.add("retentionSeconds");
             return this;
         }
-
+        /**
+         * Specifies what time zone is the schedule in
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private TimeZone timeZone;
 
+        /**
+         * Specifies what time zone is the schedule in
+         * @param timeZone the value to set
+         * @return this builder
+         **/
         public Builder timeZone(TimeZone timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -255,6 +378,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final BackupType backupType;
 
+    /**
+     * The type of volume backup to create.
+     * @return the value
+     **/
     public BackupType getBackupType() {
         return backupType;
     }
@@ -268,6 +395,13 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
     private final Integer offsetSeconds;
 
+    /**
+     * The number of seconds that the volume backup start
+     * time should be shifted from the default interval boundaries specified by
+     * the period. The volume backup start time is the frequency start time plus the offset.
+     *
+     * @return the value
+     **/
     public Integer getOffsetSeconds() {
         return offsetSeconds;
     }
@@ -328,6 +462,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     private final Period period;
 
+    /**
+     * The volume backup frequency.
+     * @return the value
+     **/
     public Period getPeriod() {
         return period;
     }
@@ -432,6 +570,33 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
     private final OffsetType offsetType;
 
+    /**
+     * Indicates how the offset is defined. If value is {@code STRUCTURED},
+     * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+     * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+     * value from the responses.
+     * <p>
+     * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+     * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * {@code dayOfWeek} is applicable for period
+     * {@code ONE_WEEK}.
+     * <p>
+     * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * 'month' is applicable for period 'ONE_YEAR'.
+     * <p>
+     * They will be ignored in the requests for inapplicable periods.
+     * <p>
+     * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+     * will be used for both requests and responses and the structured fields will be
+     * ignored in the requests and users should ignore their values from the responses.
+     * <p>
+     * For clients using older versions of Apis and not sending {@code offsetType} in their
+     * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
+     *
+     * @return the value
+     **/
     public OffsetType getOffsetType() {
         return offsetType;
     }
@@ -442,6 +607,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
     private final Integer hourOfDay;
 
+    /**
+     * The hour of the day to schedule the volume backup.
+     * @return the value
+     **/
     public Integer getHourOfDay() {
         return hourOfDay;
     }
@@ -505,6 +674,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     private final DayOfWeek dayOfWeek;
 
+    /**
+     * The day of the week to schedule the volume backup.
+     * @return the value
+     **/
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
@@ -515,6 +688,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
     private final Integer dayOfMonth;
 
+    /**
+     * The day of the month to schedule the volume backup.
+     * @return the value
+     **/
     public Integer getDayOfMonth() {
         return dayOfMonth;
     }
@@ -582,6 +759,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("month")
     private final Month month;
 
+    /**
+     * The month of the year to schedule the volume backup.
+     * @return the value
+     **/
     public Month getMonth() {
         return month;
     }
@@ -592,6 +773,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
     private final Integer retentionSeconds;
 
+    /**
+     * How long, in seconds, to keep the volume backups created by this schedule.
+     * @return the value
+     **/
     public Integer getRetentionSeconds() {
         return retentionSeconds;
     }
@@ -650,6 +835,10 @@ public final class VolumeBackupSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final TimeZone timeZone;
 
+    /**
+     * Specifies what time zone is the schedule in
+     * @return the value
+     **/
     public TimeZone getTimeZone() {
         return timeZone;
     }

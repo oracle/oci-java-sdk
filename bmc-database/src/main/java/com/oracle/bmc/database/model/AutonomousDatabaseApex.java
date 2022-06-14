@@ -31,18 +31,33 @@ public final class AutonomousDatabaseApex {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle APEX Application Development version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apexVersion")
         private String apexVersion;
 
+        /**
+         * The Oracle APEX Application Development version.
+         * @param apexVersion the value to set
+         * @return this builder
+         **/
         public Builder apexVersion(String apexVersion) {
             this.apexVersion = apexVersion;
             this.__explicitlySet__.add("apexVersion");
             return this;
         }
-
+        /**
+         * The Oracle REST Data Services (ORDS) version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ordsVersion")
         private String ordsVersion;
 
+        /**
+         * The Oracle REST Data Services (ORDS) version.
+         * @param ordsVersion the value to set
+         * @return this builder
+         **/
         public Builder ordsVersion(String ordsVersion) {
             this.ordsVersion = ordsVersion;
             this.__explicitlySet__.add("ordsVersion");
@@ -85,6 +100,10 @@ public final class AutonomousDatabaseApex {
     @com.fasterxml.jackson.annotation.JsonProperty("apexVersion")
     private final String apexVersion;
 
+    /**
+     * The Oracle APEX Application Development version.
+     * @return the value
+     **/
     public String getApexVersion() {
         return apexVersion;
     }
@@ -95,6 +114,10 @@ public final class AutonomousDatabaseApex {
     @com.fasterxml.jackson.annotation.JsonProperty("ordsVersion")
     private final String ordsVersion;
 
+    /**
+     * The Oracle REST Data Services (ORDS) version.
+     * @return the value
+     **/
     public String getOrdsVersion() {
         return ordsVersion;
     }

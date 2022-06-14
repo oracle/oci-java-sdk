@@ -31,27 +31,53 @@ public final class ChangeDatabaseParameterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The parameter name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The parameter value.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * A comment string to associate with the change in parameter value.
+         * It cannot contain control characters or a line break.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateComment")
         private String updateComment;
 
+        /**
+         * A comment string to associate with the change in parameter value.
+         * It cannot contain control characters or a line break.
+         *
+         * @param updateComment the value to set
+         * @return this builder
+         **/
         public Builder updateComment(String updateComment) {
             this.updateComment = updateComment;
             this.__explicitlySet__.add("updateComment");
@@ -95,6 +121,10 @@ public final class ChangeDatabaseParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The parameter name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +135,10 @@ public final class ChangeDatabaseParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The parameter value.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -117,6 +151,12 @@ public final class ChangeDatabaseParameterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("updateComment")
     private final String updateComment;
 
+    /**
+     * A comment string to associate with the change in parameter value.
+     * It cannot contain control characters or a line break.
+     *
+     * @return the value
+     **/
     public String getUpdateComment() {
         return updateComment;
     }

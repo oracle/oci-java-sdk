@@ -31,27 +31,49 @@ public final class ResponderConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name of the configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
+        /**
+         * Unique name of the configuration
+         * @param configKey the value to set
+         * @return this builder
+         **/
         public Builder configKey(String configKey) {
             this.configKey = configKey;
             this.__explicitlySet__.add("configKey");
             return this;
         }
-
+        /**
+         * configuration name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * configuration name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * configuration value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * configuration value
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -95,6 +117,10 @@ public final class ResponderConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
+    /**
+     * Unique name of the configuration
+     * @return the value
+     **/
     public String getConfigKey() {
         return configKey;
     }
@@ -105,6 +131,10 @@ public final class ResponderConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * configuration name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -115,6 +145,10 @@ public final class ResponderConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * configuration value
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

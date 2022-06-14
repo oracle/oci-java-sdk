@@ -17,6 +17,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +41,11 @@ public class ListProtectionCapabilitiesRequest
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results.
+     * This must come from the {@code opc-next-page} header field of a previous response.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -43,6 +54,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -51,6 +65,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private String key;
 
+    /**
+     * The unique key of protection capability to filter by.
+     */
     public String getKey() {
         return key;
     }
@@ -59,6 +76,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private java.util.List<Boolean> isLatestVersion;
 
+    /**
+     * A filter to return only resources that matches given isLatestVersion.
+     */
     public java.util.List<Boolean> getIsLatestVersion() {
         return isLatestVersion;
     }
@@ -67,6 +87,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type type;
 
+    /**
+     * A filter to return only resources that matches given type.
+     */
     public com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type getType() {
         return type;
     }
@@ -75,6 +98,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private java.util.List<String> groupTag;
 
+    /**
+     * A filter to return only resources that are accociated given group tag.
+     */
     public java.util.List<String> getGroupTag() {
         return groupTag;
     }
@@ -83,6 +109,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -91,6 +120,9 @@ public class ListProtectionCapabilitiesRequest
      */
     private com.oracle.bmc.waf.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.waf.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -146,6 +178,14 @@ public class ListProtectionCapabilitiesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for key is descending.
+     * Default order for type is descending.
+     * Default order for displayName is ascending.
+     * If no value is specified key is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -157,10 +197,14 @@ public class ListProtectionCapabilitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -168,10 +212,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -179,12 +227,18 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results.
+         * This must come from the {@code opc-next-page} header field of a previous response.
+         *
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results.
          * This must come from the {@code opc-next-page} header field of a previous response.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -192,10 +246,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -203,10 +261,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * The unique key of protection capability to filter by.
+         */
         private String key = null;
 
         /**
          * The unique key of protection capability to filter by.
+         * @param key the value to set
          * @return this builder instance
          */
         public Builder key(String key) {
@@ -214,10 +276,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that matches given isLatestVersion.
+         */
         private java.util.List<Boolean> isLatestVersion = null;
 
         /**
          * A filter to return only resources that matches given isLatestVersion.
+         * @param isLatestVersion the value to set
          * @return this builder instance
          */
         public Builder isLatestVersion(java.util.List<Boolean> isLatestVersion) {
@@ -227,16 +293,21 @@ public class ListProtectionCapabilitiesRequest
 
         /**
          * Singular setter. A filter to return only resources that matches given isLatestVersion.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder isLatestVersion(Boolean singularValue) {
             return this.isLatestVersion(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only resources that matches given type.
+         */
         private com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type type = null;
 
         /**
          * A filter to return only resources that matches given type.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(com.oracle.bmc.waf.model.ProtectionCapabilitySummary.Type type) {
@@ -244,10 +315,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that are accociated given group tag.
+         */
         private java.util.List<String> groupTag = null;
 
         /**
          * A filter to return only resources that are accociated given group tag.
+         * @param groupTag the value to set
          * @return this builder instance
          */
         public Builder groupTag(java.util.List<String> groupTag) {
@@ -257,16 +332,21 @@ public class ListProtectionCapabilitiesRequest
 
         /**
          * Singular setter. A filter to return only resources that are accociated given group tag.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder groupTag(String singularValue) {
             return this.groupTag(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -274,10 +354,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.waf.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.waf.model.SortOrder sortOrder) {
@@ -285,6 +369,14 @@ public class ListProtectionCapabilitiesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for key is descending.
+         * Default order for type is descending.
+         * Default order for displayName is ascending.
+         * If no value is specified key is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -294,6 +386,7 @@ public class ListProtectionCapabilitiesRequest
          * Default order for displayName is ascending.
          * If no value is specified key is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -389,7 +482,8 @@ public class ListProtectionCapabilitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -406,6 +500,10 @@ public class ListProtectionCapabilitiesRequest
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

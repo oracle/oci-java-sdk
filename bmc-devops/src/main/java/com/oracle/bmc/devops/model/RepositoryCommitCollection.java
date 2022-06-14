@@ -29,9 +29,17 @@ public final class RepositoryCommitCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of commit objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RepositoryCommitSummary> items;
 
+        /**
+         * List of commit objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<RepositoryCommitSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class RepositoryCommitCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RepositoryCommitSummary> items;
 
+    /**
+     * List of commit objects.
+     * @return the value
+     **/
     public java.util.List<RepositoryCommitSummary> getItems() {
         return items;
     }

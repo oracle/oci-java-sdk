@@ -15,6 +15,12 @@ public class GetScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class GetScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.usageapi.model.Schedule schedule;
 
+    /**
+     * The returned Schedule instance.
+     * @return the value
+     */
     public com.oracle.bmc.usageapi.model.Schedule getSchedule() {
         return schedule;
     }
@@ -57,22 +71,50 @@ public class GetScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned Schedule instance.
+         */
         private com.oracle.bmc.usageapi.model.Schedule schedule;
 
+        /**
+         * The returned Schedule instance.
+         * @param schedule the value to set
+         * @return this builder
+         */
         public Builder schedule(com.oracle.bmc.usageapi.model.Schedule schedule) {
             this.schedule = schedule;
             return this;
@@ -91,11 +133,19 @@ public class GetScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetScheduleResponse build() {
             return new GetScheduleResponse(__httpStatusCode__, opcRequestId, etag, schedule);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -19,6 +19,9 @@ public class CreateVolumeBackupPolicyAssignmentRequest
     private com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
             createVolumeBackupPolicyAssignmentDetails;
 
+    /**
+     * Request to assign a specified policy to a particular volume.
+     */
     public com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
             getCreateVolumeBackupPolicyAssignmentDetails() {
         return createVolumeBackupPolicyAssignmentDetails;
@@ -42,11 +45,15 @@ public class CreateVolumeBackupPolicyAssignmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to assign a specified policy to a particular volume.
+         */
         private com.oracle.bmc.core.model.CreateVolumeBackupPolicyAssignmentDetails
                 createVolumeBackupPolicyAssignmentDetails = null;
 
         /**
          * Request to assign a specified policy to a particular volume.
+         * @param createVolumeBackupPolicyAssignmentDetails the value to set
          * @return this builder instance
          */
         public Builder createVolumeBackupPolicyAssignmentDetails(
@@ -140,7 +147,8 @@ public class CreateVolumeBackupPolicyAssignmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -148,6 +156,10 @@ public class CreateVolumeBackupPolicyAssignmentRequest
                         createVolumeBackupPolicyAssignmentDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

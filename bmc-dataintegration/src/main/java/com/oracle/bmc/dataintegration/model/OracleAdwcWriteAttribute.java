@@ -27,18 +27,33 @@ package com.oracle.bmc.dataintegration.model;
 public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The bucket name for the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * The bucket name for the attribute.
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * The file name for the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stagingFileName")
         private String stagingFileName;
 
+        /**
+         * The file name for the attribute.
+         * @param stagingFileName the value to set
+         * @return this builder
+         **/
         public Builder stagingFileName(String stagingFileName) {
             this.stagingFileName = stagingFileName;
             this.__explicitlySet__.add("stagingFileName");
@@ -117,6 +132,10 @@ public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * The bucket name for the attribute.
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -127,6 +146,10 @@ public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("stagingFileName")
     private final String stagingFileName;
 
+    /**
+     * The file name for the attribute.
+     * @return the value
+     **/
     public String getStagingFileName() {
         return stagingFileName;
     }

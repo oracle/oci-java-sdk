@@ -16,6 +16,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the resources you want to list.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String registryId;
 
+    /**
+     * DCMS registry id
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -32,6 +38,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -40,6 +49,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -100,6 +115,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Lifecycle state of the resource.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -144,6 +162,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -189,6 +210,9 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -200,6 +224,12 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -211,10 +241,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment containing the resources you want to list.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment containing the resources you want to list.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -222,10 +256,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * DCMS registry id
+         */
         private String registryId = null;
 
         /**
          * DCMS registry id
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -233,10 +271,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -244,10 +286,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -255,10 +301,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -266,10 +316,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Lifecycle state of the resource.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * Lifecycle state of the resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -277,10 +331,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -288,10 +346,14 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -299,6 +361,12 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -306,6 +374,7 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -397,7 +466,8 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -412,6 +482,10 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

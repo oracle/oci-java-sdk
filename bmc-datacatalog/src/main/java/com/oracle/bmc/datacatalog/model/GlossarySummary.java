@@ -71,108 +71,205 @@ public final class GlossarySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique glossary key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique glossary key that is immutable.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The data catalog's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
+        /**
+         * The data catalog's OCID.
+         * @param catalogId the value to set
+         * @return this builder
+         **/
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
             return this;
         }
-
+        /**
+         * The date and time the glossary was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the glossary was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Detailed description of the glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the glossary.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * URI to the glossary instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * URI to the glossary instance in the API.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * Status of the approval process workflow for this business glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
         private TermWorkflowStatus workflowStatus;
 
+        /**
+         * Status of the approval process workflow for this business glossary.
+         * @param workflowStatus the value to set
+         * @return this builder
+         **/
         public Builder workflowStatus(TermWorkflowStatus workflowStatus) {
             this.workflowStatus = workflowStatus;
             this.__explicitlySet__.add("workflowStatus");
             return this;
         }
-
+        /**
+         * State of the Glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * State of the Glossary.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The unique key of the job definition resource that was used in the Glossary import.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
         private String importJobDefinitionKey;
 
+        /**
+         * The unique key of the job definition resource that was used in the Glossary import.
+         * @param importJobDefinitionKey the value to set
+         * @return this builder
+         **/
         public Builder importJobDefinitionKey(String importJobDefinitionKey) {
             this.importJobDefinitionKey = importJobDefinitionKey;
             this.__explicitlySet__.add("importJobDefinitionKey");
             return this;
         }
-
+        /**
+         * The unique key of the job policy for Glossary import.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
         private String importJobKey;
 
+        /**
+         * The unique key of the job policy for Glossary import.
+         * @param importJobKey the value to set
+         * @return this builder
+         **/
         public Builder importJobKey(String importJobKey) {
             this.importJobKey = importJobKey;
             this.__explicitlySet__.add("importJobKey");
             return this;
         }
-
+        /**
+         * The unique key of the parent job execution for which the log resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionKey")
         private String latestImportJobExecutionKey;
 
+        /**
+         * The unique key of the parent job execution for which the log resource was created.
+         * @param latestImportJobExecutionKey the value to set
+         * @return this builder
+         **/
         public Builder latestImportJobExecutionKey(String latestImportJobExecutionKey) {
             this.latestImportJobExecutionKey = latestImportJobExecutionKey;
             this.__explicitlySet__.add("latestImportJobExecutionKey");
             return this;
         }
-
+        /**
+         * Status of the latest glossary import job execution, such as running, paused, or completed.
+         * This may include additional information like time import started , import file size and % of completion
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionStatus")
         private String latestImportJobExecutionStatus;
 
+        /**
+         * Status of the latest glossary import job execution, such as running, paused, or completed.
+         * This may include additional information like time import started , import file size and % of completion
+         *
+         * @param latestImportJobExecutionStatus the value to set
+         * @return this builder
+         **/
         public Builder latestImportJobExecutionStatus(String latestImportJobExecutionStatus) {
             this.latestImportJobExecutionStatus = latestImportJobExecutionStatus;
             this.__explicitlySet__.add("latestImportJobExecutionStatus");
@@ -239,6 +336,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique glossary key that is immutable.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -251,6 +352,12 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -261,6 +368,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
+    /**
+     * The data catalog's OCID.
+     * @return the value
+     **/
     public String getCatalogId() {
         return catalogId;
     }
@@ -273,6 +384,12 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the glossary was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -283,6 +400,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the glossary.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -293,6 +414,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * URI to the glossary instance in the API.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -303,6 +428,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
     private final TermWorkflowStatus workflowStatus;
 
+    /**
+     * Status of the approval process workflow for this business glossary.
+     * @return the value
+     **/
     public TermWorkflowStatus getWorkflowStatus() {
         return workflowStatus;
     }
@@ -313,6 +442,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * State of the Glossary.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -323,6 +456,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
     private final String importJobDefinitionKey;
 
+    /**
+     * The unique key of the job definition resource that was used in the Glossary import.
+     * @return the value
+     **/
     public String getImportJobDefinitionKey() {
         return importJobDefinitionKey;
     }
@@ -333,6 +470,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
     private final String importJobKey;
 
+    /**
+     * The unique key of the job policy for Glossary import.
+     * @return the value
+     **/
     public String getImportJobKey() {
         return importJobKey;
     }
@@ -343,6 +484,10 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionKey")
     private final String latestImportJobExecutionKey;
 
+    /**
+     * The unique key of the parent job execution for which the log resource was created.
+     * @return the value
+     **/
     public String getLatestImportJobExecutionKey() {
         return latestImportJobExecutionKey;
     }
@@ -355,6 +500,12 @@ public final class GlossarySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionStatus")
     private final String latestImportJobExecutionStatus;
 
+    /**
+     * Status of the latest glossary import job execution, such as running, paused, or completed.
+     * This may include additional information like time import started , import file size and % of completion
+     *
+     * @return the value
+     **/
     public String getLatestImportJobExecutionStatus() {
         return latestImportJobExecutionStatus;
     }

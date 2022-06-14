@@ -99,219 +99,442 @@ public final class DiscoveryJob {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the discovery job.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The type of the discovery job. It defines the job's scope.
+         * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+         * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+         * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+         * ALL covers all the above three scenarios and reports new, deleted and modified columns.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryType discoveryType;
 
+        /**
+         * The type of the discovery job. It defines the job's scope.
+         * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+         * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+         * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+         * ALL covers all the above three scenarios and reports new, deleted and modified columns.
+         *
+         * @param discoveryType the value to set
+         * @return this builder
+         **/
         public Builder discoveryType(DiscoveryType discoveryType) {
             this.discoveryType = discoveryType;
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-
+        /**
+         * The display name of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the discovery job.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the discovery job.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * The current state of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DiscoveryLifecycleState lifecycleState;
 
+        /**
+         * The current state of the discovery job.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(DiscoveryLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The OCID of the sensitive data model associated with the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
+        /**
+         * The OCID of the sensitive data model associated with the discovery job.
+         * @param sensitiveDataModelId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
             return this;
         }
-
+        /**
+         * The OCID of the target database associated with the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database associated with the discovery job.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The schemas used for data discovery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
         private java.util.List<String> schemasForDiscovery;
 
+        /**
+         * The schemas used for data discovery.
+         * @param schemasForDiscovery the value to set
+         * @return this builder
+         **/
         public Builder schemasForDiscovery(java.util.List<String> schemasForDiscovery) {
             this.schemasForDiscovery = schemasForDiscovery;
             this.__explicitlySet__.add("schemasForDiscovery");
             return this;
         }
-
+        /**
+         * The OCIDs of the sensitive types used for data discovery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
         private java.util.List<String> sensitiveTypeIdsForDiscovery;
 
+        /**
+         * The OCIDs of the sensitive types used for data discovery.
+         * @param sensitiveTypeIdsForDiscovery the value to set
+         * @return this builder
+         **/
         public Builder sensitiveTypeIdsForDiscovery(
                 java.util.List<String> sensitiveTypeIdsForDiscovery) {
             this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
             this.__explicitlySet__.add("sensitiveTypeIdsForDiscovery");
             return this;
         }
-
+        /**
+         * Indicates if the discovery job should collect and store sample data values for the discovered columns.
+         * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
+         * As it collects original data from the target database, it's disabled by default and should be used only
+         * if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data
+         * values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
         private Boolean isSampleDataCollectionEnabled;
 
+        /**
+         * Indicates if the discovery job should collect and store sample data values for the discovered columns.
+         * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
+         * As it collects original data from the target database, it's disabled by default and should be used only
+         * if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data
+         * values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+         *
+         * @param isSampleDataCollectionEnabled the value to set
+         * @return this builder
+         **/
         public Builder isSampleDataCollectionEnabled(Boolean isSampleDataCollectionEnabled) {
             this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             this.__explicitlySet__.add("isSampleDataCollectionEnabled");
             return this;
         }
-
+        /**
+         * Indicates if the discovery job should identify potential application-level (non-dictionary) referential
+         * relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+         * relationships. This option helps identify application-level relationships that are not defined in the database dictionary,
+         * which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking.
+         * It's disabled by default and should be used only if there is a need to identify application-level relationships.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
         private Boolean isAppDefinedRelationDiscoveryEnabled;
 
+        /**
+         * Indicates if the discovery job should identify potential application-level (non-dictionary) referential
+         * relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+         * relationships. This option helps identify application-level relationships that are not defined in the database dictionary,
+         * which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking.
+         * It's disabled by default and should be used only if there is a need to identify application-level relationships.
+         *
+         * @param isAppDefinedRelationDiscoveryEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAppDefinedRelationDiscoveryEnabled(
                 Boolean isAppDefinedRelationDiscoveryEnabled) {
             this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
             this.__explicitlySet__.add("isAppDefinedRelationDiscoveryEnabled");
             return this;
         }
-
+        /**
+         * Indicates if all the schemas in the associated target database are used for data discovery.
+         * If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
         private Boolean isIncludeAllSchemas;
 
+        /**
+         * Indicates if all the schemas in the associated target database are used for data discovery.
+         * If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+         *
+         * @param isIncludeAllSchemas the value to set
+         * @return this builder
+         **/
         public Builder isIncludeAllSchemas(Boolean isIncludeAllSchemas) {
             this.isIncludeAllSchemas = isIncludeAllSchemas;
             this.__explicitlySet__.add("isIncludeAllSchemas");
             return this;
         }
-
+        /**
+         * Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the
+         * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSensitiveTypes")
         private Boolean isIncludeAllSensitiveTypes;
 
+        /**
+         * Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the
+         * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
+         *
+         * @param isIncludeAllSensitiveTypes the value to set
+         * @return this builder
+         **/
         public Builder isIncludeAllSensitiveTypes(Boolean isIncludeAllSensitiveTypes) {
             this.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
             this.__explicitlySet__.add("isIncludeAllSensitiveTypes");
             return this;
         }
-
+        /**
+         * The total number of schemas scanned by the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSchemasScanned")
         private Long totalSchemasScanned;
 
+        /**
+         * The total number of schemas scanned by the discovery job.
+         * @param totalSchemasScanned the value to set
+         * @return this builder
+         **/
         public Builder totalSchemasScanned(Long totalSchemasScanned) {
             this.totalSchemasScanned = totalSchemasScanned;
             this.__explicitlySet__.add("totalSchemasScanned");
             return this;
         }
-
+        /**
+         * The total number of objects (tables and editioning views) scanned by the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsScanned")
         private Long totalObjectsScanned;
 
+        /**
+         * The total number of objects (tables and editioning views) scanned by the discovery job.
+         * @param totalObjectsScanned the value to set
+         * @return this builder
+         **/
         public Builder totalObjectsScanned(Long totalObjectsScanned) {
             this.totalObjectsScanned = totalObjectsScanned;
             this.__explicitlySet__.add("totalObjectsScanned");
             return this;
         }
-
+        /**
+         * The total number of columns scanned by the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalColumnsScanned")
         private Long totalColumnsScanned;
 
+        /**
+         * The total number of columns scanned by the discovery job.
+         * @param totalColumnsScanned the value to set
+         * @return this builder
+         **/
         public Builder totalColumnsScanned(Long totalColumnsScanned) {
             this.totalColumnsScanned = totalColumnsScanned;
             this.__explicitlySet__.add("totalColumnsScanned");
             return this;
         }
-
+        /**
+         * The total number of new sensitive columns identified by the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalNewSensitiveColumns")
         private Long totalNewSensitiveColumns;
 
+        /**
+         * The total number of new sensitive columns identified by the discovery job.
+         * @param totalNewSensitiveColumns the value to set
+         * @return this builder
+         **/
         public Builder totalNewSensitiveColumns(Long totalNewSensitiveColumns) {
             this.totalNewSensitiveColumns = totalNewSensitiveColumns;
             this.__explicitlySet__.add("totalNewSensitiveColumns");
             return this;
         }
-
+        /**
+         * The total number of modified sensitive columns identified by the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalModifiedSensitiveColumns")
         private Long totalModifiedSensitiveColumns;
 
+        /**
+         * The total number of modified sensitive columns identified by the discovery job.
+         * @param totalModifiedSensitiveColumns the value to set
+         * @return this builder
+         **/
         public Builder totalModifiedSensitiveColumns(Long totalModifiedSensitiveColumns) {
             this.totalModifiedSensitiveColumns = totalModifiedSensitiveColumns;
             this.__explicitlySet__.add("totalModifiedSensitiveColumns");
             return this;
         }
-
+        /**
+         * The total number of deleted sensitive columns identified by the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalDeletedSensitiveColumns")
         private Long totalDeletedSensitiveColumns;
 
+        /**
+         * The total number of deleted sensitive columns identified by the discovery job.
+         * @param totalDeletedSensitiveColumns the value to set
+         * @return this builder
+         **/
         public Builder totalDeletedSensitiveColumns(Long totalDeletedSensitiveColumns) {
             this.totalDeletedSensitiveColumns = totalDeletedSensitiveColumns;
             this.__explicitlySet__.add("totalDeletedSensitiveColumns");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -403,6 +626,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the discovery job.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -473,6 +700,15 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryType discoveryType;
 
+    /**
+     * The type of the discovery job. It defines the job's scope.
+     * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+     * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+     * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+     * ALL covers all the above three scenarios and reports new, deleted and modified columns.
+     *
+     * @return the value
+     **/
     public DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
@@ -483,6 +719,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the discovery job.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -493,6 +733,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the discovery job.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -503,6 +747,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -513,6 +761,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -523,6 +775,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DiscoveryLifecycleState lifecycleState;
 
+    /**
+     * The current state of the discovery job.
+     * @return the value
+     **/
     public DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -533,6 +789,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model associated with the discovery job.
+     * @return the value
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -543,6 +803,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database associated with the discovery job.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -553,6 +817,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
     private final java.util.List<String> schemasForDiscovery;
 
+    /**
+     * The schemas used for data discovery.
+     * @return the value
+     **/
     public java.util.List<String> getSchemasForDiscovery() {
         return schemasForDiscovery;
     }
@@ -563,6 +831,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
     private final java.util.List<String> sensitiveTypeIdsForDiscovery;
 
+    /**
+     * The OCIDs of the sensitive types used for data discovery.
+     * @return the value
+     **/
     public java.util.List<String> getSensitiveTypeIdsForDiscovery() {
         return sensitiveTypeIdsForDiscovery;
     }
@@ -578,6 +850,15 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
     private final Boolean isSampleDataCollectionEnabled;
 
+    /**
+     * Indicates if the discovery job should collect and store sample data values for the discovered columns.
+     * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
+     * As it collects original data from the target database, it's disabled by default and should be used only
+     * if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data
+     * values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+     *
+     * @return the value
+     **/
     public Boolean getIsSampleDataCollectionEnabled() {
         return isSampleDataCollectionEnabled;
     }
@@ -593,6 +874,15 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
     private final Boolean isAppDefinedRelationDiscoveryEnabled;
 
+    /**
+     * Indicates if the discovery job should identify potential application-level (non-dictionary) referential
+     * relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+     * relationships. This option helps identify application-level relationships that are not defined in the database dictionary,
+     * which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking.
+     * It's disabled by default and should be used only if there is a need to identify application-level relationships.
+     *
+     * @return the value
+     **/
     public Boolean getIsAppDefinedRelationDiscoveryEnabled() {
         return isAppDefinedRelationDiscoveryEnabled;
     }
@@ -605,6 +895,12 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
     private final Boolean isIncludeAllSchemas;
 
+    /**
+     * Indicates if all the schemas in the associated target database are used for data discovery.
+     * If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+     *
+     * @return the value
+     **/
     public Boolean getIsIncludeAllSchemas() {
         return isIncludeAllSchemas;
     }
@@ -617,6 +913,12 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSensitiveTypes")
     private final Boolean isIncludeAllSensitiveTypes;
 
+    /**
+     * Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the
+     * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
+     *
+     * @return the value
+     **/
     public Boolean getIsIncludeAllSensitiveTypes() {
         return isIncludeAllSensitiveTypes;
     }
@@ -627,6 +929,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalSchemasScanned")
     private final Long totalSchemasScanned;
 
+    /**
+     * The total number of schemas scanned by the discovery job.
+     * @return the value
+     **/
     public Long getTotalSchemasScanned() {
         return totalSchemasScanned;
     }
@@ -637,6 +943,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsScanned")
     private final Long totalObjectsScanned;
 
+    /**
+     * The total number of objects (tables and editioning views) scanned by the discovery job.
+     * @return the value
+     **/
     public Long getTotalObjectsScanned() {
         return totalObjectsScanned;
     }
@@ -647,6 +957,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalColumnsScanned")
     private final Long totalColumnsScanned;
 
+    /**
+     * The total number of columns scanned by the discovery job.
+     * @return the value
+     **/
     public Long getTotalColumnsScanned() {
         return totalColumnsScanned;
     }
@@ -657,6 +971,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalNewSensitiveColumns")
     private final Long totalNewSensitiveColumns;
 
+    /**
+     * The total number of new sensitive columns identified by the discovery job.
+     * @return the value
+     **/
     public Long getTotalNewSensitiveColumns() {
         return totalNewSensitiveColumns;
     }
@@ -667,6 +985,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalModifiedSensitiveColumns")
     private final Long totalModifiedSensitiveColumns;
 
+    /**
+     * The total number of modified sensitive columns identified by the discovery job.
+     * @return the value
+     **/
     public Long getTotalModifiedSensitiveColumns() {
         return totalModifiedSensitiveColumns;
     }
@@ -677,6 +999,10 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("totalDeletedSensitiveColumns")
     private final Long totalDeletedSensitiveColumns;
 
+    /**
+     * The total number of deleted sensitive columns identified by the discovery job.
+     * @return the value
+     **/
     public Long getTotalDeletedSensitiveColumns() {
         return totalDeletedSensitiveColumns;
     }
@@ -690,6 +1016,13 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -703,6 +1036,13 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -715,6 +1055,12 @@ public final class DiscoveryJob {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

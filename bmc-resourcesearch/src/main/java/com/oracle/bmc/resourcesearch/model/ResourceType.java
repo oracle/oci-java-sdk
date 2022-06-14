@@ -28,18 +28,37 @@ public final class ResourceType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * List of all the fields and their value type that are indexed for querying.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<QueryableFieldDescription> fields;
 
+        /**
+         * List of all the fields and their value type that are indexed for querying.
+         *
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<QueryableFieldDescription> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
@@ -82,6 +101,11 @@ public final class ResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique name of the resource type, which matches the value returned as part of the ResourceSummary object.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +117,11 @@ public final class ResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<QueryableFieldDescription> fields;
 
+    /**
+     * List of all the fields and their value type that are indexed for querying.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryableFieldDescription> getFields() {
         return fields;
     }

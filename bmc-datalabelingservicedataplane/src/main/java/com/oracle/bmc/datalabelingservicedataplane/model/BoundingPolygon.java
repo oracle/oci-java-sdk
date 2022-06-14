@@ -27,9 +27,17 @@ public final class BoundingPolygon {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The normalized vertices that make up the polygon.  They are in the order of the segments they connect.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")
         private java.util.List<NormalizedVertex> normalizedVertices;
 
+        /**
+         * The normalized vertices that make up the polygon.  They are in the order of the segments they connect.
+         * @param normalizedVertices the value to set
+         * @return this builder
+         **/
         public Builder normalizedVertices(java.util.List<NormalizedVertex> normalizedVertices) {
             this.normalizedVertices = normalizedVertices;
             this.__explicitlySet__.add("normalizedVertices");
@@ -71,6 +79,10 @@ public final class BoundingPolygon {
     @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")
     private final java.util.List<NormalizedVertex> normalizedVertices;
 
+    /**
+     * The normalized vertices that make up the polygon.  They are in the order of the segments they connect.
+     * @return the value
+     **/
     public java.util.List<NormalizedVertex> getNormalizedVertices() {
         return normalizedVertices;
     }

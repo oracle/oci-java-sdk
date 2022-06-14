@@ -29,9 +29,21 @@ public final class UpdateContainerConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to create a new container repository when a container is pushed to a new repository path.
+         * Repositories created in this way belong to the root compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRepositoryCreatedOnFirstPush")
         private Boolean isRepositoryCreatedOnFirstPush;
 
+        /**
+         * Whether to create a new container repository when a container is pushed to a new repository path.
+         * Repositories created in this way belong to the root compartment.
+         *
+         * @param isRepositoryCreatedOnFirstPush the value to set
+         * @return this builder
+         **/
         public Builder isRepositoryCreatedOnFirstPush(Boolean isRepositoryCreatedOnFirstPush) {
             this.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
             this.__explicitlySet__.add("isRepositoryCreatedOnFirstPush");
@@ -77,6 +89,12 @@ public final class UpdateContainerConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isRepositoryCreatedOnFirstPush")
     private final Boolean isRepositoryCreatedOnFirstPush;
 
+    /**
+     * Whether to create a new container repository when a container is pushed to a new repository path.
+     * Repositories created in this way belong to the root compartment.
+     *
+     * @return the value
+     **/
     public Boolean getIsRepositoryCreatedOnFirstPush() {
         return isRepositoryCreatedOnFirstPush;
     }

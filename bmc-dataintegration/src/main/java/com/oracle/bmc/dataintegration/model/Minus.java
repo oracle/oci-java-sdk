@@ -132,19 +132,33 @@ public final class Minus extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-
+        /**
+         * minusType
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minusType")
         private MinusType minusType;
 
+        /**
+         * minusType
+         * @param minusType the value to set
+         * @return this builder
+         **/
         public Builder minusType(MinusType minusType) {
             this.minusType = minusType;
             this.__explicitlySet__.add("minusType");
             return this;
         }
-
+        /**
+         * The information about the minus all.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAll")
         private Boolean isAll;
 
+        /**
+         * The information about the minus all.
+         * @param isAll the value to set
+         * @return this builder
+         **/
         public Builder isAll(Boolean isAll) {
             this.isAll = isAll;
             this.__explicitlySet__.add("isAll");
@@ -296,6 +310,10 @@ public final class Minus extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("minusType")
     private final MinusType minusType;
 
+    /**
+     * minusType
+     * @return the value
+     **/
     public MinusType getMinusType() {
         return minusType;
     }
@@ -306,6 +324,10 @@ public final class Minus extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isAll")
     private final Boolean isAll;
 
+    /**
+     * The information about the minus all.
+     * @return the value
+     **/
     public Boolean getIsAll() {
         return isAll;
     }

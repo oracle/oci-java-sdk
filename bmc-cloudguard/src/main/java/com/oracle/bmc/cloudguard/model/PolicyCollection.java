@@ -27,9 +27,17 @@ public final class PolicyCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of global policy statements
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PolicySummary> items;
 
+        /**
+         * List of global policy statements
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PolicySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class PolicyCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PolicySummary> items;
 
+    /**
+     * List of global policy statements
+     * @return the value
+     **/
     public java.util.List<PolicySummary> getItems() {
         return items;
     }

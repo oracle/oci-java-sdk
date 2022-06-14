@@ -28,9 +28,17 @@ public final class LabelPriority {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The label priority. Default value is NONE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Priority priority;
 
+        /**
+         * The label priority. Default value is NONE.
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(Priority priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
@@ -122,6 +130,10 @@ public final class LabelPriority {
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Priority priority;
 
+    /**
+     * The label priority. Default value is NONE.
+     * @return the value
+     **/
     public Priority getPriority() {
         return priority;
     }

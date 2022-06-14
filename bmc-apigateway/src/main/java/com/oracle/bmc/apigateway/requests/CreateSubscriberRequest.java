@@ -18,6 +18,9 @@ public class CreateSubscriberRequest
      */
     private com.oracle.bmc.apigateway.model.CreateSubscriberDetails createSubscriberDetails;
 
+    /**
+     * Details for the new subscriber.
+     */
     public com.oracle.bmc.apigateway.model.CreateSubscriberDetails getCreateSubscriberDetails() {
         return createSubscriberDetails;
     }
@@ -31,6 +34,14 @@ public class CreateSubscriberRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +50,9 @@ public class CreateSubscriberRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,11 +75,15 @@ public class CreateSubscriberRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new subscriber.
+         */
         private com.oracle.bmc.apigateway.model.CreateSubscriberDetails createSubscriberDetails =
                 null;
 
         /**
          * Details for the new subscriber.
+         * @param createSubscriberDetails the value to set
          * @return this builder instance
          */
         public Builder createSubscriberDetails(
@@ -74,6 +92,14 @@ public class CreateSubscriberRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -83,6 +109,7 @@ public class CreateSubscriberRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -90,10 +117,14 @@ public class CreateSubscriberRequest
             return this;
         }
 
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,7 +215,8 @@ public class CreateSubscriberRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +225,10 @@ public class CreateSubscriberRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

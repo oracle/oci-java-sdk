@@ -17,6 +17,9 @@ public class DeleteObjectLifecyclePolicyRequest
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +30,11 @@ public class DeleteObjectLifecyclePolicyRequest
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -35,6 +43,9 @@ public class DeleteObjectLifecyclePolicyRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -46,6 +57,12 @@ public class DeleteObjectLifecyclePolicyRequest
      */
     private String ifMatch;
 
+    /**
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,10 +74,14 @@ public class DeleteObjectLifecyclePolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -68,12 +89,18 @@ public class DeleteObjectLifecyclePolicyRequest
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -81,10 +108,14 @@ public class DeleteObjectLifecyclePolicyRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -92,6 +123,12 @@ public class DeleteObjectLifecyclePolicyRequest
             return this;
         }
 
+        /**
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -99,6 +136,7 @@ public class DeleteObjectLifecyclePolicyRequest
          * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
          * the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +218,8 @@ public class DeleteObjectLifecyclePolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +229,10 @@ public class DeleteObjectLifecyclePolicyRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

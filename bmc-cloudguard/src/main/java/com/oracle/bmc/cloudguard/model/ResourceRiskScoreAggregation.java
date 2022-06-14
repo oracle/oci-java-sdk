@@ -36,36 +36,65 @@ public final class ResourceRiskScoreAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Tactics used for evaluating the risk scrore
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tactics")
         private java.util.List<String> tactics;
 
+        /**
+         * Tactics used for evaluating the risk scrore
+         * @param tactics the value to set
+         * @return this builder
+         **/
         public Builder tactics(java.util.List<String> tactics) {
             this.tactics = tactics;
             this.__explicitlySet__.add("tactics");
             return this;
         }
-
+        /**
+         * The date and time for which the score is calculated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scoreTimestamp")
         private java.math.BigDecimal scoreTimestamp;
 
+        /**
+         * The date and time for which the score is calculated. Format defined by RFC3339.
+         * @param scoreTimestamp the value to set
+         * @return this builder
+         **/
         public Builder scoreTimestamp(java.math.BigDecimal scoreTimestamp) {
             this.scoreTimestamp = scoreTimestamp;
             this.__explicitlySet__.add("scoreTimestamp");
             return this;
         }
-
+        /**
+         * Risk Score
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
+        /**
+         * Risk Score
+         * @param riskScore the value to set
+         * @return this builder
+         **/
         public Builder riskScore(Double riskScore) {
             this.riskScore = riskScore;
             this.__explicitlySet__.add("riskScore");
             return this;
         }
-
+        /**
+         * The Risk Level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
+        /**
+         * The Risk Level
+         * @param riskLevel the value to set
+         * @return this builder
+         **/
         public Builder riskLevel(RiskLevel riskLevel) {
             this.riskLevel = riskLevel;
             this.__explicitlySet__.add("riskLevel");
@@ -112,6 +141,10 @@ public final class ResourceRiskScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
     private final java.util.List<String> tactics;
 
+    /**
+     * Tactics used for evaluating the risk scrore
+     * @return the value
+     **/
     public java.util.List<String> getTactics() {
         return tactics;
     }
@@ -122,6 +155,10 @@ public final class ResourceRiskScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("scoreTimestamp")
     private final java.math.BigDecimal scoreTimestamp;
 
+    /**
+     * The date and time for which the score is calculated. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.math.BigDecimal getScoreTimestamp() {
         return scoreTimestamp;
     }
@@ -132,6 +169,10 @@ public final class ResourceRiskScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
+    /**
+     * Risk Score
+     * @return the value
+     **/
     public Double getRiskScore() {
         return riskScore;
     }
@@ -142,6 +183,10 @@ public final class ResourceRiskScoreAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
+    /**
+     * The Risk Level
+     * @return the value
+     **/
     public RiskLevel getRiskLevel() {
         return riskLevel;
     }

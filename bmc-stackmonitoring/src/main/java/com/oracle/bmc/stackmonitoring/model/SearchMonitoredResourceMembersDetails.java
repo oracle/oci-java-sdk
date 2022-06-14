@@ -30,18 +30,33 @@ public final class SearchMonitoredResourceMembersDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
 
+        /**
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * @param destinationResourceId the value to set
+         * @return this builder
+         **/
         public Builder destinationResourceId(String destinationResourceId) {
             this.destinationResourceId = destinationResourceId;
             this.__explicitlySet__.add("destinationResourceId");
             return this;
         }
-
+        /**
+         * The field which determines the depth of hierarchy while searching for members
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limitLevel")
         private Integer limitLevel;
 
+        /**
+         * The field which determines the depth of hierarchy while searching for members
+         * @param limitLevel the value to set
+         * @return this builder
+         **/
         public Builder limitLevel(Integer limitLevel) {
             this.limitLevel = limitLevel;
             this.__explicitlySet__.add("limitLevel");
@@ -86,6 +101,10 @@ public final class SearchMonitoredResourceMembersDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
     private final String destinationResourceId;
 
+    /**
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
     public String getDestinationResourceId() {
         return destinationResourceId;
     }
@@ -96,6 +115,10 @@ public final class SearchMonitoredResourceMembersDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("limitLevel")
     private final Integer limitLevel;
 
+    /**
+     * The field which determines the depth of hierarchy while searching for members
+     * @return the value
+     **/
     public Integer getLimitLevel() {
         return limitLevel;
     }

@@ -16,6 +16,9 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String glossaryKey;
 
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -32,6 +38,9 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean isRelationshipExported;
 
+    /**
+     * Specify if the relationship metadata is exported for the glossary.
+     */
     public Boolean getIsRelationshipExported() {
         return isRelationshipExported;
     }
@@ -40,6 +49,9 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -53,6 +65,14 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -64,10 +84,14 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -75,10 +99,14 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         * @param glossaryKey the value to set
          * @return this builder instance
          */
         public Builder glossaryKey(String glossaryKey) {
@@ -86,10 +114,14 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Specify if the relationship metadata is exported for the glossary.
+         */
         private Boolean isRelationshipExported = null;
 
         /**
          * Specify if the relationship metadata is exported for the glossary.
+         * @param isRelationshipExported the value to set
          * @return this builder instance
          */
         public Builder isRelationshipExported(Boolean isRelationshipExported) {
@@ -97,10 +129,14 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,6 +144,14 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -117,6 +161,7 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -200,7 +245,8 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -211,6 +257,10 @@ public class ExportGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

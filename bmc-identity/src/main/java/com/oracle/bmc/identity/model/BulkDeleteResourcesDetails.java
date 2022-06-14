@@ -29,9 +29,19 @@ public final class BulkDeleteResourcesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resources to be deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<BulkActionResource> resources;
 
+        /**
+         * The resources to be deleted.
+         *
+         * @param resources the value to set
+         * @return this builder
+         **/
         public Builder resources(java.util.List<BulkActionResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
@@ -74,6 +84,11 @@ public final class BulkDeleteResourcesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<BulkActionResource> resources;
 
+    /**
+     * The resources to be deleted.
+     *
+     * @return the value
+     **/
     public java.util.List<BulkActionResource> getResources() {
         return resources;
     }

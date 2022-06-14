@@ -17,6 +17,10 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String lookupName;
 
+    /**
+     * The name of the lookup to operate on.
+     */
     public String getLookupName() {
         return lookupName;
     }
@@ -33,6 +40,9 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Boolean isForce;
 
+    /**
+     * is force
+     */
     public Boolean getIsForce() {
         return isForce;
     }
@@ -46,6 +56,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -54,6 +72,9 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,6 +88,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -78,11 +107,16 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -90,10 +124,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The name of the lookup to operate on.
+         */
         private String lookupName = null;
 
         /**
          * The name of the lookup to operate on.
+         * @param lookupName the value to set
          * @return this builder instance
          */
         public Builder lookupName(String lookupName) {
@@ -101,10 +139,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * is force
+         */
         private Boolean isForce = null;
 
         /**
          * is force
+         * @param isForce the value to set
          * @return this builder instance
          */
         public Builder isForce(Boolean isForce) {
@@ -112,6 +154,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -121,6 +171,7 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -128,10 +179,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -139,6 +194,14 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -148,6 +211,7 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -233,7 +297,8 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +310,10 @@ public class DeleteLookupRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

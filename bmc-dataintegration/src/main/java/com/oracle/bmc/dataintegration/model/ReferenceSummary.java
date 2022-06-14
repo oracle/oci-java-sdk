@@ -57,90 +57,161 @@ public final class ReferenceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The reference's key, key of the object that is being used by a published object or its dependents.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The reference's key, key of the object that is being used by a published object or its dependents.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The name of reference object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of reference object.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The identifier of reference object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The identifier of reference object.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The identifier path of reference object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
         private String identifierPath;
 
+        /**
+         * The identifier path of reference object.
+         * @param identifierPath the value to set
+         * @return this builder
+         **/
         public Builder identifierPath(String identifierPath) {
             this.identifierPath = identifierPath;
             this.__explicitlySet__.add("identifierPath");
             return this;
         }
-
+        /**
+         * The description of reference object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of reference object.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The type of reference object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of reference object.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The target object referenced. References are made to data assets and child references are made to connections. The type defining this reference is mentioned in the property type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
         private Object targetObject;
 
+        /**
+         * The target object referenced. References are made to data assets and child references are made to connections. The type defining this reference is mentioned in the property type.
+         * @param targetObject the value to set
+         * @return this builder
+         **/
         public Builder targetObject(Object targetObject) {
             this.targetObject = targetObject;
             this.__explicitlySet__.add("targetObject");
             return this;
         }
-
+        /**
+         * The aggregator of reference object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
         private String aggregatorKey;
 
+        /**
+         * The aggregator of reference object.
+         * @param aggregatorKey the value to set
+         * @return this builder
+         **/
         public Builder aggregatorKey(String aggregatorKey) {
             this.aggregatorKey = aggregatorKey;
             this.__explicitlySet__.add("aggregatorKey");
             return this;
         }
-
+        /**
+         * List of published objects where this is used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedBy")
         private java.util.List<ReferenceUsedBy> usedBy;
 
+        /**
+         * List of published objects where this is used.
+         * @param usedBy the value to set
+         * @return this builder
+         **/
         public Builder usedBy(java.util.List<ReferenceUsedBy> usedBy) {
             this.usedBy = usedBy;
             this.__explicitlySet__.add("usedBy");
             return this;
         }
-
+        /**
+         * List of references that are dependent on this reference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
         private java.util.List<ChildReference> childReferences;
 
+        /**
+         * List of references that are dependent on this reference.
+         * @param childReferences the value to set
+         * @return this builder
+         **/
         public Builder childReferences(java.util.List<ChildReference> childReferences) {
             this.childReferences = childReferences;
             this.__explicitlySet__.add("childReferences");
@@ -203,6 +274,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The reference's key, key of the object that is being used by a published object or its dependents.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -213,6 +288,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of reference object.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -223,6 +302,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The identifier of reference object.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -233,6 +316,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
     private final String identifierPath;
 
+    /**
+     * The identifier path of reference object.
+     * @return the value
+     **/
     public String getIdentifierPath() {
         return identifierPath;
     }
@@ -243,6 +330,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of reference object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -312,6 +403,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of reference object.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -322,6 +417,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
     private final Object targetObject;
 
+    /**
+     * The target object referenced. References are made to data assets and child references are made to connections. The type defining this reference is mentioned in the property type.
+     * @return the value
+     **/
     public Object getTargetObject() {
         return targetObject;
     }
@@ -332,6 +431,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
     private final String aggregatorKey;
 
+    /**
+     * The aggregator of reference object.
+     * @return the value
+     **/
     public String getAggregatorKey() {
         return aggregatorKey;
     }
@@ -342,6 +445,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usedBy")
     private final java.util.List<ReferenceUsedBy> usedBy;
 
+    /**
+     * List of published objects where this is used.
+     * @return the value
+     **/
     public java.util.List<ReferenceUsedBy> getUsedBy() {
         return usedBy;
     }
@@ -352,6 +459,10 @@ public final class ReferenceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
     private final java.util.List<ChildReference> childReferences;
 
+    /**
+     * List of references that are dependent on this reference.
+     * @return the value
+     **/
     public java.util.List<ChildReference> getChildReferences() {
         return childReferences;
     }

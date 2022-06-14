@@ -31,27 +31,55 @@ public final class RestoreObjectsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An object that is in an archive storage tier and needs to be restored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * An object that is in an archive storage tier and needs to be restored.
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-
+        /**
+         * The number of hours for which this object will be restored.
+         * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hours")
         private Integer hours;
 
+        /**
+         * The number of hours for which this object will be restored.
+         * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
+         *
+         * @param hours the value to set
+         * @return this builder
+         **/
         public Builder hours(Integer hours) {
             this.hours = hours;
             this.__explicitlySet__.add("hours");
             return this;
         }
-
+        /**
+         * The versionId of the object to restore. Current object version is used by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionId")
         private String versionId;
 
+        /**
+         * The versionId of the object to restore. Current object version is used by default.
+         *
+         * @param versionId the value to set
+         * @return this builder
+         **/
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             this.__explicitlySet__.add("versionId");
@@ -95,6 +123,10 @@ public final class RestoreObjectsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * An object that is in an archive storage tier and needs to be restored.
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -107,6 +139,12 @@ public final class RestoreObjectsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hours")
     private final Integer hours;
 
+    /**
+     * The number of hours for which this object will be restored.
+     * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
+     *
+     * @return the value
+     **/
     public Integer getHours() {
         return hours;
     }
@@ -118,6 +156,11 @@ public final class RestoreObjectsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
     private final String versionId;
 
+    /**
+     * The versionId of the object to restore. Current object version is used by default.
+     *
+     * @return the value
+     **/
     public String getVersionId() {
         return versionId;
     }

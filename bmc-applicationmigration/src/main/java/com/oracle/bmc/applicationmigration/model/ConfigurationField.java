@@ -56,72 +56,135 @@ public final class ConfigurationField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the configuration field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the configuration field.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the group to which this field belongs, if any.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("group")
         private String group;
 
+        /**
+         * The name of the group to which this field belongs, if any.
+         * @param group the value to set
+         * @return this builder
+         **/
         public Builder group(String group) {
             this.group = group;
             this.__explicitlySet__.add("group");
             return this;
         }
-
+        /**
+         * The type of the configuration field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The type of the configuration field.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The value of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of the field.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Help text to guide the user in setting the configuration value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Help text to guide the user in setting the configuration value.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A list of resources associated with a specific configuration object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
         private java.util.List<ResourceField> resourceList;
 
+        /**
+         * A list of resources associated with a specific configuration object.
+         *
+         * @param resourceList the value to set
+         * @return this builder
+         **/
         public Builder resourceList(java.util.List<ResourceField> resourceList) {
             this.resourceList = resourceList;
             this.__explicitlySet__.add("resourceList");
             return this;
         }
-
+        /**
+         * Indicates whether or not the field is required (defaults to {@code true}).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
+        /**
+         * Indicates whether or not the field is required (defaults to {@code true}).
+         *
+         * @param isRequired the value to set
+         * @return this builder
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-
+        /**
+         * Indicates whether or not the field may be modified (defaults to {@code true}).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMutable")
         private Boolean isMutable;
 
+        /**
+         * Indicates whether or not the field may be modified (defaults to {@code true}).
+         *
+         * @param isMutable the value to set
+         * @return this builder
+         **/
         public Builder isMutable(Boolean isMutable) {
             this.isMutable = isMutable;
             this.__explicitlySet__.add("isMutable");
@@ -180,6 +243,10 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the configuration field.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -190,6 +257,10 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("group")
     private final String group;
 
+    /**
+     * The name of the group to which this field belongs, if any.
+     * @return the value
+     **/
     public String getGroup() {
         return group;
     }
@@ -200,6 +271,10 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The type of the configuration field.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -210,6 +285,10 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of the field.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -220,6 +299,10 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Help text to guide the user in setting the configuration value.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -231,6 +314,11 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
     private final java.util.List<ResourceField> resourceList;
 
+    /**
+     * A list of resources associated with a specific configuration object.
+     *
+     * @return the value
+     **/
     public java.util.List<ResourceField> getResourceList() {
         return resourceList;
     }
@@ -242,6 +330,11 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
+    /**
+     * Indicates whether or not the field is required (defaults to {@code true}).
+     *
+     * @return the value
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -253,6 +346,11 @@ public final class ConfigurationField {
     @com.fasterxml.jackson.annotation.JsonProperty("isMutable")
     private final Boolean isMutable;
 
+    /**
+     * Indicates whether or not the field may be modified (defaults to {@code true}).
+     *
+     * @return the value
+     **/
     public Boolean getIsMutable() {
         return isMutable;
     }

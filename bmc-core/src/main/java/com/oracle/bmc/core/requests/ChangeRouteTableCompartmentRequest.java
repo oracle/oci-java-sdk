@@ -18,6 +18,9 @@ public class ChangeRouteTableCompartmentRequest
      */
     private String rtId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+     */
     public String getRtId() {
         return rtId;
     }
@@ -27,6 +30,9 @@ public class ChangeRouteTableCompartmentRequest
     private com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails
             changeRouteTableCompartmentDetails;
 
+    /**
+     * Request to change the compartment of a given route table.
+     */
     public com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails
             getChangeRouteTableCompartmentDetails() {
         return changeRouteTableCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeRouteTableCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class ChangeRouteTableCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -73,10 +92,14 @@ public class ChangeRouteTableCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+         */
         private String rtId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+         * @param rtId the value to set
          * @return this builder instance
          */
         public Builder rtId(String rtId) {
@@ -84,11 +107,15 @@ public class ChangeRouteTableCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of a given route table.
+         */
         private com.oracle.bmc.core.model.ChangeRouteTableCompartmentDetails
                 changeRouteTableCompartmentDetails = null;
 
         /**
          * Request to change the compartment of a given route table.
+         * @param changeRouteTableCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeRouteTableCompartmentDetails(
@@ -98,12 +125,18 @@ public class ChangeRouteTableCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -111,6 +144,14 @@ public class ChangeRouteTableCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -120,6 +161,7 @@ public class ChangeRouteTableCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -212,7 +254,8 @@ public class ChangeRouteTableCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +265,10 @@ public class ChangeRouteTableCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

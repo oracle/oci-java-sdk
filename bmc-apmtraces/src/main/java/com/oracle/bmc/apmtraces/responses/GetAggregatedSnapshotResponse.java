@@ -15,6 +15,12 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot;
 
+    /**
+     * The returned AggregatedSnapshot instance.
+     * @return the value
+     */
     public com.oracle.bmc.apmtraces.model.AggregatedSnapshot getAggregatedSnapshot() {
         return aggregatedSnapshot;
     }
@@ -46,15 +56,35 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned AggregatedSnapshot instance.
+         */
         private com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot;
 
+        /**
+         * The returned AggregatedSnapshot instance.
+         * @param aggregatedSnapshot the value to set
+         * @return this builder
+         */
         public Builder aggregatedSnapshot(
                 com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot) {
             this.aggregatedSnapshot = aggregatedSnapshot;
@@ -73,12 +103,20 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAggregatedSnapshotResponse build() {
             return new GetAggregatedSnapshotResponse(
                     __httpStatusCode__, opcRequestId, aggregatedSnapshot);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

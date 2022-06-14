@@ -30,6 +30,7 @@ public final class DataFormat {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("formatAttribute")
         private AbstractFormatAttribute formatAttribute;
 
@@ -38,10 +39,17 @@ public final class DataFormat {
             this.__explicitlySet__.add("formatAttribute");
             return this;
         }
-
+        /**
+         * type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * type
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -150,6 +158,10 @@ public final class DataFormat {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * type
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }

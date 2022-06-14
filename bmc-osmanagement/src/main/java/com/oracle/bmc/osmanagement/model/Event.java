@@ -79,6 +79,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID identifier of the event
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -89,6 +93,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * OCI identifier of the instance where the event occurred
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -99,6 +107,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCI identifier of the compartement where the instance is
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -109,6 +121,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * OCID identifier of the instance tenancy.
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -119,6 +135,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
+    /**
+     * human readable description of the event
+     * @return the value
+     **/
     public String getSummary() {
         return summary;
     }
@@ -129,6 +149,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * Time of the occurrence of the event
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -141,6 +165,12 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("eventFingerprint")
     private final String eventFingerprint;
 
+    /**
+     * Unique ID used to group event with the same characteristics together.
+     * The list of such groups of event can be retrieved via /recurringEvents/{EventFingerprint}
+     *
+     * @return the value
+     **/
     public String getEventFingerprint() {
         return eventFingerprint;
     }
@@ -151,6 +181,10 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * Event occurrence count. Number of time the event has happen on the system.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }
@@ -163,6 +197,12 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -175,6 +215,12 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -187,6 +233,12 @@ public class Event {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

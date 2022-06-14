@@ -32,18 +32,37 @@ public final class PostMetricDataResponseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of metric objects that failed input validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedMetricsCount")
         private Integer failedMetricsCount;
 
+        /**
+         * The number of metric objects that failed input validation.
+         * @param failedMetricsCount the value to set
+         * @return this builder
+         **/
         public Builder failedMetricsCount(Integer failedMetricsCount) {
             this.failedMetricsCount = failedMetricsCount;
             this.__explicitlySet__.add("failedMetricsCount");
             return this;
         }
-
+        /**
+         * A list of records identifying metric objects that failed input validation
+         * and the reasons for the failures.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedMetrics")
         private java.util.List<FailedMetricRecord> failedMetrics;
 
+        /**
+         * A list of records identifying metric objects that failed input validation
+         * and the reasons for the failures.
+         *
+         * @param failedMetrics the value to set
+         * @return this builder
+         **/
         public Builder failedMetrics(java.util.List<FailedMetricRecord> failedMetrics) {
             this.failedMetrics = failedMetrics;
             this.__explicitlySet__.add("failedMetrics");
@@ -88,6 +107,10 @@ public final class PostMetricDataResponseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("failedMetricsCount")
     private final Integer failedMetricsCount;
 
+    /**
+     * The number of metric objects that failed input validation.
+     * @return the value
+     **/
     public Integer getFailedMetricsCount() {
         return failedMetricsCount;
     }
@@ -100,6 +123,12 @@ public final class PostMetricDataResponseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("failedMetrics")
     private final java.util.List<FailedMetricRecord> failedMetrics;
 
+    /**
+     * A list of records identifying metric objects that failed input validation
+     * and the reasons for the failures.
+     *
+     * @return the value
+     **/
     public java.util.List<FailedMetricRecord> getFailedMetrics() {
         return failedMetrics;
     }

@@ -46,54 +46,109 @@ public final class Product {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Product part numner
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
+        /**
+         * Product part numner
+         *
+         * @param partNumber the value to set
+         * @return this builder
+         **/
         public Builder partNumber(String partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-
+        /**
+         * Product name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Product name
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Unit of measure
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
+        /**
+         * Unit of measure
+         *
+         * @param unitOfMeasure the value to set
+         * @return this builder
+         **/
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = unitOfMeasure;
             this.__explicitlySet__.add("unitOfMeasure");
             return this;
         }
-
+        /**
+         * Metered service billing category
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
         private String billingCategory;
 
+        /**
+         * Metered service billing category
+         *
+         * @param billingCategory the value to set
+         * @return this builder
+         **/
         public Builder billingCategory(String billingCategory) {
             this.billingCategory = billingCategory;
             this.__explicitlySet__.add("billingCategory");
             return this;
         }
-
+        /**
+         * Product category
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
         private String productCategory;
 
+        /**
+         * Product category
+         *
+         * @param productCategory the value to set
+         * @return this builder
+         **/
         public Builder productCategory(String productCategory) {
             this.productCategory = productCategory;
             this.__explicitlySet__.add("productCategory");
             return this;
         }
-
+        /**
+         * Rate card part type of Product
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
         private String ucmRateCardPartType;
 
+        /**
+         * Rate card part type of Product
+         *
+         * @param ucmRateCardPartType the value to set
+         * @return this builder
+         **/
         public Builder ucmRateCardPartType(String ucmRateCardPartType) {
             this.ucmRateCardPartType = ucmRateCardPartType;
             this.__explicitlySet__.add("ucmRateCardPartType");
@@ -149,6 +204,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
+    /**
+     * Product part numner
+     *
+     * @return the value
+     **/
     public String getPartNumber() {
         return partNumber;
     }
@@ -160,6 +220,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Product name
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -171,6 +236,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
+    /**
+     * Unit of measure
+     *
+     * @return the value
+     **/
     public String getUnitOfMeasure() {
         return unitOfMeasure;
     }
@@ -182,6 +252,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
     private final String billingCategory;
 
+    /**
+     * Metered service billing category
+     *
+     * @return the value
+     **/
     public String getBillingCategory() {
         return billingCategory;
     }
@@ -193,6 +268,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
     private final String productCategory;
 
+    /**
+     * Product category
+     *
+     * @return the value
+     **/
     public String getProductCategory() {
         return productCategory;
     }
@@ -204,6 +284,11 @@ public final class Product {
     @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
     private final String ucmRateCardPartType;
 
+    /**
+     * Rate card part type of Product
+     *
+     * @return the value
+     **/
     public String getUcmRateCardPartType() {
         return ucmRateCardPartType;
     }

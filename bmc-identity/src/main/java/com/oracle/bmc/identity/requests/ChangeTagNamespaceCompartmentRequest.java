@@ -19,6 +19,10 @@ public class ChangeTagNamespaceCompartmentRequest
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -28,6 +32,9 @@ public class ChangeTagNamespaceCompartmentRequest
     private com.oracle.bmc.identity.model.ChangeTagNamespaceCompartmentDetail
             changeTagNamespaceCompartmentDetail;
 
+    /**
+     * Request object for changing the compartment of a tag namespace.
+     */
     public com.oracle.bmc.identity.model.ChangeTagNamespaceCompartmentDetail
             getChangeTagNamespaceCompartmentDetail() {
         return changeTagNamespaceCompartmentDetail;
@@ -42,8 +49,27 @@ public class ChangeTagNamespaceCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -64,11 +90,16 @@ public class ChangeTagNamespaceCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -76,11 +107,15 @@ public class ChangeTagNamespaceCompartmentRequest
             return this;
         }
 
+        /**
+         * Request object for changing the compartment of a tag namespace.
+         */
         private com.oracle.bmc.identity.model.ChangeTagNamespaceCompartmentDetail
                 changeTagNamespaceCompartmentDetail = null;
 
         /**
          * Request object for changing the compartment of a tag namespace.
+         * @param changeTagNamespaceCompartmentDetail the value to set
          * @return this builder instance
          */
         public Builder changeTagNamespaceCompartmentDetail(
@@ -90,6 +125,14 @@ public class ChangeTagNamespaceCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -99,10 +142,26 @@ public class ChangeTagNamespaceCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
             this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -137,6 +196,7 @@ public class ChangeTagNamespaceCompartmentRequest
             tagNamespaceId(o.getTagNamespaceId());
             changeTagNamespaceCompartmentDetail(o.getChangeTagNamespaceCompartmentDetail());
             opcRetryToken(o.getOpcRetryToken());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -185,21 +245,28 @@ public class ChangeTagNamespaceCompartmentRequest
             request.tagNamespaceId = tagNamespaceId;
             request.changeTagNamespaceCompartmentDetail = changeTagNamespaceCompartmentDetail;
             request.opcRetryToken = opcRetryToken;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new ChangeTagNamespaceCompartmentRequest(tagNamespaceId, changeTagNamespaceCompartmentDetail, opcRetryToken);
+            // new ChangeTagNamespaceCompartmentRequest(tagNamespaceId, changeTagNamespaceCompartmentDetail, opcRetryToken, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .tagNamespaceId(tagNamespaceId)
                 .changeTagNamespaceCompartmentDetail(changeTagNamespaceCompartmentDetail)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,6 +280,7 @@ public class ChangeTagNamespaceCompartmentRequest
         sb.append(",changeTagNamespaceCompartmentDetail=")
                 .append(String.valueOf(this.changeTagNamespaceCompartmentDetail));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +300,8 @@ public class ChangeTagNamespaceCompartmentRequest
                 && java.util.Objects.equals(
                         this.changeTagNamespaceCompartmentDetail,
                         other.changeTagNamespaceCompartmentDetail)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -250,6 +319,9 @@ public class ChangeTagNamespaceCompartmentRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

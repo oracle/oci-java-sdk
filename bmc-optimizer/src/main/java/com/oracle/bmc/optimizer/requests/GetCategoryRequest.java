@@ -16,6 +16,9 @@ public class GetCategoryRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String categoryId;
 
+    /**
+     * The unique OCID associated with the category.
+     */
     public String getCategoryId() {
         return categoryId;
     }
@@ -26,6 +29,11 @@ public class GetCategoryRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +45,14 @@ public class GetCategoryRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique OCID associated with the category.
+         */
         private String categoryId = null;
 
         /**
          * The unique OCID associated with the category.
+         * @param categoryId the value to set
          * @return this builder instance
          */
         public Builder categoryId(String categoryId) {
@@ -48,12 +60,18 @@ public class GetCategoryRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,12 +149,17 @@ public class GetCategoryRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().categoryId(categoryId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

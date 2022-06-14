@@ -34,18 +34,37 @@ public final class ObjectVersionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of object version summaries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ObjectVersionSummary> items;
 
+        /**
+         * An array of object version summaries.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ObjectVersionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
         private java.util.List<String> prefixes;
 
+        /**
+         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+         *
+         * @param prefixes the value to set
+         * @return this builder
+         **/
         public Builder prefixes(java.util.List<String> prefixes) {
             this.prefixes = prefixes;
             this.__explicitlySet__.add("prefixes");
@@ -88,6 +107,11 @@ public final class ObjectVersionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ObjectVersionSummary> items;
 
+    /**
+     * An array of object version summaries.
+     *
+     * @return the value
+     **/
     public java.util.List<ObjectVersionSummary> getItems() {
         return items;
     }
@@ -99,6 +123,11 @@ public final class ObjectVersionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
     private final java.util.List<String> prefixes;
 
+    /**
+     * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getPrefixes() {
         return prefixes;
     }

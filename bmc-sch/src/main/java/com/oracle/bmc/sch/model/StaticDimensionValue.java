@@ -28,9 +28,21 @@ package com.oracle.bmc.sch.model;
 public final class StaticDimensionValue extends DimensionValueDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+         * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+         * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -80,6 +92,12 @@ public final class StaticDimensionValue extends DimensionValueDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+     * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+     *
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

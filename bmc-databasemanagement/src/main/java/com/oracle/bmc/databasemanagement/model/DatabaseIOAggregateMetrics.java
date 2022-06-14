@@ -41,36 +41,65 @@ public final class DatabaseIOAggregateMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iops")
         private java.util.List<MetricDataPoint> iops;
 
+        /**
+         * The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
+         * @param iops the value to set
+         * @return this builder
+         **/
         public Builder iops(java.util.List<MetricDataPoint> iops) {
             this.iops = iops;
             this.__explicitlySet__.add("iops");
             return this;
         }
-
+        /**
+         * The IOThroughput metrics grouped by IOType for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ioThroughput")
         private java.util.List<MetricDataPoint> ioThroughput;
 
+        /**
+         * The IOThroughput metrics grouped by IOType for a specific Managed Database.
+         * @param ioThroughput the value to set
+         * @return this builder
+         **/
         public Builder ioThroughput(java.util.List<MetricDataPoint> ioThroughput) {
             this.ioThroughput = ioThroughput;
             this.__explicitlySet__.add("ioThroughput");
             return this;
         }
-
+        /**
+         * The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iopsStatistics")
         private java.util.List<MetricStatisticsDefinition> iopsStatistics;
 
+        /**
+         * The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+         * @param iopsStatistics the value to set
+         * @return this builder
+         **/
         public Builder iopsStatistics(java.util.List<MetricStatisticsDefinition> iopsStatistics) {
             this.iopsStatistics = iopsStatistics;
             this.__explicitlySet__.add("iopsStatistics");
             return this;
         }
-
+        /**
+         * The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ioThroughputStatistics")
         private java.util.List<MetricStatisticsDefinition> ioThroughputStatistics;
 
+        /**
+         * The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+         * @param ioThroughputStatistics the value to set
+         * @return this builder
+         **/
         public Builder ioThroughputStatistics(
                 java.util.List<MetricStatisticsDefinition> ioThroughputStatistics) {
             this.ioThroughputStatistics = ioThroughputStatistics;
@@ -119,6 +148,10 @@ public final class DatabaseIOAggregateMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("iops")
     private final java.util.List<MetricDataPoint> iops;
 
+    /**
+     * The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
+     * @return the value
+     **/
     public java.util.List<MetricDataPoint> getIops() {
         return iops;
     }
@@ -129,6 +162,10 @@ public final class DatabaseIOAggregateMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("ioThroughput")
     private final java.util.List<MetricDataPoint> ioThroughput;
 
+    /**
+     * The IOThroughput metrics grouped by IOType for a specific Managed Database.
+     * @return the value
+     **/
     public java.util.List<MetricDataPoint> getIoThroughput() {
         return ioThroughput;
     }
@@ -139,6 +176,10 @@ public final class DatabaseIOAggregateMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("iopsStatistics")
     private final java.util.List<MetricStatisticsDefinition> iopsStatistics;
 
+    /**
+     * The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+     * @return the value
+     **/
     public java.util.List<MetricStatisticsDefinition> getIopsStatistics() {
         return iopsStatistics;
     }
@@ -149,6 +190,10 @@ public final class DatabaseIOAggregateMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("ioThroughputStatistics")
     private final java.util.List<MetricStatisticsDefinition> ioThroughputStatistics;
 
+    /**
+     * The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+     * @return the value
+     **/
     public java.util.List<MetricStatisticsDefinition> getIoThroughputStatistics() {
         return ioThroughputStatistics;
     }

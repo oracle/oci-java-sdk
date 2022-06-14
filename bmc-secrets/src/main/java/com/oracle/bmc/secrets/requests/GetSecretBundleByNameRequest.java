@@ -17,6 +17,9 @@ public class GetSecretBundleByNameRequest
      */
     private String secretName;
 
+    /**
+     * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+     */
     public String getSecretName() {
         return secretName;
     }
@@ -25,6 +28,9 @@ public class GetSecretBundleByNameRequest
      */
     private String vaultId;
 
+    /**
+     * The OCID of the vault that contains the secret.
+     */
     public String getVaultId() {
         return vaultId;
     }
@@ -33,6 +39,9 @@ public class GetSecretBundleByNameRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +50,9 @@ public class GetSecretBundleByNameRequest
      */
     private Long versionNumber;
 
+    /**
+     * The version number of the secret.
+     */
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -49,6 +61,9 @@ public class GetSecretBundleByNameRequest
      */
     private String secretVersionName;
 
+    /**
+     * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+     */
     public String getSecretVersionName() {
         return secretVersionName;
     }
@@ -96,6 +111,9 @@ public class GetSecretBundleByNameRequest
         }
     };
 
+    /**
+     * The rotation state of the secret version.
+     */
     public Stage getStage() {
         return stage;
     }
@@ -107,10 +125,14 @@ public class GetSecretBundleByNameRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+         */
         private String secretName = null;
 
         /**
          * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+         * @param secretName the value to set
          * @return this builder instance
          */
         public Builder secretName(String secretName) {
@@ -118,10 +140,14 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
+        /**
+         * The OCID of the vault that contains the secret.
+         */
         private String vaultId = null;
 
         /**
          * The OCID of the vault that contains the secret.
+         * @param vaultId the value to set
          * @return this builder instance
          */
         public Builder vaultId(String vaultId) {
@@ -129,10 +155,14 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -140,10 +170,14 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
+        /**
+         * The version number of the secret.
+         */
         private Long versionNumber = null;
 
         /**
          * The version number of the secret.
+         * @param versionNumber the value to set
          * @return this builder instance
          */
         public Builder versionNumber(Long versionNumber) {
@@ -151,10 +185,14 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
+        /**
+         * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+         */
         private String secretVersionName = null;
 
         /**
          * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+         * @param secretVersionName the value to set
          * @return this builder instance
          */
         public Builder secretVersionName(String secretVersionName) {
@@ -162,10 +200,14 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
+        /**
+         * The rotation state of the secret version.
+         */
         private Stage stage = null;
 
         /**
          * The rotation state of the secret version.
+         * @param stage the value to set
          * @return this builder instance
          */
         public Builder stage(Stage stage) {
@@ -251,7 +293,8 @@ public class GetSecretBundleByNameRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -263,6 +306,10 @@ public class GetSecretBundleByNameRequest
                 .stage(stage);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,17 @@ public final class SqlTuningAdvisorTaskSqlExecutionPlan {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A SQL execution plan as a list of steps.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plan")
         private java.util.List<SqlTuningTaskSqlExecutionPlanStep> plan;
 
+        /**
+         * A SQL execution plan as a list of steps.
+         * @param plan the value to set
+         * @return this builder
+         **/
         public Builder plan(java.util.List<SqlTuningTaskSqlExecutionPlanStep> plan) {
             this.plan = plan;
             this.__explicitlySet__.add("plan");
@@ -75,6 +83,10 @@ public final class SqlTuningAdvisorTaskSqlExecutionPlan {
     @com.fasterxml.jackson.annotation.JsonProperty("plan")
     private final java.util.List<SqlTuningTaskSqlExecutionPlanStep> plan;
 
+    /**
+     * A SQL execution plan as a list of steps.
+     * @return the value
+     **/
     public java.util.List<SqlTuningTaskSqlExecutionPlanStep> getPlan() {
         return plan;
     }

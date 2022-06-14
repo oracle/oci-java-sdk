@@ -19,6 +19,10 @@ public class ChangeTopicCompartmentRequest
      */
     private String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to move.
+     *
+     */
     public String getTopicId() {
         return topicId;
     }
@@ -27,6 +31,9 @@ public class ChangeTopicCompartmentRequest
      */
     private com.oracle.bmc.ons.model.ChangeCompartmentDetails changeTopicCompartmentDetails;
 
+    /**
+     * The configuration details for the move operation.
+     */
     public com.oracle.bmc.ons.model.ChangeCompartmentDetails getChangeTopicCompartmentDetails() {
         return changeTopicCompartmentDetails;
     }
@@ -40,6 +47,14 @@ public class ChangeTopicCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before that due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +65,11 @@ public class ChangeTopicCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +81,12 @@ public class ChangeTopicCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -83,11 +109,16 @@ public class ChangeTopicCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to move.
+         *
+         */
         private String topicId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to move.
          *
+         * @param topicId the value to set
          * @return this builder instance
          */
         public Builder topicId(String topicId) {
@@ -95,11 +126,15 @@ public class ChangeTopicCompartmentRequest
             return this;
         }
 
+        /**
+         * The configuration details for the move operation.
+         */
         private com.oracle.bmc.ons.model.ChangeCompartmentDetails changeTopicCompartmentDetails =
                 null;
 
         /**
          * The configuration details for the move operation.
+         * @param changeTopicCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeTopicCompartmentDetails(
@@ -108,6 +143,14 @@ public class ChangeTopicCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -117,6 +160,7 @@ public class ChangeTopicCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -124,12 +168,18 @@ public class ChangeTopicCompartmentRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -137,6 +187,12 @@ public class ChangeTopicCompartmentRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -144,6 +200,7 @@ public class ChangeTopicCompartmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -238,7 +295,8 @@ public class ChangeTopicCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +307,10 @@ public class ChangeTopicCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

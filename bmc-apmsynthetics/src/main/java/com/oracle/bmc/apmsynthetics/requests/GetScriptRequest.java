@@ -17,6 +17,10 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String apmDomainId;
 
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -25,6 +29,9 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String scriptId;
 
+    /**
+     * The OCID of the script.
+     */
     public String getScriptId() {
         return scriptId;
     }
@@ -35,6 +42,11 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,11 +58,16 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -58,10 +75,14 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The OCID of the script.
+         */
         private String scriptId = null;
 
         /**
          * The OCID of the script.
+         * @param scriptId the value to set
          * @return this builder instance
          */
         public Builder scriptId(String scriptId) {
@@ -69,12 +90,18 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -154,12 +181,17 @@ public class GetScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().apmDomainId(apmDomainId).scriptId(scriptId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -13,6 +13,10 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices;
 
+    /**
+     * The returned MultipleTransferDevices instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.MultipleTransferDevices getMultipleTransferDevices() {
         return multipleTransferDevices;
     }
@@ -48,15 +56,31 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned MultipleTransferDevices instance.
+         */
         private com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices;
 
+        /**
+         * The returned MultipleTransferDevices instance.
+         * @param multipleTransferDevices the value to set
+         * @return this builder
+         */
         public Builder multipleTransferDevices(
                 com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices) {
             this.multipleTransferDevices = multipleTransferDevices;
@@ -75,12 +99,20 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListTransferDevicesResponse build() {
             return new ListTransferDevicesResponse(
                     __httpStatusCode__, opcRequestId, multipleTransferDevices);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

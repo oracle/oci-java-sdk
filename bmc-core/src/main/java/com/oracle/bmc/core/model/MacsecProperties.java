@@ -30,9 +30,17 @@ public final class MacsecProperties {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether or not MACsec is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private MacsecState state;
 
+        /**
+         * Indicates whether or not MACsec is enabled.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(MacsecState state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -47,10 +55,17 @@ public final class MacsecProperties {
             this.__explicitlySet__.add("primaryKey");
             return this;
         }
-
+        /**
+         * Type of encryption cipher suite to use for the MACsec connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
         private MacsecEncryptionCipher encryptionCipher;
 
+        /**
+         * Type of encryption cipher suite to use for the MACsec connection.
+         * @param encryptionCipher the value to set
+         * @return this builder
+         **/
         public Builder encryptionCipher(MacsecEncryptionCipher encryptionCipher) {
             this.encryptionCipher = encryptionCipher;
             this.__explicitlySet__.add("encryptionCipher");
@@ -96,6 +111,10 @@ public final class MacsecProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final MacsecState state;
 
+    /**
+     * Indicates whether or not MACsec is enabled.
+     * @return the value
+     **/
     public MacsecState getState() {
         return state;
     }
@@ -113,6 +132,10 @@ public final class MacsecProperties {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
     private final MacsecEncryptionCipher encryptionCipher;
 
+    /**
+     * Type of encryption cipher suite to use for the MACsec connection.
+     * @return the value
+     **/
     public MacsecEncryptionCipher getEncryptionCipher() {
         return encryptionCipher;
     }

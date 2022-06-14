@@ -44,45 +44,81 @@ public final class CreateManagementAgentInstallKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Management Agent install Key Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Management Agent install Key Name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Total number of install for this keys
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedKeyInstallCount")
         private Integer allowedKeyInstallCount;
 
+        /**
+         * Total number of install for this keys
+         * @param allowedKeyInstallCount the value to set
+         * @return this builder
+         **/
         public Builder allowedKeyInstallCount(Integer allowedKeyInstallCount) {
             this.allowedKeyInstallCount = allowedKeyInstallCount;
             this.__explicitlySet__.add("allowedKeyInstallCount");
             return this;
         }
-
+        /**
+         * date after which key would expire after creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
+        /**
+         * date after which key would expire after creation
+         * @param timeExpires the value to set
+         * @return this builder
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * If set to true, the install key has no expiration date or usage limit. Defaults to false
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
         private Boolean isUnlimited;
 
+        /**
+         * If set to true, the install key has no expiration date or usage limit. Defaults to false
+         * @param isUnlimited the value to set
+         * @return this builder
+         **/
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = isUnlimited;
             this.__explicitlySet__.add("isUnlimited");
@@ -135,6 +171,10 @@ public final class CreateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Management Agent install Key Name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -145,6 +185,10 @@ public final class CreateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedKeyInstallCount")
     private final Integer allowedKeyInstallCount;
 
+    /**
+     * Total number of install for this keys
+     * @return the value
+     **/
     public Integer getAllowedKeyInstallCount() {
         return allowedKeyInstallCount;
     }
@@ -155,6 +199,10 @@ public final class CreateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
+    /**
+     * date after which key would expire after creation
+     * @return the value
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
@@ -165,6 +213,10 @@ public final class CreateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -175,6 +227,10 @@ public final class CreateManagementAgentInstallKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
     private final Boolean isUnlimited;
 
+    /**
+     * If set to true, the install key has no expiration date or usage limit. Defaults to false
+     * @return the value
+     **/
     public Boolean getIsUnlimited() {
         return isUnlimited;
     }

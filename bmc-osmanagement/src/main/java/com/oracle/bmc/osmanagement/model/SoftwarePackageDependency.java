@@ -32,27 +32,49 @@ public final class SoftwarePackageDependency {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the software package's dependency
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dependency")
         private String dependency;
 
+        /**
+         * the software package's dependency
+         * @param dependency the value to set
+         * @return this builder
+         **/
         public Builder dependency(String dependency) {
             this.dependency = dependency;
             this.__explicitlySet__.add("dependency");
             return this;
         }
-
+        /**
+         * the type of the dependency
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dependencyType")
         private String dependencyType;
 
+        /**
+         * the type of the dependency
+         * @param dependencyType the value to set
+         * @return this builder
+         **/
         public Builder dependencyType(String dependencyType) {
             this.dependencyType = dependencyType;
             this.__explicitlySet__.add("dependencyType");
             return this;
         }
-
+        /**
+         * the modifier for the dependency
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dependencyModifier")
         private String dependencyModifier;
 
+        /**
+         * the modifier for the dependency
+         * @param dependencyModifier the value to set
+         * @return this builder
+         **/
         public Builder dependencyModifier(String dependencyModifier) {
             this.dependencyModifier = dependencyModifier;
             this.__explicitlySet__.add("dependencyModifier");
@@ -98,6 +120,10 @@ public final class SoftwarePackageDependency {
     @com.fasterxml.jackson.annotation.JsonProperty("dependency")
     private final String dependency;
 
+    /**
+     * the software package's dependency
+     * @return the value
+     **/
     public String getDependency() {
         return dependency;
     }
@@ -108,6 +134,10 @@ public final class SoftwarePackageDependency {
     @com.fasterxml.jackson.annotation.JsonProperty("dependencyType")
     private final String dependencyType;
 
+    /**
+     * the type of the dependency
+     * @return the value
+     **/
     public String getDependencyType() {
         return dependencyType;
     }
@@ -118,6 +148,10 @@ public final class SoftwarePackageDependency {
     @com.fasterxml.jackson.annotation.JsonProperty("dependencyModifier")
     private final String dependencyModifier;
 
+    /**
+     * the modifier for the dependency
+     * @return the value
+     **/
     public String getDependencyModifier() {
         return dependencyModifier;
     }

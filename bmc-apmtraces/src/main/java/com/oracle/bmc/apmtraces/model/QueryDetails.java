@@ -28,9 +28,19 @@ public final class QueryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Application Performance Monitoring defined query string that filters and retrieves trace data results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryText")
         private String queryText;
 
+        /**
+         * Application Performance Monitoring defined query string that filters and retrieves trace data results.
+         *
+         * @param queryText the value to set
+         * @return this builder
+         **/
         public Builder queryText(String queryText) {
             this.queryText = queryText;
             this.__explicitlySet__.add("queryText");
@@ -73,6 +83,11 @@ public final class QueryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("queryText")
     private final String queryText;
 
+    /**
+     * Application Performance Monitoring defined query string that filters and retrieves trace data results.
+     *
+     * @return the value
+     **/
     public String getQueryText() {
         return queryText;
     }

@@ -62,99 +62,189 @@ public final class DiscoveryJobSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the discovery job.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the discovery job.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * The OCID of the sensitive data model associated with the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
+        /**
+         * The OCID of the sensitive data model associated with the discovery job.
+         * @param sensitiveDataModelId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
             return this;
         }
-
+        /**
+         * The OCID of the target database associated with the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database associated with the discovery job.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The current state of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DiscoveryLifecycleState lifecycleState;
 
+        /**
+         * The current state of the discovery job.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(DiscoveryLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The type of discovery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryJob.DiscoveryType discoveryType;
 
+        /**
+         * The type of discovery.
+         * @param discoveryType the value to set
+         * @return this builder
+         **/
         public Builder discoveryType(DiscoveryJob.DiscoveryType discoveryType) {
             this.discoveryType = discoveryType;
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-
+        /**
+         * The OCID of the compartment to contain the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment to contain the discovery job.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -220,6 +310,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the discovery job.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -230,6 +324,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the discovery job.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -240,6 +338,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -250,6 +352,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -260,6 +366,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model associated with the discovery job.
+     * @return the value
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -270,6 +380,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database associated with the discovery job.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -280,6 +394,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DiscoveryLifecycleState lifecycleState;
 
+    /**
+     * The current state of the discovery job.
+     * @return the value
+     **/
     public DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -290,6 +408,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryJob.DiscoveryType discoveryType;
 
+    /**
+     * The type of discovery.
+     * @return the value
+     **/
     public DiscoveryJob.DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
@@ -300,6 +422,10 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment to contain the discovery job.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -313,6 +439,13 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -326,6 +459,13 @@ public final class DiscoveryJobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

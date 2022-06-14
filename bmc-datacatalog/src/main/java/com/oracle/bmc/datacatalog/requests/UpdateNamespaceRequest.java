@@ -18,6 +18,9 @@ public class UpdateNamespaceRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class UpdateNamespaceRequest
      */
     private String namespaceId;
 
+    /**
+     * Unique namespace identifier.
+     */
     public String getNamespaceId() {
         return namespaceId;
     }
@@ -34,6 +40,9 @@ public class UpdateNamespaceRequest
      */
     private com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails updateNamespaceDetails;
 
+    /**
+     * The information to be updated in the namespace.
+     */
     public com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails getUpdateNamespaceDetails() {
         return updateNamespaceDetails;
     }
@@ -47,6 +56,14 @@ public class UpdateNamespaceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -55,6 +72,9 @@ public class UpdateNamespaceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -77,10 +97,14 @@ public class UpdateNamespaceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -88,10 +112,14 @@ public class UpdateNamespaceRequest
             return this;
         }
 
+        /**
+         * Unique namespace identifier.
+         */
         private String namespaceId = null;
 
         /**
          * Unique namespace identifier.
+         * @param namespaceId the value to set
          * @return this builder instance
          */
         public Builder namespaceId(String namespaceId) {
@@ -99,11 +127,15 @@ public class UpdateNamespaceRequest
             return this;
         }
 
+        /**
+         * The information to be updated in the namespace.
+         */
         private com.oracle.bmc.datacatalog.model.UpdateNamespaceDetails updateNamespaceDetails =
                 null;
 
         /**
          * The information to be updated in the namespace.
+         * @param updateNamespaceDetails the value to set
          * @return this builder instance
          */
         public Builder updateNamespaceDetails(
@@ -112,6 +144,14 @@ public class UpdateNamespaceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +161,7 @@ public class UpdateNamespaceRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,10 +169,14 @@ public class UpdateNamespaceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -226,7 +271,8 @@ public class UpdateNamespaceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +283,10 @@ public class UpdateNamespaceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

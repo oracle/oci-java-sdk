@@ -54,27 +54,49 @@ public final class DetectorDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enables the control
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Enables the control
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The Risk Level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
+        /**
+         * The Risk Level
+         * @param riskLevel the value to set
+         * @return this builder
+         **/
         public Builder riskLevel(RiskLevel riskLevel) {
             this.riskLevel = riskLevel;
             this.__explicitlySet__.add("riskLevel");
             return this;
         }
-
+        /**
+         * Configuration details
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<DetectorConfiguration> configurations;
 
+        /**
+         * Configuration details
+         * @param configurations the value to set
+         * @return this builder
+         **/
         public Builder configurations(java.util.List<DetectorConfiguration> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
@@ -89,46 +111,81 @@ public final class DetectorDetails {
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * user defined labels for a detector rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * user defined labels for a detector rule
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-
+        /**
+         * configuration allowed or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
         private Boolean isConfigurationAllowed;
 
+        /**
+         * configuration allowed or not
+         * @param isConfigurationAllowed the value to set
+         * @return this builder
+         **/
         public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
             this.isConfigurationAllowed = isConfigurationAllowed;
             this.__explicitlySet__.add("isConfigurationAllowed");
             return this;
         }
-
+        /**
+         * Cutover point for an elevated resource Risk Score to create a Problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
         private Integer problemThreshold;
 
+        /**
+         * Cutover point for an elevated resource Risk Score to create a Problem
+         * @param problemThreshold the value to set
+         * @return this builder
+         **/
         public Builder problemThreshold(Integer problemThreshold) {
             this.problemThreshold = problemThreshold;
             this.__explicitlySet__.add("problemThreshold");
             return this;
         }
-
+        /**
+         * List of target types for which the detector rule is applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetTypes")
         private java.util.List<String> targetTypes;
 
+        /**
+         * List of target types for which the detector rule is applicable
+         * @param targetTypes the value to set
+         * @return this builder
+         **/
         public Builder targetTypes(java.util.List<String> targetTypes) {
             this.targetTypes = targetTypes;
             this.__explicitlySet__.add("targetTypes");
             return this;
         }
-
+        /**
+         * List of sighting types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypes")
         private java.util.List<SightingType> sightingTypes;
 
+        /**
+         * List of sighting types
+         * @param sightingTypes the value to set
+         * @return this builder
+         **/
         public Builder sightingTypes(java.util.List<SightingType> sightingTypes) {
             this.sightingTypes = sightingTypes;
             this.__explicitlySet__.add("sightingTypes");
@@ -189,6 +246,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Enables the control
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -199,6 +260,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
+    /**
+     * The Risk Level
+     * @return the value
+     **/
     public RiskLevel getRiskLevel() {
         return riskLevel;
     }
@@ -209,6 +274,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<DetectorConfiguration> configurations;
 
+    /**
+     * Configuration details
+     * @return the value
+     **/
     public java.util.List<DetectorConfiguration> getConfigurations() {
         return configurations;
     }
@@ -226,6 +295,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * user defined labels for a detector rule
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -236,6 +309,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
     private final Boolean isConfigurationAllowed;
 
+    /**
+     * configuration allowed or not
+     * @return the value
+     **/
     public Boolean getIsConfigurationAllowed() {
         return isConfigurationAllowed;
     }
@@ -246,6 +323,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
     private final Integer problemThreshold;
 
+    /**
+     * Cutover point for an elevated resource Risk Score to create a Problem
+     * @return the value
+     **/
     public Integer getProblemThreshold() {
         return problemThreshold;
     }
@@ -256,6 +337,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetTypes")
     private final java.util.List<String> targetTypes;
 
+    /**
+     * List of target types for which the detector rule is applicable
+     * @return the value
+     **/
     public java.util.List<String> getTargetTypes() {
         return targetTypes;
     }
@@ -266,6 +351,10 @@ public final class DetectorDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypes")
     private final java.util.List<SightingType> sightingTypes;
 
+    /**
+     * List of sighting types
+     * @return the value
+     **/
     public java.util.List<SightingType> getSightingTypes() {
         return sightingTypes;
     }

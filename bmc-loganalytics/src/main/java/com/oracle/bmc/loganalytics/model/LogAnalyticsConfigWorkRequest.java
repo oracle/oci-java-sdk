@@ -56,81 +56,155 @@ public final class LogAnalyticsConfigWorkRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The workrequest unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The workrequest unique identifier.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The compartment unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment unique identifier.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The operation type.  There are two classes of operations, association operations and
+         * lookup operations.  Associations may be created or deleted, and lookup operations include
+         * append, update and delete.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
+        /**
+         * The operation type.  There are two classes of operations, association operations and
+         * lookup operations.  Associations may be created or deleted, and lookup operations include
+         * append, update and delete.
+         *
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * The list of config work request responses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
 
+        /**
+         * The list of config work request responses.
+         * @param payload the value to set
+         * @return this builder
+         **/
         public Builder payload(java.util.List<LogAnalyticsConfigWorkRequestPayload> payload) {
             this.payload = payload;
             this.__explicitlySet__.add("payload");
             return this;
         }
-
+        /**
+         * The completion percentage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Long percentComplete;
 
+        /**
+         * The completion percentage.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Long percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-
+        /**
+         * The time at which the work request was started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The time at which the work request was started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The time at which the work request was accepted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The time at which the work request was accepted.
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The time at which the work request was finished.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The time at which the work request was finished.
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+         * or FAILED
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+         * or FAILED
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -191,6 +265,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The workrequest unique identifier.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -201,6 +279,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment unique identifier.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -268,6 +350,13 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
+    /**
+     * The operation type.  There are two classes of operations, association operations and
+     * lookup operations.  Associations may be created or deleted, and lookup operations include
+     * append, update and delete.
+     *
+     * @return the value
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
@@ -278,6 +367,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final java.util.List<LogAnalyticsConfigWorkRequestPayload> payload;
 
+    /**
+     * The list of config work request responses.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsConfigWorkRequestPayload> getPayload() {
         return payload;
     }
@@ -288,6 +381,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Long percentComplete;
 
+    /**
+     * The completion percentage.
+     * @return the value
+     **/
     public Long getPercentComplete() {
         return percentComplete;
     }
@@ -298,6 +395,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time at which the work request was started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -308,6 +409,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The time at which the work request was accepted.
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -318,6 +423,10 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The time at which the work request was finished.
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -382,6 +491,12 @@ public final class LogAnalyticsConfigWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+     * or FAILED
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }

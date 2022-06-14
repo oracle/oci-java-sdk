@@ -17,6 +17,9 @@ public class UpdateFleetRequest
      */
     private String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
@@ -25,6 +28,9 @@ public class UpdateFleetRequest
      */
     private com.oracle.bmc.jms.model.UpdateFleetDetails updateFleetDetails;
 
+    /**
+     * The new details for the Fleet.
+     */
     public com.oracle.bmc.jms.model.UpdateFleetDetails getUpdateFleetDetails() {
         return updateFleetDetails;
     }
@@ -38,6 +44,14 @@ public class UpdateFleetRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,6 +60,9 @@ public class UpdateFleetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +84,14 @@ public class UpdateFleetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * @param fleetId the value to set
          * @return this builder instance
          */
         public Builder fleetId(String fleetId) {
@@ -78,10 +99,14 @@ public class UpdateFleetRequest
             return this;
         }
 
+        /**
+         * The new details for the Fleet.
+         */
         private com.oracle.bmc.jms.model.UpdateFleetDetails updateFleetDetails = null;
 
         /**
          * The new details for the Fleet.
+         * @param updateFleetDetails the value to set
          * @return this builder instance
          */
         public Builder updateFleetDetails(
@@ -90,6 +115,14 @@ public class UpdateFleetRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -99,6 +132,7 @@ public class UpdateFleetRequest
          * The resource will be updated or deleted only if the ETag you
          * provide matches the resource's current ETag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -106,10 +140,14 @@ public class UpdateFleetRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -202,7 +240,8 @@ public class UpdateFleetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +251,10 @@ public class UpdateFleetRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

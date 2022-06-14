@@ -16,6 +16,9 @@ public class GetVolumeGroupRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String volumeGroupId;
 
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+     */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
@@ -27,10 +30,14 @@ public class GetVolumeGroupRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         */
         private String volumeGroupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         * @param volumeGroupId the value to set
          * @return this builder instance
          */
         public Builder volumeGroupId(String volumeGroupId) {
@@ -106,12 +113,17 @@ public class GetVolumeGroupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().volumeGroupId(volumeGroupId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

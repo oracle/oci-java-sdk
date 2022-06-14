@@ -27,9 +27,17 @@ public final class ParentReference {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key of the parent object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parent")
         private String parent;
 
+        /**
+         * Key of the parent object.
+         * @param parent the value to set
+         * @return this builder
+         **/
         public Builder parent(String parent) {
             this.parent = parent;
             this.__explicitlySet__.add("parent");
@@ -71,6 +79,10 @@ public final class ParentReference {
     @com.fasterxml.jackson.annotation.JsonProperty("parent")
     private final String parent;
 
+    /**
+     * Key of the parent object.
+     * @return the value
+     **/
     public String getParent() {
         return parent;
     }

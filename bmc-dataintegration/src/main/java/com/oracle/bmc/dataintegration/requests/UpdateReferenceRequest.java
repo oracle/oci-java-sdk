@@ -18,6 +18,9 @@ public class UpdateReferenceRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class UpdateReferenceRequest
      */
     private String applicationKey;
 
+    /**
+     * The application key.
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
@@ -34,6 +40,9 @@ public class UpdateReferenceRequest
      */
     private String referenceKey;
 
+    /**
+     * The reference key.
+     */
     public String getReferenceKey() {
         return referenceKey;
     }
@@ -42,6 +51,9 @@ public class UpdateReferenceRequest
      */
     private com.oracle.bmc.dataintegration.model.UpdateReferenceDetails updateReferenceDetails;
 
+    /**
+     * The details needed to update the references.
+     */
     public com.oracle.bmc.dataintegration.model.UpdateReferenceDetails getUpdateReferenceDetails() {
         return updateReferenceDetails;
     }
@@ -53,6 +65,12 @@ public class UpdateReferenceRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -64,6 +82,12 @@ public class UpdateReferenceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -73,6 +97,10 @@ public class UpdateReferenceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -95,10 +123,14 @@ public class UpdateReferenceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -106,10 +138,14 @@ public class UpdateReferenceRequest
             return this;
         }
 
+        /**
+         * The application key.
+         */
         private String applicationKey = null;
 
         /**
          * The application key.
+         * @param applicationKey the value to set
          * @return this builder instance
          */
         public Builder applicationKey(String applicationKey) {
@@ -117,10 +153,14 @@ public class UpdateReferenceRequest
             return this;
         }
 
+        /**
+         * The reference key.
+         */
         private String referenceKey = null;
 
         /**
          * The reference key.
+         * @param referenceKey the value to set
          * @return this builder instance
          */
         public Builder referenceKey(String referenceKey) {
@@ -128,11 +168,15 @@ public class UpdateReferenceRequest
             return this;
         }
 
+        /**
+         * The details needed to update the references.
+         */
         private com.oracle.bmc.dataintegration.model.UpdateReferenceDetails updateReferenceDetails =
                 null;
 
         /**
          * The details needed to update the references.
+         * @param updateReferenceDetails the value to set
          * @return this builder instance
          */
         public Builder updateReferenceDetails(
@@ -142,6 +186,12 @@ public class UpdateReferenceRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -149,6 +199,7 @@ public class UpdateReferenceRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -156,6 +207,12 @@ public class UpdateReferenceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -163,6 +220,7 @@ public class UpdateReferenceRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -170,11 +228,16 @@ public class UpdateReferenceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -273,7 +336,8 @@ public class UpdateReferenceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -286,6 +350,10 @@ public class UpdateReferenceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

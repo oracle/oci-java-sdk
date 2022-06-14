@@ -18,6 +18,9 @@ public class ChangeLoadBalancerCompartmentRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to move.
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -27,6 +30,9 @@ public class ChangeLoadBalancerCompartmentRequest
     private com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails
             changeLoadBalancerCompartmentDetails;
 
+    /**
+     * The configuration details for moving a load balancer to a different compartment.
+     */
     public com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails
             getChangeLoadBalancerCompartmentDetails() {
         return changeLoadBalancerCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeLoadBalancerCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class ChangeLoadBalancerCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -64,6 +83,14 @@ public class ChangeLoadBalancerCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. Set the if-match parameter to the value of the ETag from a
+     * previous GET or POST response for that resource. The resource is moved only if the ETag you
+     * provide matches the resource's current ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -86,10 +113,14 @@ public class ChangeLoadBalancerCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to move.
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to move.
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -97,11 +128,15 @@ public class ChangeLoadBalancerCompartmentRequest
             return this;
         }
 
+        /**
+         * The configuration details for moving a load balancer to a different compartment.
+         */
         private com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails
                 changeLoadBalancerCompartmentDetails = null;
 
         /**
          * The configuration details for moving a load balancer to a different compartment.
+         * @param changeLoadBalancerCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeLoadBalancerCompartmentDetails(
@@ -111,12 +146,18 @@ public class ChangeLoadBalancerCompartmentRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -124,6 +165,14 @@ public class ChangeLoadBalancerCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -133,6 +182,7 @@ public class ChangeLoadBalancerCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -140,6 +190,14 @@ public class ChangeLoadBalancerCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. Set the if-match parameter to the value of the ETag from a
+         * previous GET or POST response for that resource. The resource is moved only if the ETag you
+         * provide matches the resource's current ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -149,6 +207,7 @@ public class ChangeLoadBalancerCompartmentRequest
          * <p>
          * Example: {@code example-etag}
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -245,7 +304,8 @@ public class ChangeLoadBalancerCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -256,6 +316,10 @@ public class ChangeLoadBalancerCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

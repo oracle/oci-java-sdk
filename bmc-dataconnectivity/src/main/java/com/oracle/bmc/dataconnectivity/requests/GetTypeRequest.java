@@ -16,6 +16,9 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -24,6 +27,9 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String typeKey;
 
+    /**
+     * key of the a specefic Type.
+     */
     public String getTypeKey() {
         return typeKey;
     }
@@ -35,6 +41,12 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +55,9 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private java.util.List<String> fields;
 
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -53,10 +68,14 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -64,10 +83,14 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * key of the a specefic Type.
+         */
         private String typeKey = null;
 
         /**
          * key of the a specefic Type.
+         * @param typeKey the value to set
          * @return this builder instance
          */
         public Builder typeKey(String typeKey) {
@@ -75,6 +98,12 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -82,6 +111,7 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -89,10 +119,14 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<String> fields) {
@@ -102,6 +136,7 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(String singularValue) {
@@ -182,7 +217,8 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +228,10 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 .fields(fields);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

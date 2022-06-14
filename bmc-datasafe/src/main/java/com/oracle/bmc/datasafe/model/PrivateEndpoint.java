@@ -25,9 +25,17 @@ package com.oracle.bmc.datasafe.model;
 public final class PrivateEndpoint extends ConnectionOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Data Safe private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datasafePrivateEndpointId")
         private String datasafePrivateEndpointId;
 
+        /**
+         * The OCID of the Data Safe private endpoint.
+         * @param datasafePrivateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder datasafePrivateEndpointId(String datasafePrivateEndpointId) {
             this.datasafePrivateEndpointId = datasafePrivateEndpointId;
             this.__explicitlySet__.add("datasafePrivateEndpointId");
@@ -75,6 +83,10 @@ public final class PrivateEndpoint extends ConnectionOption {
     @com.fasterxml.jackson.annotation.JsonProperty("datasafePrivateEndpointId")
     private final String datasafePrivateEndpointId;
 
+    /**
+     * The OCID of the Data Safe private endpoint.
+     * @return the value
+     **/
     public String getDatasafePrivateEndpointId() {
         return datasafePrivateEndpointId;
     }

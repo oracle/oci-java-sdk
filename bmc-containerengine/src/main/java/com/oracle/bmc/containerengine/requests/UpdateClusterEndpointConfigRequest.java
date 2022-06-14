@@ -18,6 +18,9 @@ public class UpdateClusterEndpointConfigRequest
      */
     private String clusterId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getClusterId() {
         return clusterId;
     }
@@ -27,6 +30,9 @@ public class UpdateClusterEndpointConfigRequest
     private com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails
             updateClusterEndpointConfigDetails;
 
+    /**
+     * The details of the cluster's endpoint to update.
+     */
     public com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails
             getUpdateClusterEndpointConfigDetails() {
         return updateClusterEndpointConfigDetails;
@@ -39,6 +45,12 @@ public class UpdateClusterEndpointConfigRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +61,11 @@ public class UpdateClusterEndpointConfigRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateClusterEndpointConfigRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String clusterId = null;
 
         /**
          * The OCID of the cluster.
+         * @param clusterId the value to set
          * @return this builder instance
          */
         public Builder clusterId(String clusterId) {
@@ -82,11 +103,15 @@ public class UpdateClusterEndpointConfigRequest
             return this;
         }
 
+        /**
+         * The details of the cluster's endpoint to update.
+         */
         private com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails
                 updateClusterEndpointConfigDetails = null;
 
         /**
          * The details of the cluster's endpoint to update.
+         * @param updateClusterEndpointConfigDetails the value to set
          * @return this builder instance
          */
         public Builder updateClusterEndpointConfigDetails(
@@ -96,6 +121,12 @@ public class UpdateClusterEndpointConfigRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -103,6 +134,7 @@ public class UpdateClusterEndpointConfigRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -110,12 +142,18 @@ public class UpdateClusterEndpointConfigRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +247,8 @@ public class UpdateClusterEndpointConfigRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class UpdateClusterEndpointConfigRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

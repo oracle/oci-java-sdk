@@ -53,6 +53,10 @@ public class PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("timePaidOn")
     private final java.util.Date timePaidOn;
 
+    /**
+     * Paid the invoice on this day
+     * @return the value
+     **/
     public java.util.Date getTimePaidOn() {
         return timePaidOn;
     }
@@ -63,6 +67,10 @@ public class PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("paidBy")
     private final String paidBy;
 
+    /**
+     * example
+     * @return the value
+     **/
     public String getPaidBy() {
         return paidBy;
     }
@@ -73,6 +81,10 @@ public class PaymentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("amountPaid")
     private final java.math.BigDecimal amountPaid;
 
+    /**
+     * Amount that paid
+     * @return the value
+     **/
     public java.math.BigDecimal getAmountPaid() {
         return amountPaid;
     }

@@ -17,6 +17,9 @@ public class GetVolumeBackupPolicyRequest
      */
     private String policyId;
 
+    /**
+     * The OCID of the volume backup policy.
+     */
     public String getPolicyId() {
         return policyId;
     }
@@ -28,10 +31,14 @@ public class GetVolumeBackupPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume backup policy.
+         */
         private String policyId = null;
 
         /**
          * The OCID of the volume backup policy.
+         * @param policyId the value to set
          * @return this builder instance
          */
         public Builder policyId(String policyId) {
@@ -107,12 +114,17 @@ public class GetVolumeBackupPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().policyId(policyId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

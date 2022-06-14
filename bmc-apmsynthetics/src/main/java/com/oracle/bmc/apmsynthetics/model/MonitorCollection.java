@@ -29,9 +29,17 @@ public final class MonitorCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of MonitorSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MonitorSummary> items;
 
+        /**
+         * List of MonitorSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<MonitorSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class MonitorCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MonitorSummary> items;
 
+    /**
+     * List of MonitorSummary items.
+     * @return the value
+     **/
     public java.util.List<MonitorSummary> getItems() {
         return items;
     }

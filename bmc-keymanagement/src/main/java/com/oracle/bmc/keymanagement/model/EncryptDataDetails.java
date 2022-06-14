@@ -47,54 +47,119 @@ public final class EncryptDataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Information that can be used to provide an encryption context for the
+         * encrypted data. The length of the string representation of the associated data
+         * must be fewer than 4096 characters.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
         private java.util.Map<String, String> associatedData;
 
+        /**
+         * Information that can be used to provide an encryption context for the
+         * encrypted data. The length of the string representation of the associated data
+         * must be fewer than 4096 characters.
+         *
+         * @param associatedData the value to set
+         * @return this builder
+         **/
         public Builder associatedData(java.util.Map<String, String> associatedData) {
             this.associatedData = associatedData;
             this.__explicitlySet__.add("associatedData");
             return this;
         }
-
+        /**
+         * The OCID of the key to encrypt with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
+        /**
+         * The OCID of the key to encrypt with.
+         * @param keyId the value to set
+         * @return this builder
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-
+        /**
+         * Information that provides context for audit logging. You can provide this additional
+         * data as key-value pairs to include in the audit logs when audit logging is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
         private java.util.Map<String, String> loggingContext;
 
+        /**
+         * Information that provides context for audit logging. You can provide this additional
+         * data as key-value pairs to include in the audit logs when audit logging is enabled.
+         *
+         * @param loggingContext the value to set
+         * @return this builder
+         **/
         public Builder loggingContext(java.util.Map<String, String> loggingContext) {
             this.loggingContext = loggingContext;
             this.__explicitlySet__.add("loggingContext");
             return this;
         }
-
+        /**
+         * The plaintext data to encrypt.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
         private String plaintext;
 
+        /**
+         * The plaintext data to encrypt.
+         * @param plaintext the value to set
+         * @return this builder
+         **/
         public Builder plaintext(String plaintext) {
             this.plaintext = plaintext;
             this.__explicitlySet__.add("plaintext");
             return this;
         }
-
+        /**
+         * The OCID of the key version used to encrypt the ciphertext.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
+        /**
+         * The OCID of the key version used to encrypt the ciphertext.
+         * @param keyVersionId the value to set
+         * @return this builder
+         **/
         public Builder keyVersionId(String keyVersionId) {
             this.keyVersionId = keyVersionId;
             this.__explicitlySet__.add("keyVersionId");
             return this;
         }
-
+        /**
+         * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
+         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+         * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+         * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+         * and uses OAEP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
+        /**
+         * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
+         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+         * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+         * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+         * and uses OAEP.
+         *
+         * @param encryptionAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
@@ -152,6 +217,13 @@ public final class EncryptDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("associatedData")
     private final java.util.Map<String, String> associatedData;
 
+    /**
+     * Information that can be used to provide an encryption context for the
+     * encrypted data. The length of the string representation of the associated data
+     * must be fewer than 4096 characters.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getAssociatedData() {
         return associatedData;
     }
@@ -162,6 +234,10 @@ public final class EncryptDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
+    /**
+     * The OCID of the key to encrypt with.
+     * @return the value
+     **/
     public String getKeyId() {
         return keyId;
     }
@@ -174,6 +250,12 @@ public final class EncryptDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
     private final java.util.Map<String, String> loggingContext;
 
+    /**
+     * Information that provides context for audit logging. You can provide this additional
+     * data as key-value pairs to include in the audit logs when audit logging is enabled.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getLoggingContext() {
         return loggingContext;
     }
@@ -184,6 +266,10 @@ public final class EncryptDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("plaintext")
     private final String plaintext;
 
+    /**
+     * The plaintext data to encrypt.
+     * @return the value
+     **/
     public String getPlaintext() {
         return plaintext;
     }
@@ -194,6 +280,10 @@ public final class EncryptDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
+    /**
+     * The OCID of the key version used to encrypt the ciphertext.
+     * @return the value
+     **/
     public String getKeyVersionId() {
         return keyVersionId;
     }
@@ -252,6 +342,16 @@ public final class EncryptDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
+    /**
+     * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
+     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
+     *
+     * @return the value
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }

@@ -32,18 +32,33 @@ public final class EstimateRecallDataSizeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the start of the time range for the data to be recalled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
+        /**
+         * This is the start of the time range for the data to be recalled
+         * @param timeDataStarted the value to set
+         * @return this builder
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-
+        /**
+         * This is the end of the time range for the data to be recalled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
+        /**
+         * This is the end of the time range for the data to be recalled
+         * @param timeDataEnded the value to set
+         * @return this builder
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
@@ -87,6 +102,10 @@ public final class EstimateRecallDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
+    /**
+     * This is the start of the time range for the data to be recalled
+     * @return the value
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
@@ -97,6 +116,10 @@ public final class EstimateRecallDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
+    /**
+     * This is the end of the time range for the data to be recalled
+     * @return the value
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }

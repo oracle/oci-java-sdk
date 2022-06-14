@@ -78,10 +78,17 @@ public final class ConfiguredType extends BaseType {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A wrapped type, may be a string or a BaseType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wrappedType")
         private Object wrappedType;
 
+        /**
+         * A wrapped type, may be a string or a BaseType.
+         * @param wrappedType the value to set
+         * @return this builder
+         **/
         public Builder wrappedType(Object wrappedType) {
             this.wrappedType = wrappedType;
             this.__explicitlySet__.add("wrappedType");
@@ -177,6 +184,10 @@ public final class ConfiguredType extends BaseType {
     @com.fasterxml.jackson.annotation.JsonProperty("wrappedType")
     private final Object wrappedType;
 
+    /**
+     * A wrapped type, may be a string or a BaseType.
+     * @return the value
+     **/
     public Object getWrappedType() {
         return wrappedType;
     }

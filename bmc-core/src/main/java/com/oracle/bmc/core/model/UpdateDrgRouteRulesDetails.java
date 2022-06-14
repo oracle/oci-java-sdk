@@ -30,9 +30,17 @@ public final class UpdateDrgRouteRulesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The DRG rute rules to update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
         private java.util.List<UpdateDrgRouteRuleDetails> routeRules;
 
+        /**
+         * The DRG rute rules to update.
+         * @param routeRules the value to set
+         * @return this builder
+         **/
         public Builder routeRules(java.util.List<UpdateDrgRouteRuleDetails> routeRules) {
             this.routeRules = routeRules;
             this.__explicitlySet__.add("routeRules");
@@ -74,6 +82,10 @@ public final class UpdateDrgRouteRulesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
     private final java.util.List<UpdateDrgRouteRuleDetails> routeRules;
 
+    /**
+     * The DRG rute rules to update.
+     * @return the value
+     **/
     public java.util.List<UpdateDrgRouteRuleDetails> getRouteRules() {
         return routeRules;
     }

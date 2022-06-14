@@ -15,6 +15,12 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +32,12 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control.
+     * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -36,6 +48,11 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Long contentLength;
 
+    /**
+     * Indicates the size of the data as described in RFC 2616, section 14.13.
+     *
+     * @return the value
+     */
     public Long getContentLength() {
         return contentLength;
     }
@@ -46,6 +63,11 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String contentType;
 
+    /**
+     * Specifies the media type of the underlying data as described in RFC 2616, section 14.17.
+     *
+     * @return the value
+     */
     public String getContentType() {
         return contentType;
     }
@@ -56,6 +78,11 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String contentEncoding;
 
+    /**
+     * Indicates the encoding of the data, as described in RFC 2616, section 14.11.
+     *
+     * @return the value
+     */
     public String getContentEncoding() {
         return contentEncoding;
     }
@@ -66,6 +93,11 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.Map<String, String> opcMeta;
 
+    /**
+     * The user-defined metadata for the log.
+     *
+     * @return the value
+     */
     public java.util.Map<String, String> getOpcMeta() {
         return opcMeta;
     }
@@ -75,6 +107,10 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -116,50 +152,122 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control.
+         * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control.
+         * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Indicates the size of the data as described in RFC 2616, section 14.13.
+         *
+         */
         private Long contentLength;
 
+        /**
+         * Indicates the size of the data as described in RFC 2616, section 14.13.
+         *
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Long contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * Specifies the media type of the underlying data as described in RFC 2616, section 14.17.
+         *
+         */
         private String contentType;
 
+        /**
+         * Specifies the media type of the underlying data as described in RFC 2616, section 14.17.
+         *
+         * @param contentType the value to set
+         * @return this builder
+         */
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             return this;
         }
 
+        /**
+         * Indicates the encoding of the data, as described in RFC 2616, section 14.11.
+         *
+         */
         private String contentEncoding;
 
+        /**
+         * Indicates the encoding of the data, as described in RFC 2616, section 14.11.
+         *
+         * @param contentEncoding the value to set
+         * @return this builder
+         */
         public Builder contentEncoding(String contentEncoding) {
             this.contentEncoding = contentEncoding;
             return this;
         }
 
+        /**
+         * The user-defined metadata for the log.
+         *
+         */
         private java.util.Map<String, String> opcMeta;
 
+        /**
+         * The user-defined metadata for the log.
+         *
+         * @param opcMeta the value to set
+         * @return this builder
+         */
         public Builder opcMeta(java.util.Map<String, String> opcMeta) {
             this.opcMeta = opcMeta;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -182,6 +290,10 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRunLogResponse build() {
             return new GetRunLogResponse(
                     __httpStatusCode__,
@@ -195,6 +307,10 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

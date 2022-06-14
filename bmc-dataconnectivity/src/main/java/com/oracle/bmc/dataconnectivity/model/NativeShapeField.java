@@ -87,37 +87,65 @@ public final class NativeShapeField extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The type reference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Object type;
 
+        /**
+         * The type reference.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The position of the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
+        /**
+         * The position of the attribute.
+         * @param position the value to set
+         * @return this builder
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-
+        /**
+         * The default value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
         private String defaultValueString;
 
+        /**
+         * The default value.
+         * @param defaultValueString the value to set
+         * @return this builder
+         **/
         public Builder defaultValueString(String defaultValueString) {
             this.defaultValueString = defaultValueString;
             this.__explicitlySet__.add("defaultValueString");
             return this;
         }
-
+        /**
+         * Specifies whether the field is mandatory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
+        /**
+         * Specifies whether the field is mandatory.
+         * @param isMandatory the value to set
+         * @return this builder
+         **/
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = isMandatory;
             this.__explicitlySet__.add("isMandatory");
@@ -202,6 +230,10 @@ public final class NativeShapeField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Object type;
 
+    /**
+     * The type reference.
+     * @return the value
+     **/
     public Object getType() {
         return type;
     }
@@ -212,6 +244,10 @@ public final class NativeShapeField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
+    /**
+     * The position of the attribute.
+     * @return the value
+     **/
     public Integer getPosition() {
         return position;
     }
@@ -222,6 +258,10 @@ public final class NativeShapeField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValueString")
     private final String defaultValueString;
 
+    /**
+     * The default value.
+     * @return the value
+     **/
     public String getDefaultValueString() {
         return defaultValueString;
     }
@@ -232,6 +272,10 @@ public final class NativeShapeField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
+    /**
+     * Specifies whether the field is mandatory.
+     * @return the value
+     **/
     public Boolean getIsMandatory() {
         return isMandatory;
     }

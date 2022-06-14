@@ -17,6 +17,10 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String ospHomeRegion;
 
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
@@ -26,6 +30,10 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -34,6 +42,9 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String internalInvoiceId;
 
+    /**
+     * The identifier of the invoice.
+     */
     public String getInternalInvoiceId() {
         return internalInvoiceId;
     }
@@ -44,6 +55,11 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,11 +71,16 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
          * The home region's public name of the logged in user.
          *
+         * @param ospHomeRegion the value to set
          * @return this builder instance
          */
         public Builder ospHomeRegion(String ospHomeRegion) {
@@ -67,11 +88,16 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -79,10 +105,14 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The identifier of the invoice.
+         */
         private String internalInvoiceId = null;
 
         /**
          * The identifier of the invoice.
+         * @param internalInvoiceId the value to set
          * @return this builder instance
          */
         public Builder internalInvoiceId(String internalInvoiceId) {
@@ -90,12 +120,18 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -177,7 +213,8 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +224,10 @@ public class GetInvoiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

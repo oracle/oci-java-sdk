@@ -31,9 +31,17 @@ public final class BuildPipelineParameterCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of parameters defined for a build pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<BuildPipelineParameter> items;
 
+        /**
+         * List of parameters defined for a build pipeline.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<BuildPipelineParameter> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -76,6 +84,10 @@ public final class BuildPipelineParameterCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<BuildPipelineParameter> items;
 
+    /**
+     * List of parameters defined for a build pipeline.
+     * @return the value
+     **/
     public java.util.List<BuildPipelineParameter> getItems() {
         return items;
     }

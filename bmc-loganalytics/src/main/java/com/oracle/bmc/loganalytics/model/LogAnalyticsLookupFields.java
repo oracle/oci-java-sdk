@@ -50,63 +50,115 @@ public final class LogAnalyticsLookupFields {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The common field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
         private String commonFieldName;
 
+        /**
+         * The common field name.
+         * @param commonFieldName the value to set
+         * @return this builder
+         **/
         public Builder commonFieldName(String commonFieldName) {
             this.commonFieldName = commonFieldName;
             this.__explicitlySet__.add("commonFieldName");
             return this;
         }
-
+        /**
+         * The default match value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
         private String defaultMatchValue;
 
+        /**
+         * The default match value.
+         * @param defaultMatchValue the value to set
+         * @return this builder
+         **/
         public Builder defaultMatchValue(String defaultMatchValue) {
             this.defaultMatchValue = defaultMatchValue;
             this.__explicitlySet__.add("defaultMatchValue");
             return this;
         }
-
+        /**
+         * The display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the field is a common field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCommonField")
         private Boolean isCommonField;
 
+        /**
+         * A flag indicating whether or not the field is a common field.
+         *
+         * @param isCommonField the value to set
+         * @return this builder
+         **/
         public Builder isCommonField(Boolean isCommonField) {
             this.isCommonField = isCommonField;
             this.__explicitlySet__.add("isCommonField");
             return this;
         }
-
+        /**
+         * The match operator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchOperator")
         private String matchOperator;
 
+        /**
+         * The match operator.
+         * @param matchOperator the value to set
+         * @return this builder
+         **/
         public Builder matchOperator(String matchOperator) {
             this.matchOperator = matchOperator;
             this.__explicitlySet__.add("matchOperator");
             return this;
         }
-
+        /**
+         * The field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The field name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The position.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Long position;
 
+        /**
+         * The position.
+         * @param position the value to set
+         * @return this builder
+         **/
         public Builder position(Long position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -163,6 +215,10 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
     private final String commonFieldName;
 
+    /**
+     * The common field name.
+     * @return the value
+     **/
     public String getCommonFieldName() {
         return commonFieldName;
     }
@@ -173,6 +229,10 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
     private final String defaultMatchValue;
 
+    /**
+     * The default match value.
+     * @return the value
+     **/
     public String getDefaultMatchValue() {
         return defaultMatchValue;
     }
@@ -183,6 +243,10 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -194,6 +258,11 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("isCommonField")
     private final Boolean isCommonField;
 
+    /**
+     * A flag indicating whether or not the field is a common field.
+     *
+     * @return the value
+     **/
     public Boolean getIsCommonField() {
         return isCommonField;
     }
@@ -204,6 +273,10 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("matchOperator")
     private final String matchOperator;
 
+    /**
+     * The match operator.
+     * @return the value
+     **/
     public String getMatchOperator() {
         return matchOperator;
     }
@@ -214,6 +287,10 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The field name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -224,6 +301,10 @@ public final class LogAnalyticsLookupFields {
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Long position;
 
+    /**
+     * The position.
+     * @return the value
+     **/
     public Long getPosition() {
         return position;
     }

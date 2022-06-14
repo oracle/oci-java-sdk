@@ -66,117 +66,209 @@ public final class SoftwarePackage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Package name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Package name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Type of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of the package
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Version of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of the package
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * the architecture for which this software was built
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
+        /**
+         * the architecture for which this software was built
+         * @param architecture the value to set
+         * @return this builder
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-
+        /**
+         * date of the last update to the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
         private String lastModifiedDate;
 
+        /**
+         * date of the last update to the package
+         * @param lastModifiedDate the value to set
+         * @return this builder
+         **/
         public Builder lastModifiedDate(String lastModifiedDate) {
             this.lastModifiedDate = lastModifiedDate;
             this.__explicitlySet__.add("lastModifiedDate");
             return this;
         }
-
+        /**
+         * checksum of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
+        /**
+         * checksum of the package
+         * @param checksum the value to set
+         * @return this builder
+         **/
         public Builder checksum(String checksum) {
             this.checksum = checksum;
             this.__explicitlySet__.add("checksum");
             return this;
         }
-
+        /**
+         * type of the checksum
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private String checksumType;
 
+        /**
+         * type of the checksum
+         * @param checksumType the value to set
+         * @return this builder
+         **/
         public Builder checksumType(String checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-
+        /**
+         * description of the package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * description of the package
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * size of the package in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * size of the package in bytes
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-
+        /**
+         * list of dependencies for the software package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
         private java.util.List<SoftwarePackageDependency> dependencies;
 
+        /**
+         * list of dependencies for the software package
+         * @param dependencies the value to set
+         * @return this builder
+         **/
         public Builder dependencies(java.util.List<SoftwarePackageDependency> dependencies) {
             this.dependencies = dependencies;
             this.__explicitlySet__.add("dependencies");
             return this;
         }
-
+        /**
+         * list of files for the software package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("files")
         private java.util.List<SoftwarePackageFile> files;
 
+        /**
+         * list of files for the software package
+         * @param files the value to set
+         * @return this builder
+         **/
         public Builder files(java.util.List<SoftwarePackageFile> files) {
             this.files = files;
             this.__explicitlySet__.add("files");
             return this;
         }
-
+        /**
+         * list of software sources that provide the software package
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceId> softwareSources;
 
+        /**
+         * list of software sources that provide the software package
+         * @param softwareSources the value to set
+         * @return this builder
+         **/
         public Builder softwareSources(java.util.List<SoftwareSourceId> softwareSources) {
             this.softwareSources = softwareSources;
             this.__explicitlySet__.add("softwareSources");
@@ -245,6 +337,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Package name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -255,6 +351,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Unique identifier for the package. NOTE - This is not an OCID
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -265,6 +365,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of the package
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -275,6 +379,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of the package
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -285,6 +393,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
+    /**
+     * the architecture for which this software was built
+     * @return the value
+     **/
     public String getArchitecture() {
         return architecture;
     }
@@ -295,6 +407,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
     private final String lastModifiedDate;
 
+    /**
+     * date of the last update to the package
+     * @return the value
+     **/
     public String getLastModifiedDate() {
         return lastModifiedDate;
     }
@@ -305,6 +421,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
+    /**
+     * checksum of the package
+     * @return the value
+     **/
     public String getChecksum() {
         return checksum;
     }
@@ -315,6 +435,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final String checksumType;
 
+    /**
+     * type of the checksum
+     * @return the value
+     **/
     public String getChecksumType() {
         return checksumType;
     }
@@ -325,6 +449,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * description of the package
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -335,6 +463,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * size of the package in bytes
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -345,6 +477,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
     private final java.util.List<SoftwarePackageDependency> dependencies;
 
+    /**
+     * list of dependencies for the software package
+     * @return the value
+     **/
     public java.util.List<SoftwarePackageDependency> getDependencies() {
         return dependencies;
     }
@@ -355,6 +491,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("files")
     private final java.util.List<SoftwarePackageFile> files;
 
+    /**
+     * list of files for the software package
+     * @return the value
+     **/
     public java.util.List<SoftwarePackageFile> getFiles() {
         return files;
     }
@@ -365,6 +505,10 @@ public final class SoftwarePackage {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceId> softwareSources;
 
+    /**
+     * list of software sources that provide the software package
+     * @return the value
+     **/
     public java.util.List<SoftwareSourceId> getSoftwareSources() {
         return softwareSources;
     }

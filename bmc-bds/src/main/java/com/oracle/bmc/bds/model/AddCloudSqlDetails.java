@@ -32,27 +32,51 @@ public final class AddCloudSqlDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Shape of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * Shape of the node.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The size of block volume in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
+        /**
+         * The size of block volume in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
+         *
+         * @param blockVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
             return this;
         }
-
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -98,6 +122,10 @@ public final class AddCloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * Shape of the node.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -109,6 +137,11 @@ public final class AddCloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
+    /**
+     * The size of block volume in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
+     *
+     * @return the value
+     **/
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
@@ -119,6 +152,10 @@ public final class AddCloudSqlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }

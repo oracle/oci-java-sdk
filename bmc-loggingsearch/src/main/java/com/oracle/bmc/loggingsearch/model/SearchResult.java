@@ -27,9 +27,17 @@ public final class SearchResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * JSON blob containing the search entry with the projected fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private Object data;
 
+        /**
+         * JSON blob containing the search entry with the projected fields.
+         * @param data the value to set
+         * @return this builder
+         **/
         public Builder data(Object data) {
             this.data = data;
             this.__explicitlySet__.add("data");
@@ -71,6 +79,10 @@ public final class SearchResult {
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final Object data;
 
+    /**
+     * JSON blob containing the search entry with the projected fields.
+     * @return the value
+     **/
     public Object getData() {
         return data;
     }

@@ -29,9 +29,17 @@ public final class CompareContentResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of line comparison results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lineComparisonResults")
         private java.util.List<CompareLineResult> lineComparisonResults;
 
+        /**
+         * An array of line comparison results.
+         * @param lineComparisonResults the value to set
+         * @return this builder
+         **/
         public Builder lineComparisonResults(
                 java.util.List<CompareLineResult> lineComparisonResults) {
             this.lineComparisonResults = lineComparisonResults;
@@ -74,6 +82,10 @@ public final class CompareContentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("lineComparisonResults")
     private final java.util.List<CompareLineResult> lineComparisonResults;
 
+    /**
+     * An array of line comparison results.
+     * @return the value
+     **/
     public java.util.List<CompareLineResult> getLineComparisonResults() {
         return lineComparisonResults;
     }

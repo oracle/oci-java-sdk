@@ -56,27 +56,49 @@ public final class FunctionSignature {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key of the object.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private ModelType modelType;
 
+        /**
+         * The type of the object.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The model version of an object.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -91,10 +113,17 @@ public final class FunctionSignature {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -109,28 +138,49 @@ public final class FunctionSignature {
             this.__explicitlySet__.add("retType");
             return this;
         }
-
+        /**
+         * An array of function arguments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<TypedObject> arguments;
 
+        /**
+         * An array of function arguments.
+         * @param arguments the value to set
+         * @return this builder
+         **/
         public Builder arguments(java.util.List<TypedObject> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
             return this;
         }
-
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description for the object.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -191,6 +241,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key of the object.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -248,6 +302,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final ModelType modelType;
 
+    /**
+     * The type of the object.
+     * @return the value
+     **/
     public ModelType getModelType() {
         return modelType;
     }
@@ -258,6 +316,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of an object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -275,6 +337,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -292,6 +358,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<TypedObject> arguments;
 
+    /**
+     * An array of function arguments.
+     * @return the value
+     **/
     public java.util.List<TypedObject> getArguments() {
         return arguments;
     }
@@ -302,6 +372,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -312,6 +386,10 @@ public final class FunctionSignature {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }

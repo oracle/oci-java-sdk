@@ -66,118 +66,232 @@ public final class TargetSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier that is immutable on creation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * DetectorTemplate Identifier, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * DetectorTemplate Identifier, can be renamed
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Compartment Identifier where the resource is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier where the resource is created
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
+        /**
+         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * @param targetResourceType the value to set
+         * @return this builder
+         **/
         public Builder targetResourceType(TargetResourceType targetResourceType) {
             this.targetResourceType = targetResourceType;
             this.__explicitlySet__.add("targetResourceType");
             return this;
         }
-
+        /**
+         * Resource ID which the target uses to monitor
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
+        /**
+         * Resource ID which the target uses to monitor
+         * @param targetResourceId the value to set
+         * @return this builder
+         **/
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-
+        /**
+         * Total number of recipes attached to target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipeCount")
         private Integer recipeCount;
 
+        /**
+         * Total number of recipes attached to target
+         * @param recipeCount the value to set
+         * @return this builder
+         **/
         public Builder recipeCount(Integer recipeCount) {
             this.recipeCount = recipeCount;
             this.__explicitlySet__.add("recipeCount");
             return this;
         }
-
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the resource.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecyleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = lifecyleDetails;
             this.__explicitlySet__.add("lifecyleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -246,6 +360,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier that is immutable on creation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -256,6 +374,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * DetectorTemplate Identifier, can be renamed
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -266,6 +388,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier where the resource is created
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -276,6 +402,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
+    /**
+     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * @return the value
+     **/
     public TargetResourceType getTargetResourceType() {
         return targetResourceType;
     }
@@ -286,6 +416,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
+    /**
+     * Resource ID which the target uses to monitor
+     * @return the value
+     **/
     public String getTargetResourceId() {
         return targetResourceId;
     }
@@ -296,6 +430,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recipeCount")
     private final Integer recipeCount;
 
+    /**
+     * Total number of recipes attached to target
+     * @return the value
+     **/
     public Integer getRecipeCount() {
         return recipeCount;
     }
@@ -306,6 +444,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the target was created. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -316,6 +458,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the target was updated. Format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -326,6 +472,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the resource.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -336,6 +486,10 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecyleDetails() {
         return lifecyleDetails;
     }
@@ -350,6 +504,14 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -362,6 +524,12 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -377,6 +545,15 @@ public final class TargetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

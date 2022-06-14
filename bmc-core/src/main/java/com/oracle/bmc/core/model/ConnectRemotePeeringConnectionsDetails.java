@@ -30,18 +30,39 @@ public final class ConnectRemotePeeringConnectionsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerId")
         private String peerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
+         * @param peerId the value to set
+         * @return this builder
+         **/
         public Builder peerId(String peerId) {
             this.peerId = peerId;
             this.__explicitlySet__.add("peerId");
             return this;
         }
-
+        /**
+         * The name of the region that contains the RPC you want to peer with.
+         * <p>
+         * Example: {@code us-ashburn-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerRegionName")
         private String peerRegionName;
 
+        /**
+         * The name of the region that contains the RPC you want to peer with.
+         * <p>
+         * Example: {@code us-ashburn-1}
+         *
+         * @param peerRegionName the value to set
+         * @return this builder
+         **/
         public Builder peerRegionName(String peerRegionName) {
             this.peerRegionName = peerRegionName;
             this.__explicitlySet__.add("peerRegionName");
@@ -84,6 +105,10 @@ public final class ConnectRemotePeeringConnectionsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     private final String peerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
+     * @return the value
+     **/
     public String getPeerId() {
         return peerId;
     }
@@ -97,6 +122,13 @@ public final class ConnectRemotePeeringConnectionsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerRegionName")
     private final String peerRegionName;
 
+    /**
+     * The name of the region that contains the RPC you want to peer with.
+     * <p>
+     * Example: {@code us-ashburn-1}
+     *
+     * @return the value
+     **/
     public String getPeerRegionName() {
         return peerRegionName;
     }

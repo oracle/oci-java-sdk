@@ -32,9 +32,17 @@ public final class AnalyzeImageDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The types of image analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<ImageFeature> features;
 
+        /**
+         * The types of image analysis.
+         * @param features the value to set
+         * @return this builder
+         **/
         public Builder features(java.util.List<ImageFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -49,10 +57,17 @@ public final class AnalyzeImageDetails {
             this.__explicitlySet__.add("image");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that calls the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that calls the API.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -98,6 +113,10 @@ public final class AnalyzeImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<ImageFeature> features;
 
+    /**
+     * The types of image analysis.
+     * @return the value
+     **/
     public java.util.List<ImageFeature> getFeatures() {
         return features;
     }
@@ -115,6 +134,10 @@ public final class AnalyzeImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that calls the API.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

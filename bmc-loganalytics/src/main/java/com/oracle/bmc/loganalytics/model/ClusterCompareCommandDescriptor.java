@@ -72,55 +72,109 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * To shift time range of main query backwards using a relative time expression e.g -24hrs. E.g compare against the previous 24 hrs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeShift")
         private String timeShift;
 
+        /**
+         * To shift time range of main query backwards using a relative time expression e.g -24hrs. E.g compare against the previous 24 hrs.
+         *
+         * @param timeShift the value to set
+         * @return this builder
+         **/
         public Builder timeShift(String timeShift) {
             this.timeShift = timeShift;
             this.__explicitlySet__.add("timeShift");
             return this;
         }
-
+        /**
+         * Start time to apply to base line query if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private Long timeStart;
 
+        /**
+         * Start time to apply to base line query if specified.
+         *
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(Long timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * End time to apply to base line query if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private Long timeEnd;
 
+        /**
+         * End time to apply to base line query if specified.
+         *
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(Long timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * Option to calculate trends of each cluster if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
         private Boolean shouldIncludeTrends;
 
+        /**
+         * Option to calculate trends of each cluster if specified.
+         *
+         * @param shouldIncludeTrends the value to set
+         * @return this builder
+         **/
         public Builder shouldIncludeTrends(Boolean shouldIncludeTrends) {
             this.shouldIncludeTrends = shouldIncludeTrends;
             this.__explicitlySet__.add("shouldIncludeTrends");
             return this;
         }
-
+        /**
+         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
+        /**
+         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         *
+         * @param span the value to set
+         * @return this builder
+         **/
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
-
+        /**
+         * Query to use to compute base line to compare top level query results against to identify differences if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineQuery")
         private String baselineQuery;
 
+        /**
+         * Query to use to compute base line to compare top level query results against to identify differences if specified.
+         *
+         * @param baselineQuery the value to set
+         * @return this builder
+         **/
         public Builder baselineQuery(String baselineQuery) {
             this.baselineQuery = baselineQuery;
             this.__explicitlySet__.add("baselineQuery");
@@ -208,6 +262,11 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
     @com.fasterxml.jackson.annotation.JsonProperty("timeShift")
     private final String timeShift;
 
+    /**
+     * To shift time range of main query backwards using a relative time expression e.g -24hrs. E.g compare against the previous 24 hrs.
+     *
+     * @return the value
+     **/
     public String getTimeShift() {
         return timeShift;
     }
@@ -219,6 +278,11 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final Long timeStart;
 
+    /**
+     * Start time to apply to base line query if specified.
+     *
+     * @return the value
+     **/
     public Long getTimeStart() {
         return timeStart;
     }
@@ -230,6 +294,11 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final Long timeEnd;
 
+    /**
+     * End time to apply to base line query if specified.
+     *
+     * @return the value
+     **/
     public Long getTimeEnd() {
         return timeEnd;
     }
@@ -241,6 +310,11 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
     private final Boolean shouldIncludeTrends;
 
+    /**
+     * Option to calculate trends of each cluster if specified.
+     *
+     * @return the value
+     **/
     public Boolean getShouldIncludeTrends() {
         return shouldIncludeTrends;
     }
@@ -252,6 +326,11 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
+    /**
+     * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+     *
+     * @return the value
+     **/
     public String getSpan() {
         return span;
     }
@@ -263,6 +342,11 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
     @com.fasterxml.jackson.annotation.JsonProperty("baselineQuery")
     private final String baselineQuery;
 
+    /**
+     * Query to use to compute base line to compare top level query results against to identify differences if specified.
+     *
+     * @return the value
+     **/
     public String getBaselineQuery() {
         return baselineQuery;
     }

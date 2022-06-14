@@ -30,18 +30,55 @@ public final class UpdateLoadBalancerShapeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The new shape name for the load balancer.
+         * <p>
+         * Allowed values are :
+         *   *  10Mbps
+         *   *  100Mbps
+         *   *  400Mbps
+         *   *  8000Mbps
+         *   *  Flexible
+         * <p>
+         * Example: {@code Flexible}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The new shape name for the load balancer.
+         * <p>
+         * Allowed values are :
+         *   *  10Mbps
+         *   *  100Mbps
+         *   *  400Mbps
+         *   *  8000Mbps
+         *   *  Flexible
+         * <p>
+         * Example: {@code Flexible}
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-
+        /**
+         * The configuration details to update load balancer to a different profile.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
         private ShapeDetails shapeDetails;
 
+        /**
+         * The configuration details to update load balancer to a different profile.
+         *
+         * @param shapeDetails the value to set
+         * @return this builder
+         **/
         public Builder shapeDetails(ShapeDetails shapeDetails) {
             this.shapeDetails = shapeDetails;
             this.__explicitlySet__.add("shapeDetails");
@@ -94,6 +131,20 @@ public final class UpdateLoadBalancerShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The new shape name for the load balancer.
+     * <p>
+     * Allowed values are :
+     *   *  10Mbps
+     *   *  100Mbps
+     *   *  400Mbps
+     *   *  8000Mbps
+     *   *  Flexible
+     * <p>
+     * Example: {@code Flexible}
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -105,6 +156,11 @@ public final class UpdateLoadBalancerShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
     private final ShapeDetails shapeDetails;
 
+    /**
+     * The configuration details to update load balancer to a different profile.
+     *
+     * @return the value
+     **/
     public ShapeDetails getShapeDetails() {
         return shapeDetails;
     }

@@ -30,18 +30,33 @@ public final class ContainerRepositoryReadme {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Readme content. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
+        /**
+         * Readme content. Avoid entering confidential information.
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-
+        /**
+         * Readme format. Supported formats are text/plain and text/markdown.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private Format format;
 
+        /**
+         * Readme format. Supported formats are text/plain and text/markdown.
+         * @param format the value to set
+         * @return this builder
+         **/
         public Builder format(Format format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -83,6 +98,10 @@ public final class ContainerRepositoryReadme {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
+    /**
+     * Readme content. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getContent() {
         return content;
     }
@@ -140,6 +159,10 @@ public final class ContainerRepositoryReadme {
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final Format format;
 
+    /**
+     * Readme format. Supported formats are text/plain and text/markdown.
+     * @return the value
+     **/
     public Format getFormat() {
         return format;
     }

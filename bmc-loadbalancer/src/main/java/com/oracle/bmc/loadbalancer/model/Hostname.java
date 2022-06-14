@@ -31,18 +31,49 @@ public final class Hostname {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential
+         * information.
+         * <p>
+         * Example: {@code example_hostname_001}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential
+         * information.
+         * <p>
+         * Example: {@code example_hostname_001}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A virtual hostname. For more information about virtual hostname string construction, see
+         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+         * <p>
+         * Example: {@code app.example.com}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * A virtual hostname. For more information about virtual hostname string construction, see
+         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+         * <p>
+         * Example: {@code app.example.com}
+         *
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -88,6 +119,14 @@ public final class Hostname {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential
+     * information.
+     * <p>
+     * Example: {@code example_hostname_001}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -102,6 +141,14 @@ public final class Hostname {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * A virtual hostname. For more information about virtual hostname string construction, see
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+     * <p>
+     * Example: {@code app.example.com}
+     *
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }

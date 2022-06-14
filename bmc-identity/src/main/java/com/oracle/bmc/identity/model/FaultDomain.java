@@ -33,36 +33,65 @@ public final class FaultDomain {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Fault Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Fault Domain.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The OCID of the Fault Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Fault Domain.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment. Currently only tenancy (root) compartment can be provided.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment. Currently only tenancy (root) compartment can be provided.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the availabilityDomain where the Fault Domain belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The name of the availabilityDomain where the Fault Domain belongs.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
@@ -108,6 +137,10 @@ public final class FaultDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Fault Domain.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -118,6 +151,10 @@ public final class FaultDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Fault Domain.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -128,6 +165,10 @@ public final class FaultDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment. Currently only tenancy (root) compartment can be provided.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -138,6 +179,10 @@ public final class FaultDomain {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The name of the availabilityDomain where the Fault Domain belongs.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }

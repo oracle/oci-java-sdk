@@ -28,18 +28,37 @@ package com.oracle.bmc.analytics.model;
 public final class PrivateEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The VCN OCID for the private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The VCN OCID for the private endpoint.
+         *
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * The subnet OCID for the private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The subnet OCID for the private endpoint.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -89,6 +108,11 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The VCN OCID for the private endpoint.
+     *
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -100,6 +124,11 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The subnet OCID for the private endpoint.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }

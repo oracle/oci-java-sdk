@@ -16,6 +16,9 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment. Is exclusive with the {@code streamPoolId} parameter. One of them is required.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String streamPoolId;
 
+    /**
+     * The OCID of the stream pool. Is exclusive with the {@code compartmentId} parameter. One of them is required.
+     */
     public String getStreamPoolId() {
         return streamPoolId;
     }
@@ -33,6 +39,10 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String id;
 
+    /**
+     * A filter to return only resources that match the given ID exactly.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -42,6 +52,10 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the given name exactly.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -50,6 +64,9 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return. The value must be between 1 and 50. The default is 10.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -58,6 +75,9 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     */
     public String getPage() {
         return page;
     }
@@ -104,6 +124,10 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -150,6 +174,10 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -159,6 +187,10 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.streaming.model.Stream.LifecycleState lifecycleState;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.streaming.model.Stream.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -169,6 +201,11 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -180,10 +217,14 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment. Is exclusive with the {@code streamPoolId} parameter. One of them is required.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment. Is exclusive with the {@code streamPoolId} parameter. One of them is required.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -191,10 +232,14 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The OCID of the stream pool. Is exclusive with the {@code compartmentId} parameter. One of them is required.
+         */
         private String streamPoolId = null;
 
         /**
          * The OCID of the stream pool. Is exclusive with the {@code compartmentId} parameter. One of them is required.
+         * @param streamPoolId the value to set
          * @return this builder instance
          */
         public Builder streamPoolId(String streamPoolId) {
@@ -202,11 +247,16 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given ID exactly.
+         *
+         */
         private String id = null;
 
         /**
          * A filter to return only resources that match the given ID exactly.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -214,11 +264,16 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given name exactly.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the given name exactly.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -226,10 +281,14 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return. The value must be between 1 and 50. The default is 10.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. The value must be between 1 and 50. The default is 10.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -237,10 +296,14 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -248,11 +311,16 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -260,11 +328,16 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -272,11 +345,16 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.streaming.model.Stream.LifecycleState lifecycleState = null;
 
         /**
          * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -285,12 +363,18 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -384,7 +468,8 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -400,6 +485,10 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

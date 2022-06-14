@@ -18,6 +18,9 @@ public class UpdateConfigurationRequest
      */
     private String compartmentId;
 
+    /**
+     * ID of the root compartment (tenancy)
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,9 @@ public class UpdateConfigurationRequest
      */
     private com.oracle.bmc.audit.model.UpdateConfigurationDetails updateConfigurationDetails;
 
+    /**
+     * The configuration properties
+     */
     public com.oracle.bmc.audit.model.UpdateConfigurationDetails getUpdateConfigurationDetails() {
         return updateConfigurationDetails;
     }
@@ -48,10 +54,14 @@ public class UpdateConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the root compartment (tenancy)
+         */
         private String compartmentId = null;
 
         /**
          * ID of the root compartment (tenancy)
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -59,11 +69,15 @@ public class UpdateConfigurationRequest
             return this;
         }
 
+        /**
+         * The configuration properties
+         */
         private com.oracle.bmc.audit.model.UpdateConfigurationDetails updateConfigurationDetails =
                 null;
 
         /**
          * The configuration properties
+         * @param updateConfigurationDetails the value to set
          * @return this builder instance
          */
         public Builder updateConfigurationDetails(
@@ -153,7 +167,8 @@ public class UpdateConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -161,6 +176,10 @@ public class UpdateConfigurationRequest
                 .updateConfigurationDetails(updateConfigurationDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

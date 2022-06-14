@@ -81,10 +81,17 @@ public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTrigge
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The OCID of the DevOps code repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
+        /**
+         * The OCID of the DevOps code repository.
+         * @param repositoryId the value to set
+         * @return this builder
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
@@ -154,6 +161,10 @@ public final class CreateDevopsCodeRepositoryTriggerDetails extends CreateTrigge
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
+    /**
+     * The OCID of the DevOps code repository.
+     * @return the value
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }

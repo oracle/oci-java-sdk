@@ -30,27 +30,59 @@ public final class WorkRequestError {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A short error code that defines the error, meant for programmatic parsing.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
+        /**
+         * A short error code that defines the error, meant for programmatic parsing.
+         *
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * Error message.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * Error message.
+         *
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The date and time the error occured, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time the error occured, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -94,6 +126,11 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * A short error code that defines the error, meant for programmatic parsing.
+     *
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -105,6 +142,11 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * Error message.
+     *
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -118,6 +160,13 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time the error occured, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }

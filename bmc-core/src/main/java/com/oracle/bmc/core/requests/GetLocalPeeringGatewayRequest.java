@@ -17,6 +17,9 @@ public class GetLocalPeeringGatewayRequest
      */
     private String localPeeringGatewayId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+     */
     public String getLocalPeeringGatewayId() {
         return localPeeringGatewayId;
     }
@@ -28,10 +31,14 @@ public class GetLocalPeeringGatewayRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+         */
         private String localPeeringGatewayId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+         * @param localPeeringGatewayId the value to set
          * @return this builder instance
          */
         public Builder localPeeringGatewayId(String localPeeringGatewayId) {
@@ -107,12 +114,17 @@ public class GetLocalPeeringGatewayRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().localPeeringGatewayId(localPeeringGatewayId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

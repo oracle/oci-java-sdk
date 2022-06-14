@@ -16,6 +16,9 @@ public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String name;
 
+    /**
+     * The name of the resource type.
+     */
     public String getName() {
         return name;
     }
@@ -26,6 +29,11 @@ public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +45,14 @@ public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The name of the resource type.
+         */
         private String name = null;
 
         /**
          * The name of the resource type.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -48,12 +60,18 @@ public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
          * request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,12 +149,17 @@ public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().name(name).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

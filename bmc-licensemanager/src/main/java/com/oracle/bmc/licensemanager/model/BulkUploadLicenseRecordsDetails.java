@@ -32,27 +32,51 @@ public final class BulkUploadLicenseRecordsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where license records are created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where license records are created.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Name of the file that is being uploaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileName")
         private String fileName;
 
+        /**
+         * Name of the file that is being uploaded.
+         * @param fileName the value to set
+         * @return this builder
+         **/
         public Builder fileName(String fileName) {
             this.fileName = fileName;
             this.__explicitlySet__.add("fileName");
             return this;
         }
-
+        /**
+         * The file to be uploaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileContent")
         private String fileContent;
 
+        /**
+         * The file to be uploaded.
+         * @param fileContent the value to set
+         * @return this builder
+         **/
         public Builder fileContent(String fileContent) {
             this.fileContent = fileContent;
             this.__explicitlySet__.add("fileContent");
@@ -99,6 +123,11 @@ public final class BulkUploadLicenseRecordsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where license records are created.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -109,6 +138,10 @@ public final class BulkUploadLicenseRecordsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
     private final String fileName;
 
+    /**
+     * Name of the file that is being uploaded.
+     * @return the value
+     **/
     public String getFileName() {
         return fileName;
     }
@@ -119,6 +152,10 @@ public final class BulkUploadLicenseRecordsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileContent")
     private final String fileContent;
 
+    /**
+     * The file to be uploaded.
+     * @return the value
+     **/
     public String getFileContent() {
         return fileContent;
     }

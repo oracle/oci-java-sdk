@@ -31,18 +31,33 @@ public final class VmClusterUpdateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         * @param updateId the value to set
+         * @return this builder
+         **/
         public Builder updateId(String updateId) {
             this.updateId = updateId;
             this.__explicitlySet__.add("updateId");
             return this;
         }
-
+        /**
+         * The update action to perform.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
         private UpdateAction updateAction;
 
+        /**
+         * The update action to perform.
+         * @param updateAction the value to set
+         * @return this builder
+         **/
         public Builder updateAction(UpdateAction updateAction) {
             this.updateAction = updateAction;
             this.__explicitlySet__.add("updateAction");
@@ -85,6 +100,10 @@ public final class VmClusterUpdateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
     private final String updateId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     * @return the value
+     **/
     public String getUpdateId() {
         return updateId;
     }
@@ -131,6 +150,10 @@ public final class VmClusterUpdateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
     private final UpdateAction updateAction;
 
+    /**
+     * The update action to perform.
+     * @return the value
+     **/
     public UpdateAction getUpdateAction() {
         return updateAction;
     }

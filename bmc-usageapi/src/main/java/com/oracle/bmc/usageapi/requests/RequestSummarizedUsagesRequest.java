@@ -20,6 +20,10 @@ public class RequestSummarizedUsagesRequest
     private com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails
             requestSummarizedUsagesDetails;
 
+    /**
+     * getUsageRequest contains query inforamtion.
+     *
+     */
     public com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails
             getRequestSummarizedUsagesDetails() {
         return requestSummarizedUsagesDetails;
@@ -31,6 +35,11 @@ public class RequestSummarizedUsagesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +50,11 @@ public class RequestSummarizedUsagesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results.
+     * This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -49,6 +63,9 @@ public class RequestSummarizedUsagesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximumimum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -71,12 +88,17 @@ public class RequestSummarizedUsagesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * getUsageRequest contains query inforamtion.
+         *
+         */
         private com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails
                 requestSummarizedUsagesDetails = null;
 
         /**
          * getUsageRequest contains query inforamtion.
          *
+         * @param requestSummarizedUsagesDetails the value to set
          * @return this builder instance
          */
         public Builder requestSummarizedUsagesDetails(
@@ -86,12 +108,18 @@ public class RequestSummarizedUsagesRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -99,12 +127,18 @@ public class RequestSummarizedUsagesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results.
+         * This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results.
          * This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -112,10 +146,14 @@ public class RequestSummarizedUsagesRequest
             return this;
         }
 
+        /**
+         * The maximumimum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximumimum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -208,7 +246,8 @@ public class RequestSummarizedUsagesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -218,6 +257,10 @@ public class RequestSummarizedUsagesRequest
                 .limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

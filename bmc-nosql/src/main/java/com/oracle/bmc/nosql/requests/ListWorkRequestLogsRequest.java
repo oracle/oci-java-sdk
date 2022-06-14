@@ -16,6 +16,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String workRequestId;
 
+    /**
+     * The ID of the asynchronous request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -24,6 +27,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +41,12 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start
+     * retrieving results. This is usually retrieved from a previous
+     * list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -43,6 +55,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -54,10 +69,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the asynchronous request.
+         */
         private String workRequestId = null;
 
         /**
          * The ID of the asynchronous request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -65,10 +84,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -76,6 +99,12 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start
+         * retrieving results. This is usually retrieved from a previous
+         * list call.
+         *
+         */
         private String page = null;
 
         /**
@@ -83,6 +112,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
          * retrieving results. This is usually retrieved from a previous
          * list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -90,10 +120,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -175,7 +209,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -185,6 +220,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 .limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

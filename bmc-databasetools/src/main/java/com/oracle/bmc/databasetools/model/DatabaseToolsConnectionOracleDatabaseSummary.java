@@ -127,19 +127,33 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             this.__explicitlySet__.add("relatedResource");
             return this;
         }
-
+        /**
+         * The connect descriptor or Easy Connect Naming method used to connect to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
+        /**
+         * The connect descriptor or Easy Connect Naming method used to connect to the database.
+         * @param connectionString the value to set
+         * @return this builder
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-
+        /**
+         * The database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The database user name.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
@@ -154,28 +168,53 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
             this.__explicitlySet__.add("userPassword");
             return this;
         }
-
+        /**
+         * The advanced connection properties key-value pair (e.g., {@code oracle.net.ssl_server_dn_match}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
         private java.util.Map<String, String> advancedProperties;
 
+        /**
+         * The advanced connection properties key-value pair (e.g., {@code oracle.net.ssl_server_dn_match}).
+         * @param advancedProperties the value to set
+         * @return this builder
+         **/
         public Builder advancedProperties(java.util.Map<String, String> advancedProperties) {
             this.advancedProperties = advancedProperties;
             this.__explicitlySet__.add("advancedProperties");
             return this;
         }
-
+        /**
+         * Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
+         * the client private key and associated certificates required for client authentication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
         private java.util.List<DatabaseToolsKeyStoreSummary> keyStores;
 
+        /**
+         * Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
+         * the client private key and associated certificates required for client authentication.
+         *
+         * @param keyStores the value to set
+         * @return this builder
+         **/
         public Builder keyStores(java.util.List<DatabaseToolsKeyStoreSummary> keyStores) {
             this.keyStores = keyStores;
             this.__explicitlySet__.add("keyStores");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+         * @param privateEndpointId the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
@@ -293,21 +332,29 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
     }
 
     /**
-     * Connect descriptor or Easy Connect Naming method to connect to the database.
+     * The connect descriptor or Easy Connect Naming method used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
+    /**
+     * The connect descriptor or Easy Connect Naming method used to connect to the database.
+     * @return the value
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * Database user name.
+     * The database user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The database user name.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -320,11 +367,15 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
     }
 
     /**
-     * Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * The advanced connection properties key-value pair (e.g., {@code oracle.net.ssl_server_dn_match}).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
     private final java.util.Map<String, String> advancedProperties;
 
+    /**
+     * The advanced connection properties key-value pair (e.g., {@code oracle.net.ssl_server_dn_match}).
+     * @return the value
+     **/
     public java.util.Map<String, String> getAdvancedProperties() {
         return advancedProperties;
     }
@@ -337,16 +388,26 @@ public final class DatabaseToolsConnectionOracleDatabaseSummary
     @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
     private final java.util.List<DatabaseToolsKeyStoreSummary> keyStores;
 
+    /**
+     * Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
+     * the client private key and associated certificates required for client authentication.
+     *
+     * @return the value
+     **/
     public java.util.List<DatabaseToolsKeyStoreSummary> getKeyStores() {
         return keyStores;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code DatabaseToolsPrivateEndpoint} used to access the database in the customer VCN.
+     * @return the value
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }

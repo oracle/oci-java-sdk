@@ -27,9 +27,17 @@ package com.oracle.bmc.devops.model;
 public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The trigger that invoked the build run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
         private String triggerId;
 
+        /**
+         * The trigger that invoked the build run.
+         * @param triggerId the value to set
+         * @return this builder
+         **/
         public Builder triggerId(String triggerId) {
             this.triggerId = triggerId;
             this.__explicitlySet__.add("triggerId");
@@ -44,10 +52,17 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
             this.__explicitlySet__.add("triggerInfo");
             return this;
         }
-
+        /**
+         * The DevOps code repository identifier that invoked the build run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
+        /**
+         * The DevOps code repository identifier that invoked the build run.
+         * @param repositoryId the value to set
+         * @return this builder
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
@@ -102,6 +117,10 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
     private final String triggerId;
 
+    /**
+     * The trigger that invoked the build run.
+     * @return the value
+     **/
     public String getTriggerId() {
         return triggerId;
     }
@@ -119,6 +138,10 @@ public final class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
+    /**
+     * The DevOps code repository identifier that invoked the build run.
+     * @return the value
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }

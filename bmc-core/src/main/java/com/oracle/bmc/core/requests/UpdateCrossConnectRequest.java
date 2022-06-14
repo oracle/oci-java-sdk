@@ -18,6 +18,9 @@ public class UpdateCrossConnectRequest
      */
     private String crossConnectId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+     */
     public String getCrossConnectId() {
         return crossConnectId;
     }
@@ -26,6 +29,9 @@ public class UpdateCrossConnectRequest
      */
     private com.oracle.bmc.core.model.UpdateCrossConnectDetails updateCrossConnectDetails;
 
+    /**
+     * Update CrossConnect fields.
+     */
     public com.oracle.bmc.core.model.UpdateCrossConnectDetails getUpdateCrossConnectDetails() {
         return updateCrossConnectDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateCrossConnectRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,10 +71,14 @@ public class UpdateCrossConnectRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         */
         private String crossConnectId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         * @param crossConnectId the value to set
          * @return this builder instance
          */
         public Builder crossConnectId(String crossConnectId) {
@@ -70,11 +86,15 @@ public class UpdateCrossConnectRequest
             return this;
         }
 
+        /**
+         * Update CrossConnect fields.
+         */
         private com.oracle.bmc.core.model.UpdateCrossConnectDetails updateCrossConnectDetails =
                 null;
 
         /**
          * Update CrossConnect fields.
+         * @param updateCrossConnectDetails the value to set
          * @return this builder instance
          */
         public Builder updateCrossConnectDetails(
@@ -83,6 +103,12 @@ public class UpdateCrossConnectRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +116,7 @@ public class UpdateCrossConnectRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +207,8 @@ public class UpdateCrossConnectRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +217,10 @@ public class UpdateCrossConnectRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

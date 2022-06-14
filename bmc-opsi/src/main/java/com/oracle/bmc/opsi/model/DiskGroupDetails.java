@@ -28,18 +28,33 @@ public final class DiskGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The diskgroup name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskgroupName")
         private String diskgroupName;
 
+        /**
+         * The diskgroup name.
+         * @param diskgroupName the value to set
+         * @return this builder
+         **/
         public Builder diskgroupName(String diskgroupName) {
             this.diskgroupName = diskgroupName;
             this.__explicitlySet__.add("diskgroupName");
             return this;
         }
-
+        /**
+         * The ASM name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asmName")
         private String asmName;
 
+        /**
+         * The ASM name.
+         * @param asmName the value to set
+         * @return this builder
+         **/
         public Builder asmName(String asmName) {
             this.asmName = asmName;
             this.__explicitlySet__.add("asmName");
@@ -81,6 +96,10 @@ public final class DiskGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("diskgroupName")
     private final String diskgroupName;
 
+    /**
+     * The diskgroup name.
+     * @return the value
+     **/
     public String getDiskgroupName() {
         return diskgroupName;
     }
@@ -91,6 +110,10 @@ public final class DiskGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("asmName")
     private final String asmName;
 
+    /**
+     * The ASM name.
+     * @return the value
+     **/
     public String getAsmName() {
         return asmName;
     }

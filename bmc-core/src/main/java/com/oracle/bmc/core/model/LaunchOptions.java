@@ -47,54 +47,153 @@ public final class LaunchOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Emulation type for the boot volume.
+         * * {@code ISCSI} - ISCSI attached block storage device.
+         * * {@code SCSI} - Emulated SCSI disk.
+         * * {@code IDE} - Emulated IDE disk.
+         * * {@code VFIO} - Direct attached Virtual Function storage. This is the default option for local data
+         * volumes on platform images.
+         * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
+         * storage volumes on platform images.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
         private BootVolumeType bootVolumeType;
 
+        /**
+         * Emulation type for the boot volume.
+         * * {@code ISCSI} - ISCSI attached block storage device.
+         * * {@code SCSI} - Emulated SCSI disk.
+         * * {@code IDE} - Emulated IDE disk.
+         * * {@code VFIO} - Direct attached Virtual Function storage. This is the default option for local data
+         * volumes on platform images.
+         * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
+         * storage volumes on platform images.
+         *
+         * @param bootVolumeType the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeType(BootVolumeType bootVolumeType) {
             this.bootVolumeType = bootVolumeType;
             this.__explicitlySet__.add("bootVolumeType");
             return this;
         }
-
+        /**
+         * Firmware used to boot VM. Select the option that matches your operating system.
+         * * {@code BIOS} - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating
+         * systems that boot using MBR style bootloaders.
+         * * {@code UEFI_64} - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the
+         * default for platform images.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firmware")
         private Firmware firmware;
 
+        /**
+         * Firmware used to boot VM. Select the option that matches your operating system.
+         * * {@code BIOS} - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating
+         * systems that boot using MBR style bootloaders.
+         * * {@code UEFI_64} - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the
+         * default for platform images.
+         *
+         * @param firmware the value to set
+         * @return this builder
+         **/
         public Builder firmware(Firmware firmware) {
             this.firmware = firmware;
             this.__explicitlySet__.add("firmware");
             return this;
         }
-
+        /**
+         * Emulation type for the physical network interface card (NIC).
+         * * {@code E1000} - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
+         * when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkType")
         private NetworkType networkType;
 
+        /**
+         * Emulation type for the physical network interface card (NIC).
+         * * {@code E1000} - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
+         * when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+         *
+         * @param networkType the value to set
+         * @return this builder
+         **/
         public Builder networkType(NetworkType networkType) {
             this.networkType = networkType;
             this.__explicitlySet__.add("networkType");
             return this;
         }
-
+        /**
+         * Emulation type for volume.
+         * * {@code ISCSI} - ISCSI attached block storage device.
+         * * {@code SCSI} - Emulated SCSI disk.
+         * * {@code IDE} - Emulated IDE disk.
+         * * {@code VFIO} - Direct attached Virtual Function storage. This is the default option for local data
+         * volumes on platform images.
+         * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
+         * storage volumes on platform images.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")
         private RemoteDataVolumeType remoteDataVolumeType;
 
+        /**
+         * Emulation type for volume.
+         * * {@code ISCSI} - ISCSI attached block storage device.
+         * * {@code SCSI} - Emulated SCSI disk.
+         * * {@code IDE} - Emulated IDE disk.
+         * * {@code VFIO} - Direct attached Virtual Function storage. This is the default option for local data
+         * volumes on platform images.
+         * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
+         * storage volumes on platform images.
+         *
+         * @param remoteDataVolumeType the value to set
+         * @return this builder
+         **/
         public Builder remoteDataVolumeType(RemoteDataVolumeType remoteDataVolumeType) {
             this.remoteDataVolumeType = remoteDataVolumeType;
             this.__explicitlySet__.add("remoteDataVolumeType");
             return this;
         }
-
+        /**
+         * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in
+         * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
+        /**
+         * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in
+         * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
+         *
+         * @param isPvEncryptionInTransitEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
             return this;
         }
-
+        /**
+         * Whether to enable consistent volume naming feature. Defaults to false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConsistentVolumeNamingEnabled")
         private Boolean isConsistentVolumeNamingEnabled;
 
+        /**
+         * Whether to enable consistent volume naming feature. Defaults to false.
+         * @param isConsistentVolumeNamingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isConsistentVolumeNamingEnabled(Boolean isConsistentVolumeNamingEnabled) {
             this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
             this.__explicitlySet__.add("isConsistentVolumeNamingEnabled");
@@ -217,6 +316,18 @@ public final class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
     private final BootVolumeType bootVolumeType;
 
+    /**
+     * Emulation type for the boot volume.
+     * * {@code ISCSI} - ISCSI attached block storage device.
+     * * {@code SCSI} - Emulated SCSI disk.
+     * * {@code IDE} - Emulated IDE disk.
+     * * {@code VFIO} - Direct attached Virtual Function storage. This is the default option for local data
+     * volumes on platform images.
+     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
+     * storage volumes on platform images.
+     *
+     * @return the value
+     **/
     public BootVolumeType getBootVolumeType() {
         return bootVolumeType;
     }
@@ -285,6 +396,15 @@ public final class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("firmware")
     private final Firmware firmware;
 
+    /**
+     * Firmware used to boot VM. Select the option that matches your operating system.
+     * * {@code BIOS} - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating
+     * systems that boot using MBR style bootloaders.
+     * * {@code UEFI_64} - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the
+     * default for platform images.
+     *
+     * @return the value
+     **/
     public Firmware getFirmware() {
         return firmware;
     }
@@ -354,6 +474,15 @@ public final class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
     private final NetworkType networkType;
 
+    /**
+     * Emulation type for the physical network interface card (NIC).
+     * * {@code E1000} - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+     * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
+     * when you launch an instance using hardware-assisted (SR-IOV) networking.
+     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
+     *
+     * @return the value
+     **/
     public NetworkType getNetworkType() {
         return networkType;
     }
@@ -431,6 +560,18 @@ public final class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")
     private final RemoteDataVolumeType remoteDataVolumeType;
 
+    /**
+     * Emulation type for volume.
+     * * {@code ISCSI} - ISCSI attached block storage device.
+     * * {@code SCSI} - Emulated SCSI disk.
+     * * {@code IDE} - Emulated IDE disk.
+     * * {@code VFIO} - Direct attached Virtual Function storage. This is the default option for local data
+     * volumes on platform images.
+     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
+     * storage volumes on platform images.
+     *
+     * @return the value
+     **/
     public RemoteDataVolumeType getRemoteDataVolumeType() {
         return remoteDataVolumeType;
     }
@@ -443,6 +584,12 @@ public final class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
+    /**
+     * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in
+     * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
+     *
+     * @return the value
+     **/
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
@@ -453,6 +600,10 @@ public final class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isConsistentVolumeNamingEnabled")
     private final Boolean isConsistentVolumeNamingEnabled;
 
+    /**
+     * Whether to enable consistent volume naming feature. Defaults to false.
+     * @return the value
+     **/
     public Boolean getIsConsistentVolumeNamingEnabled() {
         return isConsistentVolumeNamingEnabled;
     }

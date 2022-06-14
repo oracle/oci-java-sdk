@@ -27,9 +27,17 @@ public final class LinkCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array containing LinkSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LinkSummary> items;
 
+        /**
+         * Array containing LinkSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LinkSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class LinkCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LinkSummary> items;
 
+    /**
+     * Array containing LinkSummary items.
+     * @return the value
+     **/
     public java.util.List<LinkSummary> getItems() {
         return items;
     }

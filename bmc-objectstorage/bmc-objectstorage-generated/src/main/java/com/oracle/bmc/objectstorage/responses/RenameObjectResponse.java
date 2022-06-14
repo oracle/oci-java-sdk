@@ -13,6 +13,10 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    /**
+     * The entity tag (ETag) for the object.
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -42,6 +56,10 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.Date lastModified;
 
+    /**
+     * The time the object was modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * @return the value
+     */
     public java.util.Date getLastModified() {
         return lastModified;
     }
@@ -51,6 +69,10 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String versionId;
 
+    /**
+     * VersionId of the renamed object
+     * @return the value
+     */
     public String getVersionId() {
         return versionId;
     }
@@ -86,36 +108,80 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The entity tag (ETag) for the object.
+         */
         private String eTag;
 
+        /**
+         * The entity tag (ETag) for the object.
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The time the object was modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         */
         private java.util.Date lastModified;
 
+        /**
+         * The time the object was modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * @param lastModified the value to set
+         * @return this builder
+         */
         public Builder lastModified(java.util.Date lastModified) {
             this.lastModified = lastModified;
             return this;
         }
 
+        /**
+         * VersionId of the renamed object
+         */
         private String versionId;
 
+        /**
+         * VersionId of the renamed object
+         * @param versionId the value to set
+         * @return this builder
+         */
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             return this;
@@ -136,6 +202,10 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public RenameObjectResponse build() {
             return new RenameObjectResponse(
                     __httpStatusCode__,
@@ -147,6 +217,10 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

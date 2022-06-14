@@ -30,9 +30,19 @@ public final class ShapeAlternativeObject {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        /**
+         * The name of the shape.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
@@ -75,6 +85,11 @@ public final class ShapeAlternativeObject {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
+    /**
+     * The name of the shape.
+     *
+     * @return the value
+     **/
     public String getShapeName() {
         return shapeName;
     }

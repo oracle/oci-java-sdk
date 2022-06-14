@@ -59,6 +59,7 @@ package com.oracle.bmc.graalvm;
     com.oracle.bmc.functions.SdkClientsMetadata.class,
     com.oracle.bmc.genericartifactscontent.SdkClientsMetadata.class,
     com.oracle.bmc.goldengate.SdkClientsMetadata.class,
+    com.oracle.bmc.governancerulescontrolplane.SdkClientsMetadata.class,
     com.oracle.bmc.healthchecks.SdkClientsMetadata.class,
     com.oracle.bmc.identity.IdentityClient.class,
     com.oracle.bmc.identitydataplane.SdkClientsMetadata.class,
@@ -82,6 +83,7 @@ package com.oracle.bmc.graalvm;
     com.oracle.bmc.oce.SdkClientsMetadata.class,
     com.oracle.bmc.ocvp.SdkClientsMetadata.class,
     com.oracle.bmc.oda.SdkClientsMetadata.class,
+    com.oracle.bmc.onesubscription.SdkClientsMetadata.class,
     com.oracle.bmc.ons.SdkClientsMetadata.class,
     com.oracle.bmc.operatoraccesscontrol.SdkClientsMetadata.class,
     com.oracle.bmc.opsi.SdkClientsMetadata.class,
@@ -109,6 +111,7 @@ package com.oracle.bmc.graalvm;
     com.oracle.bmc.vault.SdkClientsMetadata.class,
     com.oracle.bmc.visualbuilder.SdkClientsMetadata.class,
     com.oracle.bmc.vulnerabilityscanning.SdkClientsMetadata.class,
+    com.oracle.bmc.waa.SdkClientsMetadata.class,
     com.oracle.bmc.waas.SdkClientsMetadata.class,
     com.oracle.bmc.waf.SdkClientsMetadata.class,
     com.oracle.bmc.workrequests.SdkClientsMetadata.class

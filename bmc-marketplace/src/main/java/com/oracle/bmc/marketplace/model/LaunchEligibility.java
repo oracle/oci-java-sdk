@@ -41,36 +41,65 @@ public final class LaunchEligibility {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * PIC Image ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * PIC Image ID
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * Is the tenant permitted to launch the PIC image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLaunchAllowed")
         private Boolean isLaunchAllowed;
 
+        /**
+         * Is the tenant permitted to launch the PIC image
+         * @param isLaunchAllowed the value to set
+         * @return this builder
+         **/
         public Builder isLaunchAllowed(Boolean isLaunchAllowed) {
             this.isLaunchAllowed = isLaunchAllowed;
             this.__explicitlySet__.add("isLaunchAllowed");
             return this;
         }
-
+        /**
+         * related meters for the PIC image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("meters")
         private String meters;
 
+        /**
+         * related meters for the PIC image
+         * @param meters the value to set
+         * @return this builder
+         **/
         public Builder meters(String meters) {
             this.meters = meters;
             this.__explicitlySet__.add("meters");
             return this;
         }
-
+        /**
+         * Reason the account is ineligible to launch paid listings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
         private IneligibilityReasonEnum ineligibilityReason;
 
+        /**
+         * Reason the account is ineligible to launch paid listings
+         * @param ineligibilityReason the value to set
+         * @return this builder
+         **/
         public Builder ineligibilityReason(IneligibilityReasonEnum ineligibilityReason) {
             this.ineligibilityReason = ineligibilityReason;
             this.__explicitlySet__.add("ineligibilityReason");
@@ -117,6 +146,10 @@ public final class LaunchEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * PIC Image ID
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -127,6 +160,10 @@ public final class LaunchEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("isLaunchAllowed")
     private final Boolean isLaunchAllowed;
 
+    /**
+     * Is the tenant permitted to launch the PIC image
+     * @return the value
+     **/
     public Boolean getIsLaunchAllowed() {
         return isLaunchAllowed;
     }
@@ -137,6 +174,10 @@ public final class LaunchEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("meters")
     private final String meters;
 
+    /**
+     * related meters for the PIC image
+     * @return the value
+     **/
     public String getMeters() {
         return meters;
     }
@@ -147,6 +188,10 @@ public final class LaunchEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
     private final IneligibilityReasonEnum ineligibilityReason;
 
+    /**
+     * Reason the account is ineligible to launch paid listings
+     * @return the value
+     **/
     public IneligibilityReasonEnum getIneligibilityReason() {
         return ineligibilityReason;
     }

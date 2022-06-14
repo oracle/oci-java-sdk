@@ -29,9 +29,17 @@ public final class AuditArchiveRetrievalCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of archive retrieval summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AuditArchiveRetrievalSummary> items;
 
+        /**
+         * Array of archive retrieval summary.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AuditArchiveRetrievalSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class AuditArchiveRetrievalCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AuditArchiveRetrievalSummary> items;
 
+    /**
+     * Array of archive retrieval summary.
+     * @return the value
+     **/
     public java.util.List<AuditArchiveRetrievalSummary> getItems() {
         return items;
     }

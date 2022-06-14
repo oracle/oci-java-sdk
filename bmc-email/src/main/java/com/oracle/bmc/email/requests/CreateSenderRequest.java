@@ -17,6 +17,9 @@ public class CreateSenderRequest
      */
     private com.oracle.bmc.email.model.CreateSenderDetails createSenderDetails;
 
+    /**
+     * Create a sender.
+     */
     public com.oracle.bmc.email.model.CreateSenderDetails getCreateSenderDetails() {
         return createSenderDetails;
     }
@@ -25,6 +28,9 @@ public class CreateSenderRequest
      */
     private String opcRequestId;
 
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,10 +52,14 @@ public class CreateSenderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Create a sender.
+         */
         private com.oracle.bmc.email.model.CreateSenderDetails createSenderDetails = null;
 
         /**
          * Create a sender.
+         * @param createSenderDetails the value to set
          * @return this builder instance
          */
         public Builder createSenderDetails(
@@ -58,10 +68,14 @@ public class CreateSenderRequest
             return this;
         }
 
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,12 +164,17 @@ public class CreateSenderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().createSenderDetails(createSenderDetails).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

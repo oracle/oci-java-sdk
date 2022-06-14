@@ -50,63 +50,147 @@ public final class UpdateModuleStreamDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the stream of the parent module
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
+        /**
+         * The name of the stream of the parent module
+         * @param streamName the value to set
+         * @return this builder
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-
+        /**
+         * The status of the stream
+         * <p>
+         * A stream with the "ENABLED" status can be used as a source for installing
+         * profiles.  Streams with this status are also "ACTIVE".
+         * <p>
+         * A stream with the "DISABLED" status cannot be the source for installing
+         * profiles.  To install profiles and packages from this stream, it must be
+         * enabled.
+         * <p>
+         * A stream with the "ACTIVE" status can be used as a source for installing
+         * profiles.  The packages that comprise the stream are also used when a
+         * matching package is installed directly.  In general, a stream can have
+         * this status if it is the default stream for the module and no stream has
+         * been explicitly enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the stream
+         * <p>
+         * A stream with the "ENABLED" status can be used as a source for installing
+         * profiles.  Streams with this status are also "ACTIVE".
+         * <p>
+         * A stream with the "DISABLED" status cannot be the source for installing
+         * profiles.  To install profiles and packages from this stream, it must be
+         * enabled.
+         * <p>
+         * A stream with the "ACTIVE" status can be used as a source for installing
+         * profiles.  The packages that comprise the stream are also used when a
+         * matching package is installed directly.  In general, a stream can have
+         * this status if it is the default stream for the module and no stream has
+         * been explicitly enabled.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The date and time of the last status change for this object, as
+         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
+        /**
+         * The date and time of the last status change for this object, as
+         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+         * section 14.29.
+         *
+         * @param timeModified the value to set
+         * @return this builder
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-
+        /**
+         * The name of the software source that publishes this stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceName")
         private String softwareSourceName;
 
+        /**
+         * The name of the software source that publishes this stream.
+         * @param softwareSourceName the value to set
+         * @return this builder
+         **/
         public Builder softwareSourceName(String softwareSourceName) {
             this.softwareSourceName = softwareSourceName;
             this.__explicitlySet__.add("softwareSourceName");
             return this;
         }
-
+        /**
+         * The URL of the software source that publishes this stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceUrl")
         private String softwareSourceUrl;
 
+        /**
+         * The URL of the software source that publishes this stream.
+         * @param softwareSourceUrl the value to set
+         * @return this builder
+         **/
         public Builder softwareSourceUrl(String softwareSourceUrl) {
             this.softwareSourceUrl = softwareSourceUrl;
             this.__explicitlySet__.add("softwareSourceUrl");
             return this;
         }
-
+        /**
+         * Indicates if the module stream is the default
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates if the module stream is the default
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-
+        /**
+         * The profiles of the stream
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profiles")
         private java.util.List<UpdateModuleStreamProfileDetails> profiles;
 
+        /**
+         * The profiles of the stream
+         * @param profiles the value to set
+         * @return this builder
+         **/
         public Builder profiles(java.util.List<UpdateModuleStreamProfileDetails> profiles) {
             this.profiles = profiles;
             this.__explicitlySet__.add("profiles");
@@ -163,6 +247,10 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
+    /**
+     * The name of the stream of the parent module
+     * @return the value
+     **/
     public String getStreamName() {
         return streamName;
     }
@@ -237,6 +325,24 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the stream
+     * <p>
+     * A stream with the "ENABLED" status can be used as a source for installing
+     * profiles.  Streams with this status are also "ACTIVE".
+     * <p>
+     * A stream with the "DISABLED" status cannot be the source for installing
+     * profiles.  To install profiles and packages from this stream, it must be
+     * enabled.
+     * <p>
+     * A stream with the "ACTIVE" status can be used as a source for installing
+     * profiles.  The packages that comprise the stream are also used when a
+     * matching package is installed directly.  In general, a stream can have
+     * this status if it is the default stream for the module and no stream has
+     * been explicitly enabled.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -250,6 +356,13 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
+    /**
+     * The date and time of the last status change for this object, as
+     * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
+     * section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
@@ -260,6 +373,10 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceName")
     private final String softwareSourceName;
 
+    /**
+     * The name of the software source that publishes this stream.
+     * @return the value
+     **/
     public String getSoftwareSourceName() {
         return softwareSourceName;
     }
@@ -270,6 +387,10 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceUrl")
     private final String softwareSourceUrl;
 
+    /**
+     * The URL of the software source that publishes this stream.
+     * @return the value
+     **/
     public String getSoftwareSourceUrl() {
         return softwareSourceUrl;
     }
@@ -280,6 +401,10 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates if the module stream is the default
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -290,6 +415,10 @@ public final class UpdateModuleStreamDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
     private final java.util.List<UpdateModuleStreamProfileDetails> profiles;
 
+    /**
+     * The profiles of the stream
+     * @return the value
+     **/
     public java.util.List<UpdateModuleStreamProfileDetails> getProfiles() {
         return profiles;
     }

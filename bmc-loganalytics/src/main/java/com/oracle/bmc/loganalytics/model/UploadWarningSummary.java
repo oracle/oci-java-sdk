@@ -33,36 +33,65 @@ public final class UploadWarningSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique internal identifier to refer upload warning.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reference")
         private String reference;
 
+        /**
+         * Unique internal identifier to refer upload warning.
+         * @param reference the value to set
+         * @return this builder
+         **/
         public Builder reference(String reference) {
             this.reference = reference;
             this.__explicitlySet__.add("reference");
             return this;
         }
-
+        /**
+         * Status of the upload. Ex - Failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * Status of the upload. Ex - Failed.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The time when the upload processing started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The time when the upload processing started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The details about upload processing failure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * The details about upload processing failure.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -109,6 +138,10 @@ public final class UploadWarningSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     private final String reference;
 
+    /**
+     * Unique internal identifier to refer upload warning.
+     * @return the value
+     **/
     public String getReference() {
         return reference;
     }
@@ -119,6 +152,10 @@ public final class UploadWarningSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * Status of the upload. Ex - Failed.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -129,6 +166,10 @@ public final class UploadWarningSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time when the upload processing started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -139,6 +180,10 @@ public final class UploadWarningSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * The details about upload processing failure.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }

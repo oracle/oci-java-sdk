@@ -19,6 +19,9 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    /**
+     * OCID for the managed instance
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -28,6 +31,9 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
     private com.oracle.bmc.osmanagement.model.AttachChildSoftwareSourceToManagedInstanceDetails
             attachChildSoftwareSourceToManagedInstanceDetails;
 
+    /**
+     * Details for attaching a Software Source to a Managed Instance
+     */
     public com.oracle.bmc.osmanagement.model.AttachChildSoftwareSourceToManagedInstanceDetails
             getAttachChildSoftwareSourceToManagedInstanceDetails() {
         return attachChildSoftwareSourceToManagedInstanceDetails;
@@ -37,6 +43,9 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +59,14 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -74,10 +91,14 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance
+         */
         private String managedInstanceId = null;
 
         /**
          * OCID for the managed instance
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -85,11 +106,15 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
             return this;
         }
 
+        /**
+         * Details for attaching a Software Source to a Managed Instance
+         */
         private com.oracle.bmc.osmanagement.model.AttachChildSoftwareSourceToManagedInstanceDetails
                 attachChildSoftwareSourceToManagedInstanceDetails = null;
 
         /**
          * Details for attaching a Software Source to a Managed Instance
+         * @param attachChildSoftwareSourceToManagedInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder attachChildSoftwareSourceToManagedInstanceDetails(
@@ -100,10 +125,14 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -111,6 +140,14 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -120,6 +157,7 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -218,7 +256,8 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -229,6 +268,10 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

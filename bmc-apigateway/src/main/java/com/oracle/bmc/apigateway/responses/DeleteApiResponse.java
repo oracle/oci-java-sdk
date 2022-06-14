@@ -17,6 +17,14 @@ public class DeleteApiResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the work request. Use
+     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+     * this id to track the status
+     * of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -29,6 +37,13 @@ public class DeleteApiResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,15 +64,45 @@ public class DeleteApiResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * The OCID of the work request. Use
+         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+         * this id to track the status
+         * of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the work request. Use
+         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+         * this id to track the status
+         * of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -75,11 +120,19 @@ public class DeleteApiResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteApiResponse build() {
             return new DeleteApiResponse(__httpStatusCode__, opcWorkRequestId, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

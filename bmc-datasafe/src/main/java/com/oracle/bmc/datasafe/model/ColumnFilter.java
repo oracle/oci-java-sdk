@@ -42,45 +42,81 @@ public final class ColumnFilter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the column on which the filter must be applied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Name of the column on which the filter must be applied.
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * Specifies the type of operator that must be applied for example in, eq etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
+        /**
+         * Specifies the type of operator that must be applied for example in, eq etc.
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-
+        /**
+         * An array of expressions based on the operator type. A filter may have one or more expressions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expressions")
         private java.util.List<String> expressions;
 
+        /**
+         * An array of expressions based on the operator type. A filter may have one or more expressions.
+         * @param expressions the value to set
+         * @return this builder
+         **/
         public Builder expressions(java.util.List<String> expressions) {
             this.expressions = expressions;
             this.__explicitlySet__.add("expressions");
             return this;
         }
-
+        /**
+         * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
@@ -128,6 +164,10 @@ public final class ColumnFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Name of the column on which the filter must be applied.
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -196,6 +236,10 @@ public final class ColumnFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
+    /**
+     * Specifies the type of operator that must be applied for example in, eq etc.
+     * @return the value
+     **/
     public Operator getOperator() {
         return operator;
     }
@@ -206,6 +250,10 @@ public final class ColumnFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("expressions")
     private final java.util.List<String> expressions;
 
+    /**
+     * An array of expressions based on the operator type. A filter may have one or more expressions.
+     * @return the value
+     **/
     public java.util.List<String> getExpressions() {
         return expressions;
     }
@@ -216,6 +264,10 @@ public final class ColumnFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -226,6 +278,10 @@ public final class ColumnFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }

@@ -63,10 +63,17 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Specifies the OCID of the stage to be redeployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
+        /**
+         * Specifies the OCID of the stage to be redeployed.
+         * @param deployStageId the value to set
+         * @return this builder
+         **/
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = deployStageId;
             this.__explicitlySet__.add("deployStageId");
@@ -158,6 +165,10 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
+    /**
+     * Specifies the OCID of the stage to be redeployed.
+     * @return the value
+     **/
     public String getDeployStageId() {
         return deployStageId;
     }

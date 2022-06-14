@@ -50,63 +50,151 @@ public final class UpdateSensitiveColumnDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The data type of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * The data type of the sensitive column.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+         * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental
+         * data discovery job does not identify these columns as sensitive.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+         * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental
+         * data discovery job does not identify these columns as sensitive.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The OCID of the sensitive type to be associated with the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
+        /**
+         * The OCID of the sensitive type to be associated with the sensitive column.
+         * @param sensitiveTypeId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
-
+        /**
+         * Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one
+         * parent column key. This attribute can be used to establish relationship between columns in a sensitive data model.
+         * Note that the parent column must be added to the sensitive data model before its key can be specified here.
+         * If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the
+         * parent column is automatically updated to reflect the relationship.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
         private java.util.List<String> parentColumnKeys;
 
+        /**
+         * Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one
+         * parent column key. This attribute can be used to establish relationship between columns in a sensitive data model.
+         * Note that the parent column must be added to the sensitive data model before its key can be specified here.
+         * If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the
+         * parent column is automatically updated to reflect the relationship.
+         *
+         * @param parentColumnKeys the value to set
+         * @return this builder
+         **/
         public Builder parentColumnKeys(java.util.List<String> parentColumnKeys) {
             this.parentColumnKeys = parentColumnKeys;
             this.__explicitlySet__.add("parentColumnKeys");
             return this;
         }
-
+        /**
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
+         * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
+         * APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relationType")
         private RelationType relationType;
 
+        /**
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
+         * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
+         * APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+         *
+         * @param relationType the value to set
+         * @return this builder
+         **/
         public Builder relationType(RelationType relationType) {
             this.relationType = relationType;
             this.__explicitlySet__.add("relationType");
             return this;
         }
-
+        /**
+         * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+         * This attribute can be used to establish relationship between columns in a sensitive data model. Note that the
+         * child columns must be added to the sensitive data model before their keys can be specified here. If this attribute
+         * is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
         private java.util.List<String> appDefinedChildColumnKeys;
 
+        /**
+         * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+         * This attribute can be used to establish relationship between columns in a sensitive data model. Note that the
+         * child columns must be added to the sensitive data model before their keys can be specified here. If this attribute
+         * is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
+         *
+         * @param appDefinedChildColumnKeys the value to set
+         * @return this builder
+         **/
         public Builder appDefinedChildColumnKeys(java.util.List<String> appDefinedChildColumnKeys) {
             this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             this.__explicitlySet__.add("appDefinedChildColumnKeys");
             return this;
         }
-
+        /**
+         * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+         * This attribute can be used to establish relationship between columns in a sensitive data model. Note that the
+         * child columns must be added to the sensitive data model before their keys can be specified here. If this attribute
+         * is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
         private java.util.List<String> dbDefinedChildColumnKeys;
 
+        /**
+         * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+         * This attribute can be used to establish relationship between columns in a sensitive data model. Note that the
+         * child columns must be added to the sensitive data model before their keys can be specified here. If this attribute
+         * is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
+         *
+         * @param dbDefinedChildColumnKeys the value to set
+         * @return this builder
+         **/
         public Builder dbDefinedChildColumnKeys(java.util.List<String> dbDefinedChildColumnKeys) {
             this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             this.__explicitlySet__.add("dbDefinedChildColumnKeys");
@@ -163,6 +251,10 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * The data type of the sensitive column.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -214,6 +306,13 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+     * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental
+     * data discovery job does not identify these columns as sensitive.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -224,6 +323,10 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
+    /**
+     * The OCID of the sensitive type to be associated with the sensitive column.
+     * @return the value
+     **/
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -239,6 +342,15 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
     private final java.util.List<String> parentColumnKeys;
 
+    /**
+     * Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one
+     * parent column key. This attribute can be used to establish relationship between columns in a sensitive data model.
+     * Note that the parent column must be added to the sensitive data model before its key can be specified here.
+     * If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the
+     * parent column is automatically updated to reflect the relationship.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getParentColumnKeys() {
         return parentColumnKeys;
     }
@@ -291,6 +403,13 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("relationType")
     private final RelationType relationType;
 
+    /**
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive
+     * column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary.
+     * APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+     *
+     * @return the value
+     **/
     public RelationType getRelationType() {
         return relationType;
     }
@@ -305,6 +424,14 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
     private final java.util.List<String> appDefinedChildColumnKeys;
 
+    /**
+     * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+     * This attribute can be used to establish relationship between columns in a sensitive data model. Note that the
+     * child columns must be added to the sensitive data model before their keys can be specified here. If this attribute
+     * is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAppDefinedChildColumnKeys() {
         return appDefinedChildColumnKeys;
     }
@@ -319,6 +446,14 @@ public final class UpdateSensitiveColumnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
     private final java.util.List<String> dbDefinedChildColumnKeys;
 
+    /**
+     * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+     * This attribute can be used to establish relationship between columns in a sensitive data model. Note that the
+     * child columns must be added to the sensitive data model before their keys can be specified here. If this attribute
+     * is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDbDefinedChildColumnKeys() {
         return dbDefinedChildColumnKeys;
     }

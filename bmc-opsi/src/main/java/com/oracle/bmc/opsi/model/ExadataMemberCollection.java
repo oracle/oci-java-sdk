@@ -47,54 +47,97 @@ public final class ExadataMemberCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         * @param exadataInsightId the value to set
+         * @return this builder
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
             return this;
         }
-
+        /**
+         * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
         private String exadataName;
 
+        /**
+         * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
+         * @param exadataName the value to set
+         * @return this builder
+         **/
         public Builder exadataName(String exadataName) {
             this.exadataName = exadataName;
             this.__explicitlySet__.add("exadataName");
             return this;
         }
-
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
         private String exadataDisplayName;
 
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         * @param exadataDisplayName the value to set
+         * @return this builder
+         **/
         public Builder exadataDisplayName(String exadataDisplayName) {
             this.exadataDisplayName = exadataDisplayName;
             this.__explicitlySet__.add("exadataDisplayName");
             return this;
         }
-
+        /**
+         * Operations Insights internal representation of the the Exadata system type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
         private ExadataType exadataType;
 
+        /**
+         * Operations Insights internal representation of the the Exadata system type.
+         * @param exadataType the value to set
+         * @return this builder
+         **/
         public Builder exadataType(ExadataType exadataType) {
             this.exadataType = exadataType;
             this.__explicitlySet__.add("exadataType");
             return this;
         }
-
+        /**
+         * Exadata rack type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
         private ExadataRackType exadataRackType;
 
+        /**
+         * Exadata rack type.
+         * @param exadataRackType the value to set
+         * @return this builder
+         **/
         public Builder exadataRackType(ExadataRackType exadataRackType) {
             this.exadataRackType = exadataRackType;
             this.__explicitlySet__.add("exadataRackType");
             return this;
         }
-
+        /**
+         * Collection of Exadata members
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ExadataMemberSummary> items;
 
+        /**
+         * Collection of Exadata members
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ExadataMemberSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -149,6 +192,10 @@ public final class ExadataMemberCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     * @return the value
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }
@@ -159,6 +206,10 @@ public final class ExadataMemberCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
     private final String exadataName;
 
+    /**
+     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
+     * @return the value
+     **/
     public String getExadataName() {
         return exadataName;
     }
@@ -169,6 +220,10 @@ public final class ExadataMemberCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
     private final String exadataDisplayName;
 
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     * @return the value
+     **/
     public String getExadataDisplayName() {
         return exadataDisplayName;
     }
@@ -179,6 +234,10 @@ public final class ExadataMemberCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
     private final ExadataType exadataType;
 
+    /**
+     * Operations Insights internal representation of the the Exadata system type.
+     * @return the value
+     **/
     public ExadataType getExadataType() {
         return exadataType;
     }
@@ -189,6 +248,10 @@ public final class ExadataMemberCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
     private final ExadataRackType exadataRackType;
 
+    /**
+     * Exadata rack type.
+     * @return the value
+     **/
     public ExadataRackType getExadataRackType() {
         return exadataRackType;
     }
@@ -199,6 +262,10 @@ public final class ExadataMemberCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ExadataMemberSummary> items;
 
+    /**
+     * Collection of Exadata members
+     * @return the value
+     **/
     public java.util.List<ExadataMemberSummary> getItems() {
         return items;
     }

@@ -50,63 +50,113 @@ public final class FleetMetricDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
+        /**
+         * The name of the metric.
+         * @param metricName the value to set
+         * @return this builder
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-
+        /**
+         * The baseline value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineValue")
         private Double baselineValue;
 
+        /**
+         * The baseline value of the metric.
+         * @param baselineValue the value to set
+         * @return this builder
+         **/
         public Builder baselineValue(Double baselineValue) {
             this.baselineValue = baselineValue;
             this.__explicitlySet__.add("baselineValue");
             return this;
         }
-
+        /**
+         * The target value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetValue")
         private Double targetValue;
 
+        /**
+         * The target value of the metric.
+         * @param targetValue the value to set
+         * @return this builder
+         **/
         public Builder targetValue(Double targetValue) {
             this.targetValue = targetValue;
             this.__explicitlySet__.add("targetValue");
             return this;
         }
-
+        /**
+         * The unit of the value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
+        /**
+         * The unit of the value.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-
+        /**
+         * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The percentage change in the metric aggregated value compared to the baseline value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentageChange")
         private Double percentageChange;
 
+        /**
+         * The percentage change in the metric aggregated value compared to the baseline value.
+         * @param percentageChange the value to set
+         * @return this builder
+         **/
         public Builder percentageChange(Double percentageChange) {
             this.percentageChange = percentageChange;
             this.__explicitlySet__.add("percentageChange");
             return this;
         }
-
+        /**
+         * The dimensions of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<MetricDimensionDefinition> dimensions;
 
+        /**
+         * The dimensions of the metric.
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.List<MetricDimensionDefinition> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -163,6 +213,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
+    /**
+     * The name of the metric.
+     * @return the value
+     **/
     public String getMetricName() {
         return metricName;
     }
@@ -173,6 +227,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("baselineValue")
     private final Double baselineValue;
 
+    /**
+     * The baseline value of the metric.
+     * @return the value
+     **/
     public Double getBaselineValue() {
         return baselineValue;
     }
@@ -183,6 +241,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("targetValue")
     private final Double targetValue;
 
+    /**
+     * The target value of the metric.
+     * @return the value
+     **/
     public Double getTargetValue() {
         return targetValue;
     }
@@ -193,6 +255,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
+    /**
+     * The unit of the value.
+     * @return the value
+     **/
     public String getUnit() {
         return unit;
     }
@@ -203,6 +269,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -213,6 +283,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("percentageChange")
     private final Double percentageChange;
 
+    /**
+     * The percentage change in the metric aggregated value compared to the baseline value.
+     * @return the value
+     **/
     public Double getPercentageChange() {
         return percentageChange;
     }
@@ -223,6 +297,10 @@ public final class FleetMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<MetricDimensionDefinition> dimensions;
 
+    /**
+     * The dimensions of the metric.
+     * @return the value
+     **/
     public java.util.List<MetricDimensionDefinition> getDimensions() {
         return dimensions;
     }

@@ -31,9 +31,17 @@ public final class ResourceDiscoveryServiceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of supported services for Resource Discovery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceDiscoveryServiceSummary> items;
 
+        /**
+         * Collection of supported services for Resource Discovery.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ResourceDiscoveryServiceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -76,6 +84,10 @@ public final class ResourceDiscoveryServiceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceDiscoveryServiceSummary> items;
 
+    /**
+     * Collection of supported services for Resource Discovery.
+     * @return the value
+     **/
     public java.util.List<ResourceDiscoveryServiceSummary> getItems() {
         return items;
     }

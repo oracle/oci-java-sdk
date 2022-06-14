@@ -32,18 +32,39 @@ public final class Row {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The map of values from a row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.Map<String, Object> value;
 
+        /**
+         * The map of values from a row.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(java.util.Map<String, Object> value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * The expiration time of the row. A zero value indicates that
+         * the row does not expire. An RFC3339 formatted datetime
+         * string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
         private java.util.Date timeOfExpiration;
 
+        /**
+         * The expiration time of the row. A zero value indicates that
+         * the row does not expire. An RFC3339 formatted datetime
+         * string.
+         *
+         * @param timeOfExpiration the value to set
+         * @return this builder
+         **/
         public Builder timeOfExpiration(java.util.Date timeOfExpiration) {
             this.timeOfExpiration = timeOfExpiration;
             this.__explicitlySet__.add("timeOfExpiration");
@@ -97,6 +118,10 @@ public final class Row {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final java.util.Map<String, Object> value;
 
+    /**
+     * The map of values from a row.
+     * @return the value
+     **/
     public java.util.Map<String, Object> getValue() {
         return value;
     }
@@ -110,6 +135,13 @@ public final class Row {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
     private final java.util.Date timeOfExpiration;
 
+    /**
+     * The expiration time of the row. A zero value indicates that
+     * the row does not expire. An RFC3339 formatted datetime
+     * string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfExpiration() {
         return timeOfExpiration;
     }

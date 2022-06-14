@@ -92,189 +92,345 @@ public final class UpdateManagementDashboardDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerId")
         private String providerId;
 
+        /**
+         * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
+         * @param providerId the value to set
+         * @return this builder
+         **/
         public Builder providerId(String providerId) {
             this.providerId = providerId;
             this.__explicitlySet__.add("providerId");
             return this;
         }
-
+        /**
+         * Name of the service (for example, Logging Analytics) that owns the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
+        /**
+         * Name of the service (for example, Logging Analytics) that owns the dashboard.
+         * @param providerName the value to set
+         * @return this builder
+         **/
         public Builder providerName(String providerName) {
             this.providerName = providerName;
             this.__explicitlySet__.add("providerName");
             return this;
         }
-
+        /**
+         * Version of the service that owns the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
+        /**
+         * Version of the service that owns the dashboard.
+         * @param providerVersion the value to set
+         * @return this builder
+         **/
         public Builder providerVersion(String providerVersion) {
             this.providerVersion = providerVersion;
             this.__explicitlySet__.add("providerVersion");
             return this;
         }
-
+        /**
+         * Array of dashboard tiles.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tiles")
         private java.util.List<ManagementDashboardTileDetails> tiles;
 
+        /**
+         * Array of dashboard tiles.
+         * @param tiles the value to set
+         * @return this builder
+         **/
         public Builder tiles(java.util.List<ManagementDashboardTileDetails> tiles) {
             this.tiles = tiles;
             this.__explicitlySet__.add("tiles");
             return this;
         }
-
+        /**
+         * Display name of the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the dashboard.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the dashboard.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * OCID of the compartment in which the dashboard resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment in which the dashboard resides.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
         private Boolean isOobDashboard;
 
+        /**
+         * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
+         * @param isOobDashboard the value to set
+         * @return this builder
+         **/
         public Builder isOobDashboard(Boolean isOobDashboard) {
             this.isOobDashboard = isOobDashboard;
             this.__explicitlySet__.add("isOobDashboard");
             return this;
         }
-
+        /**
+         * Determines whether the dashboard will be displayed in Dashboard Home.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isShowInHome")
         private Boolean isShowInHome;
 
+        /**
+         * Determines whether the dashboard will be displayed in Dashboard Home.
+         * @param isShowInHome the value to set
+         * @return this builder
+         **/
         public Builder isShowInHome(Boolean isShowInHome) {
             this.isShowInHome = isShowInHome;
             this.__explicitlySet__.add("isShowInHome");
             return this;
         }
-
+        /**
+         * Version of the metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
+        /**
+         * Version of the metadata.
+         * @param metadataVersion the value to set
+         * @return this builder
+         **/
         public Builder metadataVersion(String metadataVersion) {
             this.metadataVersion = metadataVersion;
             this.__explicitlySet__.add("metadataVersion");
             return this;
         }
-
+        /**
+         * Determines whether the description of the dashboard is displayed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isShowDescription")
         private Boolean isShowDescription;
 
+        /**
+         * Determines whether the description of the dashboard is displayed.
+         * @param isShowDescription the value to set
+         * @return this builder
+         **/
         public Builder isShowDescription(Boolean isShowDescription) {
             this.isShowDescription = isShowDescription;
             this.__explicitlySet__.add("isShowDescription");
             return this;
         }
-
+        /**
+         * Screen image of the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
         private String screenImage;
 
+        /**
+         * Screen image of the dashboard.
+         * @param screenImage the value to set
+         * @return this builder
+         **/
         public Builder screenImage(String screenImage) {
             this.screenImage = screenImage;
             this.__explicitlySet__.add("screenImage");
             return this;
         }
-
+        /**
+         * JSON that contains internationalization options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nls")
         private Object nls;
 
+        /**
+         * JSON that contains internationalization options.
+         * @param nls the value to set
+         * @return this builder
+         **/
         public Builder nls(Object nls) {
             this.nls = nls;
             this.__explicitlySet__.add("nls");
             return this;
         }
-
+        /**
+         * JSON that contains user interface options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
+        /**
+         * JSON that contains user interface options.
+         * @param uiConfig the value to set
+         * @return this builder
+         **/
         public Builder uiConfig(Object uiConfig) {
             this.uiConfig = uiConfig;
             this.__explicitlySet__.add("uiConfig");
             return this;
         }
-
+        /**
+         * Array of JSON that contain data source options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
+        /**
+         * Array of JSON that contain data source options.
+         * @param dataConfig the value to set
+         * @return this builder
+         **/
         public Builder dataConfig(java.util.List<Object> dataConfig) {
             this.dataConfig = dataConfig;
             this.__explicitlySet__.add("dataConfig");
             return this;
         }
-
+        /**
+         * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Determines whether the dashboard is set as favorite.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
         private Boolean isFavorite;
 
+        /**
+         * Determines whether the dashboard is set as favorite.
+         * @param isFavorite the value to set
+         * @return this builder
+         **/
         public Builder isFavorite(Boolean isFavorite) {
             this.isFavorite = isFavorite;
             this.__explicitlySet__.add("isFavorite");
             return this;
         }
-
+        /**
+         * Defines parameters for the dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
         private java.util.List<Object> parametersConfig;
 
+        /**
+         * Defines parameters for the dashboard.
+         * @param parametersConfig the value to set
+         * @return this builder
+         **/
         public Builder parametersConfig(java.util.List<Object> parametersConfig) {
             this.parametersConfig = parametersConfig;
             this.__explicitlySet__.add("parametersConfig");
             return this;
         }
-
+        /**
+         * Drill-down configuration to define the destination of a drill-down action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
         private java.util.List<Object> drilldownConfig;
 
+        /**
+         * Drill-down configuration to define the destination of a drill-down action.
+         * @param drilldownConfig the value to set
+         * @return this builder
+         **/
         public Builder drilldownConfig(java.util.List<Object> drilldownConfig) {
             this.drilldownConfig = drilldownConfig;
             this.__explicitlySet__.add("drilldownConfig");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -360,6 +516,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
     private final String providerId;
 
+    /**
+     * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
+     * @return the value
+     **/
     public String getProviderId() {
         return providerId;
     }
@@ -370,6 +530,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
+    /**
+     * Name of the service (for example, Logging Analytics) that owns the dashboard.
+     * @return the value
+     **/
     public String getProviderName() {
         return providerName;
     }
@@ -380,6 +544,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
+    /**
+     * Version of the service that owns the dashboard.
+     * @return the value
+     **/
     public String getProviderVersion() {
         return providerVersion;
     }
@@ -390,6 +558,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tiles")
     private final java.util.List<ManagementDashboardTileDetails> tiles;
 
+    /**
+     * Array of dashboard tiles.
+     * @return the value
+     **/
     public java.util.List<ManagementDashboardTileDetails> getTiles() {
         return tiles;
     }
@@ -400,6 +572,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the dashboard.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -410,6 +586,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the dashboard.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -420,6 +600,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment in which the dashboard resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -430,6 +614,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
     private final Boolean isOobDashboard;
 
+    /**
+     * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
+     * @return the value
+     **/
     public Boolean getIsOobDashboard() {
         return isOobDashboard;
     }
@@ -440,6 +628,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isShowInHome")
     private final Boolean isShowInHome;
 
+    /**
+     * Determines whether the dashboard will be displayed in Dashboard Home.
+     * @return the value
+     **/
     public Boolean getIsShowInHome() {
         return isShowInHome;
     }
@@ -450,6 +642,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
+    /**
+     * Version of the metadata.
+     * @return the value
+     **/
     public String getMetadataVersion() {
         return metadataVersion;
     }
@@ -460,6 +656,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isShowDescription")
     private final Boolean isShowDescription;
 
+    /**
+     * Determines whether the description of the dashboard is displayed.
+     * @return the value
+     **/
     public Boolean getIsShowDescription() {
         return isShowDescription;
     }
@@ -470,6 +670,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
     private final String screenImage;
 
+    /**
+     * Screen image of the dashboard.
+     * @return the value
+     **/
     public String getScreenImage() {
         return screenImage;
     }
@@ -480,6 +684,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     private final Object nls;
 
+    /**
+     * JSON that contains internationalization options.
+     * @return the value
+     **/
     public Object getNls() {
         return nls;
     }
@@ -490,6 +698,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
+    /**
+     * JSON that contains user interface options.
+     * @return the value
+     **/
     public Object getUiConfig() {
         return uiConfig;
     }
@@ -500,6 +712,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
+    /**
+     * Array of JSON that contain data source options.
+     * @return the value
+     **/
     public java.util.List<Object> getDataConfig() {
         return dataConfig;
     }
@@ -510,6 +726,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -520,6 +740,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     private final Boolean isFavorite;
 
+    /**
+     * Determines whether the dashboard is set as favorite.
+     * @return the value
+     **/
     public Boolean getIsFavorite() {
         return isFavorite;
     }
@@ -530,6 +754,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
     private final java.util.List<Object> parametersConfig;
 
+    /**
+     * Defines parameters for the dashboard.
+     * @return the value
+     **/
     public java.util.List<Object> getParametersConfig() {
         return parametersConfig;
     }
@@ -540,6 +768,10 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
     private final java.util.List<Object> drilldownConfig;
 
+    /**
+     * Drill-down configuration to define the destination of a drill-down action.
+     * @return the value
+     **/
     public java.util.List<Object> getDrilldownConfig() {
         return drilldownConfig;
     }
@@ -552,6 +784,12 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -564,6 +802,12 @@ public final class UpdateManagementDashboardDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

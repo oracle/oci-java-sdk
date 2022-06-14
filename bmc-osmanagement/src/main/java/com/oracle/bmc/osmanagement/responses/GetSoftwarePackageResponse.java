@@ -15,6 +15,12 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage;
 
+    /**
+     * The returned SoftwarePackage instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.SoftwarePackage getSoftwarePackage() {
         return softwarePackage;
     }
@@ -46,15 +56,35 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SoftwarePackage instance.
+         */
         private com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage;
 
+        /**
+         * The returned SoftwarePackage instance.
+         * @param softwarePackage the value to set
+         * @return this builder
+         */
         public Builder softwarePackage(
                 com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage) {
             this.softwarePackage = softwarePackage;
@@ -73,12 +103,20 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetSoftwarePackageResponse build() {
             return new GetSoftwarePackageResponse(
                     __httpStatusCode__, opcRequestId, softwarePackage);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

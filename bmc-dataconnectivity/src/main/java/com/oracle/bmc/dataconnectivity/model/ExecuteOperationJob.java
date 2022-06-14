@@ -44,45 +44,81 @@ public final class ExecuteOperationJob {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Status of the operation job for all sets of input.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private String operationStatus;
 
+        /**
+         * Status of the operation job for all sets of input.
+         * @param operationStatus the value to set
+         * @return this builder
+         **/
         public Builder operationStatus(String operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-
+        /**
+         * Error message, if whole operation is failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * Error message, if whole operation is failed.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-
+        /**
+         * Name of the operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
 
+        /**
+         * Name of the operation.
+         * @param operationName the value to set
+         * @return this builder
+         **/
         public Builder operationName(String operationName) {
             this.operationName = operationName;
             this.__explicitlySet__.add("operationName");
             return this;
         }
-
+        /**
+         * List of names of OUT/INOUT params.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outParams")
         private java.util.List<String> outParams;
 
+        /**
+         * List of names of OUT/INOUT params.
+         * @param outParams the value to set
+         * @return this builder
+         **/
         public Builder outParams(java.util.List<String> outParams) {
             this.outParams = outParams;
             this.__explicitlySet__.add("outParams");
             return this;
         }
-
+        /**
+         * List of operation execution result for each input set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
         private java.util.List<OperationExecResult> operationResult;
 
+        /**
+         * List of operation execution result for each input set.
+         * @param operationResult the value to set
+         * @return this builder
+         **/
         public Builder operationResult(java.util.List<OperationExecResult> operationResult) {
             this.operationResult = operationResult;
             this.__explicitlySet__.add("operationResult");
@@ -135,6 +171,10 @@ public final class ExecuteOperationJob {
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final String operationStatus;
 
+    /**
+     * Status of the operation job for all sets of input.
+     * @return the value
+     **/
     public String getOperationStatus() {
         return operationStatus;
     }
@@ -145,6 +185,10 @@ public final class ExecuteOperationJob {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * Error message, if whole operation is failed.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -155,6 +199,10 @@ public final class ExecuteOperationJob {
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
     private final String operationName;
 
+    /**
+     * Name of the operation.
+     * @return the value
+     **/
     public String getOperationName() {
         return operationName;
     }
@@ -165,6 +213,10 @@ public final class ExecuteOperationJob {
     @com.fasterxml.jackson.annotation.JsonProperty("outParams")
     private final java.util.List<String> outParams;
 
+    /**
+     * List of names of OUT/INOUT params.
+     * @return the value
+     **/
     public java.util.List<String> getOutParams() {
         return outParams;
     }
@@ -175,6 +227,10 @@ public final class ExecuteOperationJob {
     @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
     private final java.util.List<OperationExecResult> operationResult;
 
+    /**
+     * List of operation execution result for each input set.
+     * @return the value
+     **/
     public java.util.List<OperationExecResult> getOperationResult() {
         return operationResult;
     }

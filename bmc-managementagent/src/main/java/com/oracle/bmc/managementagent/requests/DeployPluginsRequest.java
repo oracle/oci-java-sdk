@@ -18,6 +18,9 @@ public class DeployPluginsRequest
      */
     private com.oracle.bmc.managementagent.model.DeployPluginsDetails deployPluginsDetails;
 
+    /**
+     * Details of Plugins to be deployed for a given list of Management Agents.
+     */
     public com.oracle.bmc.managementagent.model.DeployPluginsDetails getDeployPluginsDetails() {
         return deployPluginsDetails;
     }
@@ -31,6 +34,14 @@ public class DeployPluginsRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +50,9 @@ public class DeployPluginsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,11 +75,15 @@ public class DeployPluginsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details of Plugins to be deployed for a given list of Management Agents.
+         */
         private com.oracle.bmc.managementagent.model.DeployPluginsDetails deployPluginsDetails =
                 null;
 
         /**
          * Details of Plugins to be deployed for a given list of Management Agents.
+         * @param deployPluginsDetails the value to set
          * @return this builder instance
          */
         public Builder deployPluginsDetails(
@@ -74,6 +92,14 @@ public class DeployPluginsRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -83,6 +109,7 @@ public class DeployPluginsRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -90,10 +117,14 @@ public class DeployPluginsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,7 +215,8 @@ public class DeployPluginsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +225,10 @@ public class DeployPluginsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

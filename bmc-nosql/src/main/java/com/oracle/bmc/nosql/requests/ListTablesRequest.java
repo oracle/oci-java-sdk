@@ -16,6 +16,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String compartmentId;
 
+    /**
+     * The ID of a table's compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String name;
 
+    /**
+     * A shell-globbing-style (*?[]) filter for names.
+     */
     public String getName() {
         return name;
     }
@@ -32,6 +38,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -43,6 +52,12 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start
+     * retrieving results. This is usually retrieved from a previous
+     * list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -87,6 +102,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -139,6 +157,13 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be
+     * provided. Default order for timeCreated is descending. Default
+     * order for name is ascending. If no value is specified
+     * timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -147,6 +172,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -197,6 +225,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * Filter list by the lifecycle state of the item.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -208,10 +239,14 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of a table's compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of a table's compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -219,10 +254,14 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A shell-globbing-style (*?[]) filter for names.
+         */
         private String name = null;
 
         /**
          * A shell-globbing-style (*?[]) filter for names.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -230,10 +269,14 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -241,6 +284,12 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start
+         * retrieving results. This is usually retrieved from a previous
+         * list call.
+         *
+         */
         private String page = null;
 
         /**
@@ -248,6 +297,7 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * retrieving results. This is usually retrieved from a previous
          * list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -255,10 +305,14 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -266,6 +320,13 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be
+         * provided. Default order for timeCreated is descending. Default
+         * order for name is ascending. If no value is specified
+         * timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -274,6 +335,7 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * order for name is ascending. If no value is specified
          * timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -281,10 +343,14 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -292,10 +358,14 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Filter list by the lifecycle state of the item.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * Filter list by the lifecycle state of the item.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -385,7 +455,8 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -399,6 +470,10 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

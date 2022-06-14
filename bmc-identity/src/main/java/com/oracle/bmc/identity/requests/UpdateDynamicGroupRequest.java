@@ -18,6 +18,9 @@ public class UpdateDynamicGroupRequest
      */
     private String dynamicGroupId;
 
+    /**
+     * The OCID of the dynamic group.
+     */
     public String getDynamicGroupId() {
         return dynamicGroupId;
     }
@@ -26,6 +29,9 @@ public class UpdateDynamicGroupRequest
      */
     private com.oracle.bmc.identity.model.UpdateDynamicGroupDetails updateDynamicGroupDetails;
 
+    /**
+     * Request object for updating an dynamic group.
+     */
     public com.oracle.bmc.identity.model.UpdateDynamicGroupDetails getUpdateDynamicGroupDetails() {
         return updateDynamicGroupDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateDynamicGroupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,10 +71,14 @@ public class UpdateDynamicGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the dynamic group.
+         */
         private String dynamicGroupId = null;
 
         /**
          * The OCID of the dynamic group.
+         * @param dynamicGroupId the value to set
          * @return this builder instance
          */
         public Builder dynamicGroupId(String dynamicGroupId) {
@@ -70,11 +86,15 @@ public class UpdateDynamicGroupRequest
             return this;
         }
 
+        /**
+         * Request object for updating an dynamic group.
+         */
         private com.oracle.bmc.identity.model.UpdateDynamicGroupDetails updateDynamicGroupDetails =
                 null;
 
         /**
          * Request object for updating an dynamic group.
+         * @param updateDynamicGroupDetails the value to set
          * @return this builder instance
          */
         public Builder updateDynamicGroupDetails(
@@ -83,6 +103,12 @@ public class UpdateDynamicGroupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +116,7 @@ public class UpdateDynamicGroupRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +207,8 @@ public class UpdateDynamicGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +217,10 @@ public class UpdateDynamicGroupRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

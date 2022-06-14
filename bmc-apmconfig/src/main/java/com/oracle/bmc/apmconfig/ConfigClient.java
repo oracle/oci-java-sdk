@@ -536,6 +536,80 @@ public class ConfigClient implements Config {
     }
 
     @Override
+    public RetrieveNamespaceMetricsResponse retrieveNamespaceMetrics(
+            RetrieveNamespaceMetricsRequest request) {
+        LOG.trace("Called retrieveNamespaceMetrics");
+        final RetrieveNamespaceMetricsRequest interceptedRequest =
+                RetrieveNamespaceMetricsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveNamespaceMetricsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespaceMetricsResponse>
+                transformer = RetrieveNamespaceMetricsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "RetrieveNamespaceMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaceMetrics");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRetrieveNamespaceMetricsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RetrieveNamespacesResponse retrieveNamespaces(RetrieveNamespacesRequest request) {
+        LOG.trace("Called retrieveNamespaces");
+        final RetrieveNamespacesRequest interceptedRequest =
+                RetrieveNamespacesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveNamespacesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
+                transformer = RetrieveNamespacesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "RetrieveNamespaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaces");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateConfigResponse updateConfig(UpdateConfigRequest request) {
         LOG.trace("Called updateConfig");
         final UpdateConfigRequest interceptedRequest =
@@ -567,6 +641,47 @@ public class ConfigClient implements Config {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateConfigDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ValidateSpanFilterPatternResponse validateSpanFilterPattern(
+            ValidateSpanFilterPatternRequest request) {
+        LOG.trace("Called validateSpanFilterPattern");
+        final ValidateSpanFilterPatternRequest interceptedRequest =
+                ValidateSpanFilterPatternConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateSpanFilterPatternConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ValidateSpanFilterPatternResponse>
+                transformer = ValidateSpanFilterPatternConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "ValidateSpanFilterPattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/SpanFilter/ValidateSpanFilterPattern");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getValidateSpanFilterPatternDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

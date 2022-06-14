@@ -20,6 +20,10 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,9 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
      */
     private String logAnalyticsObjectCollectionRuleId;
 
+    /**
+     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     public String getLogAnalyticsObjectCollectionRuleId() {
         return logAnalyticsObjectCollectionRuleId;
     }
@@ -38,6 +45,9 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
                     .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
             changeLogAnalyticsObjectCollectionRuleCompartmentDetails;
 
+    /**
+     * The new compartment this Object Collection Rule will be moved to.
+     */
     public com.oracle.bmc.loganalytics.model
                     .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
             getChangeLogAnalyticsObjectCollectionRuleCompartmentDetails() {
@@ -53,6 +63,14 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,6 +79,9 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -91,11 +112,16 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -103,10 +129,14 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
             return this;
         }
 
+        /**
+         * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         private String logAnalyticsObjectCollectionRuleId = null;
 
         /**
          * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param logAnalyticsObjectCollectionRuleId the value to set
          * @return this builder instance
          */
         public Builder logAnalyticsObjectCollectionRuleId(
@@ -115,12 +145,16 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
             return this;
         }
 
+        /**
+         * The new compartment this Object Collection Rule will be moved to.
+         */
         private com.oracle.bmc.loganalytics.model
                         .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
                 changeLogAnalyticsObjectCollectionRuleCompartmentDetails = null;
 
         /**
          * The new compartment this Object Collection Rule will be moved to.
+         * @param changeLogAnalyticsObjectCollectionRuleCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeLogAnalyticsObjectCollectionRuleCompartmentDetails(
@@ -132,6 +166,14 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -141,6 +183,7 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -148,10 +191,14 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -254,7 +301,8 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -266,6 +314,10 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

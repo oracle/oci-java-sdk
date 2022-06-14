@@ -18,6 +18,9 @@ public class CreateBackupRequest
      */
     private com.oracle.bmc.database.model.CreateBackupDetails createBackupDetails;
 
+    /**
+     * Request to create a new database backup.
+     */
     public com.oracle.bmc.database.model.CreateBackupDetails getCreateBackupDetails() {
         return createBackupDetails;
     }
@@ -31,6 +34,14 @@ public class CreateBackupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -52,10 +63,14 @@ public class CreateBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a new database backup.
+         */
         private com.oracle.bmc.database.model.CreateBackupDetails createBackupDetails = null;
 
         /**
          * Request to create a new database backup.
+         * @param createBackupDetails the value to set
          * @return this builder instance
          */
         public Builder createBackupDetails(
@@ -64,6 +79,14 @@ public class CreateBackupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -73,6 +96,7 @@ public class CreateBackupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -161,12 +185,17 @@ public class CreateBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().createBackupDetails(createBackupDetails).opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,19 @@ public final class RemoveDrgRouteRulesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle-assigned ID of each DRG route rule to be deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeRuleIds")
         private java.util.List<String> routeRuleIds;
 
+        /**
+         * The Oracle-assigned ID of each DRG route rule to be deleted.
+         *
+         * @param routeRuleIds the value to set
+         * @return this builder
+         **/
         public Builder routeRuleIds(java.util.List<String> routeRuleIds) {
             this.routeRuleIds = routeRuleIds;
             this.__explicitlySet__.add("routeRuleIds");
@@ -75,6 +85,11 @@ public final class RemoveDrgRouteRulesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("routeRuleIds")
     private final java.util.List<String> routeRuleIds;
 
+    /**
+     * The Oracle-assigned ID of each DRG route rule to be deleted.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getRouteRuleIds() {
         return routeRuleIds;
     }

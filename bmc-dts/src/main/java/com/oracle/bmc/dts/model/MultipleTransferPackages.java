@@ -29,9 +29,17 @@ public final class MultipleTransferPackages {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of TransferPackage summary's
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transferPackageObjects")
         private java.util.List<TransferPackageSummary> transferPackageObjects;
 
+        /**
+         * List of TransferPackage summary's
+         * @param transferPackageObjects the value to set
+         * @return this builder
+         **/
         public Builder transferPackageObjects(
                 java.util.List<TransferPackageSummary> transferPackageObjects) {
             this.transferPackageObjects = transferPackageObjects;
@@ -75,6 +83,10 @@ public final class MultipleTransferPackages {
     @com.fasterxml.jackson.annotation.JsonProperty("transferPackageObjects")
     private final java.util.List<TransferPackageSummary> transferPackageObjects;
 
+    /**
+     * List of TransferPackage summary's
+     * @return the value
+     **/
     public java.util.List<TransferPackageSummary> getTransferPackageObjects() {
         return transferPackageObjects;
     }

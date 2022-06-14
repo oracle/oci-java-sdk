@@ -29,6 +29,7 @@ public final class ReplicationStatusDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
         private java.util.List<ReplicaDetails> replicaDetails;
 

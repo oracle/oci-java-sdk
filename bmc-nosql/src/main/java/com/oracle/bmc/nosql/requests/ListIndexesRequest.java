@@ -16,6 +16,9 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String tableNameOrId;
 
+    /**
+     * A table name within the compartment, or a table OCID.
+     */
     public String getTableNameOrId() {
         return tableNameOrId;
     }
@@ -27,6 +30,12 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * The ID of a table's compartment. When a table is identified
+     * by name, the compartmentId is often needed to provide
+     * context for interpreting the name.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -35,6 +44,9 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String name;
 
+    /**
+     * A shell-globbing-style (*?[]) filter for names.
+     */
     public String getName() {
         return name;
     }
@@ -85,6 +97,9 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Filter list by the lifecycle state of the item.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -93,6 +108,9 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -104,6 +122,12 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start
+     * retrieving results. This is usually retrieved from a previous
+     * list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -148,6 +172,9 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -200,6 +227,13 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be
+     * provided. Default order for timeCreated is descending. Default
+     * order for name is ascending. If no value is specified
+     * timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -208,6 +242,9 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -219,10 +256,14 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A table name within the compartment, or a table OCID.
+         */
         private String tableNameOrId = null;
 
         /**
          * A table name within the compartment, or a table OCID.
+         * @param tableNameOrId the value to set
          * @return this builder instance
          */
         public Builder tableNameOrId(String tableNameOrId) {
@@ -230,6 +271,12 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The ID of a table's compartment. When a table is identified
+         * by name, the compartmentId is often needed to provide
+         * context for interpreting the name.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -237,6 +284,7 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * by name, the compartmentId is often needed to provide
          * context for interpreting the name.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -244,10 +292,14 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A shell-globbing-style (*?[]) filter for names.
+         */
         private String name = null;
 
         /**
          * A shell-globbing-style (*?[]) filter for names.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -255,10 +307,14 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Filter list by the lifecycle state of the item.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * Filter list by the lifecycle state of the item.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -266,10 +322,14 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -277,6 +337,12 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start
+         * retrieving results. This is usually retrieved from a previous
+         * list call.
+         *
+         */
         private String page = null;
 
         /**
@@ -284,6 +350,7 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * retrieving results. This is usually retrieved from a previous
          * list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -291,10 +358,14 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -302,6 +373,13 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be
+         * provided. Default order for timeCreated is descending. Default
+         * order for name is ascending. If no value is specified
+         * timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -310,6 +388,7 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * order for name is ascending. If no value is specified
          * timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -317,10 +396,14 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -412,7 +495,8 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -427,6 +511,10 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -87,10 +87,17 @@ public final class TypedExpression extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The expression string for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * The expression string for the object.
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
@@ -163,6 +170,10 @@ public final class TypedExpression extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * The expression string for the object.
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }

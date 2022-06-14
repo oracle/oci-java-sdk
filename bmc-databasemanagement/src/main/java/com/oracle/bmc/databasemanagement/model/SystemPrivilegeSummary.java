@@ -33,36 +33,71 @@ public final class SystemPrivilegeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of a system privilege.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of a system privilege.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminOption")
         private AdminOption adminOption;
 
+        /**
+         * Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
+         * @param adminOption the value to set
+         * @return this builder
+         **/
         public Builder adminOption(AdminOption adminOption) {
             this.adminOption = adminOption;
             this.__explicitlySet__.add("adminOption");
             return this;
         }
-
+        /**
+         * Indicates how the system privilege was granted. Possible values:
+         * YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+         * NO if the system privilege is granted locally (CONTAINER=ALL is not used)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("common")
         private Common common;
 
+        /**
+         * Indicates how the system privilege was granted. Possible values:
+         * YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+         * NO if the system privilege is granted locally (CONTAINER=ALL is not used)
+         *
+         * @param common the value to set
+         * @return this builder
+         **/
         public Builder common(Common common) {
             this.common = common;
             this.__explicitlySet__.add("common");
             return this;
         }
-
+        /**
+         * Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inherited")
         private Inherited inherited;
 
+        /**
+         * Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
+         * @param inherited the value to set
+         * @return this builder
+         **/
         public Builder inherited(Inherited inherited) {
             this.inherited = inherited;
             this.__explicitlySet__.add("inherited");
@@ -109,6 +144,10 @@ public final class SystemPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of a system privilege.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -167,6 +206,10 @@ public final class SystemPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("adminOption")
     private final AdminOption adminOption;
 
+    /**
+     * Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
+     * @return the value
+     **/
     public AdminOption getAdminOption() {
         return adminOption;
     }
@@ -230,6 +273,13 @@ public final class SystemPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("common")
     private final Common common;
 
+    /**
+     * Indicates how the system privilege was granted. Possible values:
+     * YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+     * NO if the system privilege is granted locally (CONTAINER=ALL is not used)
+     *
+     * @return the value
+     **/
     public Common getCommon() {
         return common;
     }
@@ -288,6 +338,10 @@ public final class SystemPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     private final Inherited inherited;
 
+    /**
+     * Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
+     * @return the value
+     **/
     public Inherited getInherited() {
         return inherited;
     }

@@ -28,18 +28,33 @@ public final class DataVisibility {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the visibility level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the visibility level.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The Traffic Light Protocol (TLP) name of the visibility level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlpName")
         private TlpName tlpName;
 
+        /**
+         * The Traffic Light Protocol (TLP) name of the visibility level.
+         * @param tlpName the value to set
+         * @return this builder
+         **/
         public Builder tlpName(TlpName tlpName) {
             this.tlpName = tlpName;
             this.__explicitlySet__.add("tlpName");
@@ -81,6 +96,10 @@ public final class DataVisibility {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the visibility level.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -142,6 +161,10 @@ public final class DataVisibility {
     @com.fasterxml.jackson.annotation.JsonProperty("tlpName")
     private final TlpName tlpName;
 
+    /**
+     * The Traffic Light Protocol (TLP) name of the visibility level.
+     * @return the value
+     **/
     public TlpName getTlpName() {
         return tlpName;
     }

@@ -18,12 +18,13 @@ public class ChangeAddressListCompartmentRequest
      */
     private String addressListId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
+     */
     public String getAddressListId() {
         return addressListId;
     }
-    /**
-     *
-     */
+
     private com.oracle.bmc.waas.model.ChangeAddressListCompartmentDetails
             changeAddressListCompartmentDetails;
 
@@ -36,6 +37,9 @@ public class ChangeAddressListCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -44,6 +48,9 @@ public class ChangeAddressListCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -53,6 +60,10 @@ public class ChangeAddressListCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+     * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -75,10 +86,14 @@ public class ChangeAddressListCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
+         */
         private String addressListId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
+         * @param addressListId the value to set
          * @return this builder instance
          */
         public Builder addressListId(String addressListId) {
@@ -91,6 +106,7 @@ public class ChangeAddressListCompartmentRequest
 
         /**
          *
+         * @param changeAddressListCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeAddressListCompartmentDetails(
@@ -100,10 +116,14 @@ public class ChangeAddressListCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -111,10 +131,14 @@ public class ChangeAddressListCompartmentRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -122,11 +146,16 @@ public class ChangeAddressListCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+         * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
          * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -221,7 +250,8 @@ public class ChangeAddressListCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -232,6 +262,10 @@ public class ChangeAddressListCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

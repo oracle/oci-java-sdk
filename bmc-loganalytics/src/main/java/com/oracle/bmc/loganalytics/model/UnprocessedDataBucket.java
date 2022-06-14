@@ -45,45 +45,83 @@ public final class UnprocessedDataBucket {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Object Storage namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Object Storage namespace.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Name of the Object Storage bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * Name of the Object Storage bucket.
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * Flag that specifies if this configuration is enabled or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Flag that specifies if this configuration is enabled or not.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The time when this record is created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time when this record is created. An RFC3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The latest time when this record is updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The latest time when this record is updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -132,6 +170,10 @@ public final class UnprocessedDataBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Object Storage namespace.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -142,6 +184,10 @@ public final class UnprocessedDataBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * Name of the Object Storage bucket.
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -153,6 +199,11 @@ public final class UnprocessedDataBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Flag that specifies if this configuration is enabled or not.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -163,6 +214,10 @@ public final class UnprocessedDataBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time when this record is created. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -173,6 +228,10 @@ public final class UnprocessedDataBucket {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The latest time when this record is updated. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }

@@ -18,6 +18,9 @@ public class UpdateBuildRunRequest
      */
     private String buildRunId;
 
+    /**
+     * Unique build run identifier.
+     */
     public String getBuildRunId() {
         return buildRunId;
     }
@@ -26,6 +29,9 @@ public class UpdateBuildRunRequest
      */
     private com.oracle.bmc.devops.model.UpdateBuildRunDetails updateBuildRunDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.devops.model.UpdateBuildRunDetails getUpdateBuildRunDetails() {
         return updateBuildRunDetails;
     }
@@ -34,6 +40,9 @@ public class UpdateBuildRunRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -42,6 +51,9 @@ public class UpdateBuildRunRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,10 +75,14 @@ public class UpdateBuildRunRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique build run identifier.
+         */
         private String buildRunId = null;
 
         /**
          * Unique build run identifier.
+         * @param buildRunId the value to set
          * @return this builder instance
          */
         public Builder buildRunId(String buildRunId) {
@@ -74,10 +90,14 @@ public class UpdateBuildRunRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.devops.model.UpdateBuildRunDetails updateBuildRunDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateBuildRunDetails the value to set
          * @return this builder instance
          */
         public Builder updateBuildRunDetails(
@@ -86,10 +106,14 @@ public class UpdateBuildRunRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -97,10 +121,14 @@ public class UpdateBuildRunRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -193,7 +221,8 @@ public class UpdateBuildRunRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -203,6 +232,10 @@ public class UpdateBuildRunRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

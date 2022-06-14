@@ -29,9 +29,33 @@ package com.oracle.bmc.loadbalancer.model;
 public final class SourceVcnIpAddressCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An IPv4 address range that the original client IP address (in the context of the specified VCN) of an
+         * incoming packet must match.
+         * <p>
+         * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y) strings.
+         * <p>
+         * Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
+         * <p>
+         * example: "10.10.1.0/24"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
 
+        /**
+         * An IPv4 address range that the original client IP address (in the context of the specified VCN) of an
+         * incoming packet must match.
+         * <p>
+         * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y) strings.
+         * <p>
+         * Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
+         * <p>
+         * example: "10.10.1.0/24"
+         *
+         * @param attributeValue the value to set
+         * @return this builder
+         **/
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = attributeValue;
             this.__explicitlySet__.add("attributeValue");
@@ -88,6 +112,18 @@ public final class SourceVcnIpAddressCondition extends RuleCondition {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     private final String attributeValue;
 
+    /**
+     * An IPv4 address range that the original client IP address (in the context of the specified VCN) of an
+     * incoming packet must match.
+     * <p>
+     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y) strings.
+     * <p>
+     * Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
+     * <p>
+     * example: "10.10.1.0/24"
+     *
+     * @return the value
+     **/
     public String getAttributeValue() {
         return attributeValue;
     }

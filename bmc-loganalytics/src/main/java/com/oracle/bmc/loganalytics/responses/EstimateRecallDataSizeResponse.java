@@ -14,6 +14,11 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,10 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
             estimateRecallDataSizeResult;
 
+    /**
+     * The returned EstimateRecallDataSizeResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
             getEstimateRecallDataSizeResult() {
         return estimateRecallDataSizeResult;
@@ -52,16 +61,34 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned EstimateRecallDataSizeResult instance.
+         */
         private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
                 estimateRecallDataSizeResult;
 
+        /**
+         * The returned EstimateRecallDataSizeResult instance.
+         * @param estimateRecallDataSizeResult the value to set
+         * @return this builder
+         */
         public Builder estimateRecallDataSizeResult(
                 com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
                         estimateRecallDataSizeResult) {
@@ -81,12 +108,20 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public EstimateRecallDataSizeResponse build() {
             return new EstimateRecallDataSizeResponse(
                     __httpStatusCode__, opcRequestId, estimateRecallDataSizeResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

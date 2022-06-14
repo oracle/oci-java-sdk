@@ -66,6 +66,12 @@ public class BaseAnnouncementsPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment for which the email preferences apply. Because announcements are
+     * specific to a tenancy, specify the tenancy by providing the root compartment OCID.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -76,6 +82,10 @@ public class BaseAnnouncementsPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The ID of the preferences.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -88,6 +98,12 @@ public class BaseAnnouncementsPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsubscribed")
     private final Boolean isUnsubscribed;
 
+    /**
+     * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
+     * (Manage preferences for receiving announcements by email by specifying the {@code preferenceType} attribute instead.)
+     *
+     * @return the value
+     **/
     public Boolean getIsUnsubscribed() {
         return isUnsubscribed;
     }
@@ -98,6 +114,10 @@ public class BaseAnnouncementsPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * When the preferences were set initially.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -108,6 +128,10 @@ public class BaseAnnouncementsPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * When the preferences were last updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -118,6 +142,10 @@ public class BaseAnnouncementsPreferences {
     @com.fasterxml.jackson.annotation.JsonProperty("preferenceType")
     private final BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType;
 
+    /**
+     * The string representing the user's preference regarding receiving announcements by email.
+     * @return the value
+     **/
     public BaseCreateAnnouncementsPreferencesDetails.PreferenceType getPreferenceType() {
         return preferenceType;
     }

@@ -17,6 +17,9 @@ public class ListDatabaseToolsEndpointServicesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListDatabaseToolsEndpointServicesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +39,9 @@ public class ListDatabaseToolsEndpointServicesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -41,6 +50,9 @@ public class ListDatabaseToolsEndpointServicesRequest
      */
     private com.oracle.bmc.databasetools.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.databasetools.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -87,6 +99,10 @@ public class ListDatabaseToolsEndpointServicesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -95,30 +111,42 @@ public class ListDatabaseToolsEndpointServicesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their {@code lifecycleState} matches the specified {@code lifecycleState}.
      */
     private com.oracle.bmc.databasetools.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources their {@code lifecycleState} matches the specified {@code lifecycleState}.
+     */
     public com.oracle.bmc.databasetools.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire specified display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only resources that match the entire specified name.
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire specified name.
+     */
     public String getName() {
         return name;
     }
@@ -130,10 +158,14 @@ public class ListDatabaseToolsEndpointServicesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -141,10 +173,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -152,10 +188,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -163,10 +203,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.databasetools.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasetools.model.SortOrder sortOrder) {
@@ -174,11 +218,16 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -186,10 +235,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,10 +250,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources their {@code lifecycleState} matches the specified {@code lifecycleState}.
+         */
         private com.oracle.bmc.databasetools.model.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources their {@code lifecycleState} matches the specified {@code lifecycleState}.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -209,10 +266,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire specified display name.
+         */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the entire specified display name.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -220,10 +281,14 @@ public class ListDatabaseToolsEndpointServicesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire specified name.
+         */
         private String name = null;
 
         /**
-         * A filter to return only resources that match the entire name given.
+         * A filter to return only resources that match the entire specified name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -316,7 +381,8 @@ public class ListDatabaseToolsEndpointServicesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -331,6 +397,10 @@ public class ListDatabaseToolsEndpointServicesRequest
                 .name(name);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

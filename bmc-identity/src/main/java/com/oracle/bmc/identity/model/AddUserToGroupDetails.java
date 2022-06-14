@@ -30,18 +30,33 @@ public final class AddUserToGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCID of the user.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * The OCID of the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
+        /**
+         * The OCID of the group.
+         * @param groupId the value to set
+         * @return this builder
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -83,6 +98,10 @@ public final class AddUserToGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCID of the user.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -93,6 +112,10 @@ public final class AddUserToGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
+    /**
+     * The OCID of the group.
+     * @return the value
+     **/
     public String getGroupId() {
         return groupId;
     }

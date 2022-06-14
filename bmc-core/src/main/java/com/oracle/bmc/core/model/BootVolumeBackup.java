@@ -91,163 +91,348 @@ public final class BootVolumeBackup {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the boot volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
 
+        /**
+         * The OCID of the boot volume.
+         * @param bootVolumeId the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             this.__explicitlySet__.add("bootVolumeId");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the boot volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the boot volume backup.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The date and time the volume backup will expire and be automatically deleted.
+         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
+         * were created automatically by a scheduled-backup policy. For manually created backups,
+         * it will be absent, signifying that there is no expiration time and the backup will
+         * last forever until manually deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
         private java.util.Date expirationTime;
 
+        /**
+         * The date and time the volume backup will expire and be automatically deleted.
+         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
+         * were created automatically by a scheduled-backup policy. For manually created backups,
+         * it will be absent, signifying that there is no expiration time and the backup will
+         * last forever until manually deleted.
+         *
+         * @param expirationTime the value to set
+         * @return this builder
+         **/
         public Builder expirationTime(java.util.Date expirationTime) {
             this.expirationTime = expirationTime;
             this.__explicitlySet__.add("expirationTime");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The OCID of the boot volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the boot volume backup.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The image OCID used to create the boot volume the backup is taken from.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The image OCID used to create the boot volume the backup is taken from.
+         *
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * The OCID of the Key Management master encryption assigned to the boot volume backup.
+         * For more information about the Key Management service and encryption keys, see
+         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the Key Management master encryption assigned to the boot volume backup.
+         * For more information about the Key Management service and encryption keys, see
+         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The current state of a boot volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of a boot volume backup.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The size of the boot volume, in GBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
+        /**
+         * The size of the boot volume, in GBs.
+         *
+         * @param sizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
-
+        /**
+         * The OCID of the source boot volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBootVolumeBackupId")
         private String sourceBootVolumeBackupId;
 
+        /**
+         * The OCID of the source boot volume backup.
+         * @param sourceBootVolumeBackupId the value to set
+         * @return this builder
+         **/
         public Builder sourceBootVolumeBackupId(String sourceBootVolumeBackupId) {
             this.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
             this.__explicitlySet__.add("sourceBootVolumeBackupId");
             return this;
         }
-
+        /**
+         * Specifies whether the backup was created manually, or via scheduled backup policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
+        /**
+         * Specifies whether the backup was created manually, or via scheduled backup policy.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         **/
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-
+        /**
+         * The date and time the boot volume backup was created. This is the time the actual point-in-time image
+         * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the boot volume backup was created. This is the time the actual point-in-time image
+         * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
         private java.util.Date timeRequestReceived;
 
+        /**
+         * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeRequestReceived the value to set
+         * @return this builder
+         **/
         public Builder timeRequestReceived(java.util.Date timeRequestReceived) {
             this.timeRequestReceived = timeRequestReceived;
             this.__explicitlySet__.add("timeRequestReceived");
             return this;
         }
-
+        /**
+         * The type of a volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of a volume backup.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
+         * consumed on the boot volume and whether the backup is full or incremental.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
         private Long uniqueSizeInGBs;
 
+        /**
+         * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
+         * consumed on the boot volume and whether the backup is full or incremental.
+         *
+         * @param uniqueSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder uniqueSizeInGBs(Long uniqueSizeInGBs) {
             this.uniqueSizeInGBs = uniqueSizeInGBs;
             this.__explicitlySet__.add("uniqueSizeInGBs");
@@ -326,6 +511,10 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
     private final String bootVolumeId;
 
+    /**
+     * The OCID of the boot volume.
+     * @return the value
+     **/
     public String getBootVolumeId() {
         return bootVolumeId;
     }
@@ -336,6 +525,10 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the boot volume backup.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -350,6 +543,14 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -362,6 +563,12 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -374,6 +581,12 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -389,6 +602,15 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
     private final java.util.Date expirationTime;
 
+    /**
+     * The date and time the volume backup will expire and be automatically deleted.
+     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
+     * were created automatically by a scheduled-backup policy. For manually created backups,
+     * it will be absent, signifying that there is no expiration time and the backup will
+     * last forever until manually deleted.
+     *
+     * @return the value
+     **/
     public java.util.Date getExpirationTime() {
         return expirationTime;
     }
@@ -403,6 +625,14 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -413,6 +643,10 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the boot volume backup.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -424,6 +658,11 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The image OCID used to create the boot volume the backup is taken from.
+     *
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -438,6 +677,14 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the Key Management master encryption assigned to the boot volume backup.
+     * For more information about the Key Management service and encryption keys, see
+     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -500,6 +747,10 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of a boot volume backup.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -511,6 +762,11 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
+    /**
+     * The size of the boot volume, in GBs.
+     *
+     * @return the value
+     **/
     public Long getSizeInGBs() {
         return sizeInGBs;
     }
@@ -521,6 +777,10 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBootVolumeBackupId")
     private final String sourceBootVolumeBackupId;
 
+    /**
+     * The OCID of the source boot volume backup.
+     * @return the value
+     **/
     public String getSourceBootVolumeBackupId() {
         return sourceBootVolumeBackupId;
     }
@@ -581,6 +841,11 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
+    /**
+     * Specifies whether the backup was created manually, or via scheduled backup policy.
+     *
+     * @return the value
+     **/
     public SourceType getSourceType() {
         return sourceType;
     }
@@ -593,6 +858,12 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the boot volume backup was created. This is the time the actual point-in-time image
+     * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -604,6 +875,11 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
     private final java.util.Date timeRequestReceived;
 
+    /**
+     * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeRequestReceived() {
         return timeRequestReceived;
     }
@@ -660,6 +936,10 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of a volume backup.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -672,6 +952,12 @@ public final class BootVolumeBackup {
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
     private final Long uniqueSizeInGBs;
 
+    /**
+     * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
+     * consumed on the boot volume and whether the backup is full or incremental.
+     *
+     * @return the value
+     **/
     public Long getUniqueSizeInGBs() {
         return uniqueSizeInGBs;
     }

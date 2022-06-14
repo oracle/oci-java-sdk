@@ -25,18 +25,33 @@ package com.oracle.bmc.usageapi.model;
 public final class StaticDateRange extends DateRange {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The usage start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
 
+        /**
+         * The usage start time.
+         * @param timeUsageStarted the value to set
+         * @return this builder
+         **/
         public Builder timeUsageStarted(java.util.Date timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             this.__explicitlySet__.add("timeUsageStarted");
             return this;
         }
-
+        /**
+         * The usage end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
         private java.util.Date timeUsageEnded;
 
+        /**
+         * The usage end time.
+         * @param timeUsageEnded the value to set
+         * @return this builder
+         **/
         public Builder timeUsageEnded(java.util.Date timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             this.__explicitlySet__.add("timeUsageEnded");
@@ -86,6 +101,10 @@ public final class StaticDateRange extends DateRange {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     private final java.util.Date timeUsageStarted;
 
+    /**
+     * The usage start time.
+     * @return the value
+     **/
     public java.util.Date getTimeUsageStarted() {
         return timeUsageStarted;
     }
@@ -96,6 +115,10 @@ public final class StaticDateRange extends DateRange {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     private final java.util.Date timeUsageEnded;
 
+    /**
+     * The usage end time.
+     * @return the value
+     **/
     public java.util.Date getTimeUsageEnded() {
         return timeUsageEnded;
     }

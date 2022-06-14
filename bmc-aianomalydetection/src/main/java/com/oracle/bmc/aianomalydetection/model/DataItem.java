@@ -28,18 +28,33 @@ public final class DataItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Nullable string representing timestamp.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * Nullable string representing timestamp.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * Array of double precision values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<Double> values;
 
+        /**
+         * Array of double precision values.
+         * @param values the value to set
+         * @return this builder
+         **/
         public Builder values(java.util.List<Double> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -81,6 +96,10 @@ public final class DataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * Nullable string representing timestamp.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -91,6 +110,10 @@ public final class DataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<Double> values;
 
+    /**
+     * Array of double precision values.
+     * @return the value
+     **/
     public java.util.List<Double> getValues() {
         return values;
     }

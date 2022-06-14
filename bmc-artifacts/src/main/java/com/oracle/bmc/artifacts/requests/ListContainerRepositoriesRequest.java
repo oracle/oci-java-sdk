@@ -17,6 +17,9 @@ public class ListContainerRepositoriesRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -30,6 +33,14 @@ public class ListContainerRepositoriesRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * inspected depending on the the setting of {@code accessLevel}.
+     * Default is false. Can only be set to true when calling the API
+     * on the tenancy (root compartment).
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -39,6 +50,10 @@ public class ListContainerRepositoriesRequest
      */
     private String repositoryId;
 
+    /**
+     * A filter to return container images only for the specified container repository OCID.
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -48,6 +63,10 @@ public class ListContainerRepositoriesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -57,6 +76,10 @@ public class ListContainerRepositoriesRequest
      */
     private Boolean isPublic;
 
+    /**
+     * A filter to return resources that match the isPublic value.
+     *
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -66,6 +89,10 @@ public class ListContainerRepositoriesRequest
      */
     private String lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state name exactly.
+     *
+     */
     public String getLifecycleState() {
         return lifecycleState;
     }
@@ -79,6 +106,14 @@ public class ListContainerRepositoriesRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -90,6 +125,12 @@ public class ListContainerRepositoriesRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -100,6 +141,11 @@ public class ListContainerRepositoriesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -160,6 +206,17 @@ public class ListContainerRepositoriesRequest
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -208,6 +265,11 @@ public class ListContainerRepositoriesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -219,10 +281,14 @@ public class ListContainerRepositoriesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -230,6 +296,14 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * inspected depending on the the setting of {@code accessLevel}.
+         * Default is false. Can only be set to true when calling the API
+         * on the tenancy (root compartment).
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -239,6 +313,7 @@ public class ListContainerRepositoriesRequest
          * Default is false. Can only be set to true when calling the API
          * on the tenancy (root compartment).
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -246,11 +321,16 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * A filter to return container images only for the specified container repository OCID.
+         *
+         */
         private String repositoryId = null;
 
         /**
          * A filter to return container images only for the specified container repository OCID.
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -258,11 +338,16 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the given display name exactly.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -270,11 +355,16 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * A filter to return resources that match the isPublic value.
+         *
+         */
         private Boolean isPublic = null;
 
         /**
          * A filter to return resources that match the isPublic value.
          *
+         * @param isPublic the value to set
          * @return this builder instance
          */
         public Builder isPublic(Boolean isPublic) {
@@ -282,11 +372,16 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state name exactly.
+         *
+         */
         private String lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state name exactly.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(String lifecycleState) {
@@ -294,6 +389,14 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -303,6 +406,7 @@ public class ListContainerRepositoriesRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -310,6 +414,12 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -317,6 +427,7 @@ public class ListContainerRepositoriesRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -324,12 +435,18 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -337,6 +454,17 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -349,6 +477,7 @@ public class ListContainerRepositoriesRequest
          * single availability domain. If you call one of these "List" operations without specifying
          * an availability domain, the resources are grouped by availability domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -356,12 +485,18 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -457,7 +592,8 @@ public class ListContainerRepositoriesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -474,6 +610,10 @@ public class ListContainerRepositoriesRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

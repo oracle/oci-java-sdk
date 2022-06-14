@@ -17,6 +17,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private String targetAlertPolicyAssociationId;
 
+    /**
+     * A filter to return only items related to a specific target-alert policy association ID.
+     */
     public String getTargetAlertPolicyAssociationId() {
         return targetAlertPolicyAssociationId;
     }
@@ -33,6 +39,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private String alertPolicyId;
 
+    /**
+     * A filter to return policy by it's OCID.
+     */
     public String getAlertPolicyId() {
         return alertPolicyId;
     }
@@ -41,6 +50,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private String targetId;
 
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -49,6 +61,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState lifecycleState;
 
+    /**
+     * An optional filter to return only alert policies that have the given life-cycle state.
+     */
     public com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -57,6 +72,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,6 +83,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -109,6 +130,9 @@ public class ListTargetAlertPolicyAssociationsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -159,6 +183,12 @@ public class ListTargetAlertPolicyAssociationsRequest
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -167,6 +197,9 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -179,6 +212,13 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -194,6 +234,16 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -204,6 +254,11 @@ public class ListTargetAlertPolicyAssociationsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -256,6 +311,13 @@ public class ListTargetAlertPolicyAssociationsRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -267,10 +329,14 @@ public class ListTargetAlertPolicyAssociationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -278,10 +344,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to a specific target-alert policy association ID.
+         */
         private String targetAlertPolicyAssociationId = null;
 
         /**
          * A filter to return only items related to a specific target-alert policy association ID.
+         * @param targetAlertPolicyAssociationId the value to set
          * @return this builder instance
          */
         public Builder targetAlertPolicyAssociationId(String targetAlertPolicyAssociationId) {
@@ -289,10 +359,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * A filter to return policy by it's OCID.
+         */
         private String alertPolicyId = null;
 
         /**
          * A filter to return policy by it's OCID.
+         * @param alertPolicyId the value to set
          * @return this builder instance
          */
         public Builder alertPolicyId(String alertPolicyId) {
@@ -300,10 +374,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -311,10 +389,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * An optional filter to return only alert policies that have the given life-cycle state.
+         */
         private com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState lifecycleState = null;
 
         /**
          * An optional filter to return only alert policies that have the given life-cycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -323,10 +405,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -334,10 +420,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -345,10 +435,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -356,6 +450,12 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -363,6 +463,7 @@ public class ListTargetAlertPolicyAssociationsRequest
          * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -370,10 +471,14 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -381,6 +486,13 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
@@ -389,6 +501,7 @@ public class ListTargetAlertPolicyAssociationsRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -397,6 +510,16 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
@@ -408,6 +531,7 @@ public class ListTargetAlertPolicyAssociationsRequest
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -415,12 +539,18 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -428,6 +558,13 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -436,6 +573,7 @@ public class ListTargetAlertPolicyAssociationsRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -538,7 +676,8 @@ public class ListTargetAlertPolicyAssociationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -558,6 +697,10 @@ public class ListTargetAlertPolicyAssociationsRequest
                 .accessLevel(accessLevel);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -39,28 +39,50 @@ public final class DbSystemStoragePerformanceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ShapeType of the DbSystems,INTEL or AMD
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
         private ShapeType shapeType;
 
+        /**
+         * ShapeType of the DbSystems,INTEL or AMD
+         * @param shapeType the value to set
+         * @return this builder
+         **/
         public Builder shapeType(ShapeType shapeType) {
             this.shapeType = shapeType;
             this.__explicitlySet__.add("shapeType");
             return this;
         }
-
+        /**
+         * List of storage performance for the DATA disks
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePerformanceList")
         private java.util.List<StoragePerformanceDetails> dataStoragePerformanceList;
 
+        /**
+         * List of storage performance for the DATA disks
+         * @param dataStoragePerformanceList the value to set
+         * @return this builder
+         **/
         public Builder dataStoragePerformanceList(
                 java.util.List<StoragePerformanceDetails> dataStoragePerformanceList) {
             this.dataStoragePerformanceList = dataStoragePerformanceList;
             this.__explicitlySet__.add("dataStoragePerformanceList");
             return this;
         }
-
+        /**
+         * List of storage performance for the RECO disks
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoStoragePerformanceList")
         private java.util.List<StoragePerformanceDetails> recoStoragePerformanceList;
 
+        /**
+         * List of storage performance for the RECO disks
+         * @param recoStoragePerformanceList the value to set
+         * @return this builder
+         **/
         public Builder recoStoragePerformanceList(
                 java.util.List<StoragePerformanceDetails> recoStoragePerformanceList) {
             this.recoStoragePerformanceList = recoStoragePerformanceList;
@@ -156,6 +178,10 @@ public final class DbSystemStoragePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
     private final ShapeType shapeType;
 
+    /**
+     * ShapeType of the DbSystems,INTEL or AMD
+     * @return the value
+     **/
     public ShapeType getShapeType() {
         return shapeType;
     }
@@ -166,6 +192,10 @@ public final class DbSystemStoragePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePerformanceList")
     private final java.util.List<StoragePerformanceDetails> dataStoragePerformanceList;
 
+    /**
+     * List of storage performance for the DATA disks
+     * @return the value
+     **/
     public java.util.List<StoragePerformanceDetails> getDataStoragePerformanceList() {
         return dataStoragePerformanceList;
     }
@@ -176,6 +206,10 @@ public final class DbSystemStoragePerformanceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("recoStoragePerformanceList")
     private final java.util.List<StoragePerformanceDetails> recoStoragePerformanceList;
 
+    /**
+     * List of storage performance for the RECO disks
+     * @return the value
+     **/
     public java.util.List<StoragePerformanceDetails> getRecoStoragePerformanceList() {
         return recoStoragePerformanceList;
     }

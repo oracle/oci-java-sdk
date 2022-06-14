@@ -73,28 +73,49 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The Microsoft App ID that you obtained when you created your bot registration in Azure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("msaAppId")
         private String msaAppId;
 
+        /**
+         * The Microsoft App ID that you obtained when you created your bot registration in Azure.
+         * @param msaAppId the value to set
+         * @return this builder
+         **/
         public Builder msaAppId(String msaAppId) {
             this.msaAppId = msaAppId;
             this.__explicitlySet__.add("msaAppId");
             return this;
         }
-
+        /**
+         * The client secret that you obtained from your bot registration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
         private String msaAppPassword;
 
+        /**
+         * The client secret that you obtained from your bot registration.
+         * @param msaAppPassword the value to set
+         * @return this builder
+         **/
         public Builder msaAppPassword(String msaAppPassword) {
             this.msaAppPassword = msaAppPassword;
             this.__explicitlySet__.add("msaAppPassword");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -170,6 +191,10 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("msaAppId")
     private final String msaAppId;
 
+    /**
+     * The Microsoft App ID that you obtained when you created your bot registration in Azure.
+     * @return the value
+     **/
     public String getMsaAppId() {
         return msaAppId;
     }
@@ -180,6 +205,10 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("msaAppPassword")
     private final String msaAppPassword;
 
+    /**
+     * The client secret that you obtained from your bot registration.
+     * @return the value
+     **/
     public String getMsaAppPassword() {
         return msaAppPassword;
     }
@@ -190,6 +219,10 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }

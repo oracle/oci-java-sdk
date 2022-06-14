@@ -33,18 +33,33 @@ public final class CommitMultipartUploadPartDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The part number for this part.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNum")
         private Integer partNum;
 
+        /**
+         * The part number for this part.
+         * @param partNum the value to set
+         * @return this builder
+         **/
         public Builder partNum(Integer partNum) {
             this.partNum = partNum;
             this.__explicitlySet__.add("partNum");
             return this;
         }
-
+        /**
+         * The entity tag (ETag) returned when this part was uploaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        /**
+         * The entity tag (ETag) returned when this part was uploaded.
+         * @param etag the value to set
+         * @return this builder
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
@@ -87,6 +102,10 @@ public final class CommitMultipartUploadPartDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("partNum")
     private final Integer partNum;
 
+    /**
+     * The part number for this part.
+     * @return the value
+     **/
     public Integer getPartNum() {
         return partNum;
     }
@@ -97,6 +116,10 @@ public final class CommitMultipartUploadPartDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
+    /**
+     * The entity tag (ETag) returned when this part was uploaded.
+     * @return the value
+     **/
     public String getEtag() {
         return etag;
     }

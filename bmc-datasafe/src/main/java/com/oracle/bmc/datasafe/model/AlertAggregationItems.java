@@ -44,36 +44,65 @@ public final class AlertAggregationItems {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the aggregation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
+        /**
+         * The name of the aggregation.
+         * @param metricName the value to set
+         * @return this builder
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-
+        /**
+         * The time at which the aggregation started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The time at which the aggregation started.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The time at which the aggregation ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * The time at which the aggregation ended.
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-
+        /**
+         * Total count of aggregated values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
+        /**
+         * Total count of aggregated values.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Long count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -131,6 +160,10 @@ public final class AlertAggregationItems {
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
+    /**
+     * The name of the aggregation.
+     * @return the value
+     **/
     public String getMetricName() {
         return metricName;
     }
@@ -141,6 +174,10 @@ public final class AlertAggregationItems {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The time at which the aggregation started.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -151,6 +188,10 @@ public final class AlertAggregationItems {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * The time at which the aggregation ended.
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -161,6 +202,10 @@ public final class AlertAggregationItems {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
+    /**
+     * Total count of aggregated values.
+     * @return the value
+     **/
     public Long getCount() {
         return count;
     }

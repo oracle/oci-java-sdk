@@ -30,9 +30,17 @@ public final class ManagementAgentPluginAggregationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List in which each item describes an aggregation of Managment Agent Plugins
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagementAgentPluginAggregation> items;
 
+        /**
+         * List in which each item describes an aggregation of Managment Agent Plugins
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ManagementAgentPluginAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class ManagementAgentPluginAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagementAgentPluginAggregation> items;
 
+    /**
+     * List in which each item describes an aggregation of Managment Agent Plugins
+     * @return the value
+     **/
     public java.util.List<ManagementAgentPluginAggregation> getItems() {
         return items;
     }

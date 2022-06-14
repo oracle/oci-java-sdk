@@ -44,45 +44,93 @@ public final class CreateInstanceAgentCommandDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to create the command in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to create the command in.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+         * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
         private Integer executionTimeOutInSeconds;
 
+        /**
+         * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+         * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+         *
+         * @param executionTimeOutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder executionTimeOutInSeconds(Integer executionTimeOutInSeconds) {
             this.executionTimeOutInSeconds = executionTimeOutInSeconds;
             this.__explicitlySet__.add("executionTimeOutInSeconds");
             return this;
         }
-
+        /**
+         * A user-friendly name for the command. It does not have to be unique.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code Database Backup Script}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name for the command. It does not have to be unique.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code Database Backup Script}
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The target instance to run the command on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private InstanceAgentCommandTarget target;
 
+        /**
+         * The target instance to run the command on.
+         * @param target the value to set
+         * @return this builder
+         **/
         public Builder target(InstanceAgentCommandTarget target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * The contents of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private InstanceAgentCommandContent content;
 
+        /**
+         * The contents of the command.
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(InstanceAgentCommandContent content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -131,6 +179,10 @@ public final class CreateInstanceAgentCommandDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to create the command in.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -143,6 +195,12 @@ public final class CreateInstanceAgentCommandDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
     private final Integer executionTimeOutInSeconds;
 
+    /**
+     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+     * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+     *
+     * @return the value
+     **/
     public Integer getExecutionTimeOutInSeconds() {
         return executionTimeOutInSeconds;
     }
@@ -157,6 +215,14 @@ public final class CreateInstanceAgentCommandDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name for the command. It does not have to be unique.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code Database Backup Script}
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -167,6 +233,10 @@ public final class CreateInstanceAgentCommandDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final InstanceAgentCommandTarget target;
 
+    /**
+     * The target instance to run the command on.
+     * @return the value
+     **/
     public InstanceAgentCommandTarget getTarget() {
         return target;
     }
@@ -177,6 +247,10 @@ public final class CreateInstanceAgentCommandDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final InstanceAgentCommandContent content;
 
+    /**
+     * The contents of the command.
+     * @return the value
+     **/
     public InstanceAgentCommandContent getContent() {
         return content;
     }

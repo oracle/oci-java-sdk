@@ -29,27 +29,49 @@ public final class ReplicaDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of REST proxy replicas
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("proxyCount")
         private Integer proxyCount;
 
+        /**
+         * Number of REST proxy replicas
+         * @param proxyCount the value to set
+         * @return this builder
+         **/
         public Builder proxyCount(Integer proxyCount) {
             this.proxyCount = proxyCount;
             this.__explicitlySet__.add("proxyCount");
             return this;
         }
-
+        /**
+         * Number of CA replicas
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCount")
         private Integer caCount;
 
+        /**
+         * Number of CA replicas
+         * @param caCount the value to set
+         * @return this builder
+         **/
         public Builder caCount(Integer caCount) {
             this.caCount = caCount;
             this.__explicitlySet__.add("caCount");
             return this;
         }
-
+        /**
+         * Number of console replicas
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consoleCount")
         private Integer consoleCount;
 
+        /**
+         * Number of console replicas
+         * @param consoleCount the value to set
+         * @return this builder
+         **/
         public Builder consoleCount(Integer consoleCount) {
             this.consoleCount = consoleCount;
             this.__explicitlySet__.add("consoleCount");
@@ -94,6 +116,10 @@ public final class ReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("proxyCount")
     private final Integer proxyCount;
 
+    /**
+     * Number of REST proxy replicas
+     * @return the value
+     **/
     public Integer getProxyCount() {
         return proxyCount;
     }
@@ -104,6 +130,10 @@ public final class ReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("caCount")
     private final Integer caCount;
 
+    /**
+     * Number of CA replicas
+     * @return the value
+     **/
     public Integer getCaCount() {
         return caCount;
     }
@@ -114,6 +144,10 @@ public final class ReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("consoleCount")
     private final Integer consoleCount;
 
+    /**
+     * Number of console replicas
+     * @return the value
+     **/
     public Integer getConsoleCount() {
         return consoleCount;
     }

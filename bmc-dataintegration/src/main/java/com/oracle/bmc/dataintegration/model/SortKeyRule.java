@@ -28,6 +28,7 @@ public final class SortKeyRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("wrappedRule")
         private ProjectionRule wrappedRule;
 
@@ -36,10 +37,17 @@ public final class SortKeyRule {
             this.__explicitlySet__.add("wrappedRule");
             return this;
         }
-
+        /**
+         * Specifies if the sort key has ascending order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAscending")
         private Boolean isAscending;
 
+        /**
+         * Specifies if the sort key has ascending order.
+         * @param isAscending the value to set
+         * @return this builder
+         **/
         public Builder isAscending(Boolean isAscending) {
             this.isAscending = isAscending;
             this.__explicitlySet__.add("isAscending");
@@ -88,6 +96,10 @@ public final class SortKeyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isAscending")
     private final Boolean isAscending;
 
+    /**
+     * Specifies if the sort key has ascending order.
+     * @return the value
+     **/
     public Boolean getIsAscending() {
         return isAscending;
     }

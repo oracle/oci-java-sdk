@@ -44,19 +44,39 @@ public final class ResolverForwardRule extends ResolverRule {
             this.__explicitlySet__.add("qnameCoverConditions");
             return this;
         }
-
+        /**
+         * IP addresses to which queries should be forwarded. Currently limited to a single address.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationAddresses")
         private java.util.List<String> destinationAddresses;
 
+        /**
+         * IP addresses to which queries should be forwarded. Currently limited to a single address.
+         *
+         * @param destinationAddresses the value to set
+         * @return this builder
+         **/
         public Builder destinationAddresses(java.util.List<String> destinationAddresses) {
             this.destinationAddresses = destinationAddresses;
             this.__explicitlySet__.add("destinationAddresses");
             return this;
         }
-
+        /**
+         * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+         * interface. The endpoint must have isForwarding set to true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceEndpointName")
         private String sourceEndpointName;
 
+        /**
+         * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+         * interface. The endpoint must have isForwarding set to true.
+         *
+         * @param sourceEndpointName the value to set
+         * @return this builder
+         **/
         public Builder sourceEndpointName(String sourceEndpointName) {
             this.sourceEndpointName = sourceEndpointName;
             this.__explicitlySet__.add("sourceEndpointName");
@@ -119,6 +139,11 @@ public final class ResolverForwardRule extends ResolverRule {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationAddresses")
     private final java.util.List<String> destinationAddresses;
 
+    /**
+     * IP addresses to which queries should be forwarded. Currently limited to a single address.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getDestinationAddresses() {
         return destinationAddresses;
     }
@@ -131,6 +156,12 @@ public final class ResolverForwardRule extends ResolverRule {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEndpointName")
     private final String sourceEndpointName;
 
+    /**
+     * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+     * interface. The endpoint must have isForwarding set to true.
+     *
+     * @return the value
+     **/
     public String getSourceEndpointName() {
         return sourceEndpointName;
     }

@@ -18,6 +18,9 @@ public class UpdateTagDefaultRequest
      */
     private String tagDefaultId;
 
+    /**
+     * The OCID of the tag default.
+     */
     public String getTagDefaultId() {
         return tagDefaultId;
     }
@@ -26,8 +29,22 @@ public class UpdateTagDefaultRequest
      */
     private com.oracle.bmc.identity.model.UpdateTagDefaultDetails updateTagDefaultDetails;
 
+    /**
+     * Request object for updating a tag default.
+     */
     public com.oracle.bmc.identity.model.UpdateTagDefaultDetails getUpdateTagDefaultDetails() {
         return updateTagDefaultDetails;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -37,6 +54,12 @@ public class UpdateTagDefaultRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +70,11 @@ public class UpdateTagDefaultRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +97,14 @@ public class UpdateTagDefaultRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag default.
+         */
         private String tagDefaultId = null;
 
         /**
          * The OCID of the tag default.
+         * @param tagDefaultId the value to set
          * @return this builder instance
          */
         public Builder tagDefaultId(String tagDefaultId) {
@@ -80,11 +112,15 @@ public class UpdateTagDefaultRequest
             return this;
         }
 
+        /**
+         * Request object for updating a tag default.
+         */
         private com.oracle.bmc.identity.model.UpdateTagDefaultDetails updateTagDefaultDetails =
                 null;
 
         /**
          * Request object for updating a tag default.
+         * @param updateTagDefaultDetails the value to set
          * @return this builder instance
          */
         public Builder updateTagDefaultDetails(
@@ -93,6 +129,27 @@ public class UpdateTagDefaultRequest
             return this;
         }
 
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -100,6 +157,7 @@ public class UpdateTagDefaultRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -107,12 +165,18 @@ public class UpdateTagDefaultRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,6 +214,7 @@ public class UpdateTagDefaultRequest
         public Builder copy(UpdateTagDefaultRequest o) {
             tagDefaultId(o.getTagDefaultId());
             updateTagDefaultDetails(o.getUpdateTagDefaultDetails());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -197,24 +262,31 @@ public class UpdateTagDefaultRequest
             UpdateTagDefaultRequest request = new UpdateTagDefaultRequest();
             request.tagDefaultId = tagDefaultId;
             request.updateTagDefaultDetails = updateTagDefaultDetails;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateTagDefaultRequest(tagDefaultId, updateTagDefaultDetails, ifMatch, opcRequestId);
+            // new UpdateTagDefaultRequest(tagDefaultId, updateTagDefaultDetails, isLockOverride, ifMatch, opcRequestId);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .tagDefaultId(tagDefaultId)
                 .updateTagDefaultDetails(updateTagDefaultDetails)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -226,6 +298,7 @@ public class UpdateTagDefaultRequest
         sb.append("super=").append(super.toString());
         sb.append(",tagDefaultId=").append(String.valueOf(this.tagDefaultId));
         sb.append(",updateTagDefaultDetails=").append(String.valueOf(this.updateTagDefaultDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -246,6 +319,7 @@ public class UpdateTagDefaultRequest
                 && java.util.Objects.equals(this.tagDefaultId, other.tagDefaultId)
                 && java.util.Objects.equals(
                         this.updateTagDefaultDetails, other.updateTagDefaultDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -260,6 +334,9 @@ public class UpdateTagDefaultRequest
                         + (this.updateTagDefaultDetails == null
                                 ? 43
                                 : this.updateTagDefaultDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

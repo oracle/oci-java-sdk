@@ -59,90 +59,165 @@ public final class DatabaseUsageMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param dbId the value to set
+         * @return this builder
+         **/
         public Builder dbId(String dbId) {
             this.dbId = dbId;
             this.__explicitlySet__.add("dbId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The type of Oracle Database installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
+        /**
+         * The type of Oracle Database installation.
+         * @param databaseType the value to set
+         * @return this builder
+         **/
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
         private DatabaseSubType databaseSubType;
 
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         *
+         * @param databaseSubType the value to set
+         * @return this builder
+         **/
         public Builder databaseSubType(DatabaseSubType databaseSubType) {
             this.databaseSubType = databaseSubType;
             this.__explicitlySet__.add("databaseSubType");
             return this;
         }
-
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         * @param deploymentType the value to set
+         * @return this builder
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-
+        /**
+         * The Oracle Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
+        /**
+         * The Oracle Database version.
+         * @param databaseVersion the value to set
+         * @return this builder
+         **/
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
             return this;
         }
-
+        /**
+         * The workload type of the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private WorkloadType workloadType;
 
+        /**
+         * The workload type of the Autonomous Database.
+         * @param workloadType the value to set
+         * @return this builder
+         **/
         public Builder workloadType(WorkloadType workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
         }
-
+        /**
+         * The display name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * The display name of the Managed Database.
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent Container Database, in the case of a Pluggable Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseContainerId")
         private String databaseContainerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent Container Database, in the case of a Pluggable Database.
+         * @param databaseContainerId the value to set
+         * @return this builder
+         **/
         public Builder databaseContainerId(String databaseContainerId) {
             this.databaseContainerId = databaseContainerId;
             this.__explicitlySet__.add("databaseContainerId");
             return this;
         }
-
+        /**
+         * A list of the database health metrics like CPU, Storage, and Memory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<FleetMetricDefinition> metrics;
 
+        /**
+         * A list of the database health metrics like CPU, Storage, and Memory.
+         * @param metrics the value to set
+         * @return this builder
+         **/
         public Builder metrics(java.util.List<FleetMetricDefinition> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -205,6 +280,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * @return the value
+     **/
     public String getDbId() {
         return dbId;
     }
@@ -215,6 +294,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -225,6 +308,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
+    /**
+     * The type of Oracle Database installation.
+     * @return the value
+     **/
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
@@ -237,6 +324,12 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
+     * @return the value
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
@@ -247,6 +340,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     * @return the value
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
@@ -257,6 +354,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
+    /**
+     * The Oracle Database version.
+     * @return the value
+     **/
     public String getDatabaseVersion() {
         return databaseVersion;
     }
@@ -267,6 +368,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final WorkloadType workloadType;
 
+    /**
+     * The workload type of the Autonomous Database.
+     * @return the value
+     **/
     public WorkloadType getWorkloadType() {
         return workloadType;
     }
@@ -277,6 +382,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * The display name of the Managed Database.
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -287,6 +396,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseContainerId")
     private final String databaseContainerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent Container Database, in the case of a Pluggable Database.
+     * @return the value
+     **/
     public String getDatabaseContainerId() {
         return databaseContainerId;
     }
@@ -297,6 +410,10 @@ public final class DatabaseUsageMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<FleetMetricDefinition> metrics;
 
+    /**
+     * A list of the database health metrics like CPU, Storage, and Memory.
+     * @return the value
+     **/
     public java.util.List<FleetMetricDefinition> getMetrics() {
         return metrics;
     }

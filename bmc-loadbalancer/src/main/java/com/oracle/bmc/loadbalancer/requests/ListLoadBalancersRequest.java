@@ -16,6 +16,9 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,6 +46,13 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Long limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Long getLimit() {
         return limit;
     }
@@ -50,6 +65,13 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 3}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -61,6 +83,12 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String detail;
 
+    /**
+     * The level of detail to return for each result. Can be {@code full} or {@code simple}.
+     * <p>
+     * Example: {@code full}
+     *
+     */
     public String getDetail() {
         return detail;
     }
@@ -109,6 +137,11 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending.
+     * Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -155,6 +188,10 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -166,6 +203,12 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     * <p>
+     * Example: {@code example_load_balancer}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -177,6 +220,12 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state.
+     * <p>
+     * Example: {@code SUCCEEDED}
+     *
+     */
     public com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -188,10 +237,14 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -199,12 +252,18 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -212,6 +271,13 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Long limit = null;
 
         /**
@@ -220,6 +286,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Long limit) {
@@ -227,6 +294,13 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 3}
+         *
+         */
         private String page = null;
 
         /**
@@ -235,6 +309,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code 3}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -242,6 +317,12 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The level of detail to return for each result. Can be {@code full} or {@code simple}.
+         * <p>
+         * Example: {@code full}
+         *
+         */
         private String detail = null;
 
         /**
@@ -249,6 +330,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code full}
          *
+         * @param detail the value to set
          * @return this builder instance
          */
         public Builder detail(String detail) {
@@ -256,12 +338,18 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending.
+         * Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by.  You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending.
          * Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -269,11 +357,16 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -281,6 +374,12 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         * <p>
+         * Example: {@code example_load_balancer}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -288,6 +387,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code example_load_balancer}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -295,6 +395,12 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state.
+         * <p>
+         * Example: {@code SUCCEEDED}
+         *
+         */
         private com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState lifecycleState = null;
 
         /**
@@ -302,6 +408,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
          * <p>
          * Example: {@code SUCCEEDED}
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -394,7 +501,8 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -409,6 +517,10 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

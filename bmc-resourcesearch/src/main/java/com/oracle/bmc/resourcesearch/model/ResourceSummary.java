@@ -66,91 +66,180 @@ public final class ResourceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource type name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * The resource type name.
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * The unique identifier for this particular resource, usually an OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * The unique identifier for this particular resource, usually an OCID.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains this resource.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The time that this resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time that this resource was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The display name (or name) of this resource, if one exists.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name (or name) of this resource, if one exists.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The availability domain where this resource exists, if applicable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain where this resource exists, if applicable.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The lifecycle state of this resource, if applicable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private String lifecycleState;
 
+        /**
+         * The lifecycle state of this resource, if applicable.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(String lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * System tags associated with this resource, if any. System tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * System tags associated with this resource, if any. System tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -165,19 +254,49 @@ public final class ResourceSummary {
             this.__explicitlySet__.add("searchContext");
             return this;
         }
-
+        /**
+         * Additional identifiers to use together in a "Get" request for a specified resource, only required for resource types
+         * that explicitly cannot be retrieved by using a single identifier, such as the resource's OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityContext")
         private java.util.Map<String, Object> identityContext;
 
+        /**
+         * Additional identifiers to use together in a "Get" request for a specified resource, only required for resource types
+         * that explicitly cannot be retrieved by using a single identifier, such as the resource's OCID.
+         *
+         * @param identityContext the value to set
+         * @return this builder
+         **/
         public Builder identityContext(java.util.Map<String, Object> identityContext) {
             this.identityContext = identityContext;
             this.__explicitlySet__.add("identityContext");
             return this;
         }
-
+        /**
+         * Additional resource attribute fields of this resource that match queries with a return clause, if any.
+         * For example, if you ran a query to find the private IP addresses, public IP addresses, and isPrimary field of
+         * the VNIC attachment on instance resources, that field would be included in the ResourceSummary object as:
+         * {"additionalDetails": {"attachedVnic": [{"publicIP" : "172.110.110.110","privateIP" : "10.10.10.10","isPrimary" : true},
+         * {"publicIP" : "172.110.110.111","privateIP" : "10.10.10.11","isPrimary" : false}]}.
+         * The structure of the additional details attribute fields depends on the matching resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, Object> additionalDetails;
 
+        /**
+         * Additional resource attribute fields of this resource that match queries with a return clause, if any.
+         * For example, if you ran a query to find the private IP addresses, public IP addresses, and isPrimary field of
+         * the VNIC attachment on instance resources, that field would be included in the ResourceSummary object as:
+         * {"additionalDetails": {"attachedVnic": [{"publicIP" : "172.110.110.110","privateIP" : "10.10.10.10","isPrimary" : true},
+         * {"publicIP" : "172.110.110.111","privateIP" : "10.10.10.11","isPrimary" : false}]}.
+         * The structure of the additional details attribute fields depends on the matching resource.
+         *
+         * @param additionalDetails the value to set
+         * @return this builder
+         **/
         public Builder additionalDetails(java.util.Map<String, Object> additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
@@ -246,6 +365,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * The resource type name.
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -256,6 +379,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * The unique identifier for this particular resource, usually an OCID.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -266,6 +393,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains this resource.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -276,6 +407,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time that this resource was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -286,6 +421,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name (or name) of this resource, if one exists.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -296,6 +435,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain where this resource exists, if applicable.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -306,6 +449,10 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final String lifecycleState;
 
+    /**
+     * The lifecycle state of this resource, if applicable.
+     * @return the value
+     **/
     public String getLifecycleState() {
         return lifecycleState;
     }
@@ -319,6 +466,13 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -332,6 +486,13 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -345,6 +506,13 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags associated with this resource, if any. System tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -364,6 +532,12 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("identityContext")
     private final java.util.Map<String, Object> identityContext;
 
+    /**
+     * Additional identifiers to use together in a "Get" request for a specified resource, only required for resource types
+     * that explicitly cannot be retrieved by using a single identifier, such as the resource's OCID.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Object> getIdentityContext() {
         return identityContext;
     }
@@ -380,6 +554,16 @@ public final class ResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, Object> additionalDetails;
 
+    /**
+     * Additional resource attribute fields of this resource that match queries with a return clause, if any.
+     * For example, if you ran a query to find the private IP addresses, public IP addresses, and isPrimary field of
+     * the VNIC attachment on instance resources, that field would be included in the ResourceSummary object as:
+     * {"additionalDetails": {"attachedVnic": [{"publicIP" : "172.110.110.110","privateIP" : "10.10.10.10","isPrimary" : true},
+     * {"publicIP" : "172.110.110.111","privateIP" : "10.10.10.11","isPrimary" : false}]}.
+     * The structure of the additional details attribute fields depends on the matching resource.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, Object> getAdditionalDetails() {
         return additionalDetails;
     }

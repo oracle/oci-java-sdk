@@ -18,6 +18,10 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -34,6 +41,9 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private String name;
 
+    /**
+     * A filter to return rules only matching with this name.
+     */
     public String getName() {
         return name;
     }
@@ -43,6 +53,10 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private com.oracle.bmc.loganalytics.model.LifecycleStates lifecycleState;
 
+    /**
+     * Lifecycle state filter.
+     *
+     */
     public com.oracle.bmc.loganalytics.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -51,6 +65,9 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,6 +76,9 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -105,6 +125,10 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -154,6 +178,11 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeUpdated is descending.
+     * Default order for name is ascending. If no value is specified timeUpdated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -162,6 +191,9 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -173,11 +205,16 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -185,10 +222,14 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -196,10 +237,14 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * A filter to return rules only matching with this name.
+         */
         private String name = null;
 
         /**
          * A filter to return rules only matching with this name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -207,11 +252,16 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * Lifecycle state filter.
+         *
+         */
         private com.oracle.bmc.loganalytics.model.LifecycleStates lifecycleState = null;
 
         /**
          * Lifecycle state filter.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -220,10 +270,14 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -231,10 +285,14 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -242,11 +300,16 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -254,12 +317,18 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeUpdated is descending.
+         * Default order for name is ascending. If no value is specified timeUpdated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeUpdated is descending.
          * Default order for name is ascending. If no value is specified timeUpdated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -267,10 +336,14 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -363,7 +436,8 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -378,6 +452,10 @@ public class ListLogAnalyticsObjectCollectionRulesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

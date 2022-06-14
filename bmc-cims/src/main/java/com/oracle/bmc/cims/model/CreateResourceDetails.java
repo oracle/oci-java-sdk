@@ -35,6 +35,7 @@ public final class CreateResourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("item")
         private CreateItemDetails item;
 
@@ -43,19 +44,33 @@ public final class CreateResourceDetails {
             this.__explicitlySet__.add("item");
             return this;
         }
-
+        /**
+         * The list of available Oracle Cloud Infrastructure regions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private Region region;
 
+        /**
+         * The list of available Oracle Cloud Infrastructure regions.
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(Region region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * The list of available Oracle Cloud Infrastructure availability domains.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private AvailabilityDomain availabilityDomain;
 
+        /**
+         * The list of available Oracle Cloud Infrastructure availability domains.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(AvailabilityDomain availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
@@ -108,6 +123,10 @@ public final class CreateResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final Region region;
 
+    /**
+     * The list of available Oracle Cloud Infrastructure regions.
+     * @return the value
+     **/
     public Region getRegion() {
         return region;
     }
@@ -118,6 +137,10 @@ public final class CreateResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final AvailabilityDomain availabilityDomain;
 
+    /**
+     * The list of available Oracle Cloud Infrastructure availability domains.
+     * @return the value
+     **/
     public AvailabilityDomain getAvailabilityDomain() {
         return availabilityDomain;
     }

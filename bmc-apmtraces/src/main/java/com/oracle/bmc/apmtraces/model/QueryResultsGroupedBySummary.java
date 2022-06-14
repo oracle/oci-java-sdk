@@ -30,9 +30,19 @@ public final class QueryResultsGroupedBySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Column or attribute in the query result, which is a group by value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultsGroupedByColumn")
         private String queryResultsGroupedByColumn;
 
+        /**
+         * Column or attribute in the query result, which is a group by value.
+         *
+         * @param queryResultsGroupedByColumn the value to set
+         * @return this builder
+         **/
         public Builder queryResultsGroupedByColumn(String queryResultsGroupedByColumn) {
             this.queryResultsGroupedByColumn = queryResultsGroupedByColumn;
             this.__explicitlySet__.add("queryResultsGroupedByColumn");
@@ -76,6 +86,11 @@ public final class QueryResultsGroupedBySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsGroupedByColumn")
     private final String queryResultsGroupedByColumn;
 
+    /**
+     * Column or attribute in the query result, which is a group by value.
+     *
+     * @return the value
+     **/
     public String getQueryResultsGroupedByColumn() {
         return queryResultsGroupedByColumn;
     }

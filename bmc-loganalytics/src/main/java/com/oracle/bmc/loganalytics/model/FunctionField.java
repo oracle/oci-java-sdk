@@ -115,19 +115,37 @@ public final class FunctionField extends AbstractField {
             this.__explicitlySet__.add("unitType");
             return this;
         }
-
+        /**
+         * Name of the aggregate function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("function")
         private String function;
 
+        /**
+         * Name of the aggregate function.
+         *
+         * @param function the value to set
+         * @return this builder
+         **/
         public Builder function(String function) {
             this.function = function;
             this.__explicitlySet__.add("function");
             return this;
         }
-
+        /**
+         * List of function arguments if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<Argument> arguments;
 
+        /**
+         * List of function arguments if specified.
+         *
+         * @param arguments the value to set
+         * @return this builder
+         **/
         public Builder arguments(java.util.List<Argument> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
@@ -224,6 +242,11 @@ public final class FunctionField extends AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("function")
     private final String function;
 
+    /**
+     * Name of the aggregate function.
+     *
+     * @return the value
+     **/
     public String getFunction() {
         return function;
     }
@@ -235,6 +258,11 @@ public final class FunctionField extends AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<Argument> arguments;
 
+    /**
+     * List of function arguments if specified.
+     *
+     * @return the value
+     **/
     public java.util.List<Argument> getArguments() {
         return arguments;
     }

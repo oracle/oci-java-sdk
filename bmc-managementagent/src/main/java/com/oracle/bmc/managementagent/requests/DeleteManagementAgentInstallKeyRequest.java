@@ -17,6 +17,9 @@ public class DeleteManagementAgentInstallKeyRequest
      */
     private String managementAgentInstallKeyId;
 
+    /**
+     * Unique Management Agent Install Key identifier
+     */
     public String getManagementAgentInstallKeyId() {
         return managementAgentInstallKeyId;
     }
@@ -30,6 +33,14 @@ public class DeleteManagementAgentInstallKeyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,6 +49,9 @@ public class DeleteManagementAgentInstallKeyRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,10 +63,14 @@ public class DeleteManagementAgentInstallKeyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Management Agent Install Key identifier
+         */
         private String managementAgentInstallKeyId = null;
 
         /**
          * Unique Management Agent Install Key identifier
+         * @param managementAgentInstallKeyId the value to set
          * @return this builder instance
          */
         public Builder managementAgentInstallKeyId(String managementAgentInstallKeyId) {
@@ -60,6 +78,14 @@ public class DeleteManagementAgentInstallKeyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -69,6 +95,7 @@ public class DeleteManagementAgentInstallKeyRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -76,10 +103,14 @@ public class DeleteManagementAgentInstallKeyRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -160,7 +191,8 @@ public class DeleteManagementAgentInstallKeyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +201,10 @@ public class DeleteManagementAgentInstallKeyRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

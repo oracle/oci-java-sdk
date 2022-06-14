@@ -39,36 +39,71 @@ public final class TableLimits {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Maximum sustained read throughput limit for the table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxReadUnits")
         private Integer maxReadUnits;
 
+        /**
+         * Maximum sustained read throughput limit for the table.
+         * @param maxReadUnits the value to set
+         * @return this builder
+         **/
         public Builder maxReadUnits(Integer maxReadUnits) {
             this.maxReadUnits = maxReadUnits;
             this.__explicitlySet__.add("maxReadUnits");
             return this;
         }
-
+        /**
+         * Maximum sustained write throughput limit for the table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxWriteUnits")
         private Integer maxWriteUnits;
 
+        /**
+         * Maximum sustained write throughput limit for the table.
+         * @param maxWriteUnits the value to set
+         * @return this builder
+         **/
         public Builder maxWriteUnits(Integer maxWriteUnits) {
             this.maxWriteUnits = maxWriteUnits;
             this.__explicitlySet__.add("maxWriteUnits");
             return this;
         }
-
+        /**
+         * Maximum size of storage used by the table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxStorageInGBs")
         private Integer maxStorageInGBs;
 
+        /**
+         * Maximum size of storage used by the table.
+         * @param maxStorageInGBs the value to set
+         * @return this builder
+         **/
         public Builder maxStorageInGBs(Integer maxStorageInGBs) {
             this.maxStorageInGBs = maxStorageInGBs;
             this.__explicitlySet__.add("maxStorageInGBs");
             return this;
         }
-
+        /**
+         * The capacity mode of the table.  If capacityMode = ON_DEMAND,
+         * maxReadUnits and maxWriteUnits are not used, and both will have
+         * the value of zero.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
         private CapacityMode capacityMode;
 
+        /**
+         * The capacity mode of the table.  If capacityMode = ON_DEMAND,
+         * maxReadUnits and maxWriteUnits are not used, and both will have
+         * the value of zero.
+         *
+         * @param capacityMode the value to set
+         * @return this builder
+         **/
         public Builder capacityMode(CapacityMode capacityMode) {
             this.capacityMode = capacityMode;
             this.__explicitlySet__.add("capacityMode");
@@ -115,6 +150,10 @@ public final class TableLimits {
     @com.fasterxml.jackson.annotation.JsonProperty("maxReadUnits")
     private final Integer maxReadUnits;
 
+    /**
+     * Maximum sustained read throughput limit for the table.
+     * @return the value
+     **/
     public Integer getMaxReadUnits() {
         return maxReadUnits;
     }
@@ -125,6 +164,10 @@ public final class TableLimits {
     @com.fasterxml.jackson.annotation.JsonProperty("maxWriteUnits")
     private final Integer maxWriteUnits;
 
+    /**
+     * Maximum sustained write throughput limit for the table.
+     * @return the value
+     **/
     public Integer getMaxWriteUnits() {
         return maxWriteUnits;
     }
@@ -135,6 +178,10 @@ public final class TableLimits {
     @com.fasterxml.jackson.annotation.JsonProperty("maxStorageInGBs")
     private final Integer maxStorageInGBs;
 
+    /**
+     * Maximum size of storage used by the table.
+     * @return the value
+     **/
     public Integer getMaxStorageInGBs() {
         return maxStorageInGBs;
     }
@@ -199,6 +246,13 @@ public final class TableLimits {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
     private final CapacityMode capacityMode;
 
+    /**
+     * The capacity mode of the table.  If capacityMode = ON_DEMAND,
+     * maxReadUnits and maxWriteUnits are not used, and both will have
+     * the value of zero.
+     *
+     * @return the value
+     **/
     public CapacityMode getCapacityMode() {
         return capacityMode;
     }

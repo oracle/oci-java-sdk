@@ -120,10 +120,17 @@ public final class ResolverVnicEndpointSummary extends ResolverEndpointSummary {
             this.__explicitlySet__.add("self");
             return this;
         }
-
+        /**
+         * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -215,6 +222,10 @@ public final class ResolverVnicEndpointSummary extends ResolverEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }

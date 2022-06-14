@@ -16,6 +16,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -32,6 +38,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -76,6 +85,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -84,6 +96,9 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String shape;
 
+    /**
+     * If provided, filters the results for the given shape.
+     */
     public String getShape() {
         return shape;
     }
@@ -95,10 +110,14 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -106,10 +125,14 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -117,10 +140,14 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -128,10 +155,14 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -139,10 +170,14 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * If provided, filters the results for the given shape.
+         */
         private String shape = null;
 
         /**
          * If provided, filters the results for the given shape.
+         * @param shape the value to set
          * @return this builder instance
          */
         public Builder shape(String shape) {
@@ -226,7 +261,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +273,10 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .shape(shape);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

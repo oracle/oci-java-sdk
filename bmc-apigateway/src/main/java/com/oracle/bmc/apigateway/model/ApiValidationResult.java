@@ -30,18 +30,33 @@ public final class ApiValidationResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the validation.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Result of the validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private Result result;
 
+        /**
+         * Result of the validation.
+         * @param result the value to set
+         * @return this builder
+         **/
         public Builder result(Result result) {
             this.result = result;
             this.__explicitlySet__.add("result");
@@ -83,6 +98,10 @@ public final class ApiValidationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the validation.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -142,6 +161,10 @@ public final class ApiValidationResult {
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final Result result;
 
+    /**
+     * Result of the validation.
+     * @return the value
+     **/
     public Result getResult() {
         return result;
     }

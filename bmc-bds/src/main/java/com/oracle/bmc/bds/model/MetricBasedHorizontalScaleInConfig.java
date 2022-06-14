@@ -32,6 +32,7 @@ public final class MetricBasedHorizontalScaleInConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private AutoScalePolicyMetricRule metric;
 
@@ -40,19 +41,33 @@ public final class MetricBasedHorizontalScaleInConfig {
             this.__explicitlySet__.add("metric");
             return this;
         }
-
+        /**
+         * This value is the minimum number of nodes the cluster can be scaled-in to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minNodeCount")
         private Integer minNodeCount;
 
+        /**
+         * This value is the minimum number of nodes the cluster can be scaled-in to.
+         * @param minNodeCount the value to set
+         * @return this builder
+         **/
         public Builder minNodeCount(Integer minNodeCount) {
             this.minNodeCount = minNodeCount;
             this.__explicitlySet__.add("minNodeCount");
             return this;
         }
-
+        /**
+         * This value is the number of nodes to remove during a scale-in event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
         private Integer stepSize;
 
+        /**
+         * This value is the number of nodes to remove during a scale-in event.
+         * @param stepSize the value to set
+         * @return this builder
+         **/
         public Builder stepSize(Integer stepSize) {
             this.stepSize = stepSize;
             this.__explicitlySet__.add("stepSize");
@@ -105,6 +120,10 @@ public final class MetricBasedHorizontalScaleInConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("minNodeCount")
     private final Integer minNodeCount;
 
+    /**
+     * This value is the minimum number of nodes the cluster can be scaled-in to.
+     * @return the value
+     **/
     public Integer getMinNodeCount() {
         return minNodeCount;
     }
@@ -115,6 +134,10 @@ public final class MetricBasedHorizontalScaleInConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("stepSize")
     private final Integer stepSize;
 
+    /**
+     * This value is the number of nodes to remove during a scale-in event.
+     * @return the value
+     **/
     public Integer getStepSize() {
         return stepSize;
     }

@@ -25,9 +25,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class Sort extends PushDownOperation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The sort clause.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortClauses")
         private java.util.List<SortClause> sortClauses;
 
+        /**
+         * The sort clause.
+         * @param sortClauses the value to set
+         * @return this builder
+         **/
         public Builder sortClauses(java.util.List<SortClause> sortClauses) {
             this.sortClauses = sortClauses;
             this.__explicitlySet__.add("sortClauses");
@@ -75,6 +83,10 @@ public final class Sort extends PushDownOperation {
     @com.fasterxml.jackson.annotation.JsonProperty("sortClauses")
     private final java.util.List<SortClause> sortClauses;
 
+    /**
+     * The sort clause.
+     * @return the value
+     **/
     public java.util.List<SortClause> getSortClauses() {
         return sortClauses;
     }

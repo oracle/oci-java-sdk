@@ -33,19 +33,33 @@ public final class BipCallAttribute extends AbstractCallAttribute {
             this.__explicitlySet__.add("fetchSize");
             return this;
         }
-
+        /**
+         * Name of BIP report parameter to control the offset of the chunk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
         private String offsetParameter;
 
+        /**
+         * Name of BIP report parameter to control the offset of the chunk.
+         * @param offsetParameter the value to set
+         * @return this builder
+         **/
         public Builder offsetParameter(String offsetParameter) {
             this.offsetParameter = offsetParameter;
             this.__explicitlySet__.add("offsetParameter");
             return this;
         }
-
+        /**
+         * Name of BIP report parameter to control the fetch next rows of the chunk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
         private String fetchNextRowsParameter;
 
+        /**
+         * Name of BIP report parameter to control the fetch next rows of the chunk.
+         * @param fetchNextRowsParameter the value to set
+         * @return this builder
+         **/
         public Builder fetchNextRowsParameter(String fetchNextRowsParameter) {
             this.fetchNextRowsParameter = fetchNextRowsParameter;
             this.__explicitlySet__.add("fetchNextRowsParameter");
@@ -143,6 +157,10 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
     private final String offsetParameter;
 
+    /**
+     * Name of BIP report parameter to control the offset of the chunk.
+     * @return the value
+     **/
     public String getOffsetParameter() {
         return offsetParameter;
     }
@@ -153,6 +171,10 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
     private final String fetchNextRowsParameter;
 
+    /**
+     * Name of BIP report parameter to control the fetch next rows of the chunk.
+     * @return the value
+     **/
     public String getFetchNextRowsParameter() {
         return fetchNextRowsParameter;
     }

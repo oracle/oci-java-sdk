@@ -36,28 +36,53 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
             this.__explicitlySet__.add("destinations");
             return this;
         }
-
+        /**
+         * Route to match
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * Route to match
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * Match type for the route
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathType")
         private PathType pathType;
 
+        /**
+         * Match type for the route
+         * @param pathType the value to set
+         * @return this builder
+         **/
         public Builder pathType(PathType pathType) {
             this.pathType = pathType;
             this.__explicitlySet__.add("pathType");
             return this;
         }
-
+        /**
+         * If true, the rule will check that the content-type header has a application/grpc
+         * or one of the various application/grpc+ values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
         private Boolean isGrpc;
 
+        /**
+         * If true, the rule will check that the content-type header has a application/grpc
+         * or one of the various application/grpc+ values.
+         *
+         * @param isGrpc the value to set
+         * @return this builder
+         **/
         public Builder isGrpc(Boolean isGrpc) {
             this.isGrpc = isGrpc;
             this.__explicitlySet__.add("isGrpc");
@@ -116,6 +141,10 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * Route to match
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -173,6 +202,10 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
     @com.fasterxml.jackson.annotation.JsonProperty("pathType")
     private final PathType pathType;
 
+    /**
+     * Match type for the route
+     * @return the value
+     **/
     public PathType getPathType() {
         return pathType;
     }
@@ -185,6 +218,12 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
     @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
     private final Boolean isGrpc;
 
+    /**
+     * If true, the rule will check that the content-type header has a application/grpc
+     * or one of the various application/grpc+ values.
+     *
+     * @return the value
+     **/
     public Boolean getIsGrpc() {
         return isGrpc;
     }

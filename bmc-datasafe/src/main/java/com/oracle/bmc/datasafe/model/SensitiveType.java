@@ -88,6 +88,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the sensitive type.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -98,6 +102,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the sensitive type.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -108,6 +116,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the sensitive type.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -118,6 +130,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DiscoveryLifecycleState lifecycleState;
 
+    /**
+     * The current state of the sensitive type.
+     * @return the value
+     **/
     public DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -128,6 +144,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("shortName")
     private final String shortName;
 
+    /**
+     * The short name of the sensitive type.
+     * @return the value
+     **/
     public String getShortName() {
         return shortName;
     }
@@ -138,6 +158,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final SensitiveTypeSource source;
 
+    /**
+     * Specifies whether the sensitive type is user-defined or predefined.
+     * @return the value
+     **/
     public SensitiveTypeSource getSource() {
         return source;
     }
@@ -148,6 +172,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -158,6 +186,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -168,6 +200,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the sensitive type.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -178,6 +214,10 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("parentCategoryId")
     private final String parentCategoryId;
 
+    /**
+     * The OCID of the parent sensitive category.
+     * @return the value
+     **/
     public String getParentCategoryId() {
         return parentCategoryId;
     }
@@ -191,6 +231,13 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -204,6 +251,13 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -216,6 +270,12 @@ public class SensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

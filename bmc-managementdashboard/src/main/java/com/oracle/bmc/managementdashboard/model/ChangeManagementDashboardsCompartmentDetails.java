@@ -29,9 +29,17 @@ public final class ChangeManagementDashboardsCompartmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the compartment to which the dashboard is being moved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment to which the dashboard is being moved.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -74,6 +82,10 @@ public final class ChangeManagementDashboardsCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment to which the dashboard is being moved.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

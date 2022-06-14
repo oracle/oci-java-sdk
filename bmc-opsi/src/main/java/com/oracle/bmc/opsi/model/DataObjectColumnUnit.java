@@ -74,6 +74,10 @@ public class DataObjectColumnUnit {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the column's unit.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

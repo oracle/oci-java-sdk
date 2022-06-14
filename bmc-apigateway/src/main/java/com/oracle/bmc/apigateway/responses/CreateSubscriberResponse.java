@@ -14,6 +14,11 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -27,6 +32,14 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the work request. Use
+     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+     * this id to track the status
+     * of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -39,6 +52,13 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +69,11 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String location;
 
+    /**
+     * Location of the resource.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -58,6 +83,10 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.apigateway.model.Subscriber subscriber;
 
+    /**
+     * The returned Subscriber instance.
+     * @return the value
+     */
     public com.oracle.bmc.apigateway.model.Subscriber getSubscriber() {
         return subscriber;
     }
@@ -93,36 +122,94 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The OCID of the work request. Use
+         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+         * this id to track the status
+         * of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the work request. Use
+         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+         * this id to track the status
+         * of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Location of the resource.
+         *
+         */
         private String location;
 
+        /**
+         * Location of the resource.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned Subscriber instance.
+         */
         private com.oracle.bmc.apigateway.model.Subscriber subscriber;
 
+        /**
+         * The returned Subscriber instance.
+         * @param subscriber the value to set
+         * @return this builder
+         */
         public Builder subscriber(com.oracle.bmc.apigateway.model.Subscriber subscriber) {
             this.subscriber = subscriber;
             return this;
@@ -143,12 +230,20 @@ public class CreateSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSubscriberResponse build() {
             return new CreateSubscriberResponse(
                     __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, location, subscriber);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

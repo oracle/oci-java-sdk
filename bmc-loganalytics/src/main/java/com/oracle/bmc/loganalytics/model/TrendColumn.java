@@ -124,28 +124,55 @@ public final class TrendColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-
+        /**
+         * Time gap between each data pont in the series.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
         private String intervalGap;
 
+        /**
+         * Time gap between each data pont in the series.
+         *
+         * @param intervalGap the value to set
+         * @return this builder
+         **/
         public Builder intervalGap(String intervalGap) {
             this.intervalGap = intervalGap;
             this.__explicitlySet__.add("intervalGap");
             return this;
         }
-
+        /**
+         * Timestamps for each series data point
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervals")
         private java.util.List<Long> intervals;
 
+        /**
+         * Timestamps for each series data point
+         *
+         * @param intervals the value to set
+         * @return this builder
+         **/
         public Builder intervals(java.util.List<Long> intervals) {
             this.intervals = intervals;
             this.__explicitlySet__.add("intervals");
             return this;
         }
-
+        /**
+         * Sum across all column values for a given timestamp.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
         private java.util.List<Long> totalIntervalCounts;
 
+        /**
+         * Sum across all column values for a given timestamp.
+         *
+         * @param totalIntervalCounts the value to set
+         * @return this builder
+         **/
         public Builder totalIntervalCounts(java.util.List<Long> totalIntervalCounts) {
             this.totalIntervalCounts = totalIntervalCounts;
             this.__explicitlySet__.add("totalIntervalCounts");
@@ -291,6 +318,11 @@ public final class TrendColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
     private final String intervalGap;
 
+    /**
+     * Time gap between each data pont in the series.
+     *
+     * @return the value
+     **/
     public String getIntervalGap() {
         return intervalGap;
     }
@@ -302,6 +334,11 @@ public final class TrendColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("intervals")
     private final java.util.List<Long> intervals;
 
+    /**
+     * Timestamps for each series data point
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getIntervals() {
         return intervals;
     }
@@ -313,6 +350,11 @@ public final class TrendColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
     private final java.util.List<Long> totalIntervalCounts;
 
+    /**
+     * Sum across all column values for a given timestamp.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getTotalIntervalCounts() {
         return totalIntervalCounts;
     }

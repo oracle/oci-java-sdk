@@ -16,6 +16,9 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String userId;
 
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -24,6 +27,9 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String fingerprint;
 
+    /**
+     * The key's fingerprint.
+     */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -35,6 +41,12 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,10 +58,14 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -57,10 +73,14 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The key's fingerprint.
+         */
         private String fingerprint = null;
 
         /**
          * The key's fingerprint.
+         * @param fingerprint the value to set
          * @return this builder instance
          */
         public Builder fingerprint(String fingerprint) {
@@ -68,6 +88,12 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -75,6 +101,7 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -154,12 +181,17 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().userId(userId).fingerprint(fingerprint).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

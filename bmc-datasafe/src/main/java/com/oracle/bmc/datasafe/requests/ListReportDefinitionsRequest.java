@@ -17,6 +17,9 @@ public class ListReportDefinitionsRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,11 @@ public class ListReportDefinitionsRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -79,6 +87,13 @@ public class ListReportDefinitionsRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -87,6 +102,9 @@ public class ListReportDefinitionsRequest
      */
     private String displayName;
 
+    /**
+     * The name of the report definition to query.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -95,6 +113,9 @@ public class ListReportDefinitionsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -103,6 +124,9 @@ public class ListReportDefinitionsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -147,6 +171,9 @@ public class ListReportDefinitionsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -198,6 +225,12 @@ public class ListReportDefinitionsRequest
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -206,6 +239,9 @@ public class ListReportDefinitionsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -214,6 +250,9 @@ public class ListReportDefinitionsRequest
      */
     private Boolean isSeeded;
 
+    /**
+     * A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
+     */
     public Boolean getIsSeeded() {
         return isSeeded;
     }
@@ -222,6 +261,9 @@ public class ListReportDefinitionsRequest
      */
     private com.oracle.bmc.datasafe.model.ReportDefinitionDataSource dataSource;
 
+    /**
+     * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     */
     public com.oracle.bmc.datasafe.model.ReportDefinitionDataSource getDataSource() {
         return dataSource;
     }
@@ -230,6 +272,9 @@ public class ListReportDefinitionsRequest
      */
     private com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState lifecycleState;
 
+    /**
+     * An optional filter to return only resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -275,6 +320,9 @@ public class ListReportDefinitionsRequest
         }
     };
 
+    /**
+     * An optional filter to return only resources that match the specified category.
+     */
     public Category getCategory() {
         return category;
     }
@@ -286,10 +334,14 @@ public class ListReportDefinitionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -297,12 +349,18 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -310,6 +368,13 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -318,6 +383,7 @@ public class ListReportDefinitionsRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -325,10 +391,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * The name of the report definition to query.
+         */
         private String displayName = null;
 
         /**
          * The name of the report definition to query.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -336,10 +406,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -347,10 +421,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -358,10 +436,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -369,6 +451,12 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -376,6 +464,7 @@ public class ListReportDefinitionsRequest
          * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -383,10 +472,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -394,10 +487,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
+         */
         private Boolean isSeeded = null;
 
         /**
          * A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
+         * @param isSeeded the value to set
          * @return this builder instance
          */
         public Builder isSeeded(Boolean isSeeded) {
@@ -405,10 +502,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+         */
         private com.oracle.bmc.datasafe.model.ReportDefinitionDataSource dataSource = null;
 
         /**
          * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+         * @param dataSource the value to set
          * @return this builder instance
          */
         public Builder dataSource(
@@ -417,10 +518,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * An optional filter to return only resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState lifecycleState = null;
 
         /**
          * An optional filter to return only resources that match the specified lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -429,10 +534,14 @@ public class ListReportDefinitionsRequest
             return this;
         }
 
+        /**
+         * An optional filter to return only resources that match the specified category.
+         */
         private Category category = null;
 
         /**
          * An optional filter to return only resources that match the specified category.
+         * @param category the value to set
          * @return this builder instance
          */
         public Builder category(Category category) {
@@ -532,7 +641,8 @@ public class ListReportDefinitionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -551,6 +661,10 @@ public class ListReportDefinitionsRequest
                 .category(category);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

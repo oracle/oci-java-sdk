@@ -17,6 +17,9 @@ public class GetAcceptedAgreementRequest
      */
     private String acceptedAgreementId;
 
+    /**
+     * The unique identifier for the accepted terms of use agreement.
+     */
     public String getAcceptedAgreementId() {
         return acceptedAgreementId;
     }
@@ -27,6 +30,11 @@ public class GetAcceptedAgreementRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,10 +46,14 @@ public class GetAcceptedAgreementRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the accepted terms of use agreement.
+         */
         private String acceptedAgreementId = null;
 
         /**
          * The unique identifier for the accepted terms of use agreement.
+         * @param acceptedAgreementId the value to set
          * @return this builder instance
          */
         public Builder acceptedAgreementId(String acceptedAgreementId) {
@@ -49,12 +61,18 @@ public class GetAcceptedAgreementRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -132,12 +150,17 @@ public class GetAcceptedAgreementRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().acceptedAgreementId(acceptedAgreementId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

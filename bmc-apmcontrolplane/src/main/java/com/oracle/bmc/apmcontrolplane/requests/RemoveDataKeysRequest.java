@@ -18,6 +18,9 @@ public class RemoveDataKeysRequest
      */
     private String apmDomainId;
 
+    /**
+     * The OCID of the APM domain.
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -27,6 +30,9 @@ public class RemoveDataKeysRequest
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
             removeDataKeysListDetails;
 
+    /**
+     * List of Data Keys to be removed.
+     */
     public java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
             getRemoveDataKeysListDetails() {
         return removeDataKeysListDetails;
@@ -40,6 +46,13 @@ public class RemoveDataKeysRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. Set the {@code if-match} parameter
+     * to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +61,9 @@ public class RemoveDataKeysRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,10 +86,14 @@ public class RemoveDataKeysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the APM domain.
+         */
         private String apmDomainId = null;
 
         /**
          * The OCID of the APM domain.
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -81,11 +101,15 @@ public class RemoveDataKeysRequest
             return this;
         }
 
+        /**
+         * List of Data Keys to be removed.
+         */
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
                 removeDataKeysListDetails = null;
 
         /**
          * List of Data Keys to be removed.
+         * @param removeDataKeysListDetails the value to set
          * @return this builder instance
          */
         public Builder removeDataKeysListDetails(
@@ -97,6 +121,7 @@ public class RemoveDataKeysRequest
 
         /**
          * Singular setter. List of Data Keys to be removed.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder removeDataKeysListDetails(
@@ -104,6 +129,13 @@ public class RemoveDataKeysRequest
             return this.removeDataKeysListDetails(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For optimistic concurrency control. Set the {@code if-match} parameter
+         * to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -112,6 +144,7 @@ public class RemoveDataKeysRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -119,10 +152,14 @@ public class RemoveDataKeysRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -216,7 +253,8 @@ public class RemoveDataKeysRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +264,10 @@ public class RemoveDataKeysRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

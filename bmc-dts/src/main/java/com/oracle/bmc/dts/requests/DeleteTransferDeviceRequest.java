@@ -17,6 +17,9 @@ public class DeleteTransferDeviceRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -25,6 +28,9 @@ public class DeleteTransferDeviceRequest
      */
     private String transferDeviceLabel;
 
+    /**
+     * Label of the Transfer Device
+     */
     public String getTransferDeviceLabel() {
         return transferDeviceLabel;
     }
@@ -36,10 +42,14 @@ public class DeleteTransferDeviceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -47,10 +57,14 @@ public class DeleteTransferDeviceRequest
             return this;
         }
 
+        /**
+         * Label of the Transfer Device
+         */
         private String transferDeviceLabel = null;
 
         /**
          * Label of the Transfer Device
+         * @param transferDeviceLabel the value to set
          * @return this builder instance
          */
         public Builder transferDeviceLabel(String transferDeviceLabel) {
@@ -128,12 +142,17 @@ public class DeleteTransferDeviceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().id(id).transferDeviceLabel(transferDeviceLabel);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

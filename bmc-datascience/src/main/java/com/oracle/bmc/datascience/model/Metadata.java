@@ -30,36 +30,99 @@ public final class Metadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Key of the model Metadata. The key can either be user defined or OCI defined.
+         *    List of OCI defined keys:
+         *          * useCaseType
+         *          * libraryName
+         *          * libraryVersion
+         *          * estimatorClass
+         *          * hyperParameters
+         *          * testartifactresults
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Key of the model Metadata. The key can either be user defined or OCI defined.
+         *    List of OCI defined keys:
+         *          * useCaseType
+         *          * libraryName
+         *          * libraryVersion
+         *          * estimatorClass
+         *          * hyperParameters
+         *          * testartifactresults
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Allowed values for useCaseType:
+         *              binary_classification, regression, multinomial_classification, clustering, recommender,
+         *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+         *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         * <p>
+         * Allowed values for libraryName:
+         *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+         *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+         *              bert, gensim, flair, word2vec, ensemble, other
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * Allowed values for useCaseType:
+         *              binary_classification, regression, multinomial_classification, clustering, recommender,
+         *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+         *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         * <p>
+         * Allowed values for libraryName:
+         *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+         *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+         *              bert, gensim, flair, word2vec, ensemble, other
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Description of model metadata
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of model metadata
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -113,6 +176,18 @@ public final class Metadata {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Key of the model Metadata. The key can either be user defined or OCI defined.
+     *    List of OCI defined keys:
+     *          * useCaseType
+     *          * libraryName
+     *          * libraryVersion
+     *          * estimatorClass
+     *          * hyperParameters
+     *          * testartifactresults
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -132,6 +207,19 @@ public final class Metadata {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * Allowed values for useCaseType:
+     *              binary_classification, regression, multinomial_classification, clustering, recommender,
+     *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+     *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+     * <p>
+     * Allowed values for libraryName:
+     *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+     *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+     *              bert, gensim, flair, word2vec, ensemble, other
+     *
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -142,6 +230,10 @@ public final class Metadata {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of model metadata
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -152,6 +244,10 @@ public final class Metadata {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }

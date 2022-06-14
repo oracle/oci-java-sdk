@@ -53,72 +53,137 @@ public final class UpdateSoftwareSourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * User friendly name for the software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User friendly name for the software source
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Information specified by the user about the software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Information specified by the user about the software source
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Name of the person maintaining this software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintainerName")
         private String maintainerName;
 
+        /**
+         * Name of the person maintaining this software source
+         * @param maintainerName the value to set
+         * @return this builder
+         **/
         public Builder maintainerName(String maintainerName) {
             this.maintainerName = maintainerName;
             this.__explicitlySet__.add("maintainerName");
             return this;
         }
-
+        /**
+         * Email address of the person maintaining this software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintainerEmail")
         private String maintainerEmail;
 
+        /**
+         * Email address of the person maintaining this software source
+         * @param maintainerEmail the value to set
+         * @return this builder
+         **/
         public Builder maintainerEmail(String maintainerEmail) {
             this.maintainerEmail = maintainerEmail;
             this.__explicitlySet__.add("maintainerEmail");
             return this;
         }
-
+        /**
+         * Phone number of the person maintaining this software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintainerPhone")
         private String maintainerPhone;
 
+        /**
+         * Phone number of the person maintaining this software source
+         * @param maintainerPhone the value to set
+         * @return this builder
+         **/
         public Builder maintainerPhone(String maintainerPhone) {
             this.maintainerPhone = maintainerPhone;
             this.__explicitlySet__.add("maintainerPhone");
             return this;
         }
-
+        /**
+         * The yum repository checksum type used by this software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private ChecksumTypes checksumType;
 
+        /**
+         * The yum repository checksum type used by this software source
+         * @param checksumType the value to set
+         * @return this builder
+         **/
         public Builder checksumType(ChecksumTypes checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -178,6 +243,10 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User friendly name for the software source
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -188,6 +257,10 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Information specified by the user about the software source
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -198,6 +271,10 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerName")
     private final String maintainerName;
 
+    /**
+     * Name of the person maintaining this software source
+     * @return the value
+     **/
     public String getMaintainerName() {
         return maintainerName;
     }
@@ -208,6 +285,10 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerEmail")
     private final String maintainerEmail;
 
+    /**
+     * Email address of the person maintaining this software source
+     * @return the value
+     **/
     public String getMaintainerEmail() {
         return maintainerEmail;
     }
@@ -218,6 +299,10 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maintainerPhone")
     private final String maintainerPhone;
 
+    /**
+     * Phone number of the person maintaining this software source
+     * @return the value
+     **/
     public String getMaintainerPhone() {
         return maintainerPhone;
     }
@@ -228,6 +313,10 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final ChecksumTypes checksumType;
 
+    /**
+     * The yum repository checksum type used by this software source
+     * @return the value
+     **/
     public ChecksumTypes getChecksumType() {
         return checksumType;
     }
@@ -240,6 +329,12 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -252,6 +347,12 @@ public final class UpdateSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

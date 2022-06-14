@@ -30,18 +30,33 @@ public final class DeploymentArgument {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the parameter (case-sensitive).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the parameter (case-sensitive).
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * value of the argument.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * value of the argument.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -83,6 +98,10 @@ public final class DeploymentArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the parameter (case-sensitive).
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +112,10 @@ public final class DeploymentArgument {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * value of the argument.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

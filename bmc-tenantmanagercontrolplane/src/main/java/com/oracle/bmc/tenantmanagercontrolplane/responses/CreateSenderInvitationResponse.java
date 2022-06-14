@@ -15,6 +15,12 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -35,6 +46,11 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -44,6 +60,10 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
+    /**
+     * The returned SenderInvitation instance.
+     * @return the value
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation getSenderInvitation() {
         return senderInvitation;
     }
@@ -76,29 +96,69 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned SenderInvitation instance.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
+        /**
+         * The returned SenderInvitation instance.
+         * @param senderInvitation the value to set
+         * @return this builder
+         */
         public Builder senderInvitation(
                 com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation) {
             this.senderInvitation = senderInvitation;
@@ -119,12 +179,20 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSenderInvitationResponse build() {
             return new CreateSenderInvitationResponse(
                     __httpStatusCode__, opcRequestId, opcWorkRequestId, etag, senderInvitation);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

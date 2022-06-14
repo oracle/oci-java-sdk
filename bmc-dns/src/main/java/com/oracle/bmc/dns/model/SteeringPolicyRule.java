@@ -69,6 +69,10 @@ public class SteeringPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A user-defined description of the rule's purpose or behavior.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

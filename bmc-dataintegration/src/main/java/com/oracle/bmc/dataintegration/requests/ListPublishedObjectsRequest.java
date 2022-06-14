@@ -17,6 +17,9 @@ public class ListPublishedObjectsRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -25,6 +28,9 @@ public class ListPublishedObjectsRequest
      */
     private String applicationKey;
 
+    /**
+     * The application key.
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
@@ -33,6 +39,9 @@ public class ListPublishedObjectsRequest
      */
     private java.util.List<String> fields;
 
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
@@ -41,6 +50,9 @@ public class ListPublishedObjectsRequest
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -49,6 +61,9 @@ public class ListPublishedObjectsRequest
      */
     private String nameStartsWith;
 
+    /**
+     * This parameter can be used to filter objects by the names starting with the given value.
+     */
     public String getNameStartsWith() {
         return nameStartsWith;
     }
@@ -57,6 +72,9 @@ public class ListPublishedObjectsRequest
      */
     private String nameContains;
 
+    /**
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+     */
     public String getNameContains() {
         return nameContains;
     }
@@ -66,6 +84,10 @@ public class ListPublishedObjectsRequest
      */
     private java.util.List<String> identifier;
 
+    /**
+     * Used to filter by the identifier of the published object.
+     *
+     */
     public java.util.List<String> getIdentifier() {
         return identifier;
     }
@@ -77,6 +99,12 @@ public class ListPublishedObjectsRequest
      */
     private java.util.List<String> type;
 
+    /**
+     * Used to filter by the object type of the object.
+     * It can be suffixed with an optional filter operator InSubtree.
+     * For Data Integration APIs, a filter based on type Task is used.
+     *
+     */
     public java.util.List<String> getType() {
         return type;
     }
@@ -88,6 +116,12 @@ public class ListPublishedObjectsRequest
      */
     private String typeInSubtree;
 
+    /**
+     * Used in association with type parameter. If value is true,
+     * then type all sub types of the given type parameter is considered.
+     * If value is false, then sub types are not considered. Default is false.
+     *
+     */
     public String getTypeInSubtree() {
         return typeInSubtree;
     }
@@ -96,6 +130,9 @@ public class ListPublishedObjectsRequest
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -104,6 +141,9 @@ public class ListPublishedObjectsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -148,6 +188,9 @@ public class ListPublishedObjectsRequest
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -192,6 +235,9 @@ public class ListPublishedObjectsRequest
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -203,6 +249,12 @@ public class ListPublishedObjectsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -214,10 +266,14 @@ public class ListPublishedObjectsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -225,10 +281,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * The application key.
+         */
         private String applicationKey = null;
 
         /**
          * The application key.
+         * @param applicationKey the value to set
          * @return this builder instance
          */
         public Builder applicationKey(String applicationKey) {
@@ -236,10 +296,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<String> fields) {
@@ -249,16 +313,21 @@ public class ListPublishedObjectsRequest
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(String singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -266,10 +335,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * This parameter can be used to filter objects by the names starting with the given value.
+         */
         private String nameStartsWith = null;
 
         /**
          * This parameter can be used to filter objects by the names starting with the given value.
+         * @param nameStartsWith the value to set
          * @return this builder instance
          */
         public Builder nameStartsWith(String nameStartsWith) {
@@ -277,10 +350,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+         */
         private String nameContains = null;
 
         /**
          * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+         * @param nameContains the value to set
          * @return this builder instance
          */
         public Builder nameContains(String nameContains) {
@@ -288,11 +365,16 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * Used to filter by the identifier of the published object.
+         *
+         */
         private java.util.List<String> identifier = null;
 
         /**
          * Used to filter by the identifier of the published object.
          *
+         * @param identifier the value to set
          * @return this builder instance
          */
         public Builder identifier(java.util.List<String> identifier) {
@@ -303,12 +385,19 @@ public class ListPublishedObjectsRequest
         /**
          * Singular setter. Used to filter by the identifier of the published object.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder identifier(String singularValue) {
             return this.identifier(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Used to filter by the object type of the object.
+         * It can be suffixed with an optional filter operator InSubtree.
+         * For Data Integration APIs, a filter based on type Task is used.
+         *
+         */
         private java.util.List<String> type = null;
 
         /**
@@ -316,6 +405,7 @@ public class ListPublishedObjectsRequest
          * It can be suffixed with an optional filter operator InSubtree.
          * For Data Integration APIs, a filter based on type Task is used.
          *
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(java.util.List<String> type) {
@@ -328,12 +418,19 @@ public class ListPublishedObjectsRequest
          * It can be suffixed with an optional filter operator InSubtree.
          * For Data Integration APIs, a filter based on type Task is used.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder type(String singularValue) {
             return this.type(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Used in association with type parameter. If value is true,
+         * then type all sub types of the given type parameter is considered.
+         * If value is false, then sub types are not considered. Default is false.
+         *
+         */
         private String typeInSubtree = null;
 
         /**
@@ -341,6 +438,7 @@ public class ListPublishedObjectsRequest
          * then type all sub types of the given type parameter is considered.
          * If value is false, then sub types are not considered. Default is false.
          *
+         * @param typeInSubtree the value to set
          * @return this builder instance
          */
         public Builder typeInSubtree(String typeInSubtree) {
@@ -348,10 +446,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -359,10 +461,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -370,10 +476,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -381,10 +491,14 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -392,6 +506,12 @@ public class ListPublishedObjectsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -399,6 +519,7 @@ public class ListPublishedObjectsRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -500,7 +621,8 @@ public class ListPublishedObjectsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -520,6 +642,10 @@ public class ListPublishedObjectsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

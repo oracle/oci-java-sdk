@@ -18,6 +18,9 @@ public class UpdateManagementAgentRequest
      */
     private String managementAgentId;
 
+    /**
+     * Unique Management Agent identifier
+     */
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -27,6 +30,9 @@ public class UpdateManagementAgentRequest
     private com.oracle.bmc.managementagent.model.UpdateManagementAgentDetails
             updateManagementAgentDetails;
 
+    /**
+     * Details required for changing the console managed properties of the Management Agent.
+     */
     public com.oracle.bmc.managementagent.model.UpdateManagementAgentDetails
             getUpdateManagementAgentDetails() {
         return updateManagementAgentDetails;
@@ -41,6 +47,14 @@ public class UpdateManagementAgentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -49,6 +63,9 @@ public class UpdateManagementAgentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class UpdateManagementAgentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -84,10 +109,14 @@ public class UpdateManagementAgentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Management Agent identifier
+         */
         private String managementAgentId = null;
 
         /**
          * Unique Management Agent identifier
+         * @param managementAgentId the value to set
          * @return this builder instance
          */
         public Builder managementAgentId(String managementAgentId) {
@@ -95,11 +124,15 @@ public class UpdateManagementAgentRequest
             return this;
         }
 
+        /**
+         * Details required for changing the console managed properties of the Management Agent.
+         */
         private com.oracle.bmc.managementagent.model.UpdateManagementAgentDetails
                 updateManagementAgentDetails = null;
 
         /**
          * Details required for changing the console managed properties of the Management Agent.
+         * @param updateManagementAgentDetails the value to set
          * @return this builder instance
          */
         public Builder updateManagementAgentDetails(
@@ -109,6 +142,14 @@ public class UpdateManagementAgentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -118,6 +159,7 @@ public class UpdateManagementAgentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -125,10 +167,14 @@ public class UpdateManagementAgentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,14 @@ public class UpdateManagementAgentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -145,6 +199,7 @@ public class UpdateManagementAgentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -240,7 +295,8 @@ public class UpdateManagementAgentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -251,6 +307,10 @@ public class UpdateManagementAgentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

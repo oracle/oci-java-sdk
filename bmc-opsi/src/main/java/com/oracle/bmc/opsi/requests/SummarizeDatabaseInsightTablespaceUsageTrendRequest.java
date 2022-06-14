@@ -17,6 +17,9 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -29,6 +32,13 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private String analysisTimeInterval;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
+     */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
@@ -42,6 +52,14 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private java.util.Date timeIntervalStart;
 
+    /**
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -54,6 +72,13 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    /**
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -63,6 +88,10 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private String databaseId;
 
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -72,6 +101,10 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private String id;
 
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -83,6 +116,12 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -96,6 +135,14 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -106,6 +153,11 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -117,10 +169,14 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -128,6 +184,13 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         */
         private String analysisTimeInterval = null;
 
         /**
@@ -136,6 +199,7 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
          * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
          * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
+         * @param analysisTimeInterval the value to set
          * @return this builder instance
          */
         public Builder analysisTimeInterval(String analysisTimeInterval) {
@@ -143,6 +207,14 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         */
         private java.util.Date timeIntervalStart = null;
 
         /**
@@ -152,6 +224,7 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          * If analysisTimeInterval is specified, this parameter is ignored.
          *
+         * @param timeIntervalStart the value to set
          * @return this builder instance
          */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
@@ -159,6 +232,13 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         */
         private java.util.Date timeIntervalEnd = null;
 
         /**
@@ -167,6 +247,7 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
          * timeIntervalStart and timeIntervalEnd are used together.
          * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
+         * @param timeIntervalEnd the value to set
          * @return this builder instance
          */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
@@ -174,11 +255,16 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         */
         private String databaseId = null;
 
         /**
          * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -186,11 +272,16 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         *
+         */
         private String id = null;
 
         /**
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -198,6 +289,12 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -205,6 +302,7 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -212,6 +310,14 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -221,6 +327,7 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
          * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -228,12 +335,18 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -328,7 +441,8 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -343,6 +457,10 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -100,118 +100,312 @@ public final class PrivateIp {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The private IP's availability domain. This attribute will be null if this is a *secondary*
+         * private IP assigned to a VNIC that is in a *regional* subnet.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The private IP's availability domain. This attribute will be null if this is a *secondary*
+         * private IP assigned to a VNIC that is in a *regional* subnet.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The hostname for the private IP. Used for DNS. The value is the hostname
+         * portion of the private IP's fully qualified domain name (FQDN)
+         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Must be unique across all VNICs in the subnet and comply with
+         * [RFC 952](https://tools.ietf.org/html/rfc952) and
+         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code bminstance-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
+        /**
+         * The hostname for the private IP. Used for DNS. The value is the hostname
+         * portion of the private IP's fully qualified domain name (FQDN)
+         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Must be unique across all VNICs in the subnet and comply with
+         * [RFC 952](https://tools.ietf.org/html/rfc952) and
+         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code bminstance-1}
+         *
+         * @param hostnameLabel the value to set
+         * @return this builder
+         **/
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
-
+        /**
+         * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The private IP address of the {@code privateIp} object. The address is within the CIDR
+         * of the VNIC's subnet.
+         * <p>
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution, the address is from the range specified by the
+         * {@code cidrBlock} attribute for the VLAN. See {@link Vlan}.
+         * <p>
+         * Example: {@code 10.0.3.3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * The private IP address of the {@code privateIp} object. The address is within the CIDR
+         * of the VNIC's subnet.
+         * <p>
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution, the address is from the range specified by the
+         * {@code cidrBlock} attribute for the VLAN. See {@link Vlan}.
+         * <p>
+         * Example: {@code 10.0.3.3}
+         *
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * Whether this private IP is the primary one on the VNIC. Primary private IPs
+         * are unassigned and deleted automatically when the VNIC is terminated.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * Whether this private IP is the primary one on the VNIC. Primary private IPs
+         * are unassigned and deleted automatically when the VNIC is terminated.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isPrimary the value to set
+         * @return this builder
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
-
+        /**
+         * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution. The {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See
+         * {@link Vlan}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
 
+        /**
+         * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution. The {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See
+         * {@link Vlan}.
+         *
+         * @param vlanId the value to set
+         * @return this builder
+         **/
         public Builder vlanId(String vlanId) {
             this.vlanId = vlanId;
             this.__explicitlySet__.add("vlanId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * <p>
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution, the {@code subnetId} is null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * <p>
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution, the {@code subnetId} is null.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
+         * must be in the same subnet.
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution, the {@code vnicId} is null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
+         * must be in the same subnet.
+         * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+         * the Oracle Cloud VMware Solution, the {@code vnicId} is null.
+         *
+         * @param vnicId the value to set
+         * @return this builder
+         **/
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
@@ -284,6 +478,14 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The private IP's availability domain. This attribute will be null if this is a *secondary*
+     * private IP assigned to a VNIC that is in a *regional* subnet.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -294,6 +496,10 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -308,6 +514,14 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -320,6 +534,12 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -334,6 +554,14 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -355,6 +583,21 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
+    /**
+     * The hostname for the private IP. Used for DNS. The value is the hostname
+     * portion of the private IP's fully qualified domain name (FQDN)
+     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * Must be unique across all VNICs in the subnet and comply with
+     * [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code bminstance-1}
+     *
+     * @return the value
+     **/
     public String getHostnameLabel() {
         return hostnameLabel;
     }
@@ -365,6 +608,10 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -383,6 +630,18 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * The private IP address of the {@code privateIp} object. The address is within the CIDR
+     * of the VNIC's subnet.
+     * <p>
+     * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution, the address is from the range specified by the
+     * {@code cidrBlock} attribute for the VLAN. See {@link Vlan}.
+     * <p>
+     * Example: {@code 10.0.3.3}
+     *
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -397,6 +656,14 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * Whether this private IP is the primary one on the VNIC. Primary private IPs
+     * are unassigned and deleted automatically when the VNIC is terminated.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
     }
@@ -410,6 +677,13 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
+    /**
+     * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution. The {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See
+     * {@link Vlan}.
+     *
+     * @return the value
+     **/
     public String getVlanId() {
         return vlanId;
     }
@@ -424,6 +698,14 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * <p>
+     * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution, the {@code subnetId} is null.
+     *
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -437,6 +719,13 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -451,6 +740,14 @@ public final class PrivateIp {
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
+     * must be in the same subnet.
+     * However, if the {@code PrivateIp} object is being used with a VLAN as part of
+     * the Oracle Cloud VMware Solution, the {@code vnicId} is null.
+     *
+     * @return the value
+     **/
     public String getVnicId() {
         return vnicId;
     }

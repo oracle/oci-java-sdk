@@ -28,18 +28,33 @@ public final class ImageDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Marketplace image listing ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
+        /**
+         * Marketplace image listing ID.
+         * @param listingId the value to set
+         * @return this builder
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
-
+        /**
+         * Image package version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
+        /**
+         * Image package version.
+         * @param packageVersion the value to set
+         * @return this builder
+         **/
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
@@ -82,6 +97,10 @@ public final class ImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * Marketplace image listing ID.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -92,6 +111,10 @@ public final class ImageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
+    /**
+     * Image package version.
+     * @return the value
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }

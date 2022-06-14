@@ -31,27 +31,49 @@ public final class Group {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The streamId for which the group exists.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamId")
         private String streamId;
 
+        /**
+         * The streamId for which the group exists.
+         * @param streamId the value to set
+         * @return this builder
+         **/
         public Builder streamId(String streamId) {
             this.streamId = streamId;
             this.__explicitlySet__.add("streamId");
             return this;
         }
-
+        /**
+         * The name of the consumer group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
+        /**
+         * The name of the consumer group.
+         * @param groupName the value to set
+         * @return this builder
+         **/
         public Builder groupName(String groupName) {
             this.groupName = groupName;
             this.__explicitlySet__.add("groupName");
             return this;
         }
-
+        /**
+         * An array of the partition reservations of a group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservations")
         private java.util.List<PartitionReservation> reservations;
 
+        /**
+         * An array of the partition reservations of a group.
+         * @param reservations the value to set
+         * @return this builder
+         **/
         public Builder reservations(java.util.List<PartitionReservation> reservations) {
             this.reservations = reservations;
             this.__explicitlySet__.add("reservations");
@@ -96,6 +118,10 @@ public final class Group {
     @com.fasterxml.jackson.annotation.JsonProperty("streamId")
     private final String streamId;
 
+    /**
+     * The streamId for which the group exists.
+     * @return the value
+     **/
     public String getStreamId() {
         return streamId;
     }
@@ -106,6 +132,10 @@ public final class Group {
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
+    /**
+     * The name of the consumer group.
+     * @return the value
+     **/
     public String getGroupName() {
         return groupName;
     }
@@ -116,6 +146,10 @@ public final class Group {
     @com.fasterxml.jackson.annotation.JsonProperty("reservations")
     private final java.util.List<PartitionReservation> reservations;
 
+    /**
+     * An array of the partition reservations of a group.
+     * @return the value
+     **/
     public java.util.List<PartitionReservation> getReservations() {
         return reservations;
     }

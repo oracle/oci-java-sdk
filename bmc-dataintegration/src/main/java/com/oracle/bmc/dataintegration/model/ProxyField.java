@@ -87,10 +87,17 @@ public final class ProxyField extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Object scope;
 
+        /**
+         * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(Object scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -114,10 +121,17 @@ public final class ProxyField extends TypedObject {
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -202,6 +216,10 @@ public final class ProxyField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Object scope;
 
+    /**
+     * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+     * @return the value
+     **/
     public Object getScope() {
         return scope;
     }
@@ -226,6 +244,10 @@ public final class ProxyField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }

@@ -19,6 +19,11 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private String resourceType;
 
+    /**
+     * Filter by resource.
+     * Supported values are HOST , STORAGE_SERVER and DATABASE
+     *
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -29,6 +34,11 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private String resourceMetric;
 
+    /**
+     * Filter by resource metric.
+     * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+     *
+     */
     public String getResourceMetric() {
         return resourceMetric;
     }
@@ -37,6 +47,9 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -49,6 +62,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private String analysisTimeInterval;
 
+    /**
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
+     */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
@@ -62,6 +82,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.Date timeIntervalStart;
 
+    /**
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
@@ -74,6 +102,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.Date timeIntervalEnd;
 
+    /**
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
@@ -83,6 +118,10 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> exadataInsightId;
 
+    /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
@@ -93,6 +132,11 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> exadataType;
 
+    /**
+     * Filter by one or more Exadata types.
+     * Possible value are DBMACHINE, EXACS, and EXACC.
+     *
+     */
     public java.util.List<String> getExadataType() {
         return exadataType;
     }
@@ -137,6 +181,9 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         }
     };
 
+    /**
+     * Choose the type of statistic metric data to be used for forecasting.
+     */
     public Statistic getStatistic() {
         return statistic;
     }
@@ -146,6 +193,10 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private Integer forecastStartDay;
 
+    /**
+     * Number of days used for utilization forecast analysis.
+     *
+     */
     public Integer getForecastStartDay() {
         return forecastStartDay;
     }
@@ -155,6 +206,10 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private Integer forecastDays;
 
+    /**
+     * Number of days used for utilization forecast analysis.
+     *
+     */
     public Integer getForecastDays() {
         return forecastDays;
     }
@@ -210,6 +265,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         }
     };
 
+    /**
+     * Choose algorithm model for the forecasting.
+     * Possible values:
+     *   - LINEAR: Uses linear regression algorithm for forecasting.
+     *   - ML_AUTO: Automatically detects best algorithm to use for forecasting.
+     *   - ML_NO_AUTO: Automatically detects seasonality of the data for forecasting using linear or seasonal algorithm.
+     *
+     */
     public ForecastModel getForecastModel() {
         return forecastModel;
     }
@@ -219,6 +282,10 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> cdbName;
 
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
     public java.util.List<String> getCdbName() {
         return cdbName;
     }
@@ -228,6 +295,10 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> hostName;
 
+    /**
+     * Filter by hostname.
+     *
+     */
     public java.util.List<String> getHostName() {
         return hostName;
     }
@@ -241,6 +312,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private Integer confidence;
 
+    /**
+     * This parameter is used to change data's confidence level, this data is ingested by the
+     * forecast algorithm.
+     * Confidence is the probability of an interval to contain the expected population parameter.
+     * Manipulation of this value will lead to different results.
+     * If not set, default confidence value is 95%.
+     *
+     */
     public Integer getConfidence() {
         return confidence;
     }
@@ -252,6 +331,12 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -264,6 +349,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> definedTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
@@ -275,6 +367,12 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> freeformTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
@@ -289,6 +387,15 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> definedTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
@@ -301,6 +408,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
@@ -311,6 +425,11 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -322,12 +441,18 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Filter by resource.
+         * Supported values are HOST , STORAGE_SERVER and DATABASE
+         *
+         */
         private String resourceType = null;
 
         /**
          * Filter by resource.
          * Supported values are HOST , STORAGE_SERVER and DATABASE
          *
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -335,12 +460,18 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Filter by resource metric.
+         * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+         *
+         */
         private String resourceMetric = null;
 
         /**
          * Filter by resource metric.
          * Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
          *
+         * @param resourceMetric the value to set
          * @return this builder instance
          */
         public Builder resourceMetric(String resourceMetric) {
@@ -348,10 +479,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -359,6 +494,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
+         */
         private String analysisTimeInterval = null;
 
         /**
@@ -367,6 +509,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
          * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
+         * @param analysisTimeInterval the value to set
          * @return this builder instance
          */
         public Builder analysisTimeInterval(String analysisTimeInterval) {
@@ -374,6 +517,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
+         */
         private java.util.Date timeIntervalStart = null;
 
         /**
@@ -383,6 +534,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * timeIntervalStart and timeIntervalEnd parameters are used together.
          * If analysisTimeInterval is specified, this parameter is ignored.
          *
+         * @param timeIntervalStart the value to set
          * @return this builder instance
          */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
@@ -390,6 +542,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
+         */
         private java.util.Date timeIntervalEnd = null;
 
         /**
@@ -398,6 +557,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * timeIntervalStart and timeIntervalEnd are used together.
          * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
+         * @param timeIntervalEnd the value to set
          * @return this builder instance
          */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
@@ -405,11 +565,16 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param exadataInsightId the value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
@@ -420,18 +585,25 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         /**
          * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataInsightId(String singularValue) {
             return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by one or more Exadata types.
+         * Possible value are DBMACHINE, EXACS, and EXACC.
+         *
+         */
         private java.util.List<String> exadataType = null;
 
         /**
          * Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param exadataType the value to set
          * @return this builder instance
          */
         public Builder exadataType(java.util.List<String> exadataType) {
@@ -443,16 +615,21 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Singular setter. Filter by one or more Exadata types.
          * Possible value are DBMACHINE, EXACS, and EXACC.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exadataType(String singularValue) {
             return this.exadataType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Choose the type of statistic metric data to be used for forecasting.
+         */
         private Statistic statistic = null;
 
         /**
          * Choose the type of statistic metric data to be used for forecasting.
+         * @param statistic the value to set
          * @return this builder instance
          */
         public Builder statistic(Statistic statistic) {
@@ -460,11 +637,16 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Number of days used for utilization forecast analysis.
+         *
+         */
         private Integer forecastStartDay = null;
 
         /**
          * Number of days used for utilization forecast analysis.
          *
+         * @param forecastStartDay the value to set
          * @return this builder instance
          */
         public Builder forecastStartDay(Integer forecastStartDay) {
@@ -472,11 +654,16 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Number of days used for utilization forecast analysis.
+         *
+         */
         private Integer forecastDays = null;
 
         /**
          * Number of days used for utilization forecast analysis.
          *
+         * @param forecastDays the value to set
          * @return this builder instance
          */
         public Builder forecastDays(Integer forecastDays) {
@@ -484,6 +671,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Choose algorithm model for the forecasting.
+         * Possible values:
+         *   - LINEAR: Uses linear regression algorithm for forecasting.
+         *   - ML_AUTO: Automatically detects best algorithm to use for forecasting.
+         *   - ML_NO_AUTO: Automatically detects seasonality of the data for forecasting using linear or seasonal algorithm.
+         *
+         */
         private ForecastModel forecastModel = null;
 
         /**
@@ -493,6 +688,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          *   - ML_AUTO: Automatically detects best algorithm to use for forecasting.
          *   - ML_NO_AUTO: Automatically detects seasonality of the data for forecasting using linear or seasonal algorithm.
          *
+         * @param forecastModel the value to set
          * @return this builder instance
          */
         public Builder forecastModel(ForecastModel forecastModel) {
@@ -500,11 +696,16 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * Filter by one or more cdb name.
+         *
+         */
         private java.util.List<String> cdbName = null;
 
         /**
          * Filter by one or more cdb name.
          *
+         * @param cdbName the value to set
          * @return this builder instance
          */
         public Builder cdbName(java.util.List<String> cdbName) {
@@ -515,17 +716,23 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         /**
          * Singular setter. Filter by one or more cdb name.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder cdbName(String singularValue) {
             return this.cdbName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Filter by hostname.
+         *
+         */
         private java.util.List<String> hostName = null;
 
         /**
          * Filter by hostname.
          *
+         * @param hostName the value to set
          * @return this builder instance
          */
         public Builder hostName(java.util.List<String> hostName) {
@@ -536,12 +743,21 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         /**
          * Singular setter. Filter by hostname.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder hostName(String singularValue) {
             return this.hostName(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * This parameter is used to change data's confidence level, this data is ingested by the
+         * forecast algorithm.
+         * Confidence is the probability of an interval to contain the expected population parameter.
+         * Manipulation of this value will lead to different results.
+         * If not set, default confidence value is 95%.
+         *
+         */
         private Integer confidence = null;
 
         /**
@@ -551,6 +767,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Manipulation of this value will lead to different results.
          * If not set, default confidence value is 95%.
          *
+         * @param confidence the value to set
          * @return this builder instance
          */
         public Builder confidence(Integer confidence) {
@@ -558,6 +775,12 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -565,6 +788,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -572,6 +796,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
             return this;
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagEquals = null;
 
         /**
@@ -580,6 +811,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagEquals the value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
@@ -593,12 +825,19 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(String singularValue) {
             return this.definedTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
@@ -606,6 +845,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagEquals the value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
@@ -618,12 +858,22 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(String singularValue) {
             return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagExists = null;
 
         /**
@@ -634,6 +884,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagExists the value to set
          * @return this builder instance
          */
         public Builder definedTagExists(java.util.List<String> definedTagExists) {
@@ -649,12 +900,20 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagExists(String singularValue) {
             return this.definedTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagExists = null;
 
         /**
@@ -663,6 +922,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagExists the value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
@@ -676,18 +936,25 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(String singularValue) {
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -806,7 +1073,8 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -833,6 +1101,10 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

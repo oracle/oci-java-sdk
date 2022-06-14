@@ -15,6 +15,12 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
+    /**
+     * The returned RegionSubscription instance.
+     * @return the value
+     */
     public com.oracle.bmc.identity.model.RegionSubscription getRegionSubscription() {
         return regionSubscription;
     }
@@ -46,15 +56,35 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned RegionSubscription instance.
+         */
         private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
+        /**
+         * The returned RegionSubscription instance.
+         * @param regionSubscription the value to set
+         * @return this builder
+         */
         public Builder regionSubscription(
                 com.oracle.bmc.identity.model.RegionSubscription regionSubscription) {
             this.regionSubscription = regionSubscription;
@@ -73,12 +103,20 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateRegionSubscriptionResponse build() {
             return new CreateRegionSubscriptionResponse(
                     __httpStatusCode__, opcRequestId, regionSubscription);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

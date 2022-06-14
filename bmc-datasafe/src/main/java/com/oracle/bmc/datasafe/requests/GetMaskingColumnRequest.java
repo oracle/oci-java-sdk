@@ -16,6 +16,9 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -24,6 +27,9 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String maskingColumnKey;
 
+    /**
+     * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+     */
     public String getMaskingColumnKey() {
         return maskingColumnKey;
     }
@@ -32,6 +38,9 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,10 +52,14 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -54,10 +67,14 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+         */
         private String maskingColumnKey = null;
 
         /**
          * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+         * @param maskingColumnKey the value to set
          * @return this builder instance
          */
         public Builder maskingColumnKey(String maskingColumnKey) {
@@ -65,10 +82,14 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -148,7 +169,8 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -157,6 +179,10 @@ public class GetMaskingColumnRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

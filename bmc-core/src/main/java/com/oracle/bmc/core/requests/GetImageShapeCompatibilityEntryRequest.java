@@ -17,6 +17,9 @@ public class GetImageShapeCompatibilityEntryRequest
      */
     private String imageId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+     */
     public String getImageId() {
         return imageId;
     }
@@ -25,6 +28,9 @@ public class GetImageShapeCompatibilityEntryRequest
      */
     private String shapeName;
 
+    /**
+     * Shape name.
+     */
     public String getShapeName() {
         return shapeName;
     }
@@ -35,6 +41,11 @@ public class GetImageShapeCompatibilityEntryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,10 +57,14 @@ public class GetImageShapeCompatibilityEntryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         */
         private String imageId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -57,10 +72,14 @@ public class GetImageShapeCompatibilityEntryRequest
             return this;
         }
 
+        /**
+         * Shape name.
+         */
         private String shapeName = null;
 
         /**
          * Shape name.
+         * @param shapeName the value to set
          * @return this builder instance
          */
         public Builder shapeName(String shapeName) {
@@ -68,12 +87,18 @@ public class GetImageShapeCompatibilityEntryRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -154,12 +179,17 @@ public class GetImageShapeCompatibilityEntryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().imageId(imageId).shapeName(shapeName).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

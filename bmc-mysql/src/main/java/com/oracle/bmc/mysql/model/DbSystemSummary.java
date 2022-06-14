@@ -91,45 +91,83 @@ public final class DbSystemSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the DB System.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The user-friendly name for the DB System. It does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the DB System. It does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * User-provided data about the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * User-provided data about the DB System.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCID of the compartment the DB System belongs in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment the DB System belongs in.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Specifies if the DB System is highly available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
         private Boolean isHighlyAvailable;
 
+        /**
+         * Specifies if the DB System is highly available.
+         *
+         * @param isHighlyAvailable the value to set
+         * @return this builder
+         **/
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             this.isHighlyAvailable = isHighlyAvailable;
             this.__explicitlySet__.add("isHighlyAvailable");
@@ -144,10 +182,21 @@ public final class DbSystemSummary {
             this.__explicitlySet__.add("currentPlacement");
             return this;
         }
-
+        /**
+         * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
+         * If the DB System has an Analytics Cluster attached.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
         private Boolean isAnalyticsClusterAttached;
 
+        /**
+         * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
+         * If the DB System has an Analytics Cluster attached.
+         *
+         * @param isAnalyticsClusterAttached the value to set
+         * @return this builder
+         **/
         public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
             this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
             this.__explicitlySet__.add("isAnalyticsClusterAttached");
@@ -162,10 +211,19 @@ public final class DbSystemSummary {
             this.__explicitlySet__.add("analyticsCluster");
             return this;
         }
-
+        /**
+         * If the DB System has a HeatWave Cluster attached.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
         private Boolean isHeatWaveClusterAttached;
 
+        /**
+         * If the DB System has a HeatWave Cluster attached.
+         *
+         * @param isHeatWaveClusterAttached the value to set
+         * @return this builder
+         **/
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             this.__explicitlySet__.add("isHeatWaveClusterAttached");
@@ -180,64 +238,143 @@ public final class DbSystemSummary {
             this.__explicitlySet__.add("heatWaveCluster");
             return this;
         }
-
+        /**
+         * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
+         * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
+         * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
+         * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
+         * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
+         *
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The network endpoints available for this DB System.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<DbSystemEndpoint> endpoints;
 
+        /**
+         * The network endpoints available for this DB System.
+         *
+         * @param endpoints the value to set
+         * @return this builder
+         **/
         public Builder endpoints(java.util.List<DbSystemEndpoint> endpoints) {
             this.endpoints = endpoints;
             this.__explicitlySet__.add("endpoints");
             return this;
         }
-
+        /**
+         * The current state of the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DbSystem.LifecycleState lifecycleState;
 
+        /**
+         * The current state of the DB System.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(DbSystem.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Name of the MySQL Version in use for the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
         private String mysqlVersion;
 
+        /**
+         * Name of the MySQL Version in use for the DB System.
+         * @param mysqlVersion the value to set
+         * @return this builder
+         **/
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = mysqlVersion;
             this.__explicitlySet__.add("mysqlVersion");
             return this;
         }
-
+        /**
+         * The date and time the DB System was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the DB System was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the DB System was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the DB System was last updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -252,29 +389,62 @@ public final class DbSystemSummary {
             this.__explicitlySet__.add("deletionPolicy");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+         * and whether to enable or disable syncing of the Binary Logs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
         private CrashRecoveryStatus crashRecovery;
 
+        /**
+         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+         * and whether to enable or disable syncing of the Binary Logs.
+         *
+         * @param crashRecovery the value to set
+         * @return this builder
+         **/
         public Builder crashRecovery(CrashRecoveryStatus crashRecovery) {
             this.crashRecovery = crashRecovery;
             this.__explicitlySet__.add("crashRecovery");
@@ -359,6 +529,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the DB System.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -369,6 +543,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the DB System. It does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -379,6 +557,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * User-provided data about the DB System.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -389,6 +571,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment the DB System belongs in.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -400,6 +586,11 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
     private final Boolean isHighlyAvailable;
 
+    /**
+     * Specifies if the DB System is highly available.
+     *
+     * @return the value
+     **/
     public Boolean getIsHighlyAvailable() {
         return isHighlyAvailable;
     }
@@ -419,6 +610,12 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
     private final Boolean isAnalyticsClusterAttached;
 
+    /**
+     * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
+     * If the DB System has an Analytics Cluster attached.
+     *
+     * @return the value
+     **/
     public Boolean getIsAnalyticsClusterAttached() {
         return isAnalyticsClusterAttached;
     }
@@ -437,6 +634,11 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
     private final Boolean isHeatWaveClusterAttached;
 
+    /**
+     * If the DB System has a HeatWave Cluster attached.
+     *
+     * @return the value
+     **/
     public Boolean getIsHeatWaveClusterAttached() {
         return isHeatWaveClusterAttached;
     }
@@ -461,6 +663,17 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -478,6 +691,17 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
+     *
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -489,6 +713,11 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
     private final java.util.List<DbSystemEndpoint> endpoints;
 
+    /**
+     * The network endpoints available for this DB System.
+     *
+     * @return the value
+     **/
     public java.util.List<DbSystemEndpoint> getEndpoints() {
         return endpoints;
     }
@@ -499,6 +728,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DbSystem.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the DB System.
+     * @return the value
+     **/
     public DbSystem.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -509,6 +742,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
     private final String mysqlVersion;
 
+    /**
+     * Name of the MySQL Version in use for the DB System.
+     * @return the value
+     **/
     public String getMysqlVersion() {
         return mysqlVersion;
     }
@@ -519,6 +756,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the DB System was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -529,6 +770,10 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the DB System was last updated.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -548,6 +793,12 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -560,6 +811,12 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -572,6 +829,12 @@ public final class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
     private final CrashRecoveryStatus crashRecovery;
 
+    /**
+     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+     * and whether to enable or disable syncing of the Binary Logs.
+     *
+     * @return the value
+     **/
     public CrashRecoveryStatus getCrashRecovery() {
         return crashRecovery;
     }

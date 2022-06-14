@@ -13,6 +13,10 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String value;
 
+    /**
+     * The returned String instance.
+     * @return the value
+     */
     public String getValue() {
         return value;
     }
@@ -31,8 +35,16 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * The returned String instance.
+         */
         private String value;
 
+        /**
+         * The returned String instance.
+         * @param value the value to set
+         * @return this builder
+         */
         public Builder value(String value) {
             this.value = value;
             return this;
@@ -50,11 +62,19 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetNamespaceResponse build() {
             return new GetNamespaceResponse(__httpStatusCode__, value);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

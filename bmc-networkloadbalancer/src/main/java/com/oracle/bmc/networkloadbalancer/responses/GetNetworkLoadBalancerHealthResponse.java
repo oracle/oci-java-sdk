@@ -15,6 +15,12 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
             networkLoadBalancerHealth;
 
+    /**
+     * The returned NetworkLoadBalancerHealth instance.
+     * @return the value
+     */
     public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
             getNetworkLoadBalancerHealth() {
         return networkLoadBalancerHealth;
@@ -53,16 +63,36 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned NetworkLoadBalancerHealth instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
                 networkLoadBalancerHealth;
 
+        /**
+         * The returned NetworkLoadBalancerHealth instance.
+         * @param networkLoadBalancerHealth the value to set
+         * @return this builder
+         */
         public Builder networkLoadBalancerHealth(
                 com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
                         networkLoadBalancerHealth) {
@@ -82,12 +112,20 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetNetworkLoadBalancerHealthResponse build() {
             return new GetNetworkLoadBalancerHealthResponse(
                     __httpStatusCode__, opcRequestId, networkLoadBalancerHealth);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

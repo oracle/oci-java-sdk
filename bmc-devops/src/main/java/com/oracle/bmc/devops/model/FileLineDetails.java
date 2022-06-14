@@ -28,18 +28,33 @@ public final class FileLineDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The line number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
         private Integer lineNumber;
 
+        /**
+         * The line number.
+         * @param lineNumber the value to set
+         * @return this builder
+         **/
         public Builder lineNumber(Integer lineNumber) {
             this.lineNumber = lineNumber;
             this.__explicitlySet__.add("lineNumber");
             return this;
         }
-
+        /**
+         * The content of the line.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
         private String lineContent;
 
+        /**
+         * The content of the line.
+         * @param lineContent the value to set
+         * @return this builder
+         **/
         public Builder lineContent(String lineContent) {
             this.lineContent = lineContent;
             this.__explicitlySet__.add("lineContent");
@@ -81,6 +96,10 @@ public final class FileLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
     private final Integer lineNumber;
 
+    /**
+     * The line number.
+     * @return the value
+     **/
     public Integer getLineNumber() {
         return lineNumber;
     }
@@ -91,6 +110,10 @@ public final class FileLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
     private final String lineContent;
 
+    /**
+     * The content of the line.
+     * @return the value
+     **/
     public String getLineContent() {
         return lineContent;
     }

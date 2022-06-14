@@ -17,6 +17,9 @@ public class GetInstancePoolInstanceRequest
      */
     private String instancePoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+     */
     public String getInstancePoolId() {
         return instancePoolId;
     }
@@ -25,6 +28,9 @@ public class GetInstancePoolInstanceRequest
      */
     private String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+     */
     public String getInstanceId() {
         return instanceId;
     }
@@ -36,10 +42,14 @@ public class GetInstancePoolInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         */
         private String instancePoolId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         * @param instancePoolId the value to set
          * @return this builder instance
          */
         public Builder instancePoolId(String instancePoolId) {
@@ -47,10 +57,14 @@ public class GetInstancePoolInstanceRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         */
         private String instanceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @param instanceId the value to set
          * @return this builder instance
          */
         public Builder instanceId(String instanceId) {
@@ -128,12 +142,17 @@ public class GetInstancePoolInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().instancePoolId(instancePoolId).instanceId(instanceId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

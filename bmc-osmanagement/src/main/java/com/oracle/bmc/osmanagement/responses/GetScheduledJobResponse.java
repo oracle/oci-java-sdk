@@ -14,6 +14,11 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +47,12 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private Float retryAfter;
 
+    /**
+     * A decimal number representing the number of seconds the client
+     * should wait before polling this endpoint again.
+     *
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -45,6 +62,10 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
+    /**
+     * The returned ScheduledJob instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.ScheduledJob getScheduledJob() {
         return scheduledJob;
     }
@@ -77,29 +98,71 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * A decimal number representing the number of seconds the client
+         * should wait before polling this endpoint again.
+         *
+         */
         private Float retryAfter;
 
+        /**
+         * A decimal number representing the number of seconds the client
+         * should wait before polling this endpoint again.
+         *
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned ScheduledJob instance.
+         */
         private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
+        /**
+         * The returned ScheduledJob instance.
+         * @param scheduledJob the value to set
+         * @return this builder
+         */
         public Builder scheduledJob(com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob) {
             this.scheduledJob = scheduledJob;
             return this;
@@ -119,12 +182,20 @@ public class GetScheduledJobResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetScheduledJobResponse build() {
             return new GetScheduledJobResponse(
                     __httpStatusCode__, etag, opcRequestId, retryAfter, scheduledJob);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class BlockchainPlatformCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of BlockchainPlatformSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<BlockchainPlatformSummary> items;
 
+        /**
+         * Collection of BlockchainPlatformSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<BlockchainPlatformSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class BlockchainPlatformCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<BlockchainPlatformSummary> items;
 
+    /**
+     * Collection of BlockchainPlatformSummary
+     * @return the value
+     **/
     public java.util.List<BlockchainPlatformSummary> getItems() {
         return items;
     }

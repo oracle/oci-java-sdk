@@ -46,54 +46,111 @@ public final class RunLogSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the log.
+         * Example: spark_driver_stderr_20190917T114000Z.log.gz
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the log.
+         * Example: spark_driver_stderr_20190917T114000Z.log.gz
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The runId associated with the log.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runId")
         private String runId;
 
+        /**
+         * The runId associated with the log.
+         *
+         * @param runId the value to set
+         * @return this builder
+         **/
         public Builder runId(String runId) {
             this.runId = runId;
             this.__explicitlySet__.add("runId");
             return this;
         }
-
+        /**
+         * The size of the object in bytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * The size of the object in bytes.
+         *
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-
+        /**
+         * The source of the log such as driver and executor.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private Source source;
 
+        /**
+         * The source of the log such as driver and executor.
+         *
+         * @param source the value to set
+         * @return this builder
+         **/
         public Builder source(Source source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The type of log such as stdout and stderr.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of log such as stdout and stderr.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -144,6 +201,12 @@ public final class RunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the log.
+     * Example: spark_driver_stderr_20190917T114000Z.log.gz
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -155,6 +218,11 @@ public final class RunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("runId")
     private final String runId;
 
+    /**
+     * The runId associated with the log.
+     *
+     * @return the value
+     **/
     public String getRunId() {
         return runId;
     }
@@ -166,6 +234,11 @@ public final class RunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * The size of the object in bytes.
+     *
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -226,6 +299,11 @@ public final class RunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final Source source;
 
+    /**
+     * The source of the log such as driver and executor.
+     *
+     * @return the value
+     **/
     public Source getSource() {
         return source;
     }
@@ -237,6 +315,11 @@ public final class RunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -295,6 +378,11 @@ public final class RunLogSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of log such as stdout and stderr.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }

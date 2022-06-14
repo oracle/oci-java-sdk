@@ -30,9 +30,17 @@ public final class TargetCompartments {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of OCIDs attached to the compartments specified in the current profile override.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<String> items;
 
+        /**
+         * The list of OCIDs attached to the compartments specified in the current profile override.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<String> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class TargetCompartments {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<String> items;
 
+    /**
+     * The list of OCIDs attached to the compartments specified in the current profile override.
+     * @return the value
+     **/
     public java.util.List<String> getItems() {
         return items;
     }

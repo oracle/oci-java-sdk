@@ -29,9 +29,19 @@ public final class CompareUserAssessmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comparisonUserAssessmentId")
         private String comparisonUserAssessmentId;
 
+        /**
+         * The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
+         *
+         * @param comparisonUserAssessmentId the value to set
+         * @return this builder
+         **/
         public Builder comparisonUserAssessmentId(String comparisonUserAssessmentId) {
             this.comparisonUserAssessmentId = comparisonUserAssessmentId;
             this.__explicitlySet__.add("comparisonUserAssessmentId");
@@ -75,6 +85,11 @@ public final class CompareUserAssessmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("comparisonUserAssessmentId")
     private final String comparisonUserAssessmentId;
 
+    /**
+     * The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
+     *
+     * @return the value
+     **/
     public String getComparisonUserAssessmentId() {
         return comparisonUserAssessmentId;
     }

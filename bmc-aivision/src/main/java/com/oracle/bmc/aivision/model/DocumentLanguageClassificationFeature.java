@@ -27,9 +27,17 @@ package com.oracle.bmc.aivision.model;
 public final class DocumentLanguageClassificationFeature extends DocumentFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum number of results to return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
         private Integer maxResults;
 
+        /**
+         * The maximum number of results to return.
+         * @param maxResults the value to set
+         * @return this builder
+         **/
         public Builder maxResults(Integer maxResults) {
             this.maxResults = maxResults;
             this.__explicitlySet__.add("maxResults");
@@ -78,6 +86,10 @@ public final class DocumentLanguageClassificationFeature extends DocumentFeature
     @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
     private final Integer maxResults;
 
+    /**
+     * The maximum number of results to return.
+     * @return the value
+     **/
     public Integer getMaxResults() {
         return maxResults;
     }

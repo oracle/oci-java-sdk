@@ -94,37 +94,65 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-
+        /**
+         * Release name of the Helm chart.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseName")
         private String releaseName;
 
+        /**
+         * Release name of the Helm chart.
+         * @param releaseName the value to set
+         * @return this builder
+         **/
         public Builder releaseName(String releaseName) {
             this.releaseName = releaseName;
             this.__explicitlySet__.add("releaseName");
             return this;
         }
-
+        /**
+         * The URL of an OCIR repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
         private String chartUrl;
 
+        /**
+         * The URL of an OCIR repository.
+         * @param chartUrl the value to set
+         * @return this builder
+         **/
         public Builder chartUrl(String chartUrl) {
             this.chartUrl = chartUrl;
             this.__explicitlySet__.add("chartUrl");
             return this;
         }
-
+        /**
+         * The version of the helm chart stored in OCIR repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the helm chart stored in OCIR repository.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -217,6 +245,10 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
     @com.fasterxml.jackson.annotation.JsonProperty("releaseName")
     private final String releaseName;
 
+    /**
+     * Release name of the Helm chart.
+     * @return the value
+     **/
     public String getReleaseName() {
         return releaseName;
     }
@@ -227,6 +259,10 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
     @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
     private final String chartUrl;
 
+    /**
+     * The URL of an OCIR repository.
+     * @return the value
+     **/
     public String getChartUrl() {
         return chartUrl;
     }
@@ -237,6 +273,10 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the helm chart stored in OCIR repository.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -247,6 +287,10 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

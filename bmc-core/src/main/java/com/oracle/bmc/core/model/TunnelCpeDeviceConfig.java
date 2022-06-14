@@ -41,6 +41,7 @@ public final class TunnelCpeDeviceConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelCpeDeviceConfigParameter")
         private java.util.List<CpeDeviceConfigAnswer> tunnelCpeDeviceConfigParameter;
 

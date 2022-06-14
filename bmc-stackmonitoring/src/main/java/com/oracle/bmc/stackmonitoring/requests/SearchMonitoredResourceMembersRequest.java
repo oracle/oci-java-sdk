@@ -18,6 +18,9 @@ public class SearchMonitoredResourceMembersRequest
      */
     private String monitoredResourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+     */
     public String getMonitoredResourceId() {
         return monitoredResourceId;
     }
@@ -27,6 +30,9 @@ public class SearchMonitoredResourceMembersRequest
     private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceMembersDetails
             searchMonitoredResourceMembersDetails;
 
+    /**
+     * Search criteria for the listing the member monitored resources.
+     */
     public com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceMembersDetails
             getSearchMonitoredResourceMembersDetails() {
         return searchMonitoredResourceMembersDetails;
@@ -75,6 +81,10 @@ public class SearchMonitoredResourceMembersRequest
         }
     };
 
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -84,6 +94,10 @@ public class SearchMonitoredResourceMembersRequest
      */
     private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.stackmonitoring.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -95,6 +109,12 @@ public class SearchMonitoredResourceMembersRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -106,6 +126,12 @@ public class SearchMonitoredResourceMembersRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -119,6 +145,14 @@ public class SearchMonitoredResourceMembersRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -129,6 +163,11 @@ public class SearchMonitoredResourceMembersRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -142,6 +181,14 @@ public class SearchMonitoredResourceMembersRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -164,10 +211,14 @@ public class SearchMonitoredResourceMembersRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+         */
         private String monitoredResourceId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * @param monitoredResourceId the value to set
          * @return this builder instance
          */
         public Builder monitoredResourceId(String monitoredResourceId) {
@@ -175,11 +226,15 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * Search criteria for the listing the member monitored resources.
+         */
         private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceMembersDetails
                 searchMonitoredResourceMembersDetails = null;
 
         /**
          * Search criteria for the listing the member monitored resources.
+         * @param searchMonitoredResourceMembersDetails the value to set
          * @return this builder instance
          */
         public Builder searchMonitoredResourceMembersDetails(
@@ -189,11 +244,16 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * If this query parameter is specified, the result is sorted by this query parameter value.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * If this query parameter is specified, the result is sorted by this query parameter value.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -201,11 +261,16 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder) {
@@ -213,6 +278,12 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -220,6 +291,7 @@ public class SearchMonitoredResourceMembersRequest
          * previous "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -227,6 +299,12 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -234,6 +312,7 @@ public class SearchMonitoredResourceMembersRequest
          * paginated "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -241,6 +320,14 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -250,6 +337,7 @@ public class SearchMonitoredResourceMembersRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -257,12 +345,18 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -270,6 +364,14 @@ public class SearchMonitoredResourceMembersRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -279,6 +381,7 @@ public class SearchMonitoredResourceMembersRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -383,7 +486,8 @@ public class SearchMonitoredResourceMembersRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -398,6 +502,10 @@ public class SearchMonitoredResourceMembersRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -48,6 +48,11 @@ public class UpdateCertificateAuthorityConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     *
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }
@@ -99,6 +104,13 @@ public class UpdateCertificateAuthorityConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("stage")
     private final Stage stage;
 
+    /**
+     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged and available for use. A CA version
+     * that you mark as {@code CURRENT} is currently in use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
+     *
+     * @return the value
+     **/
     public Stage getStage() {
         return stage;
     }

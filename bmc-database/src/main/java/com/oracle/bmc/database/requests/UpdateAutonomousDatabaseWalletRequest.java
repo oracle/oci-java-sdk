@@ -18,6 +18,9 @@ public class UpdateAutonomousDatabaseWalletRequest
      */
     private String autonomousDatabaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
@@ -27,6 +30,9 @@ public class UpdateAutonomousDatabaseWalletRequest
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             updateAutonomousDatabaseWalletDetails;
 
+    /**
+     * Request to update the properties of an Autonomous Database wallet.
+     */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             getUpdateAutonomousDatabaseWalletDetails() {
         return updateAutonomousDatabaseWalletDetails;
@@ -37,6 +43,10 @@ public class UpdateAutonomousDatabaseWalletRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,10 +69,14 @@ public class UpdateAutonomousDatabaseWalletRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousDatabaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
@@ -70,11 +84,15 @@ public class UpdateAutonomousDatabaseWalletRequest
             return this;
         }
 
+        /**
+         * Request to update the properties of an Autonomous Database wallet.
+         */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
                 updateAutonomousDatabaseWalletDetails = null;
 
         /**
          * Request to update the properties of an Autonomous Database wallet.
+         * @param updateAutonomousDatabaseWalletDetails the value to set
          * @return this builder instance
          */
         public Builder updateAutonomousDatabaseWalletDetails(
@@ -84,11 +102,16 @@ public class UpdateAutonomousDatabaseWalletRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +204,8 @@ public class UpdateAutonomousDatabaseWalletRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +214,10 @@ public class UpdateAutonomousDatabaseWalletRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

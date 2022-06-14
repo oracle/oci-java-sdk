@@ -30,18 +30,41 @@ package com.oracle.bmc.sch.model;
 public final class NotificationsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         *
+         * @param topicId the value to set
+         * @return this builder
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
             return this;
         }
-
+        /**
+         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
         private Boolean enableFormattedMessaging;
 
+        /**
+         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param enableFormattedMessaging the value to set
+         * @return this builder
+         **/
         public Builder enableFormattedMessaging(Boolean enableFormattedMessaging) {
             this.enableFormattedMessaging = enableFormattedMessaging;
             this.__explicitlySet__.add("enableFormattedMessaging");
@@ -94,6 +117,11 @@ public final class NotificationsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+     *
+     * @return the value
+     **/
     public String getTopicId() {
         return topicId;
     }
@@ -107,6 +135,13 @@ public final class NotificationsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
     private final Boolean enableFormattedMessaging;
 
+    /**
+     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
     public Boolean getEnableFormattedMessaging() {
         return enableFormattedMessaging;
     }

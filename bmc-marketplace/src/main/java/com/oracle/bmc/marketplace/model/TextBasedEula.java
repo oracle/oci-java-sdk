@@ -25,9 +25,17 @@ package com.oracle.bmc.marketplace.model;
 public final class TextBasedEula extends Eula {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The text of the end user license agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseText")
         private String licenseText;
 
+        /**
+         * The text of the end user license agreement.
+         * @param licenseText the value to set
+         * @return this builder
+         **/
         public Builder licenseText(String licenseText) {
             this.licenseText = licenseText;
             this.__explicitlySet__.add("licenseText");
@@ -75,6 +83,10 @@ public final class TextBasedEula extends Eula {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseText")
     private final String licenseText;
 
+    /**
+     * The text of the end user license agreement.
+     * @return the value
+     **/
     public String getLicenseText() {
         return licenseText;
     }

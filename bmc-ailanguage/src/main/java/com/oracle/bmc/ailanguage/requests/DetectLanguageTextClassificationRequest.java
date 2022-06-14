@@ -20,6 +20,10 @@ public class DetectLanguageTextClassificationRequest
     private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
             detectLanguageTextClassificationDetails;
 
+    /**
+     * The details to make text classification detect call.
+     *
+     */
     public com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
             getDetectLanguageTextClassificationDetails() {
         return detectLanguageTextClassificationDetails;
@@ -29,6 +33,9 @@ public class DetectLanguageTextClassificationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,12 +58,17 @@ public class DetectLanguageTextClassificationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details to make text classification detect call.
+         *
+         */
         private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
                 detectLanguageTextClassificationDetails = null;
 
         /**
          * The details to make text classification detect call.
          *
+         * @param detectLanguageTextClassificationDetails the value to set
          * @return this builder instance
          */
         public Builder detectLanguageTextClassificationDetails(
@@ -66,10 +78,14 @@ public class DetectLanguageTextClassificationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -161,7 +177,8 @@ public class DetectLanguageTextClassificationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +186,10 @@ public class DetectLanguageTextClassificationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

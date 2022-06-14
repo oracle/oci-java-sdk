@@ -76,144 +76,283 @@ public final class DomainSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the identity domain.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment containing the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment containing the identity domain.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The mutable display name of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The mutable display name of the identity domain.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The identity domain description. You can have an empty description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The identity domain description. You can have an empty description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Region-agnostic identity domain URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * Region-agnostic identity domain URL.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * Region-specific identity domain URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homeRegionUrl")
         private String homeRegionUrl;
 
+        /**
+         * Region-specific identity domain URL.
+         * @param homeRegionUrl the value to set
+         * @return this builder
+         **/
         public Builder homeRegionUrl(String homeRegionUrl) {
             this.homeRegionUrl = homeRegionUrl;
             this.__explicitlySet__.add("homeRegionUrl");
             return this;
         }
-
+        /**
+         * The home region for the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
         private String homeRegion;
 
+        /**
+         * The home region for the identity domain.
+         * @param homeRegion the value to set
+         * @return this builder
+         **/
         public Builder homeRegion(String homeRegion) {
             this.homeRegion = homeRegion;
             this.__explicitlySet__.add("homeRegion");
             return this;
         }
-
+        /**
+         * The regions where replicas of the identity domain exist.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicaRegions")
         private java.util.List<ReplicatedRegionDetails> replicaRegions;
 
+        /**
+         * The regions where replicas of the identity domain exist.
+         * @param replicaRegions the value to set
+         * @return this builder
+         **/
         public Builder replicaRegions(java.util.List<ReplicatedRegionDetails> replicaRegions) {
             this.replicaRegions = replicaRegions;
             this.__explicitlySet__.add("replicaRegions");
             return this;
         }
-
+        /**
+         * The type of the identity domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of the identity domain.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The license type of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
+        /**
+         * The license type of the identity domain.
+         * @param licenseType the value to set
+         * @return this builder
+         **/
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-
+        /**
+         * Indicates whether the identity domain is hidden on the sign-in screen or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
         private Boolean isHiddenOnLogin;
 
+        /**
+         * Indicates whether the identity domain is hidden on the sign-in screen or not.
+         *
+         * @param isHiddenOnLogin the value to set
+         * @return this builder
+         **/
         public Builder isHiddenOnLogin(Boolean isHiddenOnLogin) {
             this.isHiddenOnLogin = isHiddenOnLogin;
             this.__explicitlySet__.add("isHiddenOnLogin");
             return this;
         }
-
+        /**
+         * Date and time the identity domain was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the identity domain was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The current state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Any additional details about the current state of the identity domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
+        /**
+         * Any additional details about the current state of the identity domain.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -289,6 +428,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the identity domain.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -299,6 +442,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the identity domain.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -309,6 +456,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The mutable display name of the identity domain.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -319,6 +470,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The identity domain description. You can have an empty description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -329,6 +484,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * Region-agnostic identity domain URL.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -339,6 +498,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionUrl")
     private final String homeRegionUrl;
 
+    /**
+     * Region-specific identity domain URL.
+     * @return the value
+     **/
     public String getHomeRegionUrl() {
         return homeRegionUrl;
     }
@@ -349,6 +512,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
     private final String homeRegion;
 
+    /**
+     * The home region for the identity domain.
+     * @return the value
+     **/
     public String getHomeRegion() {
         return homeRegion;
     }
@@ -359,6 +526,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegions")
     private final java.util.List<ReplicatedRegionDetails> replicaRegions;
 
+    /**
+     * The regions where replicas of the identity domain exist.
+     * @return the value
+     **/
     public java.util.List<ReplicatedRegionDetails> getReplicaRegions() {
         return replicaRegions;
     }
@@ -417,6 +588,11 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of the identity domain.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -427,6 +603,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
+    /**
+     * The license type of the identity domain.
+     * @return the value
+     **/
     public String getLicenseType() {
         return licenseType;
     }
@@ -438,6 +618,11 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
     private final Boolean isHiddenOnLogin;
 
+    /**
+     * Indicates whether the identity domain is hidden on the sign-in screen or not.
+     *
+     * @return the value
+     **/
     public Boolean getIsHiddenOnLogin() {
         return isHiddenOnLogin;
     }
@@ -451,6 +636,13 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the identity domain was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -513,6 +705,11 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -574,6 +771,11 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
+    /**
+     * Any additional details about the current state of the identity domain.
+     *
+     * @return the value
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -587,6 +789,13 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -600,6 +809,13 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -17,6 +17,9 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -25,6 +28,9 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String endpointKey;
 
+    /**
+     * The endpoint key.
+     */
     public String getEndpointKey() {
         return endpointKey;
     }
@@ -36,6 +42,12 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,6 +57,10 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -53,6 +69,9 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -61,6 +80,9 @@ public class GetNetworkConnectivityStatusCollectionRequest
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -106,6 +128,9 @@ public class GetNetworkConnectivityStatusCollectionRequest
         }
     };
 
+    /**
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -150,6 +175,9 @@ public class GetNetworkConnectivityStatusCollectionRequest
         }
     };
 
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -161,10 +189,14 @@ public class GetNetworkConnectivityStatusCollectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -172,10 +204,14 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * The endpoint key.
+         */
         private String endpointKey = null;
 
         /**
          * The endpoint key.
+         * @param endpointKey the value to set
          * @return this builder instance
          */
         public Builder endpointKey(String endpointKey) {
@@ -183,6 +219,12 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -190,6 +232,7 @@ public class GetNetworkConnectivityStatusCollectionRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,11 +240,16 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -209,10 +257,14 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -220,10 +272,14 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -231,10 +287,14 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         */
         private SortBy sortBy = null;
 
         /**
          * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -242,10 +302,14 @@ public class GetNetworkConnectivityStatusCollectionRequest
             return this;
         }
 
+        /**
+         * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -337,7 +401,8 @@ public class GetNetworkConnectivityStatusCollectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -351,6 +416,10 @@ public class GetNetworkConnectivityStatusCollectionRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

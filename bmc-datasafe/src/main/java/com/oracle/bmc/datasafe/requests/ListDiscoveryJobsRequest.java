@@ -16,6 +16,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -78,6 +86,13 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -87,6 +102,10 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -95,6 +114,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String discoveryJobId;
 
+    /**
+     * A filter to return only the resources that match the specified discovery job OCID.
+     */
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
@@ -103,6 +125,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String targetId;
 
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -111,6 +136,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.datasafe.model.DiscoveryLifecycleState lifecycleState;
 
+    /**
+     * A filter to return only the resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -119,6 +147,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * A filter to return only the resources that match the specified sensitive data model OCID.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -163,6 +194,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -211,6 +245,11 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+     * The default order for displayName is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -219,6 +258,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -227,6 +269,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -235,6 +280,9 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -246,10 +294,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -257,12 +309,18 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -270,6 +328,13 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -278,6 +343,7 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -285,11 +351,16 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -297,10 +368,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified discovery job OCID.
+         */
         private String discoveryJobId = null;
 
         /**
          * A filter to return only the resources that match the specified discovery job OCID.
+         * @param discoveryJobId the value to set
          * @return this builder instance
          */
         public Builder discoveryJobId(String discoveryJobId) {
@@ -308,10 +383,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -319,10 +398,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.DiscoveryLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only the resources that match the specified lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -331,10 +414,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only the resources that match the specified sensitive data model OCID.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * A filter to return only the resources that match the specified sensitive data model OCID.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -342,10 +429,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -353,12 +444,18 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+         * The default order for displayName is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
          * The default order for displayName is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -366,10 +463,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -377,10 +478,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -388,10 +493,14 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -491,7 +600,8 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -510,6 +620,10 @@ public class ListDiscoveryJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

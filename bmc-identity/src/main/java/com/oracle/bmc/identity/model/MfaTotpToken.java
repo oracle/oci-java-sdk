@@ -28,9 +28,19 @@ public final class MfaTotpToken {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Totp token for MFA.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totpToken")
         private String totpToken;
 
+        /**
+         * The Totp token for MFA.
+         *
+         * @param totpToken the value to set
+         * @return this builder
+         **/
         public Builder totpToken(String totpToken) {
             this.totpToken = totpToken;
             this.__explicitlySet__.add("totpToken");
@@ -73,6 +83,11 @@ public final class MfaTotpToken {
     @com.fasterxml.jackson.annotation.JsonProperty("totpToken")
     private final String totpToken;
 
+    /**
+     * The Totp token for MFA.
+     *
+     * @return the value
+     **/
     public String getTotpToken() {
         return totpToken;
     }

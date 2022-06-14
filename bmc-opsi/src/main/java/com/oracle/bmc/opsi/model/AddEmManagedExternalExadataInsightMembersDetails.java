@@ -28,6 +28,7 @@ public final class AddEmManagedExternalExadataInsightMembersDetails
         extends AddExadataInsightMembersDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("memberEntityDetails")
         private java.util.List<CreateEmManagedExternalExadataMemberEntityDetails>
                 memberEntityDetails;

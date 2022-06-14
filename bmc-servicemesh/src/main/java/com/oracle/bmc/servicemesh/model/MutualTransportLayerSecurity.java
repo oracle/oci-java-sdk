@@ -32,27 +32,65 @@ public final class MutualTransportLayerSecurity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         *
+         * @param certificateId the value to set
+         * @return this builder
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
-
+        /**
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+         * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+         * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+         * will be renewed every 30 days.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
         private Integer maximumValidity;
 
+        /**
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+         * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+         * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+         * will be renewed every 30 days.
+         *
+         * @param maximumValidity the value to set
+         * @return this builder
+         **/
         public Builder maximumValidity(Integer maximumValidity) {
             this.maximumValidity = maximumValidity;
             this.__explicitlySet__.add("maximumValidity");
             return this;
         }
-
+        /**
+         * DISABLED: Connection is not tunneled.
+         * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+         * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
+        /**
+         * DISABLED: Connection is not tunneled.
+         * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+         * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+         *
+         * @param mode the value to set
+         * @return this builder
+         **/
         public Builder mode(Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -99,6 +137,11 @@ public final class MutualTransportLayerSecurity {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
+    /**
+     * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+     *
+     * @return the value
+     **/
     public String getCertificateId() {
         return certificateId;
     }
@@ -113,6 +156,14 @@ public final class MutualTransportLayerSecurity {
     @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
     private final Integer maximumValidity;
 
+    /**
+     * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+     * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+     * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+     * will be renewed every 30 days.
+     *
+     * @return the value
+     **/
     public Integer getMaximumValidity() {
         return maximumValidity;
     }
@@ -176,6 +227,13 @@ public final class MutualTransportLayerSecurity {
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
+    /**
+     * DISABLED: Connection is not tunneled.
+     * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+     * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+     *
+     * @return the value
+     **/
     public Mode getMode() {
         return mode;
     }

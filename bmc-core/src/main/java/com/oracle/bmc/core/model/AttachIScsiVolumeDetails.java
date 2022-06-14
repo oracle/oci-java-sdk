@@ -80,28 +80,57 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
             this.__explicitlySet__.add("volumeId");
             return this;
         }
-
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("useChap")
         private Boolean useChap;
 
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         *
+         * @param useChap the value to set
+         * @return this builder
+         **/
         public Builder useChap(Boolean useChap) {
             this.useChap = useChap;
             this.__explicitlySet__.add("useChap");
             return this;
         }
-
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         * @param encryptionInTransitType the value to set
+         * @return this builder
+         **/
         public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
             this.encryptionInTransitType = encryptionInTransitType;
             this.__explicitlySet__.add("encryptionInTransitType");
             return this;
         }
-
+        /**
+         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
         private Boolean isAgentAutoIscsiLoginEnabled;
 
+        /**
+         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         *
+         * @param isAgentAutoIscsiLoginEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
             this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
             this.__explicitlySet__.add("isAgentAutoIscsiLoginEnabled");
@@ -180,6 +209,11 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     private final Boolean useChap;
 
+    /**
+     * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+     *
+     * @return the value
+     **/
     public Boolean getUseChap() {
         return useChap;
     }
@@ -192,6 +226,12 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     * @return the value
+     **/
     public EncryptionInTransitType getEncryptionInTransitType() {
         return encryptionInTransitType;
     }
@@ -203,6 +243,11 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
     private final Boolean isAgentAutoIscsiLoginEnabled;
 
+    /**
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     *
+     * @return the value
+     **/
     public Boolean getIsAgentAutoIscsiLoginEnabled() {
         return isAgentAutoIscsiLoginEnabled;
     }

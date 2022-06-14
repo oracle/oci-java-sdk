@@ -13,6 +13,10 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String location;
 
+    /**
+     * A link to the created Software Source
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -24,6 +28,12 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -43,6 +58,10 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+    /**
+     * The returned SoftwareSource instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.SoftwareSource getSoftwareSource() {
         return softwareSource;
     }
@@ -75,29 +94,67 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * A link to the created Software Source
+         */
         private String location;
 
+        /**
+         * A link to the created Software Source
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned SoftwareSource instance.
+         */
         private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+        /**
+         * The returned SoftwareSource instance.
+         * @param softwareSource the value to set
+         * @return this builder
+         */
         public Builder softwareSource(
                 com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource) {
             this.softwareSource = softwareSource;
@@ -118,12 +175,20 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSoftwareSourceResponse build() {
             return new CreateSoftwareSourceResponse(
                     __httpStatusCode__, location, opcRequestId, etag, softwareSource);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

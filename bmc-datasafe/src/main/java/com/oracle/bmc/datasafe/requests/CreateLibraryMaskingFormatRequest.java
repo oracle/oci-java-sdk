@@ -19,6 +19,9 @@ public class CreateLibraryMaskingFormatRequest
     private com.oracle.bmc.datasafe.model.CreateLibraryMaskingFormatDetails
             createLibraryMaskingFormatDetails;
 
+    /**
+     * Details to create a new library masking format.
+     */
     public com.oracle.bmc.datasafe.model.CreateLibraryMaskingFormatDetails
             getCreateLibraryMaskingFormatDetails() {
         return createLibraryMaskingFormatDetails;
@@ -32,6 +35,13 @@ public class CreateLibraryMaskingFormatRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -40,6 +50,9 @@ public class CreateLibraryMaskingFormatRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,11 +75,15 @@ public class CreateLibraryMaskingFormatRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details to create a new library masking format.
+         */
         private com.oracle.bmc.datasafe.model.CreateLibraryMaskingFormatDetails
                 createLibraryMaskingFormatDetails = null;
 
         /**
          * Details to create a new library masking format.
+         * @param createLibraryMaskingFormatDetails the value to set
          * @return this builder instance
          */
         public Builder createLibraryMaskingFormatDetails(
@@ -76,6 +93,13 @@ public class CreateLibraryMaskingFormatRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -84,6 +108,7 @@ public class CreateLibraryMaskingFormatRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -91,10 +116,14 @@ public class CreateLibraryMaskingFormatRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -185,7 +214,8 @@ public class CreateLibraryMaskingFormatRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -194,6 +224,10 @@ public class CreateLibraryMaskingFormatRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

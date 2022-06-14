@@ -32,45 +32,81 @@ public final class User {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user's Oracle ID (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The user's Oracle ID (OCID).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the user.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * If the provided password is a one-time password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOTP")
         private Boolean isOTP;
 
+        /**
+         * If the provided password is a one-time password.
+         * @param isOTP the value to set
+         * @return this builder
+         **/
         public Builder isOTP(Boolean isOTP) {
             this.isOTP = isOTP;
             this.__explicitlySet__.add("isOTP");
             return this;
         }
-
+        /**
+         * If mfa is activated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
         private Boolean isMfaActivated;
 
+        /**
+         * If mfa is activated.
+         * @param isMfaActivated the value to set
+         * @return this builder
+         **/
         public Builder isMfaActivated(Boolean isMfaActivated) {
             this.isMfaActivated = isMfaActivated;
             this.__explicitlySet__.add("isMfaActivated");
             return this;
         }
-
+        /**
+         * If the user has been mfa verified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMfaVerified")
         private Boolean isMfaVerified;
 
+        /**
+         * If the user has been mfa verified.
+         * @param isMfaVerified the value to set
+         * @return this builder
+         **/
         public Builder isMfaVerified(Boolean isMfaVerified) {
             this.isMfaVerified = isMfaVerified;
             this.__explicitlySet__.add("isMfaVerified");
@@ -117,6 +153,10 @@ public final class User {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The user's Oracle ID (OCID).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -127,6 +167,10 @@ public final class User {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the user.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -137,6 +181,10 @@ public final class User {
     @com.fasterxml.jackson.annotation.JsonProperty("isOTP")
     private final Boolean isOTP;
 
+    /**
+     * If the provided password is a one-time password.
+     * @return the value
+     **/
     public Boolean getIsOTP() {
         return isOTP;
     }
@@ -147,6 +195,10 @@ public final class User {
     @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
     private final Boolean isMfaActivated;
 
+    /**
+     * If mfa is activated.
+     * @return the value
+     **/
     public Boolean getIsMfaActivated() {
         return isMfaActivated;
     }
@@ -157,6 +209,10 @@ public final class User {
     @com.fasterxml.jackson.annotation.JsonProperty("isMfaVerified")
     private final Boolean isMfaVerified;
 
+    /**
+     * If the user has been mfa verified.
+     * @return the value
+     **/
     public Boolean getIsMfaVerified() {
         return isMfaVerified;
     }

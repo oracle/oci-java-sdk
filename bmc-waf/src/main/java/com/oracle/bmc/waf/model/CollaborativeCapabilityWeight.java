@@ -32,27 +32,49 @@ public final class CollaborativeCapabilityWeight {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of contributing protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique key of contributing protection capability.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The display name of contributing protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of contributing protection capability.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The weight of contributing protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
+        /**
+         * The weight of contributing protection capability.
+         * @param weight the value to set
+         * @return this builder
+         **/
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -96,6 +118,10 @@ public final class CollaborativeCapabilityWeight {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique key of contributing protection capability.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -106,6 +132,10 @@ public final class CollaborativeCapabilityWeight {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of contributing protection capability.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -116,6 +146,10 @@ public final class CollaborativeCapabilityWeight {
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
+    /**
+     * The weight of contributing protection capability.
+     * @return the value
+     **/
     public Integer getWeight() {
         return weight;
     }

@@ -18,6 +18,10 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,11 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private String name;
 
+    /**
+     * A filter to return only log analytics entity types whose name matches the entire name given. The match is
+     * case-insensitive.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -38,6 +47,11 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private String nameContains;
 
+    /**
+     * A filter to return only log analytics entity types whose name or internalName contains name given. The match
+     * is case-insensitive.
+     *
+     */
     public String getNameContains() {
         return nameContains;
     }
@@ -47,6 +61,10 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private com.oracle.bmc.loganalytics.model.EntityCloudType cloudType;
 
+    /**
+     * A filter to return CLOUD or NON_CLOUD entity types.
+     *
+     */
     public com.oracle.bmc.loganalytics.model.EntityCloudType getCloudType() {
         return cloudType;
     }
@@ -57,6 +75,11 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private com.oracle.bmc.loganalytics.model.EntityLifecycleStates lifecycleState;
 
+    /**
+     * A filter to return only those log analytics entities with the specified lifecycle state. The state
+     * value is case-insensitive.
+     *
+     */
     public com.oracle.bmc.loganalytics.model.EntityLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -65,6 +88,9 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -73,6 +99,9 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -119,6 +148,10 @@ public class ListLogAnalyticsEntityTypesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -168,6 +201,11 @@ public class ListLogAnalyticsEntityTypesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+     * is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -176,6 +214,9 @@ public class ListLogAnalyticsEntityTypesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -187,11 +228,16 @@ public class ListLogAnalyticsEntityTypesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -199,12 +245,18 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * A filter to return only log analytics entity types whose name matches the entire name given. The match is
+         * case-insensitive.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to return only log analytics entity types whose name matches the entire name given. The match is
          * case-insensitive.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -212,12 +264,18 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * A filter to return only log analytics entity types whose name or internalName contains name given. The match
+         * is case-insensitive.
+         *
+         */
         private String nameContains = null;
 
         /**
          * A filter to return only log analytics entity types whose name or internalName contains name given. The match
          * is case-insensitive.
          *
+         * @param nameContains the value to set
          * @return this builder instance
          */
         public Builder nameContains(String nameContains) {
@@ -225,11 +283,16 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * A filter to return CLOUD or NON_CLOUD entity types.
+         *
+         */
         private com.oracle.bmc.loganalytics.model.EntityCloudType cloudType = null;
 
         /**
          * A filter to return CLOUD or NON_CLOUD entity types.
          *
+         * @param cloudType the value to set
          * @return this builder instance
          */
         public Builder cloudType(com.oracle.bmc.loganalytics.model.EntityCloudType cloudType) {
@@ -237,12 +300,18 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * A filter to return only those log analytics entities with the specified lifecycle state. The state
+         * value is case-insensitive.
+         *
+         */
         private com.oracle.bmc.loganalytics.model.EntityLifecycleStates lifecycleState = null;
 
         /**
          * A filter to return only those log analytics entities with the specified lifecycle state. The state
          * value is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -251,10 +320,14 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -262,10 +335,14 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -273,11 +350,16 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -285,12 +367,18 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+         * is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
          * is descending. Default order for name is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -298,10 +386,14 @@ public class ListLogAnalyticsEntityTypesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -395,7 +487,8 @@ public class ListLogAnalyticsEntityTypesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -411,6 +504,10 @@ public class ListLogAnalyticsEntityTypesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

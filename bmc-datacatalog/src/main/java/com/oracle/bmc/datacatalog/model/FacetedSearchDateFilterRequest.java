@@ -32,27 +32,57 @@ public final class FacetedSearchDateFilterRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Date field name that needs to be filtered by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Date field name that needs to be filtered by.
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * The date and time the request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAfter")
         private java.util.Date timeAfter;
 
+        /**
+         * The date and time the request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         * @param timeAfter the value to set
+         * @return this builder
+         **/
         public Builder timeAfter(java.util.Date timeAfter) {
             this.timeAfter = timeAfter;
             this.__explicitlySet__.add("timeAfter");
             return this;
         }
-
+        /**
+         * The date and time the request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBefore")
         private java.util.Date timeBefore;
 
+        /**
+         * The date and time the request was created, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         * @param timeBefore the value to set
+         * @return this builder
+         **/
         public Builder timeBefore(java.util.Date timeBefore) {
             this.timeBefore = timeBefore;
             this.__explicitlySet__.add("timeBefore");
@@ -98,6 +128,10 @@ public final class FacetedSearchDateFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Date field name that needs to be filtered by.
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -110,6 +144,12 @@ public final class FacetedSearchDateFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAfter")
     private final java.util.Date timeAfter;
 
+    /**
+     * The date and time the request was created, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeAfter() {
         return timeAfter;
     }
@@ -122,6 +162,12 @@ public final class FacetedSearchDateFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeBefore")
     private final java.util.Date timeBefore;
 
+    /**
+     * The date and time the request was created, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeBefore() {
         return timeBefore;
     }

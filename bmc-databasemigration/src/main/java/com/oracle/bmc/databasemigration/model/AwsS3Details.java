@@ -30,18 +30,41 @@ public final class AwsS3Details {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * S3 bucket name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * S3 bucket name.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * AWS region code where the S3 bucket is located.
+         * Region code should match the documented available regions:
+         * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * AWS region code where the S3 bucket is located.
+         * Region code should match the documented available regions:
+         * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -84,6 +107,11 @@ public final class AwsS3Details {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * S3 bucket name.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -97,6 +125,13 @@ public final class AwsS3Details {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * AWS region code where the S3 bucket is located.
+     * Region code should match the documented available regions:
+     * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }

@@ -29,9 +29,17 @@ public final class TranscriptionTaskCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Transcription Task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TranscriptionTaskSummary> items;
 
+        /**
+         * List of Transcription Task.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TranscriptionTaskSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class TranscriptionTaskCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TranscriptionTaskSummary> items;
 
+    /**
+     * List of Transcription Task.
+     * @return the value
+     **/
     public java.util.List<TranscriptionTaskSummary> getItems() {
         return items;
     }

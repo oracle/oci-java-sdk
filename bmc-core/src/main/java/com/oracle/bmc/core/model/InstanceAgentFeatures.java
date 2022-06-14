@@ -30,18 +30,37 @@ public final class InstanceAgentFeatures {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This attribute is not used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringSupported")
         private Boolean isMonitoringSupported;
 
+        /**
+         * This attribute is not used.
+         *
+         * @param isMonitoringSupported the value to set
+         * @return this builder
+         **/
         public Builder isMonitoringSupported(Boolean isMonitoringSupported) {
             this.isMonitoringSupported = isMonitoringSupported;
             this.__explicitlySet__.add("isMonitoringSupported");
             return this;
         }
-
+        /**
+         * This attribute is not used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagementSupported")
         private Boolean isManagementSupported;
 
+        /**
+         * This attribute is not used.
+         *
+         * @param isManagementSupported the value to set
+         * @return this builder
+         **/
         public Builder isManagementSupported(Boolean isManagementSupported) {
             this.isManagementSupported = isManagementSupported;
             this.__explicitlySet__.add("isManagementSupported");
@@ -87,6 +106,11 @@ public final class InstanceAgentFeatures {
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringSupported")
     private final Boolean isMonitoringSupported;
 
+    /**
+     * This attribute is not used.
+     *
+     * @return the value
+     **/
     public Boolean getIsMonitoringSupported() {
         return isMonitoringSupported;
     }
@@ -98,6 +122,11 @@ public final class InstanceAgentFeatures {
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementSupported")
     private final Boolean isManagementSupported;
 
+    /**
+     * This attribute is not used.
+     *
+     * @return the value
+     **/
     public Boolean getIsManagementSupported() {
         return isManagementSupported;
     }

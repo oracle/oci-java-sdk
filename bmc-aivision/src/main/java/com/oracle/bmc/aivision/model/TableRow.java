@@ -27,9 +27,17 @@ public final class TableRow {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The cells in the row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cells")
         private java.util.List<Cell> cells;
 
+        /**
+         * The cells in the row.
+         * @param cells the value to set
+         * @return this builder
+         **/
         public Builder cells(java.util.List<Cell> cells) {
             this.cells = cells;
             this.__explicitlySet__.add("cells");
@@ -71,6 +79,10 @@ public final class TableRow {
     @com.fasterxml.jackson.annotation.JsonProperty("cells")
     private final java.util.List<Cell> cells;
 
+    /**
+     * The cells in the row.
+     * @return the value
+     **/
     public java.util.List<Cell> getCells() {
         return cells;
     }

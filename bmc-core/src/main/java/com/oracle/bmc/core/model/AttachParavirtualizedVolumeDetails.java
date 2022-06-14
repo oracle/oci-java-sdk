@@ -80,10 +80,17 @@ public final class AttachParavirtualizedVolumeDetails extends AttachVolumeDetail
             this.__explicitlySet__.add("volumeId");
             return this;
         }
-
+        /**
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
+        /**
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+         * @param isPvEncryptionInTransitEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
@@ -153,6 +160,10 @@ public final class AttachParavirtualizedVolumeDetails extends AttachVolumeDetail
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
+    /**
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+     * @return the value
+     **/
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }

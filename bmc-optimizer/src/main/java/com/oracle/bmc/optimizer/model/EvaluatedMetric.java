@@ -30,36 +30,65 @@ public final class EvaluatedMetric {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the metric (e.g., {@code CpuUtilization}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the metric (e.g., {@code CpuUtilization}).
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the statistic (e.g., {@code p95}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statistic")
         private String statistic;
 
+        /**
+         * The name of the statistic (e.g., {@code p95}).
+         * @param statistic the value to set
+         * @return this builder
+         **/
         public Builder statistic(String statistic) {
             this.statistic = statistic;
             this.__explicitlySet__.add("statistic");
             return this;
         }
-
+        /**
+         * The threshold that must be crossed for the recommendation to appear.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("threshold")
         private Double threshold;
 
+        /**
+         * The threshold that must be crossed for the recommendation to appear.
+         * @param threshold the value to set
+         * @return this builder
+         **/
         public Builder threshold(Double threshold) {
             this.threshold = threshold;
             this.__explicitlySet__.add("threshold");
             return this;
         }
-
+        /**
+         * Optional. The metric value that the recommendation will target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private Double target;
 
+        /**
+         * Optional. The metric value that the recommendation will target.
+         * @param target the value to set
+         * @return this builder
+         **/
         public Builder target(Double target) {
             this.target = target;
             this.__explicitlySet__.add("target");
@@ -105,6 +134,10 @@ public final class EvaluatedMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the metric (e.g., {@code CpuUtilization}).
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -115,6 +148,10 @@ public final class EvaluatedMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("statistic")
     private final String statistic;
 
+    /**
+     * The name of the statistic (e.g., {@code p95}).
+     * @return the value
+     **/
     public String getStatistic() {
         return statistic;
     }
@@ -125,6 +162,10 @@ public final class EvaluatedMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
     private final Double threshold;
 
+    /**
+     * The threshold that must be crossed for the recommendation to appear.
+     * @return the value
+     **/
     public Double getThreshold() {
         return threshold;
     }
@@ -135,6 +176,10 @@ public final class EvaluatedMetric {
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final Double target;
 
+    /**
+     * Optional. The metric value that the recommendation will target.
+     * @return the value
+     **/
     public Double getTarget() {
         return target;
     }

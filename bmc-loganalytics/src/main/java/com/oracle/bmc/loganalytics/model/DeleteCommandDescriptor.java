@@ -72,10 +72,19 @@ public final class DeleteCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Value specified in DELETE command in queryString as to whether the delete is a dry-run (only report number of rows removed) rather than actually remove matching log records.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
         private Boolean isDryRun;
 
+        /**
+         * Value specified in DELETE command in queryString as to whether the delete is a dry-run (only report number of rows removed) rather than actually remove matching log records.
+         *
+         * @param isDryRun the value to set
+         * @return this builder
+         **/
         public Builder isDryRun(Boolean isDryRun) {
             this.isDryRun = isDryRun;
             this.__explicitlySet__.add("isDryRun");
@@ -143,6 +152,11 @@ public final class DeleteCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
     private final Boolean isDryRun;
 
+    /**
+     * Value specified in DELETE command in queryString as to whether the delete is a dry-run (only report number of rows removed) rather than actually remove matching log records.
+     *
+     * @return the value
+     **/
     public Boolean getIsDryRun() {
         return isDryRun;
     }

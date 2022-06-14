@@ -90,37 +90,71 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The resource's display name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The resource's display name.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * A list of native languages supported by this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nativeLanguageTags")
         private java.util.List<String> nativeLanguageTags;
 
+        /**
+         * A list of native languages supported by this resource.
+         * @param nativeLanguageTags the value to set
+         * @return this builder
+         **/
         public Builder nativeLanguageTags(java.util.List<String> nativeLanguageTags) {
             this.nativeLanguageTags = nativeLanguageTags;
             this.__explicitlySet__.add("nativeLanguageTags");
@@ -213,6 +247,11 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -224,6 +263,11 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The resource's display name.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -235,6 +279,11 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+     *
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -245,6 +294,10 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
     @com.fasterxml.jackson.annotation.JsonProperty("nativeLanguageTags")
     private final java.util.List<String> nativeLanguageTags;
 
+    /**
+     * A list of native languages supported by this resource.
+     * @return the value
+     **/
     public java.util.List<String> getNativeLanguageTags() {
         return nativeLanguageTags;
     }

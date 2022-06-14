@@ -44,45 +44,85 @@ public final class DatabaseParametersCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * The name of the Managed Database.
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * The type of Oracle Database installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
+        /**
+         * The type of Oracle Database installation.
+         * @param databaseType the value to set
+         * @return this builder
+         **/
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database
+         * is a Container Database, Pluggable Database, or a Non-container Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
         private DatabaseSubType databaseSubType;
 
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database
+         * is a Container Database, Pluggable Database, or a Non-container Database.
+         *
+         * @param databaseSubType the value to set
+         * @return this builder
+         **/
         public Builder databaseSubType(DatabaseSubType databaseSubType) {
             this.databaseSubType = databaseSubType;
             this.__explicitlySet__.add("databaseSubType");
             return this;
         }
-
+        /**
+         * The Oracle Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
+        /**
+         * The Oracle Database version.
+         * @param databaseVersion the value to set
+         * @return this builder
+         **/
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
             return this;
         }
-
+        /**
+         * An array of DatabaseParameterSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DatabaseParameterSummary> items;
 
+        /**
+         * An array of DatabaseParameterSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DatabaseParameterSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -131,6 +171,10 @@ public final class DatabaseParametersCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * The name of the Managed Database.
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -141,6 +185,10 @@ public final class DatabaseParametersCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
+    /**
+     * The type of Oracle Database installation.
+     * @return the value
+     **/
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
@@ -153,6 +201,12 @@ public final class DatabaseParametersCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database
+     * is a Container Database, Pluggable Database, or a Non-container Database.
+     *
+     * @return the value
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
@@ -163,6 +217,10 @@ public final class DatabaseParametersCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
+    /**
+     * The Oracle Database version.
+     * @return the value
+     **/
     public String getDatabaseVersion() {
         return databaseVersion;
     }
@@ -173,6 +231,10 @@ public final class DatabaseParametersCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DatabaseParameterSummary> items;
 
+    /**
+     * An array of DatabaseParameterSummary objects.
+     * @return the value
+     **/
     public java.util.List<DatabaseParameterSummary> getItems() {
         return items;
     }

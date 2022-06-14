@@ -32,27 +32,49 @@ public final class HostedEntitySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityIdentifier")
         private String entityIdentifier;
 
+        /**
+         * The identifier of the entity.
+         * @param entityIdentifier the value to set
+         * @return this builder
+         **/
         public Builder entityIdentifier(String entityIdentifier) {
             this.entityIdentifier = entityIdentifier;
             this.__explicitlySet__.add("entityIdentifier");
             return this;
         }
-
+        /**
+         * The entity name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * The entity name.
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -98,6 +120,10 @@ public final class HostedEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityIdentifier")
     private final String entityIdentifier;
 
+    /**
+     * The identifier of the entity.
+     * @return the value
+     **/
     public String getEntityIdentifier() {
         return entityIdentifier;
     }
@@ -108,6 +134,10 @@ public final class HostedEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * The entity name.
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -118,6 +148,10 @@ public final class HostedEntitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }

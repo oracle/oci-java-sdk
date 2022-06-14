@@ -28,18 +28,33 @@ public final class RoverNodeGetRpt {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource principal token blob that contains claims about the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
         private String resourcePrincipalToken;
 
+        /**
+         * The resource principal token blob that contains claims about the resource.
+         * @param resourcePrincipalToken the value to set
+         * @return this builder
+         **/
         public Builder resourcePrincipalToken(String resourcePrincipalToken) {
             this.resourcePrincipalToken = resourcePrincipalToken;
             this.__explicitlySet__.add("resourcePrincipalToken");
             return this;
         }
-
+        /**
+         * The service principal session token
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
         private String servicePrincipalSessionToken;
 
+        /**
+         * The service principal session token
+         * @param servicePrincipalSessionToken the value to set
+         * @return this builder
+         **/
         public Builder servicePrincipalSessionToken(String servicePrincipalSessionToken) {
             this.servicePrincipalSessionToken = servicePrincipalSessionToken;
             this.__explicitlySet__.add("servicePrincipalSessionToken");
@@ -84,6 +99,10 @@ public final class RoverNodeGetRpt {
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
     private final String resourcePrincipalToken;
 
+    /**
+     * The resource principal token blob that contains claims about the resource.
+     * @return the value
+     **/
     public String getResourcePrincipalToken() {
         return resourcePrincipalToken;
     }
@@ -94,6 +113,10 @@ public final class RoverNodeGetRpt {
     @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
     private final String servicePrincipalSessionToken;
 
+    /**
+     * The service principal session token
+     * @return the value
+     **/
     public String getServicePrincipalSessionToken() {
         return servicePrincipalSessionToken;
     }

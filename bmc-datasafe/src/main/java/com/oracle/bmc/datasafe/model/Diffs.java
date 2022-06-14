@@ -46,6 +46,7 @@ public final class Diffs {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("current")
         private Finding current;
 
@@ -63,37 +64,67 @@ public final class Diffs {
             this.__explicitlySet__.add("baseline");
             return this;
         }
-
+        /**
+         * This array identifies the items that are present in the baseline, but are missing from the current assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removedItems")
         private java.util.List<String> removedItems;
 
+        /**
+         * This array identifies the items that are present in the baseline, but are missing from the current assessment.
+         * @param removedItems the value to set
+         * @return this builder
+         **/
         public Builder removedItems(java.util.List<String> removedItems) {
             this.removedItems = removedItems;
             this.__explicitlySet__.add("removedItems");
             return this;
         }
-
+        /**
+         * This array identifies the items that are present in the current assessment, but are missing from the baseline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addedItems")
         private java.util.List<String> addedItems;
 
+        /**
+         * This array identifies the items that are present in the current assessment, but are missing from the baseline.
+         * @param addedItems the value to set
+         * @return this builder
+         **/
         public Builder addedItems(java.util.List<String> addedItems) {
             this.addedItems = addedItems;
             this.__explicitlySet__.add("addedItems");
             return this;
         }
-
+        /**
+         * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modifiedItems")
         private java.util.List<String> modifiedItems;
 
+        /**
+         * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
+         *
+         * @param modifiedItems the value to set
+         * @return this builder
+         **/
         public Builder modifiedItems(java.util.List<String> modifiedItems) {
             this.modifiedItems = modifiedItems;
             this.__explicitlySet__.add("modifiedItems");
             return this;
         }
-
+        /**
+         * The severity of this diff.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
+        /**
+         * The severity of this diff.
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
@@ -156,6 +187,10 @@ public final class Diffs {
     @com.fasterxml.jackson.annotation.JsonProperty("removedItems")
     private final java.util.List<String> removedItems;
 
+    /**
+     * This array identifies the items that are present in the baseline, but are missing from the current assessment.
+     * @return the value
+     **/
     public java.util.List<String> getRemovedItems() {
         return removedItems;
     }
@@ -166,6 +201,10 @@ public final class Diffs {
     @com.fasterxml.jackson.annotation.JsonProperty("addedItems")
     private final java.util.List<String> addedItems;
 
+    /**
+     * This array identifies the items that are present in the current assessment, but are missing from the baseline.
+     * @return the value
+     **/
     public java.util.List<String> getAddedItems() {
         return addedItems;
     }
@@ -177,6 +216,11 @@ public final class Diffs {
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedItems")
     private final java.util.List<String> modifiedItems;
 
+    /**
+     * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getModifiedItems() {
         return modifiedItems;
     }
@@ -239,6 +283,10 @@ public final class Diffs {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
+    /**
+     * The severity of this diff.
+     * @return the value
+     **/
     public Severity getSeverity() {
         return severity;
     }

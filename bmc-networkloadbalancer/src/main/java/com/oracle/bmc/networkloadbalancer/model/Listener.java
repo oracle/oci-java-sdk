@@ -45,45 +45,113 @@ public final class Listener {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A friendly name for the listener. It must be unique and it cannot be changed.
+         * <p>
+         * Example: {@code example_listener}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A friendly name for the listener. It must be unique and it cannot be changed.
+         * <p>
+         * Example: {@code example_listener}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the associated backend set.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
 
+        /**
+         * The name of the associated backend set.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         * @param defaultBackendSetName the value to set
+         * @return this builder
+         **/
         public Builder defaultBackendSetName(String defaultBackendSetName) {
             this.defaultBackendSetName = defaultBackendSetName;
             this.__explicitlySet__.add("defaultBackendSetName");
             return this;
         }
-
+        /**
+         * The communication port for the listener.
+         * <p>
+         * Example: {@code 80}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The communication port for the listener.
+         * <p>
+         * Example: {@code 80}
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The protocol on which the listener accepts connection requests.
+         * For public network load balancers, ANY protocol refers to TCP/UDP.
+         * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
+         * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
+         * operation.
+         * <p>
+         * Example: {@code TCP}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private ListenerProtocols protocol;
 
+        /**
+         * The protocol on which the listener accepts connection requests.
+         * For public network load balancers, ANY protocol refers to TCP/UDP.
+         * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
+         * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
+         * operation.
+         * <p>
+         * Example: {@code TCP}
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(ListenerProtocols protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * IP version associated with the listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
         private IpVersion ipVersion;
 
+        /**
+         * IP version associated with the listener.
+         * @param ipVersion the value to set
+         * @return this builder
+         **/
         public Builder ipVersion(IpVersion ipVersion) {
             this.ipVersion = ipVersion;
             this.__explicitlySet__.add("ipVersion");
@@ -134,6 +202,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A friendly name for the listener. It must be unique and it cannot be changed.
+     * <p>
+     * Example: {@code example_listener}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -147,6 +222,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     private final String defaultBackendSetName;
 
+    /**
+     * The name of the associated backend set.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     * @return the value
+     **/
     public String getDefaultBackendSetName() {
         return defaultBackendSetName;
     }
@@ -160,6 +242,13 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The communication port for the listener.
+     * <p>
+     * Example: {@code 80}
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -177,6 +266,17 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final ListenerProtocols protocol;
 
+    /**
+     * The protocol on which the listener accepts connection requests.
+     * For public network load balancers, ANY protocol refers to TCP/UDP.
+     * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
+     * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
+     * operation.
+     * <p>
+     * Example: {@code TCP}
+     *
+     * @return the value
+     **/
     public ListenerProtocols getProtocol() {
         return protocol;
     }
@@ -187,6 +287,10 @@ public final class Listener {
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
     private final IpVersion ipVersion;
 
+    /**
+     * IP version associated with the listener.
+     * @return the value
+     **/
     public IpVersion getIpVersion() {
         return ipVersion;
     }

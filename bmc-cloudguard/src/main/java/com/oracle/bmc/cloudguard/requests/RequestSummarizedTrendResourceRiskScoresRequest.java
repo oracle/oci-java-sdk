@@ -19,6 +19,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
     private com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails
             requestSummarizedTrendResourceRiskScoresDetails;
 
+    /**
+     * The filter to fetch risk score trend.
+     */
     public com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails
             getRequestSummarizedTrendResourceRiskScoresDetails() {
         return requestSummarizedTrendResourceRiskScoresDetails;
@@ -28,6 +31,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -36,6 +42,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private java.util.Date timeScoreComputedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+     */
     public java.util.Date getTimeScoreComputedGreaterThanOrEqualTo() {
         return timeScoreComputedGreaterThanOrEqualTo;
     }
@@ -44,6 +53,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private java.util.Date timeScoreComputedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to today's current time.
+     */
     public java.util.Date getTimeScoreComputedLessThanOrEqualTo() {
         return timeScoreComputedLessThanOrEqualTo;
     }
@@ -56,6 +68,13 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -110,6 +129,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -118,6 +145,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -126,6 +156,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -134,6 +167,9 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -158,11 +194,15 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The filter to fetch risk score trend.
+         */
         private com.oracle.bmc.cloudguard.model.RequestSummarizedTrendResourceRiskScoresDetails
                 requestSummarizedTrendResourceRiskScoresDetails = null;
 
         /**
          * The filter to fetch risk score trend.
+         * @param requestSummarizedTrendResourceRiskScoresDetails the value to set
          * @return this builder instance
          */
         public Builder requestSummarizedTrendResourceRiskScoresDetails(
@@ -173,10 +213,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -184,10 +228,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+         */
         private java.util.Date timeScoreComputedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+         * @param timeScoreComputedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeScoreComputedGreaterThanOrEqualTo(
@@ -196,10 +244,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to today's current time.
+         */
         private java.util.Date timeScoreComputedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to today's current time.
+         * @param timeScoreComputedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeScoreComputedLessThanOrEqualTo(
@@ -208,6 +260,13 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -216,6 +275,7 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -223,6 +283,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -232,6 +300,7 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -239,10 +308,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -250,10 +323,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -261,10 +338,14 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -373,7 +454,8 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -389,6 +471,10 @@ public class RequestSummarizedTrendResourceRiskScoresRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

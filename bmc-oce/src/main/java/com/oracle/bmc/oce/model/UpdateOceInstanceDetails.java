@@ -50,63 +50,121 @@ public final class UpdateOceInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OceInstance description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * OceInstance description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Web Application Firewall(WAF) primary domain
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
         private String wafPrimaryDomain;
 
+        /**
+         * Web Application Firewall(WAF) primary domain
+         * @param wafPrimaryDomain the value to set
+         * @return this builder
+         **/
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
             this.wafPrimaryDomain = wafPrimaryDomain;
             this.__explicitlySet__.add("wafPrimaryDomain");
             return this;
         }
-
+        /**
+         * Flag indicating whether the instance license is new cloud or bring your own license
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
         private LicenseType instanceLicenseType;
 
+        /**
+         * Flag indicating whether the instance license is new cloud or bring your own license
+         * @param instanceLicenseType the value to set
+         * @return this builder
+         **/
         public Builder instanceLicenseType(LicenseType instanceLicenseType) {
             this.instanceLicenseType = instanceLicenseType;
             this.__explicitlySet__.add("instanceLicenseType");
             return this;
         }
-
+        /**
+         * Instance type based on its usage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
         private InstanceUsageType instanceUsageType;
 
+        /**
+         * Instance type based on its usage
+         * @param instanceUsageType the value to set
+         * @return this builder
+         **/
         public Builder instanceUsageType(InstanceUsageType instanceUsageType) {
             this.instanceUsageType = instanceUsageType;
             this.__explicitlySet__.add("instanceUsageType");
             return this;
         }
-
+        /**
+         * a list of add-on features for the ocm instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
         private java.util.List<String> addOnFeatures;
 
+        /**
+         * a list of add-on features for the ocm instance
+         * @param addOnFeatures the value to set
+         * @return this builder
+         **/
         public Builder addOnFeatures(java.util.List<String> addOnFeatures) {
             this.addOnFeatures = addOnFeatures;
             this.__explicitlySet__.add("addOnFeatures");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -164,6 +222,10 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * OceInstance description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -174,6 +236,10 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
     private final String wafPrimaryDomain;
 
+    /**
+     * Web Application Firewall(WAF) primary domain
+     * @return the value
+     **/
     public String getWafPrimaryDomain() {
         return wafPrimaryDomain;
     }
@@ -184,6 +250,10 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
     private final LicenseType instanceLicenseType;
 
+    /**
+     * Flag indicating whether the instance license is new cloud or bring your own license
+     * @return the value
+     **/
     public LicenseType getInstanceLicenseType() {
         return instanceLicenseType;
     }
@@ -229,6 +299,10 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
     private final InstanceUsageType instanceUsageType;
 
+    /**
+     * Instance type based on its usage
+     * @return the value
+     **/
     public InstanceUsageType getInstanceUsageType() {
         return instanceUsageType;
     }
@@ -239,6 +313,10 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
     private final java.util.List<String> addOnFeatures;
 
+    /**
+     * a list of add-on features for the ocm instance
+     * @return the value
+     **/
     public java.util.List<String> getAddOnFeatures() {
         return addOnFeatures;
     }
@@ -251,6 +329,12 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -263,6 +347,12 @@ public final class UpdateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -43,10 +43,23 @@ public final class PPFFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+         * format. It can be a standalone or packaged function, so PACKAGE_NAME
+         * is optional.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("postProcessingFunction")
         private String postProcessingFunction;
 
+        /**
+         * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+         * format. It can be a standalone or packaged function, so PACKAGE_NAME
+         * is optional.
+         *
+         * @param postProcessingFunction the value to set
+         * @return this builder
+         **/
         public Builder postProcessingFunction(String postProcessingFunction) {
             this.postProcessingFunction = postProcessingFunction;
             this.__explicitlySet__.add("postProcessingFunction");
@@ -99,6 +112,13 @@ public final class PPFFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("postProcessingFunction")
     private final String postProcessingFunction;
 
+    /**
+     * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+     * format. It can be a standalone or packaged function, so PACKAGE_NAME
+     * is optional.
+     *
+     * @return the value
+     **/
     public String getPostProcessingFunction() {
         return postProcessingFunction;
     }

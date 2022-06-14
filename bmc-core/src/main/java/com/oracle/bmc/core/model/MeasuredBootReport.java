@@ -31,9 +31,19 @@ public final class MeasuredBootReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether the verification succeeded, and the new values match the expected values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")
         private Boolean isPolicyVerificationSuccessful;
 
+        /**
+         * Whether the verification succeeded, and the new values match the expected values.
+         *
+         * @param isPolicyVerificationSuccessful the value to set
+         * @return this builder
+         **/
         public Builder isPolicyVerificationSuccessful(Boolean isPolicyVerificationSuccessful) {
             this.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
             this.__explicitlySet__.add("isPolicyVerificationSuccessful");
@@ -88,6 +98,11 @@ public final class MeasuredBootReport {
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")
     private final Boolean isPolicyVerificationSuccessful;
 
+    /**
+     * Whether the verification succeeded, and the new values match the expected values.
+     *
+     * @return the value
+     **/
     public Boolean getIsPolicyVerificationSuccessful() {
         return isPolicyVerificationSuccessful;
     }

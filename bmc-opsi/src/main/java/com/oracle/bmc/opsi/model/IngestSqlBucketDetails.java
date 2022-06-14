@@ -30,9 +30,17 @@ public final class IngestSqlBucketDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of SQL Bucket Metric Entries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlBucket> items;
 
+        /**
+         * List of SQL Bucket Metric Entries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SqlBucket> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class IngestSqlBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlBucket> items;
 
+    /**
+     * List of SQL Bucket Metric Entries.
+     * @return the value
+     **/
     public java.util.List<SqlBucket> getItems() {
         return items;
     }

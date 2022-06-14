@@ -20,6 +20,10 @@ public class ChangeKeyStoreCompartmentRequest
     private com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails
             changeKeyStoreCompartmentDetails;
 
+    /**
+     * Request to move key store to a different compartment
+     *
+     */
     public com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails
             getChangeKeyStoreCompartmentDetails() {
         return changeKeyStoreCompartmentDetails;
@@ -29,6 +33,9 @@ public class ChangeKeyStoreCompartmentRequest
      */
     private String keyStoreId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     */
     public String getKeyStoreId() {
         return keyStoreId;
     }
@@ -42,6 +49,14 @@ public class ChangeKeyStoreCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -51,6 +66,10 @@ public class ChangeKeyStoreCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +81,12 @@ public class ChangeKeyStoreCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -84,12 +109,17 @@ public class ChangeKeyStoreCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to move key store to a different compartment
+         *
+         */
         private com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails
                 changeKeyStoreCompartmentDetails = null;
 
         /**
          * Request to move key store to a different compartment
          *
+         * @param changeKeyStoreCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeKeyStoreCompartmentDetails(
@@ -99,10 +129,14 @@ public class ChangeKeyStoreCompartmentRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         */
         private String keyStoreId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * @param keyStoreId the value to set
          * @return this builder instance
          */
         public Builder keyStoreId(String keyStoreId) {
@@ -110,6 +144,14 @@ public class ChangeKeyStoreCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -119,6 +161,7 @@ public class ChangeKeyStoreCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -126,11 +169,16 @@ public class ChangeKeyStoreCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -138,6 +186,12 @@ public class ChangeKeyStoreCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeKeyStoreCompartmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -239,7 +294,8 @@ public class ChangeKeyStoreCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -250,6 +306,10 @@ public class ChangeKeyStoreCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

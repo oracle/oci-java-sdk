@@ -18,6 +18,9 @@ public class UpdateUnifiedAgentConfigurationRequest
      */
     private String unifiedAgentConfigurationId;
 
+    /**
+     * The OCID of the Unified Agent configuration.
+     */
     public String getUnifiedAgentConfigurationId() {
         return unifiedAgentConfigurationId;
     }
@@ -28,6 +31,10 @@ public class UpdateUnifiedAgentConfigurationRequest
     private com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails
             updateUnifiedAgentConfigurationDetails;
 
+    /**
+     * Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.
+     *
+     */
     public com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails
             getUpdateUnifiedAgentConfigurationDetails() {
         return updateUnifiedAgentConfigurationDetails;
@@ -42,6 +49,14 @@ public class UpdateUnifiedAgentConfigurationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -52,6 +67,11 @@ public class UpdateUnifiedAgentConfigurationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,10 +94,14 @@ public class UpdateUnifiedAgentConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the Unified Agent configuration.
+         */
         private String unifiedAgentConfigurationId = null;
 
         /**
          * The OCID of the Unified Agent configuration.
+         * @param unifiedAgentConfigurationId the value to set
          * @return this builder instance
          */
         public Builder unifiedAgentConfigurationId(String unifiedAgentConfigurationId) {
@@ -85,12 +109,17 @@ public class UpdateUnifiedAgentConfigurationRequest
             return this;
         }
 
+        /**
+         * Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.
+         *
+         */
         private com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails
                 updateUnifiedAgentConfigurationDetails = null;
 
         /**
          * Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.
          *
+         * @param updateUnifiedAgentConfigurationDetails the value to set
          * @return this builder instance
          */
         public Builder updateUnifiedAgentConfigurationDetails(
@@ -100,6 +129,14 @@ public class UpdateUnifiedAgentConfigurationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -109,6 +146,7 @@ public class UpdateUnifiedAgentConfigurationRequest
          * updated or deleted only if the etag you provide matches the resource's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -116,12 +154,18 @@ public class UpdateUnifiedAgentConfigurationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -216,7 +260,8 @@ public class UpdateUnifiedAgentConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +271,10 @@ public class UpdateUnifiedAgentConfigurationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

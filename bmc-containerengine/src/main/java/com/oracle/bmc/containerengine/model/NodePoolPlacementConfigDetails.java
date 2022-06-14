@@ -41,36 +41,71 @@ public final class NodePoolPlacementConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain in which to place nodes.
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain in which to place nodes.
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The OCID of the subnet in which to place nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet in which to place nodes.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * The OCID of the compute capacity reservation in which to place the compute instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
+        /**
+         * The OCID of the compute capacity reservation in which to place the compute instance.
+         * @param capacityReservationId the value to set
+         * @return this builder
+         **/
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
-
+        /**
+         * A list of fault domains in which to place nodes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
         private java.util.List<String> faultDomains;
 
+        /**
+         * A list of fault domains in which to place nodes.
+         *
+         * @param faultDomains the value to set
+         * @return this builder
+         **/
         public Builder faultDomains(java.util.List<String> faultDomains) {
             this.faultDomains = faultDomains;
             this.__explicitlySet__.add("faultDomains");
@@ -120,6 +155,12 @@ public final class NodePoolPlacementConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain in which to place nodes.
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -130,6 +171,10 @@ public final class NodePoolPlacementConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet in which to place nodes.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -140,6 +185,10 @@ public final class NodePoolPlacementConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
+    /**
+     * The OCID of the compute capacity reservation in which to place the compute instance.
+     * @return the value
+     **/
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
@@ -151,6 +200,11 @@ public final class NodePoolPlacementConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
     private final java.util.List<String> faultDomains;
 
+    /**
+     * A list of fault domains in which to place nodes.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getFaultDomains() {
         return faultDomains;
     }

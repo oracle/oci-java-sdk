@@ -27,9 +27,17 @@ public final class Nameserver {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The hostname of the nameserver.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The hostname of the nameserver.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -71,6 +79,10 @@ public final class Nameserver {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The hostname of the nameserver.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }

@@ -27,9 +27,17 @@ package com.oracle.bmc.aispeech.model;
 public final class ObjectListInlineInputLocation extends InputLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of ObjectLocations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectLocations")
         private java.util.List<ObjectLocation> objectLocations;
 
+        /**
+         * A list of ObjectLocations.
+         * @param objectLocations the value to set
+         * @return this builder
+         **/
         public Builder objectLocations(java.util.List<ObjectLocation> objectLocations) {
             this.objectLocations = objectLocations;
             this.__explicitlySet__.add("objectLocations");
@@ -78,6 +86,10 @@ public final class ObjectListInlineInputLocation extends InputLocation {
     @com.fasterxml.jackson.annotation.JsonProperty("objectLocations")
     private final java.util.List<ObjectLocation> objectLocations;
 
+    /**
+     * A list of ObjectLocations.
+     * @return the value
+     **/
     public java.util.List<ObjectLocation> getObjectLocations() {
         return objectLocations;
     }

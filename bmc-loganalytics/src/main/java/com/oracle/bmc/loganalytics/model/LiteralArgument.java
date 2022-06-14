@@ -26,18 +26,37 @@ package com.oracle.bmc.loganalytics.model;
 public final class LiteralArgument extends Argument {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Data type of specified literal in queryString.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * Data type of specified literal in queryString.
+         *
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Literal value specified in queryString.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Object value;
 
+        /**
+         * Literal value specified in queryString.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Object value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -87,6 +106,11 @@ public final class LiteralArgument extends Argument {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * Data type of specified literal in queryString.
+     *
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -98,6 +122,11 @@ public final class LiteralArgument extends Argument {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Object value;
 
+    /**
+     * Literal value specified in queryString.
+     *
+     * @return the value
+     **/
     public Object getValue() {
         return value;
     }

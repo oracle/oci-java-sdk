@@ -27,27 +27,53 @@ package com.oracle.bmc.servicemesh.model;
 public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the virtual deployment where the request will be routed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("virtualDeploymentId")
         private String virtualDeploymentId;
 
+        /**
+         * The OCID of the virtual deployment where the request will be routed.
+         * @param virtualDeploymentId the value to set
+         * @return this builder
+         **/
         public Builder virtualDeploymentId(String virtualDeploymentId) {
             this.virtualDeploymentId = virtualDeploymentId;
             this.__explicitlySet__.add("virtualDeploymentId");
             return this;
         }
-
+        /**
+         * Port on virtual deployment to target.
+         * If port is missing, the rule will target all ports on the virtual deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Port on virtual deployment to target.
+         * If port is missing, the rule will target all ports on the virtual deployment.
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * Weight of traffic target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
+        /**
+         * Weight of traffic target.
+         * @param weight the value to set
+         * @return this builder
+         **/
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -102,6 +128,10 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("virtualDeploymentId")
     private final String virtualDeploymentId;
 
+    /**
+     * The OCID of the virtual deployment where the request will be routed.
+     * @return the value
+     **/
     public String getVirtualDeploymentId() {
         return virtualDeploymentId;
     }
@@ -114,6 +144,12 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Port on virtual deployment to target.
+     * If port is missing, the rule will target all ports on the virtual deployment.
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -124,6 +160,10 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
+    /**
+     * Weight of traffic target.
+     * @return the value
+     **/
     public Integer getWeight() {
         return weight;
     }

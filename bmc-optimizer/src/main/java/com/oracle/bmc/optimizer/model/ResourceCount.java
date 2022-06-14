@@ -28,18 +28,33 @@ public final class ResourceCount {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The recommendation status of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The recommendation status of the resource.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The count of resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The count of resources.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -81,6 +96,10 @@ public final class ResourceCount {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The recommendation status of the resource.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -91,6 +110,10 @@ public final class ResourceCount {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The count of resources.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

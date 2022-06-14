@@ -30,18 +30,33 @@ package com.oracle.bmc.applicationmigration.model;
 public final class SoacsDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weblogicUser")
         private String weblogicUser;
 
+        /**
+         * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
+         * @param weblogicUser the value to set
+         * @return this builder
+         **/
         public Builder weblogicUser(String weblogicUser) {
             this.weblogicUser = weblogicUser;
             this.__explicitlySet__.add("weblogicUser");
             return this;
         }
-
+        /**
+         * Password for this user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weblogicPassword")
         private String weblogicPassword;
 
+        /**
+         * Password for this user.
+         * @param weblogicPassword the value to set
+         * @return this builder
+         **/
         public Builder weblogicPassword(String weblogicPassword) {
             this.weblogicPassword = weblogicPassword;
             this.__explicitlySet__.add("weblogicPassword");
@@ -92,6 +107,10 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicUser")
     private final String weblogicUser;
 
+    /**
+     * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
+     * @return the value
+     **/
     public String getWeblogicUser() {
         return weblogicUser;
     }
@@ -102,6 +121,10 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicPassword")
     private final String weblogicPassword;
 
+    /**
+     * Password for this user.
+     * @return the value
+     **/
     public String getWeblogicPassword() {
         return weblogicPassword;
     }

@@ -31,6 +31,7 @@ public final class HeaderValidationRequestPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HeaderValidationItem> headers;
 
@@ -39,10 +40,35 @@ public final class HeaderValidationRequestPolicy {
             this.__explicitlySet__.add("headers");
             return this;
         }
-
+        /**
+         * Validation behavior mode.
+         * <p>
+         * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
+         * and not sent to the backend.
+         * <p>
+         * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
+         * will follow the normal path.
+         * <p>
+         * {@code DISABLED} type turns the validation off.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
         private ValidationMode validationMode;
 
+        /**
+         * Validation behavior mode.
+         * <p>
+         * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
+         * and not sent to the backend.
+         * <p>
+         * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
+         * will follow the normal path.
+         * <p>
+         * {@code DISABLED} type turns the validation off.
+         *
+         * @param validationMode the value to set
+         * @return this builder
+         **/
         public Builder validationMode(ValidationMode validationMode) {
             this.validationMode = validationMode;
             this.__explicitlySet__.add("validationMode");
@@ -146,6 +172,19 @@ public final class HeaderValidationRequestPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
     private final ValidationMode validationMode;
 
+    /**
+     * Validation behavior mode.
+     * <p>
+     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
+     * and not sent to the backend.
+     * <p>
+     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
+     * will follow the normal path.
+     * <p>
+     * {@code DISABLED} type turns the validation off.
+     *
+     * @return the value
+     **/
     public ValidationMode getValidationMode() {
         return validationMode;
     }

@@ -17,6 +17,9 @@ public class ListWorkRequestErrorsRequest
      */
     private String workRequestId;
 
+    /**
+     * The asynchronous request ID.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -27,6 +30,11 @@ public class ListWorkRequestErrorsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +45,11 @@ public class ListWorkRequestErrorsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -46,6 +59,10 @@ public class ListWorkRequestErrorsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -57,10 +74,14 @@ public class ListWorkRequestErrorsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The asynchronous request ID.
+         */
         private String workRequestId = null;
 
         /**
          * The asynchronous request ID.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -68,12 +89,18 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -81,12 +108,18 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
          * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -94,11 +127,16 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -180,7 +218,8 @@ public class ListWorkRequestErrorsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -190,6 +229,10 @@ public class ListWorkRequestErrorsRequest
                 .limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

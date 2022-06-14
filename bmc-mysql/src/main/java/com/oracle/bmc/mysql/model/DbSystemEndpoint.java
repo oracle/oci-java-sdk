@@ -49,63 +49,117 @@ public final class DbSystemEndpoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The network address of the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The network address of the DB System.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * The IP address the DB System is configured to listen on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * The IP address the DB System is configured to listen on.
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * The port the MySQL instance listens on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port the MySQL instance listens on.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The network port where to connect to use this endpoint using the X protocol.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portX")
         private Integer portX;
 
+        /**
+         * The network port where to connect to use this endpoint using the X protocol.
+         * @param portX the value to set
+         * @return this builder
+         **/
         public Builder portX(Integer portX) {
             this.portX = portX;
             this.__explicitlySet__.add("portX");
             return this;
         }
-
+        /**
+         * The access modes from the client that this endpoint supports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modes")
         private java.util.List<Modes> modes;
 
+        /**
+         * The access modes from the client that this endpoint supports.
+         * @param modes the value to set
+         * @return this builder
+         **/
         public Builder modes(java.util.List<Modes> modes) {
             this.modes = modes;
             this.__explicitlySet__.add("modes");
             return this;
         }
-
+        /**
+         * The state of the endpoints, as far as it can seen from the DB System.
+         * There may be some inconsistency with the actual state of the MySQL service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The state of the endpoints, as far as it can seen from the DB System.
+         * There may be some inconsistency with the actual state of the MySQL service.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Additional information about the current endpoint status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
+        /**
+         * Additional information about the current endpoint status.
+         * @param statusDetails the value to set
+         * @return this builder
+         **/
         public Builder statusDetails(String statusDetails) {
             this.statusDetails = statusDetails;
             this.__explicitlySet__.add("statusDetails");
@@ -156,6 +210,10 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The network address of the DB System.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -166,6 +224,10 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * The IP address the DB System is configured to listen on.
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -176,6 +238,10 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port the MySQL instance listens on.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -186,6 +252,10 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("portX")
     private final Integer portX;
 
+    /**
+     * The network port where to connect to use this endpoint using the X protocol.
+     * @return the value
+     **/
     public Integer getPortX() {
         return portX;
     }
@@ -242,6 +312,10 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("modes")
     private final java.util.List<Modes> modes;
 
+    /**
+     * The access modes from the client that this endpoint supports.
+     * @return the value
+     **/
     public java.util.List<Modes> getModes() {
         return modes;
     }
@@ -304,6 +378,12 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The state of the endpoints, as far as it can seen from the DB System.
+     * There may be some inconsistency with the actual state of the MySQL service.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -314,6 +394,10 @@ public final class DbSystemEndpoint {
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
+    /**
+     * Additional information about the current endpoint status.
+     * @return the value
+     **/
     public String getStatusDetails() {
         return statusDetails;
     }

@@ -47,54 +47,97 @@ public final class ContainerRepositoryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of layers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("layerCount")
         private Integer layerCount;
 
+        /**
+         * Total number of layers.
+         * @param layerCount the value to set
+         * @return this builder
+         **/
         public Builder layerCount(Integer layerCount) {
             this.layerCount = layerCount;
             this.__explicitlySet__.add("layerCount");
             return this;
         }
-
+        /**
+         * Total storage in bytes consumed by layers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
         private Long layersSizeInBytes;
 
+        /**
+         * Total storage in bytes consumed by layers.
+         * @param layersSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder layersSizeInBytes(Long layersSizeInBytes) {
             this.layersSizeInBytes = layersSizeInBytes;
             this.__explicitlySet__.add("layersSizeInBytes");
             return this;
         }
-
+        /**
+         * Total number of images.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageCount")
         private Integer imageCount;
 
+        /**
+         * Total number of images.
+         * @param imageCount the value to set
+         * @return this builder
+         **/
         public Builder imageCount(Integer imageCount) {
             this.imageCount = imageCount;
             this.__explicitlySet__.add("imageCount");
             return this;
         }
-
+        /**
+         * Collection of container repositories.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ContainerRepositorySummary> items;
 
+        /**
+         * Collection of container repositories.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ContainerRepositorySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * Estimated number of remaining results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remainingItemsCount")
         private Integer remainingItemsCount;
 
+        /**
+         * Estimated number of remaining results.
+         * @param remainingItemsCount the value to set
+         * @return this builder
+         **/
         public Builder remainingItemsCount(Integer remainingItemsCount) {
             this.remainingItemsCount = remainingItemsCount;
             this.__explicitlySet__.add("remainingItemsCount");
             return this;
         }
-
+        /**
+         * Total number of repositories.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryCount")
         private Integer repositoryCount;
 
+        /**
+         * Total number of repositories.
+         * @param repositoryCount the value to set
+         * @return this builder
+         **/
         public Builder repositoryCount(Integer repositoryCount) {
             this.repositoryCount = repositoryCount;
             this.__explicitlySet__.add("repositoryCount");
@@ -149,6 +192,10 @@ public final class ContainerRepositoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("layerCount")
     private final Integer layerCount;
 
+    /**
+     * Total number of layers.
+     * @return the value
+     **/
     public Integer getLayerCount() {
         return layerCount;
     }
@@ -159,6 +206,10 @@ public final class ContainerRepositoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
     private final Long layersSizeInBytes;
 
+    /**
+     * Total storage in bytes consumed by layers.
+     * @return the value
+     **/
     public Long getLayersSizeInBytes() {
         return layersSizeInBytes;
     }
@@ -169,6 +220,10 @@ public final class ContainerRepositoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("imageCount")
     private final Integer imageCount;
 
+    /**
+     * Total number of images.
+     * @return the value
+     **/
     public Integer getImageCount() {
         return imageCount;
     }
@@ -179,6 +234,10 @@ public final class ContainerRepositoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ContainerRepositorySummary> items;
 
+    /**
+     * Collection of container repositories.
+     * @return the value
+     **/
     public java.util.List<ContainerRepositorySummary> getItems() {
         return items;
     }
@@ -189,6 +248,10 @@ public final class ContainerRepositoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("remainingItemsCount")
     private final Integer remainingItemsCount;
 
+    /**
+     * Estimated number of remaining results.
+     * @return the value
+     **/
     public Integer getRemainingItemsCount() {
         return remainingItemsCount;
     }
@@ -199,6 +262,10 @@ public final class ContainerRepositoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryCount")
     private final Integer repositoryCount;
 
+    /**
+     * Total number of repositories.
+     * @return the value
+     **/
     public Integer getRepositoryCount() {
         return repositoryCount;
     }

@@ -17,6 +17,9 @@ public class AttachDevicesToTransferPackageRequest
      */
     private String id;
 
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -25,6 +28,9 @@ public class AttachDevicesToTransferPackageRequest
      */
     private String transferPackageLabel;
 
+    /**
+     * Label of the Transfer Package
+     */
     public String getTransferPackageLabel() {
         return transferPackageLabel;
     }
@@ -33,6 +39,9 @@ public class AttachDevicesToTransferPackageRequest
      */
     private com.oracle.bmc.dts.model.AttachDevicesDetails attachDevicesDetails;
 
+    /**
+     * Labels of Transfer Devices to attach
+     */
     public com.oracle.bmc.dts.model.AttachDevicesDetails getAttachDevicesDetails() {
         return attachDevicesDetails;
     }
@@ -55,10 +64,14 @@ public class AttachDevicesToTransferPackageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -66,10 +79,14 @@ public class AttachDevicesToTransferPackageRequest
             return this;
         }
 
+        /**
+         * Label of the Transfer Package
+         */
         private String transferPackageLabel = null;
 
         /**
          * Label of the Transfer Package
+         * @param transferPackageLabel the value to set
          * @return this builder instance
          */
         public Builder transferPackageLabel(String transferPackageLabel) {
@@ -77,10 +94,14 @@ public class AttachDevicesToTransferPackageRequest
             return this;
         }
 
+        /**
+         * Labels of Transfer Devices to attach
+         */
         private com.oracle.bmc.dts.model.AttachDevicesDetails attachDevicesDetails = null;
 
         /**
          * Labels of Transfer Devices to attach
+         * @param attachDevicesDetails the value to set
          * @return this builder instance
          */
         public Builder attachDevicesDetails(
@@ -173,7 +194,8 @@ public class AttachDevicesToTransferPackageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -182,6 +204,10 @@ public class AttachDevicesToTransferPackageRequest
                 .attachDevicesDetails(attachDevicesDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,9 +27,17 @@ package com.oracle.bmc.aivision.model;
 public final class DataScienceLabelingDataset extends Dataset {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the Data Labeling dataset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
         private String datasetId;
 
+        /**
+         * OCID of the Data Labeling dataset.
+         * @param datasetId the value to set
+         * @return this builder
+         **/
         public Builder datasetId(String datasetId) {
             this.datasetId = datasetId;
             this.__explicitlySet__.add("datasetId");
@@ -77,6 +85,10 @@ public final class DataScienceLabelingDataset extends Dataset {
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     private final String datasetId;
 
+    /**
+     * OCID of the Data Labeling dataset.
+     * @return the value
+     **/
     public String getDatasetId() {
         return datasetId;
     }

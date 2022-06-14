@@ -42,45 +42,81 @@ public final class Screenshot {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the screenshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the screenshot.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A description of the screenshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the screenshot.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The content URL of the screenshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
+        /**
+         * The content URL of the screenshot.
+         * @param contentUrl the value to set
+         * @return this builder
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-
+        /**
+         * The MIME type of the screenshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
+        /**
+         * The MIME type of the screenshot.
+         * @param mimeType the value to set
+         * @return this builder
+         **/
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-
+        /**
+         * The file extension of the screenshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileExtension")
         private String fileExtension;
 
+        /**
+         * The file extension of the screenshot.
+         * @param fileExtension the value to set
+         * @return this builder
+         **/
         public Builder fileExtension(String fileExtension) {
             this.fileExtension = fileExtension;
             this.__explicitlySet__.add("fileExtension");
@@ -128,6 +164,10 @@ public final class Screenshot {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the screenshot.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -138,6 +178,10 @@ public final class Screenshot {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the screenshot.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -148,6 +192,10 @@ public final class Screenshot {
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
+    /**
+     * The content URL of the screenshot.
+     * @return the value
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
@@ -158,6 +206,10 @@ public final class Screenshot {
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
+    /**
+     * The MIME type of the screenshot.
+     * @return the value
+     **/
     public String getMimeType() {
         return mimeType;
     }
@@ -168,6 +220,10 @@ public final class Screenshot {
     @com.fasterxml.jackson.annotation.JsonProperty("fileExtension")
     private final String fileExtension;
 
+    /**
+     * The file extension of the screenshot.
+     * @return the value
+     **/
     public String getFileExtension() {
         return fileExtension;
     }

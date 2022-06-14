@@ -61,99 +61,193 @@ public final class Metastore {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The metastore's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The metastore's OCID.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Mutable name of the metastore.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Mutable name of the metastore.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * OCID of the compartment which holds the metastore.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the compartment which holds the metastore.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Location under which managed tables will be created by default. This references Object Storage
+         * using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultManagedTableLocation")
         private String defaultManagedTableLocation;
 
+        /**
+         * Location under which managed tables will be created by default. This references Object Storage
+         * using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         *
+         * @param defaultManagedTableLocation the value to set
+         * @return this builder
+         **/
         public Builder defaultManagedTableLocation(String defaultManagedTableLocation) {
             this.defaultManagedTableLocation = defaultManagedTableLocation;
             this.__explicitlySet__.add("defaultManagedTableLocation");
             return this;
         }
-
+        /**
+         * Location under which external tables will be created by default. This references Object Storage
+         * using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultExternalTableLocation")
         private String defaultExternalTableLocation;
 
+        /**
+         * Location under which external tables will be created by default. This references Object Storage
+         * using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         *
+         * @param defaultExternalTableLocation the value to set
+         * @return this builder
+         **/
         public Builder defaultExternalTableLocation(String defaultExternalTableLocation) {
             this.defaultExternalTableLocation = defaultExternalTableLocation;
             this.__explicitlySet__.add("defaultExternalTableLocation");
             return this;
         }
-
+        /**
+         * The current state of the metastore.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the metastore.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -219,6 +313,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The metastore's OCID.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -229,6 +327,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Mutable name of the metastore.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -239,6 +341,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the compartment which holds the metastore.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -249,6 +355,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -259,6 +369,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -271,6 +385,12 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultManagedTableLocation")
     private final String defaultManagedTableLocation;
 
+    /**
+     * Location under which managed tables will be created by default. This references Object Storage
+     * using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     *
+     * @return the value
+     **/
     public String getDefaultManagedTableLocation() {
         return defaultManagedTableLocation;
     }
@@ -283,6 +403,12 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultExternalTableLocation")
     private final String defaultExternalTableLocation;
 
+    /**
+     * Location under which external tables will be created by default. This references Object Storage
+     * using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     *
+     * @return the value
+     **/
     public String getDefaultExternalTableLocation() {
         return defaultExternalTableLocation;
     }
@@ -293,6 +419,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the metastore.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -303,6 +433,10 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -315,6 +449,12 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -327,6 +467,12 @@ public final class Metastore {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

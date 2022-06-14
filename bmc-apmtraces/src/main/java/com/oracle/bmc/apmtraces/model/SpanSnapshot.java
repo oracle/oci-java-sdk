@@ -49,63 +49,127 @@ public final class SpanSnapshot {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier (spanId) for the trace span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique identifier (spanId) for the trace span.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Span name associated with the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanName")
         private String spanName;
 
+        /**
+         * Span name associated with the trace.
+         *
+         * @param spanName the value to set
+         * @return this builder
+         **/
         public Builder spanName(String spanName) {
             this.spanName = spanName;
             this.__explicitlySet__.add("spanName");
             return this;
         }
-
+        /**
+         * Start time of the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * Start time of the span.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * End time of the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
+        /**
+         * End time of the span.
+         *
+         * @param timeEnded the value to set
+         * @return this builder
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-
+        /**
+         * Span snapshots properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshotDetails")
         private java.util.List<SnapshotDetail> spanSnapshotDetails;
 
+        /**
+         * Span snapshots properties.
+         *
+         * @param spanSnapshotDetails the value to set
+         * @return this builder
+         **/
         public Builder spanSnapshotDetails(java.util.List<SnapshotDetail> spanSnapshotDetails) {
             this.spanSnapshotDetails = spanSnapshotDetails;
             this.__explicitlySet__.add("spanSnapshotDetails");
             return this;
         }
-
+        /**
+         * Thread snapshots.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshots")
         private java.util.List<ThreadSnapshot> threadSnapshots;
 
+        /**
+         * Thread snapshots.
+         *
+         * @param threadSnapshots the value to set
+         * @return this builder
+         **/
         public Builder threadSnapshots(java.util.List<ThreadSnapshot> threadSnapshots) {
             this.threadSnapshots = threadSnapshots;
             this.__explicitlySet__.add("threadSnapshots");
             return this;
         }
-
+        /**
+         * An array of child span snapshots.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("children")
         private java.util.List<SpanSnapshot> children;
 
+        /**
+         * An array of child span snapshots.
+         *
+         * @param children the value to set
+         * @return this builder
+         **/
         public Builder children(java.util.List<SpanSnapshot> children) {
             this.children = children;
             this.__explicitlySet__.add("children");
@@ -163,6 +227,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique identifier (spanId) for the trace span.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -174,6 +243,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("spanName")
     private final String spanName;
 
+    /**
+     * Span name associated with the trace.
+     *
+     * @return the value
+     **/
     public String getSpanName() {
         return spanName;
     }
@@ -185,6 +259,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * Start time of the span.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -196,6 +275,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
+    /**
+     * End time of the span.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -207,6 +291,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshotDetails")
     private final java.util.List<SnapshotDetail> spanSnapshotDetails;
 
+    /**
+     * Span snapshots properties.
+     *
+     * @return the value
+     **/
     public java.util.List<SnapshotDetail> getSpanSnapshotDetails() {
         return spanSnapshotDetails;
     }
@@ -218,6 +307,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshots")
     private final java.util.List<ThreadSnapshot> threadSnapshots;
 
+    /**
+     * Thread snapshots.
+     *
+     * @return the value
+     **/
     public java.util.List<ThreadSnapshot> getThreadSnapshots() {
         return threadSnapshots;
     }
@@ -229,6 +323,11 @@ public final class SpanSnapshot {
     @com.fasterxml.jackson.annotation.JsonProperty("children")
     private final java.util.List<SpanSnapshot> children;
 
+    /**
+     * An array of child span snapshots.
+     *
+     * @return the value
+     **/
     public java.util.List<SpanSnapshot> getChildren() {
         return children;
     }

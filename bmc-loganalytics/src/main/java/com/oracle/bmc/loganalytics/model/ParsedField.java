@@ -28,18 +28,33 @@ public final class ParsedField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Sample log entries picked up from the given file for validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logContent")
         private String logContent;
 
+        /**
+         * Sample log entries picked up from the given file for validation.
+         * @param logContent the value to set
+         * @return this builder
+         **/
         public Builder logContent(String logContent) {
             this.logContent = logContent;
             this.__explicitlySet__.add("logContent");
             return this;
         }
-
+        /**
+         * List of field Values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<String> fieldValues;
 
+        /**
+         * List of field Values.
+         * @param fieldValues the value to set
+         * @return this builder
+         **/
         public Builder fieldValues(java.util.List<String> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
@@ -81,6 +96,10 @@ public final class ParsedField {
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     private final String logContent;
 
+    /**
+     * Sample log entries picked up from the given file for validation.
+     * @return the value
+     **/
     public String getLogContent() {
         return logContent;
     }
@@ -91,6 +110,10 @@ public final class ParsedField {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<String> fieldValues;
 
+    /**
+     * List of field Values.
+     * @return the value
+     **/
     public java.util.List<String> getFieldValues() {
         return fieldValues;
     }

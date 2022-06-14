@@ -58,18 +58,33 @@ public final class UpdateMigrationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * User-friendly name of the migration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * User-friendly name of the migration.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Description of the migration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the migration.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -84,47 +99,104 @@ public final class UpdateMigrationDetails {
             this.__explicitlySet__.add("discoveryDetails");
             return this;
         }
-
+        /**
+         * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
         private Boolean isSelectiveMigration;
 
+        /**
+         * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
+         *
+         * @param isSelectiveMigration the value to set
+         * @return this builder
+         **/
         public Builder isSelectiveMigration(Boolean isSelectiveMigration) {
             this.isSelectiveMigration = isSelectiveMigration;
             this.__explicitlySet__.add("isSelectiveMigration");
             return this;
         }
-
+        /**
+         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+         * CreateMigration operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
         private java.util.Map<String, ConfigurationField> serviceConfig;
 
+        /**
+         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+         * CreateMigration operation.
+         *
+         * @param serviceConfig the value to set
+         * @return this builder
+         **/
         public Builder serviceConfig(java.util.Map<String, ConfigurationField> serviceConfig) {
             this.serviceConfig = serviceConfig;
             this.__explicitlySet__.add("serviceConfig");
             return this;
         }
-
+        /**
+         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+         * CreateMigration operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
         private java.util.Map<String, ConfigurationField> applicationConfig;
 
+        /**
+         * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+         * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+         * CreateMigration operation.
+         *
+         * @param applicationConfig the value to set
+         * @return this builder
+         **/
         public Builder applicationConfig(
                 java.util.Map<String, ConfigurationField> applicationConfig) {
             this.applicationConfig = applicationConfig;
             this.__explicitlySet__.add("applicationConfig");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -184,6 +256,10 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * User-friendly name of the migration.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -194,6 +270,10 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the migration.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -212,6 +292,11 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isSelectiveMigration")
     private final Boolean isSelectiveMigration;
 
+    /**
+     * If set to {@code true}, Application Migration migrates the application resources selectively depending on the source.
+     *
+     * @return the value
+     **/
     public Boolean getIsSelectiveMigration() {
         return isSelectiveMigration;
     }
@@ -225,6 +310,13 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
     private final java.util.Map<String, ConfigurationField> serviceConfig;
 
+    /**
+     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+     * CreateMigration operation.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, ConfigurationField> getServiceConfig() {
         return serviceConfig;
     }
@@ -238,6 +330,13 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
     private final java.util.Map<String, ConfigurationField> applicationConfig;
 
+    /**
+     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+     * CreateMigration operation.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, ConfigurationField> getApplicationConfig() {
         return applicationConfig;
     }
@@ -250,6 +349,12 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -262,6 +367,12 @@ public final class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

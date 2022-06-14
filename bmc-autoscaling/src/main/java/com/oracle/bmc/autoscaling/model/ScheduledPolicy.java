@@ -69,10 +69,17 @@ public final class ScheduledPolicy extends AutoScalingPolicy {
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The schedule for executing the autoscaling policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionSchedule")
         private ExecutionSchedule executionSchedule;
 
+        /**
+         * The schedule for executing the autoscaling policy.
+         * @param executionSchedule the value to set
+         * @return this builder
+         **/
         public Builder executionSchedule(ExecutionSchedule executionSchedule) {
             this.executionSchedule = executionSchedule;
             this.__explicitlySet__.add("executionSchedule");
@@ -152,6 +159,10 @@ public final class ScheduledPolicy extends AutoScalingPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("executionSchedule")
     private final ExecutionSchedule executionSchedule;
 
+    /**
+     * The schedule for executing the autoscaling policy.
+     * @return the value
+     **/
     public ExecutionSchedule getExecutionSchedule() {
         return executionSchedule;
     }

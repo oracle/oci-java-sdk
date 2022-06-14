@@ -15,6 +15,12 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth;
 
+    /**
+     * The returned LoadBalancerHealth instance.
+     * @return the value
+     */
     public com.oracle.bmc.loadbalancer.model.LoadBalancerHealth getLoadBalancerHealth() {
         return loadBalancerHealth;
     }
@@ -46,15 +56,35 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LoadBalancerHealth instance.
+         */
         private com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth;
 
+        /**
+         * The returned LoadBalancerHealth instance.
+         * @param loadBalancerHealth the value to set
+         * @return this builder
+         */
         public Builder loadBalancerHealth(
                 com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth) {
             this.loadBalancerHealth = loadBalancerHealth;
@@ -73,12 +103,20 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetLoadBalancerHealthResponse build() {
             return new GetLoadBalancerHealthResponse(
                     __httpStatusCode__, opcRequestId, loadBalancerHealth);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

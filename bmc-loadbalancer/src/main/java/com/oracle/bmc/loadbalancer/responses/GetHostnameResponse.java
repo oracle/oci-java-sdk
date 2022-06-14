@@ -15,6 +15,12 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loadbalancer.model.Hostname hostname;
 
+    /**
+     * The returned Hostname instance.
+     * @return the value
+     */
     public com.oracle.bmc.loadbalancer.model.Hostname getHostname() {
         return hostname;
     }
@@ -46,15 +56,35 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Hostname instance.
+         */
         private com.oracle.bmc.loadbalancer.model.Hostname hostname;
 
+        /**
+         * The returned Hostname instance.
+         * @param hostname the value to set
+         * @return this builder
+         */
         public Builder hostname(com.oracle.bmc.loadbalancer.model.Hostname hostname) {
             this.hostname = hostname;
             return this;
@@ -72,11 +102,19 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetHostnameResponse build() {
             return new GetHostnameResponse(__httpStatusCode__, opcRequestId, hostname);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

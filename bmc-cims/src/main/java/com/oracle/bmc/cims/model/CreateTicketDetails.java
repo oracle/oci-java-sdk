@@ -47,45 +47,81 @@ public final class CreateTicketDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The severity of the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
+        /**
+         * The severity of the support ticket.
+         * @param severity the value to set
+         * @return this builder
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-
+        /**
+         * The list of resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
         private java.util.List<CreateResourceDetails> resourceList;
 
+        /**
+         * The list of resources.
+         * @param resourceList the value to set
+         * @return this builder
+         **/
         public Builder resourceList(java.util.List<CreateResourceDetails> resourceList) {
             this.resourceList = resourceList;
             this.__explicitlySet__.add("resourceList");
             return this;
         }
-
+        /**
+         * The title of the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
+        /**
+         * The title of the support ticket.
+         * @param title the value to set
+         * @return this builder
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
-
+        /**
+         * The description of the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the support ticket.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The context from where the ticket is getting created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
         private ContextualData contextualData;
 
+        /**
+         * The context from where the ticket is getting created.
+         * @param contextualData the value to set
+         * @return this builder
+         **/
         public Builder contextualData(ContextualData contextualData) {
             this.contextualData = contextualData;
             this.__explicitlySet__.add("contextualData");
@@ -170,6 +206,10 @@ public final class CreateTicketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
+    /**
+     * The severity of the support ticket.
+     * @return the value
+     **/
     public Severity getSeverity() {
         return severity;
     }
@@ -180,6 +220,10 @@ public final class CreateTicketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
     private final java.util.List<CreateResourceDetails> resourceList;
 
+    /**
+     * The list of resources.
+     * @return the value
+     **/
     public java.util.List<CreateResourceDetails> getResourceList() {
         return resourceList;
     }
@@ -190,6 +234,10 @@ public final class CreateTicketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
+    /**
+     * The title of the support ticket.
+     * @return the value
+     **/
     public String getTitle() {
         return title;
     }
@@ -200,6 +248,10 @@ public final class CreateTicketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the support ticket.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -210,6 +262,10 @@ public final class CreateTicketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
     private final ContextualData contextualData;
 
+    /**
+     * The context from where the ticket is getting created.
+     * @return the value
+     **/
     public ContextualData getContextualData() {
         return contextualData;
     }

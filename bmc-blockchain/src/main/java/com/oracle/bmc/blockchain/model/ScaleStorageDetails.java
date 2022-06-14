@@ -29,9 +29,17 @@ public final class ScaleStorageDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Storage size in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
         private Integer storageSizeInTBs;
 
+        /**
+         * Storage size in TBs
+         * @param storageSizeInTBs the value to set
+         * @return this builder
+         **/
         public Builder storageSizeInTBs(Integer storageSizeInTBs) {
             this.storageSizeInTBs = storageSizeInTBs;
             this.__explicitlySet__.add("storageSizeInTBs");
@@ -73,6 +81,10 @@ public final class ScaleStorageDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
     private final Integer storageSizeInTBs;
 
+    /**
+     * Storage size in TBs
+     * @return the value
+     **/
     public Integer getStorageSizeInTBs() {
         return storageSizeInTBs;
     }

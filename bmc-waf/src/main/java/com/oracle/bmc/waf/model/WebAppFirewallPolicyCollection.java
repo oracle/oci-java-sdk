@@ -29,9 +29,17 @@ public final class WebAppFirewallPolicyCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of WebAppFirewallPolicySummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WebAppFirewallPolicySummary> items;
 
+        /**
+         * A list of WebAppFirewallPolicySummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<WebAppFirewallPolicySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class WebAppFirewallPolicyCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WebAppFirewallPolicySummary> items;
 
+    /**
+     * A list of WebAppFirewallPolicySummary objects.
+     * @return the value
+     **/
     public java.util.List<WebAppFirewallPolicySummary> getItems() {
         return items;
     }

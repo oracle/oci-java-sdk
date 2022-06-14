@@ -47,6 +47,11 @@ public class CreateCertificateAuthorityConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     *
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }

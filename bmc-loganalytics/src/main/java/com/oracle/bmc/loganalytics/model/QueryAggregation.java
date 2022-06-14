@@ -55,81 +55,163 @@ public final class QueryAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of rows query retrieved. Up to maxTotalCount limit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
+        /**
+         * Number of rows query retrieved. Up to maxTotalCount limit.
+         *
+         * @param totalCount the value to set
+         * @return this builder
+         **/
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
             return this;
         }
-
+        /**
+         * Number of rows matched by query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
         private Long totalMatchedCount;
 
+        /**
+         * Number of rows matched by query.
+         *
+         * @param totalMatchedCount the value to set
+         * @return this builder
+         **/
         public Builder totalMatchedCount(Long totalMatchedCount) {
             this.totalMatchedCount = totalMatchedCount;
             this.__explicitlySet__.add("totalMatchedCount");
             return this;
         }
-
+        /**
+         * True if query did not complete processing all data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
         private Boolean arePartialResults;
 
+        /**
+         * True if query did not complete processing all data.
+         *
+         * @param arePartialResults the value to set
+         * @return this builder
+         **/
         public Builder arePartialResults(Boolean arePartialResults) {
             this.arePartialResults = arePartialResults;
             this.__explicitlySet__.add("arePartialResults");
             return this;
         }
-
+        /**
+         * Explanation of why results may be partial. Only set if arePartialResults is true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partialResultReason")
         private String partialResultReason;
 
+        /**
+         * Explanation of why results may be partial. Only set if arePartialResults is true.
+         *
+         * @param partialResultReason the value to set
+         * @return this builder
+         **/
         public Builder partialResultReason(String partialResultReason) {
             this.partialResultReason = partialResultReason;
             this.__explicitlySet__.add("partialResultReason");
             return this;
         }
-
+        /**
+         * Query result columns
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<AbstractColumn> columns;
 
+        /**
+         * Query result columns
+         *
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<AbstractColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-
+        /**
+         * Query result fields
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<AbstractColumn> fields;
 
+        /**
+         * Query result fields
+         *
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<AbstractColumn> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * Query result data
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
+        /**
+         * Query result data
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<java.util.Map<String, Object>> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-
+        /**
+         * Time ellapsed executing query in milli-seconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeInMs")
         private Long queryExecutionTimeInMs;
 
+        /**
+         * Time ellapsed executing query in milli-seconds.
+         *
+         * @param queryExecutionTimeInMs the value to set
+         * @return this builder
+         **/
         public Builder queryExecutionTimeInMs(Long queryExecutionTimeInMs) {
             this.queryExecutionTimeInMs = queryExecutionTimeInMs;
             this.__explicitlySet__.add("queryExecutionTimeInMs");
             return this;
         }
-
+        /**
+         * Percentage progress completion of the query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
+        /**
+         * Percentage progress completion of the query.
+         *
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -191,6 +273,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
+    /**
+     * Number of rows query retrieved. Up to maxTotalCount limit.
+     *
+     * @return the value
+     **/
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -202,6 +289,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("totalMatchedCount")
     private final Long totalMatchedCount;
 
+    /**
+     * Number of rows matched by query.
+     *
+     * @return the value
+     **/
     public Long getTotalMatchedCount() {
         return totalMatchedCount;
     }
@@ -213,6 +305,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
     private final Boolean arePartialResults;
 
+    /**
+     * True if query did not complete processing all data.
+     *
+     * @return the value
+     **/
     public Boolean getArePartialResults() {
         return arePartialResults;
     }
@@ -224,6 +321,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("partialResultReason")
     private final String partialResultReason;
 
+    /**
+     * Explanation of why results may be partial. Only set if arePartialResults is true.
+     *
+     * @return the value
+     **/
     public String getPartialResultReason() {
         return partialResultReason;
     }
@@ -235,6 +337,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<AbstractColumn> columns;
 
+    /**
+     * Query result columns
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractColumn> getColumns() {
         return columns;
     }
@@ -246,6 +353,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<AbstractColumn> fields;
 
+    /**
+     * Query result fields
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractColumn> getFields() {
         return fields;
     }
@@ -257,6 +369,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
+    /**
+     * Query result data
+     *
+     * @return the value
+     **/
     public java.util.List<java.util.Map<String, Object>> getItems() {
         return items;
     }
@@ -268,6 +385,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeInMs")
     private final Long queryExecutionTimeInMs;
 
+    /**
+     * Time ellapsed executing query in milli-seconds.
+     *
+     * @return the value
+     **/
     public Long getQueryExecutionTimeInMs() {
         return queryExecutionTimeInMs;
     }
@@ -279,6 +401,11 @@ public final class QueryAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
+    /**
+     * Percentage progress completion of the query.
+     *
+     * @return the value
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }

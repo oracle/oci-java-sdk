@@ -17,6 +17,10 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String objectLocation;
 
+    /**
+     * Location of the log file.
+     */
     public String getObjectLocation() {
         return objectLocation;
     }
@@ -34,6 +41,10 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String filename;
 
+    /**
+     * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
+     *
+     */
     public String getFilename() {
         return filename;
     }
@@ -42,6 +53,9 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -53,11 +67,16 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -65,10 +84,14 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Location of the log file.
+         */
         private String objectLocation = null;
 
         /**
          * Location of the log file.
+         * @param objectLocation the value to set
          * @return this builder instance
          */
         public Builder objectLocation(String objectLocation) {
@@ -76,11 +99,16 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
+         *
+         */
         private String filename = null;
 
         /**
          * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
          *
+         * @param filename the value to set
          * @return this builder instance
          */
         public Builder filename(String filename) {
@@ -88,10 +116,14 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -173,7 +205,8 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -183,6 +216,10 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

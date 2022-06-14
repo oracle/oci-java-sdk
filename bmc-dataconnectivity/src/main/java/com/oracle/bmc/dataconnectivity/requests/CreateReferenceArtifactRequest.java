@@ -18,6 +18,9 @@ public class CreateReferenceArtifactRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -26,6 +29,9 @@ public class CreateReferenceArtifactRequest
      */
     private String dcmsArtifactId;
 
+    /**
+     * The ID of a dcms artifact (DataAsset or Endpoint).
+     */
     public String getDcmsArtifactId() {
         return dcmsArtifactId;
     }
@@ -35,6 +41,9 @@ public class CreateReferenceArtifactRequest
     private com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails
             createReferenceArtifactDetails;
 
+    /**
+     * The information needed to reference a dcms artifact
+     */
     public com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails
             getCreateReferenceArtifactDetails() {
         return createReferenceArtifactDetails;
@@ -47,6 +56,12 @@ public class CreateReferenceArtifactRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,6 +71,10 @@ public class CreateReferenceArtifactRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -67,6 +86,12 @@ public class CreateReferenceArtifactRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -89,10 +114,14 @@ public class CreateReferenceArtifactRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -100,10 +129,14 @@ public class CreateReferenceArtifactRequest
             return this;
         }
 
+        /**
+         * The ID of a dcms artifact (DataAsset or Endpoint).
+         */
         private String dcmsArtifactId = null;
 
         /**
          * The ID of a dcms artifact (DataAsset or Endpoint).
+         * @param dcmsArtifactId the value to set
          * @return this builder instance
          */
         public Builder dcmsArtifactId(String dcmsArtifactId) {
@@ -111,11 +144,15 @@ public class CreateReferenceArtifactRequest
             return this;
         }
 
+        /**
+         * The information needed to reference a dcms artifact
+         */
         private com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails
                 createReferenceArtifactDetails = null;
 
         /**
          * The information needed to reference a dcms artifact
+         * @param createReferenceArtifactDetails the value to set
          * @return this builder instance
          */
         public Builder createReferenceArtifactDetails(
@@ -125,6 +162,12 @@ public class CreateReferenceArtifactRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -132,6 +175,7 @@ public class CreateReferenceArtifactRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -139,11 +183,16 @@ public class CreateReferenceArtifactRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -151,6 +200,12 @@ public class CreateReferenceArtifactRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -158,6 +213,7 @@ public class CreateReferenceArtifactRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -255,7 +311,8 @@ public class CreateReferenceArtifactRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -267,6 +324,10 @@ public class CreateReferenceArtifactRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

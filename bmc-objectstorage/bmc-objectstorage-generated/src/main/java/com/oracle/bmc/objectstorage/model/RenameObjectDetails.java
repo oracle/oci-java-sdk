@@ -47,45 +47,85 @@ public final class RenameObjectDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the source object to be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The name of the source object to be renamed.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-
+        /**
+         * The new name of the source object. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newName")
         private String newName;
 
+        /**
+         * The new name of the source object. Avoid entering confidential information.
+         * @param newName the value to set
+         * @return this builder
+         **/
         public Builder newName(String newName) {
             this.newName = newName;
             this.__explicitlySet__.add("newName");
             return this;
         }
-
+        /**
+         * The if-match entity tag (ETag) of the source object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("srcObjIfMatchETag")
         private String srcObjIfMatchETag;
 
+        /**
+         * The if-match entity tag (ETag) of the source object.
+         * @param srcObjIfMatchETag the value to set
+         * @return this builder
+         **/
         public Builder srcObjIfMatchETag(String srcObjIfMatchETag) {
             this.srcObjIfMatchETag = srcObjIfMatchETag;
             this.__explicitlySet__.add("srcObjIfMatchETag");
             return this;
         }
-
+        /**
+         * The if-match entity tag (ETag) of the new object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newObjIfMatchETag")
         private String newObjIfMatchETag;
 
+        /**
+         * The if-match entity tag (ETag) of the new object.
+         * @param newObjIfMatchETag the value to set
+         * @return this builder
+         **/
         public Builder newObjIfMatchETag(String newObjIfMatchETag) {
             this.newObjIfMatchETag = newObjIfMatchETag;
             this.__explicitlySet__.add("newObjIfMatchETag");
             return this;
         }
-
+        /**
+         * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
+         * request should fail if the new object already exists.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newObjIfNoneMatchETag")
         private String newObjIfNoneMatchETag;
 
+        /**
+         * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
+         * request should fail if the new object already exists.
+         *
+         * @param newObjIfNoneMatchETag the value to set
+         * @return this builder
+         **/
         public Builder newObjIfNoneMatchETag(String newObjIfNoneMatchETag) {
             this.newObjIfNoneMatchETag = newObjIfNoneMatchETag;
             this.__explicitlySet__.add("newObjIfNoneMatchETag");
@@ -138,6 +178,10 @@ public final class RenameObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The name of the source object to be renamed.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }
@@ -148,6 +192,10 @@ public final class RenameObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("newName")
     private final String newName;
 
+    /**
+     * The new name of the source object. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getNewName() {
         return newName;
     }
@@ -158,6 +206,10 @@ public final class RenameObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("srcObjIfMatchETag")
     private final String srcObjIfMatchETag;
 
+    /**
+     * The if-match entity tag (ETag) of the source object.
+     * @return the value
+     **/
     public String getSrcObjIfMatchETag() {
         return srcObjIfMatchETag;
     }
@@ -168,6 +220,10 @@ public final class RenameObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfMatchETag")
     private final String newObjIfMatchETag;
 
+    /**
+     * The if-match entity tag (ETag) of the new object.
+     * @return the value
+     **/
     public String getNewObjIfMatchETag() {
         return newObjIfMatchETag;
     }
@@ -180,6 +236,12 @@ public final class RenameObjectDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfNoneMatchETag")
     private final String newObjIfNoneMatchETag;
 
+    /**
+     * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
+     * request should fail if the new object already exists.
+     *
+     * @return the value
+     **/
     public String getNewObjIfNoneMatchETag() {
         return newObjIfNoneMatchETag;
     }

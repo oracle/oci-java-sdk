@@ -17,6 +17,9 @@ public class DeleteCloudExadataInfrastructureRequest
      */
     private String cloudExadataInfrastructureId;
 
+    /**
+     * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
@@ -28,6 +31,12 @@ public class DeleteCloudExadataInfrastructureRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -37,6 +46,10 @@ public class DeleteCloudExadataInfrastructureRequest
      */
     private Boolean isDeleteVmClusters;
 
+    /**
+     * If {@code true}, forces the deletion the specified cloud Exadata infrastructure resource as well as all associated VM clusters. If {@code false}, the cloud Exadata infrastructure resource can be deleted only if it has no associated VM clusters. Default value is {@code false}.
+     *
+     */
     public Boolean getIsDeleteVmClusters() {
         return isDeleteVmClusters;
     }
@@ -46,6 +59,10 @@ public class DeleteCloudExadataInfrastructureRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,10 +74,14 @@ public class DeleteCloudExadataInfrastructureRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudExadataInfrastructureId = null;
 
         /**
          * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudExadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
@@ -68,6 +89,12 @@ public class DeleteCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -75,6 +102,7 @@ public class DeleteCloudExadataInfrastructureRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -82,11 +110,16 @@ public class DeleteCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * If {@code true}, forces the deletion the specified cloud Exadata infrastructure resource as well as all associated VM clusters. If {@code false}, the cloud Exadata infrastructure resource can be deleted only if it has no associated VM clusters. Default value is {@code false}.
+         *
+         */
         private Boolean isDeleteVmClusters = null;
 
         /**
          * If {@code true}, forces the deletion the specified cloud Exadata infrastructure resource as well as all associated VM clusters. If {@code false}, the cloud Exadata infrastructure resource can be deleted only if it has no associated VM clusters. Default value is {@code false}.
          *
+         * @param isDeleteVmClusters the value to set
          * @return this builder instance
          */
         public Builder isDeleteVmClusters(Boolean isDeleteVmClusters) {
@@ -94,11 +127,16 @@ public class DeleteCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -181,7 +219,8 @@ public class DeleteCloudExadataInfrastructureRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +230,10 @@ public class DeleteCloudExadataInfrastructureRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

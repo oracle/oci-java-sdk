@@ -18,6 +18,9 @@ public class UpdateVolumeAttachmentRequest
      */
     private String volumeAttachmentId;
 
+    /**
+     * The OCID of the volume attachment.
+     */
     public String getVolumeAttachmentId() {
         return volumeAttachmentId;
     }
@@ -26,6 +29,9 @@ public class UpdateVolumeAttachmentRequest
      */
     private com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails updateVolumeAttachmentDetails;
 
+    /**
+     * Update information about the specified volume attachment.
+     */
     public com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails
             getUpdateVolumeAttachmentDetails() {
         return updateVolumeAttachmentDetails;
@@ -37,6 +43,11 @@ public class UpdateVolumeAttachmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +59,12 @@ public class UpdateVolumeAttachmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -70,10 +87,14 @@ public class UpdateVolumeAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume attachment.
+         */
         private String volumeAttachmentId = null;
 
         /**
          * The OCID of the volume attachment.
+         * @param volumeAttachmentId the value to set
          * @return this builder instance
          */
         public Builder volumeAttachmentId(String volumeAttachmentId) {
@@ -81,11 +102,15 @@ public class UpdateVolumeAttachmentRequest
             return this;
         }
 
+        /**
+         * Update information about the specified volume attachment.
+         */
         private com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails
                 updateVolumeAttachmentDetails = null;
 
         /**
          * Update information about the specified volume attachment.
+         * @param updateVolumeAttachmentDetails the value to set
          * @return this builder instance
          */
         public Builder updateVolumeAttachmentDetails(
@@ -95,12 +120,18 @@ public class UpdateVolumeAttachmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -108,6 +139,12 @@ public class UpdateVolumeAttachmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -115,6 +152,7 @@ public class UpdateVolumeAttachmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -207,7 +245,8 @@ public class UpdateVolumeAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +256,10 @@ public class UpdateVolumeAttachmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

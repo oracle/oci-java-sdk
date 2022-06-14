@@ -29,9 +29,17 @@ public final class OperationsInsightsWarehouses {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Operations Insights Warehouse Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouses")
         private Object operationsInsightsWarehouses;
 
+        /**
+         * Operations Insights Warehouse Object.
+         * @param operationsInsightsWarehouses the value to set
+         * @return this builder
+         **/
         public Builder operationsInsightsWarehouses(Object operationsInsightsWarehouses) {
             this.operationsInsightsWarehouses = operationsInsightsWarehouses;
             this.__explicitlySet__.add("operationsInsightsWarehouses");
@@ -75,6 +83,10 @@ public final class OperationsInsightsWarehouses {
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouses")
     private final Object operationsInsightsWarehouses;
 
+    /**
+     * Operations Insights Warehouse Object.
+     * @return the value
+     **/
     public Object getOperationsInsightsWarehouses() {
         return operationsInsightsWarehouses;
     }

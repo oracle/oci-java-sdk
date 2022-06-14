@@ -14,6 +14,11 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +29,11 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
+    /**
+     * The returned SecurityAssessment instance.
+     * @return the value
+     */
     public com.oracle.bmc.datasafe.model.SecurityAssessment getSecurityAssessment() {
         return securityAssessment;
     }
@@ -62,22 +76,50 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned SecurityAssessment instance.
+         */
         private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
+        /**
+         * The returned SecurityAssessment instance.
+         * @param securityAssessment the value to set
+         * @return this builder
+         */
         public Builder securityAssessment(
                 com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment) {
             this.securityAssessment = securityAssessment;
@@ -97,12 +139,20 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetSecurityAssessmentResponse build() {
             return new GetSecurityAssessmentResponse(
                     __httpStatusCode__, opcRequestId, etag, securityAssessment);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

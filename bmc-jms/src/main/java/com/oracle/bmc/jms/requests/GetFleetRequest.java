@@ -16,6 +16,9 @@ public class GetFleetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
@@ -24,6 +27,9 @@ public class GetFleetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,10 +40,14 @@ public class GetFleetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * @param fleetId the value to set
          * @return this builder instance
          */
         public Builder fleetId(String fleetId) {
@@ -45,10 +55,14 @@ public class GetFleetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -126,12 +140,17 @@ public class GetFleetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().fleetId(fleetId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

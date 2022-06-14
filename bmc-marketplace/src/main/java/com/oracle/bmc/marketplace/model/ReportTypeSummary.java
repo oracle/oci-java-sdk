@@ -33,36 +33,65 @@ public final class ReportTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportType")
         private String reportType;
 
+        /**
+         * The type of report.
+         * @param reportType the value to set
+         * @return this builder
+         **/
         public Builder reportType(String reportType) {
             this.reportType = reportType;
             this.__explicitlySet__.add("reportType");
             return this;
         }
-
+        /**
+         * The name of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the report.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A description of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the report.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The columns in the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<String> columns;
 
+        /**
+         * The columns in the report.
+         * @param columns the value to set
+         * @return this builder
+         **/
         public Builder columns(java.util.List<String> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
@@ -109,6 +138,10 @@ public final class ReportTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("reportType")
     private final String reportType;
 
+    /**
+     * The type of report.
+     * @return the value
+     **/
     public String getReportType() {
         return reportType;
     }
@@ -119,6 +152,10 @@ public final class ReportTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the report.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -129,6 +166,10 @@ public final class ReportTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the report.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -139,6 +180,10 @@ public final class ReportTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<String> columns;
 
+    /**
+     * The columns in the report.
+     * @return the value
+     **/
     public java.util.List<String> getColumns() {
         return columns;
     }

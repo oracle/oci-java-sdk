@@ -17,6 +17,9 @@ public class ListAvailableAuditVolumesRequest
      */
     private String auditProfileId;
 
+    /**
+     * The OCID of the audit.
+     */
     public String getAuditProfileId() {
         return auditProfileId;
     }
@@ -25,6 +28,9 @@ public class ListAvailableAuditVolumesRequest
      */
     private String workRequestId;
 
+    /**
+     * The OCID of the work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -33,6 +39,9 @@ public class ListAvailableAuditVolumesRequest
      */
     private String trailLocation;
 
+    /**
+     * The audit trail location.
+     */
     public String getTrailLocation() {
         return trailLocation;
     }
@@ -47,6 +56,15 @@ public class ListAvailableAuditVolumesRequest
      */
     private java.util.Date monthInConsiderationGreaterThan;
 
+    /**
+     * Specifying {@code monthInConsiderationGreaterThan} parameter
+     * will retrieve all items for which the event month is
+     * greater than the date and time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T00:00:00.000Z
+     *
+     */
     public java.util.Date getMonthInConsiderationGreaterThan() {
         return monthInConsiderationGreaterThan;
     }
@@ -61,6 +79,15 @@ public class ListAvailableAuditVolumesRequest
      */
     private java.util.Date monthInConsiderationLessThan;
 
+    /**
+     * Specifying {@code monthInConsiderationLessThan} parameter
+     * will retrieve all items for which the event month is
+     * less than the date and time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T00:00:00.000Z
+     *
+     */
     public java.util.Date getMonthInConsiderationLessThan() {
         return monthInConsiderationLessThan;
     }
@@ -69,6 +96,9 @@ public class ListAvailableAuditVolumesRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -77,6 +107,9 @@ public class ListAvailableAuditVolumesRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -121,6 +154,9 @@ public class ListAvailableAuditVolumesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -168,6 +204,10 @@ public class ListAvailableAuditVolumesRequest
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for all fields is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -176,6 +216,9 @@ public class ListAvailableAuditVolumesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -187,10 +230,14 @@ public class ListAvailableAuditVolumesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the audit.
+         */
         private String auditProfileId = null;
 
         /**
          * The OCID of the audit.
+         * @param auditProfileId the value to set
          * @return this builder instance
          */
         public Builder auditProfileId(String auditProfileId) {
@@ -198,10 +245,14 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * The OCID of the work request.
+         */
         private String workRequestId = null;
 
         /**
          * The OCID of the work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -209,10 +260,14 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * The audit trail location.
+         */
         private String trailLocation = null;
 
         /**
          * The audit trail location.
+         * @param trailLocation the value to set
          * @return this builder instance
          */
         public Builder trailLocation(String trailLocation) {
@@ -220,6 +275,15 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * Specifying {@code monthInConsiderationGreaterThan} parameter
+         * will retrieve all items for which the event month is
+         * greater than the date and time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T00:00:00.000Z
+         *
+         */
         private java.util.Date monthInConsiderationGreaterThan = null;
 
         /**
@@ -230,6 +294,7 @@ public class ListAvailableAuditVolumesRequest
          * <p>
          **Example:** 2016-12-19T00:00:00.000Z
          *
+         * @param monthInConsiderationGreaterThan the value to set
          * @return this builder instance
          */
         public Builder monthInConsiderationGreaterThan(
@@ -238,6 +303,15 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * Specifying {@code monthInConsiderationLessThan} parameter
+         * will retrieve all items for which the event month is
+         * less than the date and time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T00:00:00.000Z
+         *
+         */
         private java.util.Date monthInConsiderationLessThan = null;
 
         /**
@@ -248,6 +322,7 @@ public class ListAvailableAuditVolumesRequest
          * <p>
          **Example:** 2016-12-19T00:00:00.000Z
          *
+         * @param monthInConsiderationLessThan the value to set
          * @return this builder instance
          */
         public Builder monthInConsiderationLessThan(java.util.Date monthInConsiderationLessThan) {
@@ -255,10 +330,14 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -266,10 +345,14 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -277,10 +360,14 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -288,11 +375,16 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for all fields is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order(sortOrder). The default order for all fields is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -300,10 +392,14 @@ public class ListAvailableAuditVolumesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -397,7 +493,8 @@ public class ListAvailableAuditVolumesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -413,6 +510,10 @@ public class ListAvailableAuditVolumesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

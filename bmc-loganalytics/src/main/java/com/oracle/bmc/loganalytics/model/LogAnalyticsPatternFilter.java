@@ -53,6 +53,7 @@ public final class LogAnalyticsPatternFilter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private LogAnalyticsSourcePattern pattern;
 
@@ -61,55 +62,101 @@ public final class LogAnalyticsPatternFilter {
             this.__explicitlySet__.add("pattern");
             return this;
         }
-
+        /**
+         * The agent version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
         private String agentVersion;
 
+        /**
+         * The agent version.
+         * @param agentVersion the value to set
+         * @return this builder
+         **/
         public Builder agentVersion(String agentVersion) {
             this.agentVersion = agentVersion;
             this.__explicitlySet__.add("agentVersion");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the pattern filter is currently
+         * in use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
         private Boolean isInUse;
 
+        /**
+         * A flag indicating whether or not the pattern filter is currently
+         * in use.
+         *
+         * @param isInUse the value to set
+         * @return this builder
+         **/
         public Builder isInUse(Boolean isInUse) {
             this.isInUse = isInUse;
             this.__explicitlySet__.add("isInUse");
             return this;
         }
-
+        /**
+         * The operating system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
+        /**
+         * The operating system.
+         * @param operatingSystem the value to set
+         * @return this builder
+         **/
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = operatingSystem;
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-
+        /**
+         * The pattern unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternId")
         private Long patternId;
 
+        /**
+         * The pattern unique identifier.
+         * @param patternId the value to set
+         * @return this builder
+         **/
         public Builder patternId(Long patternId) {
             this.patternId = patternId;
             this.__explicitlySet__.add("patternId");
             return this;
         }
-
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The pattern filter version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The pattern filter version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -184,6 +231,10 @@ public final class LogAnalyticsPatternFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
     private final String agentVersion;
 
+    /**
+     * The agent version.
+     * @return the value
+     **/
     public String getAgentVersion() {
         return agentVersion;
     }
@@ -196,6 +247,12 @@ public final class LogAnalyticsPatternFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
     private final Boolean isInUse;
 
+    /**
+     * A flag indicating whether or not the pattern filter is currently
+     * in use.
+     *
+     * @return the value
+     **/
     public Boolean getIsInUse() {
         return isInUse;
     }
@@ -206,6 +263,10 @@ public final class LogAnalyticsPatternFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     private final String operatingSystem;
 
+    /**
+     * The operating system.
+     * @return the value
+     **/
     public String getOperatingSystem() {
         return operatingSystem;
     }
@@ -216,6 +277,10 @@ public final class LogAnalyticsPatternFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
     private final Long patternId;
 
+    /**
+     * The pattern unique identifier.
+     * @return the value
+     **/
     public Long getPatternId() {
         return patternId;
     }
@@ -226,6 +291,10 @@ public final class LogAnalyticsPatternFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -236,6 +305,10 @@ public final class LogAnalyticsPatternFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The pattern filter version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

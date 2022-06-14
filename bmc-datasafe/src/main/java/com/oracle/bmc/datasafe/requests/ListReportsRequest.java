@@ -16,6 +16,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -78,6 +86,13 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -86,6 +101,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String displayName;
 
+    /**
+     * The name of the report definition to query.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -94,6 +112,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -102,6 +123,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -146,6 +170,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -192,6 +219,10 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeGenerated is descending. Default order for displayName is ascending. If no value is specified timeGenerated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -200,6 +231,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String reportDefinitionId;
 
+    /**
+     * The ID of the report definition to filter the list of reports
+     */
     public String getReportDefinitionId() {
         return reportDefinitionId;
     }
@@ -208,6 +242,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -216,6 +253,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.datasafe.model.ReportLifecycleState lifecycleState;
 
+    /**
+     * An optional filter to return only resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.ReportLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -227,10 +267,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -238,12 +282,18 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -251,6 +301,13 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -259,6 +316,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -266,10 +324,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The name of the report definition to query.
+         */
         private String displayName = null;
 
         /**
          * The name of the report definition to query.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -277,10 +339,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -288,10 +354,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -299,10 +369,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -310,11 +384,16 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeGenerated is descending. Default order for displayName is ascending. If no value is specified timeGenerated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeGenerated is descending. Default order for displayName is ascending. If no value is specified timeGenerated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -322,10 +401,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The ID of the report definition to filter the list of reports
+         */
         private String reportDefinitionId = null;
 
         /**
          * The ID of the report definition to filter the list of reports
+         * @param reportDefinitionId the value to set
          * @return this builder instance
          */
         public Builder reportDefinitionId(String reportDefinitionId) {
@@ -333,10 +416,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -344,10 +431,14 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * An optional filter to return only resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.ReportLifecycleState lifecycleState = null;
 
         /**
          * An optional filter to return only resources that match the specified lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -444,7 +535,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -461,6 +553,10 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .lifecycleState(lifecycleState);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

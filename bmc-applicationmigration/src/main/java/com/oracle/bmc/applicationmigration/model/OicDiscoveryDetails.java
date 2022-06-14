@@ -29,18 +29,33 @@ package com.oracle.bmc.applicationmigration.model;
 public final class OicDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Application administrator username to access the Oracle Integration Classic instance in the source environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
         private String serviceInstanceUser;
 
+        /**
+         * Application administrator username to access the Oracle Integration Classic instance in the source environment.
+         * @param serviceInstanceUser the value to set
+         * @return this builder
+         **/
         public Builder serviceInstanceUser(String serviceInstanceUser) {
             this.serviceInstanceUser = serviceInstanceUser;
             this.__explicitlySet__.add("serviceInstanceUser");
             return this;
         }
-
+        /**
+         * Password for this user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
         private String serviceInstancePassword;
 
+        /**
+         * Password for this user.
+         * @param serviceInstancePassword the value to set
+         * @return this builder
+         **/
         public Builder serviceInstancePassword(String serviceInstancePassword) {
             this.serviceInstancePassword = serviceInstancePassword;
             this.__explicitlySet__.add("serviceInstancePassword");
@@ -92,6 +107,10 @@ public final class OicDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
     private final String serviceInstanceUser;
 
+    /**
+     * Application administrator username to access the Oracle Integration Classic instance in the source environment.
+     * @return the value
+     **/
     public String getServiceInstanceUser() {
         return serviceInstanceUser;
     }
@@ -102,6 +121,10 @@ public final class OicDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
     private final String serviceInstancePassword;
 
+    /**
+     * Password for this user.
+     * @return the value
+     **/
     public String getServiceInstancePassword() {
         return serviceInstancePassword;
     }

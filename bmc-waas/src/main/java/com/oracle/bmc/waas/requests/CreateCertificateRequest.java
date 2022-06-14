@@ -18,6 +18,9 @@ public class CreateCertificateRequest
      */
     private com.oracle.bmc.waas.model.CreateCertificateDetails createCertificateDetails;
 
+    /**
+     * The details of the SSL certificate resource to create.
+     */
     public com.oracle.bmc.waas.model.CreateCertificateDetails getCreateCertificateDetails() {
         return createCertificateDetails;
     }
@@ -26,6 +29,9 @@ public class CreateCertificateRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +41,10 @@ public class CreateCertificateRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+     * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -56,10 +66,14 @@ public class CreateCertificateRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details of the SSL certificate resource to create.
+         */
         private com.oracle.bmc.waas.model.CreateCertificateDetails createCertificateDetails = null;
 
         /**
          * The details of the SSL certificate resource to create.
+         * @param createCertificateDetails the value to set
          * @return this builder instance
          */
         public Builder createCertificateDetails(
@@ -68,10 +82,14 @@ public class CreateCertificateRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -79,11 +97,16 @@ public class CreateCertificateRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+         * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
          * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -174,7 +197,8 @@ public class CreateCertificateRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -183,6 +207,10 @@ public class CreateCertificateRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

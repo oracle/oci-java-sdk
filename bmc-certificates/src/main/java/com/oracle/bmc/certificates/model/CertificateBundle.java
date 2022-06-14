@@ -80,6 +80,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
+    /**
+     * The OCID of the certificate.
+     * @return the value
+     **/
     public String getCertificateId() {
         return certificateId;
     }
@@ -90,6 +94,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     private final String certificateName;
 
+    /**
+     * The name of the certificate.
+     * @return the value
+     **/
     public String getCertificateName() {
         return certificateName;
     }
@@ -100,6 +108,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
     private final Long versionNumber;
 
+    /**
+     * The version number of the certificate.
+     * @return the value
+     **/
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -112,6 +124,12 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
+    /**
+     * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
+     * Example: {@code 03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF}
+     *
+     * @return the value
+     **/
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -122,6 +140,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
     private final String certificatePem;
 
+    /**
+     * The certificate in PEM format.
+     * @return the value
+     **/
     public String getCertificatePem() {
         return certificatePem;
     }
@@ -132,6 +154,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
     private final String certChainPem;
 
+    /**
+     * The certificate chain (in PEM format) for the certificate bundle.
+     * @return the value
+     **/
     public String getCertChainPem() {
         return certChainPem;
     }
@@ -144,6 +170,12 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * An optional property indicating when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -161,6 +193,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * The name of the certificate version.
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }
@@ -171,6 +207,10 @@ public class CertificateBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
     private final java.util.List<VersionStage> stages;
 
+    /**
+     * A list of rotation states for the certificate bundle.
+     * @return the value
+     **/
     public java.util.List<VersionStage> getStages() {
         return stages;
     }

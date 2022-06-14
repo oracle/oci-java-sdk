@@ -47,10 +47,17 @@ public final class ScheduleBasedVerticalScalingPolicyDetails extends AutoScalePo
             this.__explicitlySet__.add("actionType");
             return this;
         }
-
+        /**
+         * The time zone of the execution schedule, in IANA time zone database name format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timezone")
         private String timezone;
 
+        /**
+         * The time zone of the execution schedule, in IANA time zone database name format
+         * @param timezone the value to set
+         * @return this builder
+         **/
         public Builder timezone(String timezone) {
             this.timezone = timezone;
             this.__explicitlySet__.add("timezone");
@@ -119,6 +126,10 @@ public final class ScheduleBasedVerticalScalingPolicyDetails extends AutoScalePo
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final String timezone;
 
+    /**
+     * The time zone of the execution schedule, in IANA time zone database name format
+     * @return the value
+     **/
     public String getTimezone() {
         return timezone;
     }

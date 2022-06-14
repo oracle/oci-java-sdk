@@ -29,27 +29,49 @@ public final class MatchInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The end index of the matching log entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchingLogEntryEndIndex")
         private Integer matchingLogEntryEndIndex;
 
+        /**
+         * The end index of the matching log entry.
+         * @param matchingLogEntryEndIndex the value to set
+         * @return this builder
+         **/
         public Builder matchingLogEntryEndIndex(Integer matchingLogEntryEndIndex) {
             this.matchingLogEntryEndIndex = matchingLogEntryEndIndex;
             this.__explicitlySet__.add("matchingLogEntryEndIndex");
             return this;
         }
-
+        /**
+         * The regular expression score.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
         private Integer regexScore;
 
+        /**
+         * The regular expression score.
+         * @param regexScore the value to set
+         * @return this builder
+         **/
         public Builder regexScore(Integer regexScore) {
             this.regexScore = regexScore;
             this.__explicitlySet__.add("regexScore");
             return this;
         }
-
+        /**
+         * The step count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
         private Integer stepCount;
 
+        /**
+         * The step count.
+         * @param stepCount the value to set
+         * @return this builder
+         **/
         public Builder stepCount(Integer stepCount) {
             this.stepCount = stepCount;
             this.__explicitlySet__.add("stepCount");
@@ -94,6 +116,10 @@ public final class MatchInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("matchingLogEntryEndIndex")
     private final Integer matchingLogEntryEndIndex;
 
+    /**
+     * The end index of the matching log entry.
+     * @return the value
+     **/
     public Integer getMatchingLogEntryEndIndex() {
         return matchingLogEntryEndIndex;
     }
@@ -104,6 +130,10 @@ public final class MatchInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
     private final Integer regexScore;
 
+    /**
+     * The regular expression score.
+     * @return the value
+     **/
     public Integer getRegexScore() {
         return regexScore;
     }
@@ -114,6 +144,10 @@ public final class MatchInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     private final Integer stepCount;
 
+    /**
+     * The step count.
+     * @return the value
+     **/
     public Integer getStepCount() {
         return stepCount;
     }

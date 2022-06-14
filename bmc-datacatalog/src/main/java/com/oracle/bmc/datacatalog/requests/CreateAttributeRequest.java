@@ -18,6 +18,9 @@ public class CreateAttributeRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class CreateAttributeRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -34,6 +40,9 @@ public class CreateAttributeRequest
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -42,6 +51,9 @@ public class CreateAttributeRequest
      */
     private com.oracle.bmc.datacatalog.model.CreateAttributeDetails createAttributeDetails;
 
+    /**
+     * The information used to create an entity attribute.
+     */
     public com.oracle.bmc.datacatalog.model.CreateAttributeDetails getCreateAttributeDetails() {
         return createAttributeDetails;
     }
@@ -50,6 +62,9 @@ public class CreateAttributeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,6 +78,14 @@ public class CreateAttributeRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -85,10 +108,14 @@ public class CreateAttributeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -96,10 +123,14 @@ public class CreateAttributeRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -107,10 +138,14 @@ public class CreateAttributeRequest
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -118,11 +153,15 @@ public class CreateAttributeRequest
             return this;
         }
 
+        /**
+         * The information used to create an entity attribute.
+         */
         private com.oracle.bmc.datacatalog.model.CreateAttributeDetails createAttributeDetails =
                 null;
 
         /**
          * The information used to create an entity attribute.
+         * @param createAttributeDetails the value to set
          * @return this builder instance
          */
         public Builder createAttributeDetails(
@@ -131,10 +170,14 @@ public class CreateAttributeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -142,6 +185,14 @@ public class CreateAttributeRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -151,6 +202,7 @@ public class CreateAttributeRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -247,7 +299,8 @@ public class CreateAttributeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -259,6 +312,10 @@ public class CreateAttributeRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

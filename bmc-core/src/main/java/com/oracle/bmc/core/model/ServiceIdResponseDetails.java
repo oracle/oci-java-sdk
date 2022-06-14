@@ -30,18 +30,35 @@ public final class ServiceIdResponseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceId")
         private String serviceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
+         *
+         * @param serviceId the value to set
+         * @return this builder
+         **/
         public Builder serviceId(String serviceId) {
             this.serviceId = serviceId;
             this.__explicitlySet__.add("serviceId");
             return this;
         }
-
+        /**
+         * The name of the service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The name of the service.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -85,6 +102,11 @@ public final class ServiceIdResponseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceId")
     private final String serviceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
+     *
+     * @return the value
+     **/
     public String getServiceId() {
         return serviceId;
     }
@@ -95,6 +117,10 @@ public final class ServiceIdResponseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The name of the service.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

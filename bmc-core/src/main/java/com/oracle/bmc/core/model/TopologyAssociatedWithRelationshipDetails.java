@@ -29,9 +29,17 @@ public final class TopologyAssociatedWithRelationshipDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entities via which the relationship is created. For example an instance is associated with a network security group via the VNIC attachment and the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("via")
         private java.util.List<String> via;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entities via which the relationship is created. For example an instance is associated with a network security group via the VNIC attachment and the VNIC.
+         * @param via the value to set
+         * @return this builder
+         **/
         public Builder via(java.util.List<String> via) {
             this.via = via;
             this.__explicitlySet__.add("via");
@@ -74,6 +82,10 @@ public final class TopologyAssociatedWithRelationshipDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("via")
     private final java.util.List<String> via;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entities via which the relationship is created. For example an instance is associated with a network security group via the VNIC attachment and the VNIC.
+     * @return the value
+     **/
     public java.util.List<String> getVia() {
         return via;
     }

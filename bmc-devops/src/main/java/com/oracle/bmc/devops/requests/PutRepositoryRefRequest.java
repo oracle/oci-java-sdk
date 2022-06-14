@@ -18,6 +18,9 @@ public class PutRepositoryRefRequest
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -26,6 +29,9 @@ public class PutRepositoryRefRequest
      */
     private String refName;
 
+    /**
+     * A filter to return only resources that match the given reference name.
+     */
     public String getRefName() {
         return refName;
     }
@@ -34,6 +40,9 @@ public class PutRepositoryRefRequest
      */
     private com.oracle.bmc.devops.model.PutRepositoryRefDetails putRepositoryRefDetails;
 
+    /**
+     * The information to create a reference with the type specified in the query.
+     */
     public com.oracle.bmc.devops.model.PutRepositoryRefDetails getPutRepositoryRefDetails() {
         return putRepositoryRefDetails;
     }
@@ -42,6 +51,9 @@ public class PutRepositoryRefRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +62,9 @@ public class PutRepositoryRefRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -58,6 +73,9 @@ public class PutRepositoryRefRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -79,10 +97,14 @@ public class PutRepositoryRefRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -90,10 +112,14 @@ public class PutRepositoryRefRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given reference name.
+         */
         private String refName = null;
 
         /**
          * A filter to return only resources that match the given reference name.
+         * @param refName the value to set
          * @return this builder instance
          */
         public Builder refName(String refName) {
@@ -101,10 +127,14 @@ public class PutRepositoryRefRequest
             return this;
         }
 
+        /**
+         * The information to create a reference with the type specified in the query.
+         */
         private com.oracle.bmc.devops.model.PutRepositoryRefDetails putRepositoryRefDetails = null;
 
         /**
          * The information to create a reference with the type specified in the query.
+         * @param putRepositoryRefDetails the value to set
          * @return this builder instance
          */
         public Builder putRepositoryRefDetails(
@@ -113,10 +143,14 @@ public class PutRepositoryRefRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -124,10 +158,14 @@ public class PutRepositoryRefRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -135,10 +173,14 @@ public class PutRepositoryRefRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -235,7 +277,8 @@ public class PutRepositoryRefRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -247,6 +290,10 @@ public class PutRepositoryRefRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

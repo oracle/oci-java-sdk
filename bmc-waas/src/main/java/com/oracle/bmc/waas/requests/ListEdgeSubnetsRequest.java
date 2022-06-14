@@ -16,6 +16,9 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +27,9 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -32,6 +38,9 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -77,6 +86,9 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The value by which edge node subnets are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeModified}.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -121,6 +133,9 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -132,10 +147,14 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -143,10 +162,14 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -154,10 +177,14 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -165,10 +192,14 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The value by which edge node subnets are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeModified}.
+         */
         private SortBy sortBy = null;
 
         /**
          * The value by which edge node subnets are sorted in a paginated 'List' call. If unspecified, defaults to {@code timeModified}.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -176,10 +207,14 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -263,7 +298,8 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -274,6 +310,10 @@ public class ListEdgeSubnetsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

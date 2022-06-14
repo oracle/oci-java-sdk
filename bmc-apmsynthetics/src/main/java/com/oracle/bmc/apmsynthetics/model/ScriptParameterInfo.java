@@ -32,6 +32,7 @@ public final class ScriptParameterInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("scriptParameter")
         private ScriptParameter scriptParameter;
 
@@ -40,10 +41,19 @@ public final class ScriptParameterInfo {
             this.__explicitlySet__.add("scriptParameter");
             return this;
         }
-
+        /**
+         * If parameter value is default or overwritten.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
         private Boolean isOverwritten;
 
+        /**
+         * If parameter value is default or overwritten.
+         *
+         * @param isOverwritten the value to set
+         * @return this builder
+         **/
         public Builder isOverwritten(Boolean isOverwritten) {
             this.isOverwritten = isOverwritten;
             this.__explicitlySet__.add("isOverwritten");
@@ -95,6 +105,11 @@ public final class ScriptParameterInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("isOverwritten")
     private final Boolean isOverwritten;
 
+    /**
+     * If parameter value is default or overwritten.
+     *
+     * @return the value
+     **/
     public Boolean getIsOverwritten() {
         return isOverwritten;
     }

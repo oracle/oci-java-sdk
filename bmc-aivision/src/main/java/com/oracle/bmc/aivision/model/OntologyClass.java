@@ -30,27 +30,49 @@ public final class OntologyClass {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The label name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The label name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The label parents.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentNames")
         private java.util.List<String> parentNames;
 
+        /**
+         * The label parents.
+         * @param parentNames the value to set
+         * @return this builder
+         **/
         public Builder parentNames(java.util.List<String> parentNames) {
             this.parentNames = parentNames;
             this.__explicitlySet__.add("parentNames");
             return this;
         }
-
+        /**
+         * The label synonyms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("synonymNames")
         private java.util.List<String> synonymNames;
 
+        /**
+         * The label synonyms.
+         * @param synonymNames the value to set
+         * @return this builder
+         **/
         public Builder synonymNames(java.util.List<String> synonymNames) {
             this.synonymNames = synonymNames;
             this.__explicitlySet__.add("synonymNames");
@@ -95,6 +117,10 @@ public final class OntologyClass {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The label name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +131,10 @@ public final class OntologyClass {
     @com.fasterxml.jackson.annotation.JsonProperty("parentNames")
     private final java.util.List<String> parentNames;
 
+    /**
+     * The label parents.
+     * @return the value
+     **/
     public java.util.List<String> getParentNames() {
         return parentNames;
     }
@@ -115,6 +145,10 @@ public final class OntologyClass {
     @com.fasterxml.jackson.annotation.JsonProperty("synonymNames")
     private final java.util.List<String> synonymNames;
 
+    /**
+     * The label synonyms.
+     * @return the value
+     **/
     public java.util.List<String> getSynonymNames() {
         return synonymNames;
     }

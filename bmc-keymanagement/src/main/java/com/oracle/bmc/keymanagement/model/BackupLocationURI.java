@@ -27,6 +27,7 @@ package com.oracle.bmc.keymanagement.model;
 public final class BackupLocationURI extends BackupLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 

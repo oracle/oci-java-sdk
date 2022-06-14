@@ -16,6 +16,9 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String applicationKey;
 
+    /**
+     * The application key.
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
@@ -32,6 +38,9 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String taskRunKey;
 
+    /**
+     * The task run key.
+     */
     public String getTaskRunKey() {
         return taskRunKey;
     }
@@ -43,6 +52,12 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -54,10 +69,14 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -65,10 +84,14 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The application key.
+         */
         private String applicationKey = null;
 
         /**
          * The application key.
+         * @param applicationKey the value to set
          * @return this builder instance
          */
         public Builder applicationKey(String applicationKey) {
@@ -76,10 +99,14 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The task run key.
+         */
         private String taskRunKey = null;
 
         /**
          * The task run key.
+         * @param taskRunKey the value to set
          * @return this builder instance
          */
         public Builder taskRunKey(String taskRunKey) {
@@ -87,6 +114,12 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -94,6 +127,7 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -175,7 +209,8 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -185,6 +220,10 @@ public class GetTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

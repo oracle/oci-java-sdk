@@ -30,18 +30,37 @@ public final class AddPublicIpPoolCapacityDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
         private String byoipRangeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * @param byoipRangeId the value to set
+         * @return this builder
+         **/
         public Builder byoipRangeId(String byoipRangeId) {
             this.byoipRangeId = byoipRangeId;
             this.__explicitlySet__.add("byoipRangeId");
             return this;
         }
-
+        /**
+         * The CIDR block to add to the public IP pool. It could be all of the CIDR block identified in {@code byoipRangeId}, or a subrange.
+         * Example: {@code 10.0.1.0/24}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * The CIDR block to add to the public IP pool. It could be all of the CIDR block identified in {@code byoipRangeId}, or a subrange.
+         * Example: {@code 10.0.1.0/24}
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
@@ -84,6 +103,10 @@ public final class AddPublicIpPoolCapacityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
     private final String byoipRangeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code ByoipRange} resource to which the CIDR block belongs.
+     * @return the value
+     **/
     public String getByoipRangeId() {
         return byoipRangeId;
     }
@@ -96,6 +119,12 @@ public final class AddPublicIpPoolCapacityDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * The CIDR block to add to the public IP pool. It could be all of the CIDR block identified in {@code byoipRangeId}, or a subrange.
+     * Example: {@code 10.0.1.0/24}
+     *
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }

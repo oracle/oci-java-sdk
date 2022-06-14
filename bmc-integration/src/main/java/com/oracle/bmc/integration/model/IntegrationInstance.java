@@ -86,136 +86,254 @@ public final class IntegrationInstance {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier that is immutable on creation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Integration Instance Identifier, can be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Integration Instance Identifier, can be renamed.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Standard or Enterprise type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
         private IntegrationInstanceType integrationInstanceType;
 
+        /**
+         * Standard or Enterprise type
+         * @param integrationInstanceType the value to set
+         * @return this builder
+         **/
         public Builder integrationInstanceType(IntegrationInstanceType integrationInstanceType) {
             this.integrationInstanceType = integrationInstanceType;
             this.__explicitlySet__.add("integrationInstanceType");
             return this;
         }
-
+        /**
+         * The time the the IntegrationInstance was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the the IntegrationInstance was created. An RFC3339 formatted datetime string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The current state of the integration instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the integration instance.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
+        /**
+         * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param stateMessage the value to set
+         * @return this builder
+         **/
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = stateMessage;
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name,
+         * type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name,
+         * type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to
+         * namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to
+         * namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Bring your own license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isByol")
         private Boolean isByol;
 
+        /**
+         * Bring your own license.
+         * @param isByol the value to set
+         * @return this builder
+         **/
         public Builder isByol(Boolean isByol) {
             this.isByol = isByol;
             this.__explicitlySet__.add("isByol");
             return this;
         }
-
+        /**
+         * The Integration Instance URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
         private String instanceUrl;
 
+        /**
+         * The Integration Instance URL.
+         * @param instanceUrl the value to set
+         * @return this builder
+         **/
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
             return this;
         }
-
+        /**
+         * The number of configured message packs (if any)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
         private Integer messagePacks;
 
+        /**
+         * The number of configured message packs (if any)
+         * @param messagePacks the value to set
+         * @return this builder
+         **/
         public Builder messagePacks(Integer messagePacks) {
             this.messagePacks = messagePacks;
             this.__explicitlySet__.add("messagePacks");
             return this;
         }
-
+        /**
+         * The file server is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
         private Boolean isFileServerEnabled;
 
+        /**
+         * The file server is enabled or not.
+         * @param isFileServerEnabled the value to set
+         * @return this builder
+         **/
         public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
             this.isFileServerEnabled = isFileServerEnabled;
             this.__explicitlySet__.add("isFileServerEnabled");
             return this;
         }
-
+        /**
+         * VisualBuilder is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
         private Boolean isVisualBuilderEnabled;
 
+        /**
+         * VisualBuilder is enabled or not.
+         * @param isVisualBuilderEnabled the value to set
+         * @return this builder
+         **/
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             this.__explicitlySet__.add("isVisualBuilderEnabled");
@@ -230,20 +348,36 @@ public final class IntegrationInstance {
             this.__explicitlySet__.add("customEndpoint");
             return this;
         }
-
+        /**
+         * A list of alternate custom endpoints used for the integration instance URL.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
         private java.util.List<CustomEndpointDetails> alternateCustomEndpoints;
 
+        /**
+         * A list of alternate custom endpoints used for the integration instance URL.
+         *
+         * @param alternateCustomEndpoints the value to set
+         * @return this builder
+         **/
         public Builder alternateCustomEndpoints(
                 java.util.List<CustomEndpointDetails> alternateCustomEndpoints) {
             this.alternateCustomEndpoints = alternateCustomEndpoints;
             this.__explicitlySet__.add("alternateCustomEndpoints");
             return this;
         }
-
+        /**
+         * The entitlement used for billing purposes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
         private ConsumptionModel consumptionModel;
 
+        /**
+         * The entitlement used for billing purposes.
+         * @param consumptionModel the value to set
+         * @return this builder
+         **/
         public Builder consumptionModel(ConsumptionModel consumptionModel) {
             this.consumptionModel = consumptionModel;
             this.__explicitlySet__.add("consumptionModel");
@@ -333,6 +467,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier that is immutable on creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -343,6 +481,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Integration Instance Identifier, can be renamed.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -353,6 +495,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -411,6 +557,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
     private final IntegrationInstanceType integrationInstanceType;
 
+    /**
+     * Standard or Enterprise type
+     * @return the value
+     **/
     public IntegrationInstanceType getIntegrationInstanceType() {
         return integrationInstanceType;
     }
@@ -421,6 +571,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the the IntegrationInstance was created. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -431,6 +585,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -494,6 +652,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the integration instance.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -504,6 +666,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     private final String stateMessage;
 
+    /**
+     * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getStateMessage() {
         return stateMessage;
     }
@@ -517,6 +683,13 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name,
+     * type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -530,6 +703,13 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to
+     * namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -540,6 +720,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
     private final Boolean isByol;
 
+    /**
+     * Bring your own license.
+     * @return the value
+     **/
     public Boolean getIsByol() {
         return isByol;
     }
@@ -550,6 +734,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
     private final String instanceUrl;
 
+    /**
+     * The Integration Instance URL.
+     * @return the value
+     **/
     public String getInstanceUrl() {
         return instanceUrl;
     }
@@ -560,6 +748,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
     private final Integer messagePacks;
 
+    /**
+     * The number of configured message packs (if any)
+     * @return the value
+     **/
     public Integer getMessagePacks() {
         return messagePacks;
     }
@@ -570,6 +762,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     private final Boolean isFileServerEnabled;
 
+    /**
+     * The file server is enabled or not.
+     * @return the value
+     **/
     public Boolean getIsFileServerEnabled() {
         return isFileServerEnabled;
     }
@@ -580,6 +776,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
     private final Boolean isVisualBuilderEnabled;
 
+    /**
+     * VisualBuilder is enabled or not.
+     * @return the value
+     **/
     public Boolean getIsVisualBuilderEnabled() {
         return isVisualBuilderEnabled;
     }
@@ -598,6 +798,11 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
     private final java.util.List<CustomEndpointDetails> alternateCustomEndpoints;
 
+    /**
+     * A list of alternate custom endpoints used for the integration instance URL.
+     *
+     * @return the value
+     **/
     public java.util.List<CustomEndpointDetails> getAlternateCustomEndpoints() {
         return alternateCustomEndpoints;
     }
@@ -657,6 +862,10 @@ public final class IntegrationInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     private final ConsumptionModel consumptionModel;
 
+    /**
+     * The entitlement used for billing purposes.
+     * @return the value
+     **/
     public ConsumptionModel getConsumptionModel() {
         return consumptionModel;
     }

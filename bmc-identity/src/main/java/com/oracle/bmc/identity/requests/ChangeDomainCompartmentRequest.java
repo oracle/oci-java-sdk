@@ -18,6 +18,9 @@ public class ChangeDomainCompartmentRequest
      */
     private String domainId;
 
+    /**
+     * The OCID of the identity domain.
+     */
     public String getDomainId() {
         return domainId;
     }
@@ -27,6 +30,9 @@ public class ChangeDomainCompartmentRequest
     private com.oracle.bmc.identity.model.ChangeDomainCompartmentDetails
             changeDomainCompartmentDetails;
 
+    /**
+     * The request object for moving the identity domain to a different compartment.
+     */
     public com.oracle.bmc.identity.model.ChangeDomainCompartmentDetails
             getChangeDomainCompartmentDetails() {
         return changeDomainCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangeDomainCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class ChangeDomainCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,6 +81,12 @@ public class ChangeDomainCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -84,10 +109,14 @@ public class ChangeDomainCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the identity domain.
+         */
         private String domainId = null;
 
         /**
          * The OCID of the identity domain.
+         * @param domainId the value to set
          * @return this builder instance
          */
         public Builder domainId(String domainId) {
@@ -95,11 +124,15 @@ public class ChangeDomainCompartmentRequest
             return this;
         }
 
+        /**
+         * The request object for moving the identity domain to a different compartment.
+         */
         private com.oracle.bmc.identity.model.ChangeDomainCompartmentDetails
                 changeDomainCompartmentDetails = null;
 
         /**
          * The request object for moving the identity domain to a different compartment.
+         * @param changeDomainCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeDomainCompartmentDetails(
@@ -109,12 +142,18 @@ public class ChangeDomainCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -122,6 +161,14 @@ public class ChangeDomainCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -131,6 +178,7 @@ public class ChangeDomainCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -138,6 +186,12 @@ public class ChangeDomainCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeDomainCompartmentRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -239,7 +294,8 @@ public class ChangeDomainCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -250,6 +306,10 @@ public class ChangeDomainCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

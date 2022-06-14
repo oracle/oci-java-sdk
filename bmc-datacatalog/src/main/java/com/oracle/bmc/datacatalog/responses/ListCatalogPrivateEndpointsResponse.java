@@ -15,6 +15,12 @@ public class ListCatalogPrivateEndpointsResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class ListCatalogPrivateEndpointsResponse extends com.oracle.bmc.response
      */
     private String opcNextPage;
 
+    /**
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -34,6 +45,10 @@ public class ListCatalogPrivateEndpointsResponse extends com.oracle.bmc.response
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary> items;
 
+    /**
+     * A list of com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>
             getItems() {
         return items;
@@ -64,23 +79,53 @@ public class ListCatalogPrivateEndpointsResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary instances.
+         */
         private java.util.List<com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>
                 items;
 
+        /**
+         * A list of com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>
                         items) {
@@ -101,12 +146,20 @@ public class ListCatalogPrivateEndpointsResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListCatalogPrivateEndpointsResponse build() {
             return new ListCatalogPrivateEndpointsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

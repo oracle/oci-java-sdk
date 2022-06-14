@@ -46,19 +46,38 @@ public final class FleetAgentConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jreScanFrequencyInMinutes")
         private Integer jreScanFrequencyInMinutes;
 
+        /**
+         * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
+         *
+         * @param jreScanFrequencyInMinutes the value to set
+         * @return this builder
+         **/
         public Builder jreScanFrequencyInMinutes(Integer jreScanFrequencyInMinutes) {
             this.jreScanFrequencyInMinutes = jreScanFrequencyInMinutes;
             this.__explicitlySet__.add("jreScanFrequencyInMinutes");
             return this;
         }
-
+        /**
+         * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "javaUsageTrackerProcessingFrequencyInMinutes")
         private Integer javaUsageTrackerProcessingFrequencyInMinutes;
 
+        /**
+         * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
+         *
+         * @param javaUsageTrackerProcessingFrequencyInMinutes the value to set
+         * @return this builder
+         **/
         public Builder javaUsageTrackerProcessingFrequencyInMinutes(
                 Integer javaUsageTrackerProcessingFrequencyInMinutes) {
             this.javaUsageTrackerProcessingFrequencyInMinutes =
@@ -84,10 +103,19 @@ public final class FleetAgentConfiguration {
             this.__explicitlySet__.add("windowsConfiguration");
             return this;
         }
-
+        /**
+         * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
+        /**
+         * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeLastModified the value to set
+         * @return this builder
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
@@ -142,6 +170,11 @@ public final class FleetAgentConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("jreScanFrequencyInMinutes")
     private final Integer jreScanFrequencyInMinutes;
 
+    /**
+     * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
+     *
+     * @return the value
+     **/
     public Integer getJreScanFrequencyInMinutes() {
         return jreScanFrequencyInMinutes;
     }
@@ -153,6 +186,11 @@ public final class FleetAgentConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("javaUsageTrackerProcessingFrequencyInMinutes")
     private final Integer javaUsageTrackerProcessingFrequencyInMinutes;
 
+    /**
+     * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
+     *
+     * @return the value
+     **/
     public Integer getJavaUsageTrackerProcessingFrequencyInMinutes() {
         return javaUsageTrackerProcessingFrequencyInMinutes;
     }
@@ -178,6 +216,11 @@ public final class FleetAgentConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
+    /**
+     * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }

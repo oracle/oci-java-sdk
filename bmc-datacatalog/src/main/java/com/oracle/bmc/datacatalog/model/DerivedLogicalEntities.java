@@ -32,27 +32,49 @@ public final class DerivedLogicalEntities {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the derived logical entity. The group name of the unmatched files will be UNMATCHED
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the derived logical entity. The group name of the unmatched files will be UNMATCHED
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The expression realized after resolving qualifiers . Used in deriving this logical entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
         private String realizedExpression;
 
+        /**
+         * The expression realized after resolving qualifiers . Used in deriving this logical entity
+         * @param realizedExpression the value to set
+         * @return this builder
+         **/
         public Builder realizedExpression(String realizedExpression) {
             this.realizedExpression = realizedExpression;
             this.__explicitlySet__.add("realizedExpression");
             return this;
         }
-
+        /**
+         * The list of file paths that belong to the grouping of logical entity or UNMATCHED for which realizedExpression is a selector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filesInLogicalGrouping")
         private java.util.List<String> filesInLogicalGrouping;
 
+        /**
+         * The list of file paths that belong to the grouping of logical entity or UNMATCHED for which realizedExpression is a selector.
+         * @param filesInLogicalGrouping the value to set
+         * @return this builder
+         **/
         public Builder filesInLogicalGrouping(java.util.List<String> filesInLogicalGrouping) {
             this.filesInLogicalGrouping = filesInLogicalGrouping;
             this.__explicitlySet__.add("filesInLogicalGrouping");
@@ -98,6 +120,10 @@ public final class DerivedLogicalEntities {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the derived logical entity. The group name of the unmatched files will be UNMATCHED
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -108,6 +134,10 @@ public final class DerivedLogicalEntities {
     @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
     private final String realizedExpression;
 
+    /**
+     * The expression realized after resolving qualifiers . Used in deriving this logical entity
+     * @return the value
+     **/
     public String getRealizedExpression() {
         return realizedExpression;
     }
@@ -118,6 +148,10 @@ public final class DerivedLogicalEntities {
     @com.fasterxml.jackson.annotation.JsonProperty("filesInLogicalGrouping")
     private final java.util.List<String> filesInLogicalGrouping;
 
+    /**
+     * The list of file paths that belong to the grouping of logical entity or UNMATCHED for which realizedExpression is a selector.
+     * @return the value
+     **/
     public java.util.List<String> getFilesInLogicalGrouping() {
         return filesInLogicalGrouping;
     }

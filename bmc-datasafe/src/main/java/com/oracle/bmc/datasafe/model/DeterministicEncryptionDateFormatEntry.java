@@ -52,19 +52,41 @@ public final class DeterministicEncryptionDateFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The lower bound of the range within which all the original column values fall.
+         * The start date must be less than or equal to the end date.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
+        /**
+         * The lower bound of the range within which all the original column values fall.
+         * The start date must be less than or equal to the end date.
+         *
+         * @param startDate the value to set
+         * @return this builder
+         **/
         public Builder startDate(java.util.Date startDate) {
             this.startDate = startDate;
             this.__explicitlySet__.add("startDate");
             return this;
         }
-
+        /**
+         * The upper bound of the range within which all the original column values fall.
+         * The end date must be greater than or equal to the start date.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
+        /**
+         * The upper bound of the range within which all the original column values fall.
+         * The end date must be greater than or equal to the start date.
+         *
+         * @param endDate the value to set
+         * @return this builder
+         **/
         public Builder endDate(java.util.Date endDate) {
             this.endDate = endDate;
             this.__explicitlySet__.add("endDate");
@@ -120,6 +142,12 @@ public final class DeterministicEncryptionDateFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
+    /**
+     * The lower bound of the range within which all the original column values fall.
+     * The start date must be less than or equal to the end date.
+     *
+     * @return the value
+     **/
     public java.util.Date getStartDate() {
         return startDate;
     }
@@ -132,6 +160,12 @@ public final class DeterministicEncryptionDateFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
+    /**
+     * The upper bound of the range within which all the original column values fall.
+     * The end date must be greater than or equal to the start date.
+     *
+     * @return the value
+     **/
     public java.util.Date getEndDate() {
         return endDate;
     }

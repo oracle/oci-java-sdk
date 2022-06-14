@@ -17,6 +17,9 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    /**
+     * OCID for the managed instance
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -25,6 +28,9 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -35,6 +41,11 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private String moduleName;
 
+    /**
+     * The name of a module.  This parameter is required if a
+     * streamName is specified.
+     *
+     */
     public String getModuleName() {
         return moduleName;
     }
@@ -45,6 +56,11 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private String streamName;
 
+    /**
+     * The name of the stream of the containing module.  This parameter
+     * is required if a profileName is specified.
+     *
+     */
     public String getStreamName() {
         return streamName;
     }
@@ -118,6 +134,23 @@ public class ListModuleStreamsOnManagedInstanceRequest
         }
     };
 
+    /**
+     * The status of the stream
+     * <p>
+     * A stream with the "ENABLED" status can be used as a source for installing
+     * profiles.  Streams with this status are also "ACTIVE".
+     * <p>
+     * A stream with the "DISABLED" status cannot be the source for installing
+     * profiles.  To install profiles and packages from this stream, it must be
+     * enabled.
+     * <p>
+     * A stream with the "ACTIVE" status can be used as a source for installing
+     * profiles.  The packages that comprise the stream are also used when a
+     * matching package is installed directly.  In general, a stream can have
+     * this status if it is the default stream for the module and no stream has
+     * been explicitly enabled.
+     *
+     */
     public StreamStatus getStreamStatus() {
         return streamStatus;
     }
@@ -126,6 +159,9 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -134,6 +170,9 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -178,6 +217,9 @@ public class ListModuleStreamsOnManagedInstanceRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -224,6 +266,10 @@ public class ListModuleStreamsOnManagedInstanceRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -232,6 +278,9 @@ public class ListModuleStreamsOnManagedInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -243,10 +292,14 @@ public class ListModuleStreamsOnManagedInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance
+         */
         private String managedInstanceId = null;
 
         /**
          * OCID for the managed instance
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -254,10 +307,14 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -265,12 +322,18 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The name of a module.  This parameter is required if a
+         * streamName is specified.
+         *
+         */
         private String moduleName = null;
 
         /**
          * The name of a module.  This parameter is required if a
          * streamName is specified.
          *
+         * @param moduleName the value to set
          * @return this builder instance
          */
         public Builder moduleName(String moduleName) {
@@ -278,12 +341,18 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The name of the stream of the containing module.  This parameter
+         * is required if a profileName is specified.
+         *
+         */
         private String streamName = null;
 
         /**
          * The name of the stream of the containing module.  This parameter
          * is required if a profileName is specified.
          *
+         * @param streamName the value to set
          * @return this builder instance
          */
         public Builder streamName(String streamName) {
@@ -291,6 +360,23 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The status of the stream
+         * <p>
+         * A stream with the "ENABLED" status can be used as a source for installing
+         * profiles.  Streams with this status are also "ACTIVE".
+         * <p>
+         * A stream with the "DISABLED" status cannot be the source for installing
+         * profiles.  To install profiles and packages from this stream, it must be
+         * enabled.
+         * <p>
+         * A stream with the "ACTIVE" status can be used as a source for installing
+         * profiles.  The packages that comprise the stream are also used when a
+         * matching package is installed directly.  In general, a stream can have
+         * this status if it is the default stream for the module and no stream has
+         * been explicitly enabled.
+         *
+         */
         private StreamStatus streamStatus = null;
 
         /**
@@ -309,6 +395,7 @@ public class ListModuleStreamsOnManagedInstanceRequest
          * this status if it is the default stream for the module and no stream has
          * been explicitly enabled.
          *
+         * @param streamStatus the value to set
          * @return this builder instance
          */
         public Builder streamStatus(StreamStatus streamStatus) {
@@ -316,10 +403,14 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -327,10 +418,14 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -338,10 +433,14 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -349,11 +448,16 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -361,10 +465,14 @@ public class ListModuleStreamsOnManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -459,7 +567,8 @@ public class ListModuleStreamsOnManagedInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -475,6 +584,10 @@ public class ListModuleStreamsOnManagedInstanceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class AnalyzeImageRequest
      */
     private com.oracle.bmc.aivision.model.AnalyzeImageDetails analyzeImageDetails;
 
+    /**
+     * Details about how to analyze an image.
+     */
     public com.oracle.bmc.aivision.model.AnalyzeImageDetails getAnalyzeImageDetails() {
         return analyzeImageDetails;
     }
@@ -26,6 +29,9 @@ public class AnalyzeImageRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,10 +53,14 @@ public class AnalyzeImageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details about how to analyze an image.
+         */
         private com.oracle.bmc.aivision.model.AnalyzeImageDetails analyzeImageDetails = null;
 
         /**
          * Details about how to analyze an image.
+         * @param analyzeImageDetails the value to set
          * @return this builder instance
          */
         public Builder analyzeImageDetails(
@@ -59,10 +69,14 @@ public class AnalyzeImageRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -151,12 +165,17 @@ public class AnalyzeImageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().analyzeImageDetails(analyzeImageDetails).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

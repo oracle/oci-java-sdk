@@ -18,6 +18,10 @@ public class ListResourceCategoriesRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ListResourceCategoriesRequest
      */
     private String categories;
 
+    /**
+     * A comma-separated list of categories used for filtering
+     */
     public String getCategories() {
         return categories;
     }
@@ -36,6 +43,11 @@ public class ListResourceCategoriesRequest
      */
     private String resourceTypes;
 
+    /**
+     * A comma-separated list of resource types used for filtering. Only resources of the types
+     * specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
+     *
+     */
     public String getResourceTypes() {
         return resourceTypes;
     }
@@ -46,6 +58,11 @@ public class ListResourceCategoriesRequest
      */
     private String resourceIds;
 
+    /**
+     * A comma-separated list of resource unique identifiers used for filtering. Only resources
+     * with matching unique identifiers will be returned.
+     *
+     */
     public String getResourceIds() {
         return resourceIds;
     }
@@ -92,6 +109,10 @@ public class ListResourceCategoriesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -137,6 +158,9 @@ public class ListResourceCategoriesRequest
         }
     };
 
+    /**
+     * The attribute used to sort the returned category resources.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -145,6 +169,9 @@ public class ListResourceCategoriesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -153,6 +180,9 @@ public class ListResourceCategoriesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -161,6 +191,9 @@ public class ListResourceCategoriesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -172,11 +205,16 @@ public class ListResourceCategoriesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -184,10 +222,14 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * A comma-separated list of categories used for filtering
+         */
         private String categories = null;
 
         /**
          * A comma-separated list of categories used for filtering
+         * @param categories the value to set
          * @return this builder instance
          */
         public Builder categories(String categories) {
@@ -195,12 +237,18 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * A comma-separated list of resource types used for filtering. Only resources of the types
+         * specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
+         *
+         */
         private String resourceTypes = null;
 
         /**
          * A comma-separated list of resource types used for filtering. Only resources of the types
          * specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
          *
+         * @param resourceTypes the value to set
          * @return this builder instance
          */
         public Builder resourceTypes(String resourceTypes) {
@@ -208,12 +256,18 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * A comma-separated list of resource unique identifiers used for filtering. Only resources
+         * with matching unique identifiers will be returned.
+         *
+         */
         private String resourceIds = null;
 
         /**
          * A comma-separated list of resource unique identifiers used for filtering. Only resources
          * with matching unique identifiers will be returned.
          *
+         * @param resourceIds the value to set
          * @return this builder instance
          */
         public Builder resourceIds(String resourceIds) {
@@ -221,11 +275,16 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -233,10 +292,14 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned category resources.
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned category resources.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -244,10 +307,14 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -255,10 +322,14 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -266,10 +337,14 @@ public class ListResourceCategoriesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -361,7 +436,8 @@ public class ListResourceCategoriesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -376,6 +452,10 @@ public class ListResourceCategoriesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

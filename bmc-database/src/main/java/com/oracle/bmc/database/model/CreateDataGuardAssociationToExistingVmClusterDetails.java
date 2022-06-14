@@ -91,19 +91,41 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             this.__explicitlySet__.add("peerSidPrefix");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+         * You must supply this value if creationType is {@code ExistingVmCluster}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerVmClusterId")
         private String peerVmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+         * You must supply this value if creationType is {@code ExistingVmCluster}.
+         *
+         * @param peerVmClusterId the value to set
+         * @return this builder
+         **/
         public Builder peerVmClusterId(String peerVmClusterId) {
             this.peerVmClusterId = peerVmClusterId;
             this.__explicitlySet__.add("peerVmClusterId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * You must supply this value to create standby database with an existing DB home
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
         private String peerDbHomeId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * You must supply this value to create standby database with an existing DB home
+         *
+         * @param peerDbHomeId the value to set
+         * @return this builder
+         **/
         public Builder peerDbHomeId(String peerDbHomeId) {
             this.peerDbHomeId = peerDbHomeId;
             this.__explicitlySet__.add("peerDbHomeId");
@@ -189,6 +211,12 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     @com.fasterxml.jackson.annotation.JsonProperty("peerVmClusterId")
     private final String peerVmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+     * You must supply this value if creationType is {@code ExistingVmCluster}.
+     *
+     * @return the value
+     **/
     public String getPeerVmClusterId() {
         return peerVmClusterId;
     }
@@ -201,6 +229,12 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
     private final String peerDbHomeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * You must supply this value to create standby database with an existing DB home
+     *
+     * @return the value
+     **/
     public String getPeerDbHomeId() {
         return peerDbHomeId;
     }

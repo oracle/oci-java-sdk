@@ -29,9 +29,19 @@ public final class MonitoringSourceSelectedNamespaceDetails
         extends MonitoringSourceNamespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The namespaces for the compartment-specific list.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaces")
         private java.util.List<MonitoringSourceSelectedNamespace> namespaces;
 
+        /**
+         * The namespaces for the compartment-specific list.
+         *
+         * @param namespaces the value to set
+         * @return this builder
+         **/
         public Builder namespaces(java.util.List<MonitoringSourceSelectedNamespace> namespaces) {
             this.namespaces = namespaces;
             this.__explicitlySet__.add("namespaces");
@@ -82,6 +92,11 @@ public final class MonitoringSourceSelectedNamespaceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("namespaces")
     private final java.util.List<MonitoringSourceSelectedNamespace> namespaces;
 
+    /**
+     * The namespaces for the compartment-specific list.
+     *
+     * @return the value
+     **/
     public java.util.List<MonitoringSourceSelectedNamespace> getNamespaces() {
         return namespaces;
     }

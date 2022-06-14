@@ -30,18 +30,33 @@ public final class FullyQualifiedScope {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Audience for the given scope context.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("audience")
         private String audience;
 
+        /**
+         * Audience for the given scope context.
+         * @param audience the value to set
+         * @return this builder
+         **/
         public Builder audience(String audience) {
             this.audience = audience;
             this.__explicitlySet__.add("audience");
             return this;
         }
-
+        /**
+         * Allowed permission scope for the given context.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private String scope;
 
+        /**
+         * Allowed permission scope for the given context.
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(String scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -83,6 +98,10 @@ public final class FullyQualifiedScope {
     @com.fasterxml.jackson.annotation.JsonProperty("audience")
     private final String audience;
 
+    /**
+     * Audience for the given scope context.
+     * @return the value
+     **/
     public String getAudience() {
         return audience;
     }
@@ -93,6 +112,10 @@ public final class FullyQualifiedScope {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final String scope;
 
+    /**
+     * Allowed permission scope for the given context.
+     * @return the value
+     **/
     public String getScope() {
         return scope;
     }

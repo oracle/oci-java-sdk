@@ -144,19 +144,33 @@ public final class GitlabTriggerCreateResult extends TriggerCreateResult {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The secret used to validate the incoming trigger call. This is visible only after the resource is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secret")
         private String secret;
 
+        /**
+         * The secret used to validate the incoming trigger call. This is visible only after the resource is created.
+         * @param secret the value to set
+         * @return this builder
+         **/
         public Builder secret(String secret) {
             this.secret = secret;
             this.__explicitlySet__.add("secret");
             return this;
         }
-
+        /**
+         * The endpoint that listens to trigger events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
         private String triggerUrl;
 
+        /**
+         * The endpoint that listens to trigger events.
+         * @param triggerUrl the value to set
+         * @return this builder
+         **/
         public Builder triggerUrl(String triggerUrl) {
             this.triggerUrl = triggerUrl;
             this.__explicitlySet__.add("triggerUrl");
@@ -264,6 +278,10 @@ public final class GitlabTriggerCreateResult extends TriggerCreateResult {
     @com.fasterxml.jackson.annotation.JsonProperty("secret")
     private final String secret;
 
+    /**
+     * The secret used to validate the incoming trigger call. This is visible only after the resource is created.
+     * @return the value
+     **/
     public String getSecret() {
         return secret;
     }
@@ -274,6 +292,10 @@ public final class GitlabTriggerCreateResult extends TriggerCreateResult {
     @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
     private final String triggerUrl;
 
+    /**
+     * The endpoint that listens to trigger events.
+     * @return the value
+     **/
     public String getTriggerUrl() {
         return triggerUrl;
     }

@@ -29,9 +29,17 @@ public final class OcpuAllocationNumberParam {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of OCPU allocation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuAllocationNumber")
         private Float ocpuAllocationNumber;
 
+        /**
+         * Number of OCPU allocation
+         * @param ocpuAllocationNumber the value to set
+         * @return this builder
+         **/
         public Builder ocpuAllocationNumber(Float ocpuAllocationNumber) {
             this.ocpuAllocationNumber = ocpuAllocationNumber;
             this.__explicitlySet__.add("ocpuAllocationNumber");
@@ -74,6 +82,10 @@ public final class OcpuAllocationNumberParam {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuAllocationNumber")
     private final Float ocpuAllocationNumber;
 
+    /**
+     * Number of OCPU allocation
+     * @return the value
+     **/
     public Float getOcpuAllocationNumber() {
         return ocpuAllocationNumber;
     }

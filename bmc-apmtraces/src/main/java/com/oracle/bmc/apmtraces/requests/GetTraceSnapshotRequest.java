@@ -17,6 +17,10 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String apmDomainId;
 
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -26,6 +30,10 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String traceKey;
 
+    /**
+     * Unique Application Performance Monitoring trace identifier (traceId).
+     *
+     */
     public String getTraceKey() {
         return traceKey;
     }
@@ -36,6 +44,11 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,6 +58,10 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Boolean isSummarized;
 
+    /**
+     * If enabled, then only span level details will be sent.
+     *
+     */
     public Boolean getIsSummarized() {
         return isSummarized;
     }
@@ -54,6 +71,10 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String threadId;
 
+    /**
+     * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     *
+     */
     public String getThreadId() {
         return threadId;
     }
@@ -63,6 +84,10 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String snapshotTime;
 
+    /**
+     * Epoch time of snapshot.
+     *
+     */
     public String getSnapshotTime() {
         return snapshotTime;
     }
@@ -74,11 +99,16 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM Domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -86,11 +116,16 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Application Performance Monitoring trace identifier (traceId).
+         *
+         */
         private String traceKey = null;
 
         /**
          * Unique Application Performance Monitoring trace identifier (traceId).
          *
+         * @param traceKey the value to set
          * @return this builder instance
          */
         public Builder traceKey(String traceKey) {
@@ -98,12 +133,18 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -111,11 +152,16 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * If enabled, then only span level details will be sent.
+         *
+         */
         private Boolean isSummarized = null;
 
         /**
          * If enabled, then only span level details will be sent.
          *
+         * @param isSummarized the value to set
          * @return this builder instance
          */
         public Builder isSummarized(Boolean isSummarized) {
@@ -123,11 +169,16 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+         *
+         */
         private String threadId = null;
 
         /**
          * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
          *
+         * @param threadId the value to set
          * @return this builder instance
          */
         public Builder threadId(String threadId) {
@@ -135,11 +186,16 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Epoch time of snapshot.
+         *
+         */
         private String snapshotTime = null;
 
         /**
          * Epoch time of snapshot.
          *
+         * @param snapshotTime the value to set
          * @return this builder instance
          */
         public Builder snapshotTime(String snapshotTime) {
@@ -225,7 +281,8 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +294,10 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
                 .snapshotTime(snapshotTime);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

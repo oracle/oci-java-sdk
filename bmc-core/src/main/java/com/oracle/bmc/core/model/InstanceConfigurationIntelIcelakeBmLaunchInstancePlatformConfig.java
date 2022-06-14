@@ -56,28 +56,67 @@ public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConf
             this.__explicitlySet__.add("isMeasuredBootEnabled");
             return this;
         }
-
+        /**
+         * The number of NUMA nodes per socket (NPS).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
         private NumaNodesPerSocket numaNodesPerSocket;
 
+        /**
+         * The number of NUMA nodes per socket (NPS).
+         *
+         * @param numaNodesPerSocket the value to set
+         * @return this builder
+         **/
         public Builder numaNodesPerSocket(NumaNodesPerSocket numaNodesPerSocket) {
             this.numaNodesPerSocket = numaNodesPerSocket;
             this.__explicitlySet__.add("numaNodesPerSocket");
             return this;
         }
-
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+         * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * <p>
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+         * independent threads of execution, to better use the resources and increase the efficiency
+         * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+         * can provide higher or more predictable performance for some workloads.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
         private Boolean isSymmetricMultiThreadingEnabled;
 
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+         * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * <p>
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+         * independent threads of execution, to better use the resources and increase the efficiency
+         * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+         * can provide higher or more predictable performance for some workloads.
+         *
+         * @param isSymmetricMultiThreadingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
             this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             this.__explicitlySet__.add("isSymmetricMultiThreadingEnabled");
             return this;
         }
-
+        /**
+         * Whether the input-output memory management unit is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
         private Boolean isInputOutputMemoryManagementUnitEnabled;
 
+        /**
+         * Whether the input-output memory management unit is enabled.
+         *
+         * @param isInputOutputMemoryManagementUnitEnabled the value to set
+         * @return this builder
+         **/
         public Builder isInputOutputMemoryManagementUnitEnabled(
                 Boolean isInputOutputMemoryManagementUnitEnabled) {
             this.isInputOutputMemoryManagementUnitEnabled =
@@ -85,10 +124,31 @@ public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConf
             this.__explicitlySet__.add("isInputOutputMemoryManagementUnitEnabled");
             return this;
         }
-
+        /**
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
+         * results in a fractional number of cores, the system rounds up the number of cores across processors
+         * and provisions an instance with a whole number of cores.
+         * <p>
+         * If the applications that you run on the instance use a core-based licensing model and need fewer cores
+         * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
+         * itself is billed for the full shape, regardless of whether all cores are enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
         private Integer percentageOfCoresEnabled;
 
+        /**
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
+         * results in a fractional number of cores, the system rounds up the number of cores across processors
+         * and provisions an instance with a whole number of cores.
+         * <p>
+         * If the applications that you run on the instance use a core-based licensing model and need fewer cores
+         * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
+         * itself is billed for the full shape, regardless of whether all cores are enabled.
+         *
+         * @param percentageOfCoresEnabled the value to set
+         * @return this builder
+         **/
         public Builder percentageOfCoresEnabled(Integer percentageOfCoresEnabled) {
             this.percentageOfCoresEnabled = percentageOfCoresEnabled;
             this.__explicitlySet__.add("percentageOfCoresEnabled");
@@ -213,6 +273,11 @@ public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConf
     @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
     private final NumaNodesPerSocket numaNodesPerSocket;
 
+    /**
+     * The number of NUMA nodes per socket (NPS).
+     *
+     * @return the value
+     **/
     public NumaNodesPerSocket getNumaNodesPerSocket() {
         return numaNodesPerSocket;
     }
@@ -230,6 +295,17 @@ public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConf
     @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
     private final Boolean isSymmetricMultiThreadingEnabled;
 
+    /**
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+     * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+     * <p>
+     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+     * independent threads of execution, to better use the resources and increase the efficiency
+     * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+     * can provide higher or more predictable performance for some workloads.
+     *
+     * @return the value
+     **/
     public Boolean getIsSymmetricMultiThreadingEnabled() {
         return isSymmetricMultiThreadingEnabled;
     }
@@ -241,6 +317,11 @@ public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConf
     @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
     private final Boolean isInputOutputMemoryManagementUnitEnabled;
 
+    /**
+     * Whether the input-output memory management unit is enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsInputOutputMemoryManagementUnitEnabled() {
         return isInputOutputMemoryManagementUnitEnabled;
     }
@@ -258,6 +339,17 @@ public final class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConf
     @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
     private final Integer percentageOfCoresEnabled;
 
+    /**
+     * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
+     * results in a fractional number of cores, the system rounds up the number of cores across processors
+     * and provisions an instance with a whole number of cores.
+     * <p>
+     * If the applications that you run on the instance use a core-based licensing model and need fewer cores
+     * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
+     * itself is billed for the full shape, regardless of whether all cores are enabled.
+     *
+     * @return the value
+     **/
     public Integer getPercentageOfCoresEnabled() {
         return percentageOfCoresEnabled;
     }

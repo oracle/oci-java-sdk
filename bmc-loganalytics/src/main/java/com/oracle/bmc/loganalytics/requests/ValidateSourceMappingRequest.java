@@ -18,6 +18,10 @@ public class ValidateSourceMappingRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ValidateSourceMappingRequest
      */
     private String objectLocation;
 
+    /**
+     * Location of the log file.
+     */
     public String getObjectLocation() {
         return objectLocation;
     }
@@ -35,6 +42,10 @@ public class ValidateSourceMappingRequest
      */
     private String filename;
 
+    /**
+     * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
+     *
+     */
     public String getFilename() {
         return filename;
     }
@@ -44,6 +55,10 @@ public class ValidateSourceMappingRequest
      */
     private String logSourceName;
 
+    /**
+     * Name of the log source that will be used to process the files being uploaded.
+     *
+     */
     public String getLogSourceName() {
         return logSourceName;
     }
@@ -52,6 +67,9 @@ public class ValidateSourceMappingRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,11 +81,16 @@ public class ValidateSourceMappingRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -75,10 +98,14 @@ public class ValidateSourceMappingRequest
             return this;
         }
 
+        /**
+         * Location of the log file.
+         */
         private String objectLocation = null;
 
         /**
          * Location of the log file.
+         * @param objectLocation the value to set
          * @return this builder instance
          */
         public Builder objectLocation(String objectLocation) {
@@ -86,11 +113,16 @@ public class ValidateSourceMappingRequest
             return this;
         }
 
+        /**
+         * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
+         *
+         */
         private String filename = null;
 
         /**
          * The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
          *
+         * @param filename the value to set
          * @return this builder instance
          */
         public Builder filename(String filename) {
@@ -98,11 +130,16 @@ public class ValidateSourceMappingRequest
             return this;
         }
 
+        /**
+         * Name of the log source that will be used to process the files being uploaded.
+         *
+         */
         private String logSourceName = null;
 
         /**
          * Name of the log source that will be used to process the files being uploaded.
          *
+         * @param logSourceName the value to set
          * @return this builder instance
          */
         public Builder logSourceName(String logSourceName) {
@@ -110,10 +147,14 @@ public class ValidateSourceMappingRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,7 +238,8 @@ public class ValidateSourceMappingRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -208,6 +250,10 @@ public class ValidateSourceMappingRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

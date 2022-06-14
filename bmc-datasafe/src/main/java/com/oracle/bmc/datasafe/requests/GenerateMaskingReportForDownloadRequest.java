@@ -18,6 +18,9 @@ public class GenerateMaskingReportForDownloadRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -27,6 +30,9 @@ public class GenerateMaskingReportForDownloadRequest
     private com.oracle.bmc.datasafe.model.GenerateMaskingReportForDownloadDetails
             generateMaskingReportForDownloadDetails;
 
+    /**
+     * Details to generate a downloadable masking report.
+     */
     public com.oracle.bmc.datasafe.model.GenerateMaskingReportForDownloadDetails
             getGenerateMaskingReportForDownloadDetails() {
         return generateMaskingReportForDownloadDetails;
@@ -36,6 +42,9 @@ public class GenerateMaskingReportForDownloadRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,10 +67,14 @@ public class GenerateMaskingReportForDownloadRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -69,11 +82,15 @@ public class GenerateMaskingReportForDownloadRequest
             return this;
         }
 
+        /**
+         * Details to generate a downloadable masking report.
+         */
         private com.oracle.bmc.datasafe.model.GenerateMaskingReportForDownloadDetails
                 generateMaskingReportForDownloadDetails = null;
 
         /**
          * Details to generate a downloadable masking report.
+         * @param generateMaskingReportForDownloadDetails the value to set
          * @return this builder instance
          */
         public Builder generateMaskingReportForDownloadDetails(
@@ -83,10 +100,14 @@ public class GenerateMaskingReportForDownloadRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -180,7 +201,8 @@ public class GenerateMaskingReportForDownloadRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +211,10 @@ public class GenerateMaskingReportForDownloadRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

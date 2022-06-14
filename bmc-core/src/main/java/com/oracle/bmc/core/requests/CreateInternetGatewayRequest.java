@@ -18,6 +18,9 @@ public class CreateInternetGatewayRequest
      */
     private com.oracle.bmc.core.model.CreateInternetGatewayDetails createInternetGatewayDetails;
 
+    /**
+     * Details for creating a new internet gateway.
+     */
     public com.oracle.bmc.core.model.CreateInternetGatewayDetails
             getCreateInternetGatewayDetails() {
         return createInternetGatewayDetails;
@@ -32,6 +35,14 @@ public class CreateInternetGatewayRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -54,11 +65,15 @@ public class CreateInternetGatewayRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for creating a new internet gateway.
+         */
         private com.oracle.bmc.core.model.CreateInternetGatewayDetails
                 createInternetGatewayDetails = null;
 
         /**
          * Details for creating a new internet gateway.
+         * @param createInternetGatewayDetails the value to set
          * @return this builder instance
          */
         public Builder createInternetGatewayDetails(
@@ -68,6 +83,14 @@ public class CreateInternetGatewayRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -77,6 +100,7 @@ public class CreateInternetGatewayRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -165,7 +189,8 @@ public class CreateInternetGatewayRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -173,6 +198,10 @@ public class CreateInternetGatewayRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

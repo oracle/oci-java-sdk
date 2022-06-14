@@ -18,6 +18,9 @@ public class UpdateLocalPeeringGatewayRequest
      */
     private String localPeeringGatewayId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+     */
     public String getLocalPeeringGatewayId() {
         return localPeeringGatewayId;
     }
@@ -27,6 +30,9 @@ public class UpdateLocalPeeringGatewayRequest
     private com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails
             updateLocalPeeringGatewayDetails;
 
+    /**
+     * Details object for updating a local peering gateway.
+     */
     public com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails
             getUpdateLocalPeeringGatewayDetails() {
         return updateLocalPeeringGatewayDetails;
@@ -39,6 +45,12 @@ public class UpdateLocalPeeringGatewayRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,10 +73,14 @@ public class UpdateLocalPeeringGatewayRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+         */
         private String localPeeringGatewayId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+         * @param localPeeringGatewayId the value to set
          * @return this builder instance
          */
         public Builder localPeeringGatewayId(String localPeeringGatewayId) {
@@ -72,11 +88,15 @@ public class UpdateLocalPeeringGatewayRequest
             return this;
         }
 
+        /**
+         * Details object for updating a local peering gateway.
+         */
         private com.oracle.bmc.core.model.UpdateLocalPeeringGatewayDetails
                 updateLocalPeeringGatewayDetails = null;
 
         /**
          * Details object for updating a local peering gateway.
+         * @param updateLocalPeeringGatewayDetails the value to set
          * @return this builder instance
          */
         public Builder updateLocalPeeringGatewayDetails(
@@ -86,6 +106,12 @@ public class UpdateLocalPeeringGatewayRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -93,6 +119,7 @@ public class UpdateLocalPeeringGatewayRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -183,7 +210,8 @@ public class UpdateLocalPeeringGatewayRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +220,10 @@ public class UpdateLocalPeeringGatewayRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

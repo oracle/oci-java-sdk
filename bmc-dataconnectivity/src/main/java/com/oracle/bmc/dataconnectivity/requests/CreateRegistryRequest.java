@@ -18,6 +18,9 @@ public class CreateRegistryRequest
      */
     private com.oracle.bmc.dataconnectivity.model.CreateRegistryDetails createRegistryDetails;
 
+    /**
+     * Details for the new Data Connectivity Management Registry.
+     */
     public com.oracle.bmc.dataconnectivity.model.CreateRegistryDetails getCreateRegistryDetails() {
         return createRegistryDetails;
     }
@@ -27,6 +30,10 @@ public class CreateRegistryRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -38,6 +45,12 @@ public class CreateRegistryRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,11 +73,15 @@ public class CreateRegistryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new Data Connectivity Management Registry.
+         */
         private com.oracle.bmc.dataconnectivity.model.CreateRegistryDetails createRegistryDetails =
                 null;
 
         /**
          * Details for the new Data Connectivity Management Registry.
+         * @param createRegistryDetails the value to set
          * @return this builder instance
          */
         public Builder createRegistryDetails(
@@ -73,11 +90,16 @@ public class CreateRegistryRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -85,6 +107,12 @@ public class CreateRegistryRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -92,6 +120,7 @@ public class CreateRegistryRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +211,8 @@ public class CreateRegistryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +221,10 @@ public class CreateRegistryRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

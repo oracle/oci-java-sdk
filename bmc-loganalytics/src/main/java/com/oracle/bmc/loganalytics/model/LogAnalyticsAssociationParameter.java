@@ -56,81 +56,145 @@ public final class LogAnalyticsAssociationParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The agent unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
+        /**
+         * The agent unique identifier.
+         * @param agentId the value to set
+         * @return this builder
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * The entity unique identifier.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
+        /**
+         * The source name.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The source display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
+        /**
+         * The source display name.
+         * @param sourceDisplayName the value to set
+         * @return this builder
+         **/
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-
+        /**
+         * The source type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private String sourceType;
 
+        /**
+         * The source type.
+         * @param sourceType the value to set
+         * @return this builder
+         **/
         public Builder sourceType(String sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-
+        /**
+         * The status.  Either FAILED or SUCCEEDED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status.  Either FAILED or SUCCEEDED.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * A list of missing properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
         private java.util.List<String> missingProperties;
 
+        /**
+         * A list of missing properties.
+         * @param missingProperties the value to set
+         * @return this builder
+         **/
         public Builder missingProperties(java.util.List<String> missingProperties) {
             this.missingProperties = missingProperties;
             this.__explicitlySet__.add("missingProperties");
             return this;
         }
-
+        /**
+         * A list of requried properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requiredProperties")
         private java.util.List<String> requiredProperties;
 
+        /**
+         * A list of requried properties.
+         * @param requiredProperties the value to set
+         * @return this builder
+         **/
         public Builder requiredProperties(java.util.List<String> requiredProperties) {
             this.requiredProperties = requiredProperties;
             this.__explicitlySet__.add("requiredProperties");
@@ -191,6 +255,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
+    /**
+     * The agent unique identifier.
+     * @return the value
+     **/
     public String getAgentId() {
         return agentId;
     }
@@ -201,6 +269,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -211,6 +283,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * The entity unique identifier.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -221,6 +297,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
+    /**
+     * The source name.
+     * @return the value
+     **/
     public String getSourceId() {
         return sourceId;
     }
@@ -231,6 +311,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
+    /**
+     * The source display name.
+     * @return the value
+     **/
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
@@ -241,6 +325,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final String sourceType;
 
+    /**
+     * The source type.
+     * @return the value
+     **/
     public String getSourceType() {
         return sourceType;
     }
@@ -298,6 +386,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status.  Either FAILED or SUCCEEDED.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -308,6 +400,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
     private final java.util.List<String> missingProperties;
 
+    /**
+     * A list of missing properties.
+     * @return the value
+     **/
     public java.util.List<String> getMissingProperties() {
         return missingProperties;
     }
@@ -318,6 +414,10 @@ public final class LogAnalyticsAssociationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("requiredProperties")
     private final java.util.List<String> requiredProperties;
 
+    /**
+     * A list of requried properties.
+     * @return the value
+     **/
     public java.util.List<String> getRequiredProperties() {
         return requiredProperties;
     }

@@ -30,27 +30,55 @@ public final class BucketRange {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lower")
         private java.math.BigDecimal lower;
 
+        /**
+         * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+         *
+         * @param lower the value to set
+         * @return this builder
+         **/
         public Builder lower(java.math.BigDecimal lower) {
             this.lower = lower;
             this.__explicitlySet__.add("lower");
             return this;
         }
-
+        /**
+         * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upper")
         private java.math.BigDecimal upper;
 
+        /**
+         * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+         *
+         * @param upper the value to set
+         * @return this builder
+         **/
         public Builder upper(java.math.BigDecimal upper) {
             this.upper = upper;
             this.__explicitlySet__.add("upper");
             return this;
         }
-
+        /**
+         * Optional alias of the bucket range if specified in the querystring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
+        /**
+         * Optional alias of the bucket range if specified in the querystring.
+         *
+         * @param alias the value to set
+         * @return this builder
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
@@ -93,6 +121,11 @@ public final class BucketRange {
     @com.fasterxml.jackson.annotation.JsonProperty("lower")
     private final java.math.BigDecimal lower;
 
+    /**
+     * Lower bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getLower() {
         return lower;
     }
@@ -104,6 +137,11 @@ public final class BucketRange {
     @com.fasterxml.jackson.annotation.JsonProperty("upper")
     private final java.math.BigDecimal upper;
 
+    /**
+     * Upper bound of the bucket range specified in the querystring for the numeric field referenced in tbe bucket command.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getUpper() {
         return upper;
     }
@@ -115,6 +153,11 @@ public final class BucketRange {
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
+    /**
+     * Optional alias of the bucket range if specified in the querystring.
+     *
+     * @return the value
+     **/
     public String getAlias() {
         return alias;
     }

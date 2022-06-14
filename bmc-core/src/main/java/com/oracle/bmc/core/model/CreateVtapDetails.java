@@ -83,163 +83,338 @@ public final class CreateVtapDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code Vtap} resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code Vtap} resource.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the {@code Vtap} resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the {@code Vtap} resource.
+         * @param vcnId the value to set
+         * @return this builder
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+         *
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
+         *
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The IP address of the destination resource where mirrored packets are sent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetIp")
         private String targetIp;
 
+        /**
+         * The IP address of the destination resource where mirrored packets are sent.
+         *
+         * @param targetIp the value to set
+         * @return this builder
+         **/
         public Builder targetIp(String targetIp) {
             this.targetIp = targetIp;
             this.__explicitlySet__.add("targetIp");
             return this;
         }
-
+        /**
+         * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("captureFilterId")
         private String captureFilterId;
 
+        /**
+         * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
+         * @param captureFilterId the value to set
+         * @return this builder
+         **/
         public Builder captureFilterId(String captureFilterId) {
             this.captureFilterId = captureFilterId;
             this.__explicitlySet__.add("captureFilterId");
             return this;
         }
-
+        /**
+         * Defines an encapsulation header type for the VTAP's mirrored traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encapsulationProtocol")
         private EncapsulationProtocol encapsulationProtocol;
 
+        /**
+         * Defines an encapsulation header type for the VTAP's mirrored traffic.
+         *
+         * @param encapsulationProtocol the value to set
+         * @return this builder
+         **/
         public Builder encapsulationProtocol(EncapsulationProtocol encapsulationProtocol) {
             this.encapsulationProtocol = encapsulationProtocol;
             this.__explicitlySet__.add("encapsulationProtocol");
             return this;
         }
-
+        /**
+         * The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vxlanNetworkIdentifier")
         private Long vxlanNetworkIdentifier;
 
+        /**
+         * The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+         *
+         * @param vxlanNetworkIdentifier the value to set
+         * @return this builder
+         **/
         public Builder vxlanNetworkIdentifier(Long vxlanNetworkIdentifier) {
             this.vxlanNetworkIdentifier = vxlanNetworkIdentifier;
             this.__explicitlySet__.add("vxlanNetworkIdentifier");
             return this;
         }
-
+        /**
+         * Used to start or stop a {@code Vtap} resource.
+         * <p>
+         * {@code TRUE} directs the VTAP to start mirroring traffic.
+         * * {@code FALSE} (Default) directs the VTAP to stop mirroring traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVtapEnabled")
         private Boolean isVtapEnabled;
 
+        /**
+         * Used to start or stop a {@code Vtap} resource.
+         * <p>
+         * {@code TRUE} directs the VTAP to start mirroring traffic.
+         * * {@code FALSE} (Default) directs the VTAP to stop mirroring traffic.
+         *
+         * @param isVtapEnabled the value to set
+         * @return this builder
+         **/
         public Builder isVtapEnabled(Boolean isVtapEnabled) {
             this.isVtapEnabled = isVtapEnabled;
             this.__explicitlySet__.add("isVtapEnabled");
             return this;
         }
-
+        /**
+         * The source type for the VTAP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
+        /**
+         * The source type for the VTAP.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         **/
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-
+        /**
+         * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
         private TrafficMode trafficMode;
 
+        /**
+         * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
+         * @param trafficMode the value to set
+         * @return this builder
+         **/
         public Builder trafficMode(TrafficMode trafficMode) {
             this.trafficMode = trafficMode;
             this.__explicitlySet__.add("trafficMode");
             return this;
         }
-
+        /**
+         * The maximum size of the packets to be included in the filter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPacketSize")
         private Integer maxPacketSize;
 
+        /**
+         * The maximum size of the packets to be included in the filter.
+         * @param maxPacketSize the value to set
+         * @return this builder
+         **/
         public Builder maxPacketSize(Integer maxPacketSize) {
             this.maxPacketSize = maxPacketSize;
             this.__explicitlySet__.add("maxPacketSize");
             return this;
         }
-
+        /**
+         * The target type for the VTAP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetType")
         private TargetType targetType;
 
+        /**
+         * The target type for the VTAP.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         **/
         public Builder targetType(TargetType targetType) {
             this.targetType = targetType;
             this.__explicitlySet__.add("targetType");
             return this;
         }
-
+        /**
+         * The IP Address of the source private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointIp")
         private String sourcePrivateEndpointIp;
 
+        /**
+         * The IP Address of the source private endpoint.
+         *
+         * @param sourcePrivateEndpointIp the value to set
+         * @return this builder
+         **/
         public Builder sourcePrivateEndpointIp(String sourcePrivateEndpointIp) {
             this.sourcePrivateEndpointIp = sourcePrivateEndpointIp;
             this.__explicitlySet__.add("sourcePrivateEndpointIp");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointSubnetId")
         private String sourcePrivateEndpointSubnetId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+         *
+         * @param sourcePrivateEndpointSubnetId the value to set
+         * @return this builder
+         **/
         public Builder sourcePrivateEndpointSubnetId(String sourcePrivateEndpointSubnetId) {
             this.sourcePrivateEndpointSubnetId = sourcePrivateEndpointSubnetId;
             this.__explicitlySet__.add("sourcePrivateEndpointSubnetId");
@@ -318,6 +493,10 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the {@code Vtap} resource.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -328,6 +507,10 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the {@code Vtap} resource.
+     * @return the value
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -342,6 +525,14 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -354,6 +545,12 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -368,6 +565,14 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -379,6 +584,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+     *
+     * @return the value
+     **/
     public String getSourceId() {
         return sourceId;
     }
@@ -390,6 +600,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
+     *
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -401,6 +616,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetIp")
     private final String targetIp;
 
+    /**
+     * The IP address of the destination resource where mirrored packets are sent.
+     *
+     * @return the value
+     **/
     public String getTargetIp() {
         return targetIp;
     }
@@ -412,6 +632,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("captureFilterId")
     private final String captureFilterId;
 
+    /**
+     * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     *
+     * @return the value
+     **/
     public String getCaptureFilterId() {
         return captureFilterId;
     }
@@ -458,6 +683,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encapsulationProtocol")
     private final EncapsulationProtocol encapsulationProtocol;
 
+    /**
+     * Defines an encapsulation header type for the VTAP's mirrored traffic.
+     *
+     * @return the value
+     **/
     public EncapsulationProtocol getEncapsulationProtocol() {
         return encapsulationProtocol;
     }
@@ -469,6 +699,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vxlanNetworkIdentifier")
     private final Long vxlanNetworkIdentifier;
 
+    /**
+     * The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+     *
+     * @return the value
+     **/
     public Long getVxlanNetworkIdentifier() {
         return vxlanNetworkIdentifier;
     }
@@ -483,6 +718,14 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isVtapEnabled")
     private final Boolean isVtapEnabled;
 
+    /**
+     * Used to start or stop a {@code Vtap} resource.
+     * <p>
+     * {@code TRUE} directs the VTAP to start mirroring traffic.
+     * * {@code FALSE} (Default) directs the VTAP to stop mirroring traffic.
+     *
+     * @return the value
+     **/
     public Boolean getIsVtapEnabled() {
         return isVtapEnabled;
     }
@@ -534,6 +777,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
+    /**
+     * The source type for the VTAP.
+     *
+     * @return the value
+     **/
     public SourceType getSourceType() {
         return sourceType;
     }
@@ -579,6 +827,10 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
     private final TrafficMode trafficMode;
 
+    /**
+     * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
+     * @return the value
+     **/
     public TrafficMode getTrafficMode() {
         return trafficMode;
     }
@@ -589,6 +841,10 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxPacketSize")
     private final Integer maxPacketSize;
 
+    /**
+     * The maximum size of the packets to be included in the filter.
+     * @return the value
+     **/
     public Integer getMaxPacketSize() {
         return maxPacketSize;
     }
@@ -637,6 +893,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetType")
     private final TargetType targetType;
 
+    /**
+     * The target type for the VTAP.
+     *
+     * @return the value
+     **/
     public TargetType getTargetType() {
         return targetType;
     }
@@ -648,6 +909,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointIp")
     private final String sourcePrivateEndpointIp;
 
+    /**
+     * The IP Address of the source private endpoint.
+     *
+     * @return the value
+     **/
     public String getSourcePrivateEndpointIp() {
         return sourcePrivateEndpointIp;
     }
@@ -659,6 +925,11 @@ public final class CreateVtapDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePrivateEndpointSubnetId")
     private final String sourcePrivateEndpointSubnetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+     *
+     * @return the value
+     **/
     public String getSourcePrivateEndpointSubnetId() {
         return sourcePrivateEndpointSubnetId;
     }

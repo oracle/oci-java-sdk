@@ -30,9 +30,19 @@ public final class SetQueryParameterPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of query parameters.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SetQueryParameterPolicyItem> items;
 
+        /**
+         * The list of query parameters.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<SetQueryParameterPolicyItem> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +85,11 @@ public final class SetQueryParameterPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SetQueryParameterPolicyItem> items;
 
+    /**
+     * The list of query parameters.
+     *
+     * @return the value
+     **/
     public java.util.List<SetQueryParameterPolicyItem> getItems() {
         return items;
     }

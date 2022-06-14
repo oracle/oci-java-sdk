@@ -16,6 +16,9 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String compartmentId;
 
+    /**
+     * The ocid of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -37,6 +46,11 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.apigateway.model.Subscriber.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state.
+     * Example: {@code ACTIVE}
+     *
+     */
     public com.oracle.bmc.apigateway.model.Subscriber.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -45,6 +59,9 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -53,6 +70,9 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -97,6 +117,9 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -149,6 +172,13 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
+     * sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -157,6 +187,9 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -168,10 +201,14 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ocid of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ocid of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -179,6 +216,12 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -186,6 +229,7 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -193,12 +237,18 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state.
+         * Example: {@code ACTIVE}
+         *
+         */
         private com.oracle.bmc.apigateway.model.Subscriber.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state.
          * Example: {@code ACTIVE}
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -207,10 +257,14 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -218,10 +272,14 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -229,10 +287,14 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -240,6 +302,13 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         * Default order for {@code timeCreated} is descending. Default order for
+         * {@code displayName} is ascending. The {@code displayName} sort order is case
+         * sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -248,6 +317,7 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
          * {@code displayName} is ascending. The {@code displayName} sort order is case
          * sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -255,10 +325,14 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -348,7 +422,8 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -362,6 +437,10 @@ public class ListSubscribersRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String repositoryId;
 
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -26,6 +29,11 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ref;
 
+    /**
+     * The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag.
+     * You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
+     *
+     */
     public String getRef() {
         return ref;
     }
@@ -34,6 +42,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Boolean pathsInSubtree;
 
+    /**
+     * Flag to determine if files must be retrived recursively. Flag is False by default.
+     */
     public Boolean getPathsInSubtree() {
         return pathsInSubtree;
     }
@@ -42,6 +53,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String folderPath;
 
+    /**
+     * The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
+     */
     public String getFolderPath() {
         return folderPath;
     }
@@ -50,6 +64,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -58,6 +75,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -66,6 +86,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -74,6 +97,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -121,6 +147,10 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order is ascending. If no value is specified name is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -129,6 +159,9 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -140,10 +173,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -151,12 +188,18 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag.
+         * You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
+         *
+         */
         private String ref = null;
 
         /**
          * The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag.
          * You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
          *
+         * @param ref the value to set
          * @return this builder instance
          */
         public Builder ref(String ref) {
@@ -164,10 +207,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Flag to determine if files must be retrived recursively. Flag is False by default.
+         */
         private Boolean pathsInSubtree = null;
 
         /**
          * Flag to determine if files must be retrived recursively. Flag is False by default.
+         * @param pathsInSubtree the value to set
          * @return this builder instance
          */
         public Builder pathsInSubtree(Boolean pathsInSubtree) {
@@ -175,10 +222,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
+         */
         private String folderPath = null;
 
         /**
          * The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
+         * @param folderPath the value to set
          * @return this builder instance
          */
         public Builder folderPath(String folderPath) {
@@ -186,10 +237,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -197,10 +252,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -208,10 +267,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -219,10 +282,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.devops.model.SortOrder sortOrder) {
@@ -230,11 +297,16 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order is ascending. If no value is specified name is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order is ascending. If no value is specified name is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -242,10 +314,14 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -339,7 +415,8 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -355,6 +432,10 @@ public class ListPathsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

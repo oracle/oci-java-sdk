@@ -18,6 +18,9 @@ public class UpdateExportRequest
      */
     private String exportId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export.
+     */
     public String getExportId() {
         return exportId;
     }
@@ -26,6 +29,9 @@ public class UpdateExportRequest
      */
     private com.oracle.bmc.filestorage.model.UpdateExportDetails updateExportDetails;
 
+    /**
+     * Details object for updating an export.
+     */
     public com.oracle.bmc.filestorage.model.UpdateExportDetails getUpdateExportDetails() {
         return updateExportDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateExportRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,11 @@ public class UpdateExportRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,10 +89,14 @@ public class UpdateExportRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export.
+         */
         private String exportId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export.
+         * @param exportId the value to set
          * @return this builder instance
          */
         public Builder exportId(String exportId) {
@@ -81,10 +104,14 @@ public class UpdateExportRequest
             return this;
         }
 
+        /**
+         * Details object for updating an export.
+         */
         private com.oracle.bmc.filestorage.model.UpdateExportDetails updateExportDetails = null;
 
         /**
          * Details object for updating an export.
+         * @param updateExportDetails the value to set
          * @return this builder instance
          */
         public Builder updateExportDetails(
@@ -93,6 +120,14 @@ public class UpdateExportRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +137,7 @@ public class UpdateExportRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,12 +145,18 @@ public class UpdateExportRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -207,7 +249,8 @@ public class UpdateExportRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -217,6 +260,10 @@ public class UpdateExportRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

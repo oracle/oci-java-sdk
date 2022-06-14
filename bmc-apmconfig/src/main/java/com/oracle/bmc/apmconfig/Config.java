@@ -97,6 +97,31 @@ public interface Config extends AutoCloseable {
     ListConfigsResponse listConfigs(ListConfigsRequest request);
 
     /**
+     * Returns all metrics associated with the specified namespace.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespaceMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaceMetrics API.
+     */
+    RetrieveNamespaceMetricsResponse retrieveNamespaceMetrics(
+            RetrieveNamespaceMetricsRequest request);
+
+    /**
+     * Returns all namespaces available in APM.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaces API.
+     */
+    RetrieveNamespacesResponse retrieveNamespaces(RetrieveNamespacesRequest request);
+
+    /**
      * Updates the details of the configuration item identified by the OCID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -107,6 +132,21 @@ public interface Config extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
      */
     UpdateConfigResponse updateConfig(UpdateConfigRequest request);
+
+    /**
+     * Validates the Span Filter pattern (filterText) for syntactic correctness.
+     * Returns 204 on success, 422 when validation fails.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ValidateSpanFilterPatternExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSpanFilterPattern API.
+     */
+    ValidateSpanFilterPatternResponse validateSpanFilterPattern(
+            ValidateSpanFilterPatternRequest request);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

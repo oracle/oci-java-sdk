@@ -13,6 +13,10 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.resourcemanager.model.PrivateEndpoint privateEndpoint;
 
+    /**
+     * The returned PrivateEndpoint instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.PrivateEndpoint getPrivateEndpoint() {
         return privateEndpoint;
     }
@@ -60,22 +72,46 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned PrivateEndpoint instance.
+         */
         private com.oracle.bmc.resourcemanager.model.PrivateEndpoint privateEndpoint;
 
+        /**
+         * The returned PrivateEndpoint instance.
+         * @param privateEndpoint the value to set
+         * @return this builder
+         */
         public Builder privateEndpoint(
                 com.oracle.bmc.resourcemanager.model.PrivateEndpoint privateEndpoint) {
             this.privateEndpoint = privateEndpoint;
@@ -95,12 +131,20 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetPrivateEndpointResponse build() {
             return new GetPrivateEndpointResponse(
                     __httpStatusCode__, opcRequestId, etag, privateEndpoint);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

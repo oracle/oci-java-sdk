@@ -18,6 +18,9 @@ public class UpdatePublicIpPoolRequest
      */
     private String publicIpPoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+     */
     public String getPublicIpPoolId() {
         return publicIpPoolId;
     }
@@ -26,6 +29,9 @@ public class UpdatePublicIpPoolRequest
      */
     private com.oracle.bmc.core.model.UpdatePublicIpPoolDetails updatePublicIpPoolDetails;
 
+    /**
+     * Public IP pool details.
+     */
     public com.oracle.bmc.core.model.UpdatePublicIpPoolDetails getUpdatePublicIpPoolDetails() {
         return updatePublicIpPoolDetails;
     }
@@ -36,6 +42,11 @@ public class UpdatePublicIpPoolRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,6 +58,12 @@ public class UpdatePublicIpPoolRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -69,10 +86,14 @@ public class UpdatePublicIpPoolRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         */
         private String publicIpPoolId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * @param publicIpPoolId the value to set
          * @return this builder instance
          */
         public Builder publicIpPoolId(String publicIpPoolId) {
@@ -80,11 +101,15 @@ public class UpdatePublicIpPoolRequest
             return this;
         }
 
+        /**
+         * Public IP pool details.
+         */
         private com.oracle.bmc.core.model.UpdatePublicIpPoolDetails updatePublicIpPoolDetails =
                 null;
 
         /**
          * Public IP pool details.
+         * @param updatePublicIpPoolDetails the value to set
          * @return this builder instance
          */
         public Builder updatePublicIpPoolDetails(
@@ -93,12 +118,18 @@ public class UpdatePublicIpPoolRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -106,6 +137,12 @@ public class UpdatePublicIpPoolRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -113,6 +150,7 @@ public class UpdatePublicIpPoolRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -205,7 +243,8 @@ public class UpdatePublicIpPoolRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +254,10 @@ public class UpdatePublicIpPoolRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

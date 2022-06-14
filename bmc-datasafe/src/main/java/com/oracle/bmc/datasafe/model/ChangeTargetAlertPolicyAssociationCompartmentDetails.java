@@ -29,9 +29,17 @@ public final class ChangeTargetAlertPolicyAssociationCompartmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the new compartment to move the target-alert policy association to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the new compartment to move the target-alert policy association to.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -74,6 +82,10 @@ public final class ChangeTargetAlertPolicyAssociationCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the new compartment to move the target-alert policy association to.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

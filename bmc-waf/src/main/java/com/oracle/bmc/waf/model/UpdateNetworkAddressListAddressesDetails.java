@@ -64,10 +64,21 @@ public final class UpdateNetworkAddressListAddressesDetails
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * A list of IP address prefixes in CIDR notation.
+         * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<String> addresses;
 
+        /**
+         * A list of IP address prefixes in CIDR notation.
+         * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+         *
+         * @param addresses the value to set
+         * @return this builder
+         **/
         public Builder addresses(java.util.List<String> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
@@ -129,6 +140,12 @@ public final class UpdateNetworkAddressListAddressesDetails
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<String> addresses;
 
+    /**
+     * A list of IP address prefixes in CIDR notation.
+     * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAddresses() {
         return addresses;
     }

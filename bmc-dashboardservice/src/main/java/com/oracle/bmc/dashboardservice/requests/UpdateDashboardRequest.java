@@ -18,6 +18,9 @@ public class UpdateDashboardRequest
      */
     private String dashboardId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+     */
     public String getDashboardId() {
         return dashboardId;
     }
@@ -26,6 +29,9 @@ public class UpdateDashboardRequest
      */
     private com.oracle.bmc.dashboardservice.model.UpdateDashboardDetails updateDashboardDetails;
 
+    /**
+     * The dashboard details to be updated.
+     */
     public com.oracle.bmc.dashboardservice.model.UpdateDashboardDetails
             getUpdateDashboardDetails() {
         return updateDashboardDetails;
@@ -40,6 +46,14 @@ public class UpdateDashboardRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +62,9 @@ public class UpdateDashboardRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +78,14 @@ public class UpdateDashboardRequest
      */
     private String opcCrossRegion;
 
+    /**
+     * To identify if the call is cross-regional. In CRUD calls for a resource, to
+     * identify that the call originates from different region, set the
+     * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+     * The call will be served from a Replicated bucket.
+     * For same-region calls, the value is unassigned.
+     *
+     */
     public String getOpcCrossRegion() {
         return opcCrossRegion;
     }
@@ -83,10 +108,14 @@ public class UpdateDashboardRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         */
         private String dashboardId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         * @param dashboardId the value to set
          * @return this builder instance
          */
         public Builder dashboardId(String dashboardId) {
@@ -94,11 +123,15 @@ public class UpdateDashboardRequest
             return this;
         }
 
+        /**
+         * The dashboard details to be updated.
+         */
         private com.oracle.bmc.dashboardservice.model.UpdateDashboardDetails
                 updateDashboardDetails = null;
 
         /**
          * The dashboard details to be updated.
+         * @param updateDashboardDetails the value to set
          * @return this builder instance
          */
         public Builder updateDashboardDetails(
@@ -108,6 +141,14 @@ public class UpdateDashboardRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -117,6 +158,7 @@ public class UpdateDashboardRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -124,10 +166,14 @@ public class UpdateDashboardRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -135,6 +181,14 @@ public class UpdateDashboardRequest
             return this;
         }
 
+        /**
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to
+         * identify that the call originates from different region, set the
+         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+         * The call will be served from a Replicated bucket.
+         * For same-region calls, the value is unassigned.
+         *
+         */
         private String opcCrossRegion = null;
 
         /**
@@ -144,6 +198,7 @@ public class UpdateDashboardRequest
          * The call will be served from a Replicated bucket.
          * For same-region calls, the value is unassigned.
          *
+         * @param opcCrossRegion the value to set
          * @return this builder instance
          */
         public Builder opcCrossRegion(String opcCrossRegion) {
@@ -238,7 +293,8 @@ public class UpdateDashboardRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +305,10 @@ public class UpdateDashboardRequest
                 .opcCrossRegion(opcCrossRegion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

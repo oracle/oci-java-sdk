@@ -72,6 +72,19 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * Whether the public IP is regional or specific to a particular availability domain.
+     * <p>
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private IP
+     * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}, as do
+     * ephemeral public IPs assigned to a regional entity.
+     * <p>
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+     * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+     *
+     */
     public Scope getScope() {
         return scope;
     }
@@ -80,6 +93,9 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -93,6 +109,14 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -104,6 +128,12 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -115,6 +145,12 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String availabilityDomain;
 
+    /**
+     * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -161,6 +197,10 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
+    /**
+     * A filter to return only public IPs that match given lifetime.
+     *
+     */
     public Lifetime getLifetime() {
         return lifetime;
     }
@@ -170,6 +210,10 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String publicIpPoolId;
 
+    /**
+     * A filter to return only resources that belong to the given public IP pool.
+     *
+     */
     public String getPublicIpPoolId() {
         return publicIpPoolId;
     }
@@ -181,6 +225,19 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Whether the public IP is regional or specific to a particular availability domain.
+         * <p>
+         * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+         * (such as a {@link NatGateway}), or can be assigned to a private IP
+         * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}, as do
+         * ephemeral public IPs assigned to a regional entity.
+         * <p>
+         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+         * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+         * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+         *
+         */
         private Scope scope = null;
 
         /**
@@ -195,6 +252,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
          * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(Scope scope) {
@@ -202,10 +260,14 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -213,6 +275,14 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -222,6 +292,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -229,6 +300,12 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -236,6 +313,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -243,6 +321,12 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         */
         private String availabilityDomain = null;
 
         /**
@@ -250,6 +334,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -257,11 +342,16 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only public IPs that match given lifetime.
+         *
+         */
         private Lifetime lifetime = null;
 
         /**
          * A filter to return only public IPs that match given lifetime.
          *
+         * @param lifetime the value to set
          * @return this builder instance
          */
         public Builder lifetime(Lifetime lifetime) {
@@ -269,11 +359,16 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only resources that belong to the given public IP pool.
+         *
+         */
         private String publicIpPoolId = null;
 
         /**
          * A filter to return only resources that belong to the given public IP pool.
          *
+         * @param publicIpPoolId the value to set
          * @return this builder instance
          */
         public Builder publicIpPoolId(String publicIpPoolId) {
@@ -361,7 +456,8 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -374,6 +470,10 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .publicIpPoolId(publicIpPoolId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

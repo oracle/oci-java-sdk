@@ -16,6 +16,9 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String userId;
 
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -26,10 +29,14 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -105,12 +112,17 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().userId(userId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

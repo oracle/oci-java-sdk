@@ -18,6 +18,10 @@ public class ImportCustomContentRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class ImportCustomContentRequest
      */
     private java.io.InputStream importCustomContentFileBody;
 
+    /**
+     * The file to upload which contains the custom content.
+     */
     public java.io.InputStream getImportCustomContentFileBody() {
         return importCustomContentFileBody;
     }
@@ -36,6 +43,11 @@ public class ImportCustomContentRequest
      */
     private Boolean isOverwrite;
 
+    /**
+     * A flag indicating whether or not to overwrite existing content if a conflict is
+     * found during import content operation.
+     *
+     */
     public Boolean getIsOverwrite() {
         return isOverwrite;
     }
@@ -49,6 +61,14 @@ public class ImportCustomContentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -57,6 +77,9 @@ public class ImportCustomContentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,6 +91,12 @@ public class ImportCustomContentRequest
      */
     private String expect;
 
+    /**
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
+     */
     public String getExpect() {
         return expect;
     }
@@ -94,11 +123,16 @@ public class ImportCustomContentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -106,10 +140,14 @@ public class ImportCustomContentRequest
             return this;
         }
 
+        /**
+         * The file to upload which contains the custom content.
+         */
         private java.io.InputStream importCustomContentFileBody = null;
 
         /**
          * The file to upload which contains the custom content.
+         * @param importCustomContentFileBody the value to set
          * @return this builder instance
          */
         public Builder importCustomContentFileBody(
@@ -118,12 +156,18 @@ public class ImportCustomContentRequest
             return this;
         }
 
+        /**
+         * A flag indicating whether or not to overwrite existing content if a conflict is
+         * found during import content operation.
+         *
+         */
         private Boolean isOverwrite = null;
 
         /**
          * A flag indicating whether or not to overwrite existing content if a conflict is
          * found during import content operation.
          *
+         * @param isOverwrite the value to set
          * @return this builder instance
          */
         public Builder isOverwrite(Boolean isOverwrite) {
@@ -131,6 +175,14 @@ public class ImportCustomContentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -140,6 +192,7 @@ public class ImportCustomContentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -147,10 +200,14 @@ public class ImportCustomContentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,6 +215,12 @@ public class ImportCustomContentRequest
             return this;
         }
 
+        /**
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
+         */
         private String expect = null;
 
         /**
@@ -165,6 +228,7 @@ public class ImportCustomContentRequest
          * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
          * The only allowed value for this parameter is "100-Continue" (case-insensitive).
          *
+         * @param expect the value to set
          * @return this builder instance
          */
         public Builder expect(String expect) {
@@ -261,7 +325,8 @@ public class ImportCustomContentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -273,6 +338,10 @@ public class ImportCustomContentRequest
                 .expect(expect);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

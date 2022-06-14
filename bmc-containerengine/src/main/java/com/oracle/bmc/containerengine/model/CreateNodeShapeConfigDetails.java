@@ -30,18 +30,39 @@ public final class CreateNodeShapeConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs available to each node in the node pool.
+         * See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
+        /**
+         * The total number of OCPUs available to each node in the node pool.
+         * See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         *
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The total amount of memory available to each node, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
+        /**
+         * The total amount of memory available to each node, in gigabytes.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -86,6 +107,12 @@ public final class CreateNodeShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
+    /**
+     * The total number of OCPUs available to each node in the node pool.
+     * See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+     *
+     * @return the value
+     **/
     public Float getOcpus() {
         return ocpus;
     }
@@ -97,6 +124,11 @@ public final class CreateNodeShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
+    /**
+     * The total amount of memory available to each node, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }

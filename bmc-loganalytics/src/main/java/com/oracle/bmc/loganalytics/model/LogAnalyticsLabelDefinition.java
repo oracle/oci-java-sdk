@@ -33,36 +33,69 @@ public final class LogAnalyticsLabelDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
+        /**
+         * The edit version.
+         * @param editVersion the value to set
+         * @return this builder
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The label name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelName")
         private String labelName;
 
+        /**
+         * The label name.
+         * @param labelName the value to set
+         * @return this builder
+         **/
         public Builder labelName(String labelName) {
             this.labelName = labelName;
             this.__explicitlySet__.add("labelName");
@@ -109,6 +142,10 @@ public final class LogAnalyticsLabelDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
+    /**
+     * The edit version.
+     * @return the value
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
@@ -121,6 +158,12 @@ public final class LogAnalyticsLabelDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -131,6 +174,10 @@ public final class LogAnalyticsLabelDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -141,6 +188,10 @@ public final class LogAnalyticsLabelDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("labelName")
     private final String labelName;
 
+    /**
+     * The label name.
+     * @return the value
+     **/
     public String getLabelName() {
         return labelName;
     }

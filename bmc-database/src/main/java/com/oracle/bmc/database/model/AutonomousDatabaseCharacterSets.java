@@ -32,9 +32,17 @@ public final class AutonomousDatabaseCharacterSets {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A valid Oracle character set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A valid Oracle character set.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -77,6 +85,10 @@ public final class AutonomousDatabaseCharacterSets {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A valid Oracle character set.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

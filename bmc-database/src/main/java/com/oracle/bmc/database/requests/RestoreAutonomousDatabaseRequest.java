@@ -18,6 +18,9 @@ public class RestoreAutonomousDatabaseRequest
      */
     private String autonomousDatabaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
@@ -27,6 +30,9 @@ public class RestoreAutonomousDatabaseRequest
     private com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
             restoreAutonomousDatabaseDetails;
 
+    /**
+     * Request to perform an Autonomous Database restore.
+     */
     public com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
             getRestoreAutonomousDatabaseDetails() {
         return restoreAutonomousDatabaseDetails;
@@ -39,6 +45,12 @@ public class RestoreAutonomousDatabaseRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -61,10 +73,14 @@ public class RestoreAutonomousDatabaseRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousDatabaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
@@ -72,11 +88,15 @@ public class RestoreAutonomousDatabaseRequest
             return this;
         }
 
+        /**
+         * Request to perform an Autonomous Database restore.
+         */
         private com.oracle.bmc.database.model.RestoreAutonomousDatabaseDetails
                 restoreAutonomousDatabaseDetails = null;
 
         /**
          * Request to perform an Autonomous Database restore.
+         * @param restoreAutonomousDatabaseDetails the value to set
          * @return this builder instance
          */
         public Builder restoreAutonomousDatabaseDetails(
@@ -86,6 +106,12 @@ public class RestoreAutonomousDatabaseRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -93,6 +119,7 @@ public class RestoreAutonomousDatabaseRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -183,7 +210,8 @@ public class RestoreAutonomousDatabaseRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -192,6 +220,10 @@ public class RestoreAutonomousDatabaseRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

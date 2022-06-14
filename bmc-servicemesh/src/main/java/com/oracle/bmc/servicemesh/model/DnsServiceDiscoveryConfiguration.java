@@ -27,9 +27,17 @@ package com.oracle.bmc.servicemesh.model;
 public final class DnsServiceDiscoveryConfiguration extends ServiceDiscoveryConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The hostname of the virtual deployments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The hostname of the virtual deployments.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -78,6 +86,10 @@ public final class DnsServiceDiscoveryConfiguration extends ServiceDiscoveryConf
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The hostname of the virtual deployments.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }

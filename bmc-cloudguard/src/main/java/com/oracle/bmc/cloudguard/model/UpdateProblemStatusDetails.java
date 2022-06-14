@@ -30,18 +30,33 @@ public final class UpdateProblemStatusDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Action taken by user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ProblemLifecycleDetail status;
 
+        /**
+         * Action taken by user
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(ProblemLifecycleDetail status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * User Comments
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
+        /**
+         * User Comments
+         * @param comment the value to set
+         * @return this builder
+         **/
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
@@ -84,6 +99,10 @@ public final class UpdateProblemStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ProblemLifecycleDetail status;
 
+    /**
+     * Action taken by user
+     * @return the value
+     **/
     public ProblemLifecycleDetail getStatus() {
         return status;
     }
@@ -94,6 +113,10 @@ public final class UpdateProblemStatusDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
+    /**
+     * User Comments
+     * @return the value
+     **/
     public String getComment() {
         return comment;
     }

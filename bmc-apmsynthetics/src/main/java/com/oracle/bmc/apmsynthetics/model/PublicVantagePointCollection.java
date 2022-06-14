@@ -29,9 +29,17 @@ public final class PublicVantagePointCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of PublicVantagePointSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PublicVantagePointSummary> items;
 
+        /**
+         * List of PublicVantagePointSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<PublicVantagePointSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class PublicVantagePointCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PublicVantagePointSummary> items;
 
+    /**
+     * List of PublicVantagePointSummary items.
+     * @return the value
+     **/
     public java.util.List<PublicVantagePointSummary> getItems() {
         return items;
     }

@@ -64,10 +64,25 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
             this.__explicitlySet__.add("actionName");
             return this;
         }
-
+        /**
+         * An ordered list that references OCI-managed protection capabilities.
+         * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+         * is decided at runtime for improved performance.
+         * The array cannot contain entries with the same pair of capability key and version more than once.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionCapabilities")
         private java.util.List<ProtectionCapability> protectionCapabilities;
 
+        /**
+         * An ordered list that references OCI-managed protection capabilities.
+         * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+         * is decided at runtime for improved performance.
+         * The array cannot contain entries with the same pair of capability key and version more than once.
+         *
+         * @param protectionCapabilities the value to set
+         * @return this builder
+         **/
         public Builder protectionCapabilities(
                 java.util.List<ProtectionCapability> protectionCapabilities) {
             this.protectionCapabilities = protectionCapabilities;
@@ -84,10 +99,23 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
             this.__explicitlySet__.add("protectionCapabilitySettings");
             return this;
         }
-
+        /**
+         * Enables/disables body inspection for this protection rule.
+         * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+         * be available at a later date.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBodyInspectionEnabled")
         private Boolean isBodyInspectionEnabled;
 
+        /**
+         * Enables/disables body inspection for this protection rule.
+         * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+         * be available at a later date.
+         *
+         * @param isBodyInspectionEnabled the value to set
+         * @return this builder
+         **/
         public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
             this.isBodyInspectionEnabled = isBodyInspectionEnabled;
             this.__explicitlySet__.add("isBodyInspectionEnabled");
@@ -163,6 +191,14 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionCapabilities")
     private final java.util.List<ProtectionCapability> protectionCapabilities;
 
+    /**
+     * An ordered list that references OCI-managed protection capabilities.
+     * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+     * is decided at runtime for improved performance.
+     * The array cannot contain entries with the same pair of capability key and version more than once.
+     *
+     * @return the value
+     **/
     public java.util.List<ProtectionCapability> getProtectionCapabilities() {
         return protectionCapabilities;
     }
@@ -183,6 +219,13 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isBodyInspectionEnabled")
     private final Boolean isBodyInspectionEnabled;
 
+    /**
+     * Enables/disables body inspection for this protection rule.
+     * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+     * be available at a later date.
+     *
+     * @return the value
+     **/
     public Boolean getIsBodyInspectionEnabled() {
         return isBodyInspectionEnabled;
     }

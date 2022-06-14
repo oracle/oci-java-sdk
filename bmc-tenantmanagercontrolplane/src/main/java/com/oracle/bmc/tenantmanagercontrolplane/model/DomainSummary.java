@@ -60,100 +60,190 @@ public final class DomainSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the domain.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The domain name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
+        /**
+         * The domain name.
+         * @param domainName the value to set
+         * @return this builder
+         **/
         public Builder domainName(String domainName) {
             this.domainName = domainName;
             this.__explicitlySet__.add("domainName");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy that has started the registration process for this domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
         private String ownerId;
 
+        /**
+         * The OCID of the tenancy that has started the registration process for this domain.
+         * @param ownerId the value to set
+         * @return this builder
+         **/
         public Builder ownerId(String ownerId) {
             this.ownerId = ownerId;
             this.__explicitlySet__.add("ownerId");
             return this;
         }
-
+        /**
+         * The lifecycle state of the domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Domain.LifecycleState lifecycleState;
 
+        /**
+         * The lifecycle state of the domain.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Domain.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Status of the domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Domain.Status status;
 
+        /**
+         * Status of the domain.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Domain.Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The code that the owner of the domain will need to add as a TXT record to their domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("txtRecord")
         private String txtRecord;
 
+        /**
+         * The code that the owner of the domain will need to add as a TXT record to their domain.
+         * @param txtRecord the value to set
+         * @return this builder
+         **/
         public Builder txtRecord(String txtRecord) {
             this.txtRecord = txtRecord;
             this.__explicitlySet__.add("txtRecord");
             return this;
         }
-
+        /**
+         * Date-time when this domain was created. An RFC 3339-formatted date and time string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date-time when this domain was created. An RFC 3339-formatted date and time string.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -218,6 +308,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the domain.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -228,6 +322,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
+    /**
+     * The domain name.
+     * @return the value
+     **/
     public String getDomainName() {
         return domainName;
     }
@@ -238,6 +336,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
     private final String ownerId;
 
+    /**
+     * The OCID of the tenancy that has started the registration process for this domain.
+     * @return the value
+     **/
     public String getOwnerId() {
         return ownerId;
     }
@@ -248,6 +350,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Domain.LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the domain.
+     * @return the value
+     **/
     public Domain.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -258,6 +364,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Domain.Status status;
 
+    /**
+     * Status of the domain.
+     * @return the value
+     **/
     public Domain.Status getStatus() {
         return status;
     }
@@ -268,6 +378,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("txtRecord")
     private final String txtRecord;
 
+    /**
+     * The code that the owner of the domain will need to add as a TXT record to their domain.
+     * @return the value
+     **/
     public String getTxtRecord() {
         return txtRecord;
     }
@@ -278,6 +392,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date-time when this domain was created. An RFC 3339-formatted date and time string.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -288,6 +406,10 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -300,6 +422,12 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -312,6 +440,12 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -324,6 +458,12 @@ public final class DomainSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

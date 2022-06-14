@@ -37,45 +37,91 @@ public final class VanityUrlDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The vanity url unique identifier key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The vanity url unique identifier key.
+         *
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Description of the vanity url.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the vanity url.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * List of urls supported by this vanity URL definition (max of 3).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("urls")
         private java.util.List<String> urls;
 
+        /**
+         * List of urls supported by this vanity URL definition (max of 3).
+         *
+         * @param urls the value to set
+         * @return this builder
+         **/
         public Builder urls(java.util.List<String> urls) {
             this.urls = urls;
             this.__explicitlySet__.add("urls");
             return this;
         }
-
+        /**
+         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
+        /**
+         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         *
+         * @param hosts the value to set
+         * @return this builder
+         **/
         public Builder hosts(java.util.List<String> hosts) {
             this.hosts = hosts;
             this.__explicitlySet__.add("hosts");
             return this;
         }
-
+        /**
+         * PEM certificate for HTTPS connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
+        /**
+         * PEM certificate for HTTPS connections.
+         *
+         * @param publicCertificate the value to set
+         * @return this builder
+         **/
         public Builder publicCertificate(String publicCertificate) {
             this.publicCertificate = publicCertificate;
             this.__explicitlySet__.add("publicCertificate");
@@ -124,6 +170,11 @@ public final class VanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The vanity url unique identifier key.
+     *
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -135,6 +186,11 @@ public final class VanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the vanity url.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -146,6 +202,11 @@ public final class VanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("urls")
     private final java.util.List<String> urls;
 
+    /**
+     * List of urls supported by this vanity URL definition (max of 3).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getUrls() {
         return urls;
     }
@@ -157,6 +218,11 @@ public final class VanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
+    /**
+     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getHosts() {
         return hosts;
     }
@@ -168,6 +234,11 @@ public final class VanityUrlDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     private final String publicCertificate;
 
+    /**
+     * PEM certificate for HTTPS connections.
+     *
+     * @return the value
+     **/
     public String getPublicCertificate() {
         return publicCertificate;
     }

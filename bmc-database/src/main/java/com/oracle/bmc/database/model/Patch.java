@@ -51,72 +51,133 @@ public final class Patch {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The text describing this patch package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The text describing this patch package.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Action that is currently being performed or was completed last.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
         private LastAction lastAction;
 
+        /**
+         * Action that is currently being performed or was completed last.
+         * @param lastAction the value to set
+         * @return this builder
+         **/
         public Builder lastAction(LastAction lastAction) {
             this.lastAction = lastAction;
             this.__explicitlySet__.add("lastAction");
             return this;
         }
-
+        /**
+         * Actions that can possibly be performed using this patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
         private java.util.List<AvailableActions> availableActions;
 
+        /**
+         * Actions that can possibly be performed using this patch.
+         * @param availableActions the value to set
+         * @return this builder
+         **/
         public Builder availableActions(java.util.List<AvailableActions> availableActions) {
             this.availableActions = availableActions;
             this.__explicitlySet__.add("availableActions");
             return this;
         }
-
+        /**
+         * A descriptive text associated with the lifecycleState.
+         * Typically can contain additional displayable text.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A descriptive text associated with the lifecycleState.
+         * Typically can contain additional displayable text.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The current state of the patch as a result of lastAction.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the patch as a result of lastAction.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time that the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
+        /**
+         * The date and time that the patch was released.
+         * @param timeReleased the value to set
+         * @return this builder
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-
+        /**
+         * The version of this patch package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of this patch package.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -175,6 +236,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -185,6 +250,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The text describing this patch package.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -243,6 +312,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
     private final LastAction lastAction;
 
+    /**
+     * Action that is currently being performed or was completed last.
+     * @return the value
+     **/
     public LastAction getLastAction() {
         return lastAction;
     }
@@ -300,6 +373,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
     private final java.util.List<AvailableActions> availableActions;
 
+    /**
+     * Actions that can possibly be performed using this patch.
+     * @return the value
+     **/
     public java.util.List<AvailableActions> getAvailableActions() {
         return availableActions;
     }
@@ -312,6 +389,12 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A descriptive text associated with the lifecycleState.
+     * Typically can contain additional displayable text.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -372,6 +455,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the patch as a result of lastAction.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -382,6 +469,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
+    /**
+     * The date and time that the patch was released.
+     * @return the value
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
@@ -392,6 +483,10 @@ public final class Patch {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of this patch package.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

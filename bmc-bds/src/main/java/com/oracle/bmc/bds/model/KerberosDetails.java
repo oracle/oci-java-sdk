@@ -28,18 +28,33 @@ public final class KerberosDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the Kerberos principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalName")
         private String principalName;
 
+        /**
+         * Name of the Kerberos principal.
+         * @param principalName the value to set
+         * @return this builder
+         **/
         public Builder principalName(String principalName) {
             this.principalName = principalName;
             this.__explicitlySet__.add("principalName");
             return this;
         }
-
+        /**
+         * Location of the keytab file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keytabFile")
         private String keytabFile;
 
+        /**
+         * Location of the keytab file
+         * @param keytabFile the value to set
+         * @return this builder
+         **/
         public Builder keytabFile(String keytabFile) {
             this.keytabFile = keytabFile;
             this.__explicitlySet__.add("keytabFile");
@@ -82,6 +97,10 @@ public final class KerberosDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("principalName")
     private final String principalName;
 
+    /**
+     * Name of the Kerberos principal.
+     * @return the value
+     **/
     public String getPrincipalName() {
         return principalName;
     }
@@ -92,6 +111,10 @@ public final class KerberosDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keytabFile")
     private final String keytabFile;
 
+    /**
+     * Location of the keytab file
+     * @return the value
+     **/
     public String getKeytabFile() {
         return keytabFile;
     }

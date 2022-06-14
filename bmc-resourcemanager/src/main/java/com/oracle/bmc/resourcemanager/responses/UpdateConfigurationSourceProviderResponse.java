@@ -14,6 +14,10 @@ public class UpdateConfigurationSourceProviderResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +27,10 @@ public class UpdateConfigurationSourceProviderResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +41,10 @@ public class UpdateConfigurationSourceProviderResponse
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
             configurationSourceProvider;
 
+    /**
+     * The returned ConfigurationSourceProvider instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
             getConfigurationSourceProvider() {
         return configurationSourceProvider;
@@ -64,23 +76,47 @@ public class UpdateConfigurationSourceProviderResponse
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned ConfigurationSourceProvider instance.
+         */
         private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
                 configurationSourceProvider;
 
+        /**
+         * The returned ConfigurationSourceProvider instance.
+         * @param configurationSourceProvider the value to set
+         * @return this builder
+         */
         public Builder configurationSourceProvider(
                 com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
                         configurationSourceProvider) {
@@ -101,12 +137,20 @@ public class UpdateConfigurationSourceProviderResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateConfigurationSourceProviderResponse build() {
             return new UpdateConfigurationSourceProviderResponse(
                     __httpStatusCode__, opcRequestId, etag, configurationSourceProvider);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,17 @@ public final class LogAnalyticsAssociationParameterCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of association parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsAssociationParameter> items;
 
+        /**
+         * A list of association parameters.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsAssociationParameter> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class LogAnalyticsAssociationParameterCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsAssociationParameter> items;
 
+    /**
+     * A list of association parameters.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsAssociationParameter> getItems() {
         return items;
     }

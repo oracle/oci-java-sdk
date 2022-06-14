@@ -35,19 +35,38 @@ public final class CommitMultipartUploadDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The part numbers and entity tags (ETags) for the parts to be committed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partsToCommit")
         private java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
 
+        /**
+         * The part numbers and entity tags (ETags) for the parts to be committed.
+         * @param partsToCommit the value to set
+         * @return this builder
+         **/
         public Builder partsToCommit(
                 java.util.List<CommitMultipartUploadPartDetails> partsToCommit) {
             this.partsToCommit = partsToCommit;
             this.__explicitlySet__.add("partsToCommit");
             return this;
         }
-
+        /**
+         * The part numbers for the parts to be excluded from the completed object.
+         * Each part created for this upload must be in either partsToExclude or partsToCommit, but cannot be in both.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partsToExclude")
         private java.util.List<Integer> partsToExclude;
 
+        /**
+         * The part numbers for the parts to be excluded from the completed object.
+         * Each part created for this upload must be in either partsToExclude or partsToCommit, but cannot be in both.
+         *
+         * @param partsToExclude the value to set
+         * @return this builder
+         **/
         public Builder partsToExclude(java.util.List<Integer> partsToExclude) {
             this.partsToExclude = partsToExclude;
             this.__explicitlySet__.add("partsToExclude");
@@ -91,6 +110,10 @@ public final class CommitMultipartUploadDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("partsToCommit")
     private final java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
 
+    /**
+     * The part numbers and entity tags (ETags) for the parts to be committed.
+     * @return the value
+     **/
     public java.util.List<CommitMultipartUploadPartDetails> getPartsToCommit() {
         return partsToCommit;
     }
@@ -103,6 +126,12 @@ public final class CommitMultipartUploadDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("partsToExclude")
     private final java.util.List<Integer> partsToExclude;
 
+    /**
+     * The part numbers for the parts to be excluded from the completed object.
+     * Each part created for this upload must be in either partsToExclude or partsToCommit, but cannot be in both.
+     *
+     * @return the value
+     **/
     public java.util.List<Integer> getPartsToExclude() {
         return partsToExclude;
     }

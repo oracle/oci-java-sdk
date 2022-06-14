@@ -91,10 +91,17 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
@@ -187,6 +194,10 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * @return the value
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }

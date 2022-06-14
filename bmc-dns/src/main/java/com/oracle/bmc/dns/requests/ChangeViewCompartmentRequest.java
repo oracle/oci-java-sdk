@@ -18,6 +18,9 @@ public class ChangeViewCompartmentRequest
      */
     private String viewId;
 
+    /**
+     * The OCID of the target view.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -26,6 +29,9 @@ public class ChangeViewCompartmentRequest
      */
     private com.oracle.bmc.dns.model.ChangeViewCompartmentDetails changeViewCompartmentDetails;
 
+    /**
+     * Details for moving a view into a different compartment.
+     */
     public com.oracle.bmc.dns.model.ChangeViewCompartmentDetails getChangeViewCompartmentDetails() {
         return changeViewCompartmentDetails;
     }
@@ -39,6 +45,14 @@ public class ChangeViewCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,6 +67,15 @@ public class ChangeViewCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated before
+     * then due to conflicting operations (for example, if a resource has been
+     * deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -64,6 +87,12 @@ public class ChangeViewCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,6 +102,10 @@ public class ChangeViewCompartmentRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -95,10 +128,14 @@ public class ChangeViewCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target view.
+         */
         private String viewId = null;
 
         /**
          * The OCID of the target view.
+         * @param viewId the value to set
          * @return this builder instance
          */
         public Builder viewId(String viewId) {
@@ -106,11 +143,15 @@ public class ChangeViewCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for moving a view into a different compartment.
+         */
         private com.oracle.bmc.dns.model.ChangeViewCompartmentDetails changeViewCompartmentDetails =
                 null;
 
         /**
          * Details for moving a view into a different compartment.
+         * @param changeViewCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeViewCompartmentDetails(
@@ -120,6 +161,14 @@ public class ChangeViewCompartmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -129,6 +178,7 @@ public class ChangeViewCompartmentRequest
          * target resource that has an entity-tag matching a member of the list of
          * entity-tags provided in the field-value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -136,6 +186,15 @@ public class ChangeViewCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated before
+         * then due to conflicting operations (for example, if a resource has been
+         * deleted and purged from the system, then a retry of the original creation
+         * request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -146,6 +205,7 @@ public class ChangeViewCompartmentRequest
          * deleted and purged from the system, then a retry of the original creation
          * request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -153,6 +213,12 @@ public class ChangeViewCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -160,6 +226,7 @@ public class ChangeViewCompartmentRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -167,11 +234,16 @@ public class ChangeViewCompartmentRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -268,7 +340,8 @@ public class ChangeViewCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -280,6 +353,10 @@ public class ChangeViewCompartmentRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

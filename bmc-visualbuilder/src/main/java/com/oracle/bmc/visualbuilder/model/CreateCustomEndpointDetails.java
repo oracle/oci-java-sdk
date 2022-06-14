@@ -30,18 +30,39 @@ public final class CreateCustomEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A custom hostname to be used for the vb instance URL, in FQDN format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * A custom hostname to be used for the vb instance URL, in FQDN format.
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-
+        /**
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         * All certificates should be stored in a single base64 encoded secret
+         * Note the update will fail if this is not a valid certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
         private String certificateSecretId;
 
+        /**
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         * All certificates should be stored in a single base64 encoded secret
+         * Note the update will fail if this is not a valid certificate.
+         *
+         * @param certificateSecretId the value to set
+         * @return this builder
+         **/
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             this.__explicitlySet__.add("certificateSecretId");
@@ -85,6 +106,10 @@ public final class CreateCustomEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * A custom hostname to be used for the vb instance URL, in FQDN format.
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -98,6 +123,13 @@ public final class CreateCustomEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
     private final String certificateSecretId;
 
+    /**
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+     * All certificates should be stored in a single base64 encoded secret
+     * Note the update will fail if this is not a valid certificate.
+     *
+     * @return the value
+     **/
     public String getCertificateSecretId() {
         return certificateSecretId;
     }

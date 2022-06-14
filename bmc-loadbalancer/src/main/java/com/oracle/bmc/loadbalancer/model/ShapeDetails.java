@@ -29,18 +29,55 @@ public final class ShapeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress).
+         * The values must be between 10 and the maximumBandwidthInMbps.
+         * <p>
+         * Example: {@code 150}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumBandwidthInMbps")
         private Integer minimumBandwidthInMbps;
 
+        /**
+         * Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress).
+         * The values must be between 10 and the maximumBandwidthInMbps.
+         * <p>
+         * Example: {@code 150}
+         *
+         * @param minimumBandwidthInMbps the value to set
+         * @return this builder
+         **/
         public Builder minimumBandwidthInMbps(Integer minimumBandwidthInMbps) {
             this.minimumBandwidthInMbps = minimumBandwidthInMbps;
             this.__explicitlySet__.add("minimumBandwidthInMbps");
             return this;
         }
-
+        /**
+         * Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can
+         * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
+         * parameter.
+         * <p>
+         * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+         * <p>
+         * Example: {@code 1500}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumBandwidthInMbps")
         private Integer maximumBandwidthInMbps;
 
+        /**
+         * Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can
+         * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
+         * parameter.
+         * <p>
+         * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+         * <p>
+         * Example: {@code 1500}
+         *
+         * @param maximumBandwidthInMbps the value to set
+         * @return this builder
+         **/
         public Builder maximumBandwidthInMbps(Integer maximumBandwidthInMbps) {
             this.maximumBandwidthInMbps = maximumBandwidthInMbps;
             this.__explicitlySet__.add("maximumBandwidthInMbps");
@@ -89,6 +126,14 @@ public final class ShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("minimumBandwidthInMbps")
     private final Integer minimumBandwidthInMbps;
 
+    /**
+     * Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress).
+     * The values must be between 10 and the maximumBandwidthInMbps.
+     * <p>
+     * Example: {@code 150}
+     *
+     * @return the value
+     **/
     public Integer getMinimumBandwidthInMbps() {
         return minimumBandwidthInMbps;
     }
@@ -106,6 +151,17 @@ public final class ShapeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maximumBandwidthInMbps")
     private final Integer maximumBandwidthInMbps;
 
+    /**
+     * Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can
+     * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
+     * parameter.
+     * <p>
+     * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+     * <p>
+     * Example: {@code 1500}
+     *
+     * @return the value
+     **/
     public Integer getMaximumBandwidthInMbps() {
         return maximumBandwidthInMbps;
     }

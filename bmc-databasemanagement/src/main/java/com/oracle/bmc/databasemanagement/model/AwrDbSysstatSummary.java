@@ -47,54 +47,97 @@ public final class AwrDbSysstatSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the SYSSTAT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the SYSSTAT.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The name of the SYSSTAT category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * The name of the SYSSTAT category.
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-
+        /**
+         * The start time of the SYSSTAT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
         private java.util.Date timeBegin;
 
+        /**
+         * The start time of the SYSSTAT.
+         * @param timeBegin the value to set
+         * @return this builder
+         **/
         public Builder timeBegin(java.util.Date timeBegin) {
             this.timeBegin = timeBegin;
             this.__explicitlySet__.add("timeBegin");
             return this;
         }
-
+        /**
+         * The end time of the SYSSTAT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * The end time of the SYSSTAT.
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * The average value of the SYSSTAT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
         private Double avgValue;
 
+        /**
+         * The average value of the SYSSTAT.
+         * @param avgValue the value to set
+         * @return this builder
+         **/
         public Builder avgValue(Double avgValue) {
             this.avgValue = avgValue;
             this.__explicitlySet__.add("avgValue");
             return this;
         }
-
+        /**
+         * The last value of the SYSSTAT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentValue")
         private Double currentValue;
 
+        /**
+         * The last value of the SYSSTAT.
+         * @param currentValue the value to set
+         * @return this builder
+         **/
         public Builder currentValue(Double currentValue) {
             this.currentValue = currentValue;
             this.__explicitlySet__.add("currentValue");
@@ -144,6 +187,10 @@ public final class AwrDbSysstatSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the SYSSTAT.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -154,6 +201,10 @@ public final class AwrDbSysstatSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * The name of the SYSSTAT category.
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -164,6 +215,10 @@ public final class AwrDbSysstatSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
     private final java.util.Date timeBegin;
 
+    /**
+     * The start time of the SYSSTAT.
+     * @return the value
+     **/
     public java.util.Date getTimeBegin() {
         return timeBegin;
     }
@@ -174,6 +229,10 @@ public final class AwrDbSysstatSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * The end time of the SYSSTAT.
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -184,6 +243,10 @@ public final class AwrDbSysstatSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("avgValue")
     private final Double avgValue;
 
+    /**
+     * The average value of the SYSSTAT.
+     * @return the value
+     **/
     public Double getAvgValue() {
         return avgValue;
     }
@@ -194,6 +257,10 @@ public final class AwrDbSysstatSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("currentValue")
     private final Double currentValue;
 
+    /**
+     * The last value of the SYSSTAT.
+     * @return the value
+     **/
     public Double getCurrentValue() {
         return currentValue;
     }

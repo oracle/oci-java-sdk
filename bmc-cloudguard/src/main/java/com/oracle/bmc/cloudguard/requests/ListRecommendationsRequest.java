@@ -16,6 +16,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -70,6 +76,10 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for riskLevel and timeCreated is descending. If no value is specified riskLevel is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -78,6 +88,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String targetId;
 
+    /**
+     * The ID of the target in which to list resources.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -90,6 +103,13 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -144,6 +164,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -152,6 +180,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
 
+    /**
+     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     */
     public com.oracle.bmc.cloudguard.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -160,6 +191,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.cloudguard.model.RecommendationLifecycleDetail lifecycleDetail;
 
+    /**
+     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     */
     public com.oracle.bmc.cloudguard.model.RecommendationLifecycleDetail getLifecycleDetail() {
         return lifecycleDetail;
     }
@@ -168,6 +202,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -176,6 +213,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -184,6 +224,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -195,10 +238,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -206,10 +253,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
@@ -217,11 +268,16 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for riskLevel and timeCreated is descending. If no value is specified riskLevel is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for riskLevel and timeCreated is descending. If no value is specified riskLevel is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -229,10 +285,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The ID of the target in which to list resources.
+         */
         private String targetId = null;
 
         /**
          * The ID of the target in which to list resources.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -240,6 +300,13 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -248,6 +315,7 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -255,6 +323,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -264,6 +340,7 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -271,10 +348,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
         private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState = null;
 
         /**
          * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -283,11 +364,15 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
         private com.oracle.bmc.cloudguard.model.RecommendationLifecycleDetail lifecycleDetail =
                 null;
 
         /**
          * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param lifecycleDetail the value to set
          * @return this builder instance
          */
         public Builder lifecycleDetail(
@@ -296,10 +381,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -307,10 +396,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -318,10 +411,14 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -417,7 +514,8 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -434,6 +532,10 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

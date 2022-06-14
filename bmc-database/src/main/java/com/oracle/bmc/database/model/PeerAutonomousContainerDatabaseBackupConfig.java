@@ -33,19 +33,40 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Backup destination details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
         private java.util.List<BackupDestinationDetails> backupDestinationDetails;
 
+        /**
+         * Backup destination details.
+         * @param backupDestinationDetails the value to set
+         * @return this builder
+         **/
         public Builder backupDestinationDetails(
                 java.util.List<BackupDestinationDetails> backupDestinationDetails) {
             this.backupDestinationDetails = backupDestinationDetails;
             this.__explicitlySet__.add("backupDestinationDetails");
             return this;
         }
-
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups.
+         * This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+         * When the value is updated, it is applied to all existing automatic backups.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
         private Integer recoveryWindowInDays;
 
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups.
+         * This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+         * When the value is updated, it is applied to all existing automatic backups.
+         *
+         * @param recoveryWindowInDays the value to set
+         * @return this builder
+         **/
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = recoveryWindowInDays;
             this.__explicitlySet__.add("recoveryWindowInDays");
@@ -91,6 +112,10 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
     private final java.util.List<BackupDestinationDetails> backupDestinationDetails;
 
+    /**
+     * Backup destination details.
+     * @return the value
+     **/
     public java.util.List<BackupDestinationDetails> getBackupDestinationDetails() {
         return backupDestinationDetails;
     }
@@ -104,6 +129,13 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
     private final Integer recoveryWindowInDays;
 
+    /**
+     * Number of days between the current and the earliest point of recoverability covered by automatic backups.
+     * This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+     * When the value is updated, it is applied to all existing automatic backups.
+     *
+     * @return the value
+     **/
     public Integer getRecoveryWindowInDays() {
         return recoveryWindowInDays;
     }

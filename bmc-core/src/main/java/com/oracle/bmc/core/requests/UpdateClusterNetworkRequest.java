@@ -18,6 +18,9 @@ public class UpdateClusterNetworkRequest
      */
     private String clusterNetworkId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
+     */
     public String getClusterNetworkId() {
         return clusterNetworkId;
     }
@@ -26,6 +29,9 @@ public class UpdateClusterNetworkRequest
      */
     private com.oracle.bmc.core.model.UpdateClusterNetworkDetails updateClusterNetworkDetails;
 
+    /**
+     * Update cluster network
+     */
     public com.oracle.bmc.core.model.UpdateClusterNetworkDetails getUpdateClusterNetworkDetails() {
         return updateClusterNetworkDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateClusterNetworkRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -50,6 +64,12 @@ public class UpdateClusterNetworkRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -72,10 +92,14 @@ public class UpdateClusterNetworkRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
+         */
         private String clusterNetworkId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
+         * @param clusterNetworkId the value to set
          * @return this builder instance
          */
         public Builder clusterNetworkId(String clusterNetworkId) {
@@ -83,11 +107,15 @@ public class UpdateClusterNetworkRequest
             return this;
         }
 
+        /**
+         * Update cluster network
+         */
         private com.oracle.bmc.core.model.UpdateClusterNetworkDetails updateClusterNetworkDetails =
                 null;
 
         /**
          * Update cluster network
+         * @param updateClusterNetworkDetails the value to set
          * @return this builder instance
          */
         public Builder updateClusterNetworkDetails(
@@ -96,6 +124,14 @@ public class UpdateClusterNetworkRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -105,6 +141,7 @@ public class UpdateClusterNetworkRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -112,6 +149,12 @@ public class UpdateClusterNetworkRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +162,7 @@ public class UpdateClusterNetworkRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -211,7 +255,8 @@ public class UpdateClusterNetworkRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +266,10 @@ public class UpdateClusterNetworkRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

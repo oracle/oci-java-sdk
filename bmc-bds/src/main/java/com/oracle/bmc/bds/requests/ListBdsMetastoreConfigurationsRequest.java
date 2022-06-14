@@ -17,6 +17,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String bdsInstanceId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
@@ -25,6 +28,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType metastoreType;
 
+    /**
+     * The type of the metastore in the metastore configuration
+     */
     public com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType getMetastoreType() {
         return metastoreType;
     }
@@ -33,6 +39,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String metastoreId;
 
+    /**
+     * The OCID of the Data Catalog metastore in the metastore configuration
+     */
     public String getMetastoreId() {
         return metastoreId;
     }
@@ -41,6 +50,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the metastore in the metastore configuration
+     */
     public com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -49,6 +61,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String bdsApiKeyId;
 
+    /**
+     * The ID of the API key that is associated with the external metastore in the metastore configuration
+     */
     public String getBdsApiKeyId() {
         return bdsApiKeyId;
     }
@@ -57,6 +72,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -65,6 +83,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -111,6 +132,10 @@ public class ListBdsMetastoreConfigurationsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -119,6 +144,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private com.oracle.bmc.bds.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.bds.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -127,6 +155,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -135,6 +166,9 @@ public class ListBdsMetastoreConfigurationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -146,10 +180,14 @@ public class ListBdsMetastoreConfigurationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
+         * @param bdsInstanceId the value to set
          * @return this builder instance
          */
         public Builder bdsInstanceId(String bdsInstanceId) {
@@ -157,11 +195,15 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The type of the metastore in the metastore configuration
+         */
         private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.MetastoreType metastoreType =
                 null;
 
         /**
          * The type of the metastore in the metastore configuration
+         * @param metastoreType the value to set
          * @return this builder instance
          */
         public Builder metastoreType(
@@ -170,10 +212,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The OCID of the Data Catalog metastore in the metastore configuration
+         */
         private String metastoreId = null;
 
         /**
          * The OCID of the Data Catalog metastore in the metastore configuration
+         * @param metastoreId the value to set
          * @return this builder instance
          */
         public Builder metastoreId(String metastoreId) {
@@ -181,11 +227,15 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The lifecycle state of the metastore in the metastore configuration
+         */
         private com.oracle.bmc.bds.model.BdsMetastoreConfiguration.LifecycleState lifecycleState =
                 null;
 
         /**
          * The lifecycle state of the metastore in the metastore configuration
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -194,10 +244,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The ID of the API key that is associated with the external metastore in the metastore configuration
+         */
         private String bdsApiKeyId = null;
 
         /**
          * The ID of the API key that is associated with the external metastore in the metastore configuration
+         * @param bdsApiKeyId the value to set
          * @return this builder instance
          */
         public Builder bdsApiKeyId(String bdsApiKeyId) {
@@ -205,10 +259,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -216,10 +274,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -227,11 +289,16 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -239,10 +306,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.bds.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.bds.model.SortOrders sortOrder) {
@@ -250,10 +321,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -261,10 +336,14 @@ public class ListBdsMetastoreConfigurationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -361,7 +440,8 @@ public class ListBdsMetastoreConfigurationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -378,6 +458,10 @@ public class ListBdsMetastoreConfigurationsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

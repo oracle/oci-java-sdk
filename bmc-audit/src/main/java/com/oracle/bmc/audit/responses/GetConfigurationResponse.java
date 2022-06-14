@@ -13,6 +13,10 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.audit.model.Configuration configuration;
 
+    /**
+     * The returned Configuration instance.
+     * @return the value
+     */
     public com.oracle.bmc.audit.model.Configuration getConfiguration() {
         return configuration;
     }
@@ -32,8 +36,16 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * The returned Configuration instance.
+         */
         private com.oracle.bmc.audit.model.Configuration configuration;
 
+        /**
+         * The returned Configuration instance.
+         * @param configuration the value to set
+         * @return this builder
+         */
         public Builder configuration(com.oracle.bmc.audit.model.Configuration configuration) {
             this.configuration = configuration;
             return this;
@@ -51,11 +63,19 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetConfigurationResponse build() {
             return new GetConfigurationResponse(__httpStatusCode__, configuration);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

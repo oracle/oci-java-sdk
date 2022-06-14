@@ -29,9 +29,17 @@ public final class WorkRequestErrorCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the list of workRequestError objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestError> items;
 
+        /**
+         * the list of workRequestError objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<WorkRequestError> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class WorkRequestErrorCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestError> items;
 
+    /**
+     * the list of workRequestError objects.
+     * @return the value
+     **/
     public java.util.List<WorkRequestError> getItems() {
         return items;
     }

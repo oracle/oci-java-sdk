@@ -17,6 +17,9 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
      */
     private String instancePoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+     */
     public String getInstancePoolId() {
         return instancePoolId;
     }
@@ -25,6 +28,9 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
      */
     private String instancePoolLoadBalancerAttachmentId;
 
+    /**
+     * The OCID of the load balancer attachment.
+     */
     public String getInstancePoolLoadBalancerAttachmentId() {
         return instancePoolLoadBalancerAttachmentId;
     }
@@ -36,10 +42,14 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         */
         private String instancePoolId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         * @param instancePoolId the value to set
          * @return this builder instance
          */
         public Builder instancePoolId(String instancePoolId) {
@@ -47,10 +57,14 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
             return this;
         }
 
+        /**
+         * The OCID of the load balancer attachment.
+         */
         private String instancePoolLoadBalancerAttachmentId = null;
 
         /**
          * The OCID of the load balancer attachment.
+         * @param instancePoolLoadBalancerAttachmentId the value to set
          * @return this builder instance
          */
         public Builder instancePoolLoadBalancerAttachmentId(
@@ -130,7 +144,8 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -138,6 +153,10 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
                 .instancePoolLoadBalancerAttachmentId(instancePoolLoadBalancerAttachmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

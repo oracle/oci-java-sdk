@@ -31,18 +31,33 @@ public final class UpdateGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of the cursor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of the cursor.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The time to consume from if type is AT_TIME.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private java.util.Date time;
 
+        /**
+         * The time to consume from if type is AT_TIME.
+         * @param time the value to set
+         * @return this builder
+         **/
         public Builder time(java.util.Date time) {
             this.time = time;
             this.__explicitlySet__.add("time");
@@ -120,6 +135,10 @@ public final class UpdateGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of the cursor.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -130,6 +149,10 @@ public final class UpdateGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final java.util.Date time;
 
+    /**
+     * The time to consume from if type is AT_TIME.
+     * @return the value
+     **/
     public java.util.Date getTime() {
         return time;
     }

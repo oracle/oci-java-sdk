@@ -31,27 +31,55 @@ public final class InstalledWindowsUpdateSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Windows Update name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Windows Update name
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Unique identifier for the Windows update. NOTE - This is not an OCID,
+         * but is a unique identifier assigned by Microsoft.
+         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Unique identifier for the Windows update. NOTE - This is not an OCID,
+         * but is a unique identifier assigned by Microsoft.
+         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The purpose of this update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateTypes updateType;
 
+        /**
+         * The purpose of this update.
+         * @param updateType the value to set
+         * @return this builder
+         **/
         public Builder updateType(UpdateTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
@@ -95,6 +123,10 @@ public final class InstalledWindowsUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Windows Update name
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -108,6 +140,13 @@ public final class InstalledWindowsUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Unique identifier for the Windows update. NOTE - This is not an OCID,
+     * but is a unique identifier assigned by Microsoft.
+     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -118,6 +157,10 @@ public final class InstalledWindowsUpdateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateTypes updateType;
 
+    /**
+     * The purpose of this update.
+     * @return the value
+     **/
     public UpdateTypes getUpdateType() {
         return updateType;
     }

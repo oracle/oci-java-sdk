@@ -19,6 +19,9 @@ public class CreateSecurityAssessmentRequest
     private com.oracle.bmc.datasafe.model.CreateSecurityAssessmentDetails
             createSecurityAssessmentDetails;
 
+    /**
+     * The details used to create a new saved security assessment.
+     */
     public com.oracle.bmc.datasafe.model.CreateSecurityAssessmentDetails
             getCreateSecurityAssessmentDetails() {
         return createSecurityAssessmentDetails;
@@ -32,6 +35,13 @@ public class CreateSecurityAssessmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -40,6 +50,9 @@ public class CreateSecurityAssessmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,11 +75,15 @@ public class CreateSecurityAssessmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details used to create a new saved security assessment.
+         */
         private com.oracle.bmc.datasafe.model.CreateSecurityAssessmentDetails
                 createSecurityAssessmentDetails = null;
 
         /**
          * The details used to create a new saved security assessment.
+         * @param createSecurityAssessmentDetails the value to set
          * @return this builder instance
          */
         public Builder createSecurityAssessmentDetails(
@@ -76,6 +93,13 @@ public class CreateSecurityAssessmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -84,6 +108,7 @@ public class CreateSecurityAssessmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -91,10 +116,14 @@ public class CreateSecurityAssessmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -185,7 +214,8 @@ public class CreateSecurityAssessmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -194,6 +224,10 @@ public class CreateSecurityAssessmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -82,154 +82,278 @@ public final class SqlTuningAdvisorTaskFindingSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
         private Long sqlTuningAdvisorTaskId;
 
+        /**
+         * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningAdvisorTaskId(Long sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             this.__explicitlySet__.add("sqlTuningAdvisorTaskId");
             return this;
         }
-
+        /**
+         * The key of the object to which these recommendations apply.
+         * This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
         private Long sqlTuningAdvisorTaskObjectId;
 
+        /**
+         * The key of the object to which these recommendations apply.
+         * This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param sqlTuningAdvisorTaskObjectId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningAdvisorTaskObjectId(Long sqlTuningAdvisorTaskObjectId) {
             this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
             this.__explicitlySet__.add("sqlTuningAdvisorTaskObjectId");
             return this;
         }
-
+        /**
+         * The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectExecutionId")
         private Long sqlTuningAdvisorTaskObjectExecutionId;
 
+        /**
+         * The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param sqlTuningAdvisorTaskObjectExecutionId the value to set
+         * @return this builder
+         **/
         public Builder sqlTuningAdvisorTaskObjectExecutionId(
                 Long sqlTuningAdvisorTaskObjectExecutionId) {
             this.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
             this.__explicitlySet__.add("sqlTuningAdvisorTaskObjectExecutionId");
             return this;
         }
-
+        /**
+         * The text of the SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
+        /**
+         * The text of the SQL statement.
+         * @param sqlText the value to set
+         * @return this builder
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-
+        /**
+         * The parsing schema of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parsingSchema")
         private String parsingSchema;
 
+        /**
+         * The parsing schema of the object.
+         * @param parsingSchema the value to set
+         * @return this builder
+         **/
         public Builder parsingSchema(String parsingSchema) {
             this.parsingSchema = parsingSchema;
             this.__explicitlySet__.add("parsingSchema");
             return this;
         }
-
+        /**
+         * The unique key of this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlKey")
         private String sqlKey;
 
+        /**
+         * The unique key of this SQL statement.
+         * @param sqlKey the value to set
+         * @return this builder
+         **/
         public Builder sqlKey(String sqlKey) {
             this.sqlKey = sqlKey;
             this.__explicitlySet__.add("sqlKey");
             return this;
         }
-
+        /**
+         * The time benefit (in seconds) for the highest-rated finding for this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBenefit")
         private Float dbTimeBenefit;
 
+        /**
+         * The time benefit (in seconds) for the highest-rated finding for this object.
+         * @param dbTimeBenefit the value to set
+         * @return this builder
+         **/
         public Builder dbTimeBenefit(Float dbTimeBenefit) {
             this.dbTimeBenefit = dbTimeBenefit;
             this.__explicitlySet__.add("dbTimeBenefit");
             return this;
         }
-
+        /**
+         * The per-execution percentage benefit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("perExecutionPercentage")
         private Integer perExecutionPercentage;
 
+        /**
+         * The per-execution percentage benefit.
+         * @param perExecutionPercentage the value to set
+         * @return this builder
+         **/
         public Builder perExecutionPercentage(Integer perExecutionPercentage) {
             this.perExecutionPercentage = perExecutionPercentage;
             this.__explicitlySet__.add("perExecutionPercentage");
             return this;
         }
-
+        /**
+         * Indicates whether a statistics recommendation was reported for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStatsFindingPresent")
         private Boolean isStatsFindingPresent;
 
+        /**
+         * Indicates whether a statistics recommendation was reported for this SQL statement.
+         * @param isStatsFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isStatsFindingPresent(Boolean isStatsFindingPresent) {
             this.isStatsFindingPresent = isStatsFindingPresent;
             this.__explicitlySet__.add("isStatsFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether a SQL Profile recommendation was reported for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingPresent")
         private Boolean isSqlProfileFindingPresent;
 
+        /**
+         * Indicates whether a SQL Profile recommendation was reported for this SQL statement.
+         * @param isSqlProfileFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isSqlProfileFindingPresent(Boolean isSqlProfileFindingPresent) {
             this.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
             this.__explicitlySet__.add("isSqlProfileFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingImplemented")
         private Boolean isSqlProfileFindingImplemented;
 
+        /**
+         * Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
+         * @param isSqlProfileFindingImplemented the value to set
+         * @return this builder
+         **/
         public Builder isSqlProfileFindingImplemented(Boolean isSqlProfileFindingImplemented) {
             this.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
             this.__explicitlySet__.add("isSqlProfileFindingImplemented");
             return this;
         }
-
+        /**
+         * Indicates whether an index recommendation was reported for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIndexFindingPresent")
         private Boolean isIndexFindingPresent;
 
+        /**
+         * Indicates whether an index recommendation was reported for this SQL statement.
+         * @param isIndexFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isIndexFindingPresent(Boolean isIndexFindingPresent) {
             this.isIndexFindingPresent = isIndexFindingPresent;
             this.__explicitlySet__.add("isIndexFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether a restructure SQL recommendation was reported for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRestructureSqlFindingPresent")
         private Boolean isRestructureSqlFindingPresent;
 
+        /**
+         * Indicates whether a restructure SQL recommendation was reported for this SQL statement.
+         * @param isRestructureSqlFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isRestructureSqlFindingPresent(Boolean isRestructureSqlFindingPresent) {
             this.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
             this.__explicitlySet__.add("isRestructureSqlFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether an alternative execution plan was reported for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAlternativePlanFindingPresent")
         private Boolean isAlternativePlanFindingPresent;
 
+        /**
+         * Indicates whether an alternative execution plan was reported for this SQL statement.
+         * @param isAlternativePlanFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isAlternativePlanFindingPresent(Boolean isAlternativePlanFindingPresent) {
             this.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
             this.__explicitlySet__.add("isAlternativePlanFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether a miscellaneous finding was reported for this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMiscellaneousFindingPresent")
         private Boolean isMiscellaneousFindingPresent;
 
+        /**
+         * Indicates whether a miscellaneous finding was reported for this SQL statement.
+         * @param isMiscellaneousFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isMiscellaneousFindingPresent(Boolean isMiscellaneousFindingPresent) {
             this.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
             this.__explicitlySet__.add("isMiscellaneousFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether there is an error in this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isErrorFindingPresent")
         private Boolean isErrorFindingPresent;
 
+        /**
+         * Indicates whether there is an error in this SQL statement.
+         * @param isErrorFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isErrorFindingPresent(Boolean isErrorFindingPresent) {
             this.isErrorFindingPresent = isErrorFindingPresent;
             this.__explicitlySet__.add("isErrorFindingPresent");
             return this;
         }
-
+        /**
+         * Indicates whether the task timed out.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTimeoutFindingPresent")
         private Boolean isTimeoutFindingPresent;
 
+        /**
+         * Indicates whether the task timed out.
+         * @param isTimeoutFindingPresent the value to set
+         * @return this builder
+         **/
         public Builder isTimeoutFindingPresent(Boolean isTimeoutFindingPresent) {
             this.isTimeoutFindingPresent = isTimeoutFindingPresent;
             this.__explicitlySet__.add("isTimeoutFindingPresent");
@@ -307,6 +431,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     private final Long sqlTuningAdvisorTaskId;
 
+    /**
+     * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public Long getSqlTuningAdvisorTaskId() {
         return sqlTuningAdvisorTaskId;
     }
@@ -319,6 +447,12 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
     private final Long sqlTuningAdvisorTaskObjectId;
 
+    /**
+     * The key of the object to which these recommendations apply.
+     * This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
     public Long getSqlTuningAdvisorTaskObjectId() {
         return sqlTuningAdvisorTaskObjectId;
     }
@@ -329,6 +463,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectExecutionId")
     private final Long sqlTuningAdvisorTaskObjectExecutionId;
 
+    /**
+     * The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public Long getSqlTuningAdvisorTaskObjectExecutionId() {
         return sqlTuningAdvisorTaskObjectExecutionId;
     }
@@ -339,6 +477,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
+    /**
+     * The text of the SQL statement.
+     * @return the value
+     **/
     public String getSqlText() {
         return sqlText;
     }
@@ -349,6 +491,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parsingSchema")
     private final String parsingSchema;
 
+    /**
+     * The parsing schema of the object.
+     * @return the value
+     **/
     public String getParsingSchema() {
         return parsingSchema;
     }
@@ -359,6 +505,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlKey")
     private final String sqlKey;
 
+    /**
+     * The unique key of this SQL statement.
+     * @return the value
+     **/
     public String getSqlKey() {
         return sqlKey;
     }
@@ -369,6 +519,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBenefit")
     private final Float dbTimeBenefit;
 
+    /**
+     * The time benefit (in seconds) for the highest-rated finding for this object.
+     * @return the value
+     **/
     public Float getDbTimeBenefit() {
         return dbTimeBenefit;
     }
@@ -379,6 +533,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("perExecutionPercentage")
     private final Integer perExecutionPercentage;
 
+    /**
+     * The per-execution percentage benefit.
+     * @return the value
+     **/
     public Integer getPerExecutionPercentage() {
         return perExecutionPercentage;
     }
@@ -389,6 +547,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isStatsFindingPresent")
     private final Boolean isStatsFindingPresent;
 
+    /**
+     * Indicates whether a statistics recommendation was reported for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsStatsFindingPresent() {
         return isStatsFindingPresent;
     }
@@ -399,6 +561,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingPresent")
     private final Boolean isSqlProfileFindingPresent;
 
+    /**
+     * Indicates whether a SQL Profile recommendation was reported for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsSqlProfileFindingPresent() {
         return isSqlProfileFindingPresent;
     }
@@ -409,6 +575,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingImplemented")
     private final Boolean isSqlProfileFindingImplemented;
 
+    /**
+     * Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsSqlProfileFindingImplemented() {
         return isSqlProfileFindingImplemented;
     }
@@ -419,6 +589,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isIndexFindingPresent")
     private final Boolean isIndexFindingPresent;
 
+    /**
+     * Indicates whether an index recommendation was reported for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsIndexFindingPresent() {
         return isIndexFindingPresent;
     }
@@ -429,6 +603,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isRestructureSqlFindingPresent")
     private final Boolean isRestructureSqlFindingPresent;
 
+    /**
+     * Indicates whether a restructure SQL recommendation was reported for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsRestructureSqlFindingPresent() {
         return isRestructureSqlFindingPresent;
     }
@@ -439,6 +617,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isAlternativePlanFindingPresent")
     private final Boolean isAlternativePlanFindingPresent;
 
+    /**
+     * Indicates whether an alternative execution plan was reported for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsAlternativePlanFindingPresent() {
         return isAlternativePlanFindingPresent;
     }
@@ -449,6 +631,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isMiscellaneousFindingPresent")
     private final Boolean isMiscellaneousFindingPresent;
 
+    /**
+     * Indicates whether a miscellaneous finding was reported for this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsMiscellaneousFindingPresent() {
         return isMiscellaneousFindingPresent;
     }
@@ -459,6 +645,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isErrorFindingPresent")
     private final Boolean isErrorFindingPresent;
 
+    /**
+     * Indicates whether there is an error in this SQL statement.
+     * @return the value
+     **/
     public Boolean getIsErrorFindingPresent() {
         return isErrorFindingPresent;
     }
@@ -469,6 +659,10 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isTimeoutFindingPresent")
     private final Boolean isTimeoutFindingPresent;
 
+    /**
+     * Indicates whether the task timed out.
+     * @return the value
+     **/
     public Boolean getIsTimeoutFindingPresent() {
         return isTimeoutFindingPresent;
     }

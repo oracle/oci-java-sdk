@@ -17,6 +17,10 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String privateIp;
 
+    /**
+     * The IP address of the resource in the private subnet.
+     *
+     */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -25,6 +29,9 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String privateEndpointId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     */
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -35,6 +42,11 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +60,14 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -59,11 +79,16 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The IP address of the resource in the private subnet.
+         *
+         */
         private String privateIp = null;
 
         /**
          * The IP address of the resource in the private subnet.
          *
+         * @param privateIp the value to set
          * @return this builder instance
          */
         public Builder privateIp(String privateIp) {
@@ -71,10 +96,14 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
         private String privateEndpointId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         * @param privateEndpointId the value to set
          * @return this builder instance
          */
         public Builder privateEndpointId(String privateEndpointId) {
@@ -82,12 +111,18 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -95,6 +130,14 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -104,6 +147,7 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request may be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -185,7 +229,8 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -195,6 +240,10 @@ public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

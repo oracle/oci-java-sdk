@@ -30,18 +30,35 @@ public final class HistoricalDataItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The timestamp in which the current sampling period ends in RFC 3339 format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
 
+        /**
+         * The timestamp in which the current sampling period ends in RFC 3339 format.
+         * @param endTimestamp the value to set
+         * @return this builder
+         **/
         public Builder endTimestamp(java.util.Date endTimestamp) {
             this.endTimestamp = endTimestamp;
             this.__explicitlySet__.add("endTimestamp");
             return this;
         }
-
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         * @param usage the value to set
+         * @return this builder
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
@@ -83,6 +100,10 @@ public final class HistoricalDataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
     private final java.util.Date endTimestamp;
 
+    /**
+     * The timestamp in which the current sampling period ends in RFC 3339 format.
+     * @return the value
+     **/
     public java.util.Date getEndTimestamp() {
         return endTimestamp;
     }
@@ -94,6 +115,11 @@ public final class HistoricalDataItem {
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     * @return the value
+     **/
     public Double getUsage() {
         return usage;
     }

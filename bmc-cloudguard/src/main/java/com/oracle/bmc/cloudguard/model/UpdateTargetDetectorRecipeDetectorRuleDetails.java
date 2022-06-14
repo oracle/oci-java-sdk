@@ -29,6 +29,7 @@ public final class UpdateTargetDetectorRecipeDetectorRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private UpdateTargetDetectorRuleDetails details;
 

@@ -17,6 +17,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     public String getName() {
         return name;
     }
@@ -33,6 +39,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private String vcnId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+     */
     public String getVcnId() {
         return vcnId;
     }
@@ -42,6 +51,10 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private Boolean isCluster;
 
+    /**
+     * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
+     *
+     */
     public Boolean getIsCluster() {
         return isCluster;
     }
@@ -50,6 +63,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private com.oracle.bmc.databasemanagement.model.LifecycleStates lifecycleState;
 
+    /**
+     * The lifecycle state of a resource.
+     */
     public com.oracle.bmc.databasemanagement.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -58,6 +74,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -68,6 +87,11 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -76,6 +100,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -126,6 +153,12 @@ public class ListDbManagementPrivateEndpointsRequest
         }
     };
 
+    /**
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -134,6 +167,9 @@ public class ListDbManagementPrivateEndpointsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -145,10 +181,14 @@ public class ListDbManagementPrivateEndpointsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -156,10 +196,14 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -167,10 +211,14 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+         */
         private String vcnId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId the value to set
          * @return this builder instance
          */
         public Builder vcnId(String vcnId) {
@@ -178,11 +226,16 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
+         *
+         */
         private Boolean isCluster = null;
 
         /**
          * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
          *
+         * @param isCluster the value to set
          * @return this builder instance
          */
         public Builder isCluster(Boolean isCluster) {
@@ -190,10 +243,14 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The lifecycle state of a resource.
+         */
         private com.oracle.bmc.databasemanagement.model.LifecycleStates lifecycleState = null;
 
         /**
          * The lifecycle state of a resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -202,10 +259,14 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -213,12 +274,18 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -226,10 +293,14 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -237,6 +308,12 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The default sort order
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -244,6 +321,7 @@ public class ListDbManagementPrivateEndpointsRequest
          * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
          * The \u2018NAME\u2019 sort order is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -251,10 +329,14 @@ public class ListDbManagementPrivateEndpointsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -349,7 +431,8 @@ public class ListDbManagementPrivateEndpointsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -365,6 +448,10 @@ public class ListDbManagementPrivateEndpointsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String availabilityDomain;
 
+    /**
+     * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -43,6 +52,17 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 1000 is the maximum.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 500}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -56,6 +76,14 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -67,6 +95,12 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * <p>
+     * Example: {@code My resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -118,6 +152,11 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Filter results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -128,6 +167,11 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String id;
 
+    /**
+     * Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
+     * the resouce type.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -180,6 +224,13 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The field to sort by. You can provide either value, but not both.
+     * By default, when you sort by time created, results are shown
+     * in descending order. When you sort by display name, results are
+     * shown in ascending order.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -230,6 +281,12 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc', where 'asc' is
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -240,6 +297,11 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -251,10 +313,14 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -262,6 +328,12 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         */
         private String availabilityDomain = null;
 
         /**
@@ -269,6 +341,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -276,6 +349,17 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 1000 is the maximum.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 500}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -288,6 +372,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * <p>
          * Example: {@code 500}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -295,6 +380,14 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -304,6 +397,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -311,6 +405,12 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * <p>
+         * Example: {@code My resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -318,6 +418,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * <p>
          * Example: {@code My resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -325,12 +426,18 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Filter results by the specified lifecycle state. Must be a valid
+         * state for the resource type.
+         *
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * Filter results by the specified lifecycle state. Must be a valid
          * state for the resource type.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -338,12 +445,18 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
+         * the resouce type.
+         *
+         */
         private String id = null;
 
         /**
          * Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
          * the resouce type.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -351,6 +464,13 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide either value, but not both.
+         * By default, when you sort by time created, results are shown
+         * in descending order. When you sort by display name, results are
+         * shown in ascending order.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -359,6 +479,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * in descending order. When you sort by display name, results are
          * shown in ascending order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -366,6 +487,12 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc', where 'asc' is
+         * ascending and 'desc' is descending. The default order is 'desc'
+         * except for numeric values.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -373,6 +500,7 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * ascending and 'desc' is descending. The default order is 'desc'
          * except for numeric values.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -380,12 +508,18 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -479,7 +613,8 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -495,6 +630,10 @@ public class ListExportSetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

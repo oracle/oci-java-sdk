@@ -65,108 +65,207 @@ public final class MonthlyRewardSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of rewards available for a specific usage period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableRewards")
         private Float availableRewards;
 
+        /**
+         * The number of rewards available for a specific usage period.
+         * @param availableRewards the value to set
+         * @return this builder
+         **/
         public Builder availableRewards(Float availableRewards) {
             this.availableRewards = availableRewards;
             this.__explicitlySet__.add("availableRewards");
             return this;
         }
-
+        /**
+         * The number of rewards redeemed for a specific month.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redeemedRewards")
         private Float redeemedRewards;
 
+        /**
+         * The number of rewards redeemed for a specific month.
+         * @param redeemedRewards the value to set
+         * @return this builder
+         **/
         public Builder redeemedRewards(Float redeemedRewards) {
             this.redeemedRewards = redeemedRewards;
             this.__explicitlySet__.add("redeemedRewards");
             return this;
         }
-
+        /**
+         * The number of rewards earned for the specific usage period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
         private Float earnedRewards;
 
+        /**
+         * The number of rewards earned for the specific usage period.
+         * @param earnedRewards the value to set
+         * @return this builder
+         **/
         public Builder earnedRewards(Float earnedRewards) {
             this.earnedRewards = earnedRewards;
             this.__explicitlySet__.add("earnedRewards");
             return this;
         }
-
+        /**
+         * The boolean parameter to indicate whether or not the available rewards are manually posted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManual")
         private Boolean isManual;
 
+        /**
+         * The boolean parameter to indicate whether or not the available rewards are manually posted.
+         * @param isManual the value to set
+         * @return this builder
+         **/
         public Builder isManual(Boolean isManual) {
             this.isManual = isManual;
             this.__explicitlySet__.add("isManual");
             return this;
         }
-
+        /**
+         * The date and time when rewards expire.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsExpired")
         private java.util.Date timeRewardsExpired;
 
+        /**
+         * The date and time when rewards expire.
+         * @param timeRewardsExpired the value to set
+         * @return this builder
+         **/
         public Builder timeRewardsExpired(java.util.Date timeRewardsExpired) {
             this.timeRewardsExpired = timeRewardsExpired;
             this.__explicitlySet__.add("timeRewardsExpired");
             return this;
         }
-
+        /**
+         * The date and time when rewards accrue.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsEarned")
         private java.util.Date timeRewardsEarned;
 
+        /**
+         * The date and time when rewards accrue.
+         *
+         * @param timeRewardsEarned the value to set
+         * @return this builder
+         **/
         public Builder timeRewardsEarned(java.util.Date timeRewardsEarned) {
             this.timeRewardsEarned = timeRewardsEarned;
             this.__explicitlySet__.add("timeRewardsEarned");
             return this;
         }
-
+        /**
+         * The start date and time for the usage period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
 
+        /**
+         * The start date and time for the usage period.
+         *
+         * @param timeUsageStarted the value to set
+         * @return this builder
+         **/
         public Builder timeUsageStarted(java.util.Date timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             this.__explicitlySet__.add("timeUsageStarted");
             return this;
         }
-
+        /**
+         * The end date and time for the usage period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
         private java.util.Date timeUsageEnded;
 
+        /**
+         * The end date and time for the usage period.
+         *
+         * @param timeUsageEnded the value to set
+         * @return this builder
+         **/
         public Builder timeUsageEnded(java.util.Date timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             this.__explicitlySet__.add("timeUsageEnded");
             return this;
         }
-
+        /**
+         * The usage amount for the usage period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
         private Double usageAmount;
 
+        /**
+         * The usage amount for the usage period.
+         *
+         * @param usageAmount the value to set
+         * @return this builder
+         **/
         public Builder usageAmount(Double usageAmount) {
             this.usageAmount = usageAmount;
             this.__explicitlySet__.add("usageAmount");
             return this;
         }
-
+        /**
+         * The eligible usage amount for the usage period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eligibleUsageAmount")
         private Double eligibleUsageAmount;
 
+        /**
+         * The eligible usage amount for the usage period.
+         *
+         * @param eligibleUsageAmount the value to set
+         * @return this builder
+         **/
         public Builder eligibleUsageAmount(Double eligibleUsageAmount) {
             this.eligibleUsageAmount = eligibleUsageAmount;
             this.__explicitlySet__.add("eligibleUsageAmount");
             return this;
         }
-
+        /**
+         * The ineligible usage amount for the usage period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ineligibleUsageAmount")
         private Double ineligibleUsageAmount;
 
+        /**
+         * The ineligible usage amount for the usage period.
+         *
+         * @param ineligibleUsageAmount the value to set
+         * @return this builder
+         **/
         public Builder ineligibleUsageAmount(Double ineligibleUsageAmount) {
             this.ineligibleUsageAmount = ineligibleUsageAmount;
             this.__explicitlySet__.add("ineligibleUsageAmount");
             return this;
         }
-
+        /**
+         * The usage period ID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usagePeriodKey")
         private String usagePeriodKey;
 
+        /**
+         * The usage period ID.
+         *
+         * @param usagePeriodKey the value to set
+         * @return this builder
+         **/
         public Builder usagePeriodKey(String usagePeriodKey) {
             this.usagePeriodKey = usagePeriodKey;
             this.__explicitlySet__.add("usagePeriodKey");
@@ -233,6 +332,10 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availableRewards")
     private final Float availableRewards;
 
+    /**
+     * The number of rewards available for a specific usage period.
+     * @return the value
+     **/
     public Float getAvailableRewards() {
         return availableRewards;
     }
@@ -243,6 +346,10 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("redeemedRewards")
     private final Float redeemedRewards;
 
+    /**
+     * The number of rewards redeemed for a specific month.
+     * @return the value
+     **/
     public Float getRedeemedRewards() {
         return redeemedRewards;
     }
@@ -253,6 +360,10 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("earnedRewards")
     private final Float earnedRewards;
 
+    /**
+     * The number of rewards earned for the specific usage period.
+     * @return the value
+     **/
     public Float getEarnedRewards() {
         return earnedRewards;
     }
@@ -263,6 +374,10 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isManual")
     private final Boolean isManual;
 
+    /**
+     * The boolean parameter to indicate whether or not the available rewards are manually posted.
+     * @return the value
+     **/
     public Boolean getIsManual() {
         return isManual;
     }
@@ -273,6 +388,10 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsExpired")
     private final java.util.Date timeRewardsExpired;
 
+    /**
+     * The date and time when rewards expire.
+     * @return the value
+     **/
     public java.util.Date getTimeRewardsExpired() {
         return timeRewardsExpired;
     }
@@ -284,6 +403,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsEarned")
     private final java.util.Date timeRewardsEarned;
 
+    /**
+     * The date and time when rewards accrue.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeRewardsEarned() {
         return timeRewardsEarned;
     }
@@ -295,6 +419,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     private final java.util.Date timeUsageStarted;
 
+    /**
+     * The start date and time for the usage period.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUsageStarted() {
         return timeUsageStarted;
     }
@@ -306,6 +435,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     private final java.util.Date timeUsageEnded;
 
+    /**
+     * The end date and time for the usage period.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUsageEnded() {
         return timeUsageEnded;
     }
@@ -317,6 +451,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
     private final Double usageAmount;
 
+    /**
+     * The usage amount for the usage period.
+     *
+     * @return the value
+     **/
     public Double getUsageAmount() {
         return usageAmount;
     }
@@ -328,6 +467,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("eligibleUsageAmount")
     private final Double eligibleUsageAmount;
 
+    /**
+     * The eligible usage amount for the usage period.
+     *
+     * @return the value
+     **/
     public Double getEligibleUsageAmount() {
         return eligibleUsageAmount;
     }
@@ -339,6 +483,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibleUsageAmount")
     private final Double ineligibleUsageAmount;
 
+    /**
+     * The ineligible usage amount for the usage period.
+     *
+     * @return the value
+     **/
     public Double getIneligibleUsageAmount() {
         return ineligibleUsageAmount;
     }
@@ -350,6 +499,11 @@ public final class MonthlyRewardSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("usagePeriodKey")
     private final String usagePeriodKey;
 
+    /**
+     * The usage period ID.
+     *
+     * @return the value
+     **/
     public String getUsagePeriodKey() {
         return usagePeriodKey;
     }

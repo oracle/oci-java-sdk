@@ -16,6 +16,9 @@ public class GetMaintenanceRunRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String maintenanceRunId;
 
+    /**
+     * The maintenance run OCID.
+     */
     public String getMaintenanceRunId() {
         return maintenanceRunId;
     }
@@ -27,10 +30,14 @@ public class GetMaintenanceRunRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The maintenance run OCID.
+         */
         private String maintenanceRunId = null;
 
         /**
          * The maintenance run OCID.
+         * @param maintenanceRunId the value to set
          * @return this builder instance
          */
         public Builder maintenanceRunId(String maintenanceRunId) {
@@ -106,12 +113,17 @@ public class GetMaintenanceRunRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().maintenanceRunId(maintenanceRunId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

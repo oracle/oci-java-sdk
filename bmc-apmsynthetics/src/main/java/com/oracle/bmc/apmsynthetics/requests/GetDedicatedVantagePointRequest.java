@@ -18,6 +18,10 @@ public class GetDedicatedVantagePointRequest
      */
     private String apmDomainId;
 
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -26,6 +30,9 @@ public class GetDedicatedVantagePointRequest
      */
     private String dedicatedVantagePointId;
 
+    /**
+     * The OCID of the dedicated vantage point.
+     */
     public String getDedicatedVantagePointId() {
         return dedicatedVantagePointId;
     }
@@ -36,6 +43,11 @@ public class GetDedicatedVantagePointRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,11 +59,16 @@ public class GetDedicatedVantagePointRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
          * The APM domain ID the request is intended for.
          *
+         * @param apmDomainId the value to set
          * @return this builder instance
          */
         public Builder apmDomainId(String apmDomainId) {
@@ -59,10 +76,14 @@ public class GetDedicatedVantagePointRequest
             return this;
         }
 
+        /**
+         * The OCID of the dedicated vantage point.
+         */
         private String dedicatedVantagePointId = null;
 
         /**
          * The OCID of the dedicated vantage point.
+         * @param dedicatedVantagePointId the value to set
          * @return this builder instance
          */
         public Builder dedicatedVantagePointId(String dedicatedVantagePointId) {
@@ -70,12 +91,18 @@ public class GetDedicatedVantagePointRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -155,7 +182,8 @@ public class GetDedicatedVantagePointRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -164,6 +192,10 @@ public class GetDedicatedVantagePointRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

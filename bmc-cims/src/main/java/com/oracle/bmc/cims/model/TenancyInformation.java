@@ -30,18 +30,33 @@ public final class TenancyInformation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Customer Support Identifier number associated with the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
         private String customerSupportKey;
 
+        /**
+         * The Customer Support Identifier number associated with the tenancy.
+         * @param customerSupportKey the value to set
+         * @return this builder
+         **/
         public Builder customerSupportKey(String customerSupportKey) {
             this.customerSupportKey = customerSupportKey;
             this.__explicitlySet__.add("customerSupportKey");
             return this;
         }
-
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * The OCID of the tenancy.
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
@@ -84,6 +99,10 @@ public final class TenancyInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
     private final String customerSupportKey;
 
+    /**
+     * The Customer Support Identifier number associated with the tenancy.
+     * @return the value
+     **/
     public String getCustomerSupportKey() {
         return customerSupportKey;
     }
@@ -94,6 +113,10 @@ public final class TenancyInformation {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * The OCID of the tenancy.
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }

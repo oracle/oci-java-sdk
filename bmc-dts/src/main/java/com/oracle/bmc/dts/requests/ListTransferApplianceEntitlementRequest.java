@@ -17,6 +17,9 @@ public class ListTransferApplianceEntitlementRequest
      */
     private String compartmentId;
 
+    /**
+     * compartment id
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListTransferApplianceEntitlementRequest
      */
     private String id;
 
+    /**
+     * filtering by Transfer Appliance Entitlement id
+     */
     public String getId() {
         return id;
     }
@@ -33,6 +39,9 @@ public class ListTransferApplianceEntitlementRequest
      */
     private String displayName;
 
+    /**
+     * filtering by displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -43,6 +52,11 @@ public class ListTransferApplianceEntitlementRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -54,10 +68,14 @@ public class ListTransferApplianceEntitlementRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * compartment id
+         */
         private String compartmentId = null;
 
         /**
          * compartment id
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -65,10 +83,14 @@ public class ListTransferApplianceEntitlementRequest
             return this;
         }
 
+        /**
+         * filtering by Transfer Appliance Entitlement id
+         */
         private String id = null;
 
         /**
          * filtering by Transfer Appliance Entitlement id
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -76,10 +98,14 @@ public class ListTransferApplianceEntitlementRequest
             return this;
         }
 
+        /**
+         * filtering by displayName
+         */
         private String displayName = null;
 
         /**
          * filtering by displayName
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -87,12 +113,18 @@ public class ListTransferApplianceEntitlementRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -175,7 +207,8 @@ public class ListTransferApplianceEntitlementRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -185,6 +218,10 @@ public class ListTransferApplianceEntitlementRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,18 +28,33 @@ public final class ResourceType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Resource type name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Resource type name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Categories for resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<Category> categories;
 
+        /**
+         * Categories for resources.
+         * @param categories the value to set
+         * @return this builder
+         **/
         public Builder categories(java.util.List<Category> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
@@ -81,6 +96,10 @@ public final class ResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Resource type name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -91,6 +110,10 @@ public final class ResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<Category> categories;
 
+    /**
+     * Categories for resources.
+     * @return the value
+     **/
     public java.util.List<Category> getCategories() {
         return categories;
     }

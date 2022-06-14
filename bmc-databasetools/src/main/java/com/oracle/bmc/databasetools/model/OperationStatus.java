@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Possible operation status.
+ * The state of the operation.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum OperationStatus {

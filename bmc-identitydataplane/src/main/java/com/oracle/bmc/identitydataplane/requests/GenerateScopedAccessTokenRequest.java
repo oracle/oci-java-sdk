@@ -19,6 +19,9 @@ public class GenerateScopedAccessTokenRequest
     private com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
             generateScopedAccessTokenDetails;
 
+    /**
+     * Scoped Access token request
+     */
     public com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
             getGenerateScopedAccessTokenDetails() {
         return generateScopedAccessTokenDetails;
@@ -42,11 +45,15 @@ public class GenerateScopedAccessTokenRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Scoped Access token request
+         */
         private com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
                 generateScopedAccessTokenDetails = null;
 
         /**
          * Scoped Access token request
+         * @param generateScopedAccessTokenDetails the value to set
          * @return this builder instance
          */
         public Builder generateScopedAccessTokenDetails(
@@ -136,12 +143,17 @@ public class GenerateScopedAccessTokenRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().generateScopedAccessTokenDetails(generateScopedAccessTokenDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class CreateCustomPropertyRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class CreateCustomPropertyRequest
      */
     private String namespaceId;
 
+    /**
+     * Unique namespace identifier.
+     */
     public String getNamespaceId() {
         return namespaceId;
     }
@@ -36,6 +42,10 @@ public class CreateCustomPropertyRequest
     private com.oracle.bmc.datacatalog.model.CreateCustomPropertyDetails
             createCustomPropertyDetails;
 
+    /**
+     * The information used to create the Custom Property.
+     *
+     */
     public com.oracle.bmc.datacatalog.model.CreateCustomPropertyDetails
             getCreateCustomPropertyDetails() {
         return createCustomPropertyDetails;
@@ -45,6 +55,9 @@ public class CreateCustomPropertyRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,6 +71,14 @@ public class CreateCustomPropertyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -80,10 +101,14 @@ public class CreateCustomPropertyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -91,10 +116,14 @@ public class CreateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * Unique namespace identifier.
+         */
         private String namespaceId = null;
 
         /**
          * Unique namespace identifier.
+         * @param namespaceId the value to set
          * @return this builder instance
          */
         public Builder namespaceId(String namespaceId) {
@@ -102,12 +131,17 @@ public class CreateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * The information used to create the Custom Property.
+         *
+         */
         private com.oracle.bmc.datacatalog.model.CreateCustomPropertyDetails
                 createCustomPropertyDetails = null;
 
         /**
          * The information used to create the Custom Property.
          *
+         * @param createCustomPropertyDetails the value to set
          * @return this builder instance
          */
         public Builder createCustomPropertyDetails(
@@ -117,10 +151,14 @@ public class CreateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,6 +166,14 @@ public class CreateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -137,6 +183,7 @@ public class CreateCustomPropertyRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -231,7 +278,8 @@ public class CreateCustomPropertyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -242,6 +290,10 @@ public class CreateCustomPropertyRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

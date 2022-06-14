@@ -45,6 +45,11 @@ public class ResponseCacheLookupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether this policy is currently enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -61,6 +66,16 @@ public class ResponseCacheLookupPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivateCachingEnabled")
     private final Boolean isPrivateCachingEnabled;
 
+    /**
+     * Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your
+     * cache key additions to get the level of isolation across authenticated requests that you require.
+     * <p>
+     * When false, any request with an Authorization header will not be stored in the Response Cache.
+     * <p>
+     * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
+     *
+     * @return the value
+     **/
     public Boolean getIsPrivateCachingEnabled() {
         return isPrivateCachingEnabled;
     }

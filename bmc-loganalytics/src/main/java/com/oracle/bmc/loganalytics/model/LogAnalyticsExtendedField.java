@@ -50,6 +50,7 @@ public final class LogAnalyticsExtendedField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private LogAnalyticsField field;
 
@@ -68,46 +69,81 @@ public final class LogAnalyticsExtendedField {
             this.__explicitlySet__.add("extendedFieldDefinition");
             return this;
         }
-
+        /**
+         * The extended field unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
         private Long extendedFieldDefinitionId;
 
+        /**
+         * The extended field unique identifier.
+         * @param extendedFieldDefinitionId the value to set
+         * @return this builder
+         **/
         public Builder extendedFieldDefinitionId(Long extendedFieldDefinitionId) {
             this.extendedFieldDefinitionId = extendedFieldDefinitionId;
             this.__explicitlySet__.add("extendedFieldDefinitionId");
             return this;
         }
-
+        /**
+         * The field internal name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * The field internal name
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * The field internal display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayName")
         private String fieldDisplayName;
 
+        /**
+         * The field internal display name.
+         * @param fieldDisplayName the value to set
+         * @return this builder
+         **/
         public Builder fieldDisplayName(String fieldDisplayName) {
             this.fieldDisplayName = fieldDisplayName;
             this.__explicitlySet__.add("fieldDisplayName");
             return this;
         }
-
+        /**
+         * The saved regular expression name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedRegularExpressionName")
         private String savedRegularExpressionName;
 
+        /**
+         * The saved regular expression name.
+         * @param savedRegularExpressionName the value to set
+         * @return this builder
+         **/
         public Builder savedRegularExpressionName(String savedRegularExpressionName) {
             this.savedRegularExpressionName = savedRegularExpressionName;
             this.__explicitlySet__.add("savedRegularExpressionName");
             return this;
         }
-
+        /**
+         * The extended field unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldId")
         private Long extendedFieldId;
 
+        /**
+         * The extended field unique identifier.
+         * @param extendedFieldId the value to set
+         * @return this builder
+         **/
         public Builder extendedFieldId(Long extendedFieldId) {
             this.extendedFieldId = extendedFieldId;
             this.__explicitlySet__.add("extendedFieldId");
@@ -178,6 +214,10 @@ public final class LogAnalyticsExtendedField {
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
     private final Long extendedFieldDefinitionId;
 
+    /**
+     * The extended field unique identifier.
+     * @return the value
+     **/
     public Long getExtendedFieldDefinitionId() {
         return extendedFieldDefinitionId;
     }
@@ -188,6 +228,10 @@ public final class LogAnalyticsExtendedField {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * The field internal name
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -198,6 +242,10 @@ public final class LogAnalyticsExtendedField {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayName")
     private final String fieldDisplayName;
 
+    /**
+     * The field internal display name.
+     * @return the value
+     **/
     public String getFieldDisplayName() {
         return fieldDisplayName;
     }
@@ -208,6 +256,10 @@ public final class LogAnalyticsExtendedField {
     @com.fasterxml.jackson.annotation.JsonProperty("savedRegularExpressionName")
     private final String savedRegularExpressionName;
 
+    /**
+     * The saved regular expression name.
+     * @return the value
+     **/
     public String getSavedRegularExpressionName() {
         return savedRegularExpressionName;
     }
@@ -218,6 +270,10 @@ public final class LogAnalyticsExtendedField {
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldId")
     private final Long extendedFieldId;
 
+    /**
+     * The extended field unique identifier.
+     * @return the value
+     **/
     public Long getExtendedFieldId() {
         return extendedFieldId;
     }

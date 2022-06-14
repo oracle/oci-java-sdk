@@ -31,36 +31,73 @@ public final class JobShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the job shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the job shape.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The number of cores associated with this job run shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
         private Integer coreCount;
 
+        /**
+         * The number of cores associated with this job run shape.
+         *
+         * @param coreCount the value to set
+         * @return this builder
+         **/
         public Builder coreCount(Integer coreCount) {
             this.coreCount = coreCount;
             this.__explicitlySet__.add("coreCount");
             return this;
         }
-
+        /**
+         * The number of cores associated with this job shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
+        /**
+         * The number of cores associated with this job shape.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-
+        /**
+         * The family that the compute shape belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
         private ShapeSeries shapeSeries;
 
+        /**
+         * The family that the compute shape belongs to.
+         *
+         * @param shapeSeries the value to set
+         * @return this builder
+         **/
         public Builder shapeSeries(ShapeSeries shapeSeries) {
             this.shapeSeries = shapeSeries;
             this.__explicitlySet__.add("shapeSeries");
@@ -108,6 +145,11 @@ public final class JobShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the job shape.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -119,6 +161,11 @@ public final class JobShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("coreCount")
     private final Integer coreCount;
 
+    /**
+     * The number of cores associated with this job run shape.
+     *
+     * @return the value
+     **/
     public Integer getCoreCount() {
         return coreCount;
     }
@@ -130,6 +177,11 @@ public final class JobShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
+    /**
+     * The number of cores associated with this job shape.
+     *
+     * @return the value
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -192,6 +244,11 @@ public final class JobShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shapeSeries")
     private final ShapeSeries shapeSeries;
 
+    /**
+     * The family that the compute shape belongs to.
+     *
+     * @return the value
+     **/
     public ShapeSeries getShapeSeries() {
         return shapeSeries;
     }

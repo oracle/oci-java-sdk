@@ -15,6 +15,12 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +45,10 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.bds.model.BdsApiKey bdsApiKey;
 
+    /**
+     * The returned BdsApiKey instance.
+     * @return the value
+     */
     public com.oracle.bmc.bds.model.BdsApiKey getBdsApiKey() {
         return bdsApiKey;
     }
@@ -58,22 +73,52 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned BdsApiKey instance.
+         */
         private com.oracle.bmc.bds.model.BdsApiKey bdsApiKey;
 
+        /**
+         * The returned BdsApiKey instance.
+         * @param bdsApiKey the value to set
+         * @return this builder
+         */
         public Builder bdsApiKey(com.oracle.bmc.bds.model.BdsApiKey bdsApiKey) {
             this.bdsApiKey = bdsApiKey;
             return this;
@@ -92,11 +137,19 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetBdsApiKeyResponse build() {
             return new GetBdsApiKeyResponse(__httpStatusCode__, opcRequestId, etag, bdsApiKey);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,18 +30,33 @@ public final class DbSystemPlacement {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain in which the DB System is placed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain in which the DB System is placed.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The fault domain in which the DB System is placed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain in which the DB System is placed.
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
@@ -84,6 +99,10 @@ public final class DbSystemPlacement {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain in which the DB System is placed.
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -94,6 +113,10 @@ public final class DbSystemPlacement {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain in which the DB System is placed.
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }

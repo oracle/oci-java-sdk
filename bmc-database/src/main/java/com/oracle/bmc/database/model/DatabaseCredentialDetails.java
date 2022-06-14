@@ -31,18 +31,33 @@ public final class DatabaseCredentialDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Oracle Database user that will be used to connect to the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The name of the Oracle Database user that will be used to connect to the database.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
@@ -86,6 +101,10 @@ public final class DatabaseCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The name of the Oracle Database user that will be used to connect to the database.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -96,6 +115,10 @@ public final class DatabaseCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }

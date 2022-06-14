@@ -13,6 +13,10 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -22,6 +26,10 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,6 +39,10 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.waas.model.PolicyConfig policyConfig;
 
+    /**
+     * The returned PolicyConfig instance.
+     * @return the value
+     */
     public com.oracle.bmc.waas.model.PolicyConfig getPolicyConfig() {
         return policyConfig;
     }
@@ -60,22 +72,46 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PolicyConfig instance.
+         */
         private com.oracle.bmc.waas.model.PolicyConfig policyConfig;
 
+        /**
+         * The returned PolicyConfig instance.
+         * @param policyConfig the value to set
+         * @return this builder
+         */
         public Builder policyConfig(com.oracle.bmc.waas.model.PolicyConfig policyConfig) {
             this.policyConfig = policyConfig;
             return this;
@@ -94,12 +130,20 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetPolicyConfigResponse build() {
             return new GetPolicyConfigResponse(
                     __httpStatusCode__, etag, opcRequestId, policyConfig);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -38,27 +38,55 @@ public final class DatabaseManagementConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the Database Management service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
         private DatabaseManagementStatus databaseManagementStatus;
 
+        /**
+         * The status of the Database Management service.
+         * @param databaseManagementStatus the value to set
+         * @return this builder
+         **/
         public Builder databaseManagementStatus(DatabaseManagementStatus databaseManagementStatus) {
             this.databaseManagementStatus = databaseManagementStatus;
             this.__explicitlySet__.add("databaseManagementStatus");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConnectionId")
         private String databaseManagementConnectionId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         * @param databaseManagementConnectionId the value to set
+         * @return this builder
+         **/
         public Builder databaseManagementConnectionId(String databaseManagementConnectionId) {
             this.databaseManagementConnectionId = databaseManagementConnectionId;
             this.__explicitlySet__.add("databaseManagementConnectionId");
             return this;
         }
-
+        /**
+         * The Oracle license model that applies to the external database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to the external database.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -157,6 +185,10 @@ public final class DatabaseManagementConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
     private final DatabaseManagementStatus databaseManagementStatus;
 
+    /**
+     * The status of the Database Management service.
+     * @return the value
+     **/
     public DatabaseManagementStatus getDatabaseManagementStatus() {
         return databaseManagementStatus;
     }
@@ -169,6 +201,12 @@ public final class DatabaseManagementConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConnectionId")
     private final String databaseManagementConnectionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     *
+     * @return the value
+     **/
     public String getDatabaseManagementConnectionId() {
         return databaseManagementConnectionId;
     }
@@ -229,6 +267,11 @@ public final class DatabaseManagementConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to the external database.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }

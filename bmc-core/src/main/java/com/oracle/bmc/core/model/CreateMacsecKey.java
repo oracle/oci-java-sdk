@@ -32,19 +32,46 @@ public final class CreateMacsecKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+         * <p>
+         * NOTE: Only the latest secret version will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
         private String connectivityAssociationNameSecretId;
 
+        /**
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+         * <p>
+         * NOTE: Only the latest secret version will be used.
+         *
+         * @param connectivityAssociationNameSecretId the value to set
+         * @return this builder
+         **/
         public Builder connectivityAssociationNameSecretId(
                 String connectivityAssociationNameSecretId) {
             this.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
             this.__explicitlySet__.add("connectivityAssociationNameSecretId");
             return this;
         }
-
+        /**
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+         * <p>
+         * NOTE: Only the latest secret version will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
         private String connectivityAssociationKeySecretId;
 
+        /**
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+         * <p>
+         * NOTE: Only the latest secret version will be used.
+         *
+         * @param connectivityAssociationKeySecretId the value to set
+         * @return this builder
+         **/
         public Builder connectivityAssociationKeySecretId(
                 String connectivityAssociationKeySecretId) {
             this.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
@@ -96,6 +123,13 @@ public final class CreateMacsecKey {
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
     private final String connectivityAssociationNameSecretId;
 
+    /**
+     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+     * <p>
+     * NOTE: Only the latest secret version will be used.
+     *
+     * @return the value
+     **/
     public String getConnectivityAssociationNameSecretId() {
         return connectivityAssociationNameSecretId;
     }
@@ -109,6 +143,13 @@ public final class CreateMacsecKey {
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
     private final String connectivityAssociationKeySecretId;
 
+    /**
+     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+     * <p>
+     * NOTE: Only the latest secret version will be used.
+     *
+     * @return the value
+     **/
     public String getConnectivityAssociationKeySecretId() {
         return connectivityAssociationKeySecretId;
     }

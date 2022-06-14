@@ -18,6 +18,9 @@ public class AssociateCustomPropertyRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class AssociateCustomPropertyRequest
      */
     private String typeKey;
 
+    /**
+     * Unique type key.
+     */
     public String getTypeKey() {
         return typeKey;
     }
@@ -36,6 +42,10 @@ public class AssociateCustomPropertyRequest
     private com.oracle.bmc.datacatalog.model.TypeCustomPropertyDetails
             associateCustomPropertyDetails;
 
+    /**
+     * The information used to associate the custom property for the type.
+     *
+     */
     public com.oracle.bmc.datacatalog.model.TypeCustomPropertyDetails
             getAssociateCustomPropertyDetails() {
         return associateCustomPropertyDetails;
@@ -45,6 +55,9 @@ public class AssociateCustomPropertyRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,6 +71,14 @@ public class AssociateCustomPropertyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -71,6 +92,14 @@ public class AssociateCustomPropertyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -93,10 +122,14 @@ public class AssociateCustomPropertyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -104,10 +137,14 @@ public class AssociateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * Unique type key.
+         */
         private String typeKey = null;
 
         /**
          * Unique type key.
+         * @param typeKey the value to set
          * @return this builder instance
          */
         public Builder typeKey(String typeKey) {
@@ -115,12 +152,17 @@ public class AssociateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * The information used to associate the custom property for the type.
+         *
+         */
         private com.oracle.bmc.datacatalog.model.TypeCustomPropertyDetails
                 associateCustomPropertyDetails = null;
 
         /**
          * The information used to associate the custom property for the type.
          *
+         * @param associateCustomPropertyDetails the value to set
          * @return this builder instance
          */
         public Builder associateCustomPropertyDetails(
@@ -130,10 +172,14 @@ public class AssociateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -141,6 +187,14 @@ public class AssociateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -150,6 +204,7 @@ public class AssociateCustomPropertyRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -157,6 +212,14 @@ public class AssociateCustomPropertyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -166,6 +229,7 @@ public class AssociateCustomPropertyRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -262,7 +326,8 @@ public class AssociateCustomPropertyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -274,6 +339,10 @@ public class AssociateCustomPropertyRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

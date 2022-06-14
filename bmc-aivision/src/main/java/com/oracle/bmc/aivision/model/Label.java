@@ -28,18 +28,33 @@ public final class Label {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The classification catagory label name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The classification catagory label name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -81,6 +96,10 @@ public final class Label {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The classification catagory label name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -91,6 +110,10 @@ public final class Label {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }

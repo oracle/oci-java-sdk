@@ -27,18 +27,33 @@ package com.oracle.bmc.devops.model;
 public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The URL of an OCIR repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
         private String chartUrl;
 
+        /**
+         * The URL of an OCIR repository.
+         * @param chartUrl the value to set
+         * @return this builder
+         **/
         public Builder chartUrl(String chartUrl) {
             this.chartUrl = chartUrl;
             this.__explicitlySet__.add("chartUrl");
             return this;
         }
-
+        /**
+         * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
         private String deployArtifactVersion;
 
+        /**
+         * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+         * @param deployArtifactVersion the value to set
+         * @return this builder
+         **/
         public Builder deployArtifactVersion(String deployArtifactVersion) {
             this.deployArtifactVersion = deployArtifactVersion;
             this.__explicitlySet__.add("deployArtifactVersion");
@@ -89,6 +104,10 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
     @com.fasterxml.jackson.annotation.JsonProperty("chartUrl")
     private final String chartUrl;
 
+    /**
+     * The URL of an OCIR repository.
+     * @return the value
+     **/
     public String getChartUrl() {
         return chartUrl;
     }
@@ -99,6 +118,10 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
     private final String deployArtifactVersion;
 
+    /**
+     * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+     * @return the value
+     **/
     public String getDeployArtifactVersion() {
         return deployArtifactVersion;
     }

@@ -41,36 +41,65 @@ public final class LogAnalyticsSourceEntityType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The type category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeCategory")
         private String entityTypeCategory;
 
+        /**
+         * The type category.
+         * @param entityTypeCategory the value to set
+         * @return this builder
+         **/
         public Builder entityTypeCategory(String entityTypeCategory) {
             this.entityTypeCategory = entityTypeCategory;
             this.__explicitlySet__.add("entityTypeCategory");
             return this;
         }
-
+        /**
+         * The entity type display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
         private String entityTypeDisplayName;
 
+        /**
+         * The entity type display name.
+         * @param entityTypeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
             this.entityTypeDisplayName = entityTypeDisplayName;
             this.__explicitlySet__.add("entityTypeDisplayName");
@@ -118,6 +147,10 @@ public final class LogAnalyticsSourceEntityType {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -128,6 +161,10 @@ public final class LogAnalyticsSourceEntityType {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The entity type.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -138,6 +175,10 @@ public final class LogAnalyticsSourceEntityType {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeCategory")
     private final String entityTypeCategory;
 
+    /**
+     * The type category.
+     * @return the value
+     **/
     public String getEntityTypeCategory() {
         return entityTypeCategory;
     }
@@ -148,6 +189,10 @@ public final class LogAnalyticsSourceEntityType {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     private final String entityTypeDisplayName;
 
+    /**
+     * The entity type display name.
+     * @return the value
+     **/
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }

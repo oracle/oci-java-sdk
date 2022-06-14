@@ -30,9 +30,17 @@ public final class VirtualServiceRouteTableCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of virtual service route tables.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<VirtualServiceRouteTableSummary> items;
 
+        /**
+         * List of virtual service route tables.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<VirtualServiceRouteTableSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class VirtualServiceRouteTableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<VirtualServiceRouteTableSummary> items;
 
+    /**
+     * List of virtual service route tables.
+     * @return the value
+     **/
     public java.util.List<VirtualServiceRouteTableSummary> getItems() {
         return items;
     }

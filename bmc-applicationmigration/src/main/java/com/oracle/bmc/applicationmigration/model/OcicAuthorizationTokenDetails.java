@@ -28,18 +28,33 @@ package com.oracle.bmc.applicationmigration.model;
 public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * AuthClient app url resource that the accesstoken is for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientAppUrl")
         private String clientAppUrl;
 
+        /**
+         * AuthClient app url resource that the accesstoken is for.
+         * @param clientAppUrl the value to set
+         * @return this builder
+         **/
         public Builder clientAppUrl(String clientAppUrl) {
             this.clientAppUrl = clientAppUrl;
             this.__explicitlySet__.add("clientAppUrl");
             return this;
         }
-
+        /**
+         * AccessToken to access the app endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
+        /**
+         * AccessToken to access the app endpoint.
+         * @param accessToken the value to set
+         * @return this builder
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -90,6 +105,10 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clientAppUrl")
     private final String clientAppUrl;
 
+    /**
+     * AuthClient app url resource that the accesstoken is for.
+     * @return the value
+     **/
     public String getClientAppUrl() {
         return clientAppUrl;
     }
@@ -100,6 +119,10 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
+    /**
+     * AccessToken to access the app endpoint.
+     * @return the value
+     **/
     public String getAccessToken() {
         return accessToken;
     }

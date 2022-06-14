@@ -17,6 +17,9 @@ public class ListPrivateApplicationsRequest
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListPrivateApplicationsRequest
      */
     private String privateApplicationId;
 
+    /**
+     * The unique identifier for the private application.
+     */
     public String getPrivateApplicationId() {
         return privateApplicationId;
     }
@@ -35,6 +41,11 @@ public class ListPrivateApplicationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +55,10 @@ public class ListPrivateApplicationsRequest
      */
     private Integer limit;
 
+    /**
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -52,6 +67,9 @@ public class ListPrivateApplicationsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -100,6 +118,11 @@ public class ListPrivateApplicationsRequest
         }
     };
 
+    /**
+     * The field to use to sort listed results. You can only specify one field to sort by.
+     * Default is {@code TIMECREATED}.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -144,6 +167,9 @@ public class ListPrivateApplicationsRequest
         }
     };
 
+    /**
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -152,6 +178,9 @@ public class ListPrivateApplicationsRequest
      */
     private String displayName;
 
+    /**
+     * Exact match name filter.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -163,10 +192,14 @@ public class ListPrivateApplicationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -174,10 +207,14 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * The unique identifier for the private application.
+         */
         private String privateApplicationId = null;
 
         /**
          * The unique identifier for the private application.
+         * @param privateApplicationId the value to set
          * @return this builder instance
          */
         public Builder privateApplicationId(String privateApplicationId) {
@@ -185,12 +222,18 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -198,11 +241,16 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         */
         private Integer limit = null;
 
         /**
          * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -210,10 +258,14 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -221,12 +273,18 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * The field to use to sort listed results. You can only specify one field to sort by.
+         * Default is {@code TIMECREATED}.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to use to sort listed results. You can only specify one field to sort by.
          * Default is {@code TIMECREATED}.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -234,10 +292,14 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -245,10 +307,14 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
+        /**
+         * Exact match name filter.
+         */
         private String displayName = null;
 
         /**
          * Exact match name filter.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -338,7 +404,8 @@ public class ListPrivateApplicationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -352,6 +419,10 @@ public class ListPrivateApplicationsRequest
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

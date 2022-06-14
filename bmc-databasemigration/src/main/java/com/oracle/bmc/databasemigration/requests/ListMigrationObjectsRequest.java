@@ -18,6 +18,10 @@ public class ListMigrationObjectsRequest
      */
     private String migrationId;
 
+    /**
+     * The OCID of the migration
+     *
+     */
     public String getMigrationId() {
         return migrationId;
     }
@@ -28,6 +32,11 @@ public class ListMigrationObjectsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +50,14 @@ public class ListMigrationObjectsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -50,6 +67,10 @@ public class ListMigrationObjectsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,6 +80,10 @@ public class ListMigrationObjectsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -70,11 +95,16 @@ public class ListMigrationObjectsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the migration
+         *
+         */
         private String migrationId = null;
 
         /**
          * The OCID of the migration
          *
+         * @param migrationId the value to set
          * @return this builder instance
          */
         public Builder migrationId(String migrationId) {
@@ -82,12 +112,18 @@ public class ListMigrationObjectsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -95,6 +131,14 @@ public class ListMigrationObjectsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -104,6 +148,7 @@ public class ListMigrationObjectsRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -111,11 +156,16 @@ public class ListMigrationObjectsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -123,11 +173,16 @@ public class ListMigrationObjectsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -211,7 +266,8 @@ public class ListMigrationObjectsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +278,10 @@ public class ListMigrationObjectsRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

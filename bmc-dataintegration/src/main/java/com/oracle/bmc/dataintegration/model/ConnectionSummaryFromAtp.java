@@ -144,37 +144,65 @@ public final class ConnectionSummaryFromAtp extends ConnectionSummary {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-
+        /**
+         * The Autonomous Transaction Processing instance service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tnsAlias")
         private String tnsAlias;
 
+        /**
+         * The Autonomous Transaction Processing instance service name.
+         * @param tnsAlias the value to set
+         * @return this builder
+         **/
         public Builder tnsAlias(String tnsAlias) {
             this.tnsAlias = tnsAlias;
             this.__explicitlySet__.add("tnsAlias");
             return this;
         }
-
+        /**
+         * Array of service names that are available for selection in the tnsAlias property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tnsNames")
         private java.util.List<String> tnsNames;
 
+        /**
+         * Array of service names that are available for selection in the tnsAlias property.
+         * @param tnsNames the value to set
+         * @return this builder
+         **/
         public Builder tnsNames(java.util.List<String> tnsNames) {
             this.tnsNames = tnsNames;
             this.__explicitlySet__.add("tnsNames");
             return this;
         }
-
+        /**
+         * The user name for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * The user name for the connection.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * The password for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * The password for the connection.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -303,6 +331,10 @@ public final class ConnectionSummaryFromAtp extends ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tnsAlias")
     private final String tnsAlias;
 
+    /**
+     * The Autonomous Transaction Processing instance service name.
+     * @return the value
+     **/
     public String getTnsAlias() {
         return tnsAlias;
     }
@@ -313,6 +345,10 @@ public final class ConnectionSummaryFromAtp extends ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tnsNames")
     private final java.util.List<String> tnsNames;
 
+    /**
+     * Array of service names that are available for selection in the tnsAlias property.
+     * @return the value
+     **/
     public java.util.List<String> getTnsNames() {
         return tnsNames;
     }
@@ -323,6 +359,10 @@ public final class ConnectionSummaryFromAtp extends ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The user name for the connection.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -333,6 +373,10 @@ public final class ConnectionSummaryFromAtp extends ConnectionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * The password for the connection.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

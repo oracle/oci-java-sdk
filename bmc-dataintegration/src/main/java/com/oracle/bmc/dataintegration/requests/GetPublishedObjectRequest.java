@@ -16,6 +16,9 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -24,6 +27,9 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String applicationKey;
 
+    /**
+     * The application key.
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
@@ -32,6 +38,9 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String publishedObjectKey;
 
+    /**
+     * The published object key.
+     */
     public String getPublishedObjectKey() {
         return publishedObjectKey;
     }
@@ -43,6 +52,12 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +66,9 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String expandReferences;
 
+    /**
+     * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+     */
     public String getExpandReferences() {
         return expandReferences;
     }
@@ -62,10 +80,14 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -73,10 +95,14 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The application key.
+         */
         private String applicationKey = null;
 
         /**
          * The application key.
+         * @param applicationKey the value to set
          * @return this builder instance
          */
         public Builder applicationKey(String applicationKey) {
@@ -84,10 +110,14 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The published object key.
+         */
         private String publishedObjectKey = null;
 
         /**
          * The published object key.
+         * @param publishedObjectKey the value to set
          * @return this builder instance
          */
         public Builder publishedObjectKey(String publishedObjectKey) {
@@ -95,6 +125,12 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -102,6 +138,7 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,10 +146,14 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+         */
         private String expandReferences = null;
 
         /**
          * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+         * @param expandReferences the value to set
          * @return this builder instance
          */
         public Builder expandReferences(String expandReferences) {
@@ -196,7 +237,8 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +249,10 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
                 .expandReferences(expandReferences);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

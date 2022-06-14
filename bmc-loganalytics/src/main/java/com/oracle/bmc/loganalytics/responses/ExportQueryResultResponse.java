@@ -14,6 +14,11 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -43,15 +52,33 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -69,11 +96,19 @@ public class ExportQueryResultResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ExportQueryResultResponse build() {
             return new ExportQueryResultResponse(__httpStatusCode__, opcRequestId, inputStream);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

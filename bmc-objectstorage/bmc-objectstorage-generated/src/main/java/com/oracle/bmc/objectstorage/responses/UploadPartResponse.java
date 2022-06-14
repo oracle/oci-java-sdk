@@ -13,6 +13,10 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcContentMd5;
 
+    /**
+     * The base64-encoded MD5 hash of the request body, as computed by the server.
+     * @return the value
+     */
     public String getOpcContentMd5() {
         return opcContentMd5;
     }
@@ -42,6 +56,10 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    /**
+     * The entity tag (ETag) for the object.
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -74,29 +92,65 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The base64-encoded MD5 hash of the request body, as computed by the server.
+         */
         private String opcContentMd5;
 
+        /**
+         * The base64-encoded MD5 hash of the request body, as computed by the server.
+         * @param opcContentMd5 the value to set
+         * @return this builder
+         */
         public Builder opcContentMd5(String opcContentMd5) {
             this.opcContentMd5 = opcContentMd5;
             return this;
         }
 
+        /**
+         * The entity tag (ETag) for the object.
+         */
         private String eTag;
 
+        /**
+         * The entity tag (ETag) for the object.
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -116,12 +170,20 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UploadPartResponse build() {
             return new UploadPartResponse(
                     __httpStatusCode__, opcClientRequestId, opcRequestId, opcContentMd5, eTag);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

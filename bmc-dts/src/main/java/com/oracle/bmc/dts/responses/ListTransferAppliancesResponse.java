@@ -13,6 +13,10 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances;
 
+    /**
+     * The returned MultipleTransferAppliances instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.MultipleTransferAppliances getMultipleTransferAppliances() {
         return multipleTransferAppliances;
     }
@@ -48,15 +56,31 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned MultipleTransferAppliances instance.
+         */
         private com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances;
 
+        /**
+         * The returned MultipleTransferAppliances instance.
+         * @param multipleTransferAppliances the value to set
+         * @return this builder
+         */
         public Builder multipleTransferAppliances(
                 com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances) {
             this.multipleTransferAppliances = multipleTransferAppliances;
@@ -75,12 +99,20 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListTransferAppliancesResponse build() {
             return new ListTransferAppliancesResponse(
                     __httpStatusCode__, opcRequestId, multipleTransferAppliances);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

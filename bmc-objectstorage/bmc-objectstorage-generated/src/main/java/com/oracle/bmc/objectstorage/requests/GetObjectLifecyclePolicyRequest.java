@@ -17,6 +17,9 @@ public class GetObjectLifecyclePolicyRequest
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +30,11 @@ public class GetObjectLifecyclePolicyRequest
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -35,6 +43,9 @@ public class GetObjectLifecyclePolicyRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -46,10 +57,14 @@ public class GetObjectLifecyclePolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -57,12 +72,18 @@ public class GetObjectLifecyclePolicyRequest
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -70,10 +91,14 @@ public class GetObjectLifecyclePolicyRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -153,7 +178,8 @@ public class GetObjectLifecyclePolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -162,6 +188,10 @@ public class GetObjectLifecyclePolicyRequest
                 .opcClientRequestId(opcClientRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

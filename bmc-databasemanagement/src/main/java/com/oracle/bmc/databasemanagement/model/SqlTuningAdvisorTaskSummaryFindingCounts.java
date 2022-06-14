@@ -47,54 +47,97 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of distinct SQL statements with recommended SQL profiles.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
         private Integer recommendedSqlProfile;
 
+        /**
+         * The number of distinct SQL statements with recommended SQL profiles.
+         * @param recommendedSqlProfile the value to set
+         * @return this builder
+         **/
         public Builder recommendedSqlProfile(Integer recommendedSqlProfile) {
             this.recommendedSqlProfile = recommendedSqlProfile;
             this.__explicitlySet__.add("recommendedSqlProfile");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with implemented SQL profiles.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("implementedSqlProfile")
         private Integer implementedSqlProfile;
 
+        /**
+         * The number of distinct SQL statements with implemented SQL profiles.
+         * @param implementedSqlProfile the value to set
+         * @return this builder
+         **/
         public Builder implementedSqlProfile(Integer implementedSqlProfile) {
             this.implementedSqlProfile = implementedSqlProfile;
             this.__explicitlySet__.add("implementedSqlProfile");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with index recommendations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("index")
         private Integer index;
 
+        /**
+         * The number of distinct SQL statements with index recommendations.
+         * @param index the value to set
+         * @return this builder
+         **/
         public Builder index(Integer index) {
             this.index = index;
             this.__explicitlySet__.add("index");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with restructured SQL recommendations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restructure")
         private Integer restructure;
 
+        /**
+         * The number of distinct SQL statements with restructured SQL recommendations.
+         * @param restructure the value to set
+         * @return this builder
+         **/
         public Builder restructure(Integer restructure) {
             this.restructure = restructure;
             this.__explicitlySet__.add("restructure");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statistics")
         private Integer statistics;
 
+        /**
+         * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
+         * @param statistics the value to set
+         * @return this builder
+         **/
         public Builder statistics(Integer statistics) {
             this.statistics = statistics;
             this.__explicitlySet__.add("statistics");
             return this;
         }
-
+        /**
+         * The number of distinct SQL statements with alternative plan recommendations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternatePlan")
         private Integer alternatePlan;
 
+        /**
+         * The number of distinct SQL statements with alternative plan recommendations.
+         * @param alternatePlan the value to set
+         * @return this builder
+         **/
         public Builder alternatePlan(Integer alternatePlan) {
             this.alternatePlan = alternatePlan;
             this.__explicitlySet__.add("alternatePlan");
@@ -149,6 +192,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
     private final Integer recommendedSqlProfile;
 
+    /**
+     * The number of distinct SQL statements with recommended SQL profiles.
+     * @return the value
+     **/
     public Integer getRecommendedSqlProfile() {
         return recommendedSqlProfile;
     }
@@ -159,6 +206,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("implementedSqlProfile")
     private final Integer implementedSqlProfile;
 
+    /**
+     * The number of distinct SQL statements with implemented SQL profiles.
+     * @return the value
+     **/
     public Integer getImplementedSqlProfile() {
         return implementedSqlProfile;
     }
@@ -169,6 +220,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("index")
     private final Integer index;
 
+    /**
+     * The number of distinct SQL statements with index recommendations.
+     * @return the value
+     **/
     public Integer getIndex() {
         return index;
     }
@@ -179,6 +234,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("restructure")
     private final Integer restructure;
 
+    /**
+     * The number of distinct SQL statements with restructured SQL recommendations.
+     * @return the value
+     **/
     public Integer getRestructure() {
         return restructure;
     }
@@ -189,6 +248,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
     private final Integer statistics;
 
+    /**
+     * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
+     * @return the value
+     **/
     public Integer getStatistics() {
         return statistics;
     }
@@ -199,6 +262,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingCounts {
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlan")
     private final Integer alternatePlan;
 
+    /**
+     * The number of distinct SQL statements with alternative plan recommendations.
+     * @return the value
+     **/
     public Integer getAlternatePlan() {
         return alternatePlan;
     }

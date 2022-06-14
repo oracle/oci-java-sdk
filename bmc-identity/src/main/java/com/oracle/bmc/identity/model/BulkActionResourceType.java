@@ -30,18 +30,39 @@ public final class BulkActionResourceType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name of the resource-type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique name of the resource-type.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+         * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
         private java.util.List<String> metadataKeys;
 
+        /**
+         * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+         * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
+         *
+         * @param metadataKeys the value to set
+         * @return this builder
+         **/
         public Builder metadataKeys(java.util.List<String> metadataKeys) {
             this.metadataKeys = metadataKeys;
             this.__explicitlySet__.add("metadataKeys");
@@ -84,6 +105,11 @@ public final class BulkActionResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique name of the resource-type.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -96,6 +122,12 @@ public final class BulkActionResourceType {
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
     private final java.util.List<String> metadataKeys;
 
+    /**
+     * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+     * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getMetadataKeys() {
         return metadataKeys;
     }

@@ -16,6 +16,9 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String logGroupId;
 
+    /**
+     * OCID of a log group to work with.
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -24,6 +27,9 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String logId;
 
+    /**
+     * OCID of a log to work with.
+     */
     public String getLogId() {
         return logId;
     }
@@ -34,6 +40,11 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +55,14 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of a log group to work with.
+         */
         private String logGroupId = null;
 
         /**
          * OCID of a log group to work with.
+         * @param logGroupId the value to set
          * @return this builder instance
          */
         public Builder logGroupId(String logGroupId) {
@@ -55,10 +70,14 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * OCID of a log to work with.
+         */
         private String logId = null;
 
         /**
          * OCID of a log to work with.
+         * @param logId the value to set
          * @return this builder instance
          */
         public Builder logId(String logId) {
@@ -66,12 +85,18 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -151,12 +176,17 @@ public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().logGroupId(logGroupId).logId(logId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -19,6 +19,10 @@ public class ValidateSourceRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,9 @@ public class ValidateSourceRequest
     private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
             upsertLogAnalyticsSourceDetails;
 
+    /**
+     * Details for the new LoganSourceDetails.
+     */
     public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
             getUpsertLogAnalyticsSourceDetails() {
         return upsertLogAnalyticsSourceDetails;
@@ -39,6 +46,11 @@ public class ValidateSourceRequest
      */
     private Integer createLikeSourceId;
 
+    /**
+     * The unique identifier of the source to use as the reference for a create like
+     * operation.
+     *
+     */
     public Integer getCreateLikeSourceId() {
         return createLikeSourceId;
     }
@@ -49,6 +61,11 @@ public class ValidateSourceRequest
      */
     private Boolean isIncremental;
 
+    /**
+     * A flag indicating whether or not the update of a source is incremental or not.  If incremental,
+     * the name of the source must be specified.
+     *
+     */
     public Boolean getIsIncremental() {
         return isIncremental;
     }
@@ -57,6 +74,9 @@ public class ValidateSourceRequest
      */
     private Boolean isIgnoreWarning;
 
+    /**
+     * is ignore warning
+     */
     public Boolean getIsIgnoreWarning() {
         return isIgnoreWarning;
     }
@@ -70,6 +90,14 @@ public class ValidateSourceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -78,6 +106,9 @@ public class ValidateSourceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -105,11 +136,16 @@ public class ValidateSourceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -117,11 +153,15 @@ public class ValidateSourceRequest
             return this;
         }
 
+        /**
+         * Details for the new LoganSourceDetails.
+         */
         private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
                 upsertLogAnalyticsSourceDetails = null;
 
         /**
          * Details for the new LoganSourceDetails.
+         * @param upsertLogAnalyticsSourceDetails the value to set
          * @return this builder instance
          */
         public Builder upsertLogAnalyticsSourceDetails(
@@ -131,12 +171,18 @@ public class ValidateSourceRequest
             return this;
         }
 
+        /**
+         * The unique identifier of the source to use as the reference for a create like
+         * operation.
+         *
+         */
         private Integer createLikeSourceId = null;
 
         /**
          * The unique identifier of the source to use as the reference for a create like
          * operation.
          *
+         * @param createLikeSourceId the value to set
          * @return this builder instance
          */
         public Builder createLikeSourceId(Integer createLikeSourceId) {
@@ -144,12 +190,18 @@ public class ValidateSourceRequest
             return this;
         }
 
+        /**
+         * A flag indicating whether or not the update of a source is incremental or not.  If incremental,
+         * the name of the source must be specified.
+         *
+         */
         private Boolean isIncremental = null;
 
         /**
          * A flag indicating whether or not the update of a source is incremental or not.  If incremental,
          * the name of the source must be specified.
          *
+         * @param isIncremental the value to set
          * @return this builder instance
          */
         public Builder isIncremental(Boolean isIncremental) {
@@ -157,10 +209,14 @@ public class ValidateSourceRequest
             return this;
         }
 
+        /**
+         * is ignore warning
+         */
         private Boolean isIgnoreWarning = null;
 
         /**
          * is ignore warning
+         * @param isIgnoreWarning the value to set
          * @return this builder instance
          */
         public Builder isIgnoreWarning(Boolean isIgnoreWarning) {
@@ -168,6 +224,14 @@ public class ValidateSourceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -177,6 +241,7 @@ public class ValidateSourceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -184,10 +249,14 @@ public class ValidateSourceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -287,7 +356,8 @@ public class ValidateSourceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -300,6 +370,10 @@ public class ValidateSourceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

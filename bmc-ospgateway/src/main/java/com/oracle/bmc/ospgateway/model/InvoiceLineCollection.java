@@ -29,9 +29,17 @@ public final class InvoiceLineCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Invoice line list elements
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<InvoiceLineSummary> items;
 
+        /**
+         * Invoice line list elements
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<InvoiceLineSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class InvoiceLineCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<InvoiceLineSummary> items;
 
+    /**
+     * Invoice line list elements
+     * @return the value
+     **/
     public java.util.List<InvoiceLineSummary> getItems() {
         return items;
     }

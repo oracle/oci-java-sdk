@@ -30,18 +30,33 @@ public final class JobExecutionsStatusSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of the job execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of the job execution.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The number of job executions of a particular status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * The number of job executions of a particular status.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -131,6 +146,10 @@ public final class JobExecutionsStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of the job execution.
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -141,6 +160,10 @@ public final class JobExecutionsStatusSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * The number of job executions of a particular status.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }

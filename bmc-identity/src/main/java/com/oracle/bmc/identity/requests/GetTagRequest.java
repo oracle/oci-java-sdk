@@ -17,6 +17,10 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -26,6 +30,10 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String tagName;
 
+    /**
+     * The name of the tag.
+     *
+     */
     public String getTagName() {
         return tagName;
     }
@@ -36,11 +44,16 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -48,11 +61,16 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * The name of the tag.
+         *
+         */
         private String tagName = null;
 
         /**
          * The name of the tag.
          *
+         * @param tagName the value to set
          * @return this builder instance
          */
         public Builder tagName(String tagName) {
@@ -130,12 +148,17 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().tagNamespaceId(tagNamespaceId).tagName(tagName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

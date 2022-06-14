@@ -35,19 +35,37 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("isFailureRetried");
             return this;
         }
-
+        /**
+         * If certificate validation is enabled, then the call will fail in case of certification errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
         private Boolean isCertificateValidationEnabled;
 
+        /**
+         * If certificate validation is enabled, then the call will fail in case of certification errors.
+         * @param isCertificateValidationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             this.__explicitlySet__.add("isCertificateValidationEnabled");
             return this;
         }
-
+        /**
+         * Verifies all the search strings present in the response.
+         * If any search string is not present in the response, then it will be considered as a failure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyTexts")
         private java.util.List<VerifyText> verifyTexts;
 
+        /**
+         * Verifies all the search strings present in the response.
+         * If any search string is not present in the response, then it will be considered as a failure.
+         *
+         * @param verifyTexts the value to set
+         * @return this builder
+         **/
         public Builder verifyTexts(java.util.List<VerifyText> verifyTexts) {
             this.verifyTexts = verifyTexts;
             this.__explicitlySet__.add("verifyTexts");
@@ -119,6 +137,10 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
     private final Boolean isCertificateValidationEnabled;
 
+    /**
+     * If certificate validation is enabled, then the call will fail in case of certification errors.
+     * @return the value
+     **/
     public Boolean getIsCertificateValidationEnabled() {
         return isCertificateValidationEnabled;
     }
@@ -131,6 +153,12 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("verifyTexts")
     private final java.util.List<VerifyText> verifyTexts;
 
+    /**
+     * Verifies all the search strings present in the response.
+     * If any search string is not present in the response, then it will be considered as a failure.
+     *
+     * @return the value
+     **/
     public java.util.List<VerifyText> getVerifyTexts() {
         return verifyTexts;
     }

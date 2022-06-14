@@ -16,6 +16,9 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String userId;
 
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -24,6 +27,9 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String mfaTotpDeviceId;
 
+    /**
+     * The OCID of the MFA TOTP device.
+     */
     public String getMfaTotpDeviceId() {
         return mfaTotpDeviceId;
     }
@@ -35,6 +41,12 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,10 +58,14 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -57,10 +73,14 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The OCID of the MFA TOTP device.
+         */
         private String mfaTotpDeviceId = null;
 
         /**
          * The OCID of the MFA TOTP device.
+         * @param mfaTotpDeviceId the value to set
          * @return this builder instance
          */
         public Builder mfaTotpDeviceId(String mfaTotpDeviceId) {
@@ -68,6 +88,12 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -75,6 +101,7 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -154,12 +181,17 @@ public class GenerateTotpSeedRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().userId(userId).mfaTotpDeviceId(mfaTotpDeviceId).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

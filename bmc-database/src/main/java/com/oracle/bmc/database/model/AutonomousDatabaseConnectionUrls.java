@@ -44,36 +44,65 @@ public final class AutonomousDatabaseConnectionUrls {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Oracle SQL Developer Web URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlDevWebUrl")
         private String sqlDevWebUrl;
 
+        /**
+         * Oracle SQL Developer Web URL.
+         * @param sqlDevWebUrl the value to set
+         * @return this builder
+         **/
         public Builder sqlDevWebUrl(String sqlDevWebUrl) {
             this.sqlDevWebUrl = sqlDevWebUrl;
             this.__explicitlySet__.add("sqlDevWebUrl");
             return this;
         }
-
+        /**
+         * Oracle Application Express (APEX) URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apexUrl")
         private String apexUrl;
 
+        /**
+         * Oracle Application Express (APEX) URL.
+         * @param apexUrl the value to set
+         * @return this builder
+         **/
         public Builder apexUrl(String apexUrl) {
             this.apexUrl = apexUrl;
             this.__explicitlySet__.add("apexUrl");
             return this;
         }
-
+        /**
+         * Oracle Machine Learning user management URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
         private String machineLearningUserManagementUrl;
 
+        /**
+         * Oracle Machine Learning user management URL.
+         * @param machineLearningUserManagementUrl the value to set
+         * @return this builder
+         **/
         public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
             this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             this.__explicitlySet__.add("machineLearningUserManagementUrl");
             return this;
         }
-
+        /**
+         * The URL of the Graph Studio for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
         private String graphStudioUrl;
 
+        /**
+         * The URL of the Graph Studio for the Autonomous Database.
+         * @param graphStudioUrl the value to set
+         * @return this builder
+         **/
         public Builder graphStudioUrl(String graphStudioUrl) {
             this.graphStudioUrl = graphStudioUrl;
             this.__explicitlySet__.add("graphStudioUrl");
@@ -125,6 +154,10 @@ public final class AutonomousDatabaseConnectionUrls {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlDevWebUrl")
     private final String sqlDevWebUrl;
 
+    /**
+     * Oracle SQL Developer Web URL.
+     * @return the value
+     **/
     public String getSqlDevWebUrl() {
         return sqlDevWebUrl;
     }
@@ -135,6 +168,10 @@ public final class AutonomousDatabaseConnectionUrls {
     @com.fasterxml.jackson.annotation.JsonProperty("apexUrl")
     private final String apexUrl;
 
+    /**
+     * Oracle Application Express (APEX) URL.
+     * @return the value
+     **/
     public String getApexUrl() {
         return apexUrl;
     }
@@ -145,6 +182,10 @@ public final class AutonomousDatabaseConnectionUrls {
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
     private final String machineLearningUserManagementUrl;
 
+    /**
+     * Oracle Machine Learning user management URL.
+     * @return the value
+     **/
     public String getMachineLearningUserManagementUrl() {
         return machineLearningUserManagementUrl;
     }
@@ -155,6 +196,10 @@ public final class AutonomousDatabaseConnectionUrls {
     @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
     private final String graphStudioUrl;
 
+    /**
+     * The URL of the Graph Studio for the Autonomous Database.
+     * @return the value
+     **/
     public String getGraphStudioUrl() {
         return graphStudioUrl;
     }

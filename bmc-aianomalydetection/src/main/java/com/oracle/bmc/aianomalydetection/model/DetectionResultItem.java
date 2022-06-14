@@ -36,36 +36,65 @@ public final class DetectionResultItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The time stamp associated with a list of anomaly points, format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The time stamp associated with a list of anomaly points, format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The index number to indicate where anomaly points are located among all rows when there are no timestamps provided.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
         private Integer rowIndex;
 
+        /**
+         * The index number to indicate where anomaly points are located among all rows when there are no timestamps provided.
+         * @param rowIndex the value to set
+         * @return this builder
+         **/
         public Builder rowIndex(Integer rowIndex) {
             this.rowIndex = rowIndex;
             this.__explicitlySet__.add("rowIndex");
             return this;
         }
-
+        /**
+         * A significant score across multiple signals at timestamp/row level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
+        /**
+         * A significant score across multiple signals at timestamp/row level
+         * @param score the value to set
+         * @return this builder
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
             return this;
         }
-
+        /**
+         * An array of anomalies associated with a given timestamp/row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anomalies")
         private java.util.List<Anomaly> anomalies;
 
+        /**
+         * An array of anomalies associated with a given timestamp/row.
+         * @param anomalies the value to set
+         * @return this builder
+         **/
         public Builder anomalies(java.util.List<Anomaly> anomalies) {
             this.anomalies = anomalies;
             this.__explicitlySet__.add("anomalies");
@@ -112,6 +141,10 @@ public final class DetectionResultItem {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The time stamp associated with a list of anomaly points, format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -122,6 +155,10 @@ public final class DetectionResultItem {
     @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
     private final Integer rowIndex;
 
+    /**
+     * The index number to indicate where anomaly points are located among all rows when there are no timestamps provided.
+     * @return the value
+     **/
     public Integer getRowIndex() {
         return rowIndex;
     }
@@ -132,6 +169,10 @@ public final class DetectionResultItem {
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
+    /**
+     * A significant score across multiple signals at timestamp/row level
+     * @return the value
+     **/
     public Double getScore() {
         return score;
     }
@@ -142,6 +183,10 @@ public final class DetectionResultItem {
     @com.fasterxml.jackson.annotation.JsonProperty("anomalies")
     private final java.util.List<Anomaly> anomalies;
 
+    /**
+     * An array of anomalies associated with a given timestamp/row.
+     * @return the value
+     **/
     public java.util.List<Anomaly> getAnomalies() {
         return anomalies;
     }

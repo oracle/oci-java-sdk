@@ -35,10 +35,17 @@ public final class PemEncodedPublicKey extends StaticPublicKey {
             this.__explicitlySet__.add("kid");
             return this;
         }
-
+        /**
+         * The content of the PEM-encoded public key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The content of the PEM-encoded public key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -86,6 +93,10 @@ public final class PemEncodedPublicKey extends StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The content of the PEM-encoded public key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }

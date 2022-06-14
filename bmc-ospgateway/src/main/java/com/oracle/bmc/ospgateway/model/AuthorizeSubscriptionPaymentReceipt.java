@@ -31,27 +31,49 @@ public final class AuthorizeSubscriptionPaymentReceipt {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Payment header id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerId")
         private String headerId;
 
+        /**
+         * Payment header id
+         * @param headerId the value to set
+         * @return this builder
+         **/
         public Builder headerId(String headerId) {
             this.headerId = headerId;
             this.__explicitlySet__.add("headerId");
             return this;
         }
-
+        /**
+         * Parameters in a token for Payment Service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiToken")
         private String apiToken;
 
+        /**
+         * Parameters in a token for Payment Service
+         * @param apiToken the value to set
+         * @return this builder
+         **/
         public Builder apiToken(String apiToken) {
             this.apiToken = apiToken;
             this.__explicitlySet__.add("apiToken");
             return this;
         }
-
+        /**
+         * Session token created for Payment Service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userToken")
         private String userToken;
 
+        /**
+         * Session token created for Payment Service
+         * @param userToken the value to set
+         * @return this builder
+         **/
         public Builder userToken(String userToken) {
             this.userToken = userToken;
             this.__explicitlySet__.add("userToken");
@@ -95,6 +117,10 @@ public final class AuthorizeSubscriptionPaymentReceipt {
     @com.fasterxml.jackson.annotation.JsonProperty("headerId")
     private final String headerId;
 
+    /**
+     * Payment header id
+     * @return the value
+     **/
     public String getHeaderId() {
         return headerId;
     }
@@ -105,6 +131,10 @@ public final class AuthorizeSubscriptionPaymentReceipt {
     @com.fasterxml.jackson.annotation.JsonProperty("apiToken")
     private final String apiToken;
 
+    /**
+     * Parameters in a token for Payment Service
+     * @return the value
+     **/
     public String getApiToken() {
         return apiToken;
     }
@@ -115,6 +145,10 @@ public final class AuthorizeSubscriptionPaymentReceipt {
     @com.fasterxml.jackson.annotation.JsonProperty("userToken")
     private final String userToken;
 
+    /**
+     * Session token created for Payment Service
+     * @return the value
+     **/
     public String getUserToken() {
         return userToken;
     }

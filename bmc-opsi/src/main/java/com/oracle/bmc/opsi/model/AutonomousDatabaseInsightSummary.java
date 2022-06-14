@@ -189,10 +189,17 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
+        /**
+         * OCI database resource type
+         * @param databaseResourceType the value to set
+         * @return this builder
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
@@ -316,6 +323,10 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
+    /**
+     * OCI database resource type
+     * @return the value
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }

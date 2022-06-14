@@ -29,9 +29,23 @@ public final class ScheduleKeyVersionDeletionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format. The specified time must be between 7 and 30 days from the time
+         * when the request is received. If this property is missing, it will be set to 30 days from the time of the request by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format. The specified time must be between 7 and 30 days from the time
+         * when the request is received. If this property is missing, it will be set to 30 days from the time of the request by default.
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
@@ -77,6 +91,13 @@ public final class ScheduleKeyVersionDeletionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format. The specified time must be between 7 and 30 days from the time
+     * when the request is received. If this property is missing, it will be set to 30 days from the time of the request by default.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }

@@ -18,6 +18,9 @@ public class CreateFilterGroupRequest
      */
     private String announcementSubscriptionId;
 
+    /**
+     * The OCID of the announcement subscription.
+     */
     public String getAnnouncementSubscriptionId() {
         return announcementSubscriptionId;
     }
@@ -27,6 +30,9 @@ public class CreateFilterGroupRequest
     private com.oracle.bmc.announcementsservice.model.CreateFilterGroupDetails
             createFilterGroupDetails;
 
+    /**
+     * Details of the new filter group.
+     */
     public com.oracle.bmc.announcementsservice.model.CreateFilterGroupDetails
             getCreateFilterGroupDetails() {
         return createFilterGroupDetails;
@@ -41,6 +47,14 @@ public class CreateFilterGroupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -51,6 +65,11 @@ public class CreateFilterGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,6 +78,9 @@ public class CreateFilterGroupRequest
      */
     private String ifMatch;
 
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -81,10 +103,14 @@ public class CreateFilterGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the announcement subscription.
+         */
         private String announcementSubscriptionId = null;
 
         /**
          * The OCID of the announcement subscription.
+         * @param announcementSubscriptionId the value to set
          * @return this builder instance
          */
         public Builder announcementSubscriptionId(String announcementSubscriptionId) {
@@ -92,11 +118,15 @@ public class CreateFilterGroupRequest
             return this;
         }
 
+        /**
+         * Details of the new filter group.
+         */
         private com.oracle.bmc.announcementsservice.model.CreateFilterGroupDetails
                 createFilterGroupDetails = null;
 
         /**
          * Details of the new filter group.
+         * @param createFilterGroupDetails the value to set
          * @return this builder instance
          */
         public Builder createFilterGroupDetails(
@@ -106,6 +136,14 @@ public class CreateFilterGroupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -115,6 +153,7 @@ public class CreateFilterGroupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -122,12 +161,18 @@ public class CreateFilterGroupRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -135,10 +180,14 @@ public class CreateFilterGroupRequest
             return this;
         }
 
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -234,7 +283,8 @@ public class CreateFilterGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +295,10 @@ public class CreateFilterGroupRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

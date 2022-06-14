@@ -47,6 +47,10 @@ public class ManagedDatabaseCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * The user to connect to the database.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -92,6 +96,10 @@ public class ManagedDatabaseCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
+    /**
+     * The role of the database user.
+     * @return the value
+     **/
     public Role getRole() {
         return role;
     }

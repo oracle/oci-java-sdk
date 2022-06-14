@@ -45,54 +45,105 @@ public final class MonitorResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of result.
+         * Example: HAR, Screenshot, Log or Network.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultType")
         private String resultType;
 
+        /**
+         * Type of result.
+         * Example: HAR, Screenshot, Log or Network.
+         *
+         * @param resultType the value to set
+         * @return this builder
+         **/
         public Builder resultType(String resultType) {
             this.resultType = resultType;
             this.__explicitlySet__.add("resultType");
             return this;
         }
-
+        /**
+         * Type of result content.
+         * Example: Zip or Raw file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultContentType")
         private String resultContentType;
 
+        /**
+         * Type of result content.
+         * Example: Zip or Raw file.
+         *
+         * @param resultContentType the value to set
+         * @return this builder
+         **/
         public Builder resultContentType(String resultContentType) {
             this.resultContentType = resultContentType;
             this.__explicitlySet__.add("resultContentType");
             return this;
         }
-
+        /**
+         * Monitor result data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultDataSet")
         private java.util.List<MonitorResultData> resultDataSet;
 
+        /**
+         * Monitor result data set.
+         * @param resultDataSet the value to set
+         * @return this builder
+         **/
         public Builder resultDataSet(java.util.List<MonitorResultData> resultDataSet) {
             this.resultDataSet = resultDataSet;
             this.__explicitlySet__.add("resultDataSet");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitorId")
         private String monitorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the monitor.
+         * @param monitorId the value to set
+         * @return this builder
+         **/
         public Builder monitorId(String monitorId) {
             this.monitorId = monitorId;
             this.__explicitlySet__.add("monitorId");
             return this;
         }
-
+        /**
+         * The name of the public or dedicated vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePoint")
         private String vantagePoint;
 
+        /**
+         * The name of the public or dedicated vantage point.
+         * @param vantagePoint the value to set
+         * @return this builder
+         **/
         public Builder vantagePoint(String vantagePoint) {
             this.vantagePoint = vantagePoint;
             this.__explicitlySet__.add("vantagePoint");
             return this;
         }
-
+        /**
+         * The specific point of time when the result of an execution is collected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionTime")
         private String executionTime;
 
+        /**
+         * The specific point of time when the result of an execution is collected.
+         * @param executionTime the value to set
+         * @return this builder
+         **/
         public Builder executionTime(String executionTime) {
             this.executionTime = executionTime;
             this.__explicitlySet__.add("executionTime");
@@ -149,6 +200,12 @@ public final class MonitorResult {
     @com.fasterxml.jackson.annotation.JsonProperty("resultType")
     private final String resultType;
 
+    /**
+     * Type of result.
+     * Example: HAR, Screenshot, Log or Network.
+     *
+     * @return the value
+     **/
     public String getResultType() {
         return resultType;
     }
@@ -161,6 +218,12 @@ public final class MonitorResult {
     @com.fasterxml.jackson.annotation.JsonProperty("resultContentType")
     private final String resultContentType;
 
+    /**
+     * Type of result content.
+     * Example: Zip or Raw file.
+     *
+     * @return the value
+     **/
     public String getResultContentType() {
         return resultContentType;
     }
@@ -171,6 +234,10 @@ public final class MonitorResult {
     @com.fasterxml.jackson.annotation.JsonProperty("resultDataSet")
     private final java.util.List<MonitorResultData> resultDataSet;
 
+    /**
+     * Monitor result data set.
+     * @return the value
+     **/
     public java.util.List<MonitorResultData> getResultDataSet() {
         return resultDataSet;
     }
@@ -181,6 +248,10 @@ public final class MonitorResult {
     @com.fasterxml.jackson.annotation.JsonProperty("monitorId")
     private final String monitorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the monitor.
+     * @return the value
+     **/
     public String getMonitorId() {
         return monitorId;
     }
@@ -191,6 +262,10 @@ public final class MonitorResult {
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoint")
     private final String vantagePoint;
 
+    /**
+     * The name of the public or dedicated vantage point.
+     * @return the value
+     **/
     public String getVantagePoint() {
         return vantagePoint;
     }
@@ -201,6 +276,10 @@ public final class MonitorResult {
     @com.fasterxml.jackson.annotation.JsonProperty("executionTime")
     private final String executionTime;
 
+    /**
+     * The specific point of time when the result of an execution is collected.
+     * @return the value
+     **/
     public String getExecutionTime() {
         return executionTime;
     }

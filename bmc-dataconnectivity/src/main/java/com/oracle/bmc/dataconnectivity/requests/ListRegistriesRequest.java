@@ -16,6 +16,9 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment containing the resources you want to list.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String name;
 
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
@@ -32,6 +38,9 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -40,6 +49,9 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -48,6 +60,9 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Boolean isDeepLookup;
 
+    /**
+     * This parameter allows list registries to deep look at whole tenancy.
+     */
     public Boolean getIsDeepLookup() {
         return isDeepLookup;
     }
@@ -100,6 +115,9 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
+    /**
+     * Lifecycle state of the resource.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -111,6 +129,12 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -122,10 +146,14 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment containing the resources you want to list.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment containing the resources you want to list.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -133,10 +161,14 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -144,10 +176,14 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -155,10 +191,14 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -166,10 +206,14 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * This parameter allows list registries to deep look at whole tenancy.
+         */
         private Boolean isDeepLookup = null;
 
         /**
          * This parameter allows list registries to deep look at whole tenancy.
+         * @param isDeepLookup the value to set
          * @return this builder instance
          */
         public Builder isDeepLookup(Boolean isDeepLookup) {
@@ -177,10 +221,14 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Lifecycle state of the resource.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * Lifecycle state of the resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -188,6 +236,12 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -195,6 +249,7 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -282,7 +337,8 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -295,6 +351,10 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

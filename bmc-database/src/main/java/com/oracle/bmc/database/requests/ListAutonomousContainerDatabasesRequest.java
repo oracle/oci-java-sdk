@@ -17,6 +17,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String autonomousExadataInfrastructureId;
 
+    /**
+     * The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousExadataInfrastructureId() {
         return autonomousExadataInfrastructureId;
     }
@@ -33,6 +39,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String autonomousVmClusterId;
 
+    /**
+     * The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousVmClusterId() {
         return autonomousVmClusterId;
     }
@@ -42,6 +51,9 @@ public class ListAutonomousContainerDatabasesRequest
     private com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.InfrastructureType
             infrastructureType;
 
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
     public com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.InfrastructureType
             getInfrastructureType() {
         return infrastructureType;
@@ -51,6 +63,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -59,6 +74,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -109,6 +127,12 @@ public class ListAutonomousContainerDatabasesRequest
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * <p>
+     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -153,6 +177,9 @@ public class ListAutonomousContainerDatabasesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -162,6 +189,9 @@ public class ListAutonomousContainerDatabasesRequest
     private com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.LifecycleState
             lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -171,6 +201,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String availabilityDomain;
 
+    /**
+     * A filter to return only resources that match the given availability domain exactly.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -179,6 +212,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -187,6 +223,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String serviceLevelAgreementType;
 
+    /**
+     * A filter to return only resources that match the given service-level agreement type exactly.
+     */
     public String getServiceLevelAgreementType() {
         return serviceLevelAgreementType;
     }
@@ -195,6 +234,9 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String cloudAutonomousVmClusterId;
 
+    /**
+     * The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
     }
@@ -206,10 +248,14 @@ public class ListAutonomousContainerDatabasesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -217,10 +263,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousExadataInfrastructureId = null;
 
         /**
          * The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousExadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
@@ -228,10 +278,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousVmClusterId = null;
 
         /**
          * The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousVmClusterId the value to set
          * @return this builder instance
          */
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
@@ -239,11 +293,15 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given Infrastructure Type.
+         */
         private com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.InfrastructureType
                 infrastructureType = null;
 
         /**
          * A filter to return only resources that match the given Infrastructure Type.
+         * @param infrastructureType the value to set
          * @return this builder instance
          */
         public Builder infrastructureType(
@@ -253,10 +311,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -264,10 +326,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -275,6 +341,12 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         * <p>
+         **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -282,6 +354,7 @@ public class ListAutonomousContainerDatabasesRequest
          * <p>
          **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -289,10 +362,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -300,11 +377,15 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -314,10 +395,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given availability domain exactly.
+         */
         private String availabilityDomain = null;
 
         /**
          * A filter to return only resources that match the given availability domain exactly.
+         * @param availabilityDomain the value to set
          * @return this builder instance
          */
         public Builder availabilityDomain(String availabilityDomain) {
@@ -325,10 +410,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -336,10 +425,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given service-level agreement type exactly.
+         */
         private String serviceLevelAgreementType = null;
 
         /**
          * A filter to return only resources that match the given service-level agreement type exactly.
+         * @param serviceLevelAgreementType the value to set
          * @return this builder instance
          */
         public Builder serviceLevelAgreementType(String serviceLevelAgreementType) {
@@ -347,10 +440,14 @@ public class ListAutonomousContainerDatabasesRequest
             return this;
         }
 
+        /**
+         * The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudAutonomousVmClusterId = null;
 
         /**
          * The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudAutonomousVmClusterId the value to set
          * @return this builder instance
          */
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
@@ -451,7 +548,8 @@ public class ListAutonomousContainerDatabasesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -470,6 +568,10 @@ public class ListAutonomousContainerDatabasesRequest
                 .cloudAutonomousVmClusterId(cloudAutonomousVmClusterId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

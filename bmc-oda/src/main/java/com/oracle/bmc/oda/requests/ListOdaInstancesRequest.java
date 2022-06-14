@@ -16,6 +16,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * List the Digital Assistant instances that belong to this compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String displayName;
 
+    /**
+     * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -76,6 +85,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * List only the Digital Assistant instances that are in this lifecycle state.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -84,6 +96,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -98,6 +113,15 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -142,6 +166,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -192,6 +219,12 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+     * <p>
+     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -200,6 +233,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -211,10 +247,14 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * List the Digital Assistant instances that belong to this compartment.
+         */
         private String compartmentId = null;
 
         /**
          * List the Digital Assistant instances that belong to this compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -222,6 +262,12 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -229,6 +275,7 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -236,10 +283,14 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * List only the Digital Assistant instances that are in this lifecycle state.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * List only the Digital Assistant instances that are in this lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(LifecycleState lifecycleState) {
@@ -247,10 +298,14 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -258,6 +313,15 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         */
         private String page = null;
 
         /**
@@ -268,6 +332,7 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * Example: {@code MToxMA==}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -275,10 +340,14 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -286,6 +355,12 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+         * <p>
+         * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -293,6 +368,7 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -300,10 +376,14 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -393,7 +473,8 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -407,6 +488,10 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

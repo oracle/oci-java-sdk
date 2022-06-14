@@ -62,6 +62,7 @@ public final class AnalyzeDocumentResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("documentMetadata")
         private DocumentMetadata documentMetadata;
 
@@ -70,94 +71,164 @@ public final class AnalyzeDocumentResult {
             this.__explicitlySet__.add("documentMetadata");
             return this;
         }
-
+        /**
+         * The array of a Page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pages")
         private java.util.List<Page> pages;
 
+        /**
+         * The array of a Page.
+         * @param pages the value to set
+         * @return this builder
+         **/
         public Builder pages(java.util.List<Page> pages) {
             this.pages = pages;
             this.__explicitlySet__.add("pages");
             return this;
         }
-
+        /**
+         * An array of detected document types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
         private java.util.List<DetectedDocumentType> detectedDocumentTypes;
 
+        /**
+         * An array of detected document types.
+         * @param detectedDocumentTypes the value to set
+         * @return this builder
+         **/
         public Builder detectedDocumentTypes(
                 java.util.List<DetectedDocumentType> detectedDocumentTypes) {
             this.detectedDocumentTypes = detectedDocumentTypes;
             this.__explicitlySet__.add("detectedDocumentTypes");
             return this;
         }
-
+        /**
+         * An array of detected languages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
         private java.util.List<DetectedLanguage> detectedLanguages;
 
+        /**
+         * An array of detected languages.
+         * @param detectedLanguages the value to set
+         * @return this builder
+         **/
         public Builder detectedLanguages(java.util.List<DetectedLanguage> detectedLanguages) {
             this.detectedLanguages = detectedLanguages;
             this.__explicitlySet__.add("detectedLanguages");
             return this;
         }
-
+        /**
+         * The document classification model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentClassificationModelVersion")
         private String documentClassificationModelVersion;
 
+        /**
+         * The document classification model version.
+         * @param documentClassificationModelVersion the value to set
+         * @return this builder
+         **/
         public Builder documentClassificationModelVersion(
                 String documentClassificationModelVersion) {
             this.documentClassificationModelVersion = documentClassificationModelVersion;
             this.__explicitlySet__.add("documentClassificationModelVersion");
             return this;
         }
-
+        /**
+         * The document language classification model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageClassificationModelVersion")
         private String languageClassificationModelVersion;
 
+        /**
+         * The document language classification model version.
+         * @param languageClassificationModelVersion the value to set
+         * @return this builder
+         **/
         public Builder languageClassificationModelVersion(
                 String languageClassificationModelVersion) {
             this.languageClassificationModelVersion = languageClassificationModelVersion;
             this.__explicitlySet__.add("languageClassificationModelVersion");
             return this;
         }
-
+        /**
+         * The document text detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
         private String textDetectionModelVersion;
 
+        /**
+         * The document text detection model version.
+         * @param textDetectionModelVersion the value to set
+         * @return this builder
+         **/
         public Builder textDetectionModelVersion(String textDetectionModelVersion) {
             this.textDetectionModelVersion = textDetectionModelVersion;
             this.__explicitlySet__.add("textDetectionModelVersion");
             return this;
         }
-
+        /**
+         * The document keyValue detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyValueDetectionModelVersion")
         private String keyValueDetectionModelVersion;
 
+        /**
+         * The document keyValue detection model version.
+         * @param keyValueDetectionModelVersion the value to set
+         * @return this builder
+         **/
         public Builder keyValueDetectionModelVersion(String keyValueDetectionModelVersion) {
             this.keyValueDetectionModelVersion = keyValueDetectionModelVersion;
             this.__explicitlySet__.add("keyValueDetectionModelVersion");
             return this;
         }
-
+        /**
+         * The document table detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableDetectionModelVersion")
         private String tableDetectionModelVersion;
 
+        /**
+         * The document table detection model version.
+         * @param tableDetectionModelVersion the value to set
+         * @return this builder
+         **/
         public Builder tableDetectionModelVersion(String tableDetectionModelVersion) {
             this.tableDetectionModelVersion = tableDetectionModelVersion;
             this.__explicitlySet__.add("tableDetectionModelVersion");
             return this;
         }
-
+        /**
+         * The errors encountered during document analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<ProcessingError> errors;
 
+        /**
+         * The errors encountered during document analysis.
+         * @param errors the value to set
+         * @return this builder
+         **/
         public Builder errors(java.util.List<ProcessingError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
             return this;
         }
-
+        /**
+         * The searchable PDF file that was generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchablePdf")
         private byte[] searchablePdf;
 
+        /**
+         * The searchable PDF file that was generated.
+         * @param searchablePdf the value to set
+         * @return this builder
+         **/
         public Builder searchablePdf(byte[] searchablePdf) {
             this.searchablePdf = searchablePdf;
             this.__explicitlySet__.add("searchablePdf");
@@ -231,6 +302,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("pages")
     private final java.util.List<Page> pages;
 
+    /**
+     * The array of a Page.
+     * @return the value
+     **/
     public java.util.List<Page> getPages() {
         return pages;
     }
@@ -241,6 +316,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
     private final java.util.List<DetectedDocumentType> detectedDocumentTypes;
 
+    /**
+     * An array of detected document types.
+     * @return the value
+     **/
     public java.util.List<DetectedDocumentType> getDetectedDocumentTypes() {
         return detectedDocumentTypes;
     }
@@ -251,6 +330,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
     private final java.util.List<DetectedLanguage> detectedLanguages;
 
+    /**
+     * An array of detected languages.
+     * @return the value
+     **/
     public java.util.List<DetectedLanguage> getDetectedLanguages() {
         return detectedLanguages;
     }
@@ -261,6 +344,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("documentClassificationModelVersion")
     private final String documentClassificationModelVersion;
 
+    /**
+     * The document classification model version.
+     * @return the value
+     **/
     public String getDocumentClassificationModelVersion() {
         return documentClassificationModelVersion;
     }
@@ -271,6 +358,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("languageClassificationModelVersion")
     private final String languageClassificationModelVersion;
 
+    /**
+     * The document language classification model version.
+     * @return the value
+     **/
     public String getLanguageClassificationModelVersion() {
         return languageClassificationModelVersion;
     }
@@ -281,6 +372,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
     private final String textDetectionModelVersion;
 
+    /**
+     * The document text detection model version.
+     * @return the value
+     **/
     public String getTextDetectionModelVersion() {
         return textDetectionModelVersion;
     }
@@ -291,6 +386,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("keyValueDetectionModelVersion")
     private final String keyValueDetectionModelVersion;
 
+    /**
+     * The document keyValue detection model version.
+     * @return the value
+     **/
     public String getKeyValueDetectionModelVersion() {
         return keyValueDetectionModelVersion;
     }
@@ -301,6 +400,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("tableDetectionModelVersion")
     private final String tableDetectionModelVersion;
 
+    /**
+     * The document table detection model version.
+     * @return the value
+     **/
     public String getTableDetectionModelVersion() {
         return tableDetectionModelVersion;
     }
@@ -311,6 +414,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<ProcessingError> errors;
 
+    /**
+     * The errors encountered during document analysis.
+     * @return the value
+     **/
     public java.util.List<ProcessingError> getErrors() {
         return errors;
     }
@@ -321,6 +428,10 @@ public final class AnalyzeDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("searchablePdf")
     private final byte[] searchablePdf;
 
+    /**
+     * The searchable PDF file that was generated.
+     * @return the value
+     **/
     public byte[] getSearchablePdf() {
         return searchablePdf;
     }

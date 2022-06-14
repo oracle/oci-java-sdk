@@ -16,6 +16,9 @@ public class GetVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String volumeBackupId;
 
+    /**
+     * The OCID of the volume backup.
+     */
     public String getVolumeBackupId() {
         return volumeBackupId;
     }
@@ -27,10 +30,14 @@ public class GetVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume backup.
+         */
         private String volumeBackupId = null;
 
         /**
          * The OCID of the volume backup.
+         * @param volumeBackupId the value to set
          * @return this builder instance
          */
         public Builder volumeBackupId(String volumeBackupId) {
@@ -106,12 +113,17 @@ public class GetVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().volumeBackupId(volumeBackupId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

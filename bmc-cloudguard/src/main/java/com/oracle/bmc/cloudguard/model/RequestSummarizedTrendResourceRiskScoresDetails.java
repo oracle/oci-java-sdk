@@ -31,18 +31,33 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The filter type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filter")
         private ResourceRiskScoreDimension filter;
 
+        /**
+         * The filter type.
+         * @param filter the value to set
+         * @return this builder
+         **/
         public Builder filter(ResourceRiskScoreDimension filter) {
             this.filter = filter;
             this.__explicitlySet__.add("filter");
             return this;
         }
-
+        /**
+         * Id to be passed in to filter the risk scores.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
+        /**
+         * Id to be passed in to filter the risk scores.
+         * @param filterId the value to set
+         * @return this builder
+         **/
         public Builder filterId(String filterId) {
             this.filterId = filterId;
             this.__explicitlySet__.add("filterId");
@@ -85,6 +100,10 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
     private final ResourceRiskScoreDimension filter;
 
+    /**
+     * The filter type.
+     * @return the value
+     **/
     public ResourceRiskScoreDimension getFilter() {
         return filter;
     }
@@ -95,6 +114,10 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
+    /**
+     * Id to be passed in to filter the risk scores.
+     * @return the value
+     **/
     public String getFilterId() {
         return filterId;
     }

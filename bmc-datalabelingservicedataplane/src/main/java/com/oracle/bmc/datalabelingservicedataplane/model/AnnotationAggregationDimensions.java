@@ -30,6 +30,7 @@ public final class AnnotationAggregationDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private Label label;
 
@@ -38,10 +39,17 @@ public final class AnnotationAggregationDimensions {
             this.__explicitlySet__.add("label");
             return this;
         }
-
+        /**
+         * The OCID of the principal which updated the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
+        /**
+         * The OCID of the principal which updated the resource.
+         * @param updatedBy the value to set
+         * @return this builder
+         **/
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
@@ -91,6 +99,10 @@ public final class AnnotationAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
+    /**
+     * The OCID of the principal which updated the resource.
+     * @return the value
+     **/
     public String getUpdatedBy() {
         return updatedBy;
     }

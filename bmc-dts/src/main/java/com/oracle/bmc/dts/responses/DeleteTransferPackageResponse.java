@@ -13,6 +13,10 @@ public class DeleteTransferPackageResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,8 +35,16 @@ public class DeleteTransferPackageResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -49,11 +61,19 @@ public class DeleteTransferPackageResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteTransferPackageResponse build() {
             return new DeleteTransferPackageResponse(__httpStatusCode__, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

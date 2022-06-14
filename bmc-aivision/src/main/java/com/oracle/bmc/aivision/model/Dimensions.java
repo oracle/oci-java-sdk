@@ -29,27 +29,49 @@ public final class Dimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the width of a page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("width")
         private Double width;
 
+        /**
+         * the width of a page.
+         * @param width the value to set
+         * @return this builder
+         **/
         public Builder width(Double width) {
             this.width = width;
             this.__explicitlySet__.add("width");
             return this;
         }
-
+        /**
+         * The height of a page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("height")
         private Double height;
 
+        /**
+         * The height of a page.
+         * @param height the value to set
+         * @return this builder
+         **/
         public Builder height(Double height) {
             this.height = height;
             this.__explicitlySet__.add("height");
             return this;
         }
-
+        /**
+         * The unit of length.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * The unit of length.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -91,6 +113,10 @@ public final class Dimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     private final Double width;
 
+    /**
+     * the width of a page.
+     * @return the value
+     **/
     public Double getWidth() {
         return width;
     }
@@ -101,6 +127,10 @@ public final class Dimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     private final Double height;
 
+    /**
+     * The height of a page.
+     * @return the value
+     **/
     public Double getHeight() {
         return height;
     }
@@ -157,6 +187,10 @@ public final class Dimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * The unit of length.
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

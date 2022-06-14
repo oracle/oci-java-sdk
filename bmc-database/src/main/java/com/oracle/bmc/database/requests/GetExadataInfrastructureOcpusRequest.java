@@ -17,6 +17,9 @@ public class GetExadataInfrastructureOcpusRequest
      */
     private String autonomousExadataInfrastructureId;
 
+    /**
+     * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousExadataInfrastructureId() {
         return autonomousExadataInfrastructureId;
     }
@@ -26,6 +29,10 @@ public class GetExadataInfrastructureOcpusRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,10 +44,14 @@ public class GetExadataInfrastructureOcpusRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousExadataInfrastructureId = null;
 
         /**
          * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousExadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
@@ -48,11 +59,16 @@ public class GetExadataInfrastructureOcpusRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,7 +147,8 @@ public class GetExadataInfrastructureOcpusRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -139,6 +156,10 @@ public class GetExadataInfrastructureOcpusRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

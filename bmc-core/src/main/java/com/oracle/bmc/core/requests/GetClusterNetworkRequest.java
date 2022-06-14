@@ -16,6 +16,9 @@ public class GetClusterNetworkRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String clusterNetworkId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
+     */
     public String getClusterNetworkId() {
         return clusterNetworkId;
     }
@@ -27,10 +30,14 @@ public class GetClusterNetworkRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
+         */
         private String clusterNetworkId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
+         * @param clusterNetworkId the value to set
          * @return this builder instance
          */
         public Builder clusterNetworkId(String clusterNetworkId) {
@@ -106,12 +113,17 @@ public class GetClusterNetworkRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().clusterNetworkId(clusterNetworkId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -32,27 +32,49 @@ public final class EntityProfileResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeCount")
         private Integer attributeCount;
 
+        /**
+         * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+         * @param attributeCount the value to set
+         * @return this builder
+         **/
         public Builder attributeCount(Integer attributeCount) {
             this.attributeCount = attributeCount;
             this.__explicitlySet__.add("attributeCount");
             return this;
         }
-
+        /**
+         * Number of rows were that were sampled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampledRowCount")
         private Integer sampledRowCount;
 
+        /**
+         * Number of rows were that were sampled
+         * @param sampledRowCount the value to set
+         * @return this builder
+         **/
         public Builder sampledRowCount(Integer sampledRowCount) {
             this.sampledRowCount = sampledRowCount;
             this.__explicitlySet__.add("sampledRowCount");
             return this;
         }
-
+        /**
+         * The estimated row count in the source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedRowCount")
         private Integer estimatedRowCount;
 
+        /**
+         * The estimated row count in the source.
+         * @param estimatedRowCount the value to set
+         * @return this builder
+         **/
         public Builder estimatedRowCount(Integer estimatedRowCount) {
             this.estimatedRowCount = estimatedRowCount;
             this.__explicitlySet__.add("estimatedRowCount");
@@ -98,6 +120,10 @@ public final class EntityProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeCount")
     private final Integer attributeCount;
 
+    /**
+     * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+     * @return the value
+     **/
     public Integer getAttributeCount() {
         return attributeCount;
     }
@@ -108,6 +134,10 @@ public final class EntityProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("sampledRowCount")
     private final Integer sampledRowCount;
 
+    /**
+     * Number of rows were that were sampled
+     * @return the value
+     **/
     public Integer getSampledRowCount() {
         return sampledRowCount;
     }
@@ -118,6 +148,10 @@ public final class EntityProfileResult {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedRowCount")
     private final Integer estimatedRowCount;
 
+    /**
+     * The estimated row count in the source.
+     * @return the value
+     **/
     public Integer getEstimatedRowCount() {
         return estimatedRowCount;
     }

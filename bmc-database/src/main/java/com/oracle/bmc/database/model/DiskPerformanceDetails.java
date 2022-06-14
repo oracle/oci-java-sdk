@@ -31,18 +31,33 @@ public final class DiskPerformanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Disk IOPS in thousands.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
         private Float diskIops;
 
+        /**
+         * Disk IOPS in thousands.
+         * @param diskIops the value to set
+         * @return this builder
+         **/
         public Builder diskIops(Float diskIops) {
             this.diskIops = diskIops;
             this.__explicitlySet__.add("diskIops");
             return this;
         }
-
+        /**
+         * Disk Throughput in Mbps.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskThroughputInMbps")
         private Float diskThroughputInMbps;
 
+        /**
+         * Disk Throughput in Mbps.
+         * @param diskThroughputInMbps the value to set
+         * @return this builder
+         **/
         public Builder diskThroughputInMbps(Float diskThroughputInMbps) {
             this.diskThroughputInMbps = diskThroughputInMbps;
             this.__explicitlySet__.add("diskThroughputInMbps");
@@ -86,6 +101,10 @@ public final class DiskPerformanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
     private final Float diskIops;
 
+    /**
+     * Disk IOPS in thousands.
+     * @return the value
+     **/
     public Float getDiskIops() {
         return diskIops;
     }
@@ -96,6 +115,10 @@ public final class DiskPerformanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("diskThroughputInMbps")
     private final Float diskThroughputInMbps;
 
+    /**
+     * Disk Throughput in Mbps.
+     * @return the value
+     **/
     public Float getDiskThroughputInMbps() {
         return diskThroughputInMbps;
     }

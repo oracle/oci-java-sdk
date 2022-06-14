@@ -36,46 +36,81 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Page size in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageSizeInKB")
         private Double pageSizeInKB;
 
+        /**
+         * Page size in kilobytes
+         * @param pageSizeInKB the value to set
+         * @return this builder
+         **/
         public Builder pageSizeInKB(Double pageSizeInKB) {
             this.pageSizeInKB = pageSizeInKB;
             this.__explicitlySet__.add("pageSizeInKB");
             return this;
         }
-
+        /**
+         * Amount of memory used for page tables in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageTablesInKB")
         private Double pageTablesInKB;
 
+        /**
+         * Amount of memory used for page tables in kilobytes
+         * @param pageTablesInKB the value to set
+         * @return this builder
+         **/
         public Builder pageTablesInKB(Double pageTablesInKB) {
             this.pageTablesInKB = pageTablesInKB;
             this.__explicitlySet__.add("pageTablesInKB");
             return this;
         }
-
+        /**
+         * Amount of total swap space in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("swapTotalInKB")
         private Double swapTotalInKB;
 
+        /**
+         * Amount of total swap space in kilobytes
+         * @param swapTotalInKB the value to set
+         * @return this builder
+         **/
         public Builder swapTotalInKB(Double swapTotalInKB) {
             this.swapTotalInKB = swapTotalInKB;
             this.__explicitlySet__.add("swapTotalInKB");
             return this;
         }
-
+        /**
+         * Size of huge pages in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInKB")
         private Double hugePageSizeInKB;
 
+        /**
+         * Size of huge pages in kilobytes
+         * @param hugePageSizeInKB the value to set
+         * @return this builder
+         **/
         public Builder hugePageSizeInKB(Double hugePageSizeInKB) {
             this.hugePageSizeInKB = hugePageSizeInKB;
             this.__explicitlySet__.add("hugePageSizeInKB");
             return this;
         }
-
+        /**
+         * Total number of huge pages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
         private Integer hugePagesTotal;
 
+        /**
+         * Total number of huge pages
+         * @param hugePagesTotal the value to set
+         * @return this builder
+         **/
         public Builder hugePagesTotal(Integer hugePagesTotal) {
             this.hugePagesTotal = hugePagesTotal;
             this.__explicitlySet__.add("hugePagesTotal");
@@ -146,6 +181,10 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
     @com.fasterxml.jackson.annotation.JsonProperty("pageSizeInKB")
     private final Double pageSizeInKB;
 
+    /**
+     * Page size in kilobytes
+     * @return the value
+     **/
     public Double getPageSizeInKB() {
         return pageSizeInKB;
     }
@@ -156,6 +195,10 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
     @com.fasterxml.jackson.annotation.JsonProperty("pageTablesInKB")
     private final Double pageTablesInKB;
 
+    /**
+     * Amount of memory used for page tables in kilobytes
+     * @return the value
+     **/
     public Double getPageTablesInKB() {
         return pageTablesInKB;
     }
@@ -166,6 +209,10 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
     @com.fasterxml.jackson.annotation.JsonProperty("swapTotalInKB")
     private final Double swapTotalInKB;
 
+    /**
+     * Amount of total swap space in kilobytes
+     * @return the value
+     **/
     public Double getSwapTotalInKB() {
         return swapTotalInKB;
     }
@@ -176,6 +223,10 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
     @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInKB")
     private final Double hugePageSizeInKB;
 
+    /**
+     * Size of huge pages in kilobytes
+     * @return the value
+     **/
     public Double getHugePageSizeInKB() {
         return hugePageSizeInKB;
     }
@@ -186,6 +237,10 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
     private final Integer hugePagesTotal;
 
+    /**
+     * Total number of huge pages
+     * @return the value
+     **/
     public Integer getHugePagesTotal() {
         return hugePagesTotal;
     }

@@ -15,6 +15,12 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Integer opcTotalItems;
 
+    /**
+     * The total number of items that match the query.
+     *
+     * @return the value
+     */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
@@ -37,6 +48,13 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the page parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -46,6 +64,10 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
+    /**
+     * The returned QueryResultResponse instance.
+     * @return the value
+     */
     public com.oracle.bmc.apmtraces.model.QueryResultResponse getQueryResultResponse() {
         return queryResultResponse;
     }
@@ -78,29 +100,73 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The total number of items that match the query.
+         *
+         */
         private Integer opcTotalItems;
 
+        /**
+         * The total number of items that match the query.
+         *
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
         public Builder opcTotalItems(Integer opcTotalItems) {
             this.opcTotalItems = opcTotalItems;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the page parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the page parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned QueryResultResponse instance.
+         */
         private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
+        /**
+         * The returned QueryResultResponse instance.
+         * @param queryResultResponse the value to set
+         * @return this builder
+         */
         public Builder queryResultResponse(
                 com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse) {
             this.queryResultResponse = queryResultResponse;
@@ -121,6 +187,10 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public QueryResponse build() {
             return new QueryResponse(
                     __httpStatusCode__,
@@ -131,6 +201,10 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

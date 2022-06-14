@@ -29,9 +29,17 @@ public final class CreateConfigProvider {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * bindings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bindings")
         private java.util.Map<String, ParameterValue> bindings;
 
+        /**
+         * bindings
+         * @param bindings the value to set
+         * @return this builder
+         **/
         public Builder bindings(java.util.Map<String, ParameterValue> bindings) {
             this.bindings = bindings;
             this.__explicitlySet__.add("bindings");
@@ -73,6 +81,10 @@ public final class CreateConfigProvider {
     @com.fasterxml.jackson.annotation.JsonProperty("bindings")
     private final java.util.Map<String, ParameterValue> bindings;
 
+    /**
+     * bindings
+     * @return the value
+     **/
     public java.util.Map<String, ParameterValue> getBindings() {
         return bindings;
     }

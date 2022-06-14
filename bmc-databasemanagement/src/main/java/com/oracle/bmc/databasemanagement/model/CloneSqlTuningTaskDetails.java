@@ -41,27 +41,55 @@ public final class CloneSqlTuningTaskDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
 
+        /**
+         * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
+         * @param taskName the value to set
+         * @return this builder
+         **/
         public Builder taskName(String taskName) {
             this.taskName = taskName;
             this.__explicitlySet__.add("taskName");
             return this;
         }
-
+        /**
+         * The identifier of the SQL tuning task being cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint
+         * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalTaskId")
         private Long originalTaskId;
 
+        /**
+         * The identifier of the SQL tuning task being cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * It can be retrieved from the following endpoint
+         * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
+         *
+         * @param originalTaskId the value to set
+         * @return this builder
+         **/
         public Builder originalTaskId(Long originalTaskId) {
             this.originalTaskId = originalTaskId;
             this.__explicitlySet__.add("originalTaskId");
             return this;
         }
-
+        /**
+         * The description of the SQL tuning task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskDescription")
         private String taskDescription;
 
+        /**
+         * The description of the SQL tuning task.
+         * @param taskDescription the value to set
+         * @return this builder
+         **/
         public Builder taskDescription(String taskDescription) {
             this.taskDescription = taskDescription;
             this.__explicitlySet__.add("taskDescription");
@@ -118,6 +146,10 @@ public final class CloneSqlTuningTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     private final String taskName;
 
+    /**
+     * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
+     * @return the value
+     **/
     public String getTaskName() {
         return taskName;
     }
@@ -131,6 +163,13 @@ public final class CloneSqlTuningTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("originalTaskId")
     private final Long originalTaskId;
 
+    /**
+     * The identifier of the SQL tuning task being cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * It can be retrieved from the following endpoint
+     * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
+     *
+     * @return the value
+     **/
     public Long getOriginalTaskId() {
         return originalTaskId;
     }
@@ -141,6 +180,10 @@ public final class CloneSqlTuningTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("taskDescription")
     private final String taskDescription;
 
+    /**
+     * The description of the SQL tuning task.
+     * @return the value
+     **/
     public String getTaskDescription() {
         return taskDescription;
     }

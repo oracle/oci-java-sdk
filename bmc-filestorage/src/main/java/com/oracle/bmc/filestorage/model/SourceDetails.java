@@ -29,18 +29,41 @@ public final class SourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentFileSystemId")
         private String parentFileSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         * @param parentFileSystemId the value to set
+         * @return this builder
+         **/
         public Builder parentFileSystemId(String parentFileSystemId) {
             this.parentFileSystemId = parentFileSystemId;
             this.__explicitlySet__.add("parentFileSystemId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source snapshot used to create a cloned file system.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
         private String sourceSnapshotId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source snapshot used to create a cloned file system.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         * @param sourceSnapshotId the value to set
+         * @return this builder
+         **/
         public Builder sourceSnapshotId(String sourceSnapshotId) {
             this.sourceSnapshotId = sourceSnapshotId;
             this.__explicitlySet__.add("sourceSnapshotId");
@@ -86,6 +109,12 @@ public final class SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parentFileSystemId")
     private final String parentFileSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     *
+     * @return the value
+     **/
     public String getParentFileSystemId() {
         return parentFileSystemId;
     }
@@ -98,6 +127,12 @@ public final class SourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceSnapshotId")
     private final String sourceSnapshotId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source snapshot used to create a cloned file system.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     *
+     * @return the value
+     **/
     public String getSourceSnapshotId() {
         return sourceSnapshotId;
     }

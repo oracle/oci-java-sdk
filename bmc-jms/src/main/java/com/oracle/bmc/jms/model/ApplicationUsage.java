@@ -63,99 +63,195 @@ public final class ApplicationUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An internal identifier for the application that is unique to a Fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
+        /**
+         * An internal identifier for the application that is unique to a Fleet.
+         *
+         * @param applicationId the value to set
+         * @return this builder
+         **/
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
-
+        /**
+         * The name of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The name of the application.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The type of the application, denoted by how the application was started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
+        /**
+         * The type of the application, denoted by how the application was started.
+         * @param applicationType the value to set
+         * @return this builder
+         **/
         public Builder applicationType(String applicationType) {
             this.applicationType = applicationType;
             this.__explicitlySet__.add("applicationType");
             return this;
         }
-
+        /**
+         * The operating systems running this application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
         private java.util.List<OperatingSystem> operatingSystems;
 
+        /**
+         * The operating systems running this application.
+         * @param operatingSystems the value to set
+         * @return this builder
+         **/
         public Builder operatingSystems(java.util.List<OperatingSystem> operatingSystems) {
             this.operatingSystems = operatingSystems;
             this.__explicitlySet__.add("operatingSystems");
             return this;
         }
-
+        /**
+         * The approximate count of installations running this application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
         private Integer approximateInstallationCount;
 
+        /**
+         * The approximate count of installations running this application.
+         * @param approximateInstallationCount the value to set
+         * @return this builder
+         **/
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
             this.approximateInstallationCount = approximateInstallationCount;
             this.__explicitlySet__.add("approximateInstallationCount");
             return this;
         }
-
+        /**
+         * The approximate count of Java Runtimes running this application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
         private Integer approximateJreCount;
 
+        /**
+         * The approximate count of Java Runtimes running this application.
+         * @param approximateJreCount the value to set
+         * @return this builder
+         **/
         public Builder approximateJreCount(Integer approximateJreCount) {
             this.approximateJreCount = approximateJreCount;
             this.__explicitlySet__.add("approximateJreCount");
             return this;
         }
-
+        /**
+         * The approximate count of managed instances reporting this application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
         private Integer approximateManagedInstanceCount;
 
+        /**
+         * The approximate count of managed instances reporting this application.
+         * @param approximateManagedInstanceCount the value to set
+         * @return this builder
+         **/
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
             this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             this.__explicitlySet__.add("approximateManagedInstanceCount");
             return this;
         }
-
+        /**
+         * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
+        /**
+         * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * The date and time the resource was _first_ reported to JMS.
+         * This is potentially _before_ the specified time period provided by the filters.
+         * For example, a resource can be first reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
         private java.util.Date timeFirstSeen;
 
+        /**
+         * The date and time the resource was _first_ reported to JMS.
+         * This is potentially _before_ the specified time period provided by the filters.
+         * For example, a resource can be first reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         * @param timeFirstSeen the value to set
+         * @return this builder
+         **/
         public Builder timeFirstSeen(java.util.Date timeFirstSeen) {
             this.timeFirstSeen = timeFirstSeen;
             this.__explicitlySet__.add("timeFirstSeen");
             return this;
         }
-
+        /**
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
+        /**
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         * @param timeLastSeen the value to set
+         * @return this builder
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -221,6 +317,11 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
+    /**
+     * An internal identifier for the application that is unique to a Fleet.
+     *
+     * @return the value
+     **/
     public String getApplicationId() {
         return applicationId;
     }
@@ -231,6 +332,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The name of the application.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -241,6 +346,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
+    /**
+     * The type of the application, denoted by how the application was started.
+     * @return the value
+     **/
     public String getApplicationType() {
         return applicationType;
     }
@@ -251,6 +360,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
     private final java.util.List<OperatingSystem> operatingSystems;
 
+    /**
+     * The operating systems running this application.
+     * @return the value
+     **/
     public java.util.List<OperatingSystem> getOperatingSystems() {
         return operatingSystems;
     }
@@ -261,6 +374,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
     private final Integer approximateInstallationCount;
 
+    /**
+     * The approximate count of installations running this application.
+     * @return the value
+     **/
     public Integer getApproximateInstallationCount() {
         return approximateInstallationCount;
     }
@@ -271,6 +388,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
     private final Integer approximateJreCount;
 
+    /**
+     * The approximate count of Java Runtimes running this application.
+     * @return the value
+     **/
     public Integer getApproximateJreCount() {
         return approximateJreCount;
     }
@@ -281,6 +402,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
     private final Integer approximateManagedInstanceCount;
 
+    /**
+     * The approximate count of managed instances reporting this application.
+     * @return the value
+     **/
     public Integer getApproximateManagedInstanceCount() {
         return approximateManagedInstanceCount;
     }
@@ -291,6 +416,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
+    /**
+     * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return the value
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -301,6 +430,10 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -315,6 +448,14 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
     private final java.util.Date timeFirstSeen;
 
+    /**
+     * The date and time the resource was _first_ reported to JMS.
+     * This is potentially _before_ the specified time period provided by the filters.
+     * For example, a resource can be first reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeFirstSeen() {
         return timeFirstSeen;
     }
@@ -329,6 +470,14 @@ public final class ApplicationUsage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
+    /**
+     * The date and time the resource was _last_ reported to JMS.
+     * This is potentially _after_ the specified time period provided by the filters.
+     * For example, a resource can be last reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }

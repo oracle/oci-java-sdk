@@ -19,6 +19,10 @@ public class EnableAutoAssociationRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class EnableAutoAssociationRequest
      */
     private String sourceName;
 
+    /**
+     * The source name.
+     */
     public String getSourceName() {
         return sourceName;
     }
@@ -36,6 +43,9 @@ public class EnableAutoAssociationRequest
     private com.oracle.bmc.loganalytics.model.EnableAutoAssociationDetails
             enableAutoAssociationDetails;
 
+    /**
+     * Details required to enable auto association for the log source.
+     */
     public com.oracle.bmc.loganalytics.model.EnableAutoAssociationDetails
             getEnableAutoAssociationDetails() {
         return enableAutoAssociationDetails;
@@ -50,6 +60,14 @@ public class EnableAutoAssociationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -58,6 +76,9 @@ public class EnableAutoAssociationRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -85,11 +106,16 @@ public class EnableAutoAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -97,10 +123,14 @@ public class EnableAutoAssociationRequest
             return this;
         }
 
+        /**
+         * The source name.
+         */
         private String sourceName = null;
 
         /**
          * The source name.
+         * @param sourceName the value to set
          * @return this builder instance
          */
         public Builder sourceName(String sourceName) {
@@ -108,11 +138,15 @@ public class EnableAutoAssociationRequest
             return this;
         }
 
+        /**
+         * Details required to enable auto association for the log source.
+         */
         private com.oracle.bmc.loganalytics.model.EnableAutoAssociationDetails
                 enableAutoAssociationDetails = null;
 
         /**
          * Details required to enable auto association for the log source.
+         * @param enableAutoAssociationDetails the value to set
          * @return this builder instance
          */
         public Builder enableAutoAssociationDetails(
@@ -122,6 +156,14 @@ public class EnableAutoAssociationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -131,6 +173,7 @@ public class EnableAutoAssociationRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -138,10 +181,14 @@ public class EnableAutoAssociationRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -236,7 +283,8 @@ public class EnableAutoAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -247,6 +295,10 @@ public class EnableAutoAssociationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

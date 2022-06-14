@@ -34,27 +34,89 @@ public final class BodyValidationRequestPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Determines if the request body is required in the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
 
+        /**
+         * Determines if the request body is required in the request.
+         * @param required the value to set
+         * @return this builder
+         **/
         public Builder required(Boolean required) {
             this.required = required;
             this.__explicitlySet__.add("required");
             return this;
         }
-
+        /**
+         * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
+         * subset restricted to the following schema
+         * <p>
+         * key ::= (
+         *           / (  "*" "/" "*" )
+         *           / ( type "/" "*" )
+         *           / ( type "/" subtype )
+         *           )
+         * <p>
+         * For requests that match multiple keys, only the most specific key is applicable.
+         * e.g. {@code text/plain} overrides {@code text/*}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private java.util.Map<String, ContentValidation> content;
 
+        /**
+         * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
+         * subset restricted to the following schema
+         * <p>
+         * key ::= (
+         *           / (  "*" "/" "*" )
+         *           / ( type "/" "*" )
+         *           / ( type "/" subtype )
+         *           )
+         * <p>
+         * For requests that match multiple keys, only the most specific key is applicable.
+         * e.g. {@code text/plain} overrides {@code text/*}
+         *
+         * @param content the value to set
+         * @return this builder
+         **/
         public Builder content(java.util.Map<String, ContentValidation> content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-
+        /**
+         * Validation behavior mode.
+         * <p>
+         * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
+         * and not sent to the backend.
+         * <p>
+         * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
+         * will follow the normal path.
+         * <p>
+         * {@code DISABLED} type turns the validation off.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
         private ValidationMode validationMode;
 
+        /**
+         * Validation behavior mode.
+         * <p>
+         * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
+         * and not sent to the backend.
+         * <p>
+         * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
+         * will follow the normal path.
+         * <p>
+         * {@code DISABLED} type turns the validation off.
+         *
+         * @param validationMode the value to set
+         * @return this builder
+         **/
         public Builder validationMode(ValidationMode validationMode) {
             this.validationMode = validationMode;
             this.__explicitlySet__.add("validationMode");
@@ -100,6 +162,10 @@ public final class BodyValidationRequestPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("required")
     private final Boolean required;
 
+    /**
+     * Determines if the request body is required in the request.
+     * @return the value
+     **/
     public Boolean getRequired() {
         return required;
     }
@@ -121,6 +187,21 @@ public final class BodyValidationRequestPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final java.util.Map<String, ContentValidation> content;
 
+    /**
+     * The content of the request body. The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D)
+     * subset restricted to the following schema
+     * <p>
+     * key ::= (
+     *           / (  "*" "/" "*" )
+     *           / ( type "/" "*" )
+     *           / ( type "/" subtype )
+     *           )
+     * <p>
+     * For requests that match multiple keys, only the most specific key is applicable.
+     * e.g. {@code text/plain} overrides {@code text/*}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, ContentValidation> getContent() {
         return content;
     }
@@ -185,6 +266,19 @@ public final class BodyValidationRequestPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("validationMode")
     private final ValidationMode validationMode;
 
+    /**
+     * Validation behavior mode.
+     * <p>
+     * In {@code ENFORCING} mode, upon a validation failure, the request will be rejected with a 4xx response
+     * and not sent to the backend.
+     * <p>
+     * In {@code PERMISSIVE} mode, the result of the validation will be exposed as metrics while the request
+     * will follow the normal path.
+     * <p>
+     * {@code DISABLED} type turns the validation off.
+     *
+     * @return the value
+     **/
     public ValidationMode getValidationMode() {
         return validationMode;
     }

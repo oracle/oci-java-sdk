@@ -46,45 +46,97 @@ public final class ResourceAvailability {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current usage in the given compartment. To support resources with fractional counts,
+         * the field rounds up to the nearest integer.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("used")
         private Long used;
 
+        /**
+         * The current usage in the given compartment. To support resources with fractional counts,
+         * the field rounds up to the nearest integer.
+         *
+         * @param used the value to set
+         * @return this builder
+         **/
         public Builder used(Long used) {
             this.used = used;
             this.__explicitlySet__.add("used");
             return this;
         }
-
+        /**
+         * The count of available resources. To support resources with fractional counts,
+         * the field rounds down to the nearest integer.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("available")
         private Long available;
 
+        /**
+         * The count of available resources. To support resources with fractional counts,
+         * the field rounds down to the nearest integer.
+         *
+         * @param available the value to set
+         * @return this builder
+         **/
         public Builder available(Long available) {
             this.available = available;
             this.__explicitlySet__.add("available");
             return this;
         }
-
+        /**
+         * The current most accurate usage in the given compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fractionalUsage")
         private java.math.BigDecimal fractionalUsage;
 
+        /**
+         * The current most accurate usage in the given compartment.
+         *
+         * @param fractionalUsage the value to set
+         * @return this builder
+         **/
         public Builder fractionalUsage(java.math.BigDecimal fractionalUsage) {
             this.fractionalUsage = fractionalUsage;
             this.__explicitlySet__.add("fractionalUsage");
             return this;
         }
-
+        /**
+         * The most accurate count of available resources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fractionalAvailability")
         private java.math.BigDecimal fractionalAvailability;
 
+        /**
+         * The most accurate count of available resources.
+         *
+         * @param fractionalAvailability the value to set
+         * @return this builder
+         **/
         public Builder fractionalAvailability(java.math.BigDecimal fractionalAvailability) {
             this.fractionalAvailability = fractionalAvailability;
             this.__explicitlySet__.add("fractionalAvailability");
             return this;
         }
-
+        /**
+         * The effective quota value for the given compartment. This field is only present if there is a
+         * current quota policy affecting the current resource in the target region or availability domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveQuotaValue")
         private java.math.BigDecimal effectiveQuotaValue;
 
+        /**
+         * The effective quota value for the given compartment. This field is only present if there is a
+         * current quota policy affecting the current resource in the target region or availability domain.
+         *
+         * @param effectiveQuotaValue the value to set
+         * @return this builder
+         **/
         public Builder effectiveQuotaValue(java.math.BigDecimal effectiveQuotaValue) {
             this.effectiveQuotaValue = effectiveQuotaValue;
             this.__explicitlySet__.add("effectiveQuotaValue");
@@ -139,6 +191,12 @@ public final class ResourceAvailability {
     @com.fasterxml.jackson.annotation.JsonProperty("used")
     private final Long used;
 
+    /**
+     * The current usage in the given compartment. To support resources with fractional counts,
+     * the field rounds up to the nearest integer.
+     *
+     * @return the value
+     **/
     public Long getUsed() {
         return used;
     }
@@ -151,6 +209,12 @@ public final class ResourceAvailability {
     @com.fasterxml.jackson.annotation.JsonProperty("available")
     private final Long available;
 
+    /**
+     * The count of available resources. To support resources with fractional counts,
+     * the field rounds down to the nearest integer.
+     *
+     * @return the value
+     **/
     public Long getAvailable() {
         return available;
     }
@@ -162,6 +226,11 @@ public final class ResourceAvailability {
     @com.fasterxml.jackson.annotation.JsonProperty("fractionalUsage")
     private final java.math.BigDecimal fractionalUsage;
 
+    /**
+     * The current most accurate usage in the given compartment.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getFractionalUsage() {
         return fractionalUsage;
     }
@@ -173,6 +242,11 @@ public final class ResourceAvailability {
     @com.fasterxml.jackson.annotation.JsonProperty("fractionalAvailability")
     private final java.math.BigDecimal fractionalAvailability;
 
+    /**
+     * The most accurate count of available resources.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getFractionalAvailability() {
         return fractionalAvailability;
     }
@@ -185,6 +259,12 @@ public final class ResourceAvailability {
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveQuotaValue")
     private final java.math.BigDecimal effectiveQuotaValue;
 
+    /**
+     * The effective quota value for the given compartment. This field is only present if there is a
+     * current quota policy affecting the current resource in the target region or availability domain.
+     *
+     * @return the value
+     **/
     public java.math.BigDecimal getEffectiveQuotaValue() {
         return effectiveQuotaValue;
     }

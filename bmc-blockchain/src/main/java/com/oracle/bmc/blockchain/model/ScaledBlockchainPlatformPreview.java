@@ -77,63 +77,113 @@ public final class ScaledBlockchainPlatformPreview {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * unique identifier that is immutable on creation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Platform Instance Display name, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Platform Instance Display name, can be renamed
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Platform Instance Description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Platform Instance Description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
         private String computeShape;
 
+        /**
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+         * @param computeShape the value to set
+         * @return this builder
+         **/
         public Builder computeShape(String computeShape) {
             this.computeShape = computeShape;
             this.__explicitlySet__.add("computeShape");
             return this;
         }
-
+        /**
+         * Storage size in TBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
         private Double storageSizeInTBs;
 
+        /**
+         * Storage size in TBs
+         * @param storageSizeInTBs the value to set
+         * @return this builder
+         **/
         public Builder storageSizeInTBs(Double storageSizeInTBs) {
             this.storageSizeInTBs = storageSizeInTBs;
             this.__explicitlySet__.add("storageSizeInTBs");
             return this;
         }
-
+        /**
+         * Storage size in TBs post scaling
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBsPostScaling")
         private Double storageSizeInTBsPostScaling;
 
+        /**
+         * Storage size in TBs post scaling
+         * @param storageSizeInTBsPostScaling the value to set
+         * @return this builder
+         **/
         public Builder storageSizeInTBsPostScaling(Double storageSizeInTBsPostScaling) {
             this.storageSizeInTBsPostScaling = storageSizeInTBsPostScaling;
             this.__explicitlySet__.add("storageSizeInTBsPostScaling");
@@ -176,30 +226,51 @@ public final class ScaledBlockchainPlatformPreview {
             this.__explicitlySet__.add("replicasPostScaling");
             return this;
         }
-
+        /**
+         * List of OcpuUtilization for all hosts
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfo")
         private java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
 
+        /**
+         * List of OcpuUtilization for all hosts
+         * @param hostOcpuUtilizationInfo the value to set
+         * @return this builder
+         **/
         public Builder hostOcpuUtilizationInfo(
                 java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo) {
             this.hostOcpuUtilizationInfo = hostOcpuUtilizationInfo;
             this.__explicitlySet__.add("hostOcpuUtilizationInfo");
             return this;
         }
-
+        /**
+         * List of OcpuUtilization for all hosts after scaling
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfoPostScaling")
         private java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfoPostScaling;
 
+        /**
+         * List of OcpuUtilization for all hosts after scaling
+         * @param hostOcpuUtilizationInfoPostScaling the value to set
+         * @return this builder
+         **/
         public Builder hostOcpuUtilizationInfoPostScaling(
                 java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfoPostScaling) {
             this.hostOcpuUtilizationInfoPostScaling = hostOcpuUtilizationInfoPostScaling;
             this.__explicitlySet__.add("hostOcpuUtilizationInfoPostScaling");
             return this;
         }
-
+        /**
+         * Number of new VMs that would be created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newVmCount")
         private Integer newVmCount;
 
+        /**
+         * Number of new VMs that would be created
+         * @param newVmCount the value to set
+         * @return this builder
+         **/
         public Builder newVmCount(Integer newVmCount) {
             this.newVmCount = newVmCount;
             this.__explicitlySet__.add("newVmCount");
@@ -293,6 +364,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * unique identifier that is immutable on creation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -303,6 +378,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Platform Instance Display name, can be renamed
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -313,6 +392,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -323,6 +406,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Platform Instance Description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -333,6 +420,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
     private final String computeShape;
 
+    /**
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * @return the value
+     **/
     public String getComputeShape() {
         return computeShape;
     }
@@ -343,6 +434,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBs")
     private final Double storageSizeInTBs;
 
+    /**
+     * Storage size in TBs
+     * @return the value
+     **/
     public Double getStorageSizeInTBs() {
         return storageSizeInTBs;
     }
@@ -353,6 +448,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("storageSizeInTBsPostScaling")
     private final Double storageSizeInTBsPostScaling;
 
+    /**
+     * Storage size in TBs post scaling
+     * @return the value
+     **/
     public Double getStorageSizeInTBsPostScaling() {
         return storageSizeInTBsPostScaling;
     }
@@ -391,6 +490,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfo")
     private final java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfo;
 
+    /**
+     * List of OcpuUtilization for all hosts
+     * @return the value
+     **/
     public java.util.List<OcpuUtilizationInfo> getHostOcpuUtilizationInfo() {
         return hostOcpuUtilizationInfo;
     }
@@ -401,6 +504,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuUtilizationInfoPostScaling")
     private final java.util.List<OcpuUtilizationInfo> hostOcpuUtilizationInfoPostScaling;
 
+    /**
+     * List of OcpuUtilization for all hosts after scaling
+     * @return the value
+     **/
     public java.util.List<OcpuUtilizationInfo> getHostOcpuUtilizationInfoPostScaling() {
         return hostOcpuUtilizationInfoPostScaling;
     }
@@ -411,6 +518,10 @@ public final class ScaledBlockchainPlatformPreview {
     @com.fasterxml.jackson.annotation.JsonProperty("newVmCount")
     private final Integer newVmCount;
 
+    /**
+     * Number of new VMs that would be created
+     * @return the value
+     **/
     public Integer getNewVmCount() {
         return newVmCount;
     }

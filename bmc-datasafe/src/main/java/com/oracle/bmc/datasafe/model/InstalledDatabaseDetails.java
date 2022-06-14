@@ -35,37 +35,67 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
             this.__explicitlySet__.add("infrastructureType");
             return this;
         }
-
+        /**
+         * The OCID of the compute instance on which the database is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The OCID of the compute instance on which the database is running.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
         private java.util.List<String> ipAddresses;
 
+        /**
+         * The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+         *
+         * @param ipAddresses the value to set
+         * @return this builder
+         **/
         public Builder ipAddresses(java.util.List<String> ipAddresses) {
             this.ipAddresses = ipAddresses;
             this.__explicitlySet__.add("ipAddresses");
             return this;
         }
-
+        /**
+         * The port number of the database listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
         private Integer listenerPort;
 
+        /**
+         * The port number of the database listener.
+         * @param listenerPort the value to set
+         * @return this builder
+         **/
         public Builder listenerPort(Integer listenerPort) {
             this.listenerPort = listenerPort;
             this.__explicitlySet__.add("listenerPort");
             return this;
         }
-
+        /**
+         * The service name of the database registered as target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The service name of the database registered as target database.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -128,6 +158,10 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The OCID of the compute instance on which the database is running.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -139,6 +173,11 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
     private final java.util.List<String> ipAddresses;
 
+    /**
+     * The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getIpAddresses() {
         return ipAddresses;
     }
@@ -149,6 +188,10 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
     private final Integer listenerPort;
 
+    /**
+     * The port number of the database listener.
+     * @return the value
+     **/
     public Integer getListenerPort() {
         return listenerPort;
     }
@@ -159,6 +202,10 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The service name of the database registered as target database.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

@@ -563,6 +563,101 @@ public class ConfigAsyncClient implements ConfigAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RetrieveNamespaceMetricsResponse> retrieveNamespaceMetrics(
+            RetrieveNamespaceMetricsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveNamespaceMetricsRequest, RetrieveNamespaceMetricsResponse>
+                    handler) {
+        LOG.trace("Called async retrieveNamespaceMetrics");
+        final RetrieveNamespaceMetricsRequest interceptedRequest =
+                RetrieveNamespaceMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveNamespaceMetricsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RetrieveNamespaceMetricsResponse>
+                transformer = RetrieveNamespaceMetricsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "RetrieveNamespaceMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaceMetrics");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RetrieveNamespaceMetricsRequest, RetrieveNamespaceMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetrieveNamespaceMetricsRequest, RetrieveNamespaceMetricsResponse>,
+                        java.util.concurrent.Future<RetrieveNamespaceMetricsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRetrieveNamespaceMetricsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetrieveNamespaceMetricsRequest, RetrieveNamespaceMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveNamespacesResponse> retrieveNamespaces(
+            RetrieveNamespacesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveNamespacesRequest, RetrieveNamespacesResponse>
+                    handler) {
+        LOG.trace("Called async retrieveNamespaces");
+        final RetrieveNamespacesRequest interceptedRequest =
+                RetrieveNamespacesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveNamespacesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RetrieveNamespacesResponse>
+                transformer = RetrieveNamespacesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "RetrieveNamespaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/MetricGroup/RetrieveNamespaces");
+
+        com.oracle.bmc.responses.AsyncHandler<RetrieveNamespacesRequest, RetrieveNamespacesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetrieveNamespacesRequest, RetrieveNamespacesResponse>,
+                        java.util.concurrent.Future<RetrieveNamespacesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetrieveNamespacesRequest, RetrieveNamespacesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
             UpdateConfigRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
@@ -598,6 +693,58 @@ public class ConfigAsyncClient implements ConfigAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateConfigRequest, UpdateConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateSpanFilterPatternResponse> validateSpanFilterPattern(
+            ValidateSpanFilterPatternRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateSpanFilterPatternRequest, ValidateSpanFilterPatternResponse>
+                    handler) {
+        LOG.trace("Called async validateSpanFilterPattern");
+        final ValidateSpanFilterPatternRequest interceptedRequest =
+                ValidateSpanFilterPatternConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateSpanFilterPatternConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ValidateSpanFilterPatternResponse>
+                transformer = ValidateSpanFilterPatternConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "ValidateSpanFilterPattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/SpanFilter/ValidateSpanFilterPattern");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateSpanFilterPatternRequest, ValidateSpanFilterPatternResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateSpanFilterPatternRequest,
+                                ValidateSpanFilterPatternResponse>,
+                        java.util.concurrent.Future<ValidateSpanFilterPatternResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getValidateSpanFilterPatternDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateSpanFilterPatternRequest, ValidateSpanFilterPatternResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

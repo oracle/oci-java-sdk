@@ -62,10 +62,17 @@ public final class AwrDbSnapshotRangeCollection extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-
+        /**
+         * A list of AWR snapshot range summary data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrDbSnapshotRangeSummary> items;
 
+        /**
+         * A list of AWR snapshot range summary data.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AwrDbSnapshotRangeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -125,6 +132,10 @@ public final class AwrDbSnapshotRangeCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrDbSnapshotRangeSummary> items;
 
+    /**
+     * A list of AWR snapshot range summary data.
+     * @return the value
+     **/
     public java.util.List<AwrDbSnapshotRangeSummary> getItems() {
         return items;
     }

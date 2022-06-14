@@ -13,6 +13,10 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
      */
     private String location;
 
+    /**
+     * A link to the created Managed Instance Group
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -24,6 +28,12 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -43,6 +58,10 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
+    /**
+     * The returned ManagedInstanceGroup instance.
+     * @return the value
+     */
     public com.oracle.bmc.osmanagement.model.ManagedInstanceGroup getManagedInstanceGroup() {
         return managedInstanceGroup;
     }
@@ -75,29 +94,67 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * A link to the created Managed Instance Group
+         */
         private String location;
 
+        /**
+         * A link to the created Managed Instance Group
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned ManagedInstanceGroup instance.
+         */
         private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
+        /**
+         * The returned ManagedInstanceGroup instance.
+         * @param managedInstanceGroup the value to set
+         * @return this builder
+         */
         public Builder managedInstanceGroup(
                 com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup) {
             this.managedInstanceGroup = managedInstanceGroup;
@@ -118,12 +175,20 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateManagedInstanceGroupResponse build() {
             return new CreateManagedInstanceGroupResponse(
                     __httpStatusCode__, location, opcRequestId, etag, managedInstanceGroup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

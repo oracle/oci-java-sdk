@@ -154,10 +154,17 @@ public final class ComputeInstanceGroupCanaryTrafficShiftDeployStage extends Dep
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-
+        /**
+         * The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupCanaryDeployStageId")
         private String computeInstanceGroupCanaryDeployStageId;
 
+        /**
+         * The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
+         * @param computeInstanceGroupCanaryDeployStageId the value to set
+         * @return this builder
+         **/
         public Builder computeInstanceGroupCanaryDeployStageId(
                 String computeInstanceGroupCanaryDeployStageId) {
             this.computeInstanceGroupCanaryDeployStageId = computeInstanceGroupCanaryDeployStageId;
@@ -281,6 +288,10 @@ public final class ComputeInstanceGroupCanaryTrafficShiftDeployStage extends Dep
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupCanaryDeployStageId")
     private final String computeInstanceGroupCanaryDeployStageId;
 
+    /**
+     * The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
+     * @return the value
+     **/
     public String getComputeInstanceGroupCanaryDeployStageId() {
         return computeInstanceGroupCanaryDeployStageId;
     }

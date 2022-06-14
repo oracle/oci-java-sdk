@@ -34,36 +34,67 @@ public final class AutoScalingPolicySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the autoscaling policy that is assigned after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The ID of the autoscaling policy that is assigned after creation.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The type of autoscaling policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyType")
         private String policyType;
 
+        /**
+         * The type of autoscaling policy.
+         * @param policyType the value to set
+         * @return this builder
+         **/
         public Builder policyType(String policyType) {
             this.policyType = policyType;
             this.__explicitlySet__.add("policyType");
             return this;
         }
-
+        /**
+         * Whether the autoscaling policy is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Whether the autoscaling policy is enabled.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -110,6 +141,10 @@ public final class AutoScalingPolicySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The ID of the autoscaling policy that is assigned after creation.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -121,6 +156,11 @@ public final class AutoScalingPolicySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -131,6 +171,10 @@ public final class AutoScalingPolicySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     private final String policyType;
 
+    /**
+     * The type of autoscaling policy.
+     * @return the value
+     **/
     public String getPolicyType() {
         return policyType;
     }
@@ -141,6 +185,10 @@ public final class AutoScalingPolicySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether the autoscaling policy is enabled.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }

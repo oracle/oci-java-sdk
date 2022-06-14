@@ -17,6 +17,9 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the resource belongs to.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,6 +31,12 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,6 +46,10 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private Long limit;
 
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
@@ -46,6 +59,10 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -54,6 +71,9 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String id;
 
+    /**
+     * The OCID of a resource.
+     */
     public String getId() {
         return id;
     }
@@ -62,6 +82,9 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String displayName;
 
+    /**
+     * The displayName of a resource.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -72,6 +95,11 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String steeringPolicyId;
 
+    /**
+     * Search by steering policy OCID.
+     * Will match any resource whose steering policy ID matches the provided value.
+     *
+     */
     public String getSteeringPolicyId() {
         return steeringPolicyId;
     }
@@ -82,6 +110,11 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String zoneId;
 
+    /**
+     * Search by zone OCID.
+     * Will match any resource whose zone ID matches the provided value.
+     *
+     */
     public String getZoneId() {
         return zoneId;
     }
@@ -92,6 +125,11 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String domain;
 
+    /**
+     * Search by domain.
+     * Will match any record whose domain (case-insensitive) equals the provided value.
+     *
+     */
     public String getDomain() {
         return domain;
     }
@@ -102,6 +140,11 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private String domainContains;
 
+    /**
+     * Search by domain.
+     * Will match any record whose domain (case-insensitive) contains the provided value.
+     *
+     */
     public String getDomainContains() {
         return domainContains;
     }
@@ -112,6 +155,11 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
+    /**
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+     * all returned resources were created on or after the indicated time.
+     *
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
@@ -122,6 +170,11 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private java.util.Date timeCreatedLessThan;
 
+    /**
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+     * all returned resources were created before the indicated time.
+     *
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
@@ -130,6 +183,9 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary.LifecycleState lifecycleState;
 
+    /**
+     * The state of a resource.
+     */
     public com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -176,6 +232,9 @@ public class ListSteeringPolicyAttachmentsRequest
         }
     };
 
+    /**
+     * The field by which to sort steering policy attachments. If unspecified, defaults to {@code timeCreated}.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -185,6 +244,10 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * The order to sort the resources.
+     *
+     */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -194,6 +257,10 @@ public class ListSteeringPolicyAttachmentsRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -205,10 +272,14 @@ public class ListSteeringPolicyAttachmentsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment the resource belongs to.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -216,6 +287,12 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -223,6 +300,7 @@ public class ListSteeringPolicyAttachmentsRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -230,11 +308,16 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
          * The maximum number of items to return in a page of the collection.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Long limit) {
@@ -242,11 +325,16 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -254,10 +342,14 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The OCID of a resource.
+         */
         private String id = null;
 
         /**
          * The OCID of a resource.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -265,10 +357,14 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The displayName of a resource.
+         */
         private String displayName = null;
 
         /**
          * The displayName of a resource.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -276,12 +372,18 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * Search by steering policy OCID.
+         * Will match any resource whose steering policy ID matches the provided value.
+         *
+         */
         private String steeringPolicyId = null;
 
         /**
          * Search by steering policy OCID.
          * Will match any resource whose steering policy ID matches the provided value.
          *
+         * @param steeringPolicyId the value to set
          * @return this builder instance
          */
         public Builder steeringPolicyId(String steeringPolicyId) {
@@ -289,12 +391,18 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * Search by zone OCID.
+         * Will match any resource whose zone ID matches the provided value.
+         *
+         */
         private String zoneId = null;
 
         /**
          * Search by zone OCID.
          * Will match any resource whose zone ID matches the provided value.
          *
+         * @param zoneId the value to set
          * @return this builder instance
          */
         public Builder zoneId(String zoneId) {
@@ -302,12 +410,18 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * Search by domain.
+         * Will match any record whose domain (case-insensitive) equals the provided value.
+         *
+         */
         private String domain = null;
 
         /**
          * Search by domain.
          * Will match any record whose domain (case-insensitive) equals the provided value.
          *
+         * @param domain the value to set
          * @return this builder instance
          */
         public Builder domain(String domain) {
@@ -315,12 +429,18 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * Search by domain.
+         * Will match any record whose domain (case-insensitive) contains the provided value.
+         *
+         */
         private String domainContains = null;
 
         /**
          * Search by domain.
          * Will match any record whose domain (case-insensitive) contains the provided value.
          *
+         * @param domainContains the value to set
          * @return this builder instance
          */
         public Builder domainContains(String domainContains) {
@@ -328,12 +448,18 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+         * all returned resources were created on or after the indicated time.
+         *
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
          * all returned resources were created on or after the indicated time.
          *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeCreatedGreaterThanOrEqualTo(
@@ -342,12 +468,18 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+         * all returned resources were created before the indicated time.
+         *
+         */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
          * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
          * all returned resources were created before the indicated time.
          *
+         * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
@@ -355,11 +487,15 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The state of a resource.
+         */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary.LifecycleState
                 lifecycleState = null;
 
         /**
          * The state of a resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -369,10 +505,14 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The field by which to sort steering policy attachments. If unspecified, defaults to {@code timeCreated}.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort steering policy attachments. If unspecified, defaults to {@code timeCreated}.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -380,11 +520,16 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * The order to sort the resources.
+         *
+         */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
          * The order to sort the resources.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.dns.model.SortOrder sortOrder) {
@@ -392,11 +537,16 @@ public class ListSteeringPolicyAttachmentsRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -503,7 +653,8 @@ public class ListSteeringPolicyAttachmentsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -525,6 +676,10 @@ public class ListSteeringPolicyAttachmentsRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

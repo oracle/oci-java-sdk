@@ -16,6 +16,9 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String secretId;
 
+    /**
+     * The OCID of the secret.
+     */
     public String getSecretId() {
         return secretId;
     }
@@ -24,6 +27,9 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private Long versionNumber;
 
+    /**
+     * The version number of the secret.
+     */
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -40,6 +49,9 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String secretVersionName;
 
+    /**
+     * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+     */
     public String getSecretVersionName() {
         return secretVersionName;
     }
@@ -87,6 +99,9 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
+    /**
+     * The rotation state of the secret version.
+     */
     public Stage getStage() {
         return stage;
     }
@@ -98,10 +113,14 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the secret.
+         */
         private String secretId = null;
 
         /**
          * The OCID of the secret.
+         * @param secretId the value to set
          * @return this builder instance
          */
         public Builder secretId(String secretId) {
@@ -109,10 +128,14 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -120,10 +143,14 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The version number of the secret.
+         */
         private Long versionNumber = null;
 
         /**
          * The version number of the secret.
+         * @param versionNumber the value to set
          * @return this builder instance
          */
         public Builder versionNumber(Long versionNumber) {
@@ -131,10 +158,14 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+         */
         private String secretVersionName = null;
 
         /**
          * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+         * @param secretVersionName the value to set
          * @return this builder instance
          */
         public Builder secretVersionName(String secretVersionName) {
@@ -142,10 +173,14 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
+        /**
+         * The rotation state of the secret version.
+         */
         private Stage stage = null;
 
         /**
          * The rotation state of the secret version.
+         * @param stage the value to set
          * @return this builder instance
          */
         public Builder stage(Stage stage) {
@@ -229,7 +264,8 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -240,6 +276,10 @@ public class GetSecretBundleRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .stage(stage);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

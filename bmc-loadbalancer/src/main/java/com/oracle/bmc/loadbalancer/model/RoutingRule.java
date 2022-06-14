@@ -31,27 +31,55 @@ public final class RoutingRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A unique name for the routing policy rule. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * A unique name for the routing policy rule. Avoid entering confidential information.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
+        /**
+         * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
+         *
+         * @param condition the value to set
+         * @return this builder
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * A list of actions to be applied when conditions of the routing rule are met.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<Action> actions;
 
+        /**
+         * A list of actions to be applied when conditions of the routing rule are met.
+         *
+         * @param actions the value to set
+         * @return this builder
+         **/
         public Builder actions(java.util.List<Action> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
@@ -95,6 +123,11 @@ public final class RoutingRule {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * A unique name for the routing policy rule. Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -106,6 +139,11 @@ public final class RoutingRule {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
+    /**
+     * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
+     *
+     * @return the value
+     **/
     public String getCondition() {
         return condition;
     }
@@ -117,6 +155,11 @@ public final class RoutingRule {
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<Action> actions;
 
+    /**
+     * A list of actions to be applied when conditions of the routing rule are met.
+     *
+     * @return the value
+     **/
     public java.util.List<Action> getActions() {
         return actions;
     }

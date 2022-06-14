@@ -18,6 +18,9 @@ public class UpdateNamespaceMetadataRequest
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +30,9 @@ public class UpdateNamespaceMetadataRequest
     private com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails
             updateNamespaceMetadataDetails;
 
+    /**
+     * Request object for update NamespaceMetadata.
+     */
     public com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails
             getUpdateNamespaceMetadataDetails() {
         return updateNamespaceMetadataDetails;
@@ -36,6 +42,9 @@ public class UpdateNamespaceMetadataRequest
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -58,10 +67,14 @@ public class UpdateNamespaceMetadataRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -69,11 +82,15 @@ public class UpdateNamespaceMetadataRequest
             return this;
         }
 
+        /**
+         * Request object for update NamespaceMetadata.
+         */
         private com.oracle.bmc.objectstorage.model.UpdateNamespaceMetadataDetails
                 updateNamespaceMetadataDetails = null;
 
         /**
          * Request object for update NamespaceMetadata.
+         * @param updateNamespaceMetadataDetails the value to set
          * @return this builder instance
          */
         public Builder updateNamespaceMetadataDetails(
@@ -83,10 +100,14 @@ public class UpdateNamespaceMetadataRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -178,7 +199,8 @@ public class UpdateNamespaceMetadataRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -187,6 +209,10 @@ public class UpdateNamespaceMetadataRequest
                 .opcClientRequestId(opcClientRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

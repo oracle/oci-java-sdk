@@ -16,6 +16,9 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> sqlIdentifier;
 
+    /**
+     * One or more unique SQL_IDs for a SQL Statement.
+     * Example: {@code 6rgjh9bjmy2s7}
+     *
+     */
     public java.util.List<String> getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -35,6 +43,10 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> databaseId;
 
+    /**
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the assosicated DBaaS entity.
+     *
+     */
     public java.util.List<String> getDatabaseId() {
         return databaseId;
     }
@@ -44,6 +56,10 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> id;
 
+    /**
+     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
     public java.util.List<String> getId() {
         return id;
     }
@@ -55,6 +71,12 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -65,6 +87,11 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -77,6 +104,13 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> definedTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
@@ -88,6 +122,12 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> freeformTagEquals;
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
@@ -102,6 +142,15 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> definedTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
@@ -114,6 +163,13 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
+     */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
@@ -123,6 +179,10 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -134,10 +194,14 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -145,12 +209,18 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * One or more unique SQL_IDs for a SQL Statement.
+         * Example: {@code 6rgjh9bjmy2s7}
+         *
+         */
         private java.util.List<String> sqlIdentifier = null;
 
         /**
          * One or more unique SQL_IDs for a SQL Statement.
          * Example: {@code 6rgjh9bjmy2s7}
          *
+         * @param sqlIdentifier the value to set
          * @return this builder instance
          */
         public Builder sqlIdentifier(java.util.List<String> sqlIdentifier) {
@@ -162,17 +232,23 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Singular setter. One or more unique SQL_IDs for a SQL Statement.
          * Example: {@code 6rgjh9bjmy2s7}
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder sqlIdentifier(String singularValue) {
             return this.sqlIdentifier(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the assosicated DBaaS entity.
+         *
+         */
         private java.util.List<String> databaseId = null;
 
         /**
          * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the assosicated DBaaS entity.
          *
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(java.util.List<String> databaseId) {
@@ -183,17 +259,23 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Singular setter. Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the assosicated DBaaS entity.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder databaseId(String singularValue) {
             return this.databaseId(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         *
+         */
         private java.util.List<String> id = null;
 
         /**
          * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(java.util.List<String> id) {
@@ -204,12 +286,19 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Singular setter. Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder id(String singularValue) {
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -217,6 +306,7 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -224,12 +314,18 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -237,6 +333,13 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagEquals = null;
 
         /**
@@ -245,6 +348,7 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagEquals the value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(java.util.List<String> definedTagEquals) {
@@ -258,12 +362,19 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagEquals(String singularValue) {
             return this.definedTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
@@ -271,6 +382,7 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagEquals the value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(java.util.List<String> freeformTagEquals) {
@@ -283,12 +395,22 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
          * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagEquals(String singularValue) {
             return this.freeformTagEquals(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
+         */
         private java.util.List<String> definedTagExists = null;
 
         /**
@@ -299,6 +421,7 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param definedTagExists the value to set
          * @return this builder instance
          */
         public Builder definedTagExists(java.util.List<String> definedTagExists) {
@@ -314,12 +437,20 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
          * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder definedTagExists(String singularValue) {
             return this.definedTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
+         */
         private java.util.List<String> freeformTagExists = null;
 
         /**
@@ -328,6 +459,7 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param freeformTagExists the value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(java.util.List<String> freeformTagExists) {
@@ -341,17 +473,23 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
          * Multiple values for different tag names are interpreted as "AND".
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder freeformTagExists(String singularValue) {
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * A flag to search all resources within a given compartment and all sub-compartments.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -447,7 +585,8 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -464,6 +603,10 @@ public class ListSqlTextsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .compartmentIdInSubtree(compartmentIdInSubtree);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

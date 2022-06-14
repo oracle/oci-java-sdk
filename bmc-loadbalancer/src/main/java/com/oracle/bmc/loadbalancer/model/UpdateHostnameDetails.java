@@ -32,9 +32,25 @@ public final class UpdateHostnameDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The virtual hostname to update. For more information about virtual hostname string construction, see
+         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+         * <p>
+         * Example: {@code app.example.com}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
+        /**
+         * The virtual hostname to update. For more information about virtual hostname string construction, see
+         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+         * <p>
+         * Example: {@code app.example.com}
+         *
+         * @param hostname the value to set
+         * @return this builder
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -80,6 +96,14 @@ public final class UpdateHostnameDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
+    /**
+     * The virtual hostname to update. For more information about virtual hostname string construction, see
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+     * <p>
+     * Example: {@code app.example.com}
+     *
+     * @return the value
+     **/
     public String getHostname() {
         return hostname;
     }

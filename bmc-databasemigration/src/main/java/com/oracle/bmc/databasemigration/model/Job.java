@@ -67,54 +67,109 @@ public final class Job {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Migration Job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the Migration Job.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Name of the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name of the job.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the Migration that this job belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("migrationId")
         private String migrationId;
 
+        /**
+         * The OCID of the Migration that this job belongs to.
+         *
+         * @param migrationId the value to set
+         * @return this builder
+         **/
         public Builder migrationId(String migrationId) {
             this.migrationId = migrationId;
             this.__explicitlySet__.add("migrationId");
             return this;
         }
-
+        /**
+         * The job type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private JobTypes type;
 
+        /**
+         * The job type.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(JobTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The time the Migration Job was created. An RFC3339 formatted datetime string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the Migration Job was created. An RFC3339 formatted datetime string
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the Migration Job was last updated. An RFC3339 formatted datetime string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the Migration Job was last updated. An RFC3339 formatted datetime string
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -129,57 +184,119 @@ public final class Job {
             this.__explicitlySet__.add("progress");
             return this;
         }
-
+        /**
+         * Database objects not supported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unsupportedObjects")
         private java.util.List<UnsupportedDatabaseObject> unsupportedObjects;
 
+        /**
+         * Database objects not supported.
+         *
+         * @param unsupportedObjects the value to set
+         * @return this builder
+         **/
         public Builder unsupportedObjects(
                 java.util.List<UnsupportedDatabaseObject> unsupportedObjects) {
             this.unsupportedObjects = unsupportedObjects;
             this.__explicitlySet__.add("unsupportedObjects");
             return this;
         }
-
+        /**
+         * The current state of the migration job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobLifecycleStates lifecycleState;
 
+        /**
+         * The current state of the migration job.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(JobLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information
+         * for a resource in Failed state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information
+         * for a resource in Failed state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -249,6 +366,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the Migration Job.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -260,6 +382,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name of the job.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -271,6 +398,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("migrationId")
     private final String migrationId;
 
+    /**
+     * The OCID of the Migration that this job belongs to.
+     *
+     * @return the value
+     **/
     public String getMigrationId() {
         return migrationId;
     }
@@ -282,6 +414,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final JobTypes type;
 
+    /**
+     * The job type.
+     *
+     * @return the value
+     **/
     public JobTypes getType() {
         return type;
     }
@@ -293,6 +430,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the Migration Job was created. An RFC3339 formatted datetime string
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -304,6 +446,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the Migration Job was last updated. An RFC3339 formatted datetime string
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -322,6 +469,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("unsupportedObjects")
     private final java.util.List<UnsupportedDatabaseObject> unsupportedObjects;
 
+    /**
+     * Database objects not supported.
+     *
+     * @return the value
+     **/
     public java.util.List<UnsupportedDatabaseObject> getUnsupportedObjects() {
         return unsupportedObjects;
     }
@@ -333,6 +485,11 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobLifecycleStates lifecycleState;
 
+    /**
+     * The current state of the migration job.
+     *
+     * @return the value
+     **/
     public JobLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -345,6 +502,12 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -357,6 +520,12 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -369,6 +538,12 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -381,6 +556,12 @@ public final class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

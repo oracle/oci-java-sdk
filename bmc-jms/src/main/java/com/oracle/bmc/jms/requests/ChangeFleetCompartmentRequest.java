@@ -18,6 +18,9 @@ public class ChangeFleetCompartmentRequest
      */
     private String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
@@ -26,6 +29,9 @@ public class ChangeFleetCompartmentRequest
      */
     private com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails changeFleetCompartmentDetails;
 
+    /**
+     * Compartment identifier.
+     */
     public com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails
             getChangeFleetCompartmentDetails() {
         return changeFleetCompartmentDetails;
@@ -40,6 +46,14 @@ public class ChangeFleetCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,6 +67,14 @@ public class ChangeFleetCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -61,6 +83,9 @@ public class ChangeFleetCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -83,10 +108,14 @@ public class ChangeFleetCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * @param fleetId the value to set
          * @return this builder instance
          */
         public Builder fleetId(String fleetId) {
@@ -94,11 +123,15 @@ public class ChangeFleetCompartmentRequest
             return this;
         }
 
+        /**
+         * Compartment identifier.
+         */
         private com.oracle.bmc.jms.model.ChangeFleetCompartmentDetails
                 changeFleetCompartmentDetails = null;
 
         /**
          * Compartment identifier.
+         * @param changeFleetCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeFleetCompartmentDetails(
@@ -108,6 +141,14 @@ public class ChangeFleetCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -117,6 +158,7 @@ public class ChangeFleetCompartmentRequest
          * The resource will be updated or deleted only if the ETag you
          * provide matches the resource's current ETag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -124,6 +166,14 @@ public class ChangeFleetCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -133,6 +183,7 @@ public class ChangeFleetCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -140,10 +191,14 @@ public class ChangeFleetCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -238,7 +293,8 @@ public class ChangeFleetCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -249,6 +305,10 @@ public class ChangeFleetCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

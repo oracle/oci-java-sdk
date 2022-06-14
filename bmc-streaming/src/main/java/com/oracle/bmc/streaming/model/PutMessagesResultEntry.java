@@ -41,45 +41,81 @@ public final class PutMessagesResultEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ID of the partition where the message was stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
 
+        /**
+         * The ID of the partition where the message was stored.
+         * @param partition the value to set
+         * @return this builder
+         **/
         public Builder partition(String partition) {
             this.partition = partition;
             this.__explicitlySet__.add("partition");
             return this;
         }
-
+        /**
+         * The offset of the message in the partition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Long offset;
 
+        /**
+         * The offset of the message in the partition.
+         * @param offset the value to set
+         * @return this builder
+         **/
         public Builder offset(Long offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-
+        /**
+         * The timestamp indicating when the server appended the message to the stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The timestamp indicating when the server appended the message to the stream.
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * The error code, in case the message was not successfully appended to the stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("error")
         private String error;
 
+        /**
+         * The error code, in case the message was not successfully appended to the stream.
+         * @param error the value to set
+         * @return this builder
+         **/
         public Builder error(String error) {
             this.error = error;
             this.__explicitlySet__.add("error");
             return this;
         }
-
+        /**
+         * A human-readable error message associated with the error code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * A human-readable error message associated with the error code.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -127,6 +163,10 @@ public final class PutMessagesResultEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
     private final String partition;
 
+    /**
+     * The ID of the partition where the message was stored.
+     * @return the value
+     **/
     public String getPartition() {
         return partition;
     }
@@ -137,6 +177,10 @@ public final class PutMessagesResultEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Long offset;
 
+    /**
+     * The offset of the message in the partition.
+     * @return the value
+     **/
     public Long getOffset() {
         return offset;
     }
@@ -147,6 +191,10 @@ public final class PutMessagesResultEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The timestamp indicating when the server appended the message to the stream.
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -157,6 +205,10 @@ public final class PutMessagesResultEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("error")
     private final String error;
 
+    /**
+     * The error code, in case the message was not successfully appended to the stream.
+     * @return the value
+     **/
     public String getError() {
         return error;
     }
@@ -167,6 +219,10 @@ public final class PutMessagesResultEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * A human-readable error message associated with the error code.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }

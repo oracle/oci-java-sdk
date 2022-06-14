@@ -29,9 +29,17 @@ public final class AnnotationFormatCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of annotation formats.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnotationFormatSummary> items;
 
+        /**
+         * List of annotation formats.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AnnotationFormatSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AnnotationFormatCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AnnotationFormatSummary> items;
 
+    /**
+     * List of annotation formats.
+     * @return the value
+     **/
     public java.util.List<AnnotationFormatSummary> getItems() {
         return items;
     }

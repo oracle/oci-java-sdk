@@ -27,9 +27,17 @@ package com.oracle.bmc.core.model;
 public final class InstanceSourceViaBootVolumeDetails extends InstanceSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the boot volume used to boot the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
 
+        /**
+         * The OCID of the boot volume used to boot the instance.
+         * @param bootVolumeId the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             this.__explicitlySet__.add("bootVolumeId");
@@ -78,6 +86,10 @@ public final class InstanceSourceViaBootVolumeDetails extends InstanceSourceDeta
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
     private final String bootVolumeId;
 
+    /**
+     * The OCID of the boot volume used to boot the instance.
+     * @return the value
+     **/
     public String getBootVolumeId() {
         return bootVolumeId;
     }

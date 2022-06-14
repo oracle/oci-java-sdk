@@ -375,19 +375,33 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
         private RefreshableMode refreshableMode;
 
+        /**
+         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+         * @param refreshableMode the value to set
+         * @return this builder
+         **/
         public Builder refreshableMode(RefreshableMode refreshableMode) {
             this.refreshableMode = refreshableMode;
             this.__explicitlySet__.add("refreshableMode");
@@ -597,6 +611,10 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * @return the value
+     **/
     public String getSourceId() {
         return sourceId;
     }
@@ -642,6 +660,10 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
     private final RefreshableMode refreshableMode;
 
+    /**
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     * @return the value
+     **/
     public RefreshableMode getRefreshableMode() {
         return refreshableMode;
     }

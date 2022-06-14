@@ -17,6 +17,9 @@ public class UpdateIpv6Request
      */
     private String ipv6Id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+     */
     public String getIpv6Id() {
         return ipv6Id;
     }
@@ -25,6 +28,9 @@ public class UpdateIpv6Request
      */
     private com.oracle.bmc.core.model.UpdateIpv6Details updateIpv6Details;
 
+    /**
+     * IPv6 details to be updated.
+     */
     public com.oracle.bmc.core.model.UpdateIpv6Details getUpdateIpv6Details() {
         return updateIpv6Details;
     }
@@ -36,6 +42,12 @@ public class UpdateIpv6Request
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,6 +58,11 @@ public class UpdateIpv6Request
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,10 +84,14 @@ public class UpdateIpv6Request
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+         */
         private String ipv6Id = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+         * @param ipv6Id the value to set
          * @return this builder instance
          */
         public Builder ipv6Id(String ipv6Id) {
@@ -78,10 +99,14 @@ public class UpdateIpv6Request
             return this;
         }
 
+        /**
+         * IPv6 details to be updated.
+         */
         private com.oracle.bmc.core.model.UpdateIpv6Details updateIpv6Details = null;
 
         /**
          * IPv6 details to be updated.
+         * @param updateIpv6Details the value to set
          * @return this builder instance
          */
         public Builder updateIpv6Details(
@@ -90,6 +115,12 @@ public class UpdateIpv6Request
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -97,6 +128,7 @@ public class UpdateIpv6Request
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -104,12 +136,18 @@ public class UpdateIpv6Request
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -202,7 +240,8 @@ public class UpdateIpv6Request
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +251,10 @@ public class UpdateIpv6Request
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

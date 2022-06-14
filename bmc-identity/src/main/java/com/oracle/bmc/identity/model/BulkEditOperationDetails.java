@@ -32,18 +32,53 @@ public final class BulkEditOperationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An enum-like description of the type of operation.
+         * <p>
+         * {@code ADD_WHERE_ABSENT} adds a defined tag only if the tag does not already exist on the resource.
+         * * {@code SET_WHERE_PRESENT} updates the value for a defined tag only if the tag is present on the resource.
+         * * {@code ADD_OR_SET} combines the first two operations to add a defined tag if it does not already exist on the resource
+         * or update the value for a defined tag only if the tag is present on the resource.
+         * * {@code REMOVE} removes the defined tag from the resource. The tag is removed from the resource regardless of the tag value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
+        /**
+         * An enum-like description of the type of operation.
+         * <p>
+         * {@code ADD_WHERE_ABSENT} adds a defined tag only if the tag does not already exist on the resource.
+         * * {@code SET_WHERE_PRESENT} updates the value for a defined tag only if the tag is present on the resource.
+         * * {@code ADD_OR_SET} combines the first two operations to add a defined tag if it does not already exist on the resource
+         * or update the value for a defined tag only if the tag is present on the resource.
+         * * {@code REMOVE} removes the defined tag from the resource. The tag is removed from the resource regardless of the tag value.
+         *
+         * @param operationType the value to set
+         * @return this builder
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -139,6 +174,17 @@ public final class BulkEditOperationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
+    /**
+     * An enum-like description of the type of operation.
+     * <p>
+     * {@code ADD_WHERE_ABSENT} adds a defined tag only if the tag does not already exist on the resource.
+     * * {@code SET_WHERE_PRESENT} updates the value for a defined tag only if the tag is present on the resource.
+     * * {@code ADD_OR_SET} combines the first two operations to add a defined tag if it does not already exist on the resource
+     * or update the value for a defined tag only if the tag is present on the resource.
+     * * {@code REMOVE} removes the defined tag from the resource. The tag is removed from the resource regardless of the tag value.
+     *
+     * @return the value
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
@@ -152,6 +198,13 @@ public final class BulkEditOperationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

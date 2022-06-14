@@ -30,18 +30,33 @@ public final class AuthenticationPrincipal {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tenancy object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenant")
         private Tenant tenant;
 
+        /**
+         * The tenancy object.
+         * @param tenant the value to set
+         * @return this builder
+         **/
         public Builder tenant(Tenant tenant) {
             this.tenant = tenant;
             this.__explicitlySet__.add("tenant");
             return this;
         }
-
+        /**
+         * The user object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("user")
         private User user;
 
+        /**
+         * The user object.
+         * @param user the value to set
+         * @return this builder
+         **/
         public Builder user(User user) {
             this.user = user;
             this.__explicitlySet__.add("user");
@@ -83,6 +98,10 @@ public final class AuthenticationPrincipal {
     @com.fasterxml.jackson.annotation.JsonProperty("tenant")
     private final Tenant tenant;
 
+    /**
+     * The tenancy object.
+     * @return the value
+     **/
     public Tenant getTenant() {
         return tenant;
     }
@@ -93,6 +112,10 @@ public final class AuthenticationPrincipal {
     @com.fasterxml.jackson.annotation.JsonProperty("user")
     private final User user;
 
+    /**
+     * The user object.
+     * @return the value
+     **/
     public User getUser() {
         return user;
     }

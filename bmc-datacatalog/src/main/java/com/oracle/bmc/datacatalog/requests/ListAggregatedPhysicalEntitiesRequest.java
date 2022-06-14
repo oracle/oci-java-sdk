@@ -17,6 +17,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -25,6 +28,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -33,6 +39,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -99,6 +108,10 @@ public class ListAggregatedPhysicalEntitiesRequest
         }
     };
 
+    /**
+     * Specifies the fields to return in an entity response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -110,6 +123,12 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private String displayNameContains;
 
+    /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
@@ -156,6 +175,10 @@ public class ListAggregatedPhysicalEntitiesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -200,6 +223,9 @@ public class ListAggregatedPhysicalEntitiesRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -208,6 +234,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -216,6 +245,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -224,6 +256,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private Boolean isIncludeProperties;
 
+    /**
+     * Indicates whether the properties map will be provided in the response.
+     */
     public Boolean getIsIncludeProperties() {
         return isIncludeProperties;
     }
@@ -232,6 +267,9 @@ public class ListAggregatedPhysicalEntitiesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -243,10 +281,14 @@ public class ListAggregatedPhysicalEntitiesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -254,10 +296,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -265,10 +311,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -276,11 +326,16 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * Specifies the fields to return in an entity response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in an entity response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -291,12 +346,19 @@ public class ListAggregatedPhysicalEntitiesRequest
         /**
          * Singular setter. Specifies the fields to return in an entity response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
+         */
         private String displayNameContains = null;
 
         /**
@@ -304,6 +366,7 @@ public class ListAggregatedPhysicalEntitiesRequest
          * For Example : /folders?displayNameContains=Cu.*
          * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
+         * @param displayNameContains the value to set
          * @return this builder instance
          */
         public Builder displayNameContains(String displayNameContains) {
@@ -311,11 +374,16 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -323,10 +391,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -334,10 +406,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -345,10 +421,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -356,10 +436,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * Indicates whether the properties map will be provided in the response.
+         */
         private Boolean isIncludeProperties = null;
 
         /**
          * Indicates whether the properties map will be provided in the response.
+         * @param isIncludeProperties the value to set
          * @return this builder instance
          */
         public Builder isIncludeProperties(Boolean isIncludeProperties) {
@@ -367,10 +451,14 @@ public class ListAggregatedPhysicalEntitiesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -467,7 +555,8 @@ public class ListAggregatedPhysicalEntitiesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -484,6 +573,10 @@ public class ListAggregatedPhysicalEntitiesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

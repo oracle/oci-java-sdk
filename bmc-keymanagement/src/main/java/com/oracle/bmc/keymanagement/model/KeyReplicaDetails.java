@@ -30,9 +30,19 @@ public final class KeyReplicaDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * ReplicationId associated with a key operation
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationId")
         private String replicationId;
 
+        /**
+         * ReplicationId associated with a key operation
+         *
+         * @param replicationId the value to set
+         * @return this builder
+         **/
         public Builder replicationId(String replicationId) {
             this.replicationId = replicationId;
             this.__explicitlySet__.add("replicationId");
@@ -75,6 +85,11 @@ public final class KeyReplicaDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("replicationId")
     private final String replicationId;
 
+    /**
+     * ReplicationId associated with a key operation
+     *
+     * @return the value
+     **/
     public String getReplicationId() {
         return replicationId;
     }

@@ -44,18 +44,43 @@ public final class UpdateTableDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the table's current compartment.  Required
+         * if the tableNameOrId path parameter is a table name.
+         * Optional if tableNameOrId is an OCID.  If tableNameOrId
+         * is an OCID, and compartmentId is supplied, the latter
+         * must match the identified table's compartmentId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the table's current compartment.  Required
+         * if the tableNameOrId path parameter is a table name.
+         * Optional if tableNameOrId is an OCID.  If tableNameOrId
+         * is an OCID, and compartmentId is supplied, the latter
+         * must match the identified table's compartmentId.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Complete ALTER TABLE DDL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ddlStatement")
         private String ddlStatement;
 
+        /**
+         * Complete ALTER TABLE DDL statement.
+         * @param ddlStatement the value to set
+         * @return this builder
+         **/
         public Builder ddlStatement(String ddlStatement) {
             this.ddlStatement = ddlStatement;
             this.__explicitlySet__.add("ddlStatement");
@@ -70,19 +95,45 @@ public final class UpdateTableDetails {
             this.__explicitlySet__.add("tableLimits");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -137,6 +188,15 @@ public final class UpdateTableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the table's current compartment.  Required
+     * if the tableNameOrId path parameter is a table name.
+     * Optional if tableNameOrId is an OCID.  If tableNameOrId
+     * is an OCID, and compartmentId is supplied, the latter
+     * must match the identified table's compartmentId.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -147,6 +207,10 @@ public final class UpdateTableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ddlStatement")
     private final String ddlStatement;
 
+    /**
+     * Complete ALTER TABLE DDL statement.
+     * @return the value
+     **/
     public String getDdlStatement() {
         return ddlStatement;
     }
@@ -167,6 +231,13 @@ public final class UpdateTableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined
+     * name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -180,6 +251,13 @@ public final class UpdateTableDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and
+     * scoped to a namespace.  Example: {@code {"foo-namespace":
+     * {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

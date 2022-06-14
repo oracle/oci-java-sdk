@@ -32,18 +32,39 @@ public final class EnableExternalContainerDatabaseDatabaseManagementDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle license model that applies to the external database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
+        /**
+         * The Oracle license model that applies to the external database.
+         *
+         * @param licenseModel the value to set
+         * @return this builder
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseConnectorId")
         private String externalDatabaseConnectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         *
+         * @param externalDatabaseConnectorId the value to set
+         * @return this builder
+         **/
         public Builder externalDatabaseConnectorId(String externalDatabaseConnectorId) {
             this.externalDatabaseConnectorId = externalDatabaseConnectorId;
             this.__explicitlySet__.add("externalDatabaseConnectorId");
@@ -126,6 +147,11 @@ public final class EnableExternalContainerDatabaseDatabaseManagementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
+    /**
+     * The Oracle license model that applies to the external database.
+     *
+     * @return the value
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -138,6 +164,12 @@ public final class EnableExternalContainerDatabaseDatabaseManagementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseConnectorId")
     private final String externalDatabaseConnectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     *
+     * @return the value
+     **/
     public String getExternalDatabaseConnectorId() {
         return externalDatabaseConnectorId;
     }

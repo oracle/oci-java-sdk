@@ -14,6 +14,11 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -25,6 +30,12 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String location;
 
+    /**
+     * URI of the resource
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -43,6 +58,10 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String contentLocation;
 
+    /**
+     * URI of the resource
+     * @return the value
+     */
     public String getContentLocation() {
         return contentLocation;
     }
@@ -53,6 +72,11 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -62,6 +86,10 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
+    /**
+     * The returned HostInsight instance.
+     * @return the value
+     */
     public com.oracle.bmc.opsi.model.HostInsight getHostInsight() {
         return hostInsight;
     }
@@ -100,43 +128,99 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * URI of the resource
+         */
         private String location;
 
+        /**
+         * URI of the resource
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * URI of the resource
+         */
         private String contentLocation;
 
+        /**
+         * URI of the resource
+         * @param contentLocation the value to set
+         * @return this builder
+         */
         public Builder contentLocation(String contentLocation) {
             this.contentLocation = contentLocation;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned HostInsight instance.
+         */
         private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
+        /**
+         * The returned HostInsight instance.
+         * @param hostInsight the value to set
+         * @return this builder
+         */
         public Builder hostInsight(com.oracle.bmc.opsi.model.HostInsight hostInsight) {
             this.hostInsight = hostInsight;
             return this;
@@ -158,6 +242,10 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateHostInsightResponse build() {
             return new CreateHostInsightResponse(
                     __httpStatusCode__,
@@ -170,6 +258,10 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

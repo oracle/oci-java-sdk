@@ -44,36 +44,85 @@ public final class UpdateInstanceShapeConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs available to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
+        /**
+         * The total number of OCPUs available to the instance.
+         *
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
         private BaselineOcpuUtilization baselineOcpuUtilization;
 
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         *
+         * @param baselineOcpuUtilization the value to set
+         * @return this builder
+         **/
         public Builder baselineOcpuUtilization(BaselineOcpuUtilization baselineOcpuUtilization) {
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             this.__explicitlySet__.add("baselineOcpuUtilization");
             return this;
         }
-
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
         private Integer nvmes;
 
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         *
+         * @param nvmes the value to set
+         * @return this builder
+         **/
         public Builder nvmes(Integer nvmes) {
             this.nvmes = nvmes;
             this.__explicitlySet__.add("nvmes");
@@ -122,6 +171,11 @@ public final class UpdateInstanceShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
+    /**
+     * The total number of OCPUs available to the instance.
+     *
+     * @return the value
+     **/
     public Float getOcpus() {
         return ocpus;
     }
@@ -133,6 +187,11 @@ public final class UpdateInstanceShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
+    /**
+     * The total amount of memory available to the instance, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -193,6 +252,17 @@ public final class UpdateInstanceShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
     private final BaselineOcpuUtilization baselineOcpuUtilization;
 
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     *
+     * @return the value
+     **/
     public BaselineOcpuUtilization getBaselineOcpuUtilization() {
         return baselineOcpuUtilization;
     }
@@ -204,6 +274,11 @@ public final class UpdateInstanceShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
     private final Integer nvmes;
 
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     *
+     * @return the value
+     **/
     public Integer getNvmes() {
         return nvmes;
     }

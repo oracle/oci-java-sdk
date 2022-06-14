@@ -17,6 +17,10 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String emailDomainId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
+     *
+     */
     public String getEmailDomainId() {
         return emailDomainId;
     }
@@ -25,6 +29,9 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +41,10 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String id;
 
+    /**
+     * A filter to only return resources that match the given id exactly.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -43,6 +54,10 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String name;
 
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -54,6 +69,12 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -65,6 +86,12 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -74,6 +101,10 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     public com.oracle.bmc.email.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -83,6 +114,10 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.email.model.Dkim.LifecycleState lifecycleState;
 
+    /**
+     * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+     *
+     */
     public com.oracle.bmc.email.model.Dkim.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -142,6 +177,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Specifies the attribute with which to sort the DKIMs.
+     * <p>
+     * Default: {@code TIMECREATED}
+     * <p>
+     * **TIMECREATED:** Sorts by timeCreated.
+     * * **NAME:** Sorts by name.
+     * * **ID:** Sorts by id.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -153,11 +198,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
+         *
+         */
         private String emailDomainId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
          *
+         * @param emailDomainId the value to set
          * @return this builder instance
          */
         public Builder emailDomainId(String emailDomainId) {
@@ -165,10 +215,14 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -176,11 +230,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given id exactly.
+         *
+         */
         private String id = null;
 
         /**
          * A filter to only return resources that match the given id exactly.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -188,11 +247,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to only return resources that match the given name exactly.
+         *
+         */
         private String name = null;
 
         /**
          * A filter to only return resources that match the given name exactly.
          *
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -200,6 +264,12 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -207,6 +277,7 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
          * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -214,6 +285,12 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -221,6 +298,7 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -228,11 +306,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         */
         private com.oracle.bmc.email.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending or descending order.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.email.model.SortOrder sortOrder) {
@@ -240,11 +323,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+         *
+         */
         private com.oracle.bmc.email.model.Dkim.LifecycleState lifecycleState = null;
 
         /**
          * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -253,6 +341,16 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Specifies the attribute with which to sort the DKIMs.
+         * <p>
+         * Default: {@code TIMECREATED}
+         * <p>
+         * **TIMECREATED:** Sorts by timeCreated.
+         * * **NAME:** Sorts by name.
+         * * **ID:** Sorts by id.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -264,6 +362,7 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * * **NAME:** Sorts by name.
          * * **ID:** Sorts by id.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -355,7 +454,8 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -370,6 +470,10 @@ public class ListDkimsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

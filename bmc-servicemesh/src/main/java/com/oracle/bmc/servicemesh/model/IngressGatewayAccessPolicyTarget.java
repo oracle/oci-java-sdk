@@ -27,9 +27,17 @@ package com.oracle.bmc.servicemesh.model;
 public final class IngressGatewayAccessPolicyTarget extends AccessPolicyTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the ingress gateway resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ingressGatewayId")
         private String ingressGatewayId;
 
+        /**
+         * The OCID of the ingress gateway resource.
+         * @param ingressGatewayId the value to set
+         * @return this builder
+         **/
         public Builder ingressGatewayId(String ingressGatewayId) {
             this.ingressGatewayId = ingressGatewayId;
             this.__explicitlySet__.add("ingressGatewayId");
@@ -78,6 +86,10 @@ public final class IngressGatewayAccessPolicyTarget extends AccessPolicyTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("ingressGatewayId")
     private final String ingressGatewayId;
 
+    /**
+     * The OCID of the ingress gateway resource.
+     * @return the value
+     **/
     public String getIngressGatewayId() {
         return ingressGatewayId;
     }

@@ -34,27 +34,49 @@ public final class ExtractLogHeaderResults {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log header json paths.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jsonPaths")
         private java.util.List<ExtractLogHeaderDetails> jsonPaths;
 
+        /**
+         * The log header json paths.
+         * @param jsonPaths the value to set
+         * @return this builder
+         **/
         public Builder jsonPaths(java.util.List<ExtractLogHeaderDetails> jsonPaths) {
             this.jsonPaths = jsonPaths;
             this.__explicitlySet__.add("jsonPaths");
             return this;
         }
-
+        /**
+         * The log field or log header values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("xmlPaths")
         private java.util.List<String> xmlPaths;
 
+        /**
+         * The log field or log header values.
+         * @param xmlPaths the value to set
+         * @return this builder
+         **/
         public Builder xmlPaths(java.util.List<String> xmlPaths) {
             this.xmlPaths = xmlPaths;
             this.__explicitlySet__.add("xmlPaths");
             return this;
         }
-
+        /**
+         * The log header values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerPaths")
         private java.util.List<String> headerPaths;
 
+        /**
+         * The log header values.
+         * @param headerPaths the value to set
+         * @return this builder
+         **/
         public Builder headerPaths(java.util.List<String> headerPaths) {
             this.headerPaths = headerPaths;
             this.__explicitlySet__.add("headerPaths");
@@ -100,6 +122,10 @@ public final class ExtractLogHeaderResults {
     @com.fasterxml.jackson.annotation.JsonProperty("jsonPaths")
     private final java.util.List<ExtractLogHeaderDetails> jsonPaths;
 
+    /**
+     * The log header json paths.
+     * @return the value
+     **/
     public java.util.List<ExtractLogHeaderDetails> getJsonPaths() {
         return jsonPaths;
     }
@@ -110,6 +136,10 @@ public final class ExtractLogHeaderResults {
     @com.fasterxml.jackson.annotation.JsonProperty("xmlPaths")
     private final java.util.List<String> xmlPaths;
 
+    /**
+     * The log field or log header values.
+     * @return the value
+     **/
     public java.util.List<String> getXmlPaths() {
         return xmlPaths;
     }
@@ -120,6 +150,10 @@ public final class ExtractLogHeaderResults {
     @com.fasterxml.jackson.annotation.JsonProperty("headerPaths")
     private final java.util.List<String> headerPaths;
 
+    /**
+     * The log header values.
+     * @return the value
+     **/
     public java.util.List<String> getHeaderPaths() {
         return headerPaths;
     }

@@ -32,27 +32,49 @@ public final class ExportContent {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The field names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
         private java.util.List<String> fieldNames;
 
+        /**
+         * The field names.
+         * @param fieldNames the value to set
+         * @return this builder
+         **/
         public Builder fieldNames(java.util.List<String> fieldNames) {
             this.fieldNames = fieldNames;
             this.__explicitlySet__.add("fieldNames");
             return this;
         }
-
+        /**
+         * The parser names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
         private java.util.List<String> parserNames;
 
+        /**
+         * The parser names.
+         * @param parserNames the value to set
+         * @return this builder
+         **/
         public Builder parserNames(java.util.List<String> parserNames) {
             this.parserNames = parserNames;
             this.__explicitlySet__.add("parserNames");
             return this;
         }
-
+        /**
+         * The source names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
         private java.util.List<String> sourceNames;
 
+        /**
+         * The source names.
+         * @param sourceNames the value to set
+         * @return this builder
+         **/
         public Builder sourceNames(java.util.List<String> sourceNames) {
             this.sourceNames = sourceNames;
             this.__explicitlySet__.add("sourceNames");
@@ -97,6 +119,10 @@ public final class ExportContent {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     private final java.util.List<String> fieldNames;
 
+    /**
+     * The field names.
+     * @return the value
+     **/
     public java.util.List<String> getFieldNames() {
         return fieldNames;
     }
@@ -107,6 +133,10 @@ public final class ExportContent {
     @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
     private final java.util.List<String> parserNames;
 
+    /**
+     * The parser names.
+     * @return the value
+     **/
     public java.util.List<String> getParserNames() {
         return parserNames;
     }
@@ -117,6 +147,10 @@ public final class ExportContent {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
     private final java.util.List<String> sourceNames;
 
+    /**
+     * The source names.
+     * @return the value
+     **/
     public java.util.List<String> getSourceNames() {
         return sourceNames;
     }

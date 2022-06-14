@@ -35,27 +35,55 @@ public final class QueryableFieldSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of the field, which dictates the semantics and query constraints that you can use when searching or querying.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
 
+        /**
+         * The type of the field, which dictates the semantics and query constraints that you can use when searching or querying.
+         *
+         * @param fieldType the value to set
+         * @return this builder
+         **/
         public Builder fieldType(FieldType fieldType) {
             this.fieldType = fieldType;
             this.__explicitlySet__.add("fieldType");
             return this;
         }
-
+        /**
+         * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
+         *
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * If the field type is {@code OBJECT}, this property lists the individual properties of the object that can be queried.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectProperties")
         private java.util.List<QueryableFieldSummary> objectProperties;
 
+        /**
+         * If the field type is {@code OBJECT}, this property lists the individual properties of the object that can be queried.
+         *
+         * @param objectProperties the value to set
+         * @return this builder
+         **/
         public Builder objectProperties(java.util.List<QueryableFieldSummary> objectProperties) {
             this.objectProperties = objectProperties;
             this.__explicitlySet__.add("objectProperties");
@@ -154,6 +182,11 @@ public final class QueryableFieldSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
     private final FieldType fieldType;
 
+    /**
+     * The type of the field, which dictates the semantics and query constraints that you can use when searching or querying.
+     *
+     * @return the value
+     **/
     public FieldType getFieldType() {
         return fieldType;
     }
@@ -165,6 +198,11 @@ public final class QueryableFieldSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
+     *
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -176,6 +214,11 @@ public final class QueryableFieldSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectProperties")
     private final java.util.List<QueryableFieldSummary> objectProperties;
 
+    /**
+     * If the field type is {@code OBJECT}, this property lists the individual properties of the object that can be queried.
+     *
+     * @return the value
+     **/
     public java.util.List<QueryableFieldSummary> getObjectProperties() {
         return objectProperties;
     }

@@ -27,27 +27,51 @@ package com.oracle.bmc.core.model;
 public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
         private Long bootVolumeSizeInGBs;
 
+        /**
+         * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+         *
+         * @param bootVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder bootVolumeSizeInGBs(Long bootVolumeSizeInGBs) {
             this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
             this.__explicitlySet__.add("bootVolumeSizeInGBs");
             return this;
         }
-
+        /**
+         * The OCID of the image used to boot the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
+        /**
+         * The OCID of the image used to boot the instance.
+         * @param imageId the value to set
+         * @return this builder
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-
+        /**
+         * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -103,6 +127,11 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
     private final Long bootVolumeSizeInGBs;
 
+    /**
+     * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+     *
+     * @return the value
+     **/
     public Long getBootVolumeSizeInGBs() {
         return bootVolumeSizeInGBs;
     }
@@ -113,6 +142,10 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
+    /**
+     * The OCID of the image used to boot the instance.
+     * @return the value
+     **/
     public String getImageId() {
         return imageId;
     }
@@ -123,6 +156,10 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }

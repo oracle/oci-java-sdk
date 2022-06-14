@@ -14,6 +14,11 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +47,12 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this ID to track the status
+     * of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -46,6 +63,11 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private String location;
 
+    /**
+     * The full URI of the resource.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -55,6 +77,10 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
+    /**
+     * The returned AnalyticsInstance instance.
+     * @return the value
+     */
     public com.oracle.bmc.analytics.model.AnalyticsInstance getAnalyticsInstance() {
         return analyticsInstance;
     }
@@ -90,36 +116,88 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this ID to track the status
+         * of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this ID to track the status
+         * of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * The full URI of the resource.
+         *
+         */
         private String location;
 
+        /**
+         * The full URI of the resource.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned AnalyticsInstance instance.
+         */
         private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
+        /**
+         * The returned AnalyticsInstance instance.
+         * @param analyticsInstance the value to set
+         * @return this builder
+         */
         public Builder analyticsInstance(
                 com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance) {
             this.analyticsInstance = analyticsInstance;
@@ -141,6 +219,10 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateAnalyticsInstanceResponse build() {
             return new CreateAnalyticsInstanceResponse(
                     __httpStatusCode__,
@@ -152,6 +234,10 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

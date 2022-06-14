@@ -18,6 +18,9 @@ public class UpdateCloudExadataInfrastructureRequest
      */
     private String cloudExadataInfrastructureId;
 
+    /**
+     * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
@@ -27,6 +30,9 @@ public class UpdateCloudExadataInfrastructureRequest
     private com.oracle.bmc.database.model.UpdateCloudExadataInfrastructureDetails
             updateCloudExadataInfrastructureDetails;
 
+    /**
+     * Request to update the properties of an cloud Exadata infrastructure resource.
+     */
     public com.oracle.bmc.database.model.UpdateCloudExadataInfrastructureDetails
             getUpdateCloudExadataInfrastructureDetails() {
         return updateCloudExadataInfrastructureDetails;
@@ -39,6 +45,12 @@ public class UpdateCloudExadataInfrastructureRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +60,10 @@ public class UpdateCloudExadataInfrastructureRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,10 +86,14 @@ public class UpdateCloudExadataInfrastructureRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudExadataInfrastructureId = null;
 
         /**
          * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudExadataInfrastructureId the value to set
          * @return this builder instance
          */
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
@@ -81,11 +101,15 @@ public class UpdateCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * Request to update the properties of an cloud Exadata infrastructure resource.
+         */
         private com.oracle.bmc.database.model.UpdateCloudExadataInfrastructureDetails
                 updateCloudExadataInfrastructureDetails = null;
 
         /**
          * Request to update the properties of an cloud Exadata infrastructure resource.
+         * @param updateCloudExadataInfrastructureDetails the value to set
          * @return this builder instance
          */
         public Builder updateCloudExadataInfrastructureDetails(
@@ -95,6 +119,12 @@ public class UpdateCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -102,6 +132,7 @@ public class UpdateCloudExadataInfrastructureRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -109,11 +140,16 @@ public class UpdateCloudExadataInfrastructureRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +245,8 @@ public class UpdateCloudExadataInfrastructureRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +256,10 @@ public class UpdateCloudExadataInfrastructureRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

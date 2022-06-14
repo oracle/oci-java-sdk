@@ -29,27 +29,49 @@ public final class ContainerVersion {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the user or principal that pushed the version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        /**
+         * The OCID of the user or principal that pushed the version.
+         * @param createdBy the value to set
+         * @return this builder
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-
+        /**
+         * The creation time of the version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The creation time of the version.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The version name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version name.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -94,6 +116,10 @@ public final class ContainerVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
+    /**
+     * The OCID of the user or principal that pushed the version.
+     * @return the value
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
@@ -104,6 +130,10 @@ public final class ContainerVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The creation time of the version.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -114,6 +144,10 @@ public final class ContainerVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version name.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

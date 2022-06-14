@@ -40,45 +40,83 @@ public final class LogAnalyticsParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The default value of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
+        /**
+         * The default value of the parameter.
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-
+        /**
+         * The parameter description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The parameter description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the parameter is active.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
+        /**
+         * A flag indicating whether or not the parameter is active.
+         *
+         * @param isActive the value to set
+         * @return this builder
+         **/
         public Builder isActive(Boolean isActive) {
             this.isActive = isActive;
             this.__explicitlySet__.add("isActive");
             return this;
         }
-
+        /**
+         * The parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The parameter name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
@@ -126,6 +164,10 @@ public final class LogAnalyticsParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
+    /**
+     * The default value of the parameter.
+     * @return the value
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -136,6 +178,10 @@ public final class LogAnalyticsParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The parameter description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -147,6 +193,11 @@ public final class LogAnalyticsParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     private final Boolean isActive;
 
+    /**
+     * A flag indicating whether or not the parameter is active.
+     *
+     * @return the value
+     **/
     public Boolean getIsActive() {
         return isActive;
     }
@@ -157,6 +208,10 @@ public final class LogAnalyticsParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The parameter name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -167,6 +222,10 @@ public final class LogAnalyticsParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }

@@ -45,45 +45,93 @@ public final class AutonomousDbPreviewVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A valid Autonomous Database preview version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * A valid Autonomous Database preview version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The date and time when the preview version availability begins.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePreviewBegin")
         private java.util.Date timePreviewBegin;
 
+        /**
+         * The date and time when the preview version availability begins.
+         * @param timePreviewBegin the value to set
+         * @return this builder
+         **/
         public Builder timePreviewBegin(java.util.Date timePreviewBegin) {
             this.timePreviewBegin = timePreviewBegin;
             this.__explicitlySet__.add("timePreviewBegin");
             return this;
         }
-
+        /**
+         * The date and time when the preview version availability ends.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePreviewEnd")
         private java.util.Date timePreviewEnd;
 
+        /**
+         * The date and time when the preview version availability ends.
+         * @param timePreviewEnd the value to set
+         * @return this builder
+         **/
         public Builder timePreviewEnd(java.util.Date timePreviewEnd) {
             this.timePreviewEnd = timePreviewEnd;
             this.__explicitlySet__.add("timePreviewEnd");
             return this;
         }
-
+        /**
+         * The Autonomous Database workload type. The following values are valid:
+         * <p>
+         * - OLTP - indicates an Autonomous Transaction Processing database
+         * - DW - indicates an Autonomous Data Warehouse database
+         * - AJD - indicates an Autonomous JSON Database
+         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
+        /**
+         * The Autonomous Database workload type. The following values are valid:
+         * <p>
+         * - OLTP - indicates an Autonomous Transaction Processing database
+         * - DW - indicates an Autonomous Data Warehouse database
+         * - AJD - indicates an Autonomous JSON Database
+         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         *
+         * @param dbWorkload the value to set
+         * @return this builder
+         **/
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
             return this;
         }
-
+        /**
+         * A URL that points to a detailed description of the preview version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
+        /**
+         * A URL that points to a detailed description of the preview version.
+         * @param details the value to set
+         * @return this builder
+         **/
         public Builder details(String details) {
             this.details = details;
             this.__explicitlySet__.add("details");
@@ -132,6 +180,10 @@ public final class AutonomousDbPreviewVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * A valid Autonomous Database preview version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -142,6 +194,10 @@ public final class AutonomousDbPreviewVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePreviewBegin")
     private final java.util.Date timePreviewBegin;
 
+    /**
+     * The date and time when the preview version availability begins.
+     * @return the value
+     **/
     public java.util.Date getTimePreviewBegin() {
         return timePreviewBegin;
     }
@@ -152,6 +208,10 @@ public final class AutonomousDbPreviewVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePreviewEnd")
     private final java.util.Date timePreviewEnd;
 
+    /**
+     * The date and time when the preview version availability ends.
+     * @return the value
+     **/
     public java.util.Date getTimePreviewEnd() {
         return timePreviewEnd;
     }
@@ -224,6 +284,16 @@ public final class AutonomousDbPreviewVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
+    /**
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * @return the value
+     **/
     public DbWorkload getDbWorkload() {
         return dbWorkload;
     }
@@ -234,6 +304,10 @@ public final class AutonomousDbPreviewVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
+    /**
+     * A URL that points to a detailed description of the preview version.
+     * @return the value
+     **/
     public String getDetails() {
         return details;
     }

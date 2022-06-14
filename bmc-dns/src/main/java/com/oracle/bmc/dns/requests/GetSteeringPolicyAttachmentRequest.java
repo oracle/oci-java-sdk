@@ -17,6 +17,9 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String steeringPolicyAttachmentId;
 
+    /**
+     * The OCID of the target steering policy attachment.
+     */
     public String getSteeringPolicyAttachmentId() {
         return steeringPolicyAttachmentId;
     }
@@ -29,6 +32,13 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String ifNoneMatch;
 
+    /**
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -41,6 +51,13 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String ifModifiedSince;
 
+    /**
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
+     */
     public String getIfModifiedSince() {
         return ifModifiedSince;
     }
@@ -52,6 +69,12 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,6 +84,10 @@ public class GetSteeringPolicyAttachmentRequest
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -72,10 +99,14 @@ public class GetSteeringPolicyAttachmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the target steering policy attachment.
+         */
         private String steeringPolicyAttachmentId = null;
 
         /**
          * The OCID of the target steering policy attachment.
+         * @param steeringPolicyAttachmentId the value to set
          * @return this builder instance
          */
         public Builder steeringPolicyAttachmentId(String steeringPolicyAttachmentId) {
@@ -83,6 +114,13 @@ public class GetSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -91,6 +129,7 @@ public class GetSteeringPolicyAttachmentRequest
          * the field-value is {@code *}, or having a selected representation with an
          * entity-tag that does not match any of those listed in the field-value.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -98,6 +137,13 @@ public class GetSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
+         */
         private String ifModifiedSince = null;
 
         /**
@@ -106,6 +152,7 @@ public class GetSteeringPolicyAttachmentRequest
          * recent than the date provided in the field-value.  Transfer of the
          * selected representation's data is avoided if that data has not changed.
          *
+         * @param ifModifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifModifiedSince(String ifModifiedSince) {
@@ -113,6 +160,12 @@ public class GetSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -120,6 +173,7 @@ public class GetSteeringPolicyAttachmentRequest
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,11 +181,16 @@ public class GetSteeringPolicyAttachmentRequest
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -215,7 +274,8 @@ public class GetSteeringPolicyAttachmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -226,6 +286,10 @@ public class GetSteeringPolicyAttachmentRequest
                 .scope(scope);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

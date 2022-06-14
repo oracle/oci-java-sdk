@@ -19,6 +19,10 @@ public class TestParserRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class TestParserRequest
      */
     private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails testParserPayloadDetails;
 
+    /**
+     * Details for test payload
+     */
     public com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
             getTestParserPayloadDetails() {
         return testParserPayloadDetails;
@@ -73,6 +80,9 @@ public class TestParserRequest
         }
     };
 
+    /**
+     * The scope used when testing a parser.
+     */
     public Scope getScope() {
         return scope;
     }
@@ -83,6 +93,11 @@ public class TestParserRequest
      */
     private String reqOriginModule;
 
+    /**
+     * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+     * the parser functions.
+     *
+     */
     public String getReqOriginModule() {
         return reqOriginModule;
     }
@@ -96,6 +111,14 @@ public class TestParserRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -104,6 +127,9 @@ public class TestParserRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -130,11 +156,16 @@ public class TestParserRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -142,11 +173,15 @@ public class TestParserRequest
             return this;
         }
 
+        /**
+         * Details for test payload
+         */
         private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
                 testParserPayloadDetails = null;
 
         /**
          * Details for test payload
+         * @param testParserPayloadDetails the value to set
          * @return this builder instance
          */
         public Builder testParserPayloadDetails(
@@ -156,10 +191,14 @@ public class TestParserRequest
             return this;
         }
 
+        /**
+         * The scope used when testing a parser.
+         */
         private Scope scope = null;
 
         /**
          * The scope used when testing a parser.
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(Scope scope) {
@@ -167,12 +206,18 @@ public class TestParserRequest
             return this;
         }
 
+        /**
+         * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+         * the parser functions.
+         *
+         */
         private String reqOriginModule = null;
 
         /**
          * The module to test.  A value of 'ParserFunctionTest' will result in testing of
          * the parser functions.
          *
+         * @param reqOriginModule the value to set
          * @return this builder instance
          */
         public Builder reqOriginModule(String reqOriginModule) {
@@ -180,6 +225,14 @@ public class TestParserRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -189,6 +242,7 @@ public class TestParserRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -196,10 +250,14 @@ public class TestParserRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -296,7 +354,8 @@ public class TestParserRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -308,6 +367,10 @@ public class TestParserRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -41,9 +41,19 @@ public final class SqlStatisticAggregation {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         * @param sqlIdentifier the value to set
+         * @return this builder
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
@@ -58,10 +68,19 @@ public final class SqlStatisticAggregation {
             this.__explicitlySet__.add("databaseDetails");
             return this;
         }
-
+        /**
+         * SQL belongs to one or more categories based on the insights.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private java.util.List<String> category;
 
+        /**
+         * SQL belongs to one or more categories based on the insights.
+         *
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(java.util.List<String> category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -119,6 +138,11 @@ public final class SqlStatisticAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     * @return the value
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -137,6 +161,11 @@ public final class SqlStatisticAggregation {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final java.util.List<String> category;
 
+    /**
+     * SQL belongs to one or more categories based on the insights.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getCategory() {
         return category;
     }

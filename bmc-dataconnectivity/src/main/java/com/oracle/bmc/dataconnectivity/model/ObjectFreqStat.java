@@ -30,36 +30,65 @@ public final class ObjectFreqStat {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Value of the confidence of the profile result
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * Value of the confidence of the profile result
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
+        /**
+         * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-
+        /**
+         * How many times that value occurred.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freq")
         private Long freq;
 
+        /**
+         * How many times that value occurred.
+         * @param freq the value to set
+         * @return this builder
+         **/
         public Builder freq(Long freq) {
             this.freq = freq;
             this.__explicitlySet__.add("freq");
             return this;
         }
-
+        /**
+         * Frequency percentage across the sampled row counts (excluding nulls).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freqPercentage")
         private Double freqPercentage;
 
+        /**
+         * Frequency percentage across the sampled row counts (excluding nulls).
+         * @param freqPercentage the value to set
+         * @return this builder
+         **/
         public Builder freqPercentage(Double freqPercentage) {
             this.freqPercentage = freqPercentage;
             this.__explicitlySet__.add("freqPercentage");
@@ -106,6 +135,10 @@ public final class ObjectFreqStat {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * Value of the confidence of the profile result
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -116,6 +149,10 @@ public final class ObjectFreqStat {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
+    /**
+     * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+     * @return the value
+     **/
     public Integer getConfidence() {
         return confidence;
     }
@@ -126,6 +163,10 @@ public final class ObjectFreqStat {
     @com.fasterxml.jackson.annotation.JsonProperty("freq")
     private final Long freq;
 
+    /**
+     * How many times that value occurred.
+     * @return the value
+     **/
     public Long getFreq() {
         return freq;
     }
@@ -136,6 +177,10 @@ public final class ObjectFreqStat {
     @com.fasterxml.jackson.annotation.JsonProperty("freqPercentage")
     private final Double freqPercentage;
 
+    /**
+     * Frequency percentage across the sampled row counts (excluding nulls).
+     * @return the value
+     **/
     public Double getFreqPercentage() {
         return freqPercentage;
     }

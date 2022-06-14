@@ -30,9 +30,21 @@ public final class PreparedStatement {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A base64-encoded, compiled and parameterized version of
+         * a SQL statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statement")
         private String statement;
 
+        /**
+         * A base64-encoded, compiled and parameterized version of
+         * a SQL statement.
+         *
+         * @param statement the value to set
+         * @return this builder
+         **/
         public Builder statement(String statement) {
             this.statement = statement;
             this.__explicitlySet__.add("statement");
@@ -85,6 +97,12 @@ public final class PreparedStatement {
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
     private final String statement;
 
+    /**
+     * A base64-encoded, compiled and parameterized version of
+     * a SQL statement.
+     *
+     * @return the value
+     **/
     public String getStatement() {
         return statement;
     }

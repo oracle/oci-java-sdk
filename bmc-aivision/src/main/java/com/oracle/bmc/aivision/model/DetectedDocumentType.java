@@ -30,18 +30,33 @@ public final class DetectedDocumentType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The document type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentType")
         private String documentType;
 
+        /**
+         * The document type.
+         * @param documentType the value to set
+         * @return this builder
+         **/
         public Builder documentType(String documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
             return this;
         }
-
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -83,6 +98,10 @@ public final class DetectedDocumentType {
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     private final String documentType;
 
+    /**
+     * The document type.
+     * @return the value
+     **/
     public String getDocumentType() {
         return documentType;
     }
@@ -93,6 +112,10 @@ public final class DetectedDocumentType {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }

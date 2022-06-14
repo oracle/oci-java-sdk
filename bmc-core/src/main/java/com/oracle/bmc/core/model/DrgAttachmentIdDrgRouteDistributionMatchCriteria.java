@@ -29,9 +29,19 @@ public final class DrgAttachmentIdDrgRouteDistributionMatchCriteria
         extends DrgRouteDistributionMatchCriteria {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgAttachmentId")
         private String drgAttachmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+         *
+         * @param drgAttachmentId the value to set
+         * @return this builder
+         **/
         public Builder drgAttachmentId(String drgAttachmentId) {
             this.drgAttachmentId = drgAttachmentId;
             this.__explicitlySet__.add("drgAttachmentId");
@@ -81,6 +91,11 @@ public final class DrgAttachmentIdDrgRouteDistributionMatchCriteria
     @com.fasterxml.jackson.annotation.JsonProperty("drgAttachmentId")
     private final String drgAttachmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+     *
+     * @return the value
+     **/
     public String getDrgAttachmentId() {
         return drgAttachmentId;
     }

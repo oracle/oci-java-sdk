@@ -25,54 +25,97 @@ package com.oracle.bmc.dataintegration.model;
 public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Id of the external stoarge configured in BICC console. Usually its numeric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageId")
         private String storageId;
 
+        /**
+         * Id of the external stoarge configured in BICC console. Usually its numeric.
+         * @param storageId the value to set
+         * @return this builder
+         **/
         public Builder storageId(String storageId) {
             this.storageId = storageId;
             this.__explicitlySet__.add("storageId");
             return this;
         }
-
+        /**
+         * Name of the external storage configured in BICC console
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageName")
         private String storageName;
 
+        /**
+         * Name of the external storage configured in BICC console
+         * @param storageName the value to set
+         * @return this builder
+         **/
         public Builder storageName(String storageName) {
             this.storageName = storageName;
             this.__explicitlySet__.add("storageName");
             return this;
         }
-
+        /**
+         * Object Storage host Url. DO not give http/https.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Object Storage host Url. DO not give http/https.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * Tenancy OCID for the OOS bucket
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * Tenancy OCID for the OOS bucket
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-
+        /**
+         * Namespace for the OOS bucket
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Namespace for the OOS bucket
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Bucket Name where BICC extracts stores the files
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
+        /**
+         * Bucket Name where BICC extracts stores the files
+         * @param bucket the value to set
+         * @return this builder
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
@@ -138,6 +181,10 @@ public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("storageId")
     private final String storageId;
 
+    /**
+     * Id of the external stoarge configured in BICC console. Usually its numeric.
+     * @return the value
+     **/
     public String getStorageId() {
         return storageId;
     }
@@ -148,6 +195,10 @@ public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("storageName")
     private final String storageName;
 
+    /**
+     * Name of the external storage configured in BICC console
+     * @return the value
+     **/
     public String getStorageName() {
         return storageName;
     }
@@ -158,6 +209,10 @@ public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Object Storage host Url. DO not give http/https.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -168,6 +223,10 @@ public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * Tenancy OCID for the OOS bucket
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -178,6 +237,10 @@ public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Namespace for the OOS bucket
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -188,6 +251,10 @@ public final class ExternalStorage extends ConnectorAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
+    /**
+     * Bucket Name where BICC extracts stores the files
+     * @return the value
+     **/
     public String getBucket() {
         return bucket;
     }

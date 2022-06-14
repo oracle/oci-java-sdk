@@ -56,6 +56,10 @@ public class BuildSource {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -66,6 +70,10 @@ public class BuildSource {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
+    /**
+     * URL for the repository.
+     * @return the value
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
@@ -76,6 +84,10 @@ public class BuildSource {
     @com.fasterxml.jackson.annotation.JsonProperty("branch")
     private final String branch;
 
+    /**
+     * Branch name.
+     * @return the value
+     **/
     public String getBranch() {
         return branch;
     }

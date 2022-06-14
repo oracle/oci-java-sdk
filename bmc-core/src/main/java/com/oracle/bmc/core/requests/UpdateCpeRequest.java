@@ -17,6 +17,9 @@ public class UpdateCpeRequest
      */
     private String cpeId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+     */
     public String getCpeId() {
         return cpeId;
     }
@@ -25,6 +28,9 @@ public class UpdateCpeRequest
      */
     private com.oracle.bmc.core.model.UpdateCpeDetails updateCpeDetails;
 
+    /**
+     * Details object for updating a CPE.
+     */
     public com.oracle.bmc.core.model.UpdateCpeDetails getUpdateCpeDetails() {
         return updateCpeDetails;
     }
@@ -36,6 +42,12 @@ public class UpdateCpeRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -57,10 +69,14 @@ public class UpdateCpeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+         */
         private String cpeId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
+         * @param cpeId the value to set
          * @return this builder instance
          */
         public Builder cpeId(String cpeId) {
@@ -68,10 +84,14 @@ public class UpdateCpeRequest
             return this;
         }
 
+        /**
+         * Details object for updating a CPE.
+         */
         private com.oracle.bmc.core.model.UpdateCpeDetails updateCpeDetails = null;
 
         /**
          * Details object for updating a CPE.
+         * @param updateCpeDetails the value to set
          * @return this builder instance
          */
         public Builder updateCpeDetails(
@@ -80,6 +100,12 @@ public class UpdateCpeRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -87,6 +113,7 @@ public class UpdateCpeRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -177,12 +204,17 @@ public class UpdateCpeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().cpeId(cpeId).updateCpeDetails(updateCpeDetails).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

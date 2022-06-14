@@ -117,10 +117,19 @@ public final class FieldsAddRemoveField extends AbstractField {
             this.__explicitlySet__.add("unitType");
             return this;
         }
-
+        /**
+         * Denotes if field entry in FIELDS command is to show / hide field in results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
+        /**
+         * Denotes if field entry in FIELDS command is to show / hide field in results.
+         *
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
@@ -262,6 +271,11 @@ public final class FieldsAddRemoveField extends AbstractField {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
+    /**
+     * Denotes if field entry in FIELDS command is to show / hide field in results.
+     *
+     * @return the value
+     **/
     public Operation getOperation() {
         return operation;
     }

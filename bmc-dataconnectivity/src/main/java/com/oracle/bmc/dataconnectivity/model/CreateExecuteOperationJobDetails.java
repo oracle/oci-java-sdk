@@ -34,6 +34,7 @@ public final class CreateExecuteOperationJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
@@ -51,10 +52,17 @@ public final class CreateExecuteOperationJobDetails {
             this.__explicitlySet__.add("callOperationConfig");
             return this;
         }
-
+        /**
+         * Collection of input parameters supplied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
         private java.util.List<OperationInputRecord> inputRecords;
 
+        /**
+         * Collection of input parameters supplied.
+         * @param inputRecords the value to set
+         * @return this builder
+         **/
         public Builder inputRecords(java.util.List<OperationInputRecord> inputRecords) {
             this.inputRecords = inputRecords;
             this.__explicitlySet__.add("inputRecords");
@@ -115,6 +123,10 @@ public final class CreateExecuteOperationJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
     private final java.util.List<OperationInputRecord> inputRecords;
 
+    /**
+     * Collection of input parameters supplied.
+     * @return the value
+     **/
     public java.util.List<OperationInputRecord> getInputRecords() {
         return inputRecords;
     }

@@ -27,9 +27,17 @@ public final class OriginGroup {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of objects containing origin references and additional properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("origins")
         private java.util.List<OriginGroup_origins> origins;
 
+        /**
+         * The list of objects containing origin references and additional properties.
+         * @param origins the value to set
+         * @return this builder
+         **/
         public Builder origins(java.util.List<OriginGroup_origins> origins) {
             this.origins = origins;
             this.__explicitlySet__.add("origins");
@@ -71,6 +79,10 @@ public final class OriginGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("origins")
     private final java.util.List<OriginGroup_origins> origins;
 
+    /**
+     * The list of objects containing origin references and additional properties.
+     * @return the value
+     **/
     public java.util.List<OriginGroup_origins> getOrigins() {
         return origins;
     }

@@ -18,6 +18,9 @@ public class ChangePrivateApplicationCompartmentRequest
      */
     private String privateApplicationId;
 
+    /**
+     * The unique identifier for the private application.
+     */
     public String getPrivateApplicationId() {
         return privateApplicationId;
     }
@@ -27,6 +30,9 @@ public class ChangePrivateApplicationCompartmentRequest
     private com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails
             changePrivateApplicationCompartmentDetails;
 
+    /**
+     * The details of the request to change the compartment of a given private application.
+     */
     public com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails
             getChangePrivateApplicationCompartmentDetails() {
         return changePrivateApplicationCompartmentDetails;
@@ -38,6 +44,11 @@ public class ChangePrivateApplicationCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +60,12 @@ public class ChangePrivateApplicationCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to
+     * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+     * deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -73,10 +90,14 @@ public class ChangePrivateApplicationCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the private application.
+         */
         private String privateApplicationId = null;
 
         /**
          * The unique identifier for the private application.
+         * @param privateApplicationId the value to set
          * @return this builder instance
          */
         public Builder privateApplicationId(String privateApplicationId) {
@@ -84,11 +105,15 @@ public class ChangePrivateApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * The details of the request to change the compartment of a given private application.
+         */
         private com.oracle.bmc.servicecatalog.model.ChangePrivateApplicationCompartmentDetails
                 changePrivateApplicationCompartmentDetails = null;
 
         /**
          * The details of the request to change the compartment of a given private application.
+         * @param changePrivateApplicationCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changePrivateApplicationCompartmentDetails(
@@ -99,12 +124,18 @@ public class ChangePrivateApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -112,6 +143,12 @@ public class ChangePrivateApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to
+         * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -119,6 +156,7 @@ public class ChangePrivateApplicationCompartmentRequest
          * the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
          * deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -216,7 +254,8 @@ public class ChangePrivateApplicationCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -227,6 +266,10 @@ public class ChangePrivateApplicationCompartmentRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

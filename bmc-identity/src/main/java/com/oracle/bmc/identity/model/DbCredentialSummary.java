@@ -50,54 +50,121 @@ public final class DbCredentialSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the DB credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the DB credential.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the user the DB credential belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
+        /**
+         * The OCID of the user the DB credential belongs to.
+         * @param userId the value to set
+         * @return this builder
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-
+        /**
+         * The description you assign to the DB credential. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description you assign to the DB credential. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Date and time the {@code DbCredential} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * Date and time the {@code DbCredential} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Date and time when this credential will expire, in the format defined by RFC3339.
+         * Null if it never expires.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
+        /**
+         * Date and time when this credential will expire, in the format defined by RFC3339.
+         * Null if it never expires.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeExpires the value to set
+         * @return this builder
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
-
+        /**
+         * The credential's current state. After creating a DB credential, make sure its {@code lifecycleState} changes from
+         * CREATING to ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DbCredential.LifecycleState lifecycleState;
 
+        /**
+         * The credential's current state. After creating a DB credential, make sure its {@code lifecycleState} changes from
+         * CREATING to ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(DbCredential.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -147,6 +214,10 @@ public final class DbCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the DB credential.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -157,6 +228,10 @@ public final class DbCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
+    /**
+     * The OCID of the user the DB credential belongs to.
+     * @return the value
+     **/
     public String getUserId() {
         return userId;
     }
@@ -170,6 +245,13 @@ public final class DbCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description you assign to the DB credential. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -183,6 +265,13 @@ public final class DbCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * Date and time the {@code DbCredential} object was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -197,6 +286,14 @@ public final class DbCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
+    /**
+     * Date and time when this credential will expire, in the format defined by RFC3339.
+     * Null if it never expires.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
@@ -209,6 +306,12 @@ public final class DbCredentialSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DbCredential.LifecycleState lifecycleState;
 
+    /**
+     * The credential's current state. After creating a DB credential, make sure its {@code lifecycleState} changes from
+     * CREATING to ACTIVE before using it.
+     *
+     * @return the value
+     **/
     public DbCredential.LifecycleState getLifecycleState() {
         return lifecycleState;
     }

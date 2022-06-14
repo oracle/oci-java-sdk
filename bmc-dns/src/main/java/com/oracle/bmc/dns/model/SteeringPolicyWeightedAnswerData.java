@@ -30,18 +30,39 @@ public final class SteeringPolicyWeightedAnswerData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
         private String answerCondition;
 
+        /**
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         * @param answerCondition the value to set
+         * @return this builder
+         **/
         public Builder answerCondition(String answerCondition) {
             this.answerCondition = answerCondition;
             this.__explicitlySet__.add("answerCondition");
             return this;
         }
-
+        /**
+         * The weight assigned to the set of selected answers. Answers with a higher weight will be served
+         * more frequently. Answers can be given a value between {@code 0} and {@code 255}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
+        /**
+         * The weight assigned to the set of selected answers. Answers with a higher weight will be served
+         * more frequently. Answers can be given a value between {@code 0} and {@code 255}.
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -85,6 +106,11 @@ public final class SteeringPolicyWeightedAnswerData {
     @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
     private final String answerCondition;
 
+    /**
+     * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+     *
+     * @return the value
+     **/
     public String getAnswerCondition() {
         return answerCondition;
     }
@@ -97,6 +123,12 @@ public final class SteeringPolicyWeightedAnswerData {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
+    /**
+     * The weight assigned to the set of selected answers. Answers with a higher weight will be served
+     * more frequently. Answers can be given a value between {@code 0} and {@code 255}.
+     *
+     * @return the value
+     **/
     public Integer getValue() {
         return value;
     }

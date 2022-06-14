@@ -30,18 +30,33 @@ public final class DownloadDiscoveryReportDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
         private String discoveryJobId;
 
+        /**
+         * The OCID of the discovery job.
+         * @param discoveryJobId the value to set
+         * @return this builder
+         **/
         public Builder discoveryJobId(String discoveryJobId) {
             this.discoveryJobId = discoveryJobId;
             this.__explicitlySet__.add("discoveryJobId");
             return this;
         }
-
+        /**
+         * Format of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
         private ReportFormat reportFormat;
 
+        /**
+         * Format of the report.
+         * @param reportFormat the value to set
+         * @return this builder
+         **/
         public Builder reportFormat(ReportFormat reportFormat) {
             this.reportFormat = reportFormat;
             this.__explicitlySet__.add("reportFormat");
@@ -85,6 +100,10 @@ public final class DownloadDiscoveryReportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
     private final String discoveryJobId;
 
+    /**
+     * The OCID of the discovery job.
+     * @return the value
+     **/
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
@@ -130,6 +149,10 @@ public final class DownloadDiscoveryReportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
     private final ReportFormat reportFormat;
 
+    /**
+     * Format of the report.
+     * @return the value
+     **/
     public ReportFormat getReportFormat() {
         return reportFormat;
     }

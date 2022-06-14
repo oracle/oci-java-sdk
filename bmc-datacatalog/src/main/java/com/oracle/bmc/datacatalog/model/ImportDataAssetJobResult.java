@@ -44,45 +44,81 @@ public final class ImportDataAssetJobResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of the data asset on which import is triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
+        /**
+         * The unique key of the data asset on which import is triggered.
+         * @param dataAssetKey the value to set
+         * @return this builder
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-
+        /**
+         * The unique key of the job definition resource that is used for the import.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
         private String importJobDefinitionKey;
 
+        /**
+         * The unique key of the job definition resource that is used for the import.
+         * @param importJobDefinitionKey the value to set
+         * @return this builder
+         **/
         public Builder importJobDefinitionKey(String importJobDefinitionKey) {
             this.importJobDefinitionKey = importJobDefinitionKey;
             this.__explicitlySet__.add("importJobDefinitionKey");
             return this;
         }
-
+        /**
+         * The unique key of the job policy for the import.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
         private String importJobKey;
 
+        /**
+         * The unique key of the job policy for the import.
+         * @param importJobKey the value to set
+         * @return this builder
+         **/
         public Builder importJobKey(String importJobKey) {
             this.importJobKey = importJobKey;
             this.__explicitlySet__.add("importJobKey");
             return this;
         }
-
+        /**
+         * The unique key of the parent job execution for which the log resource is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importJobExecutionKey")
         private String importJobExecutionKey;
 
+        /**
+         * The unique key of the parent job execution for which the log resource is created.
+         * @param importJobExecutionKey the value to set
+         * @return this builder
+         **/
         public Builder importJobExecutionKey(String importJobExecutionKey) {
             this.importJobExecutionKey = importJobExecutionKey;
             this.__explicitlySet__.add("importJobExecutionKey");
             return this;
         }
-
+        /**
+         * The status of the import job execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importJobExecutionStatus")
         private JobExecutionState importJobExecutionStatus;
 
+        /**
+         * The status of the import job execution.
+         * @param importJobExecutionStatus the value to set
+         * @return this builder
+         **/
         public Builder importJobExecutionStatus(JobExecutionState importJobExecutionStatus) {
             this.importJobExecutionStatus = importJobExecutionStatus;
             this.__explicitlySet__.add("importJobExecutionStatus");
@@ -135,6 +171,10 @@ public final class ImportDataAssetJobResult {
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
+    /**
+     * The unique key of the data asset on which import is triggered.
+     * @return the value
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -145,6 +185,10 @@ public final class ImportDataAssetJobResult {
     @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
     private final String importJobDefinitionKey;
 
+    /**
+     * The unique key of the job definition resource that is used for the import.
+     * @return the value
+     **/
     public String getImportJobDefinitionKey() {
         return importJobDefinitionKey;
     }
@@ -155,6 +199,10 @@ public final class ImportDataAssetJobResult {
     @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
     private final String importJobKey;
 
+    /**
+     * The unique key of the job policy for the import.
+     * @return the value
+     **/
     public String getImportJobKey() {
         return importJobKey;
     }
@@ -165,6 +213,10 @@ public final class ImportDataAssetJobResult {
     @com.fasterxml.jackson.annotation.JsonProperty("importJobExecutionKey")
     private final String importJobExecutionKey;
 
+    /**
+     * The unique key of the parent job execution for which the log resource is created.
+     * @return the value
+     **/
     public String getImportJobExecutionKey() {
         return importJobExecutionKey;
     }
@@ -175,6 +227,10 @@ public final class ImportDataAssetJobResult {
     @com.fasterxml.jackson.annotation.JsonProperty("importJobExecutionStatus")
     private final JobExecutionState importJobExecutionStatus;
 
+    /**
+     * The status of the import job execution.
+     * @return the value
+     **/
     public JobExecutionState getImportJobExecutionStatus() {
         return importJobExecutionStatus;
     }

@@ -29,9 +29,17 @@ public final class ImportDataAssetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The file contents to be imported. File size not to exceed 10 MB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importFileContents")
         private byte[] importFileContents;
 
+        /**
+         * The file contents to be imported. File size not to exceed 10 MB.
+         * @param importFileContents the value to set
+         * @return this builder
+         **/
         public Builder importFileContents(byte[] importFileContents) {
             this.importFileContents = importFileContents;
             this.__explicitlySet__.add("importFileContents");
@@ -73,6 +81,10 @@ public final class ImportDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("importFileContents")
     private final byte[] importFileContents;
 
+    /**
+     * The file contents to be imported. File size not to exceed 10 MB.
+     * @return the value
+     **/
     public byte[] getImportFileContents() {
         return importFileContents;
     }

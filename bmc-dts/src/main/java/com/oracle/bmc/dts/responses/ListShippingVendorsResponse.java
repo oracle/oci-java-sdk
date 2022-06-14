@@ -13,6 +13,10 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
+    /**
+     * The returned ShippingVendors instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.ShippingVendors getShippingVendors() {
         return shippingVendors;
     }
@@ -44,15 +52,31 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ShippingVendors instance.
+         */
         private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
+        /**
+         * The returned ShippingVendors instance.
+         * @param shippingVendors the value to set
+         * @return this builder
+         */
         public Builder shippingVendors(com.oracle.bmc.dts.model.ShippingVendors shippingVendors) {
             this.shippingVendors = shippingVendors;
             return this;
@@ -70,12 +94,20 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListShippingVendorsResponse build() {
             return new ListShippingVendorsResponse(
                     __httpStatusCode__, opcRequestId, shippingVendors);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

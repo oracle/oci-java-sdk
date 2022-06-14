@@ -51,72 +51,131 @@ public final class AssociableEntity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The entity OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * The entity OCID.
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * The name of the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * The name of the entity.
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * The type name of the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
         private String entityTypeName;
 
+        /**
+         * The type name of the entity.
+         * @param entityTypeName the value to set
+         * @return this builder
+         **/
         public Builder entityTypeName(String entityTypeName) {
             this.entityTypeName = entityTypeName;
             this.__explicitlySet__.add("entityTypeName");
             return this;
         }
-
+        /**
+         * The display name of the entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
         private String entityTypeDisplayName;
 
+        /**
+         * The display name of the entity type.
+         * @param entityTypeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
             this.entityTypeDisplayName = entityTypeDisplayName;
             this.__explicitlySet__.add("entityTypeDisplayName");
             return this;
         }
-
+        /**
+         * The entity host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * The entity host.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The OCID of the Management Agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
+        /**
+         * The OCID of the Management Agent.
+         * @param agentId the value to set
+         * @return this builder
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-
+        /**
+         * This field indicates whether the entity is (in)eligible to be associated with this source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eligibilityStatus")
         private EligibilityStatus eligibilityStatus;
 
+        /**
+         * This field indicates whether the entity is (in)eligible to be associated with this source.
+         *
+         * @param eligibilityStatus the value to set
+         * @return this builder
+         **/
         public Builder eligibilityStatus(EligibilityStatus eligibilityStatus) {
             this.eligibilityStatus = eligibilityStatus;
             this.__explicitlySet__.add("eligibilityStatus");
             return this;
         }
-
+        /**
+         * The reason the entity is not eligible for association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityDetails")
         private String ineligibilityDetails;
 
+        /**
+         * The reason the entity is not eligible for association.
+         * @param ineligibilityDetails the value to set
+         * @return this builder
+         **/
         public Builder ineligibilityDetails(String ineligibilityDetails) {
             this.ineligibilityDetails = ineligibilityDetails;
             this.__explicitlySet__.add("ineligibilityDetails");
@@ -175,6 +234,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * The entity OCID.
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -185,6 +248,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * The name of the entity.
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -195,6 +262,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     private final String entityTypeName;
 
+    /**
+     * The type name of the entity.
+     * @return the value
+     **/
     public String getEntityTypeName() {
         return entityTypeName;
     }
@@ -205,6 +276,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     private final String entityTypeDisplayName;
 
+    /**
+     * The display name of the entity type.
+     * @return the value
+     **/
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }
@@ -215,6 +290,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * The entity host.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -225,6 +304,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
+    /**
+     * The OCID of the Management Agent.
+     * @return the value
+     **/
     public String getAgentId() {
         return agentId;
     }
@@ -285,6 +368,11 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("eligibilityStatus")
     private final EligibilityStatus eligibilityStatus;
 
+    /**
+     * This field indicates whether the entity is (in)eligible to be associated with this source.
+     *
+     * @return the value
+     **/
     public EligibilityStatus getEligibilityStatus() {
         return eligibilityStatus;
     }
@@ -295,6 +383,10 @@ public final class AssociableEntity {
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityDetails")
     private final String ineligibilityDetails;
 
+    /**
+     * The reason the entity is not eligible for association.
+     * @return the value
+     **/
     public String getIneligibilityDetails() {
         return ineligibilityDetails;
     }

@@ -53,10 +53,17 @@ public final class DevopsCodeRepositoryBuildSource extends BuildSource {
             this.__explicitlySet__.add("branch");
             return this;
         }
-
+        /**
+         * The DevOps code repository ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
+        /**
+         * The DevOps code repository ID.
+         * @param repositoryId the value to set
+         * @return this builder
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
@@ -110,6 +117,10 @@ public final class DevopsCodeRepositoryBuildSource extends BuildSource {
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
+    /**
+     * The DevOps code repository ID.
+     * @return the value
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }

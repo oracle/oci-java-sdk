@@ -30,18 +30,37 @@ public final class NotebookSessionShapeConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
+        /**
+         * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         *
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
+        /**
+         * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         *
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -85,6 +104,11 @@ public final class NotebookSessionShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
+    /**
+     * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     *
+     * @return the value
+     **/
     public Float getOcpus() {
         return ocpus;
     }
@@ -96,6 +120,11 @@ public final class NotebookSessionShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
+    /**
+     * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     *
+     * @return the value
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }

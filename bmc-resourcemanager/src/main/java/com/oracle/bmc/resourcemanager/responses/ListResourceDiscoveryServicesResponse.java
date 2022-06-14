@@ -15,6 +15,12 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
             resourceDiscoveryServiceCollection;
 
+    /**
+     * The returned ResourceDiscoveryServiceCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
             getResourceDiscoveryServiceCollection() {
         return resourceDiscoveryServiceCollection;
@@ -53,16 +63,36 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ResourceDiscoveryServiceCollection instance.
+         */
         private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
                 resourceDiscoveryServiceCollection;
 
+        /**
+         * The returned ResourceDiscoveryServiceCollection instance.
+         * @param resourceDiscoveryServiceCollection the value to set
+         * @return this builder
+         */
         public Builder resourceDiscoveryServiceCollection(
                 com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
                         resourceDiscoveryServiceCollection) {
@@ -82,12 +112,20 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListResourceDiscoveryServicesResponse build() {
             return new ListResourceDiscoveryServicesResponse(
                     __httpStatusCode__, opcRequestId, resourceDiscoveryServiceCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

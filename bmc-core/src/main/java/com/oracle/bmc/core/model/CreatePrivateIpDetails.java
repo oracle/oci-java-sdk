@@ -50,64 +50,178 @@ public final class CreatePrivateIpDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The hostname for the private IP. Used for DNS. The value
+         * is the hostname portion of the private IP's fully qualified domain name (FQDN)
+         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Must be unique across all VNICs in the subnet and comply with
+         * [RFC 952](https://tools.ietf.org/html/rfc952) and
+         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code bminstance-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
+        /**
+         * The hostname for the private IP. Used for DNS. The value
+         * is the hostname portion of the private IP's fully qualified domain name (FQDN)
+         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * Must be unique across all VNICs in the subnet and comply with
+         * [RFC 952](https://tools.ietf.org/html/rfc952) and
+         * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code bminstance-1}
+         *
+         * @param hostnameLabel the value to set
+         * @return this builder
+         **/
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
-
+        /**
+         * A private IP address of your choice. Must be an available IP address within
+         * the subnet's CIDR. If you don't specify a value, Oracle automatically
+         * assigns a private IP address from the subnet.
+         * <p>
+         * Example: {@code 10.0.3.3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        /**
+         * A private IP address of your choice. Must be an available IP address within
+         * the subnet's CIDR. If you don't specify a value, Oracle automatically
+         * assigns a private IP address from the subnet.
+         * <p>
+         * Example: {@code 10.0.3.3}
+         *
+         * @param ipAddress the value to set
+         * @return this builder
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+         * must be in the same subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+         * must be in the same subnet.
+         *
+         * @param vnicId the value to set
+         * @return this builder
+         **/
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
             return this;
         }
-
+        /**
+         * Use this attribute only with the Oracle Cloud VMware Solution.
+         * <p>
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+         * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
 
+        /**
+         * Use this attribute only with the Oracle Cloud VMware Solution.
+         * <p>
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+         * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+         *
+         * @param vlanId the value to set
+         * @return this builder
+         **/
         public Builder vlanId(String vlanId) {
             this.vlanId = vlanId;
             this.__explicitlySet__.add("vlanId");
@@ -168,6 +282,14 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -180,6 +302,12 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -194,6 +322,14 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -215,6 +351,21 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
+    /**
+     * The hostname for the private IP. Used for DNS. The value
+     * is the hostname portion of the private IP's fully qualified domain name (FQDN)
+     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * Must be unique across all VNICs in the subnet and comply with
+     * [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code bminstance-1}
+     *
+     * @return the value
+     **/
     public String getHostnameLabel() {
         return hostnameLabel;
     }
@@ -230,6 +381,15 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
+    /**
+     * A private IP address of your choice. Must be an available IP address within
+     * the subnet's CIDR. If you don't specify a value, Oracle automatically
+     * assigns a private IP address from the subnet.
+     * <p>
+     * Example: {@code 10.0.3.3}
+     *
+     * @return the value
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
@@ -242,6 +402,12 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+     * must be in the same subnet.
+     *
+     * @return the value
+     **/
     public String getVnicId() {
         return vnicId;
     }
@@ -256,6 +422,14 @@ public final class CreatePrivateIpDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
+    /**
+     * Use this attribute only with the Oracle Cloud VMware Solution.
+     * <p>
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+     * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+     *
+     * @return the value
+     **/
     public String getVlanId() {
         return vlanId;
     }

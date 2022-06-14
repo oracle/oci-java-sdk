@@ -35,55 +35,97 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * Name of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
+        /**
+         * Name of the database instance.
+         * @param instanceName the value to set
+         * @return this builder
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
-
+        /**
+         * Host name of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * Host name of the database instance.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * Total number of CPUs available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numCPUs")
         private Integer numCPUs;
 
+        /**
+         * Total number of CPUs available.
+         * @param numCPUs the value to set
+         * @return this builder
+         **/
         public Builder numCPUs(Integer numCPUs) {
             this.numCPUs = numCPUs;
             this.__explicitlySet__.add("numCPUs");
             return this;
         }
-
+        /**
+         * Number of CPU cores available (includes subcores of multicore CPUs as well as single-core CPUs).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numCPUCores")
         private Integer numCPUCores;
 
+        /**
+         * Number of CPU cores available (includes subcores of multicore CPUs as well as single-core CPUs).
+         * @param numCPUCores the value to set
+         * @return this builder
+         **/
         public Builder numCPUCores(Integer numCPUCores) {
             this.numCPUCores = numCPUCores;
             this.__explicitlySet__.add("numCPUCores");
             return this;
         }
-
+        /**
+         * Number of CPU Sockets available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numCPUSockets")
         private Integer numCPUSockets;
 
+        /**
+         * Number of CPU Sockets available.
+         * @param numCPUSockets the value to set
+         * @return this builder
+         **/
         public Builder numCPUSockets(Integer numCPUSockets) {
             this.numCPUSockets = numCPUSockets;
             this.__explicitlySet__.add("numCPUSockets");
             return this;
         }
-
+        /**
+         * Total number of bytes of physical memory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryBytes")
         private Double physicalMemoryBytes;
 
+        /**
+         * Total number of bytes of physical memory.
+         * @param physicalMemoryBytes the value to set
+         * @return this builder
+         **/
         public Builder physicalMemoryBytes(Double physicalMemoryBytes) {
             this.physicalMemoryBytes = physicalMemoryBytes;
             this.__explicitlySet__.add("physicalMemoryBytes");
@@ -158,6 +200,10 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
+    /**
+     * Name of the database instance.
+     * @return the value
+     **/
     public String getInstanceName() {
         return instanceName;
     }
@@ -168,6 +214,10 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * Host name of the database instance.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -178,6 +228,10 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("numCPUs")
     private final Integer numCPUs;
 
+    /**
+     * Total number of CPUs available.
+     * @return the value
+     **/
     public Integer getNumCPUs() {
         return numCPUs;
     }
@@ -188,6 +242,10 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("numCPUCores")
     private final Integer numCPUCores;
 
+    /**
+     * Number of CPU cores available (includes subcores of multicore CPUs as well as single-core CPUs).
+     * @return the value
+     **/
     public Integer getNumCPUCores() {
         return numCPUCores;
     }
@@ -198,6 +256,10 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("numCPUSockets")
     private final Integer numCPUSockets;
 
+    /**
+     * Number of CPU Sockets available.
+     * @return the value
+     **/
     public Integer getNumCPUSockets() {
         return numCPUSockets;
     }
@@ -208,6 +270,10 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.annotation.JsonProperty("physicalMemoryBytes")
     private final Double physicalMemoryBytes;
 
+    /**
+     * Total number of bytes of physical memory.
+     * @return the value
+     **/
     public Double getPhysicalMemoryBytes() {
         return physicalMemoryBytes;
     }

@@ -21,6 +21,12 @@ public class UpdateGenericArtifactByPathRequest
      */
     private String repositoryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+     * <p>
+     * Example: {@code ocid1.artifactrepository.oc1..exampleuniqueID}
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -32,6 +38,12 @@ public class UpdateGenericArtifactByPathRequest
      */
     private String artifactPath;
 
+    /**
+     * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+     * <p>
+     * Example: {@code project01/my-web-app/artifact-abc}
+     *
+     */
     public String getArtifactPath() {
         return artifactPath;
     }
@@ -43,6 +55,12 @@ public class UpdateGenericArtifactByPathRequest
      */
     private String version;
 
+    /**
+     * A user-defined string to describe the artifact version.
+     * <p>
+     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+     *
+     */
     public String getVersion() {
         return version;
     }
@@ -52,6 +70,9 @@ public class UpdateGenericArtifactByPathRequest
     private com.oracle.bmc.artifacts.model.UpdateGenericArtifactByPathDetails
             updateGenericArtifactByPathDetails;
 
+    /**
+     * Updates an artifact with a specified {@code artifactPath} and {@code version}. You can only update the tags of an artifact.
+     */
     public com.oracle.bmc.artifacts.model.UpdateGenericArtifactByPathDetails
             getUpdateGenericArtifactByPathDetails() {
         return updateGenericArtifactByPathDetails;
@@ -64,6 +85,12 @@ public class UpdateGenericArtifactByPathRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -74,6 +101,11 @@ public class UpdateGenericArtifactByPathRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -96,6 +128,12 @@ public class UpdateGenericArtifactByPathRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+         * <p>
+         * Example: {@code ocid1.artifactrepository.oc1..exampleuniqueID}
+         *
+         */
         private String repositoryId = null;
 
         /**
@@ -103,6 +141,7 @@ public class UpdateGenericArtifactByPathRequest
          * <p>
          * Example: {@code ocid1.artifactrepository.oc1..exampleuniqueID}
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -110,6 +149,12 @@ public class UpdateGenericArtifactByPathRequest
             return this;
         }
 
+        /**
+         * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+         * <p>
+         * Example: {@code project01/my-web-app/artifact-abc}
+         *
+         */
         private String artifactPath = null;
 
         /**
@@ -117,6 +162,7 @@ public class UpdateGenericArtifactByPathRequest
          * <p>
          * Example: {@code project01/my-web-app/artifact-abc}
          *
+         * @param artifactPath the value to set
          * @return this builder instance
          */
         public Builder artifactPath(String artifactPath) {
@@ -124,6 +170,12 @@ public class UpdateGenericArtifactByPathRequest
             return this;
         }
 
+        /**
+         * A user-defined string to describe the artifact version.
+         * <p>
+         * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+         *
+         */
         private String version = null;
 
         /**
@@ -131,6 +183,7 @@ public class UpdateGenericArtifactByPathRequest
          * <p>
          * Example: {@code 1.1.2} or {@code 1.2-beta-2}
          *
+         * @param version the value to set
          * @return this builder instance
          */
         public Builder version(String version) {
@@ -138,11 +191,15 @@ public class UpdateGenericArtifactByPathRequest
             return this;
         }
 
+        /**
+         * Updates an artifact with a specified {@code artifactPath} and {@code version}. You can only update the tags of an artifact.
+         */
         private com.oracle.bmc.artifacts.model.UpdateGenericArtifactByPathDetails
                 updateGenericArtifactByPathDetails = null;
 
         /**
          * Updates an artifact with a specified {@code artifactPath} and {@code version}. You can only update the tags of an artifact.
+         * @param updateGenericArtifactByPathDetails the value to set
          * @return this builder instance
          */
         public Builder updateGenericArtifactByPathDetails(
@@ -152,6 +209,12 @@ public class UpdateGenericArtifactByPathRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -159,6 +222,7 @@ public class UpdateGenericArtifactByPathRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -166,12 +230,18 @@ public class UpdateGenericArtifactByPathRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -269,7 +339,8 @@ public class UpdateGenericArtifactByPathRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -281,6 +352,10 @@ public class UpdateGenericArtifactByPathRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

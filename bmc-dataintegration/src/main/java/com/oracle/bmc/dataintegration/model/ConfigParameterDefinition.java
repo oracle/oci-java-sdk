@@ -50,6 +50,7 @@ public final class ConfigParameterDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("parameterType")
         private BaseType parameterType;
 
@@ -58,55 +59,97 @@ public final class ConfigParameterDefinition {
             this.__explicitlySet__.add("parameterType");
             return this;
         }
-
+        /**
+         * This object represents the configurable properties for an object type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
         private String parameterName;
 
+        /**
+         * This object represents the configurable properties for an object type.
+         * @param parameterName the value to set
+         * @return this builder
+         **/
         public Builder parameterName(String parameterName) {
             this.parameterName = parameterName;
             this.__explicitlySet__.add("parameterName");
             return this;
         }
-
+        /**
+         * A user defined description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A user defined description for the object.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The default value for the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Object defaultValue;
 
+        /**
+         * The default value for the parameter.
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(Object defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-
+        /**
+         * The parameter class field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classFieldName")
         private String classFieldName;
 
+        /**
+         * The parameter class field name.
+         * @param classFieldName the value to set
+         * @return this builder
+         **/
         public Builder classFieldName(String classFieldName) {
             this.classFieldName = classFieldName;
             this.__explicitlySet__.add("classFieldName");
             return this;
         }
-
+        /**
+         * Specifies whether the parameter is static or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStatic")
         private Boolean isStatic;
 
+        /**
+         * Specifies whether the parameter is static or not.
+         * @param isStatic the value to set
+         * @return this builder
+         **/
         public Builder isStatic(Boolean isStatic) {
             this.isStatic = isStatic;
             this.__explicitlySet__.add("isStatic");
             return this;
         }
-
+        /**
+         * Specifies whether the parameter is a class field or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClassFieldValue")
         private Boolean isClassFieldValue;
 
+        /**
+         * Specifies whether the parameter is a class field or not.
+         * @param isClassFieldValue the value to set
+         * @return this builder
+         **/
         public Builder isClassFieldValue(Boolean isClassFieldValue) {
             this.isClassFieldValue = isClassFieldValue;
             this.__explicitlySet__.add("isClassFieldValue");
@@ -170,6 +213,10 @@ public final class ConfigParameterDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
     private final String parameterName;
 
+    /**
+     * This object represents the configurable properties for an object type.
+     * @return the value
+     **/
     public String getParameterName() {
         return parameterName;
     }
@@ -180,6 +227,10 @@ public final class ConfigParameterDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A user defined description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -190,6 +241,10 @@ public final class ConfigParameterDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Object defaultValue;
 
+    /**
+     * The default value for the parameter.
+     * @return the value
+     **/
     public Object getDefaultValue() {
         return defaultValue;
     }
@@ -200,6 +255,10 @@ public final class ConfigParameterDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("classFieldName")
     private final String classFieldName;
 
+    /**
+     * The parameter class field name.
+     * @return the value
+     **/
     public String getClassFieldName() {
         return classFieldName;
     }
@@ -210,6 +269,10 @@ public final class ConfigParameterDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("isStatic")
     private final Boolean isStatic;
 
+    /**
+     * Specifies whether the parameter is static or not.
+     * @return the value
+     **/
     public Boolean getIsStatic() {
         return isStatic;
     }
@@ -220,6 +283,10 @@ public final class ConfigParameterDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("isClassFieldValue")
     private final Boolean isClassFieldValue;
 
+    /**
+     * Specifies whether the parameter is a class field or not.
+     * @return the value
+     **/
     public Boolean getIsClassFieldValue() {
         return isClassFieldValue;
     }

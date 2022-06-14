@@ -29,9 +29,17 @@ public final class ByoipAllocatedRangeCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of subranges of a BYOIP CIDR block allocated to an IP pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ByoipAllocatedRangeSummary> items;
 
+        /**
+         * A list of subranges of a BYOIP CIDR block allocated to an IP pool.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ByoipAllocatedRangeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ByoipAllocatedRangeCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ByoipAllocatedRangeSummary> items;
 
+    /**
+     * A list of subranges of a BYOIP CIDR block allocated to an IP pool.
+     * @return the value
+     **/
     public java.util.List<ByoipAllocatedRangeSummary> getItems() {
         return items;
     }

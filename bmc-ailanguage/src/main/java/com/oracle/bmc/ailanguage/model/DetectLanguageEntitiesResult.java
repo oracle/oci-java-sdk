@@ -29,9 +29,17 @@ public final class DetectLanguageEntitiesResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of detected entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entities")
         private java.util.List<Entity> entities;
 
+        /**
+         * List of detected entities.
+         * @param entities the value to set
+         * @return this builder
+         **/
         public Builder entities(java.util.List<Entity> entities) {
             this.entities = entities;
             this.__explicitlySet__.add("entities");
@@ -73,6 +81,10 @@ public final class DetectLanguageEntitiesResult {
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<Entity> entities;
 
+    /**
+     * List of detected entities.
+     * @return the value
+     **/
     public java.util.List<Entity> getEntities() {
         return entities;
     }

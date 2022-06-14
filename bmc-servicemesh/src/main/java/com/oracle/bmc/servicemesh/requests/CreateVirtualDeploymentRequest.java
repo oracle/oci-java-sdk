@@ -19,6 +19,9 @@ public class CreateVirtualDeploymentRequest
     private com.oracle.bmc.servicemesh.model.CreateVirtualDeploymentDetails
             createVirtualDeploymentDetails;
 
+    /**
+     * Details for the new VirtualDeployment.
+     */
     public com.oracle.bmc.servicemesh.model.CreateVirtualDeploymentDetails
             getCreateVirtualDeploymentDetails() {
         return createVirtualDeploymentDetails;
@@ -33,6 +36,14 @@ public class CreateVirtualDeploymentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -41,6 +52,9 @@ public class CreateVirtualDeploymentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -63,11 +77,15 @@ public class CreateVirtualDeploymentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new VirtualDeployment.
+         */
         private com.oracle.bmc.servicemesh.model.CreateVirtualDeploymentDetails
                 createVirtualDeploymentDetails = null;
 
         /**
          * Details for the new VirtualDeployment.
+         * @param createVirtualDeploymentDetails the value to set
          * @return this builder instance
          */
         public Builder createVirtualDeploymentDetails(
@@ -77,6 +95,14 @@ public class CreateVirtualDeploymentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -86,6 +112,7 @@ public class CreateVirtualDeploymentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -93,10 +120,14 @@ public class CreateVirtualDeploymentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -187,7 +218,8 @@ public class CreateVirtualDeploymentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -196,6 +228,10 @@ public class CreateVirtualDeploymentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

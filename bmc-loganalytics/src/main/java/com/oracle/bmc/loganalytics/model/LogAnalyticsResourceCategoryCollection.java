@@ -32,18 +32,37 @@ public final class LogAnalyticsResourceCategoryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of categories. The array contents include detailed information about
+         * the distinct set of categories assigned to all the listed resources under items.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<LogAnalyticsCategory> categories;
 
+        /**
+         * An array of categories. The array contents include detailed information about
+         * the distinct set of categories assigned to all the listed resources under items.
+         *
+         * @param categories the value to set
+         * @return this builder
+         **/
         public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
             return this;
         }
-
+        /**
+         * A list of resources and their category assignments
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsResourceCategory> items;
 
+        /**
+         * A list of resources and their category assignments
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsResourceCategory> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -88,6 +107,12 @@ public final class LogAnalyticsResourceCategoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<LogAnalyticsCategory> categories;
 
+    /**
+     * An array of categories. The array contents include detailed information about
+     * the distinct set of categories assigned to all the listed resources under items.
+     *
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsCategory> getCategories() {
         return categories;
     }
@@ -98,6 +123,10 @@ public final class LogAnalyticsResourceCategoryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsResourceCategory> items;
 
+    /**
+     * A list of resources and their category assignments
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsResourceCategory> getItems() {
         return items;
     }

@@ -78,10 +78,17 @@ public final class JavaType extends BaseType {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The java type name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("javaTypeName")
         private String javaTypeName;
 
+        /**
+         * The java type name.
+         * @param javaTypeName the value to set
+         * @return this builder
+         **/
         public Builder javaTypeName(String javaTypeName) {
             this.javaTypeName = javaTypeName;
             this.__explicitlySet__.add("javaTypeName");
@@ -164,6 +171,10 @@ public final class JavaType extends BaseType {
     @com.fasterxml.jackson.annotation.JsonProperty("javaTypeName")
     private final String javaTypeName;
 
+    /**
+     * The java type name.
+     * @return the value
+     **/
     public String getJavaTypeName() {
         return javaTypeName;
     }

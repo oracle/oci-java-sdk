@@ -89,28 +89,51 @@ public final class OrchestrationListingPackage extends ListingPackage {
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-
+        /**
+         * Link to the orchestration resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
         private String resourceLink;
 
+        /**
+         * Link to the orchestration resource.
+         * @param resourceLink the value to set
+         * @return this builder
+         **/
         public Builder resourceLink(String resourceLink) {
             this.resourceLink = resourceLink;
             this.__explicitlySet__.add("resourceLink");
             return this;
         }
-
+        /**
+         * List of variables for the orchestration resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.List<OrchestrationVariable> variables;
 
+        /**
+         * List of variables for the orchestration resource.
+         * @param variables the value to set
+         * @return this builder
+         **/
         public Builder variables(java.util.List<OrchestrationVariable> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
             return this;
         }
-
+        /**
+         * The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<Region> regions;
 
+        /**
+         * The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+         *
+         * @param regions the value to set
+         * @return this builder
+         **/
         public Builder regions(java.util.List<Region> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
@@ -191,6 +214,10 @@ public final class OrchestrationListingPackage extends ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
     private final String resourceLink;
 
+    /**
+     * Link to the orchestration resource.
+     * @return the value
+     **/
     public String getResourceLink() {
         return resourceLink;
     }
@@ -201,6 +228,10 @@ public final class OrchestrationListingPackage extends ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.List<OrchestrationVariable> variables;
 
+    /**
+     * List of variables for the orchestration resource.
+     * @return the value
+     **/
     public java.util.List<OrchestrationVariable> getVariables() {
         return variables;
     }
@@ -212,6 +243,11 @@ public final class OrchestrationListingPackage extends ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<Region> regions;
 
+    /**
+     * The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     *
+     * @return the value
+     **/
     public java.util.List<Region> getRegions() {
         return regions;
     }

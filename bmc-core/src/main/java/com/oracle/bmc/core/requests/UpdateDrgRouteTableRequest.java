@@ -18,6 +18,9 @@ public class UpdateDrgRouteTableRequest
      */
     private String drgRouteTableId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+     */
     public String getDrgRouteTableId() {
         return drgRouteTableId;
     }
@@ -26,6 +29,9 @@ public class UpdateDrgRouteTableRequest
      */
     private com.oracle.bmc.core.model.UpdateDrgRouteTableDetails updateDrgRouteTableDetails;
 
+    /**
+     * Details object used to updating a DRG route table.
+     */
     public com.oracle.bmc.core.model.UpdateDrgRouteTableDetails getUpdateDrgRouteTableDetails() {
         return updateDrgRouteTableDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateDrgRouteTableRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,10 +71,14 @@ public class UpdateDrgRouteTableRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         */
         private String drgRouteTableId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
+         * @param drgRouteTableId the value to set
          * @return this builder instance
          */
         public Builder drgRouteTableId(String drgRouteTableId) {
@@ -70,11 +86,15 @@ public class UpdateDrgRouteTableRequest
             return this;
         }
 
+        /**
+         * Details object used to updating a DRG route table.
+         */
         private com.oracle.bmc.core.model.UpdateDrgRouteTableDetails updateDrgRouteTableDetails =
                 null;
 
         /**
          * Details object used to updating a DRG route table.
+         * @param updateDrgRouteTableDetails the value to set
          * @return this builder instance
          */
         public Builder updateDrgRouteTableDetails(
@@ -83,6 +103,12 @@ public class UpdateDrgRouteTableRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +116,7 @@ public class UpdateDrgRouteTableRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +207,8 @@ public class UpdateDrgRouteTableRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +217,10 @@ public class UpdateDrgRouteTableRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

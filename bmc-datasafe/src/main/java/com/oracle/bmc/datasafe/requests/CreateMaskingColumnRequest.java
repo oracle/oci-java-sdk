@@ -18,6 +18,9 @@ public class CreateMaskingColumnRequest
      */
     private com.oracle.bmc.datasafe.model.CreateMaskingColumnDetails createMaskingColumnDetails;
 
+    /**
+     * Details to create a new masking column.
+     */
     public com.oracle.bmc.datasafe.model.CreateMaskingColumnDetails
             getCreateMaskingColumnDetails() {
         return createMaskingColumnDetails;
@@ -27,6 +30,9 @@ public class CreateMaskingColumnRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -39,6 +45,13 @@ public class CreateMaskingColumnRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -47,6 +60,9 @@ public class CreateMaskingColumnRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,11 +85,15 @@ public class CreateMaskingColumnRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details to create a new masking column.
+         */
         private com.oracle.bmc.datasafe.model.CreateMaskingColumnDetails
                 createMaskingColumnDetails = null;
 
         /**
          * Details to create a new masking column.
+         * @param createMaskingColumnDetails the value to set
          * @return this builder instance
          */
         public Builder createMaskingColumnDetails(
@@ -83,10 +103,14 @@ public class CreateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -94,6 +118,13 @@ public class CreateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -102,6 +133,7 @@ public class CreateMaskingColumnRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -109,10 +141,14 @@ public class CreateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +241,8 @@ public class CreateMaskingColumnRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +252,10 @@ public class CreateMaskingColumnRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

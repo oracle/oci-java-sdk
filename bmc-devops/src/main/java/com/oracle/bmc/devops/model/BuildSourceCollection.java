@@ -29,9 +29,17 @@ public final class BuildSourceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<BuildSource> items;
 
+        /**
+         * Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<BuildSource> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class BuildSourceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<BuildSource> items;
 
+    /**
+     * Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
+     * @return the value
+     **/
     public java.util.List<BuildSource> getItems() {
         return items;
     }

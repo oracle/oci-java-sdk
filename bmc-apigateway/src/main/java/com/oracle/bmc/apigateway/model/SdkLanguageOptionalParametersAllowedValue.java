@@ -30,18 +30,37 @@ public final class SdkLanguageOptionalParametersAllowedValue {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the allowed value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the allowed value.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Description for the allowed value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description for the allowed value.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -85,6 +104,11 @@ public final class SdkLanguageOptionalParametersAllowedValue {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the allowed value.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -96,6 +120,11 @@ public final class SdkLanguageOptionalParametersAllowedValue {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description for the allowed value.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

@@ -15,6 +15,12 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcNextPage;
 
+    /**
+     * When you are paging through a list, if this header appears in the response,
+     * then there might be additional items still to get. Include this value as the
+     * {@code page} query parameter for the subsequent GET request.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +50,11 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
      */
     private Integer opcTotalItems;
 
+    /**
+     * The total number of results that match the query.
+     *
+     * @return the value
+     */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
@@ -46,6 +64,10 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.oda.model.SkillParameterCollection skillParameterCollection;
 
+    /**
+     * The returned SkillParameterCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.SkillParameterCollection getSkillParameterCollection() {
         return skillParameterCollection;
     }
@@ -78,29 +100,73 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The total number of results that match the query.
+         *
+         */
         private Integer opcTotalItems;
 
+        /**
+         * The total number of results that match the query.
+         *
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
         public Builder opcTotalItems(Integer opcTotalItems) {
             this.opcTotalItems = opcTotalItems;
             return this;
         }
 
+        /**
+         * The returned SkillParameterCollection instance.
+         */
         private com.oracle.bmc.oda.model.SkillParameterCollection skillParameterCollection;
 
+        /**
+         * The returned SkillParameterCollection instance.
+         * @param skillParameterCollection the value to set
+         * @return this builder
+         */
         public Builder skillParameterCollection(
                 com.oracle.bmc.oda.model.SkillParameterCollection skillParameterCollection) {
             this.skillParameterCollection = skillParameterCollection;
@@ -121,6 +187,10 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListSkillParametersResponse build() {
             return new ListSkillParametersResponse(
                     __httpStatusCode__,
@@ -131,6 +201,10 @@ public class ListSkillParametersResponse extends com.oracle.bmc.responses.BmcRes
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

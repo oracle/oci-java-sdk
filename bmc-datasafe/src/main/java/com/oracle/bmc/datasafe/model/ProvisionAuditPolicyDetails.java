@@ -35,18 +35,33 @@ public final class ProvisionAuditPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountExcluded")
         private Boolean isDataSafeServiceAccountExcluded;
 
+        /**
+         * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
+         * @param isDataSafeServiceAccountExcluded the value to set
+         * @return this builder
+         **/
         public Builder isDataSafeServiceAccountExcluded(Boolean isDataSafeServiceAccountExcluded) {
             this.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
             this.__explicitlySet__.add("isDataSafeServiceAccountExcluded");
             return this;
         }
-
+        /**
+         * The audit policy details for provisioning.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionAuditConditions")
         private java.util.List<ProvisionAuditConditions> provisionAuditConditions;
 
+        /**
+         * The audit policy details for provisioning.
+         * @param provisionAuditConditions the value to set
+         * @return this builder
+         **/
         public Builder provisionAuditConditions(
                 java.util.List<ProvisionAuditConditions> provisionAuditConditions) {
             this.provisionAuditConditions = provisionAuditConditions;
@@ -93,6 +108,10 @@ public final class ProvisionAuditPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountExcluded")
     private final Boolean isDataSafeServiceAccountExcluded;
 
+    /**
+     * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
+     * @return the value
+     **/
     public Boolean getIsDataSafeServiceAccountExcluded() {
         return isDataSafeServiceAccountExcluded;
     }
@@ -103,6 +122,10 @@ public final class ProvisionAuditPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("provisionAuditConditions")
     private final java.util.List<ProvisionAuditConditions> provisionAuditConditions;
 
+    /**
+     * The audit policy details for provisioning.
+     * @return the value
+     **/
     public java.util.List<ProvisionAuditConditions> getProvisionAuditConditions() {
         return provisionAuditConditions;
     }

@@ -17,6 +17,9 @@ public class ListAutonomousDatabasesRequest
      */
     private String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListAutonomousDatabasesRequest
      */
     private String autonomousContainerDatabaseId;
 
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
     }
@@ -33,6 +39,9 @@ public class ListAutonomousDatabasesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -41,6 +50,9 @@ public class ListAutonomousDatabasesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -91,6 +103,12 @@ public class ListAutonomousDatabasesRequest
         }
     };
 
+    /**
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * <p>
+     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -135,6 +153,9 @@ public class ListAutonomousDatabasesRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -144,6 +165,9 @@ public class ListAutonomousDatabasesRequest
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.InfrastructureType
             infrastructureType;
 
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.InfrastructureType
             getInfrastructureType() {
         return infrastructureType;
@@ -153,6 +177,9 @@ public class ListAutonomousDatabasesRequest
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -162,6 +189,9 @@ public class ListAutonomousDatabasesRequest
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
+    /**
+     * A filter to return only autonomous database resources that match the specified workload type.
+     */
     public com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload getDbWorkload() {
         return dbWorkload;
     }
@@ -170,6 +200,9 @@ public class ListAutonomousDatabasesRequest
      */
     private String dbVersion;
 
+    /**
+     * A filter to return only autonomous database resources that match the specified dbVersion.
+     */
     public String getDbVersion() {
         return dbVersion;
     }
@@ -180,6 +213,11 @@ public class ListAutonomousDatabasesRequest
      */
     private Boolean isFreeTier;
 
+    /**
+     * Filter on the value of the resource's 'isFreeTier' property. A value of {@code true} returns only Always Free resources.
+     * A value of {@code false} excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     *
+     */
     public Boolean getIsFreeTier() {
         return isFreeTier;
     }
@@ -188,6 +226,9 @@ public class ListAutonomousDatabasesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -197,6 +238,10 @@ public class ListAutonomousDatabasesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -207,6 +252,11 @@ public class ListAutonomousDatabasesRequest
      */
     private Boolean isRefreshableClone;
 
+    /**
+     * Filter on the value of the resource's 'isRefreshableClone' property. A value of {@code true} returns only refreshable clones.
+     * A value of {@code false} excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     *
+     */
     public Boolean getIsRefreshableClone() {
         return isRefreshableClone;
     }
@@ -215,6 +265,9 @@ public class ListAutonomousDatabasesRequest
      */
     private Boolean isDataGuardEnabled;
 
+    /**
+     * A filter to return only resources that have Data Guard enabled.
+     */
     public Boolean getIsDataGuardEnabled() {
         return isDataGuardEnabled;
     }
@@ -226,10 +279,14 @@ public class ListAutonomousDatabasesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String compartmentId = null;
 
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -237,10 +294,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String autonomousContainerDatabaseId = null;
 
         /**
          * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param autonomousContainerDatabaseId the value to set
          * @return this builder instance
          */
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
@@ -248,10 +309,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -259,10 +324,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -270,6 +339,12 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         * <p>
+         **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -277,6 +352,7 @@ public class ListAutonomousDatabasesRequest
          * <p>
          **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -284,10 +360,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -295,11 +375,15 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given Infrastructure Type.
+         */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.InfrastructureType
                 infrastructureType = null;
 
         /**
          * A filter to return only resources that match the given Infrastructure Type.
+         * @param infrastructureType the value to set
          * @return this builder instance
          */
         public Builder infrastructureType(
@@ -309,11 +393,15 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -323,11 +411,15 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only autonomous database resources that match the specified workload type.
+         */
         private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload =
                 null;
 
         /**
          * A filter to return only autonomous database resources that match the specified workload type.
+         * @param dbWorkload the value to set
          * @return this builder instance
          */
         public Builder dbWorkload(
@@ -336,10 +428,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only autonomous database resources that match the specified dbVersion.
+         */
         private String dbVersion = null;
 
         /**
          * A filter to return only autonomous database resources that match the specified dbVersion.
+         * @param dbVersion the value to set
          * @return this builder instance
          */
         public Builder dbVersion(String dbVersion) {
@@ -347,12 +443,18 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * Filter on the value of the resource's 'isFreeTier' property. A value of {@code true} returns only Always Free resources.
+         * A value of {@code false} excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+         *
+         */
         private Boolean isFreeTier = null;
 
         /**
          * Filter on the value of the resource's 'isFreeTier' property. A value of {@code true} returns only Always Free resources.
          * A value of {@code false} excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
          *
+         * @param isFreeTier the value to set
          * @return this builder instance
          */
         public Builder isFreeTier(Boolean isFreeTier) {
@@ -360,10 +462,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -371,11 +477,16 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -383,12 +494,18 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * Filter on the value of the resource's 'isRefreshableClone' property. A value of {@code true} returns only refreshable clones.
+         * A value of {@code false} excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+         *
+         */
         private Boolean isRefreshableClone = null;
 
         /**
          * Filter on the value of the resource's 'isRefreshableClone' property. A value of {@code true} returns only refreshable clones.
          * A value of {@code false} excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
          *
+         * @param isRefreshableClone the value to set
          * @return this builder instance
          */
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
@@ -396,10 +513,14 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that have Data Guard enabled.
+         */
         private Boolean isDataGuardEnabled = null;
 
         /**
          * A filter to return only resources that have Data Guard enabled.
+         * @param isDataGuardEnabled the value to set
          * @return this builder instance
          */
         public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
@@ -503,7 +624,8 @@ public class ListAutonomousDatabasesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -524,6 +646,10 @@ public class ListAutonomousDatabasesRequest
                 .isDataGuardEnabled(isDataGuardEnabled);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

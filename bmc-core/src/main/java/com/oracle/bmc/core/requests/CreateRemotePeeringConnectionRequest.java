@@ -19,6 +19,9 @@ public class CreateRemotePeeringConnectionRequest
     private com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails
             createRemotePeeringConnectionDetails;
 
+    /**
+     * Request to create peering connection to remote region
+     */
     public com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails
             getCreateRemotePeeringConnectionDetails() {
         return createRemotePeeringConnectionDetails;
@@ -33,6 +36,14 @@ public class CreateRemotePeeringConnectionRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -55,11 +66,15 @@ public class CreateRemotePeeringConnectionRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create peering connection to remote region
+         */
         private com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails
                 createRemotePeeringConnectionDetails = null;
 
         /**
          * Request to create peering connection to remote region
+         * @param createRemotePeeringConnectionDetails the value to set
          * @return this builder instance
          */
         public Builder createRemotePeeringConnectionDetails(
@@ -69,6 +84,14 @@ public class CreateRemotePeeringConnectionRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -78,6 +101,7 @@ public class CreateRemotePeeringConnectionRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -167,7 +191,8 @@ public class CreateRemotePeeringConnectionRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -175,6 +200,10 @@ public class CreateRemotePeeringConnectionRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

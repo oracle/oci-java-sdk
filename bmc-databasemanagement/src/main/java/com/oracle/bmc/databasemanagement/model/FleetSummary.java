@@ -32,19 +32,34 @@ public final class FleetSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of databases present in the fleet and their usage metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedMetrics")
         private java.util.List<FleetMetricSummaryDefinition> aggregatedMetrics;
 
+        /**
+         * A list of databases present in the fleet and their usage metrics.
+         * @param aggregatedMetrics the value to set
+         * @return this builder
+         **/
         public Builder aggregatedMetrics(
                 java.util.List<FleetMetricSummaryDefinition> aggregatedMetrics) {
             this.aggregatedMetrics = aggregatedMetrics;
             this.__explicitlySet__.add("aggregatedMetrics");
             return this;
         }
-
+        /**
+         * A list of the databases in the fleet, grouped by database type and subtype.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inventory")
         private java.util.List<FleetStatusByCategory> inventory;
 
+        /**
+         * A list of the databases in the fleet, grouped by database type and subtype.
+         * @param inventory the value to set
+         * @return this builder
+         **/
         public Builder inventory(java.util.List<FleetStatusByCategory> inventory) {
             this.inventory = inventory;
             this.__explicitlySet__.add("inventory");
@@ -87,6 +102,10 @@ public final class FleetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedMetrics")
     private final java.util.List<FleetMetricSummaryDefinition> aggregatedMetrics;
 
+    /**
+     * A list of databases present in the fleet and their usage metrics.
+     * @return the value
+     **/
     public java.util.List<FleetMetricSummaryDefinition> getAggregatedMetrics() {
         return aggregatedMetrics;
     }
@@ -97,6 +116,10 @@ public final class FleetSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("inventory")
     private final java.util.List<FleetStatusByCategory> inventory;
 
+    /**
+     * A list of the databases in the fleet, grouped by database type and subtype.
+     * @return the value
+     **/
     public java.util.List<FleetStatusByCategory> getInventory() {
         return inventory;
     }

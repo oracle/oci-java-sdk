@@ -16,6 +16,9 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String eventFingerprint;
 
+    /**
+     * Event fingerprint identifier
+     */
     public String getEventFingerprint() {
         return eventFingerprint;
     }
@@ -24,6 +27,9 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -32,6 +38,9 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,6 +49,9 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -92,6 +107,9 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -139,6 +157,10 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for id is descending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -149,6 +171,11 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date latestTimestampLessThan;
 
+    /**
+     * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
+     * Example: 2017-07-14T02:40:00.000Z
+     *
+     */
     public java.util.Date getLatestTimestampLessThan() {
         return latestTimestampLessThan;
     }
@@ -159,6 +186,11 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.Date latestTimestampGreaterThanOrEqualTo;
 
+    /**
+     * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
+     * Example: 2017-07-14T02:40:00.000Z
+     *
+     */
     public java.util.Date getLatestTimestampGreaterThanOrEqualTo() {
         return latestTimestampGreaterThanOrEqualTo;
     }
@@ -170,10 +202,14 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Event fingerprint identifier
+         */
         private String eventFingerprint = null;
 
         /**
          * Event fingerprint identifier
+         * @param eventFingerprint the value to set
          * @return this builder instance
          */
         public Builder eventFingerprint(String eventFingerprint) {
@@ -181,10 +217,14 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -192,10 +232,14 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -203,10 +247,14 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -214,10 +262,14 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -225,10 +277,14 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -236,11 +292,16 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for id is descending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for id is descending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -248,12 +309,18 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         */
         private java.util.Date latestTimestampLessThan = null;
 
         /**
          * filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format
          * Example: 2017-07-14T02:40:00.000Z
          *
+         * @param latestTimestampLessThan the value to set
          * @return this builder instance
          */
         public Builder latestTimestampLessThan(java.util.Date latestTimestampLessThan) {
@@ -261,12 +328,18 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
+         * Example: 2017-07-14T02:40:00.000Z
+         *
+         */
         private java.util.Date latestTimestampGreaterThanOrEqualTo = null;
 
         /**
          * filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format
          * Example: 2017-07-14T02:40:00.000Z
          *
+         * @param latestTimestampGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder latestTimestampGreaterThanOrEqualTo(
@@ -359,7 +432,8 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -374,6 +448,10 @@ public class ListRelatedEventsRequest extends com.oracle.bmc.requests.BmcRequest
                 .latestTimestampGreaterThanOrEqualTo(latestTimestampGreaterThanOrEqualTo);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

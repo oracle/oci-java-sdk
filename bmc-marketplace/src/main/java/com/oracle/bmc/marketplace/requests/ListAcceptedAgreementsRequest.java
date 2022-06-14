@@ -17,6 +17,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String displayName;
 
+    /**
+     * The display name of the resource.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -33,6 +39,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String listingId;
 
+    /**
+     * The unique identifier for the listing.
+     */
     public String getListingId() {
         return listingId;
     }
@@ -41,6 +50,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String packageVersion;
 
+    /**
+     * The version of the package. Package versions are unique within a listing.
+     */
     public String getPackageVersion() {
         return packageVersion;
     }
@@ -49,6 +61,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String acceptedAgreementId;
 
+    /**
+     * The unique identifier for the accepted terms of use agreement.
+     */
     public String getAcceptedAgreementId() {
         return acceptedAgreementId;
     }
@@ -59,6 +74,11 @@ public class ListAcceptedAgreementsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -108,6 +128,12 @@ public class ListAcceptedAgreementsRequest
         }
     };
 
+    /**
+     * The field to use to sort listed results. You can only specify one field to sort by.
+     * {@code TIMEACCEPTED} displays results in descending order by default. You can change your
+     * preference by specifying a different sort order.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -152,6 +178,9 @@ public class ListAcceptedAgreementsRequest
         }
     };
 
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -161,6 +190,10 @@ public class ListAcceptedAgreementsRequest
      */
     private Integer limit;
 
+    /**
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -169,6 +202,9 @@ public class ListAcceptedAgreementsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
@@ -180,10 +216,14 @@ public class ListAcceptedAgreementsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -191,10 +231,14 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The display name of the resource.
+         */
         private String displayName = null;
 
         /**
          * The display name of the resource.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -202,10 +246,14 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The unique identifier for the listing.
+         */
         private String listingId = null;
 
         /**
          * The unique identifier for the listing.
+         * @param listingId the value to set
          * @return this builder instance
          */
         public Builder listingId(String listingId) {
@@ -213,10 +261,14 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The version of the package. Package versions are unique within a listing.
+         */
         private String packageVersion = null;
 
         /**
          * The version of the package. Package versions are unique within a listing.
+         * @param packageVersion the value to set
          * @return this builder instance
          */
         public Builder packageVersion(String packageVersion) {
@@ -224,10 +276,14 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The unique identifier for the accepted terms of use agreement.
+         */
         private String acceptedAgreementId = null;
 
         /**
          * The unique identifier for the accepted terms of use agreement.
+         * @param acceptedAgreementId the value to set
          * @return this builder instance
          */
         public Builder acceptedAgreementId(String acceptedAgreementId) {
@@ -235,12 +291,18 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -248,6 +310,12 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The field to use to sort listed results. You can only specify one field to sort by.
+         * {@code TIMEACCEPTED} displays results in descending order by default. You can change your
+         * preference by specifying a different sort order.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -255,6 +323,7 @@ public class ListAcceptedAgreementsRequest
          * {@code TIMEACCEPTED} displays results in descending order by default. You can change your
          * preference by specifying a different sort order.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -262,10 +331,14 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either {@code ASC} or {@code DESC}.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -273,11 +346,16 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
+         */
         private Integer limit = null;
 
         /**
          * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -285,10 +363,14 @@ public class ListAcceptedAgreementsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -382,7 +464,8 @@ public class ListAcceptedAgreementsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -398,6 +481,10 @@ public class ListAcceptedAgreementsRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

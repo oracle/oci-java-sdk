@@ -14,6 +14,11 @@ public class UpdateNetworkSecurityGroupResponse extends com.oracle.bmc.responses
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class UpdateNetworkSecurityGroupResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class UpdateNetworkSecurityGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup;
 
+    /**
+     * The returned NetworkSecurityGroup instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.NetworkSecurityGroup getNetworkSecurityGroup() {
         return networkSecurityGroup;
     }
@@ -63,22 +78,52 @@ public class UpdateNetworkSecurityGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned NetworkSecurityGroup instance.
+         */
         private com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup;
 
+        /**
+         * The returned NetworkSecurityGroup instance.
+         * @param networkSecurityGroup the value to set
+         * @return this builder
+         */
         public Builder networkSecurityGroup(
                 com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup) {
             this.networkSecurityGroup = networkSecurityGroup;
@@ -98,12 +143,20 @@ public class UpdateNetworkSecurityGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateNetworkSecurityGroupResponse build() {
             return new UpdateNetworkSecurityGroupResponse(
                     __httpStatusCode__, etag, opcRequestId, networkSecurityGroup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -32,9 +32,17 @@ public final class UpdateTicketDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resource")
         private Object resource;
 
+        /**
+         * The list of resources.
+         * @param resource the value to set
+         * @return this builder
+         **/
         public Builder resource(Object resource) {
             this.resource = resource;
             this.__explicitlySet__.add("resource");
@@ -76,6 +84,10 @@ public final class UpdateTicketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
     private final Object resource;
 
+    /**
+     * The list of resources.
+     * @return the value
+     **/
     public Object getResource() {
         return resource;
     }

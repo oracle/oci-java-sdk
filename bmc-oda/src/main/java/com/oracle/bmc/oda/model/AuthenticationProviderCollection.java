@@ -29,9 +29,17 @@ public final class AuthenticationProviderCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Authentication Provider summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AuthenticationProviderSummary> items;
 
+        /**
+         * The Authentication Provider summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AuthenticationProviderSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class AuthenticationProviderCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AuthenticationProviderSummary> items;
 
+    /**
+     * The Authentication Provider summaries.
+     * @return the value
+     **/
     public java.util.List<AuthenticationProviderSummary> getItems() {
         return items;
     }

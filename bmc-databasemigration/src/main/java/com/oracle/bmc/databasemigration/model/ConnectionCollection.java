@@ -30,9 +30,19 @@ public final class ConnectionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Items in collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConnectionSummary> items;
 
+        /**
+         * Items in collection.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ConnectionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +85,11 @@ public final class ConnectionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConnectionSummary> items;
 
+    /**
+     * Items in collection.
+     *
+     * @return the value
+     **/
     public java.util.List<ConnectionSummary> getItems() {
         return items;
     }

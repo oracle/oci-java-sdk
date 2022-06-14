@@ -15,6 +15,12 @@ public class GetTablespaceResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetTablespaceResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.databasemanagement.model.Tablespace tablespace;
 
+    /**
+     * The returned Tablespace instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.Tablespace getTablespace() {
         return tablespace;
     }
@@ -46,15 +56,35 @@ public class GetTablespaceResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Tablespace instance.
+         */
         private com.oracle.bmc.databasemanagement.model.Tablespace tablespace;
 
+        /**
+         * The returned Tablespace instance.
+         * @param tablespace the value to set
+         * @return this builder
+         */
         public Builder tablespace(com.oracle.bmc.databasemanagement.model.Tablespace tablespace) {
             this.tablespace = tablespace;
             return this;
@@ -72,11 +102,19 @@ public class GetTablespaceResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetTablespaceResponse build() {
             return new GetTablespaceResponse(__httpStatusCode__, opcRequestId, tablespace);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

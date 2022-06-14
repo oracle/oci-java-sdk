@@ -31,18 +31,33 @@ public final class ResponseCacheRespServer {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Hostname or IP address (IPv4 only) where the cache store is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
+        /**
+         * Hostname or IP address (IPv4 only) where the cache store is running.
+         * @param host the value to set
+         * @return this builder
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-
+        /**
+         * The port the cache store is exposed on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The port the cache store is exposed on.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -84,6 +99,10 @@ public final class ResponseCacheRespServer {
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
+    /**
+     * Hostname or IP address (IPv4 only) where the cache store is running.
+     * @return the value
+     **/
     public String getHost() {
         return host;
     }
@@ -94,6 +113,10 @@ public final class ResponseCacheRespServer {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The port the cache store is exposed on.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }

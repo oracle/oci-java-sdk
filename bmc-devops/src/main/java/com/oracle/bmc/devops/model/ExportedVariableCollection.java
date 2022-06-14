@@ -30,9 +30,17 @@ public final class ExportedVariableCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of exported variables.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ExportedVariable> items;
 
+        /**
+         * List of exported variables.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ExportedVariable> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class ExportedVariableCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ExportedVariable> items;
 
+    /**
+     * List of exported variables.
+     * @return the value
+     **/
     public java.util.List<ExportedVariable> getItems() {
         return items;
     }

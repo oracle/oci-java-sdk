@@ -25,6 +25,10 @@ package com.oracle.bmc.databasetools.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ValidateDatabaseToolsConnectionOracleDatabaseResult.class,
         name = "ORACLE_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ValidateDatabaseToolsConnectionMySqlResult.class,
+        name = "MYSQL"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -41,11 +45,15 @@ public class ValidateDatabaseToolsConnectionResult {
     }
 
     /**
-     * A short code that defines the result of the validation, meant for programmatic parsing.
+     * A short code that defines the result of the validation, meant for programmatic parsing. The value OK indicates that the validation was successful.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * A short code that defines the result of the validation, meant for programmatic parsing. The value OK indicates that the validation was successful.
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -56,6 +64,10 @@ public class ValidateDatabaseToolsConnectionResult {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human-readable message that describes the result of the validation.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -66,6 +78,10 @@ public class ValidateDatabaseToolsConnectionResult {
     @com.fasterxml.jackson.annotation.JsonProperty("cause")
     private final String cause;
 
+    /**
+     * A human-readable message that describes possible causes for the validation error.
+     * @return the value
+     **/
     public String getCause() {
         return cause;
     }
@@ -76,6 +92,10 @@ public class ValidateDatabaseToolsConnectionResult {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final String action;
 
+    /**
+     * A human-readable message that suggests a remedial action to resolve the validation error.
+     * @return the value
+     **/
     public String getAction() {
         return action;
     }

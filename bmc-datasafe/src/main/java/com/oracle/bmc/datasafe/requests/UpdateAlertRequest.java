@@ -18,6 +18,9 @@ public class UpdateAlertRequest
      */
     private String alertId;
 
+    /**
+     * The OCID of alert.
+     */
     public String getAlertId() {
         return alertId;
     }
@@ -26,6 +29,9 @@ public class UpdateAlertRequest
      */
     private com.oracle.bmc.datasafe.model.UpdateAlertDetails updateAlertDetails;
 
+    /**
+     * The details used to update alert status.
+     */
     public com.oracle.bmc.datasafe.model.UpdateAlertDetails getUpdateAlertDetails() {
         return updateAlertDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateAlertRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class UpdateAlertRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -68,10 +85,14 @@ public class UpdateAlertRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of alert.
+         */
         private String alertId = null;
 
         /**
          * The OCID of alert.
+         * @param alertId the value to set
          * @return this builder instance
          */
         public Builder alertId(String alertId) {
@@ -79,10 +100,14 @@ public class UpdateAlertRequest
             return this;
         }
 
+        /**
+         * The details used to update alert status.
+         */
         private com.oracle.bmc.datasafe.model.UpdateAlertDetails updateAlertDetails = null;
 
         /**
          * The details used to update alert status.
+         * @param updateAlertDetails the value to set
          * @return this builder instance
          */
         public Builder updateAlertDetails(
@@ -91,6 +116,14 @@ public class UpdateAlertRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -100,6 +133,7 @@ public class UpdateAlertRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -107,10 +141,14 @@ public class UpdateAlertRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -203,7 +241,8 @@ public class UpdateAlertRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -213,6 +252,10 @@ public class UpdateAlertRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

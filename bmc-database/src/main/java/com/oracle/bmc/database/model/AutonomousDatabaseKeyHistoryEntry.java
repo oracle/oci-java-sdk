@@ -34,36 +34,67 @@ public final class AutonomousDatabaseKeyHistoryEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param vaultId the value to set
+         * @return this builder
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-
+        /**
+         * The date and time the kms key activated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeActivated")
         private java.util.Date timeActivated;
 
+        /**
+         * The date and time the kms key activated.
+         * @param timeActivated the value to set
+         * @return this builder
+         **/
         public Builder timeActivated(java.util.Date timeActivated) {
             this.timeActivated = timeActivated;
             this.__explicitlySet__.add("timeActivated");
@@ -111,6 +142,10 @@ public final class AutonomousDatabaseKeyHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -122,6 +157,11 @@ public final class AutonomousDatabaseKeyHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     * @return the value
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -132,6 +172,10 @@ public final class AutonomousDatabaseKeyHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -142,6 +186,10 @@ public final class AutonomousDatabaseKeyHistoryEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timeActivated")
     private final java.util.Date timeActivated;
 
+    /**
+     * The date and time the kms key activated.
+     * @return the value
+     **/
     public java.util.Date getTimeActivated() {
         return timeActivated;
     }

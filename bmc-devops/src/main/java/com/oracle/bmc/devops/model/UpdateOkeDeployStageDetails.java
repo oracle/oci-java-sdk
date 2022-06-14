@@ -73,29 +73,50 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Kubernetes cluster environment OCID for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
         private String okeClusterDeployEnvironmentId;
 
+        /**
+         * Kubernetes cluster environment OCID for deployment.
+         * @param okeClusterDeployEnvironmentId the value to set
+         * @return this builder
+         **/
         public Builder okeClusterDeployEnvironmentId(String okeClusterDeployEnvironmentId) {
             this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             this.__explicitlySet__.add("okeClusterDeployEnvironmentId");
             return this;
         }
-
+        /**
+         * List of Kubernetes manifest artifact OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
         private java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+        /**
+         * List of Kubernetes manifest artifact OCIDs.
+         * @param kubernetesManifestDeployArtifactIds the value to set
+         * @return this builder
+         **/
         public Builder kubernetesManifestDeployArtifactIds(
                 java.util.List<String> kubernetesManifestDeployArtifactIds) {
             this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             this.__explicitlySet__.add("kubernetesManifestDeployArtifactIds");
             return this;
         }
-
+        /**
+         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -190,6 +211,10 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
     private final String okeClusterDeployEnvironmentId;
 
+    /**
+     * Kubernetes cluster environment OCID for deployment.
+     * @return the value
+     **/
     public String getOkeClusterDeployEnvironmentId() {
         return okeClusterDeployEnvironmentId;
     }
@@ -200,6 +225,10 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     private final java.util.List<String> kubernetesManifestDeployArtifactIds;
 
+    /**
+     * List of Kubernetes manifest artifact OCIDs.
+     * @return the value
+     **/
     public java.util.List<String> getKubernetesManifestDeployArtifactIds() {
         return kubernetesManifestDeployArtifactIds;
     }
@@ -210,6 +239,10 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }

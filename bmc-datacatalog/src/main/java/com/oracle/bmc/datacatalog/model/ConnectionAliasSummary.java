@@ -30,18 +30,39 @@ public final class ConnectionAliasSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
         private String aliasName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param aliasName the value to set
+         * @return this builder
+         **/
         public Builder aliasName(String aliasName) {
             this.aliasName = aliasName;
             this.__explicitlySet__.add("aliasName");
             return this;
         }
-
+        /**
+         * The description about the database alias parsed from the file metadata.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aliasDetails")
         private String aliasDetails;
 
+        /**
+         * The description about the database alias parsed from the file metadata.
+         *
+         * @param aliasDetails the value to set
+         * @return this builder
+         **/
         public Builder aliasDetails(String aliasDetails) {
             this.aliasDetails = aliasDetails;
             this.__explicitlySet__.add("aliasDetails");
@@ -86,6 +107,12 @@ public final class ConnectionAliasSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
     private final String aliasName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getAliasName() {
         return aliasName;
     }
@@ -97,6 +124,11 @@ public final class ConnectionAliasSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("aliasDetails")
     private final String aliasDetails;
 
+    /**
+     * The description about the database alias parsed from the file metadata.
+     *
+     * @return the value
+     **/
     public String getAliasDetails() {
         return aliasDetails;
     }

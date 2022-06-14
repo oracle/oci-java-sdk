@@ -29,9 +29,17 @@ public final class ManagedInstanceUsageCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of managed instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagedInstanceUsage> items;
 
+        /**
+         * A list of managed instances.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ManagedInstanceUsage> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ManagedInstanceUsageCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagedInstanceUsage> items;
 
+    /**
+     * A list of managed instances.
+     * @return the value
+     **/
     public java.util.List<ManagedInstanceUsage> getItems() {
         return items;
     }

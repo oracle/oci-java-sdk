@@ -20,6 +20,11 @@ public class ImportStandardTagsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +38,14 @@ public class ImportStandardTagsRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -41,6 +54,9 @@ public class ImportStandardTagsRequest
      */
     private com.oracle.bmc.identity.model.ImportStandardTagsDetails importStandardTagsDetails;
 
+    /**
+     * The request object for creating or updating standard tag namespace.
+     */
     public com.oracle.bmc.identity.model.ImportStandardTagsDetails getImportStandardTagsDetails() {
         return importStandardTagsDetails;
     }
@@ -63,12 +79,18 @@ public class ImportStandardTagsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -76,6 +98,14 @@ public class ImportStandardTagsRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -85,6 +115,7 @@ public class ImportStandardTagsRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -92,11 +123,15 @@ public class ImportStandardTagsRequest
             return this;
         }
 
+        /**
+         * The request object for creating or updating standard tag namespace.
+         */
         private com.oracle.bmc.identity.model.ImportStandardTagsDetails importStandardTagsDetails =
                 null;
 
         /**
          * The request object for creating or updating standard tag namespace.
+         * @param importStandardTagsDetails the value to set
          * @return this builder instance
          */
         public Builder importStandardTagsDetails(
@@ -188,7 +223,8 @@ public class ImportStandardTagsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -197,6 +233,10 @@ public class ImportStandardTagsRequest
                 .importStandardTagsDetails(importStandardTagsDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

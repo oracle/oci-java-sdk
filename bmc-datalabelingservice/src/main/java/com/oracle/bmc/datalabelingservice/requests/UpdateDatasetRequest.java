@@ -18,6 +18,9 @@ public class UpdateDatasetRequest
      */
     private String datasetId;
 
+    /**
+     * Unique Dataset OCID
+     */
     public String getDatasetId() {
         return datasetId;
     }
@@ -26,6 +29,9 @@ public class UpdateDatasetRequest
      */
     private com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails updateDatasetDetails;
 
+    /**
+     * Details for updating a Dataset.
+     */
     public com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails getUpdateDatasetDetails() {
         return updateDatasetDetails;
     }
@@ -39,6 +45,14 @@ public class UpdateDatasetRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +61,9 @@ public class UpdateDatasetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +86,14 @@ public class UpdateDatasetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Dataset OCID
+         */
         private String datasetId = null;
 
         /**
          * Unique Dataset OCID
+         * @param datasetId the value to set
          * @return this builder instance
          */
         public Builder datasetId(String datasetId) {
@@ -80,11 +101,15 @@ public class UpdateDatasetRequest
             return this;
         }
 
+        /**
+         * Details for updating a Dataset.
+         */
         private com.oracle.bmc.datalabelingservice.model.UpdateDatasetDetails updateDatasetDetails =
                 null;
 
         /**
          * Details for updating a Dataset.
+         * @param updateDatasetDetails the value to set
          * @return this builder instance
          */
         public Builder updateDatasetDetails(
@@ -94,6 +119,14 @@ public class UpdateDatasetRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -103,6 +136,7 @@ public class UpdateDatasetRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -110,10 +144,14 @@ public class UpdateDatasetRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -206,7 +244,8 @@ public class UpdateDatasetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -216,6 +255,10 @@ public class UpdateDatasetRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

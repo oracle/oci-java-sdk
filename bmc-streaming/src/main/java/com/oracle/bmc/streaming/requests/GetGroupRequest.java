@@ -17,6 +17,10 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String streamId;
 
+    /**
+     * The OCID of the stream.
+     *
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -25,6 +29,9 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String groupName;
 
+    /**
+     * The name of the consumer group.
+     */
     public String getGroupName() {
         return groupName;
     }
@@ -35,6 +42,11 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,11 +57,16 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the stream.
+         *
+         */
         private String streamId = null;
 
         /**
          * The OCID of the stream.
          *
+         * @param streamId the value to set
          * @return this builder instance
          */
         public Builder streamId(String streamId) {
@@ -57,10 +74,14 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The name of the consumer group.
+         */
         private String groupName = null;
 
         /**
          * The name of the consumer group.
+         * @param groupName the value to set
          * @return this builder instance
          */
         public Builder groupName(String groupName) {
@@ -68,12 +89,18 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -153,12 +180,17 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().streamId(streamId).groupName(groupName).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

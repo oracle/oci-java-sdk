@@ -17,6 +17,10 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -25,6 +29,9 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String uploadReference;
 
+    /**
+     * Unique internal identifier to refer upload container.
+     */
     public String getUploadReference() {
         return uploadReference;
     }
@@ -33,6 +40,9 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String warningReference;
 
+    /**
+     * Unique internal identifier to refer upload warning.
+     */
     public String getWarningReference() {
         return warningReference;
     }
@@ -41,6 +51,9 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,11 +65,16 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -64,10 +82,14 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique internal identifier to refer upload container.
+         */
         private String uploadReference = null;
 
         /**
          * Unique internal identifier to refer upload container.
+         * @param uploadReference the value to set
          * @return this builder instance
          */
         public Builder uploadReference(String uploadReference) {
@@ -75,10 +97,14 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique internal identifier to refer upload warning.
+         */
         private String warningReference = null;
 
         /**
          * Unique internal identifier to refer upload warning.
+         * @param warningReference the value to set
          * @return this builder instance
          */
         public Builder warningReference(String warningReference) {
@@ -86,10 +112,14 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -171,7 +201,8 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -181,6 +212,10 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

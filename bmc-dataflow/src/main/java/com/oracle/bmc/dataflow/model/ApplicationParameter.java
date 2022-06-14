@@ -31,18 +31,43 @@ public final class ApplicationParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the parameter.  It must be a string of one or more word characters
+         * (a-z, A-Z, 0-9, _).
+         * Examples: "iterations", "input_file"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the parameter.  It must be a string of one or more word characters
+         * (a-z, A-Z, 0-9, _).
+         * Examples: "iterations", "input_file"
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The value of the parameter. It must be a string of 0 or more characters of any kind.
+         * Examples: "" (empty string), "10", "mydata.xml", "${x}"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The value of the parameter. It must be a string of 0 or more characters of any kind.
+         * Examples: "" (empty string), "10", "mydata.xml", "${x}"
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -87,6 +112,13 @@ public final class ApplicationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the parameter.  It must be a string of one or more word characters
+     * (a-z, A-Z, 0-9, _).
+     * Examples: "iterations", "input_file"
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -99,6 +131,12 @@ public final class ApplicationParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The value of the parameter. It must be a string of 0 or more characters of any kind.
+     * Examples: "" (empty string), "10", "mydata.xml", "${x}"
+     *
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

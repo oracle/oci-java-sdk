@@ -48,18 +48,33 @@ public final class ProtectionCapability {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of referenced protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique key of referenced protection capability.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * Version of referenced protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Integer version;
 
+        /**
+         * Version of referenced protection capability.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(Integer version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -74,28 +89,61 @@ public final class ProtectionCapability {
             this.__explicitlySet__.add("exclusions");
             return this;
         }
-
+        /**
+         * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+         * Only actions of type CHECK are allowed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionName")
         private String actionName;
 
+        /**
+         * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+         * Only actions of type CHECK are allowed.
+         *
+         * @param actionName the value to set
+         * @return this builder
+         **/
         public Builder actionName(String actionName) {
             this.actionName = actionName;
             this.__explicitlySet__.add("actionName");
             return this;
         }
-
+        /**
+         * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+         * must be reached in order for _this_ capability to trigger.
+         * This field is ignored for non-collaborative capabilities.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
         private Integer collaborativeActionThreshold;
 
+        /**
+         * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+         * must be reached in order for _this_ capability to trigger.
+         * This field is ignored for non-collaborative capabilities.
+         *
+         * @param collaborativeActionThreshold the value to set
+         * @return this builder
+         **/
         public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
             this.collaborativeActionThreshold = collaborativeActionThreshold;
             this.__explicitlySet__.add("collaborativeActionThreshold");
             return this;
         }
-
+        /**
+         * Explicit weight values to use for associated collaborative protection capabilities.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
         private java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights;
 
+        /**
+         * Explicit weight values to use for associated collaborative protection capabilities.
+         *
+         * @param collaborativeWeights the value to set
+         * @return this builder
+         **/
         public Builder collaborativeWeights(
                 java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights) {
             this.collaborativeWeights = collaborativeWeights;
@@ -151,6 +199,10 @@ public final class ProtectionCapability {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique key of referenced protection capability.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -161,6 +213,10 @@ public final class ProtectionCapability {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Integer version;
 
+    /**
+     * Version of referenced protection capability.
+     * @return the value
+     **/
     public Integer getVersion() {
         return version;
     }
@@ -180,6 +236,12 @@ public final class ProtectionCapability {
     @com.fasterxml.jackson.annotation.JsonProperty("actionName")
     private final String actionName;
 
+    /**
+     * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+     * Only actions of type CHECK are allowed.
+     *
+     * @return the value
+     **/
     public String getActionName() {
         return actionName;
     }
@@ -193,6 +255,13 @@ public final class ProtectionCapability {
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
     private final Integer collaborativeActionThreshold;
 
+    /**
+     * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+     * must be reached in order for _this_ capability to trigger.
+     * This field is ignored for non-collaborative capabilities.
+     *
+     * @return the value
+     **/
     public Integer getCollaborativeActionThreshold() {
         return collaborativeActionThreshold;
     }
@@ -204,6 +273,11 @@ public final class ProtectionCapability {
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
     private final java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights;
 
+    /**
+     * Explicit weight values to use for associated collaborative protection capabilities.
+     *
+     * @return the value
+     **/
     public java.util.List<CollaborativeCapabilityWeightOverride> getCollaborativeWeights() {
         return collaborativeWeights;
     }

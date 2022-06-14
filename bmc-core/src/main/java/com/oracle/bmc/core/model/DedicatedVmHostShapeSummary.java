@@ -31,18 +31,39 @@ public final class DedicatedVmHostShapeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape's availability domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The shape's availability domain.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
+         * {@link DedicatedVmHostShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
         private String dedicatedVmHostShape;
 
+        /**
+         * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
+         * {@link DedicatedVmHostShapes}.
+         *
+         * @param dedicatedVmHostShape the value to set
+         * @return this builder
+         **/
         public Builder dedicatedVmHostShape(String dedicatedVmHostShape) {
             this.dedicatedVmHostShape = dedicatedVmHostShape;
             this.__explicitlySet__.add("dedicatedVmHostShape");
@@ -88,6 +109,11 @@ public final class DedicatedVmHostShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The shape's availability domain.
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -100,6 +126,12 @@ public final class DedicatedVmHostShapeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
     private final String dedicatedVmHostShape;
 
+    /**
+     * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
+     * {@link DedicatedVmHostShapes}.
+     *
+     * @return the value
+     **/
     public String getDedicatedVmHostShape() {
         return dedicatedVmHostShape;
     }

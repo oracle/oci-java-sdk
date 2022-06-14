@@ -48,63 +48,141 @@ public final class SqlText {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Version
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
 
+        /**
+         * Version
+         * Example: {@code 1}
+         *
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(Float version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         * @param sqlIdentifier the value to set
+         * @return this builder
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-
+        /**
+         * Collection timestamp
+         * Example: {@code "2020-05-06T00:00:00.000Z"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
+        /**
+         * Collection timestamp
+         * Example: {@code "2020-05-06T00:00:00.000Z"}
+         *
+         * @param timeCollected the value to set
+         * @return this builder
+         **/
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-
+        /**
+         * SQL command
+         * Example: {@code "SELECT"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
         private String sqlCommand;
 
+        /**
+         * SQL command
+         * Example: {@code "SELECT"}
+         *
+         * @param sqlCommand the value to set
+         * @return this builder
+         **/
         public Builder sqlCommand(String sqlCommand) {
             this.sqlCommand = sqlCommand;
             this.__explicitlySet__.add("sqlCommand");
             return this;
         }
-
+        /**
+         * Exact matching signature
+         * Example: {@code "18067345456756876713"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exactMatchingSignature")
         private String exactMatchingSignature;
 
+        /**
+         * Exact matching signature
+         * Example: {@code "18067345456756876713"}
+         *
+         * @param exactMatchingSignature the value to set
+         * @return this builder
+         **/
         public Builder exactMatchingSignature(String exactMatchingSignature) {
             this.exactMatchingSignature = exactMatchingSignature;
             this.__explicitlySet__.add("exactMatchingSignature");
             return this;
         }
-
+        /**
+         * Force matching signature
+         * Example: {@code "18067345456756876713"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
         private String forceMatchingSignature;
 
+        /**
+         * Force matching signature
+         * Example: {@code "18067345456756876713"}
+         *
+         * @param forceMatchingSignature the value to set
+         * @return this builder
+         **/
         public Builder forceMatchingSignature(String forceMatchingSignature) {
             this.forceMatchingSignature = forceMatchingSignature;
             this.__explicitlySet__.add("forceMatchingSignature");
             return this;
         }
-
+        /**
+         * Full SQL Text
+         * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+         * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlFullText")
         private String sqlFullText;
 
+        /**
+         * Full SQL Text
+         * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+         * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
+         *
+         * @param sqlFullText the value to set
+         * @return this builder
+         **/
         public Builder sqlFullText(String sqlFullText) {
             this.sqlFullText = sqlFullText;
             this.__explicitlySet__.add("sqlFullText");
@@ -163,6 +241,12 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Float version;
 
+    /**
+     * Version
+     * Example: {@code 1}
+     *
+     * @return the value
+     **/
     public Float getVersion() {
         return version;
     }
@@ -174,6 +258,11 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     * @return the value
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -186,6 +275,12 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
+    /**
+     * Collection timestamp
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
@@ -198,6 +293,12 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
     private final String sqlCommand;
 
+    /**
+     * SQL command
+     * Example: {@code "SELECT"}
+     *
+     * @return the value
+     **/
     public String getSqlCommand() {
         return sqlCommand;
     }
@@ -210,6 +311,12 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("exactMatchingSignature")
     private final String exactMatchingSignature;
 
+    /**
+     * Exact matching signature
+     * Example: {@code "18067345456756876713"}
+     *
+     * @return the value
+     **/
     public String getExactMatchingSignature() {
         return exactMatchingSignature;
     }
@@ -222,6 +329,12 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
     private final String forceMatchingSignature;
 
+    /**
+     * Force matching signature
+     * Example: {@code "18067345456756876713"}
+     *
+     * @return the value
+     **/
     public String getForceMatchingSignature() {
         return forceMatchingSignature;
     }
@@ -235,6 +348,13 @@ public final class SqlText {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlFullText")
     private final String sqlFullText;
 
+    /**
+     * Full SQL Text
+     * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+     * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
+     *
+     * @return the value
+     **/
     public String getSqlFullText() {
         return sqlFullText;
     }

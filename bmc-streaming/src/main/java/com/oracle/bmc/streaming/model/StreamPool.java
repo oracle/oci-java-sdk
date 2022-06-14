@@ -66,54 +66,103 @@ public final class StreamPool {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the stream pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the stream pool.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Compartment OCID that the pool belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment OCID that the pool belongs to.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the stream pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the stream pool.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The current state of the stream pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the stream pool.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Any additional details about the current state of the stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
         private String lifecycleStateDetails;
 
+        /**
+         * Any additional details about the current state of the stream.
+         * @param lifecycleStateDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             this.lifecycleStateDetails = lifecycleStateDetails;
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
-
+        /**
+         * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -137,19 +186,43 @@ public final class StreamPool {
             this.__explicitlySet__.add("customEncryptionKey");
             return this;
         }
-
+        /**
+         * True if the stream pool is private, false otherwise.
+         * If the stream pool is private, the streams inside the stream pool can only be accessed from inside the associated subnetId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
+        /**
+         * True if the stream pool is private, false otherwise.
+         * If the stream pool is private, the streams inside the stream pool can only be accessed from inside the associated subnetId.
+         *
+         * @param isPrivate the value to set
+         * @return this builder
+         **/
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = isPrivate;
             this.__explicitlySet__.add("isPrivate");
             return this;
         }
-
+        /**
+         * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a {@link Stream} object).
+         * If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable.
+         * Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
         private String endpointFqdn;
 
+        /**
+         * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a {@link Stream} object).
+         * If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable.
+         * Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
+         *
+         * @param endpointFqdn the value to set
+         * @return this builder
+         **/
         public Builder endpointFqdn(String endpointFqdn) {
             this.endpointFqdn = endpointFqdn;
             this.__explicitlySet__.add("endpointFqdn");
@@ -164,19 +237,47 @@ public final class StreamPool {
             this.__explicitlySet__.add("privateEndpointSettings");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {"Operations": {"CostCenter": "42"}}'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {"Operations": {"CostCenter": "42"}}'
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -246,6 +347,10 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the stream pool.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -256,6 +361,10 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment OCID that the pool belongs to.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -266,6 +375,10 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the stream pool.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -328,6 +441,10 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the stream pool.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -338,6 +455,10 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
     private final String lifecycleStateDetails;
 
+    /**
+     * Any additional details about the current state of the stream.
+     * @return the value
+     **/
     public String getLifecycleStateDetails() {
         return lifecycleStateDetails;
     }
@@ -351,6 +472,13 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -377,6 +505,12 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     private final Boolean isPrivate;
 
+    /**
+     * True if the stream pool is private, false otherwise.
+     * If the stream pool is private, the streams inside the stream pool can only be accessed from inside the associated subnetId.
+     *
+     * @return the value
+     **/
     public Boolean getIsPrivate() {
         return isPrivate;
     }
@@ -390,6 +524,13 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
     private final String endpointFqdn;
 
+    /**
+     * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a {@link Stream} object).
+     * If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable.
+     * Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
+     *
+     * @return the value
+     **/
     public String getEndpointFqdn() {
         return endpointFqdn;
     }
@@ -411,6 +552,14 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -424,6 +573,13 @@ public final class StreamPool {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {"Operations": {"CostCenter": "42"}}'
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

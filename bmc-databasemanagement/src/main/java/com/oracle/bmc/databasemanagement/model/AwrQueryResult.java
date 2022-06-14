@@ -94,6 +94,10 @@ public class AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the query result.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -104,6 +108,10 @@ public class AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the query result.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -114,6 +122,10 @@ public class AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("queryKey")
     private final String queryKey;
 
+    /**
+     * The ID assigned to the query instance.
+     * @return the value
+     **/
     public String getQueryKey() {
         return queryKey;
     }
@@ -124,6 +136,10 @@ public class AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("dbQueryTimeInSecs")
     private final Double dbQueryTimeInSecs;
 
+    /**
+     * The time taken to query the database tier (in seconds).
+     * @return the value
+     **/
     public Double getDbQueryTimeInSecs() {
         return dbQueryTimeInSecs;
     }

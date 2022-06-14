@@ -28,18 +28,33 @@ public final class TriggerInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name for Trigger.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name for Trigger.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The list of actions that are to be performed for this Trigger
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<TriggerAction> actions;
 
+        /**
+         * The list of actions that are to be performed for this Trigger
+         * @param actions the value to set
+         * @return this builder
+         **/
         public Builder actions(java.util.List<TriggerAction> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
@@ -81,6 +96,10 @@ public final class TriggerInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name for Trigger.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -91,6 +110,10 @@ public final class TriggerInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<TriggerAction> actions;
 
+    /**
+     * The list of actions that are to be performed for this Trigger
+     * @return the value
+     **/
     public java.util.List<TriggerAction> getActions() {
         return actions;
     }

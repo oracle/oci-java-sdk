@@ -34,27 +34,49 @@ public final class ExadataInsightResourceCapacityTrendSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the resource.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Time series data for capacity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityData")
         private java.util.List<ExadataInsightResourceCapacityTrendAggregation> capacityData;
 
+        /**
+         * Time series data for capacity
+         * @param capacityData the value to set
+         * @return this builder
+         **/
         public Builder capacityData(
                 java.util.List<ExadataInsightResourceCapacityTrendAggregation> capacityData) {
             this.capacityData = capacityData;
@@ -99,6 +121,10 @@ public final class ExadataInsightResourceCapacityTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -109,6 +135,10 @@ public final class ExadataInsightResourceCapacityTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the resource.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -119,6 +149,10 @@ public final class ExadataInsightResourceCapacityTrendSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("capacityData")
     private final java.util.List<ExadataInsightResourceCapacityTrendAggregation> capacityData;
 
+    /**
+     * Time series data for capacity
+     * @return the value
+     **/
     public java.util.List<ExadataInsightResourceCapacityTrendAggregation> getCapacityData() {
         return capacityData;
     }

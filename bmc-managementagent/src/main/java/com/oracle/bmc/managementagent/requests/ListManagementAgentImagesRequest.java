@@ -17,6 +17,9 @@ public class ListManagementAgentImagesRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment to which a request will be scoped.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -30,6 +33,14 @@ public class ListManagementAgentImagesRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -38,6 +49,9 @@ public class ListManagementAgentImagesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +60,9 @@ public class ListManagementAgentImagesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -54,6 +71,9 @@ public class ListManagementAgentImagesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -98,6 +118,9 @@ public class ListManagementAgentImagesRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -144,6 +167,10 @@ public class ListManagementAgentImagesRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for platformType is descending. Default order for version is descending. If no value is specified platformType is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -152,6 +179,9 @@ public class ListManagementAgentImagesRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire platform name given.
+     */
     public String getName() {
         return name;
     }
@@ -160,6 +190,9 @@ public class ListManagementAgentImagesRequest
      */
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
+    /**
+     * Filter to return only Management Agents in the particular lifecycle state.
+     */
     public com.oracle.bmc.managementagent.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -168,6 +201,9 @@ public class ListManagementAgentImagesRequest
      */
     private com.oracle.bmc.managementagent.model.InstallTypes installType;
 
+    /**
+     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     */
     public com.oracle.bmc.managementagent.model.InstallTypes getInstallType() {
         return installType;
     }
@@ -179,10 +215,14 @@ public class ListManagementAgentImagesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment to which a request will be scoped.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -190,6 +230,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -199,6 +247,7 @@ public class ListManagementAgentImagesRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -206,10 +255,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -217,10 +270,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -228,10 +285,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -239,10 +300,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -250,11 +315,16 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for platformType is descending. Default order for version is descending. If no value is specified platformType is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for platformType is descending. Default order for version is descending. If no value is specified platformType is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -262,10 +332,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire platform name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire platform name given.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -273,10 +347,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * Filter to return only Management Agents in the particular lifecycle state.
+         */
         private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState = null;
 
         /**
          * Filter to return only Management Agents in the particular lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -285,10 +363,14 @@ public class ListManagementAgentImagesRequest
             return this;
         }
 
+        /**
+         * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         */
         private com.oracle.bmc.managementagent.model.InstallTypes installType = null;
 
         /**
          * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         * @param installType the value to set
          * @return this builder instance
          */
         public Builder installType(com.oracle.bmc.managementagent.model.InstallTypes installType) {
@@ -382,7 +464,8 @@ public class ListManagementAgentImagesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -398,6 +481,10 @@ public class ListManagementAgentImagesRequest
                 .installType(installType);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

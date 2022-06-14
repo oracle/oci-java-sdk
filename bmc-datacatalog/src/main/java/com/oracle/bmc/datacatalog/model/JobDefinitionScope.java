@@ -47,54 +47,97 @@ public final class JobDefinitionScope {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the folder or schema for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderName")
         private String folderName;
 
+        /**
+         * Name of the folder or schema for this metadata harvest.
+         * @param folderName the value to set
+         * @return this builder
+         **/
         public Builder folderName(String folderName) {
             this.folderName = folderName;
             this.__explicitlySet__.add("folderName");
             return this;
         }
-
+        /**
+         * Name of the entity for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
+        /**
+         * Name of the entity for this metadata harvest.
+         * @param entityName the value to set
+         * @return this builder
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-
+        /**
+         * Filter rules with regular expression to specify folder names for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderNameFilter")
         private String folderNameFilter;
 
+        /**
+         * Filter rules with regular expression to specify folder names for this metadata harvest.
+         * @param folderNameFilter the value to set
+         * @return this builder
+         **/
         public Builder folderNameFilter(String folderNameFilter) {
             this.folderNameFilter = folderNameFilter;
             this.__explicitlySet__.add("folderNameFilter");
             return this;
         }
-
+        /**
+         * Filter rules with regular expression to specify entity names for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityNameFilter")
         private String entityNameFilter;
 
+        /**
+         * Filter rules with regular expression to specify entity names for this metadata harvest.
+         * @param entityNameFilter the value to set
+         * @return this builder
+         **/
         public Builder entityNameFilter(String entityNameFilter) {
             this.entityNameFilter = entityNameFilter;
             this.__explicitlySet__.add("entityNameFilter");
             return this;
         }
-
+        /**
+         * Specify if sample data to be extracted as part of this harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
         private Boolean isSampleDataExtracted;
 
+        /**
+         * Specify if sample data to be extracted as part of this harvest.
+         * @param isSampleDataExtracted the value to set
+         * @return this builder
+         **/
         public Builder isSampleDataExtracted(Boolean isSampleDataExtracted) {
             this.isSampleDataExtracted = isSampleDataExtracted;
             this.__explicitlySet__.add("isSampleDataExtracted");
             return this;
         }
-
+        /**
+         * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
         private Integer sampleDataSizeInMBs;
 
+        /**
+         * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+         * @param sampleDataSizeInMBs the value to set
+         * @return this builder
+         **/
         public Builder sampleDataSizeInMBs(Integer sampleDataSizeInMBs) {
             this.sampleDataSizeInMBs = sampleDataSizeInMBs;
             this.__explicitlySet__.add("sampleDataSizeInMBs");
@@ -149,6 +192,10 @@ public final class JobDefinitionScope {
     @com.fasterxml.jackson.annotation.JsonProperty("folderName")
     private final String folderName;
 
+    /**
+     * Name of the folder or schema for this metadata harvest.
+     * @return the value
+     **/
     public String getFolderName() {
         return folderName;
     }
@@ -159,6 +206,10 @@ public final class JobDefinitionScope {
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
+    /**
+     * Name of the entity for this metadata harvest.
+     * @return the value
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -169,6 +220,10 @@ public final class JobDefinitionScope {
     @com.fasterxml.jackson.annotation.JsonProperty("folderNameFilter")
     private final String folderNameFilter;
 
+    /**
+     * Filter rules with regular expression to specify folder names for this metadata harvest.
+     * @return the value
+     **/
     public String getFolderNameFilter() {
         return folderNameFilter;
     }
@@ -179,6 +234,10 @@ public final class JobDefinitionScope {
     @com.fasterxml.jackson.annotation.JsonProperty("entityNameFilter")
     private final String entityNameFilter;
 
+    /**
+     * Filter rules with regular expression to specify entity names for this metadata harvest.
+     * @return the value
+     **/
     public String getEntityNameFilter() {
         return entityNameFilter;
     }
@@ -189,6 +248,10 @@ public final class JobDefinitionScope {
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
     private final Boolean isSampleDataExtracted;
 
+    /**
+     * Specify if sample data to be extracted as part of this harvest.
+     * @return the value
+     **/
     public Boolean getIsSampleDataExtracted() {
         return isSampleDataExtracted;
     }
@@ -199,6 +262,10 @@ public final class JobDefinitionScope {
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
     private final Integer sampleDataSizeInMBs;
 
+    /**
+     * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+     * @return the value
+     **/
     public Integer getSampleDataSizeInMBs() {
         return sampleDataSizeInMBs;
     }

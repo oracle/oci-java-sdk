@@ -18,6 +18,9 @@ public class UpdateApplianceExportJobRequest
      */
     private String applianceExportJobId;
 
+    /**
+     * ID of the Appliance Export Job
+     */
     public String getApplianceExportJobId() {
         return applianceExportJobId;
     }
@@ -27,6 +30,9 @@ public class UpdateApplianceExportJobRequest
     private com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails
             updateApplianceExportJobDetails;
 
+    /**
+     * fields to update
+     */
     public com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails
             getUpdateApplianceExportJobDetails() {
         return updateApplianceExportJobDetails;
@@ -38,6 +44,11 @@ public class UpdateApplianceExportJobRequest
      */
     private String ifMatch;
 
+    /**
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +59,11 @@ public class UpdateApplianceExportJobRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,10 +86,14 @@ public class UpdateApplianceExportJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * ID of the Appliance Export Job
+         */
         private String applianceExportJobId = null;
 
         /**
          * ID of the Appliance Export Job
+         * @param applianceExportJobId the value to set
          * @return this builder instance
          */
         public Builder applianceExportJobId(String applianceExportJobId) {
@@ -81,11 +101,15 @@ public class UpdateApplianceExportJobRequest
             return this;
         }
 
+        /**
+         * fields to update
+         */
         private com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails
                 updateApplianceExportJobDetails = null;
 
         /**
          * fields to update
+         * @param updateApplianceExportJobDetails the value to set
          * @return this builder instance
          */
         public Builder updateApplianceExportJobDetails(
@@ -95,12 +119,18 @@ public class UpdateApplianceExportJobRequest
             return this;
         }
 
+        /**
+         * The entity tag to match. Optional, if set, the update will be successful only if the
+         * object's tag matches the tag specified in the request.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -108,12 +138,18 @@ public class UpdateApplianceExportJobRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -206,7 +242,8 @@ public class UpdateApplianceExportJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -216,6 +253,10 @@ public class UpdateApplianceExportJobRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

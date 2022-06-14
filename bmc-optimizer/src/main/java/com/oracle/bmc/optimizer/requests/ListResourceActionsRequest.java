@@ -16,6 +16,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -27,6 +30,12 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+     * <p>
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -35,6 +44,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String recommendationId;
 
+    /**
+     * The unique OCID associated with the recommendation.
+     */
     public String getRecommendationId() {
         return recommendationId;
     }
@@ -43,6 +55,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String name;
 
+    /**
+     * Optional. A filter that returns results that match the name specified.
+     */
     public String getName() {
         return name;
     }
@@ -51,6 +66,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String resourceType;
 
+    /**
+     * Optional. A filter that returns results that match the resource type specified.
+     */
     public String getResourceType() {
         return resourceType;
     }
@@ -59,6 +77,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -68,6 +89,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -76,6 +101,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.optimizer.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public com.oracle.bmc.optimizer.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -122,6 +150,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -131,6 +163,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.optimizer.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter that returns results that match the lifecycle state specified.
+     *
+     */
     public com.oracle.bmc.optimizer.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -140,6 +176,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private com.oracle.bmc.optimizer.model.Status status;
 
+    /**
+     * A filter that returns recommendations that match the status specified.
+     *
+     */
     public com.oracle.bmc.optimizer.model.Status getStatus() {
         return status;
     }
@@ -150,6 +190,11 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -161,10 +206,14 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -172,6 +221,12 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+         * <p>
+         * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -179,6 +234,7 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
          * <p>
          * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -186,10 +242,14 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The unique OCID associated with the recommendation.
+         */
         private String recommendationId = null;
 
         /**
          * The unique OCID associated with the recommendation.
+         * @param recommendationId the value to set
          * @return this builder instance
          */
         public Builder recommendationId(String recommendationId) {
@@ -197,10 +257,14 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Optional. A filter that returns results that match the name specified.
+         */
         private String name = null;
 
         /**
          * Optional. A filter that returns results that match the name specified.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -208,10 +272,14 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Optional. A filter that returns results that match the resource type specified.
+         */
         private String resourceType = null;
 
         /**
          * Optional. A filter that returns results that match the resource type specified.
+         * @param resourceType the value to set
          * @return this builder instance
          */
         public Builder resourceType(String resourceType) {
@@ -219,10 +287,14 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -230,11 +302,16 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -242,10 +319,14 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private com.oracle.bmc.optimizer.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.optimizer.model.SortOrder sortOrder) {
@@ -253,11 +334,16 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -265,11 +351,16 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter that returns results that match the lifecycle state specified.
+         *
+         */
         private com.oracle.bmc.optimizer.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter that returns results that match the lifecycle state specified.
          *
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -278,11 +369,16 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter that returns recommendations that match the status specified.
+         *
+         */
         private com.oracle.bmc.optimizer.model.Status status = null;
 
         /**
          * A filter that returns recommendations that match the status specified.
          *
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(com.oracle.bmc.optimizer.model.Status status) {
@@ -290,12 +386,18 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -393,7 +495,8 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -411,6 +514,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

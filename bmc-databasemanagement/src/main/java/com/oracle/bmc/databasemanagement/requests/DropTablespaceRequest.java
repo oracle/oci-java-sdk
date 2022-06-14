@@ -18,6 +18,9 @@ public class DropTablespaceRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -26,6 +29,9 @@ public class DropTablespaceRequest
      */
     private String tablespaceName;
 
+    /**
+     * The name of the tablespace.
+     */
     public String getTablespaceName() {
         return tablespaceName;
     }
@@ -34,6 +40,9 @@ public class DropTablespaceRequest
      */
     private com.oracle.bmc.databasemanagement.model.DropTablespaceDetails dropTablespaceDetails;
 
+    /**
+     * The details required to drop a tablespace.
+     */
     public com.oracle.bmc.databasemanagement.model.DropTablespaceDetails
             getDropTablespaceDetails() {
         return dropTablespaceDetails;
@@ -43,6 +52,9 @@ public class DropTablespaceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -56,6 +68,14 @@ public class DropTablespaceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -78,10 +98,14 @@ public class DropTablespaceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -89,10 +113,14 @@ public class DropTablespaceRequest
             return this;
         }
 
+        /**
+         * The name of the tablespace.
+         */
         private String tablespaceName = null;
 
         /**
          * The name of the tablespace.
+         * @param tablespaceName the value to set
          * @return this builder instance
          */
         public Builder tablespaceName(String tablespaceName) {
@@ -100,11 +128,15 @@ public class DropTablespaceRequest
             return this;
         }
 
+        /**
+         * The details required to drop a tablespace.
+         */
         private com.oracle.bmc.databasemanagement.model.DropTablespaceDetails
                 dropTablespaceDetails = null;
 
         /**
          * The details required to drop a tablespace.
+         * @param dropTablespaceDetails the value to set
          * @return this builder instance
          */
         public Builder dropTablespaceDetails(
@@ -114,10 +146,14 @@ public class DropTablespaceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -125,6 +161,14 @@ public class DropTablespaceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -134,6 +178,7 @@ public class DropTablespaceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -228,7 +273,8 @@ public class DropTablespaceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +285,10 @@ public class DropTablespaceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

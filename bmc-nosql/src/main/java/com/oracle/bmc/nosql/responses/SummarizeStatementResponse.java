@@ -16,6 +16,13 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +32,10 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.nosql.model.StatementSummary statementSummary;
 
+    /**
+     * The returned StatementSummary instance.
+     * @return the value
+     */
     public com.oracle.bmc.nosql.model.StatementSummary getStatementSummary() {
         return statementSummary;
     }
@@ -47,15 +58,37 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned StatementSummary instance.
+         */
         private com.oracle.bmc.nosql.model.StatementSummary statementSummary;
 
+        /**
+         * The returned StatementSummary instance.
+         * @param statementSummary the value to set
+         * @return this builder
+         */
         public Builder statementSummary(
                 com.oracle.bmc.nosql.model.StatementSummary statementSummary) {
             this.statementSummary = statementSummary;
@@ -74,12 +107,20 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public SummarizeStatementResponse build() {
             return new SummarizeStatementResponse(
                     __httpStatusCode__, opcRequestId, statementSummary);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -32,27 +32,53 @@ public final class UpdateNamespaceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the namespace.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * If this field is defined by service or by a user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
         private Boolean isServiceDefined;
 
+        /**
+         * If this field is defined by service or by a user
+         * @param isServiceDefined the value to set
+         * @return this builder
+         **/
         public Builder isServiceDefined(Boolean isServiceDefined) {
             this.isServiceDefined = isServiceDefined;
             this.__explicitlySet__.add("isServiceDefined");
@@ -100,6 +126,12 @@ public final class UpdateNamespaceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -110,6 +142,10 @@ public final class UpdateNamespaceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the namespace.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -120,6 +156,10 @@ public final class UpdateNamespaceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isServiceDefined")
     private final Boolean isServiceDefined;
 
+    /**
+     * If this field is defined by service or by a user
+     * @return the value
+     **/
     public Boolean getIsServiceDefined() {
         return isServiceDefined;
     }

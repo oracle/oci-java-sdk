@@ -36,10 +36,35 @@ public final class CronExecutionSchedule extends ExecutionSchedule {
             this.__explicitlySet__.add("timezone");
             return this;
         }
-
+        /**
+         * A cron expression that represents the time at which to execute the autoscaling policy.
+         * <p>
+         * Cron expressions have this format: {@code <second> <minute> <hour> <day of month> <month> <day of week> <year>}
+         * <p>
+         * You can use special characters that are supported with the Quartz cron implementation.
+         * <p>
+         * You must specify {@code 0} as the value for seconds.
+         * <p>
+         * Example: {@code 0 15 10 ? * *}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * A cron expression that represents the time at which to execute the autoscaling policy.
+         * <p>
+         * Cron expressions have this format: {@code <second> <minute> <hour> <day of month> <month> <day of week> <year>}
+         * <p>
+         * You can use special characters that are supported with the Quartz cron implementation.
+         * <p>
+         * You must specify {@code 0} as the value for seconds.
+         * <p>
+         * Example: {@code 0 15 10 ? * *}
+         *
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
@@ -96,6 +121,19 @@ public final class CronExecutionSchedule extends ExecutionSchedule {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * A cron expression that represents the time at which to execute the autoscaling policy.
+     * <p>
+     * Cron expressions have this format: {@code <second> <minute> <hour> <day of month> <month> <day of week> <year>}
+     * <p>
+     * You can use special characters that are supported with the Quartz cron implementation.
+     * <p>
+     * You must specify {@code 0} as the value for seconds.
+     * <p>
+     * Example: {@code 0 15 10 ? * *}
+     *
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }

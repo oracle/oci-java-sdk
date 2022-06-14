@@ -90,27 +90,49 @@ public final class TaskRunDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The object type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The object type.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The object's model version.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -125,145 +147,257 @@ public final class TaskRunDetails {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description for the object.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         * @param objectVersion the value to set
+         * @return this builder
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-
+        /**
+         * status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * status
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The task run start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
         private Long startTimeMillis;
 
+        /**
+         * The task run start time.
+         * @param startTimeMillis the value to set
+         * @return this builder
+         **/
         public Builder startTimeMillis(Long startTimeMillis) {
             this.startTimeMillis = startTimeMillis;
             this.__explicitlySet__.add("startTimeMillis");
             return this;
         }
-
+        /**
+         * The task run end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
         private Long endTimeMillis;
 
+        /**
+         * The task run end time.
+         * @param endTimeMillis the value to set
+         * @return this builder
+         **/
         public Builder endTimeMillis(Long endTimeMillis) {
             this.endTimeMillis = endTimeMillis;
             this.__explicitlySet__.add("endTimeMillis");
             return this;
         }
-
+        /**
+         * The date and time the task run was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastUpdated")
         private Long lastUpdated;
 
+        /**
+         * The date and time the task run was last updated.
+         * @param lastUpdated the value to set
+         * @return this builder
+         **/
         public Builder lastUpdated(Long lastUpdated) {
             this.lastUpdated = lastUpdated;
             this.__explicitlySet__.add("lastUpdated");
             return this;
         }
-
+        /**
+         * Number of records processed in task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordsWritten")
         private Long recordsWritten;
 
+        /**
+         * Number of records processed in task run.
+         * @param recordsWritten the value to set
+         * @return this builder
+         **/
         public Builder recordsWritten(Long recordsWritten) {
             this.recordsWritten = recordsWritten;
             this.__explicitlySet__.add("recordsWritten");
             return this;
         }
-
+        /**
+         * Number of bytes processed in task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bytesProcessed")
         private Long bytesProcessed;
 
+        /**
+         * Number of bytes processed in task run.
+         * @param bytesProcessed the value to set
+         * @return this builder
+         **/
         public Builder bytesProcessed(Long bytesProcessed) {
             this.bytesProcessed = bytesProcessed;
             this.__explicitlySet__.add("bytesProcessed");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-
+        /**
+         * The type of the task for the run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private TaskType taskType;
 
+        /**
+         * The type of the task for the run.
+         * @param taskType the value to set
+         * @return this builder
+         **/
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
             return this;
         }
-
+        /**
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * Reference Task Run Id to be used for re-run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refTaskRunId")
         private String refTaskRunId;
 
+        /**
+         * Reference Task Run Id to be used for re-run
+         * @param refTaskRunId the value to set
+         * @return this builder
+         **/
         public Builder refTaskRunId(String refTaskRunId) {
             this.refTaskRunId = refTaskRunId;
             this.__explicitlySet__.add("refTaskRunId");
             return this;
         }
-
+        /**
+         * Supported re-run types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reRunType")
         private ReRunType reRunType;
 
+        /**
+         * Supported re-run types
+         * @param reRunType the value to set
+         * @return this builder
+         **/
         public Builder reRunType(ReRunType reRunType) {
             this.reRunType = reRunType;
             this.__explicitlySet__.add("reRunType");
             return this;
         }
-
+        /**
+         * Step Id for running from a certain step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private String stepId;
 
+        /**
+         * Step Id for running from a certain step.
+         * @param stepId the value to set
+         * @return this builder
+         **/
         public Builder stepId(String stepId) {
             this.stepId = stepId;
             this.__explicitlySet__.add("stepId");
             return this;
         }
-
+        /**
+         * A map of the configuration provider input bindings of the run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputs")
         private java.util.Map<String, ParameterValue> inputs;
 
+        /**
+         * A map of the configuration provider input bindings of the run.
+         * @param inputs the value to set
+         * @return this builder
+         **/
         public Builder inputs(java.util.Map<String, ParameterValue> inputs) {
             this.inputs = inputs;
             this.__explicitlySet__.add("inputs");
@@ -357,6 +491,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -367,6 +505,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The object type.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }
@@ -377,6 +519,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -394,6 +540,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -404,6 +554,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -414,6 +568,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -476,6 +634,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * status
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -486,6 +648,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
     private final Long startTimeMillis;
 
+    /**
+     * The task run start time.
+     * @return the value
+     **/
     public Long getStartTimeMillis() {
         return startTimeMillis;
     }
@@ -496,6 +662,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
     private final Long endTimeMillis;
 
+    /**
+     * The task run end time.
+     * @return the value
+     **/
     public Long getEndTimeMillis() {
         return endTimeMillis;
     }
@@ -506,6 +676,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdated")
     private final Long lastUpdated;
 
+    /**
+     * The date and time the task run was last updated.
+     * @return the value
+     **/
     public Long getLastUpdated() {
         return lastUpdated;
     }
@@ -516,6 +690,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("recordsWritten")
     private final Long recordsWritten;
 
+    /**
+     * Number of records processed in task run.
+     * @return the value
+     **/
     public Long getRecordsWritten() {
         return recordsWritten;
     }
@@ -526,6 +704,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bytesProcessed")
     private final Long bytesProcessed;
 
+    /**
+     * Number of bytes processed in task run.
+     * @return the value
+     **/
     public Long getBytesProcessed() {
         return bytesProcessed;
     }
@@ -536,6 +718,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -598,6 +784,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
+    /**
+     * The type of the task for the run.
+     * @return the value
+     **/
     public TaskType getTaskType() {
         return taskType;
     }
@@ -608,6 +798,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -618,6 +812,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("refTaskRunId")
     private final String refTaskRunId;
 
+    /**
+     * Reference Task Run Id to be used for re-run
+     * @return the value
+     **/
     public String getRefTaskRunId() {
         return refTaskRunId;
     }
@@ -677,6 +875,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reRunType")
     private final ReRunType reRunType;
 
+    /**
+     * Supported re-run types
+     * @return the value
+     **/
     public ReRunType getReRunType() {
         return reRunType;
     }
@@ -687,6 +889,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final String stepId;
 
+    /**
+     * Step Id for running from a certain step.
+     * @return the value
+     **/
     public String getStepId() {
         return stepId;
     }
@@ -697,6 +903,10 @@ public final class TaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("inputs")
     private final java.util.Map<String, ParameterValue> inputs;
 
+    /**
+     * A map of the configuration provider input bindings of the run.
+     * @return the value
+     **/
     public java.util.Map<String, ParameterValue> getInputs() {
         return inputs;
     }

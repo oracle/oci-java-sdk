@@ -17,6 +17,9 @@ public class UpdateSenderRequest
      */
     private String senderId;
 
+    /**
+     * The unique OCID of the sender.
+     */
     public String getSenderId() {
         return senderId;
     }
@@ -25,6 +28,9 @@ public class UpdateSenderRequest
      */
     private com.oracle.bmc.email.model.UpdateSenderDetails updateSenderDetails;
 
+    /**
+     * update details for sender.
+     */
     public com.oracle.bmc.email.model.UpdateSenderDetails getUpdateSenderDetails() {
         return updateSenderDetails;
     }
@@ -36,6 +42,12 @@ public class UpdateSenderRequest
      */
     private String ifMatch;
 
+    /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -44,6 +56,9 @@ public class UpdateSenderRequest
      */
     private String opcRequestId;
 
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,10 +80,14 @@ public class UpdateSenderRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique OCID of the sender.
+         */
         private String senderId = null;
 
         /**
          * The unique OCID of the sender.
+         * @param senderId the value to set
          * @return this builder instance
          */
         public Builder senderId(String senderId) {
@@ -76,10 +95,14 @@ public class UpdateSenderRequest
             return this;
         }
 
+        /**
+         * update details for sender.
+         */
         private com.oracle.bmc.email.model.UpdateSenderDetails updateSenderDetails = null;
 
         /**
          * update details for sender.
+         * @param updateSenderDetails the value to set
          * @return this builder instance
          */
         public Builder updateSenderDetails(
@@ -88,6 +111,12 @@ public class UpdateSenderRequest
             return this;
         }
 
+        /**
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -95,6 +124,7 @@ public class UpdateSenderRequest
          * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -102,10 +132,14 @@ public class UpdateSenderRequest
             return this;
         }
 
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -198,7 +232,8 @@ public class UpdateSenderRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -208,6 +243,10 @@ public class UpdateSenderRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

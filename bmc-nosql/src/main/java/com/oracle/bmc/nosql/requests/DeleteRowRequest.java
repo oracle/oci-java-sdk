@@ -16,6 +16,9 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String tableNameOrId;
 
+    /**
+     * A table name within the compartment, or a table OCID.
+     */
     public String getTableNameOrId() {
         return tableNameOrId;
     }
@@ -26,6 +29,11 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private java.util.List<String> key;
 
+    /**
+     * An array of strings, each of the format "column-name:value",
+     * representing the primary key of the row.
+     *
+     */
     public java.util.List<String> getKey() {
         return key;
     }
@@ -37,6 +45,12 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String compartmentId;
 
+    /**
+     * The ID of a table's compartment. When a table is identified
+     * by name, the compartmentId is often needed to provide
+     * context for interpreting the name.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -47,6 +61,11 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Boolean isGetReturnRow;
 
+    /**
+     * If true, and the operation fails due to an option setting
+     * (ifVersion et al), then the existing row will be returned.
+     *
+     */
     public Boolean getIsGetReturnRow() {
         return isGetReturnRow;
     }
@@ -55,6 +74,9 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer timeoutInMs;
 
+    /**
+     * Timeout setting for this operation.
+     */
     public Integer getTimeoutInMs() {
         return timeoutInMs;
     }
@@ -68,6 +90,14 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -76,6 +106,9 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -87,10 +120,14 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A table name within the compartment, or a table OCID.
+         */
         private String tableNameOrId = null;
 
         /**
          * A table name within the compartment, or a table OCID.
+         * @param tableNameOrId the value to set
          * @return this builder instance
          */
         public Builder tableNameOrId(String tableNameOrId) {
@@ -98,12 +135,18 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * An array of strings, each of the format "column-name:value",
+         * representing the primary key of the row.
+         *
+         */
         private java.util.List<String> key = null;
 
         /**
          * An array of strings, each of the format "column-name:value",
          * representing the primary key of the row.
          *
+         * @param key the value to set
          * @return this builder instance
          */
         public Builder key(java.util.List<String> key) {
@@ -115,12 +158,19 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * Singular setter. An array of strings, each of the format "column-name:value",
          * representing the primary key of the row.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder key(String singularValue) {
             return this.key(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The ID of a table's compartment. When a table is identified
+         * by name, the compartmentId is often needed to provide
+         * context for interpreting the name.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -128,6 +178,7 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * by name, the compartmentId is often needed to provide
          * context for interpreting the name.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -135,12 +186,18 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * If true, and the operation fails due to an option setting
+         * (ifVersion et al), then the existing row will be returned.
+         *
+         */
         private Boolean isGetReturnRow = null;
 
         /**
          * If true, and the operation fails due to an option setting
          * (ifVersion et al), then the existing row will be returned.
          *
+         * @param isGetReturnRow the value to set
          * @return this builder instance
          */
         public Builder isGetReturnRow(Boolean isGetReturnRow) {
@@ -148,10 +205,14 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Timeout setting for this operation.
+         */
         private Integer timeoutInMs = null;
 
         /**
          * Timeout setting for this operation.
+         * @param timeoutInMs the value to set
          * @return this builder instance
          */
         public Builder timeoutInMs(Integer timeoutInMs) {
@@ -159,6 +220,14 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -168,6 +237,7 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -175,10 +245,14 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -266,7 +340,8 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -279,6 +354,10 @@ public class DeleteRowRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

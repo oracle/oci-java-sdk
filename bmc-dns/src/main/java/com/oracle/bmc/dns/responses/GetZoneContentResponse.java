@@ -16,6 +16,13 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String etag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -27,6 +34,12 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +49,10 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -60,22 +77,56 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String etag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -94,11 +145,19 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetZoneContentResponse build() {
             return new GetZoneContentResponse(__httpStatusCode__, etag, opcRequestId, inputStream);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

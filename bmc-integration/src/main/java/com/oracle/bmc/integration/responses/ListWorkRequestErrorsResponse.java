@@ -15,6 +15,12 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results remain
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -35,6 +46,11 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcPreviousPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+     *
+     * @return the value
+     */
     public String getOpcPreviousPage() {
         return opcPreviousPage;
     }
@@ -44,6 +60,10 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.List<com.oracle.bmc.integration.model.WorkRequestError> items;
 
+    /**
+     * A list of com.oracle.bmc.integration.model.WorkRequestError instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.integration.model.WorkRequestError> getItems() {
         return items;
     }
@@ -76,29 +96,69 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+         *
+         */
         private String opcPreviousPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+         *
+         * @param opcPreviousPage the value to set
+         * @return this builder
+         */
         public Builder opcPreviousPage(String opcPreviousPage) {
             this.opcPreviousPage = opcPreviousPage;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.integration.model.WorkRequestError instances.
+         */
         private java.util.List<com.oracle.bmc.integration.model.WorkRequestError> items;
 
+        /**
+         * A list of com.oracle.bmc.integration.model.WorkRequestError instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.integration.model.WorkRequestError> items) {
             this.items = items;
@@ -119,12 +179,20 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListWorkRequestErrorsResponse build() {
             return new ListWorkRequestErrorsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, opcPreviousPage, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

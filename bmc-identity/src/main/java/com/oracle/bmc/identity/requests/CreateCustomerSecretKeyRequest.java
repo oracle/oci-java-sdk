@@ -19,6 +19,9 @@ public class CreateCustomerSecretKeyRequest
     private com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails
             createCustomerSecretKeyDetails;
 
+    /**
+     * Request object for creating a new secret key.
+     */
     public com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails
             getCreateCustomerSecretKeyDetails() {
         return createCustomerSecretKeyDetails;
@@ -28,6 +31,9 @@ public class CreateCustomerSecretKeyRequest
      */
     private String userId;
 
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -41,6 +47,14 @@ public class CreateCustomerSecretKeyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,11 +77,15 @@ public class CreateCustomerSecretKeyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for creating a new secret key.
+         */
         private com.oracle.bmc.identity.model.CreateCustomerSecretKeyDetails
                 createCustomerSecretKeyDetails = null;
 
         /**
          * Request object for creating a new secret key.
+         * @param createCustomerSecretKeyDetails the value to set
          * @return this builder instance
          */
         public Builder createCustomerSecretKeyDetails(
@@ -77,10 +95,14 @@ public class CreateCustomerSecretKeyRequest
             return this;
         }
 
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
+         * @param userId the value to set
          * @return this builder instance
          */
         public Builder userId(String userId) {
@@ -88,6 +110,14 @@ public class CreateCustomerSecretKeyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -97,6 +127,7 @@ public class CreateCustomerSecretKeyRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -187,7 +218,8 @@ public class CreateCustomerSecretKeyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -196,6 +228,10 @@ public class CreateCustomerSecretKeyRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

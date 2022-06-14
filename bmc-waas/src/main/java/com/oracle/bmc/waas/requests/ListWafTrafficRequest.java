@@ -16,6 +16,9 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String waasPolicyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
@@ -24,6 +27,9 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeObservedGreaterThanOrEqualTo;
 
+    /**
+     * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+     */
     public java.util.Date getTimeObservedGreaterThanOrEqualTo() {
         return timeObservedGreaterThanOrEqualTo;
     }
@@ -40,6 +49,9 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private java.util.Date timeObservedLessThan;
 
+    /**
+     * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+     */
     public java.util.Date getTimeObservedLessThan() {
         return timeObservedLessThan;
     }
@@ -48,6 +60,9 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -56,6 +71,9 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
@@ -67,10 +85,14 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         */
         private String waasPolicyId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * @param waasPolicyId the value to set
          * @return this builder instance
          */
         public Builder waasPolicyId(String waasPolicyId) {
@@ -78,10 +100,14 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -89,10 +115,14 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+         */
         private java.util.Date timeObservedGreaterThanOrEqualTo = null;
 
         /**
          * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+         * @param timeObservedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeObservedGreaterThanOrEqualTo(
@@ -101,10 +131,14 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+         */
         private java.util.Date timeObservedLessThan = null;
 
         /**
          * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+         * @param timeObservedLessThan the value to set
          * @return this builder instance
          */
         public Builder timeObservedLessThan(java.util.Date timeObservedLessThan) {
@@ -112,10 +146,14 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -123,10 +161,14 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous paginated call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -212,7 +254,8 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -224,6 +267,10 @@ public class ListWafTrafficRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

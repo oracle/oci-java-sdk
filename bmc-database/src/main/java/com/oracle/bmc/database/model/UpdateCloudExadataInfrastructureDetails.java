@@ -51,9 +51,19 @@ public final class UpdateCloudExadataInfrastructureDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The user-friendly name for the cloud Exadata infrastructure. The name does not need to be unique.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the cloud Exadata infrastructure. The name does not need to be unique.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -68,47 +78,94 @@ public final class UpdateCloudExadataInfrastructureDetails {
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
-
+        /**
+         * The number of compute servers for the cloud Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Integer computeCount;
 
+        /**
+         * The number of compute servers for the cloud Exadata infrastructure.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
         public Builder computeCount(Integer computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-
+        /**
+         * The number of storage servers for the cloud Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
         private Integer storageCount;
 
+        /**
+         * The number of storage servers for the cloud Exadata infrastructure.
+         * @param storageCount the value to set
+         * @return this builder
+         **/
         public Builder storageCount(Integer storageCount) {
             this.storageCount = storageCount;
             this.__explicitlySet__.add("storageCount");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Customer contacts. Setting this to an empty list removes all customer contact information (email addresses) for the specified OCI Database service resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
         private java.util.List<CustomerContact> customerContacts;
 
+        /**
+         * Customer contacts. Setting this to an empty list removes all customer contact information (email addresses) for the specified OCI Database service resource.
+         * @param customerContacts the value to set
+         * @return this builder
+         **/
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
@@ -166,6 +223,11 @@ public final class UpdateCloudExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the cloud Exadata infrastructure. The name does not need to be unique.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -183,6 +245,10 @@ public final class UpdateCloudExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Integer computeCount;
 
+    /**
+     * The number of compute servers for the cloud Exadata infrastructure.
+     * @return the value
+     **/
     public Integer getComputeCount() {
         return computeCount;
     }
@@ -193,6 +259,10 @@ public final class UpdateCloudExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
     private final Integer storageCount;
 
+    /**
+     * The number of storage servers for the cloud Exadata infrastructure.
+     * @return the value
+     **/
     public Integer getStorageCount() {
         return storageCount;
     }
@@ -207,6 +277,14 @@ public final class UpdateCloudExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -219,6 +297,12 @@ public final class UpdateCloudExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -229,6 +313,10 @@ public final class UpdateCloudExadataInfrastructureDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     private final java.util.List<CustomerContact> customerContacts;
 
+    /**
+     * Customer contacts. Setting this to an empty list removes all customer contact information (email addresses) for the specified OCI Database service resource.
+     * @return the value
+     **/
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
     }

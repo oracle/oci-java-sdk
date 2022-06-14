@@ -198,19 +198,33 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * @param managementAgentId the value to set
+         * @return this builder
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         * @param connectorId the value to set
+         * @return this builder
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
@@ -342,6 +356,10 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * @return the value
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
@@ -352,6 +370,10 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * @return the value
+     **/
     public String getConnectorId() {
         return connectorId;
     }

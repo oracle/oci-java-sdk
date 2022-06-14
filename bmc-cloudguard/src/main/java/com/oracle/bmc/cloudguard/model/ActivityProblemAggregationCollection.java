@@ -29,9 +29,17 @@ public final class ActivityProblemAggregationCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The items consists of all the ActivityProblemAggregation objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ActivityProblemAggregation> items;
 
+        /**
+         * The items consists of all the ActivityProblemAggregation objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ActivityProblemAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class ActivityProblemAggregationCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ActivityProblemAggregation> items;
 
+    /**
+     * The items consists of all the ActivityProblemAggregation objects.
+     * @return the value
+     **/
     public java.util.List<ActivityProblemAggregation> getItems() {
         return items;
     }

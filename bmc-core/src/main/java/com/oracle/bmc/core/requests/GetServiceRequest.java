@@ -16,6 +16,9 @@ public class GetServiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String serviceId;
 
+    /**
+     * The service's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     public String getServiceId() {
         return serviceId;
     }
@@ -27,10 +30,14 @@ public class GetServiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The service's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         private String serviceId = null;
 
         /**
          * The service's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param serviceId the value to set
          * @return this builder instance
          */
         public Builder serviceId(String serviceId) {
@@ -106,12 +113,17 @@ public class GetServiceRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().serviceId(serviceId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

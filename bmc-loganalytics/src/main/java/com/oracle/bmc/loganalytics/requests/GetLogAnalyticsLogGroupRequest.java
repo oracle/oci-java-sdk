@@ -18,6 +18,10 @@ public class GetLogAnalyticsLogGroupRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class GetLogAnalyticsLogGroupRequest
      */
     private String logAnalyticsLogGroupId;
 
+    /**
+     * unique logAnalytics log group identifier
+     */
     public String getLogAnalyticsLogGroupId() {
         return logAnalyticsLogGroupId;
     }
@@ -34,6 +41,9 @@ public class GetLogAnalyticsLogGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,11 +55,16 @@ public class GetLogAnalyticsLogGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -57,10 +72,14 @@ public class GetLogAnalyticsLogGroupRequest
             return this;
         }
 
+        /**
+         * unique logAnalytics log group identifier
+         */
         private String logAnalyticsLogGroupId = null;
 
         /**
          * unique logAnalytics log group identifier
+         * @param logAnalyticsLogGroupId the value to set
          * @return this builder instance
          */
         public Builder logAnalyticsLogGroupId(String logAnalyticsLogGroupId) {
@@ -68,10 +87,14 @@ public class GetLogAnalyticsLogGroupRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -151,7 +174,8 @@ public class GetLogAnalyticsLogGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -160,6 +184,10 @@ public class GetLogAnalyticsLogGroupRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

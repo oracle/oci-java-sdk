@@ -170,19 +170,33 @@ public final class StandardTask extends ScheduledTask {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The most recent task execution status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
         private LastExecutionStatus lastExecutionStatus;
 
+        /**
+         * The most recent task execution status.
+         * @param lastExecutionStatus the value to set
+         * @return this builder
+         **/
         public Builder lastExecutionStatus(LastExecutionStatus lastExecutionStatus) {
             this.lastExecutionStatus = lastExecutionStatus;
             this.__explicitlySet__.add("lastExecutionStatus");
             return this;
         }
-
+        /**
+         * The date and time the scheduled task last executed, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
         private java.util.Date timeLastExecuted;
 
+        /**
+         * The date and time the scheduled task last executed, in the format defined by RFC3339.
+         * @param timeLastExecuted the value to set
+         * @return this builder
+         **/
         public Builder timeLastExecuted(java.util.Date timeLastExecuted) {
             this.timeLastExecuted = timeLastExecuted;
             this.__explicitlySet__.add("timeLastExecuted");
@@ -350,6 +364,10 @@ public final class StandardTask extends ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
     private final LastExecutionStatus lastExecutionStatus;
 
+    /**
+     * The most recent task execution status.
+     * @return the value
+     **/
     public LastExecutionStatus getLastExecutionStatus() {
         return lastExecutionStatus;
     }
@@ -360,6 +378,10 @@ public final class StandardTask extends ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
     private final java.util.Date timeLastExecuted;
 
+    /**
+     * The date and time the scheduled task last executed, in the format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeLastExecuted() {
         return timeLastExecuted;
     }

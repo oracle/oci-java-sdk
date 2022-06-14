@@ -60,82 +60,206 @@ public final class InstanceConfigurationCreateVolumeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability domain of the volume.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        /**
+         * The availability domain of the volume.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-
+        /**
+         * If provided, specifies the ID of the volume backup policy to assign to the newly
+         * created volume. If omitted, no policy will be assigned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
         private String backupPolicyId;
 
+        /**
+         * If provided, specifies the ID of the volume backup policy to assign to the newly
+         * created volume. If omitted, no policy will be assigned.
+         *
+         * @param backupPolicyId the value to set
+         * @return this builder
+         **/
         public Builder backupPolicyId(String backupPolicyId) {
             this.backupPolicyId = backupPolicyId;
             this.__explicitlySet__.add("backupPolicyId");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the volume.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The OCID of the Key Management key to assign as the master encryption key
+         * for the volume.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the Key Management key to assign as the master encryption key
+         * for the volume.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+         * representing the Block Volume service's elastic performance options.
+         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code 0}: Represents Lower Cost option.
+         * <p>
+         * {@code 10}: Represents Balanced option.
+         * <p>
+         * {@code 20}: Represents Higher Performance option.
+         * <p>
+         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
         private Long vpusPerGB;
 
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+         * representing the Block Volume service's elastic performance options.
+         * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code 0}: Represents Lower Cost option.
+         * <p>
+         * {@code 10}: Represents Balanced option.
+         * <p>
+         * {@code 20}: Represents Higher Performance option.
+         * <p>
+         * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         *
+         * @param vpusPerGB the value to set
+         * @return this builder
+         **/
         public Builder vpusPerGB(Long vpusPerGB) {
             this.vpusPerGB = vpusPerGB;
             this.__explicitlySet__.add("vpusPerGB");
             return this;
         }
-
+        /**
+         * The size of the volume in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
+        /**
+         * The size of the volume in GBs.
+         * @param sizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
@@ -210,6 +334,13 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
+    /**
+     * The availability domain of the volume.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * @return the value
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -222,6 +353,12 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
     private final String backupPolicyId;
 
+    /**
+     * If provided, specifies the ID of the volume backup policy to assign to the newly
+     * created volume. If omitted, no policy will be assigned.
+     *
+     * @return the value
+     **/
     public String getBackupPolicyId() {
         return backupPolicyId;
     }
@@ -232,6 +369,10 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the volume.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -246,6 +387,14 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -258,6 +407,12 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -272,6 +427,14 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -284,6 +447,12 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the Key Management key to assign as the master encryption key
+     * for the volume.
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -307,6 +476,23 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
     private final Long vpusPerGB;
 
+    /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code 0}: Represents Lower Cost option.
+     * <p>
+     * {@code 10}: Represents Balanced option.
+     * <p>
+     * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     *
+     * @return the value
+     **/
     public Long getVpusPerGB() {
         return vpusPerGB;
     }
@@ -317,6 +503,10 @@ public final class InstanceConfigurationCreateVolumeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
+    /**
+     * The size of the volume in GBs.
+     * @return the value
+     **/
     public Long getSizeInGBs() {
         return sizeInGBs;
     }

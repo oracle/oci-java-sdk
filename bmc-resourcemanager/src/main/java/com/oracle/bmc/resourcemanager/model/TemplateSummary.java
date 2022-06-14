@@ -49,63 +49,125 @@ public final class TemplateSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the specified template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier of the specified template.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Human-readable display name for the template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Human-readable display name for the template.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Brief description of the template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Brief description of the template.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * whether the template will work for free tier tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
         private Boolean isFreeTier;
 
+        /**
+         * whether the template will work for free tier tenancy.
+         * @param isFreeTier the value to set
+         * @return this builder
+         **/
         public Builder isFreeTier(Boolean isFreeTier) {
             this.isFreeTier = isFreeTier;
             this.__explicitlySet__.add("isFreeTier");
             return this;
         }
-
+        /**
+         * The date and time at which the template was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-11-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time at which the template was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-11-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The current lifecycle state of the template.
+         * Allowable values:
+         * - ACTIVE
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Template.LifecycleState lifecycleState;
 
+        /**
+         * The current lifecycle state of the template.
+         * Allowable values:
+         * - ACTIVE
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Template.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -162,6 +224,10 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier of the specified template.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -172,6 +238,10 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this template.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -182,6 +252,10 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Human-readable display name for the template.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -192,6 +266,10 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Brief description of the template.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -202,6 +280,10 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
     private final Boolean isFreeTier;
 
+    /**
+     * whether the template will work for free tier tenancy.
+     * @return the value
+     **/
     public Boolean getIsFreeTier() {
         return isFreeTier;
     }
@@ -215,6 +297,13 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time at which the template was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-11-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -228,6 +317,13 @@ public final class TemplateSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Template.LifecycleState lifecycleState;
 
+    /**
+     * The current lifecycle state of the template.
+     * Allowable values:
+     * - ACTIVE
+     *
+     * @return the value
+     **/
     public Template.LifecycleState getLifecycleState() {
         return lifecycleState;
     }

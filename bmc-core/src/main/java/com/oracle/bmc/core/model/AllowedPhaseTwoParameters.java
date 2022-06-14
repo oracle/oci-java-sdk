@@ -38,27 +38,49 @@ public final class AllowedPhaseTwoParameters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Allowed phase two encryption algorithms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
         private java.util.List<String> encryptionAlgorithms;
 
+        /**
+         * Allowed phase two encryption algorithms.
+         * @param encryptionAlgorithms the value to set
+         * @return this builder
+         **/
         public Builder encryptionAlgorithms(java.util.List<String> encryptionAlgorithms) {
             this.encryptionAlgorithms = encryptionAlgorithms;
             this.__explicitlySet__.add("encryptionAlgorithms");
             return this;
         }
-
+        /**
+         * Allowed phase two authentication algorithms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
         private java.util.List<String> authenticationAlgorithms;
 
+        /**
+         * Allowed phase two authentication algorithms.
+         * @param authenticationAlgorithms the value to set
+         * @return this builder
+         **/
         public Builder authenticationAlgorithms(java.util.List<String> authenticationAlgorithms) {
             this.authenticationAlgorithms = authenticationAlgorithms;
             this.__explicitlySet__.add("authenticationAlgorithms");
             return this;
         }
-
+        /**
+         * Allowed perfect forward secrecy Diffie-Hellman groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroups")
         private java.util.List<String> pfsDhGroups;
 
+        /**
+         * Allowed perfect forward secrecy Diffie-Hellman groups.
+         * @param pfsDhGroups the value to set
+         * @return this builder
+         **/
         public Builder pfsDhGroups(java.util.List<String> pfsDhGroups) {
             this.pfsDhGroups = pfsDhGroups;
             this.__explicitlySet__.add("pfsDhGroups");
@@ -105,6 +127,10 @@ public final class AllowedPhaseTwoParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
     private final java.util.List<String> encryptionAlgorithms;
 
+    /**
+     * Allowed phase two encryption algorithms.
+     * @return the value
+     **/
     public java.util.List<String> getEncryptionAlgorithms() {
         return encryptionAlgorithms;
     }
@@ -115,6 +141,10 @@ public final class AllowedPhaseTwoParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
     private final java.util.List<String> authenticationAlgorithms;
 
+    /**
+     * Allowed phase two authentication algorithms.
+     * @return the value
+     **/
     public java.util.List<String> getAuthenticationAlgorithms() {
         return authenticationAlgorithms;
     }
@@ -125,6 +155,10 @@ public final class AllowedPhaseTwoParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroups")
     private final java.util.List<String> pfsDhGroups;
 
+    /**
+     * Allowed perfect forward secrecy Diffie-Hellman groups.
+     * @return the value
+     **/
     public java.util.List<String> getPfsDhGroups() {
         return pfsDhGroups;
     }

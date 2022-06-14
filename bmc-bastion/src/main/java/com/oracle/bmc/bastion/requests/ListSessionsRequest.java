@@ -16,6 +16,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String bastionId;
 
+    /**
+     * The unique identifier (OCID) of the bastion in which to list sessions.
+     */
     public String getBastionId() {
         return bastionId;
     }
@@ -24,6 +27,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -40,6 +49,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.bastion.model.SessionLifecycleState sessionLifecycleState;
 
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.bastion.model.SessionLifecycleState getSessionLifecycleState() {
         return sessionLifecycleState;
     }
@@ -48,6 +60,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String sessionId;
 
+    /**
+     * The unique identifier (OCID) of the session in which to list resources.
+     */
     public String getSessionId() {
         return sessionId;
     }
@@ -56,6 +71,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -64,6 +82,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -72,6 +93,9 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.bastion.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.bastion.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -118,6 +142,10 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -129,10 +157,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier (OCID) of the bastion in which to list sessions.
+         */
         private String bastionId = null;
 
         /**
          * The unique identifier (OCID) of the bastion in which to list sessions.
+         * @param bastionId the value to set
          * @return this builder instance
          */
         public Builder bastionId(String bastionId) {
@@ -140,10 +172,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -151,10 +187,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -162,10 +202,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         */
         private com.oracle.bmc.bastion.model.SessionLifecycleState sessionLifecycleState = null;
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param sessionLifecycleState the value to set
          * @return this builder instance
          */
         public Builder sessionLifecycleState(
@@ -174,10 +218,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The unique identifier (OCID) of the session in which to list resources.
+         */
         private String sessionId = null;
 
         /**
          * The unique identifier (OCID) of the session in which to list resources.
+         * @param sessionId the value to set
          * @return this builder instance
          */
         public Builder sessionId(String sessionId) {
@@ -185,10 +233,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -196,10 +248,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -207,10 +263,14 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.bastion.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.bastion.model.SortOrder sortOrder) {
@@ -218,11 +278,16 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -314,7 +379,8 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -329,6 +395,10 @@ public class ListSessionsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .sortBy(sortBy);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -45,45 +45,81 @@ public final class DbVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A valid Oracle Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * A valid Oracle Database version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software is the latest version for a release.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatestForMajorVersion")
         private Boolean isLatestForMajorVersion;
 
+        /**
+         * True if this version of the Oracle Database software is the latest version for a release.
+         * @param isLatestForMajorVersion the value to set
+         * @return this builder
+         **/
         public Builder isLatestForMajorVersion(Boolean isLatestForMajorVersion) {
             this.isLatestForMajorVersion = isLatestForMajorVersion;
             this.__explicitlySet__.add("isLatestForMajorVersion");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software supports pluggable databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
         private Boolean supportsPdb;
 
+        /**
+         * True if this version of the Oracle Database software supports pluggable databases.
+         * @param supportsPdb the value to set
+         * @return this builder
+         **/
         public Builder supportsPdb(Boolean supportsPdb) {
             this.supportsPdb = supportsPdb;
             this.__explicitlySet__.add("supportsPdb");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software is the preview version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreviewDbVersion")
         private Boolean isPreviewDbVersion;
 
+        /**
+         * True if this version of the Oracle Database software is the preview version.
+         * @param isPreviewDbVersion the value to set
+         * @return this builder
+         **/
         public Builder isPreviewDbVersion(Boolean isPreviewDbVersion) {
             this.isPreviewDbVersion = isPreviewDbVersion;
             this.__explicitlySet__.add("isPreviewDbVersion");
             return this;
         }
-
+        /**
+         * True if this version of the Oracle Database software is supported for Upgrade.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
         private Boolean isUpgradeSupported;
 
+        /**
+         * True if this version of the Oracle Database software is supported for Upgrade.
+         * @param isUpgradeSupported the value to set
+         * @return this builder
+         **/
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
             this.isUpgradeSupported = isUpgradeSupported;
             this.__explicitlySet__.add("isUpgradeSupported");
@@ -136,6 +172,10 @@ public final class DbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * A valid Oracle Database version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -146,6 +186,10 @@ public final class DbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestForMajorVersion")
     private final Boolean isLatestForMajorVersion;
 
+    /**
+     * True if this version of the Oracle Database software is the latest version for a release.
+     * @return the value
+     **/
     public Boolean getIsLatestForMajorVersion() {
         return isLatestForMajorVersion;
     }
@@ -156,6 +200,10 @@ public final class DbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
     private final Boolean supportsPdb;
 
+    /**
+     * True if this version of the Oracle Database software supports pluggable databases.
+     * @return the value
+     **/
     public Boolean getSupportsPdb() {
         return supportsPdb;
     }
@@ -166,6 +214,10 @@ public final class DbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewDbVersion")
     private final Boolean isPreviewDbVersion;
 
+    /**
+     * True if this version of the Oracle Database software is the preview version.
+     * @return the value
+     **/
     public Boolean getIsPreviewDbVersion() {
         return isPreviewDbVersion;
     }
@@ -176,6 +228,10 @@ public final class DbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
     private final Boolean isUpgradeSupported;
 
+    /**
+     * True if this version of the Oracle Database software is supported for Upgrade.
+     * @return the value
+     **/
     public Boolean getIsUpgradeSupported() {
         return isUpgradeSupported;
     }

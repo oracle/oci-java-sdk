@@ -16,6 +16,9 @@ public class GetVnicRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -26,10 +29,14 @@ public class GetVnicRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         */
         private String vnicId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * @param vnicId the value to set
          * @return this builder instance
          */
         public Builder vnicId(String vnicId) {
@@ -105,12 +112,17 @@ public class GetVnicRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().vnicId(vnicId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

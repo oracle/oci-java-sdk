@@ -29,9 +29,17 @@ public final class CharEncodingCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of supported character encodings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<String> items;
 
+        /**
+         * List of supported character encodings.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<String> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class CharEncodingCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<String> items;
 
+    /**
+     * List of supported character encodings.
+     * @return the value
+     **/
     public java.util.List<String> getItems() {
         return items;
     }

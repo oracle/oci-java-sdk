@@ -15,6 +15,12 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +45,10 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
+    /**
+     * The returned AutoScalingConfiguration instance.
+     * @return the value
+     */
     public com.oracle.bmc.bds.model.AutoScalingConfiguration getAutoScalingConfiguration() {
         return autoScalingConfiguration;
     }
@@ -63,22 +78,52 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned AutoScalingConfiguration instance.
+         */
         private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
+        /**
+         * The returned AutoScalingConfiguration instance.
+         * @param autoScalingConfiguration the value to set
+         * @return this builder
+         */
         public Builder autoScalingConfiguration(
                 com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration) {
             this.autoScalingConfiguration = autoScalingConfiguration;
@@ -98,12 +143,20 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetAutoScalingConfigurationResponse build() {
             return new GetAutoScalingConfigurationResponse(
                     __httpStatusCode__, opcRequestId, etag, autoScalingConfiguration);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

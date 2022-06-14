@@ -61,99 +61,177 @@ public final class ProfileDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of users using this profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numUsers")
         private Integer numUsers;
 
+        /**
+         * The number of users using this profile.
+         * @param numUsers the value to set
+         * @return this builder
+         **/
         public Builder numUsers(Integer numUsers) {
             this.numUsers = numUsers;
             this.__explicitlySet__.add("numUsers");
             return this;
         }
-
+        /**
+         * The value of the CONNECT_TIME resource parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectTime")
         private String connectTime;
 
+        /**
+         * The value of the CONNECT_TIME resource parameter.
+         * @param connectTime the value to set
+         * @return this builder
+         **/
         public Builder connectTime(String connectTime) {
             this.connectTime = connectTime;
             this.__explicitlySet__.add("connectTime");
             return this;
         }
-
+        /**
+         * The value of the FAILED_LOGIN_ATTEMPTS password parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
         private String failedLoginAttempts;
 
+        /**
+         * The value of the FAILED_LOGIN_ATTEMPTS password parameter.
+         * @param failedLoginAttempts the value to set
+         * @return this builder
+         **/
         public Builder failedLoginAttempts(String failedLoginAttempts) {
             this.failedLoginAttempts = failedLoginAttempts;
             this.__explicitlySet__.add("failedLoginAttempts");
             return this;
         }
-
+        /**
+         * The value of the IDLE_TIME resource parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idleTime")
         private String idleTime;
 
+        /**
+         * The value of the IDLE_TIME resource parameter.
+         * @param idleTime the value to set
+         * @return this builder
+         **/
         public Builder idleTime(String idleTime) {
             this.idleTime = idleTime;
             this.__explicitlySet__.add("idleTime");
             return this;
         }
-
+        /**
+         * The value of the INACTIVE_ACCOUNT_TIME password parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
         private String inactiveAccountTime;
 
+        /**
+         * The value of the INACTIVE_ACCOUNT_TIME password parameter.
+         * @param inactiveAccountTime the value to set
+         * @return this builder
+         **/
         public Builder inactiveAccountTime(String inactiveAccountTime) {
             this.inactiveAccountTime = inactiveAccountTime;
             this.__explicitlySet__.add("inactiveAccountTime");
             return this;
         }
-
+        /**
+         * The value of the PASSWORD_GRACE_TIME password parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordGraceTime")
         private String passwordGraceTime;
 
+        /**
+         * The value of the PASSWORD_GRACE_TIME password parameter.
+         * @param passwordGraceTime the value to set
+         * @return this builder
+         **/
         public Builder passwordGraceTime(String passwordGraceTime) {
             this.passwordGraceTime = passwordGraceTime;
             this.__explicitlySet__.add("passwordGraceTime");
             return this;
         }
-
+        /**
+         * The value of the PASSWORD_LIFE_TIME password parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordLifeTime")
         private String passwordLifeTime;
 
+        /**
+         * The value of the PASSWORD_LIFE_TIME password parameter.
+         * @param passwordLifeTime the value to set
+         * @return this builder
+         **/
         public Builder passwordLifeTime(String passwordLifeTime) {
             this.passwordLifeTime = passwordLifeTime;
             this.__explicitlySet__.add("passwordLifeTime");
             return this;
         }
-
+        /**
+         * The value of the PASSWORD_LOCK_TIME password parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
         private String passwordLockTime;
 
+        /**
+         * The value of the PASSWORD_LOCK_TIME password parameter.
+         * @param passwordLockTime the value to set
+         * @return this builder
+         **/
         public Builder passwordLockTime(String passwordLockTime) {
             this.passwordLockTime = passwordLockTime;
             this.__explicitlySet__.add("passwordLockTime");
             return this;
         }
-
+        /**
+         * The value of the PASSWORD_REUSE_TIME password parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseTime")
         private String passwordReuseTime;
 
+        /**
+         * The value of the PASSWORD_REUSE_TIME password parameter.
+         * @param passwordReuseTime the value to set
+         * @return this builder
+         **/
         public Builder passwordReuseTime(String passwordReuseTime) {
             this.passwordReuseTime = passwordReuseTime;
             this.__explicitlySet__.add("passwordReuseTime");
             return this;
         }
-
+        /**
+         * The value of the PASSWORD_REUSE_MAX resource parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseMax")
         private String passwordReuseMax;
 
+        /**
+         * The value of the PASSWORD_REUSE_MAX resource parameter.
+         * @param passwordReuseMax the value to set
+         * @return this builder
+         **/
         public Builder passwordReuseMax(String passwordReuseMax) {
             this.passwordReuseMax = passwordReuseMax;
             this.__explicitlySet__.add("passwordReuseMax");
             return this;
         }
-
+        /**
+         * The value of the PASSWORD_VERIFY_FUNCTION resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVerifyFunction")
         private String passwordVerifyFunction;
 
+        /**
+         * The value of the PASSWORD_VERIFY_FUNCTION resource.
+         * @param passwordVerifyFunction the value to set
+         * @return this builder
+         **/
         public Builder passwordVerifyFunction(String passwordVerifyFunction) {
             this.passwordVerifyFunction = passwordVerifyFunction;
             this.__explicitlySet__.add("passwordVerifyFunction");
@@ -218,6 +296,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("numUsers")
     private final Integer numUsers;
 
+    /**
+     * The number of users using this profile.
+     * @return the value
+     **/
     public Integer getNumUsers() {
         return numUsers;
     }
@@ -228,6 +310,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectTime")
     private final String connectTime;
 
+    /**
+     * The value of the CONNECT_TIME resource parameter.
+     * @return the value
+     **/
     public String getConnectTime() {
         return connectTime;
     }
@@ -238,6 +324,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
     private final String failedLoginAttempts;
 
+    /**
+     * The value of the FAILED_LOGIN_ATTEMPTS password parameter.
+     * @return the value
+     **/
     public String getFailedLoginAttempts() {
         return failedLoginAttempts;
     }
@@ -248,6 +338,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("idleTime")
     private final String idleTime;
 
+    /**
+     * The value of the IDLE_TIME resource parameter.
+     * @return the value
+     **/
     public String getIdleTime() {
         return idleTime;
     }
@@ -258,6 +352,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
     private final String inactiveAccountTime;
 
+    /**
+     * The value of the INACTIVE_ACCOUNT_TIME password parameter.
+     * @return the value
+     **/
     public String getInactiveAccountTime() {
         return inactiveAccountTime;
     }
@@ -268,6 +366,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordGraceTime")
     private final String passwordGraceTime;
 
+    /**
+     * The value of the PASSWORD_GRACE_TIME password parameter.
+     * @return the value
+     **/
     public String getPasswordGraceTime() {
         return passwordGraceTime;
     }
@@ -278,6 +380,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLifeTime")
     private final String passwordLifeTime;
 
+    /**
+     * The value of the PASSWORD_LIFE_TIME password parameter.
+     * @return the value
+     **/
     public String getPasswordLifeTime() {
         return passwordLifeTime;
     }
@@ -288,6 +394,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
     private final String passwordLockTime;
 
+    /**
+     * The value of the PASSWORD_LOCK_TIME password parameter.
+     * @return the value
+     **/
     public String getPasswordLockTime() {
         return passwordLockTime;
     }
@@ -298,6 +408,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseTime")
     private final String passwordReuseTime;
 
+    /**
+     * The value of the PASSWORD_REUSE_TIME password parameter.
+     * @return the value
+     **/
     public String getPasswordReuseTime() {
         return passwordReuseTime;
     }
@@ -308,6 +422,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseMax")
     private final String passwordReuseMax;
 
+    /**
+     * The value of the PASSWORD_REUSE_MAX resource parameter.
+     * @return the value
+     **/
     public String getPasswordReuseMax() {
         return passwordReuseMax;
     }
@@ -318,6 +436,10 @@ public final class ProfileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVerifyFunction")
     private final String passwordVerifyFunction;
 
+    /**
+     * The value of the PASSWORD_VERIFY_FUNCTION resource.
+     * @return the value
+     **/
     public String getPasswordVerifyFunction() {
         return passwordVerifyFunction;
     }

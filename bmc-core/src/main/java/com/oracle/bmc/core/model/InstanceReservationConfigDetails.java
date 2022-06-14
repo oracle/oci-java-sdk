@@ -42,9 +42,25 @@ public final class InstanceReservationConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape requested when launching instances using reserved capacity.
+         * The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
+        /**
+         * The shape requested when launching instances using reserved capacity.
+         * The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+         *
+         * @param instanceShape the value to set
+         * @return this builder
+         **/
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -60,19 +76,53 @@ public final class InstanceReservationConfigDetails {
             this.__explicitlySet__.add("instanceShapeConfig");
             return this;
         }
-
+        /**
+         * The fault domain to use for instances created using this capacity configuration.
+         * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+         * If you do not specify the fault domain, the capacity is available for an instance
+         * that does not specify a fault domain. To change the fault domain for a reservation,
+         * delete the reservation and create a new one in the preferred fault domain.
+         * <p>
+         * To retrieve a list of fault domains, use the {@code ListFaultDomains} operation in
+         * the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain to use for instances created using this capacity configuration.
+         * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+         * If you do not specify the fault domain, the capacity is available for an instance
+         * that does not specify a fault domain. To change the fault domain for a reservation,
+         * delete the reservation and create a new one in the preferred fault domain.
+         * <p>
+         * To retrieve a list of fault domains, use the {@code ListFaultDomains} operation in
+         * the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
+         *
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The total number of instances that can be launched from the capacity configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
         private Long reservedCount;
 
+        /**
+         * The total number of instances that can be launched from the capacity configuration.
+         * @param reservedCount the value to set
+         * @return this builder
+         **/
         public Builder reservedCount(Long reservedCount) {
             this.reservedCount = reservedCount;
             this.__explicitlySet__.add("reservedCount");
@@ -124,6 +174,14 @@ public final class InstanceReservationConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
+    /**
+     * The shape requested when launching instances using reserved capacity.
+     * The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+     *
+     * @return the value
+     **/
     public String getInstanceShape() {
         return instanceShape;
     }
@@ -151,6 +209,20 @@ public final class InstanceReservationConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain to use for instances created using this capacity configuration.
+     * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+     * If you do not specify the fault domain, the capacity is available for an instance
+     * that does not specify a fault domain. To change the fault domain for a reservation,
+     * delete the reservation and create a new one in the preferred fault domain.
+     * <p>
+     * To retrieve a list of fault domains, use the {@code ListFaultDomains} operation in
+     * the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
+     *
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -161,6 +233,10 @@ public final class InstanceReservationConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
     private final Long reservedCount;
 
+    /**
+     * The total number of instances that can be launched from the capacity configuration.
+     * @return the value
+     **/
     public Long getReservedCount() {
         return reservedCount;
     }

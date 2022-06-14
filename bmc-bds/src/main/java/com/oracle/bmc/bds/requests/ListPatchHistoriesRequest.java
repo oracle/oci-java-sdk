@@ -16,6 +16,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String bdsInstanceId;
 
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
@@ -24,6 +27,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.bds.model.PatchHistorySummary.LifecycleState lifecycleState;
 
+    /**
+     * The status of the patch.
+     */
     public com.oracle.bmc.bds.model.PatchHistorySummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -78,6 +87,10 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -86,6 +99,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String patchVersion;
 
+    /**
+     * The version of the patch
+     */
     public String getPatchVersion() {
         return patchVersion;
     }
@@ -94,6 +110,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.bds.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.bds.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -102,6 +121,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -110,6 +132,9 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -121,10 +146,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
+         * @param bdsInstanceId the value to set
          * @return this builder instance
          */
         public Builder bdsInstanceId(String bdsInstanceId) {
@@ -132,10 +161,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -143,10 +176,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The status of the patch.
+         */
         private com.oracle.bmc.bds.model.PatchHistorySummary.LifecycleState lifecycleState = null;
 
         /**
          * The status of the patch.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -155,11 +192,16 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -167,10 +209,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The version of the patch
+         */
         private String patchVersion = null;
 
         /**
          * The version of the patch
+         * @param patchVersion the value to set
          * @return this builder instance
          */
         public Builder patchVersion(String patchVersion) {
@@ -178,10 +224,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.bds.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.bds.model.SortOrders sortOrder) {
@@ -189,10 +239,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -200,10 +254,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -293,7 +351,8 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -307,6 +366,10 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
                 .limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

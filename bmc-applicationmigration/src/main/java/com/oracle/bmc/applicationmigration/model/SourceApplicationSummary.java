@@ -36,45 +36,81 @@ public final class SourceApplicationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the application.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The type of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MigrationTypes type;
 
+        /**
+         * The type of the application.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(MigrationTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source to which the application belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source to which the application belongs.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * The version of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the application.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The current state of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
+        /**
+         * The current state of the application.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -122,6 +158,10 @@ public final class SourceApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the application.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -132,6 +172,10 @@ public final class SourceApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MigrationTypes type;
 
+    /**
+     * The type of the application.
+     * @return the value
+     **/
     public MigrationTypes getType() {
         return type;
     }
@@ -142,6 +186,10 @@ public final class SourceApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source to which the application belongs.
+     * @return the value
+     **/
     public String getSourceId() {
         return sourceId;
     }
@@ -152,6 +200,10 @@ public final class SourceApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the application.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -162,6 +214,10 @@ public final class SourceApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
+    /**
+     * The current state of the application.
+     * @return the value
+     **/
     public String getState() {
         return state;
     }

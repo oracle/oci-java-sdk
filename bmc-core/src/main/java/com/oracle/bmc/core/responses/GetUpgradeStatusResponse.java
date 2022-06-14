@@ -15,6 +15,12 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.core.model.UpgradeStatus upgradeStatus;
 
+    /**
+     * The returned UpgradeStatus instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.UpgradeStatus getUpgradeStatus() {
         return upgradeStatus;
     }
@@ -46,15 +56,35 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned UpgradeStatus instance.
+         */
         private com.oracle.bmc.core.model.UpgradeStatus upgradeStatus;
 
+        /**
+         * The returned UpgradeStatus instance.
+         * @param upgradeStatus the value to set
+         * @return this builder
+         */
         public Builder upgradeStatus(com.oracle.bmc.core.model.UpgradeStatus upgradeStatus) {
             this.upgradeStatus = upgradeStatus;
             return this;
@@ -72,11 +102,19 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetUpgradeStatusResponse build() {
             return new GetUpgradeStatusResponse(__httpStatusCode__, opcRequestId, upgradeStatus);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

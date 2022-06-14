@@ -41,19 +41,43 @@ public final class SubstringFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The starting position in the original string from where the substring
+         * should be extracted. It can be either a positive or a negative integer.
+         * If It's negative, the counting starts from the end of the string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startPosition")
         private Integer startPosition;
 
+        /**
+         * The starting position in the original string from where the substring
+         * should be extracted. It can be either a positive or a negative integer.
+         * If It's negative, the counting starts from the end of the string.
+         *
+         * @param startPosition the value to set
+         * @return this builder
+         **/
         public Builder startPosition(Integer startPosition) {
             this.startPosition = startPosition;
             this.__explicitlySet__.add("startPosition");
             return this;
         }
-
+        /**
+         * The number of characters that should be there in the substring. It should
+         * be an integer and greater than zero.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
+        /**
+         * The number of characters that should be there in the substring. It should
+         * be an integer and greater than zero.
+         *
+         * @param length the value to set
+         * @return this builder
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
@@ -109,6 +133,13 @@ public final class SubstringFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("startPosition")
     private final Integer startPosition;
 
+    /**
+     * The starting position in the original string from where the substring
+     * should be extracted. It can be either a positive or a negative integer.
+     * If It's negative, the counting starts from the end of the string.
+     *
+     * @return the value
+     **/
     public Integer getStartPosition() {
         return startPosition;
     }
@@ -121,6 +152,12 @@ public final class SubstringFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
+    /**
+     * The number of characters that should be there in the substring. It should
+     * be an integer and greater than zero.
+     *
+     * @return the value
+     **/
     public Integer getLength() {
         return length;
     }

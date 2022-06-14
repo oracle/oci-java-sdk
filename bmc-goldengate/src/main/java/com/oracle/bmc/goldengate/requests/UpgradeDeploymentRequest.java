@@ -19,6 +19,10 @@ public class UpgradeDeploymentRequest
      */
     private String deploymentId;
 
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -28,6 +32,10 @@ public class UpgradeDeploymentRequest
      */
     private com.oracle.bmc.goldengate.model.UpgradeDeploymentDetails upgradeDeploymentDetails;
 
+    /**
+     * A placeholder for any additional metadata to describe the deployment upgrade.
+     *
+     */
     public com.oracle.bmc.goldengate.model.UpgradeDeploymentDetails getUpgradeDeploymentDetails() {
         return upgradeDeploymentDetails;
     }
@@ -37,6 +45,10 @@ public class UpgradeDeploymentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -46,6 +58,10 @@ public class UpgradeDeploymentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,6 +71,10 @@ public class UpgradeDeploymentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -77,11 +97,16 @@ public class UpgradeDeploymentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique Deployment identifier.
+         *
+         */
         private String deploymentId = null;
 
         /**
          * A unique Deployment identifier.
          *
+         * @param deploymentId the value to set
          * @return this builder instance
          */
         public Builder deploymentId(String deploymentId) {
@@ -89,12 +114,17 @@ public class UpgradeDeploymentRequest
             return this;
         }
 
+        /**
+         * A placeholder for any additional metadata to describe the deployment upgrade.
+         *
+         */
         private com.oracle.bmc.goldengate.model.UpgradeDeploymentDetails upgradeDeploymentDetails =
                 null;
 
         /**
          * A placeholder for any additional metadata to describe the deployment upgrade.
          *
+         * @param upgradeDeploymentDetails the value to set
          * @return this builder instance
          */
         public Builder upgradeDeploymentDetails(
@@ -103,11 +133,16 @@ public class UpgradeDeploymentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -115,11 +150,16 @@ public class UpgradeDeploymentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,11 +167,16 @@ public class UpgradeDeploymentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -226,7 +271,8 @@ public class UpgradeDeploymentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +283,10 @@ public class UpgradeDeploymentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

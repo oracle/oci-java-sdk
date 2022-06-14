@@ -32,19 +32,34 @@ public final class FacetedSearchFilterRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Object with date filter criteria
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchDateFilters")
         private java.util.List<FacetedSearchDateFilterRequest> searchDateFilters;
 
+        /**
+         * Object with date filter criteria
+         * @param searchDateFilters the value to set
+         * @return this builder
+         **/
         public Builder searchDateFilters(
                 java.util.List<FacetedSearchDateFilterRequest> searchDateFilters) {
             this.searchDateFilters = searchDateFilters;
             this.__explicitlySet__.add("searchDateFilters");
             return this;
         }
-
+        /**
+         * Object with string filter criteria
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchStringFilters")
         private java.util.List<FacetedSearchStringFilterRequest> searchStringFilters;
 
+        /**
+         * Object with string filter criteria
+         * @param searchStringFilters the value to set
+         * @return this builder
+         **/
         public Builder searchStringFilters(
                 java.util.List<FacetedSearchStringFilterRequest> searchStringFilters) {
             this.searchStringFilters = searchStringFilters;
@@ -90,6 +105,10 @@ public final class FacetedSearchFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("searchDateFilters")
     private final java.util.List<FacetedSearchDateFilterRequest> searchDateFilters;
 
+    /**
+     * Object with date filter criteria
+     * @return the value
+     **/
     public java.util.List<FacetedSearchDateFilterRequest> getSearchDateFilters() {
         return searchDateFilters;
     }
@@ -100,6 +119,10 @@ public final class FacetedSearchFilterRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("searchStringFilters")
     private final java.util.List<FacetedSearchStringFilterRequest> searchStringFilters;
 
+    /**
+     * Object with string filter criteria
+     * @return the value
+     **/
     public java.util.List<FacetedSearchStringFilterRequest> getSearchStringFilters() {
         return searchStringFilters;
     }

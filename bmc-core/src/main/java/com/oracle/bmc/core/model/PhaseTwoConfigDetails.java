@@ -47,54 +47,103 @@ public final class PhaseTwoConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether custom configuration is enabled for phase two options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
         private Boolean isCustomPhaseTwoConfig;
 
+        /**
+         * Indicates whether custom configuration is enabled for phase two options.
+         * @param isCustomPhaseTwoConfig the value to set
+         * @return this builder
+         **/
         public Builder isCustomPhaseTwoConfig(Boolean isCustomPhaseTwoConfig) {
             this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             this.__explicitlySet__.add("isCustomPhaseTwoConfig");
             return this;
         }
-
+        /**
+         * The authentication algorithm proposed during phase two tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
         private AuthenticationAlgorithm authenticationAlgorithm;
 
+        /**
+         * The authentication algorithm proposed during phase two tunnel negotiation.
+         *
+         * @param authenticationAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder authenticationAlgorithm(AuthenticationAlgorithm authenticationAlgorithm) {
             this.authenticationAlgorithm = authenticationAlgorithm;
             this.__explicitlySet__.add("authenticationAlgorithm");
             return this;
         }
-
+        /**
+         * The encryption algorithm proposed during phase two tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
+        /**
+         * The encryption algorithm proposed during phase two tunnel negotiation.
+         *
+         * @param encryptionAlgorithm the value to set
+         * @return this builder
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
             return this;
         }
-
+        /**
+         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
         private Integer lifetimeInSeconds;
 
+        /**
+         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         *
+         * @param lifetimeInSeconds the value to set
+         * @return this builder
+         **/
         public Builder lifetimeInSeconds(Integer lifetimeInSeconds) {
             this.lifetimeInSeconds = lifetimeInSeconds;
             this.__explicitlySet__.add("lifetimeInSeconds");
             return this;
         }
-
+        /**
+         * Indicates whether perfect forward secrecy (PFS) is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
         private Boolean isPfsEnabled;
 
+        /**
+         * Indicates whether perfect forward secrecy (PFS) is enabled.
+         * @param isPfsEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPfsEnabled(Boolean isPfsEnabled) {
             this.isPfsEnabled = isPfsEnabled;
             this.__explicitlySet__.add("isPfsEnabled");
             return this;
         }
-
+        /**
+         * The Diffie-Hellman group used for PFS, if PFS is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroup")
         private PfsDhGroup pfsDhGroup;
 
+        /**
+         * The Diffie-Hellman group used for PFS, if PFS is enabled.
+         * @param pfsDhGroup the value to set
+         * @return this builder
+         **/
         public Builder pfsDhGroup(PfsDhGroup pfsDhGroup) {
             this.pfsDhGroup = pfsDhGroup;
             this.__explicitlySet__.add("pfsDhGroup");
@@ -149,6 +198,10 @@ public final class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
     private final Boolean isCustomPhaseTwoConfig;
 
+    /**
+     * Indicates whether custom configuration is enabled for phase two options.
+     * @return the value
+     **/
     public Boolean getIsCustomPhaseTwoConfig() {
         return isCustomPhaseTwoConfig;
     }
@@ -196,6 +249,11 @@ public final class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
     private final AuthenticationAlgorithm authenticationAlgorithm;
 
+    /**
+     * The authentication algorithm proposed during phase two tunnel negotiation.
+     *
+     * @return the value
+     **/
     public AuthenticationAlgorithm getAuthenticationAlgorithm() {
         return authenticationAlgorithm;
     }
@@ -247,6 +305,11 @@ public final class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
+    /**
+     * The encryption algorithm proposed during phase two tunnel negotiation.
+     *
+     * @return the value
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
@@ -258,6 +321,11 @@ public final class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
     private final Integer lifetimeInSeconds;
 
+    /**
+     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     *
+     * @return the value
+     **/
     public Integer getLifetimeInSeconds() {
         return lifetimeInSeconds;
     }
@@ -268,6 +336,10 @@ public final class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
     private final Boolean isPfsEnabled;
 
+    /**
+     * Indicates whether perfect forward secrecy (PFS) is enabled.
+     * @return the value
+     **/
     public Boolean getIsPfsEnabled() {
         return isPfsEnabled;
     }
@@ -317,6 +389,10 @@ public final class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroup")
     private final PfsDhGroup pfsDhGroup;
 
+    /**
+     * The Diffie-Hellman group used for PFS, if PFS is enabled.
+     * @return the value
+     **/
     public PfsDhGroup getPfsDhGroup() {
         return pfsDhGroup;
     }

@@ -29,9 +29,17 @@ public final class BatchDetectLanguageKeyPhrasesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of Documents for detect keyPhrases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<KeyPhraseDocument> documents;
 
+        /**
+         * List of Documents for detect keyPhrases.
+         * @param documents the value to set
+         * @return this builder
+         **/
         public Builder documents(java.util.List<KeyPhraseDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
@@ -74,6 +82,10 @@ public final class BatchDetectLanguageKeyPhrasesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<KeyPhraseDocument> documents;
 
+    /**
+     * List of Documents for detect keyPhrases.
+     * @return the value
+     **/
     public java.util.List<KeyPhraseDocument> getDocuments() {
         return documents;
     }

@@ -72,118 +72,220 @@ public final class PackageItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique immutable identifier that was assigned when the Package was registered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique immutable identifier that was assigned when the Package was registered.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * ID of the publisher providing the package.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherId")
         private String publisherId;
 
+        /**
+         * ID of the publisher providing the package.
+         *
+         * @param publisherId the value to set
+         * @return this builder
+         **/
         public Builder publisherId(String publisherId) {
             this.publisherId = publisherId;
             this.__explicitlySet__.add("publisherId");
             return this;
         }
-
+        /**
+         * Name of package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of package.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Display name for the package (displayed in UI and user-facing applications).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name for the package (displayed in UI and user-facing applications).
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Version of the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of the package.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * When the package was uploaded. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUploaded")
         private java.util.Date timeUploaded;
 
+        /**
+         * When the package was uploaded. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeUploaded the value to set
+         * @return this builder
+         **/
         public Builder timeUploaded(java.util.Date timeUploaded) {
             this.timeUploaded = timeUploaded;
             this.__explicitlySet__.add("timeUploaded");
             return this;
         }
-
+        /**
+         * When the package was last published. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
         private java.util.Date timePublished;
 
+        /**
+         * When the package was last published. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timePublished the value to set
+         * @return this builder
+         **/
         public Builder timePublished(java.util.Date timePublished) {
             this.timePublished = timePublished;
             this.__explicitlySet__.add("timePublished");
             return this;
         }
-
+        /**
+         * Description of the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the package.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A list of resource types describing the content of the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypes")
         private java.util.List<String> resourceTypes;
 
+        /**
+         * A list of resource types describing the content of the package.
+         * @param resourceTypes the value to set
+         * @return this builder
+         **/
         public Builder resourceTypes(java.util.List<String> resourceTypes) {
             this.resourceTypes = resourceTypes;
             this.__explicitlySet__.add("resourceTypes");
             return this;
         }
-
+        /**
+         * A map of resource type to metadata key/value map that further describes the content for the resource types in this package.. Keys are resource type names, values are a map of name/value pairs per resource type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypesMetadata")
         private java.util.List<ResourceTypeMetadata> resourceTypesMetadata;
 
+        /**
+         * A map of resource type to metadata key/value map that further describes the content for the resource types in this package.. Keys are resource type names, values are a map of name/value pairs per resource type.
+         * @param resourceTypesMetadata the value to set
+         * @return this builder
+         **/
         public Builder resourceTypesMetadata(
                 java.util.List<ResourceTypeMetadata> resourceTypesMetadata) {
             this.resourceTypesMetadata = resourceTypesMetadata;
             this.__explicitlySet__.add("resourceTypesMetadata");
             return this;
         }
-
+        /**
+         * A map of metadata key/value pairs that further describes the publisher and the platform in which the package might be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherMetadata")
         private java.util.List<MetadataProperty> publisherMetadata;
 
+        /**
+         * A map of metadata key/value pairs that further describes the publisher and the platform in which the package might be used.
+         * @param publisherMetadata the value to set
+         * @return this builder
+         **/
         public Builder publisherMetadata(java.util.List<MetadataProperty> publisherMetadata) {
             this.publisherMetadata = publisherMetadata;
             this.__explicitlySet__.add("publisherMetadata");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -275,6 +377,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique immutable identifier that was assigned when the Package was registered.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -286,6 +392,11 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("publisherId")
     private final String publisherId;
 
+    /**
+     * ID of the publisher providing the package.
+     *
+     * @return the value
+     **/
     public String getPublisherId() {
         return publisherId;
     }
@@ -296,6 +407,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of package.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -306,6 +421,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name for the package (displayed in UI and user-facing applications).
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -316,6 +435,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of the package.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -326,6 +449,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUploaded")
     private final java.util.Date timeUploaded;
 
+    /**
+     * When the package was uploaded. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeUploaded() {
         return timeUploaded;
     }
@@ -336,6 +463,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
     private final java.util.Date timePublished;
 
+    /**
+     * When the package was last published. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimePublished() {
         return timePublished;
     }
@@ -346,6 +477,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the package.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -356,6 +491,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypes")
     private final java.util.List<String> resourceTypes;
 
+    /**
+     * A list of resource types describing the content of the package.
+     * @return the value
+     **/
     public java.util.List<String> getResourceTypes() {
         return resourceTypes;
     }
@@ -366,6 +505,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypesMetadata")
     private final java.util.List<ResourceTypeMetadata> resourceTypesMetadata;
 
+    /**
+     * A map of resource type to metadata key/value map that further describes the content for the resource types in this package.. Keys are resource type names, values are a map of name/value pairs per resource type.
+     * @return the value
+     **/
     public java.util.List<ResourceTypeMetadata> getResourceTypesMetadata() {
         return resourceTypesMetadata;
     }
@@ -376,6 +519,10 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("publisherMetadata")
     private final java.util.List<MetadataProperty> publisherMetadata;
 
+    /**
+     * A map of metadata key/value pairs that further describes the publisher and the platform in which the package might be used.
+     * @return the value
+     **/
     public java.util.List<MetadataProperty> getPublisherMetadata() {
         return publisherMetadata;
     }
@@ -388,6 +535,12 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -400,6 +553,12 @@ public final class PackageItem {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

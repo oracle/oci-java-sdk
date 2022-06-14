@@ -16,6 +16,9 @@ public class GetNetworkSourceRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String networkSourceId;
 
+    /**
+     * The OCID of the network source.
+     */
     public String getNetworkSourceId() {
         return networkSourceId;
     }
@@ -27,10 +30,14 @@ public class GetNetworkSourceRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the network source.
+         */
         private String networkSourceId = null;
 
         /**
          * The OCID of the network source.
+         * @param networkSourceId the value to set
          * @return this builder instance
          */
         public Builder networkSourceId(String networkSourceId) {
@@ -106,12 +113,17 @@ public class GetNetworkSourceRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().networkSourceId(networkSourceId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class ListStackResourceDriftDetailsRequest
      */
     private String stackId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+     */
     public String getStackId() {
         return stackId;
     }
@@ -27,6 +30,11 @@ public class ListStackResourceDriftDetailsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +43,9 @@ public class ListStackResourceDriftDetailsRequest
      */
     private String workRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -49,6 +60,15 @@ public class ListStackResourceDriftDetailsRequest
      */
     private java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus;
 
+    /**
+     * A filter that returns only resources that match the given drift status. The value is case-insensitive.
+     * Allowable values -
+     *   - NOT_CHECKED
+     *   - MODIFIED
+     *   - IN_SYNC
+     *   - DELETED
+     *
+     */
     public java.util.List<StackResourceDriftSummary.ResourceDriftStatus> getResourceDriftStatus() {
         return resourceDriftStatus;
     }
@@ -59,6 +79,11 @@ public class ListStackResourceDriftDetailsRequest
      */
     private Integer limit;
 
+    /**
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -69,6 +94,11 @@ public class ListStackResourceDriftDetailsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -80,10 +110,14 @@ public class ListStackResourceDriftDetailsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         */
         private String stackId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         * @param stackId the value to set
          * @return this builder instance
          */
         public Builder stackId(String stackId) {
@@ -91,12 +125,18 @@ public class ListStackResourceDriftDetailsRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -104,10 +144,14 @@ public class ListStackResourceDriftDetailsRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         */
         private String workRequestId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -115,6 +159,15 @@ public class ListStackResourceDriftDetailsRequest
             return this;
         }
 
+        /**
+         * A filter that returns only resources that match the given drift status. The value is case-insensitive.
+         * Allowable values -
+         *   - NOT_CHECKED
+         *   - MODIFIED
+         *   - IN_SYNC
+         *   - DELETED
+         *
+         */
         private java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus =
                 null;
 
@@ -126,6 +179,7 @@ public class ListStackResourceDriftDetailsRequest
          *   - IN_SYNC
          *   - DELETED
          *
+         * @param resourceDriftStatus the value to set
          * @return this builder instance
          */
         public Builder resourceDriftStatus(
@@ -142,6 +196,7 @@ public class ListStackResourceDriftDetailsRequest
          *   - IN_SYNC
          *   - DELETED
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder resourceDriftStatus(
@@ -149,12 +204,18 @@ public class ListStackResourceDriftDetailsRequest
             return this.resourceDriftStatus(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private Integer limit = null;
 
         /**
          * The number of items returned in a paginated {@code List} call. For information about pagination, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -162,12 +223,18 @@ public class ListStackResourceDriftDetailsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
          * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -254,7 +321,8 @@ public class ListStackResourceDriftDetailsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -266,6 +334,10 @@ public class ListStackResourceDriftDetailsRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

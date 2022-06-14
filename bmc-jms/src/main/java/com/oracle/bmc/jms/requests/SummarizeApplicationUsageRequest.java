@@ -17,6 +17,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String fleetId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
@@ -25,6 +28,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String applicationId;
 
+    /**
+     * The Fleet-unique identifier of the application.
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -33,6 +39,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String displayName;
 
+    /**
+     * The display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -41,6 +50,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String applicationType;
 
+    /**
+     * The type of the application.
+     */
     public String getApplicationType() {
         return applicationType;
     }
@@ -49,6 +61,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String jreVendor;
 
+    /**
+     * The vendor of the related Java Runtime.
+     */
     public String getJreVendor() {
         return jreVendor;
     }
@@ -57,6 +72,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String jreDistribution;
 
+    /**
+     * The distribution of the related Java Runtime.
+     */
     public String getJreDistribution() {
         return jreDistribution;
     }
@@ -65,6 +83,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String jreVersion;
 
+    /**
+     * The version of the related Java Runtime.
+     */
     public String getJreVersion() {
         return jreVersion;
     }
@@ -73,6 +94,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String installationPath;
 
+    /**
+     * The file system path of the installation.
+     */
     public String getInstallationPath() {
         return installationPath;
     }
@@ -81,6 +105,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String managedInstanceId;
 
+    /**
+     * The Fleet-unique identifier of the related managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -92,6 +119,12 @@ public class SummarizeApplicationUsageRequest
      */
     private java.util.List<com.oracle.bmc.jms.model.SummarizeApplicationUsageFields> fields;
 
+    /**
+     * Additional fields to include into the returned model on top of the required ones.
+     * This parameter can also include 'approximateJreCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
+     * For example 'approximateJreCount,approximateInstallationCount'.
+     *
+     */
     public java.util.List<com.oracle.bmc.jms.model.SummarizeApplicationUsageFields> getFields() {
         return fields;
     }
@@ -100,6 +133,9 @@ public class SummarizeApplicationUsageRequest
      */
     private java.util.Date timeStart;
 
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -108,6 +144,9 @@ public class SummarizeApplicationUsageRequest
      */
     private java.util.Date timeEnd;
 
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -116,6 +155,9 @@ public class SummarizeApplicationUsageRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -124,6 +166,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -132,6 +177,9 @@ public class SummarizeApplicationUsageRequest
      */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -145,6 +193,14 @@ public class SummarizeApplicationUsageRequest
      */
     private com.oracle.bmc.jms.model.ApplicationSortBy sortBy;
 
+    /**
+     * The field to sort application views. Only one sort order may be provided.
+     * Default order for _timeFirstSeen_, _timeLastSeen_, _approximateJreCount_, _approximateInstallationCount_
+     * and _approximateManagedInstanceCount_  is **descending**.
+     * Default order for _displayName_ and _osName_ is **ascending**.
+     * If no value is specified _timeLastSeen_ is default.
+     *
+     */
     public com.oracle.bmc.jms.model.ApplicationSortBy getSortBy() {
         return sortBy;
     }
@@ -153,6 +209,9 @@ public class SummarizeApplicationUsageRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -161,6 +220,9 @@ public class SummarizeApplicationUsageRequest
      */
     private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily;
 
+    /**
+     * The operating system type.
+     */
     public java.util.List<com.oracle.bmc.jms.model.OsFamily> getOsFamily() {
         return osFamily;
     }
@@ -172,10 +234,14 @@ public class SummarizeApplicationUsageRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * @param fleetId the value to set
          * @return this builder instance
          */
         public Builder fleetId(String fleetId) {
@@ -183,10 +249,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The Fleet-unique identifier of the application.
+         */
         private String applicationId = null;
 
         /**
          * The Fleet-unique identifier of the application.
+         * @param applicationId the value to set
          * @return this builder instance
          */
         public Builder applicationId(String applicationId) {
@@ -194,10 +264,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The display name.
+         */
         private String displayName = null;
 
         /**
          * The display name.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -205,10 +279,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The type of the application.
+         */
         private String applicationType = null;
 
         /**
          * The type of the application.
+         * @param applicationType the value to set
          * @return this builder instance
          */
         public Builder applicationType(String applicationType) {
@@ -216,10 +294,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The vendor of the related Java Runtime.
+         */
         private String jreVendor = null;
 
         /**
          * The vendor of the related Java Runtime.
+         * @param jreVendor the value to set
          * @return this builder instance
          */
         public Builder jreVendor(String jreVendor) {
@@ -227,10 +309,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The distribution of the related Java Runtime.
+         */
         private String jreDistribution = null;
 
         /**
          * The distribution of the related Java Runtime.
+         * @param jreDistribution the value to set
          * @return this builder instance
          */
         public Builder jreDistribution(String jreDistribution) {
@@ -238,10 +324,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The version of the related Java Runtime.
+         */
         private String jreVersion = null;
 
         /**
          * The version of the related Java Runtime.
+         * @param jreVersion the value to set
          * @return this builder instance
          */
         public Builder jreVersion(String jreVersion) {
@@ -249,10 +339,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The file system path of the installation.
+         */
         private String installationPath = null;
 
         /**
          * The file system path of the installation.
+         * @param installationPath the value to set
          * @return this builder instance
          */
         public Builder installationPath(String installationPath) {
@@ -260,10 +354,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The Fleet-unique identifier of the related managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the related managed instance.
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -271,6 +369,12 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * Additional fields to include into the returned model on top of the required ones.
+         * This parameter can also include 'approximateJreCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
+         * For example 'approximateJreCount,approximateInstallationCount'.
+         *
+         */
         private java.util.List<com.oracle.bmc.jms.model.SummarizeApplicationUsageFields> fields =
                 null;
 
@@ -279,6 +383,7 @@ public class SummarizeApplicationUsageRequest
          * This parameter can also include 'approximateJreCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
          * For example 'approximateJreCount,approximateInstallationCount'.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(
@@ -292,16 +397,21 @@ public class SummarizeApplicationUsageRequest
          * This parameter can also include 'approximateJreCount', 'approximateInstallationCount' and 'approximateManagedInstanceCount'.
          * For example 'approximateJreCount,approximateInstallationCount'.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(SummarizeApplicationUsageFields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
         private java.util.Date timeStart = null;
 
         /**
          * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeStart the value to set
          * @return this builder instance
          */
         public Builder timeStart(java.util.Date timeStart) {
@@ -309,10 +419,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
         private java.util.Date timeEnd = null;
 
         /**
          * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeEnd the value to set
          * @return this builder instance
          */
         public Builder timeEnd(java.util.Date timeEnd) {
@@ -320,10 +434,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -331,10 +449,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -342,10 +464,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.jms.model.SortOrder sortOrder) {
@@ -353,6 +479,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The field to sort application views. Only one sort order may be provided.
+         * Default order for _timeFirstSeen_, _timeLastSeen_, _approximateJreCount_, _approximateInstallationCount_
+         * and _approximateManagedInstanceCount_  is **descending**.
+         * Default order for _displayName_ and _osName_ is **ascending**.
+         * If no value is specified _timeLastSeen_ is default.
+         *
+         */
         private com.oracle.bmc.jms.model.ApplicationSortBy sortBy = null;
 
         /**
@@ -362,6 +496,7 @@ public class SummarizeApplicationUsageRequest
          * Default order for _displayName_ and _osName_ is **ascending**.
          * If no value is specified _timeLastSeen_ is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(com.oracle.bmc.jms.model.ApplicationSortBy sortBy) {
@@ -369,10 +504,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -380,10 +519,14 @@ public class SummarizeApplicationUsageRequest
             return this;
         }
 
+        /**
+         * The operating system type.
+         */
         private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily = null;
 
         /**
          * The operating system type.
+         * @param osFamily the value to set
          * @return this builder instance
          */
         public Builder osFamily(java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily) {
@@ -393,6 +536,7 @@ public class SummarizeApplicationUsageRequest
 
         /**
          * Singular setter. The operating system type.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder osFamily(OsFamily singularValue) {
@@ -501,7 +645,8 @@ public class SummarizeApplicationUsageRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -525,6 +670,10 @@ public class SummarizeApplicationUsageRequest
                 .osFamily(osFamily);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class CreateUserRequest
      */
     private com.oracle.bmc.identity.model.CreateUserDetails createUserDetails;
 
+    /**
+     * Request object for creating a new user.
+     */
     public com.oracle.bmc.identity.model.CreateUserDetails getCreateUserDetails() {
         return createUserDetails;
     }
@@ -31,6 +34,14 @@ public class CreateUserRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -52,10 +63,14 @@ public class CreateUserRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for creating a new user.
+         */
         private com.oracle.bmc.identity.model.CreateUserDetails createUserDetails = null;
 
         /**
          * Request object for creating a new user.
+         * @param createUserDetails the value to set
          * @return this builder instance
          */
         public Builder createUserDetails(
@@ -64,6 +79,14 @@ public class CreateUserRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -73,6 +96,7 @@ public class CreateUserRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -161,12 +185,17 @@ public class CreateUserRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().createUserDetails(createUserDetails).opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -29,9 +29,17 @@ public final class UnifiedAgentLoggingDestination {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logObjectId")
         private String logObjectId;
 
+        /**
+         * The OCID of the resource.
+         * @param logObjectId the value to set
+         * @return this builder
+         **/
         public Builder logObjectId(String logObjectId) {
             this.logObjectId = logObjectId;
             this.__explicitlySet__.add("logObjectId");
@@ -74,6 +82,10 @@ public final class UnifiedAgentLoggingDestination {
     @com.fasterxml.jackson.annotation.JsonProperty("logObjectId")
     private final String logObjectId;
 
+    /**
+     * The OCID of the resource.
+     * @return the value
+     **/
     public String getLogObjectId() {
         return logObjectId;
     }

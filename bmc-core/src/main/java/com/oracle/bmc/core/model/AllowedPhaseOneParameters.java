@@ -38,27 +38,49 @@ public final class AllowedPhaseOneParameters {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Allowed phase one encryption algorithms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
         private java.util.List<String> encryptionAlgorithms;
 
+        /**
+         * Allowed phase one encryption algorithms.
+         * @param encryptionAlgorithms the value to set
+         * @return this builder
+         **/
         public Builder encryptionAlgorithms(java.util.List<String> encryptionAlgorithms) {
             this.encryptionAlgorithms = encryptionAlgorithms;
             this.__explicitlySet__.add("encryptionAlgorithms");
             return this;
         }
-
+        /**
+         * Allowed phase one authentication algorithms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
         private java.util.List<String> authenticationAlgorithms;
 
+        /**
+         * Allowed phase one authentication algorithms.
+         * @param authenticationAlgorithms the value to set
+         * @return this builder
+         **/
         public Builder authenticationAlgorithms(java.util.List<String> authenticationAlgorithms) {
             this.authenticationAlgorithms = authenticationAlgorithms;
             this.__explicitlySet__.add("authenticationAlgorithms");
             return this;
         }
-
+        /**
+         * Allowed phase one Diffie-Hellman groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dhGroups")
         private java.util.List<String> dhGroups;
 
+        /**
+         * Allowed phase one Diffie-Hellman groups.
+         * @param dhGroups the value to set
+         * @return this builder
+         **/
         public Builder dhGroups(java.util.List<String> dhGroups) {
             this.dhGroups = dhGroups;
             this.__explicitlySet__.add("dhGroups");
@@ -105,6 +127,10 @@ public final class AllowedPhaseOneParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
     private final java.util.List<String> encryptionAlgorithms;
 
+    /**
+     * Allowed phase one encryption algorithms.
+     * @return the value
+     **/
     public java.util.List<String> getEncryptionAlgorithms() {
         return encryptionAlgorithms;
     }
@@ -115,6 +141,10 @@ public final class AllowedPhaseOneParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
     private final java.util.List<String> authenticationAlgorithms;
 
+    /**
+     * Allowed phase one authentication algorithms.
+     * @return the value
+     **/
     public java.util.List<String> getAuthenticationAlgorithms() {
         return authenticationAlgorithms;
     }
@@ -125,6 +155,10 @@ public final class AllowedPhaseOneParameters {
     @com.fasterxml.jackson.annotation.JsonProperty("dhGroups")
     private final java.util.List<String> dhGroups;
 
+    /**
+     * Allowed phase one Diffie-Hellman groups.
+     * @return the value
+     **/
     public java.util.List<String> getDhGroups() {
         return dhGroups;
     }

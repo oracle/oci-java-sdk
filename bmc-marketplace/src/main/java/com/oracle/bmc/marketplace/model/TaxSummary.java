@@ -30,36 +30,65 @@ public final class TaxSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique code for the tax.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private java.util.UUID code;
 
+        /**
+         * Unique code for the tax.
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(java.util.UUID code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * Name of the tax code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the tax code.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Country, which imposes the tax.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
+        /**
+         * Country, which imposes the tax.
+         * @param country the value to set
+         * @return this builder
+         **/
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-
+        /**
+         * The URL with more details about this tax.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The URL with more details about this tax.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -102,6 +131,10 @@ public final class TaxSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final java.util.UUID code;
 
+    /**
+     * Unique code for the tax.
+     * @return the value
+     **/
     public java.util.UUID getCode() {
         return code;
     }
@@ -112,6 +145,10 @@ public final class TaxSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the tax code.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -122,6 +159,10 @@ public final class TaxSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
+    /**
+     * Country, which imposes the tax.
+     * @return the value
+     **/
     public String getCountry() {
         return country;
     }
@@ -132,6 +173,10 @@ public final class TaxSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The URL with more details about this tax.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }

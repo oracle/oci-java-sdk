@@ -29,9 +29,17 @@ public final class RoverNodeEncryptionKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The encryption key key for a rover node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
         private String encryptionKey;
 
+        /**
+         * The encryption key key for a rover node.
+         * @param encryptionKey the value to set
+         * @return this builder
+         **/
         public Builder encryptionKey(String encryptionKey) {
             this.encryptionKey = encryptionKey;
             this.__explicitlySet__.add("encryptionKey");
@@ -73,6 +81,10 @@ public final class RoverNodeEncryptionKey {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
     private final String encryptionKey;
 
+    /**
+     * The encryption key key for a rover node.
+     * @return the value
+     **/
     public String getEncryptionKey() {
         return encryptionKey;
     }

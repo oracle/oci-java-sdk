@@ -15,6 +15,12 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
             databaseParametersCollection;
 
+    /**
+     * The returned DatabaseParametersCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
             getDatabaseParametersCollection() {
         return databaseParametersCollection;
@@ -53,16 +63,36 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DatabaseParametersCollection instance.
+         */
         private com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
                 databaseParametersCollection;
 
+        /**
+         * The returned DatabaseParametersCollection instance.
+         * @param databaseParametersCollection the value to set
+         * @return this builder
+         */
         public Builder databaseParametersCollection(
                 com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
                         databaseParametersCollection) {
@@ -82,12 +112,20 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListDatabaseParametersResponse build() {
             return new ListDatabaseParametersResponse(
                     __httpStatusCode__, opcRequestId, databaseParametersCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

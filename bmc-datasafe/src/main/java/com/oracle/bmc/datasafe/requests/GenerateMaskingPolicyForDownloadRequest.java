@@ -18,6 +18,9 @@ public class GenerateMaskingPolicyForDownloadRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -27,6 +30,9 @@ public class GenerateMaskingPolicyForDownloadRequest
     private com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
             generateMaskingPolicyForDownloadDetails;
 
+    /**
+     * Details to generate a masking policy file.
+     */
     public com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
             getGenerateMaskingPolicyForDownloadDetails() {
         return generateMaskingPolicyForDownloadDetails;
@@ -36,6 +42,9 @@ public class GenerateMaskingPolicyForDownloadRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,10 +67,14 @@ public class GenerateMaskingPolicyForDownloadRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -69,11 +82,15 @@ public class GenerateMaskingPolicyForDownloadRequest
             return this;
         }
 
+        /**
+         * Details to generate a masking policy file.
+         */
         private com.oracle.bmc.datasafe.model.GenerateMaskingPolicyForDownloadDetails
                 generateMaskingPolicyForDownloadDetails = null;
 
         /**
          * Details to generate a masking policy file.
+         * @param generateMaskingPolicyForDownloadDetails the value to set
          * @return this builder instance
          */
         public Builder generateMaskingPolicyForDownloadDetails(
@@ -83,10 +100,14 @@ public class GenerateMaskingPolicyForDownloadRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -180,7 +201,8 @@ public class GenerateMaskingPolicyForDownloadRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +211,10 @@ public class GenerateMaskingPolicyForDownloadRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

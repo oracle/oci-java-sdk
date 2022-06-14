@@ -42,36 +42,79 @@ public final class UpdateRowResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An opaque version string associated with the row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * An opaque version string associated with the row.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The version string associated with the existing row.
+         * Returned if the put fails due to options setting in the
+         * request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
         private String existingVersion;
 
+        /**
+         * The version string associated with the existing row.
+         * Returned if the put fails due to options setting in the
+         * request.
+         *
+         * @param existingVersion the value to set
+         * @return this builder
+         **/
         public Builder existingVersion(String existingVersion) {
             this.existingVersion = existingVersion;
             this.__explicitlySet__.add("existingVersion");
             return this;
         }
-
+        /**
+         * The map of values from a row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
         private java.util.Map<String, Object> existingValue;
 
+        /**
+         * The map of values from a row.
+         * @param existingValue the value to set
+         * @return this builder
+         **/
         public Builder existingValue(java.util.Map<String, Object> existingValue) {
             this.existingValue = existingValue;
             this.__explicitlySet__.add("existingValue");
             return this;
         }
-
+        /**
+         * The value generated if the operation created a new value for
+         * an identity column. If the table has no identity column, this value
+         * is null. If it has an identity column, and a value was generated for
+         * that column, it is non-null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("generatedValue")
         private String generatedValue;
 
+        /**
+         * The value generated if the operation created a new value for
+         * an identity column. If the table has no identity column, this value
+         * is null. If it has an identity column, and a value was generated for
+         * that column, it is non-null.
+         *
+         * @param generatedValue the value to set
+         * @return this builder
+         **/
         public Builder generatedValue(String generatedValue) {
             this.generatedValue = generatedValue;
             this.__explicitlySet__.add("generatedValue");
@@ -129,6 +172,10 @@ public final class UpdateRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * An opaque version string associated with the row.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -142,6 +189,13 @@ public final class UpdateRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("existingVersion")
     private final String existingVersion;
 
+    /**
+     * The version string associated with the existing row.
+     * Returned if the put fails due to options setting in the
+     * request.
+     *
+     * @return the value
+     **/
     public String getExistingVersion() {
         return existingVersion;
     }
@@ -152,6 +206,10 @@ public final class UpdateRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("existingValue")
     private final java.util.Map<String, Object> existingValue;
 
+    /**
+     * The map of values from a row.
+     * @return the value
+     **/
     public java.util.Map<String, Object> getExistingValue() {
         return existingValue;
     }
@@ -166,6 +224,14 @@ public final class UpdateRowResult {
     @com.fasterxml.jackson.annotation.JsonProperty("generatedValue")
     private final String generatedValue;
 
+    /**
+     * The value generated if the operation created a new value for
+     * an identity column. If the table has no identity column, this value
+     * is null. If it has an identity column, and a value was generated for
+     * that column, it is non-null.
+     *
+     * @return the value
+     **/
     public String getGeneratedValue() {
         return generatedValue;
     }

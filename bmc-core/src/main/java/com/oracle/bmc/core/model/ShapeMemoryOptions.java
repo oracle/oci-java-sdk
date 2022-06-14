@@ -47,45 +47,91 @@ public final class ShapeMemoryOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The minimum amount of memory, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
         private Float minInGBs;
 
+        /**
+         * The minimum amount of memory, in gigabytes.
+         *
+         * @param minInGBs the value to set
+         * @return this builder
+         **/
         public Builder minInGBs(Float minInGBs) {
             this.minInGBs = minInGBs;
             this.__explicitlySet__.add("minInGBs");
             return this;
         }
-
+        /**
+         * The maximum amount of memory, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
         private Float maxInGBs;
 
+        /**
+         * The maximum amount of memory, in gigabytes.
+         *
+         * @param maxInGBs the value to set
+         * @return this builder
+         **/
         public Builder maxInGBs(Float maxInGBs) {
             this.maxInGBs = maxInGBs;
             this.__explicitlySet__.add("maxInGBs");
             return this;
         }
-
+        /**
+         * The default amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
         private Float defaultPerOcpuInGBs;
 
+        /**
+         * The default amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         * @param defaultPerOcpuInGBs the value to set
+         * @return this builder
+         **/
         public Builder defaultPerOcpuInGBs(Float defaultPerOcpuInGBs) {
             this.defaultPerOcpuInGBs = defaultPerOcpuInGBs;
             this.__explicitlySet__.add("defaultPerOcpuInGBs");
             return this;
         }
-
+        /**
+         * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
         private Float minPerOcpuInGBs;
 
+        /**
+         * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         * @param minPerOcpuInGBs the value to set
+         * @return this builder
+         **/
         public Builder minPerOcpuInGBs(Float minPerOcpuInGBs) {
             this.minPerOcpuInGBs = minPerOcpuInGBs;
             this.__explicitlySet__.add("minPerOcpuInGBs");
             return this;
         }
-
+        /**
+         * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
         private Float maxPerOcpuInGBs;
 
+        /**
+         * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         * @param maxPerOcpuInGBs the value to set
+         * @return this builder
+         **/
         public Builder maxPerOcpuInGBs(Float maxPerOcpuInGBs) {
             this.maxPerOcpuInGBs = maxPerOcpuInGBs;
             this.__explicitlySet__.add("maxPerOcpuInGBs");
@@ -139,6 +185,11 @@ public final class ShapeMemoryOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
     private final Float minInGBs;
 
+    /**
+     * The minimum amount of memory, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMinInGBs() {
         return minInGBs;
     }
@@ -150,6 +201,11 @@ public final class ShapeMemoryOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
     private final Float maxInGBs;
 
+    /**
+     * The maximum amount of memory, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMaxInGBs() {
         return maxInGBs;
     }
@@ -161,6 +217,11 @@ public final class ShapeMemoryOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
     private final Float defaultPerOcpuInGBs;
 
+    /**
+     * The default amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getDefaultPerOcpuInGBs() {
         return defaultPerOcpuInGBs;
     }
@@ -172,6 +233,11 @@ public final class ShapeMemoryOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
     private final Float minPerOcpuInGBs;
 
+    /**
+     * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMinPerOcpuInGBs() {
         return minPerOcpuInGBs;
     }
@@ -183,6 +249,11 @@ public final class ShapeMemoryOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
     private final Float maxPerOcpuInGBs;
 
+    /**
+     * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     * @return the value
+     **/
     public Float getMaxPerOcpuInGBs() {
         return maxPerOcpuInGBs;
     }

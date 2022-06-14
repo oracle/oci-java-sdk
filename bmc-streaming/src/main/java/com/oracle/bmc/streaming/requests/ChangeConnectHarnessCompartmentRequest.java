@@ -19,6 +19,10 @@ public class ChangeConnectHarnessCompartmentRequest
      */
     private String connectHarnessId;
 
+    /**
+     * The OCID of the connect harness.
+     *
+     */
     public String getConnectHarnessId() {
         return connectHarnessId;
     }
@@ -28,6 +32,9 @@ public class ChangeConnectHarnessCompartmentRequest
     private com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails
             changeConnectHarnessCompartmentDetails;
 
+    /**
+     * The connect harness will be moved into the compartment specified within this entity.
+     */
     public com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails
             getChangeConnectHarnessCompartmentDetails() {
         return changeConnectHarnessCompartmentDetails;
@@ -37,6 +44,9 @@ public class ChangeConnectHarnessCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -47,6 +57,11 @@ public class ChangeConnectHarnessCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,11 +84,16 @@ public class ChangeConnectHarnessCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the connect harness.
+         *
+         */
         private String connectHarnessId = null;
 
         /**
          * The OCID of the connect harness.
          *
+         * @param connectHarnessId the value to set
          * @return this builder instance
          */
         public Builder connectHarnessId(String connectHarnessId) {
@@ -81,11 +101,15 @@ public class ChangeConnectHarnessCompartmentRequest
             return this;
         }
 
+        /**
+         * The connect harness will be moved into the compartment specified within this entity.
+         */
         private com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails
                 changeConnectHarnessCompartmentDetails = null;
 
         /**
          * The connect harness will be moved into the compartment specified within this entity.
+         * @param changeConnectHarnessCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeConnectHarnessCompartmentDetails(
@@ -95,10 +119,14 @@ public class ChangeConnectHarnessCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -106,12 +134,18 @@ public class ChangeConnectHarnessCompartmentRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -206,7 +240,8 @@ public class ChangeConnectHarnessCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -216,6 +251,10 @@ public class ChangeConnectHarnessCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

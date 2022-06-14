@@ -17,6 +17,9 @@ public class GetLaunchEligibilityRequest
      */
     private String compartmentId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class GetLaunchEligibilityRequest
      */
     private String imageId;
 
+    /**
+     * Image ID
+     */
     public String getImageId() {
         return imageId;
     }
@@ -35,6 +41,11 @@ public class GetLaunchEligibilityRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,10 +57,14 @@ public class GetLaunchEligibilityRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -57,10 +72,14 @@ public class GetLaunchEligibilityRequest
             return this;
         }
 
+        /**
+         * Image ID
+         */
         private String imageId = null;
 
         /**
          * Image ID
+         * @param imageId the value to set
          * @return this builder instance
          */
         public Builder imageId(String imageId) {
@@ -68,12 +87,18 @@ public class GetLaunchEligibilityRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -153,7 +178,8 @@ public class GetLaunchEligibilityRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -162,6 +188,10 @@ public class GetLaunchEligibilityRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

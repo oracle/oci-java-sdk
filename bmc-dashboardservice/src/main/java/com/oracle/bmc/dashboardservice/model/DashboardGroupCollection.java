@@ -29,9 +29,17 @@ public final class DashboardGroupCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of dashboard groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DashboardGroupSummary> items;
 
+        /**
+         * A list of dashboard groups.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DashboardGroupSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class DashboardGroupCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DashboardGroupSummary> items;
 
+    /**
+     * A list of dashboard groups.
+     * @return the value
+     **/
     public java.util.List<DashboardGroupSummary> getItems() {
         return items;
     }

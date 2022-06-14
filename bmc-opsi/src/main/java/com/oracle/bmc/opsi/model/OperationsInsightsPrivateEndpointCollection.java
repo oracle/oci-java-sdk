@@ -30,9 +30,17 @@ public final class OperationsInsightsPrivateEndpointCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of OperationsInsightsPrivateEndpointSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<OperationsInsightsPrivateEndpointSummary> items;
 
+        /**
+         * A list of OperationsInsightsPrivateEndpointSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<OperationsInsightsPrivateEndpointSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class OperationsInsightsPrivateEndpointCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<OperationsInsightsPrivateEndpointSummary> items;
 
+    /**
+     * A list of OperationsInsightsPrivateEndpointSummary objects.
+     * @return the value
+     **/
     public java.util.List<OperationsInsightsPrivateEndpointSummary> getItems() {
         return items;
     }

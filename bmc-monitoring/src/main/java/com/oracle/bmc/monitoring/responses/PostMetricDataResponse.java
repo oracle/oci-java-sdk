@@ -15,6 +15,12 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,10 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
     private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
             postMetricDataResponseDetails;
 
+    /**
+     * The returned PostMetricDataResponseDetails instance.
+     * @return the value
+     */
     public com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
             getPostMetricDataResponseDetails() {
         return postMetricDataResponseDetails;
@@ -53,16 +63,36 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned PostMetricDataResponseDetails instance.
+         */
         private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
                 postMetricDataResponseDetails;
 
+        /**
+         * The returned PostMetricDataResponseDetails instance.
+         * @param postMetricDataResponseDetails the value to set
+         * @return this builder
+         */
         public Builder postMetricDataResponseDetails(
                 com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
                         postMetricDataResponseDetails) {
@@ -82,12 +112,20 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public PostMetricDataResponse build() {
             return new PostMetricDataResponse(
                     __httpStatusCode__, opcRequestId, postMetricDataResponseDetails);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

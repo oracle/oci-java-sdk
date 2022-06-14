@@ -19,6 +19,9 @@ public class CreateExternalBackupJobRequest
     private com.oracle.bmc.database.model.CreateExternalBackupJobDetails
             createExternalBackupJobDetails;
 
+    /**
+     * Request to create a cloud backup resource for a database running outside the cloud.
+     */
     public com.oracle.bmc.database.model.CreateExternalBackupJobDetails
             getCreateExternalBackupJobDetails() {
         return createExternalBackupJobDetails;
@@ -33,6 +36,14 @@ public class CreateExternalBackupJobRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -55,11 +66,15 @@ public class CreateExternalBackupJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a cloud backup resource for a database running outside the cloud.
+         */
         private com.oracle.bmc.database.model.CreateExternalBackupJobDetails
                 createExternalBackupJobDetails = null;
 
         /**
          * Request to create a cloud backup resource for a database running outside the cloud.
+         * @param createExternalBackupJobDetails the value to set
          * @return this builder instance
          */
         public Builder createExternalBackupJobDetails(
@@ -69,6 +84,14 @@ public class CreateExternalBackupJobRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -78,6 +101,7 @@ public class CreateExternalBackupJobRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -166,7 +190,8 @@ public class CreateExternalBackupJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -174,6 +199,10 @@ public class CreateExternalBackupJobRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

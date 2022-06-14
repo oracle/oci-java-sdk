@@ -16,6 +16,9 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +29,11 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -36,6 +44,11 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+     * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -47,10 +60,14 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -58,12 +75,18 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -71,12 +94,18 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+         * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
          * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -156,12 +185,17 @@ public class ListRetentionRulesRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().namespaceName(namespaceName).bucketName(bucketName).page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

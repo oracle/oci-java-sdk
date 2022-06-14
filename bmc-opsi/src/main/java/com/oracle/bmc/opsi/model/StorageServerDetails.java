@@ -30,18 +30,33 @@ public final class StorageServerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The storage server name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageServerName")
         private String storageServerName;
 
+        /**
+         * The storage server name.
+         * @param storageServerName the value to set
+         * @return this builder
+         **/
         public Builder storageServerName(String storageServerName) {
             this.storageServerName = storageServerName;
             this.__explicitlySet__.add("storageServerName");
             return this;
         }
-
+        /**
+         * The user-friendly name for the storage server. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageServerDisplayName")
         private String storageServerDisplayName;
 
+        /**
+         * The user-friendly name for the storage server. The name does not have to be unique.
+         * @param storageServerDisplayName the value to set
+         * @return this builder
+         **/
         public Builder storageServerDisplayName(String storageServerDisplayName) {
             this.storageServerDisplayName = storageServerDisplayName;
             this.__explicitlySet__.add("storageServerDisplayName");
@@ -86,6 +101,10 @@ public final class StorageServerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("storageServerName")
     private final String storageServerName;
 
+    /**
+     * The storage server name.
+     * @return the value
+     **/
     public String getStorageServerName() {
         return storageServerName;
     }
@@ -96,6 +115,10 @@ public final class StorageServerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("storageServerDisplayName")
     private final String storageServerDisplayName;
 
+    /**
+     * The user-friendly name for the storage server. The name does not have to be unique.
+     * @return the value
+     **/
     public String getStorageServerDisplayName() {
         return storageServerDisplayName;
     }

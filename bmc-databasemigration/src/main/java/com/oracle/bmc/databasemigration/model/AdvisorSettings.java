@@ -29,18 +29,37 @@ public final class AdvisorSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * True to skip the Pre-Migration Advisor execution. Default is false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipAdvisor")
         private Boolean isSkipAdvisor;
 
+        /**
+         * True to skip the Pre-Migration Advisor execution. Default is false.
+         *
+         * @param isSkipAdvisor the value to set
+         * @return this builder
+         **/
         public Builder isSkipAdvisor(Boolean isSkipAdvisor) {
             this.isSkipAdvisor = isSkipAdvisor;
             this.__explicitlySet__.add("isSkipAdvisor");
             return this;
         }
-
+        /**
+         * True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreErrors")
         private Boolean isIgnoreErrors;
 
+        /**
+         * True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+         *
+         * @param isIgnoreErrors the value to set
+         * @return this builder
+         **/
         public Builder isIgnoreErrors(Boolean isIgnoreErrors) {
             this.isIgnoreErrors = isIgnoreErrors;
             this.__explicitlySet__.add("isIgnoreErrors");
@@ -84,6 +103,11 @@ public final class AdvisorSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipAdvisor")
     private final Boolean isSkipAdvisor;
 
+    /**
+     * True to skip the Pre-Migration Advisor execution. Default is false.
+     *
+     * @return the value
+     **/
     public Boolean getIsSkipAdvisor() {
         return isSkipAdvisor;
     }
@@ -95,6 +119,11 @@ public final class AdvisorSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreErrors")
     private final Boolean isIgnoreErrors;
 
+    /**
+     * True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+     *
+     * @return the value
+     **/
     public Boolean getIsIgnoreErrors() {
         return isIgnoreErrors;
     }

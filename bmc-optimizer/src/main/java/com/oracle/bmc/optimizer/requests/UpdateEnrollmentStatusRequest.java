@@ -18,6 +18,9 @@ public class UpdateEnrollmentStatusRequest
      */
     private String enrollmentStatusId;
 
+    /**
+     * The unique OCID associated with the enrollment status.
+     */
     public String getEnrollmentStatusId() {
         return enrollmentStatusId;
     }
@@ -27,6 +30,9 @@ public class UpdateEnrollmentStatusRequest
     private com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails
             updateEnrollmentStatusDetails;
 
+    /**
+     * The request object for updating the enrollment status.
+     */
     public com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails
             getUpdateEnrollmentStatusDetails() {
         return updateEnrollmentStatusDetails;
@@ -38,6 +44,11 @@ public class UpdateEnrollmentStatusRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +62,14 @@ public class UpdateEnrollmentStatusRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -73,10 +92,14 @@ public class UpdateEnrollmentStatusRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique OCID associated with the enrollment status.
+         */
         private String enrollmentStatusId = null;
 
         /**
          * The unique OCID associated with the enrollment status.
+         * @param enrollmentStatusId the value to set
          * @return this builder instance
          */
         public Builder enrollmentStatusId(String enrollmentStatusId) {
@@ -84,11 +107,15 @@ public class UpdateEnrollmentStatusRequest
             return this;
         }
 
+        /**
+         * The request object for updating the enrollment status.
+         */
         private com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails
                 updateEnrollmentStatusDetails = null;
 
         /**
          * The request object for updating the enrollment status.
+         * @param updateEnrollmentStatusDetails the value to set
          * @return this builder instance
          */
         public Builder updateEnrollmentStatusDetails(
@@ -98,12 +125,18 @@ public class UpdateEnrollmentStatusRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -111,6 +144,14 @@ public class UpdateEnrollmentStatusRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -120,6 +161,7 @@ public class UpdateEnrollmentStatusRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -212,7 +254,8 @@ public class UpdateEnrollmentStatusRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +265,10 @@ public class UpdateEnrollmentStatusRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

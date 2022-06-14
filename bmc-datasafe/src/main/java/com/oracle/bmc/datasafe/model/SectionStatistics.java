@@ -53,74 +53,131 @@ public final class SectionStatistics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of targets that contributed to the counts at this risk level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
 
+        /**
+         * The number of targets that contributed to the counts at this risk level.
+         * @param targetsCount the value to set
+         * @return this builder
+         **/
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = targetsCount;
             this.__explicitlySet__.add("targetsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the Auditing category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditingFindingsCount")
         private Integer auditingFindingsCount;
 
+        /**
+         * The number of findings in the Auditing category.
+         * @param auditingFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder auditingFindingsCount(Integer auditingFindingsCount) {
             this.auditingFindingsCount = auditingFindingsCount;
             this.__explicitlySet__.add("auditingFindingsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the Authorization Control category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationControlFindingsCount")
         private Integer authorizationControlFindingsCount;
 
+        /**
+         * The number of findings in the Authorization Control category.
+         * @param authorizationControlFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder authorizationControlFindingsCount(
                 Integer authorizationControlFindingsCount) {
             this.authorizationControlFindingsCount = authorizationControlFindingsCount;
             this.__explicitlySet__.add("authorizationControlFindingsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the Data Encryption category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataEncryptionFindingsCount")
         private Integer dataEncryptionFindingsCount;
 
+        /**
+         * The number of findings in the Data Encryption category.
+         * @param dataEncryptionFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder dataEncryptionFindingsCount(Integer dataEncryptionFindingsCount) {
             this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
             this.__explicitlySet__.add("dataEncryptionFindingsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the Database Configuration category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbConfigurationFindingsCount")
         private Integer dbConfigurationFindingsCount;
 
+        /**
+         * The number of findings in the Database Configuration category.
+         * @param dbConfigurationFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder dbConfigurationFindingsCount(Integer dbConfigurationFindingsCount) {
             this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
             this.__explicitlySet__.add("dbConfigurationFindingsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the Fine-Grained Access Control category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControlFindingsCount")
         private Integer fineGrainedAccessControlFindingsCount;
 
+        /**
+         * The number of findings in the Fine-Grained Access Control category.
+         * @param fineGrainedAccessControlFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder fineGrainedAccessControlFindingsCount(
                 Integer fineGrainedAccessControlFindingsCount) {
             this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
             this.__explicitlySet__.add("fineGrainedAccessControlFindingsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the Privileges and Roles category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRolesFindingsCount")
         private Integer privilegesAndRolesFindingsCount;
 
+        /**
+         * The number of findings in the Privileges and Roles category.
+         * @param privilegesAndRolesFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder privilegesAndRolesFindingsCount(Integer privilegesAndRolesFindingsCount) {
             this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
             this.__explicitlySet__.add("privilegesAndRolesFindingsCount");
             return this;
         }
-
+        /**
+         * The number of findings in the User Accounts category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userAccountsFindingsCount")
         private Integer userAccountsFindingsCount;
 
+        /**
+         * The number of findings in the User Accounts category.
+         * @param userAccountsFindingsCount the value to set
+         * @return this builder
+         **/
         public Builder userAccountsFindingsCount(Integer userAccountsFindingsCount) {
             this.userAccountsFindingsCount = userAccountsFindingsCount;
             this.__explicitlySet__.add("userAccountsFindingsCount");
@@ -181,6 +238,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
     private final Integer targetsCount;
 
+    /**
+     * The number of targets that contributed to the counts at this risk level.
+     * @return the value
+     **/
     public Integer getTargetsCount() {
         return targetsCount;
     }
@@ -191,6 +252,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("auditingFindingsCount")
     private final Integer auditingFindingsCount;
 
+    /**
+     * The number of findings in the Auditing category.
+     * @return the value
+     **/
     public Integer getAuditingFindingsCount() {
         return auditingFindingsCount;
     }
@@ -201,6 +266,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationControlFindingsCount")
     private final Integer authorizationControlFindingsCount;
 
+    /**
+     * The number of findings in the Authorization Control category.
+     * @return the value
+     **/
     public Integer getAuthorizationControlFindingsCount() {
         return authorizationControlFindingsCount;
     }
@@ -211,6 +280,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("dataEncryptionFindingsCount")
     private final Integer dataEncryptionFindingsCount;
 
+    /**
+     * The number of findings in the Data Encryption category.
+     * @return the value
+     **/
     public Integer getDataEncryptionFindingsCount() {
         return dataEncryptionFindingsCount;
     }
@@ -221,6 +294,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("dbConfigurationFindingsCount")
     private final Integer dbConfigurationFindingsCount;
 
+    /**
+     * The number of findings in the Database Configuration category.
+     * @return the value
+     **/
     public Integer getDbConfigurationFindingsCount() {
         return dbConfigurationFindingsCount;
     }
@@ -231,6 +308,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControlFindingsCount")
     private final Integer fineGrainedAccessControlFindingsCount;
 
+    /**
+     * The number of findings in the Fine-Grained Access Control category.
+     * @return the value
+     **/
     public Integer getFineGrainedAccessControlFindingsCount() {
         return fineGrainedAccessControlFindingsCount;
     }
@@ -241,6 +322,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRolesFindingsCount")
     private final Integer privilegesAndRolesFindingsCount;
 
+    /**
+     * The number of findings in the Privileges and Roles category.
+     * @return the value
+     **/
     public Integer getPrivilegesAndRolesFindingsCount() {
         return privilegesAndRolesFindingsCount;
     }
@@ -251,6 +336,10 @@ public final class SectionStatistics {
     @com.fasterxml.jackson.annotation.JsonProperty("userAccountsFindingsCount")
     private final Integer userAccountsFindingsCount;
 
+    /**
+     * The number of findings in the User Accounts category.
+     * @return the value
+     **/
     public Integer getUserAccountsFindingsCount() {
         return userAccountsFindingsCount;
     }

@@ -30,9 +30,19 @@ public final class IngestHostMetricsResponseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Success message returned as a result of the upload.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * Success message returned as a result of the upload.
+         *
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -76,6 +86,11 @@ public final class IngestHostMetricsResponseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * Success message returned as a result of the upload.
+     *
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

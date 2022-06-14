@@ -30,18 +30,33 @@ public final class VolumeAttachmentDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the volume attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeAttachmentId")
         private String volumeAttachmentId;
 
+        /**
+         * The OCID of the volume attachment.
+         * @param volumeAttachmentId the value to set
+         * @return this builder
+         **/
         public Builder volumeAttachmentId(String volumeAttachmentId) {
             this.volumeAttachmentId = volumeAttachmentId;
             this.__explicitlySet__.add("volumeAttachmentId");
             return this;
         }
-
+        /**
+         * The size of the volume in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeSizeInGBs")
         private Long volumeSizeInGBs;
 
+        /**
+         * The size of the volume in GBs.
+         * @param volumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder volumeSizeInGBs(Long volumeSizeInGBs) {
             this.volumeSizeInGBs = volumeSizeInGBs;
             this.__explicitlySet__.add("volumeSizeInGBs");
@@ -86,6 +101,10 @@ public final class VolumeAttachmentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeAttachmentId")
     private final String volumeAttachmentId;
 
+    /**
+     * The OCID of the volume attachment.
+     * @return the value
+     **/
     public String getVolumeAttachmentId() {
         return volumeAttachmentId;
     }
@@ -96,6 +115,10 @@ public final class VolumeAttachmentDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("volumeSizeInGBs")
     private final Long volumeSizeInGBs;
 
+    /**
+     * The size of the volume in GBs.
+     * @return the value
+     **/
     public Long getVolumeSizeInGBs() {
         return volumeSizeInGBs;
     }

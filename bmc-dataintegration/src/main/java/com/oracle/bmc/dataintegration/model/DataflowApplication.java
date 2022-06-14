@@ -30,18 +30,33 @@ public final class DataflowApplication {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The application id for which Oracle Cloud Infrastructure data flow task is to be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
+        /**
+         * The application id for which Oracle Cloud Infrastructure data flow task is to be created.
+         * @param applicationId the value to set
+         * @return this builder
+         **/
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
-
+        /**
+         * The compartmentId id under which Oracle Cloud Infrastructure dataflow application lies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartmentId id under which Oracle Cloud Infrastructure dataflow application lies.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -85,6 +100,10 @@ public final class DataflowApplication {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
+    /**
+     * The application id for which Oracle Cloud Infrastructure data flow task is to be created.
+     * @return the value
+     **/
     public String getApplicationId() {
         return applicationId;
     }
@@ -95,6 +114,10 @@ public final class DataflowApplication {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartmentId id under which Oracle Cloud Infrastructure dataflow application lies.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

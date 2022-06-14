@@ -143,10 +143,17 @@ public final class DataAssetFromFusionApp extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-
+        /**
+         * The service url of the BI Server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
+        /**
+         * The service url of the BI Server.
+         * @param serviceUrl the value to set
+         * @return this builder
+         **/
         public Builder serviceUrl(String serviceUrl) {
             this.serviceUrl = serviceUrl;
             this.__explicitlySet__.add("serviceUrl");
@@ -263,6 +270,10 @@ public final class DataAssetFromFusionApp extends DataAsset {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     private final String serviceUrl;
 
+    /**
+     * The service url of the BI Server.
+     * @return the value
+     **/
     public String getServiceUrl() {
         return serviceUrl;
     }

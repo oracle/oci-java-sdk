@@ -33,36 +33,73 @@ public final class WorkRequestResource {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The resource type affected by the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
+        /**
+         * The resource type affected by the work request.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The way in which this resource was affected by the operation that spawned the work request.
+         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+         * or DELETED, respectively.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
+        /**
+         * The way in which this resource was affected by the operation that spawned the work request.
+         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+         * or DELETED, respectively.
+         *
+         * @param actionType the value to set
+         * @return this builder
+         **/
         public Builder actionType(ActionType actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-
+        /**
+         * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or other unique identifier of the resource affected by the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or other unique identifier of the resource affected by the work request.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-
+        /**
+         * The URI path that the user can perform a GET operation to access the resource metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
+        /**
+         * The URI path that the user can perform a GET operation to access the resource metadata.
+         * @param entityUri the value to set
+         * @return this builder
+         **/
         public Builder entityUri(String entityUri) {
             this.entityUri = entityUri;
             this.__explicitlySet__.add("entityUri");
@@ -109,6 +146,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
+    /**
+     * The resource type affected by the work request.
+     * @return the value
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -123,6 +164,14 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
+    /**
+     * The way in which this resource was affected by the operation that spawned the work request.
+     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+     * or DELETED, respectively.
+     *
+     * @return the value
+     **/
     public ActionType getActionType() {
         return actionType;
     }
@@ -133,6 +182,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or other unique identifier of the resource affected by the work request.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -143,6 +196,10 @@ public final class WorkRequestResource {
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
+    /**
+     * The URI path that the user can perform a GET operation to access the resource metadata.
+     * @return the value
+     **/
     public String getEntityUri() {
         return entityUri;
     }

@@ -15,6 +15,12 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loadbalancer.model.HealthChecker healthChecker;
 
+    /**
+     * The returned HealthChecker instance.
+     * @return the value
+     */
     public com.oracle.bmc.loadbalancer.model.HealthChecker getHealthChecker() {
         return healthChecker;
     }
@@ -46,15 +56,35 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned HealthChecker instance.
+         */
         private com.oracle.bmc.loadbalancer.model.HealthChecker healthChecker;
 
+        /**
+         * The returned HealthChecker instance.
+         * @param healthChecker the value to set
+         * @return this builder
+         */
         public Builder healthChecker(
                 com.oracle.bmc.loadbalancer.model.HealthChecker healthChecker) {
             this.healthChecker = healthChecker;
@@ -73,11 +103,19 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetHealthCheckerResponse build() {
             return new GetHealthCheckerResponse(__httpStatusCode__, opcRequestId, healthChecker);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

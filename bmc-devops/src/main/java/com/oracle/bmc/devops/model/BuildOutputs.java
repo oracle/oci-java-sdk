@@ -39,6 +39,7 @@ public final class BuildOutputs {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("exportedVariables")
         private ExportedVariableCollection exportedVariables;
 

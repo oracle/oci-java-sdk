@@ -14,6 +14,11 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
      */
     private String opcWorkRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -23,6 +28,10 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +43,12 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +58,10 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
+    /**
+     * The returned ExternalDatabaseConnector instance.
+     * @return the value
+     */
     public com.oracle.bmc.database.model.ExternalDatabaseConnector getExternalDatabaseConnector() {
         return externalDatabaseConnector;
     }
@@ -75,29 +94,67 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ExternalDatabaseConnector instance.
+         */
         private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
+        /**
+         * The returned ExternalDatabaseConnector instance.
+         * @param externalDatabaseConnector the value to set
+         * @return this builder
+         */
         public Builder externalDatabaseConnector(
                 com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector) {
             this.externalDatabaseConnector = externalDatabaseConnector;
@@ -118,6 +175,10 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateExternalDatabaseConnectorResponse build() {
             return new UpdateExternalDatabaseConnectorResponse(
                     __httpStatusCode__,
@@ -128,6 +189,10 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

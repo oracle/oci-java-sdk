@@ -44,45 +44,81 @@ public final class ResourceInventory {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The number of _active_ fleets.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeFleetCount")
         private Integer activeFleetCount;
 
+        /**
+         * The number of _active_ fleets.
+         * @param activeFleetCount the value to set
+         * @return this builder
+         **/
         public Builder activeFleetCount(Integer activeFleetCount) {
             this.activeFleetCount = activeFleetCount;
             this.__explicitlySet__.add("activeFleetCount");
             return this;
         }
-
+        /**
+         * The number of managed instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
         private Integer managedInstanceCount;
 
+        /**
+         * The number of managed instances.
+         * @param managedInstanceCount the value to set
+         * @return this builder
+         **/
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = managedInstanceCount;
             this.__explicitlySet__.add("managedInstanceCount");
             return this;
         }
-
+        /**
+         * The number of Java Runtimes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jreCount")
         private Integer jreCount;
 
+        /**
+         * The number of Java Runtimes.
+         * @param jreCount the value to set
+         * @return this builder
+         **/
         public Builder jreCount(Integer jreCount) {
             this.jreCount = jreCount;
             this.__explicitlySet__.add("jreCount");
             return this;
         }
-
+        /**
+         * The number of Java installations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installationCount")
         private Integer installationCount;
 
+        /**
+         * The number of Java installations.
+         * @param installationCount the value to set
+         * @return this builder
+         **/
         public Builder installationCount(Integer installationCount) {
             this.installationCount = installationCount;
             this.__explicitlySet__.add("installationCount");
             return this;
         }
-
+        /**
+         * The number of applications.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationCount")
         private Integer applicationCount;
 
+        /**
+         * The number of applications.
+         * @param applicationCount the value to set
+         * @return this builder
+         **/
         public Builder applicationCount(Integer applicationCount) {
             this.applicationCount = applicationCount;
             this.__explicitlySet__.add("applicationCount");
@@ -135,6 +171,10 @@ public final class ResourceInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("activeFleetCount")
     private final Integer activeFleetCount;
 
+    /**
+     * The number of _active_ fleets.
+     * @return the value
+     **/
     public Integer getActiveFleetCount() {
         return activeFleetCount;
     }
@@ -145,6 +185,10 @@ public final class ResourceInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
     private final Integer managedInstanceCount;
 
+    /**
+     * The number of managed instances.
+     * @return the value
+     **/
     public Integer getManagedInstanceCount() {
         return managedInstanceCount;
     }
@@ -155,6 +199,10 @@ public final class ResourceInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("jreCount")
     private final Integer jreCount;
 
+    /**
+     * The number of Java Runtimes.
+     * @return the value
+     **/
     public Integer getJreCount() {
         return jreCount;
     }
@@ -165,6 +213,10 @@ public final class ResourceInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("installationCount")
     private final Integer installationCount;
 
+    /**
+     * The number of Java installations.
+     * @return the value
+     **/
     public Integer getInstallationCount() {
         return installationCount;
     }
@@ -175,6 +227,10 @@ public final class ResourceInventory {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCount")
     private final Integer applicationCount;
 
+    /**
+     * The number of applications.
+     * @return the value
+     **/
     public Integer getApplicationCount() {
         return applicationCount;
     }

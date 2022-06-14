@@ -28,9 +28,19 @@ public final class GenerateToken {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Resource Principals Token in serialized form.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rptBlob")
         private String rptBlob;
 
+        /**
+         * Resource Principals Token in serialized form.
+         *
+         * @param rptBlob the value to set
+         * @return this builder
+         **/
         public Builder rptBlob(String rptBlob) {
             this.rptBlob = rptBlob;
             this.__explicitlySet__.add("rptBlob");
@@ -73,6 +83,11 @@ public final class GenerateToken {
     @com.fasterxml.jackson.annotation.JsonProperty("rptBlob")
     private final String rptBlob;
 
+    /**
+     * Resource Principals Token in serialized form.
+     *
+     * @return the value
+     **/
     public String getRptBlob() {
         return rptBlob;
     }

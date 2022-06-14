@@ -32,27 +32,53 @@ public final class CreateLogAnalyticsEntityTypeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Log analytics entity type name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Log analytics entity type name.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Log analytics entity type category. Category will be used for grouping and filtering.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * Log analytics entity type category. Category will be used for grouping and filtering.
+         *
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-
+        /**
+         * Log analytics entity type property definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<EntityTypeProperty> properties;
 
+        /**
+         * Log analytics entity type property definition.
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.List<EntityTypeProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -97,6 +123,11 @@ public final class CreateLogAnalyticsEntityTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Log analytics entity type name.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -108,6 +139,11 @@ public final class CreateLogAnalyticsEntityTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * Log analytics entity type category. Category will be used for grouping and filtering.
+     *
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -118,6 +154,10 @@ public final class CreateLogAnalyticsEntityTypeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<EntityTypeProperty> properties;
 
+    /**
+     * Log analytics entity type property definition.
+     * @return the value
+     **/
     public java.util.List<EntityTypeProperty> getProperties() {
         return properties;
     }

@@ -17,6 +17,10 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,11 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String scheduledTaskId;
 
+    /**
+     * Unique scheduledTask id returned from task create.
+     * If invalid will lead to a 404 not found.
+     *
+     */
     public String getScheduledTaskId() {
         return scheduledTaskId;
     }
@@ -37,6 +46,11 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private Boolean shouldIncludeResults;
 
+    /**
+     * Optional parameter to specify whether to include acceleration results.
+     * Default value is false;
+     *
+     */
     public Boolean getShouldIncludeResults() {
         return shouldIncludeResults;
     }
@@ -45,6 +59,9 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -58,6 +75,14 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -68,11 +93,16 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -80,12 +110,18 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
+         *
+         */
         private String scheduledTaskId = null;
 
         /**
          * Unique scheduledTask id returned from task create.
          * If invalid will lead to a 404 not found.
          *
+         * @param scheduledTaskId the value to set
          * @return this builder instance
          */
         public Builder scheduledTaskId(String scheduledTaskId) {
@@ -93,12 +129,18 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * Optional parameter to specify whether to include acceleration results.
+         * Default value is false;
+         *
+         */
         private Boolean shouldIncludeResults = null;
 
         /**
          * Optional parameter to specify whether to include acceleration results.
          * Default value is false;
          *
+         * @param shouldIncludeResults the value to set
          * @return this builder instance
          */
         public Builder shouldIncludeResults(Boolean shouldIncludeResults) {
@@ -106,10 +148,14 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -117,6 +163,14 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -126,6 +180,7 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -209,7 +264,8 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -220,6 +276,10 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

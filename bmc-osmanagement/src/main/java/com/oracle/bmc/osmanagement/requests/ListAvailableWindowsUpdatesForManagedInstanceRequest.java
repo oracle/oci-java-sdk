@@ -17,6 +17,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String managedInstanceId;
 
+    /**
+     * OCID for the managed instance
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -28,6 +31,12 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -36,6 +45,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -44,6 +56,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -52,6 +67,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -96,6 +114,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -142,6 +163,10 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -150,6 +175,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -158,6 +186,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
      */
     private com.oracle.bmc.osmanagement.model.IsEligibleForInstallation isEligibleForInstallation;
 
+    /**
+     * Indicator of whether the update can be installed using OSMS.
+     */
     public com.oracle.bmc.osmanagement.model.IsEligibleForInstallation
             getIsEligibleForInstallation() {
         return isEligibleForInstallation;
@@ -170,10 +201,14 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID for the managed instance
+         */
         private String managedInstanceId = null;
 
         /**
          * OCID for the managed instance
+         * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
@@ -181,6 +216,12 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
+         *
+         */
         private String displayName = null;
 
         /**
@@ -188,6 +229,7 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
          * <p>
          * Example: {@code My new resource}
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -195,10 +237,14 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -206,10 +252,14 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -217,10 +267,14 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -228,10 +282,14 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -239,11 +297,16 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -251,10 +314,14 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -262,11 +329,15 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
             return this;
         }
 
+        /**
+         * Indicator of whether the update can be installed using OSMS.
+         */
         private com.oracle.bmc.osmanagement.model.IsEligibleForInstallation
                 isEligibleForInstallation = null;
 
         /**
          * Indicator of whether the update can be installed using OSMS.
+         * @param isEligibleForInstallation the value to set
          * @return this builder instance
          */
         public Builder isEligibleForInstallation(
@@ -363,7 +434,8 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -378,6 +450,10 @@ public class ListAvailableWindowsUpdatesForManagedInstanceRequest
                 .isEligibleForInstallation(isEligibleForInstallation);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

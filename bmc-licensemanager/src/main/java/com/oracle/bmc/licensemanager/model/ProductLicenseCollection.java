@@ -29,9 +29,17 @@ public final class ProductLicenseCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The product license summary collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ProductLicenseSummary> items;
 
+        /**
+         * The product license summary collection.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ProductLicenseSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ProductLicenseCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ProductLicenseSummary> items;
 
+    /**
+     * The product license summary collection.
+     * @return the value
+     **/
     public java.util.List<ProductLicenseSummary> getItems() {
         return items;
     }

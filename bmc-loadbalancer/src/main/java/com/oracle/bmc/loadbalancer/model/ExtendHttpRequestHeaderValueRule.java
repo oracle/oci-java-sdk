@@ -41,27 +41,79 @@ package com.oracle.bmc.loadbalancer.model;
 public final class ExtendHttpRequestHeaderValueRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A header name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private String header;
 
+        /**
+         * A header name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
+         *
+         * @param header the value to set
+         * @return this builder
+         **/
         public Builder header(String header) {
             this.header = header;
             this.__explicitlySet__.add("header");
             return this;
         }
-
+        /**
+         * A string to prepend to the header value. The resulting header value must conform to RFC 7230.
+         * With the following exceptions:
+         * *  value cannot contain {@code $}
+         * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+         * <p>
+         * Example: {@code example_prefix_value}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
+        /**
+         * A string to prepend to the header value. The resulting header value must conform to RFC 7230.
+         * With the following exceptions:
+         * *  value cannot contain {@code $}
+         * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+         * <p>
+         * Example: {@code example_prefix_value}
+         *
+         * @param prefix the value to set
+         * @return this builder
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
             return this;
         }
-
+        /**
+         * A string to append to the header value. The resulting header value must conform to RFC 7230.
+         * With the following exceptions:
+         * *  value cannot contain {@code $}
+         * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+         * <p>
+         * Example: {@code example_suffix_value}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suffix")
         private String suffix;
 
+        /**
+         * A string to append to the header value. The resulting header value must conform to RFC 7230.
+         * With the following exceptions:
+         * *  value cannot contain {@code $}
+         * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+         * <p>
+         * Example: {@code example_suffix_value}
+         *
+         * @param suffix the value to set
+         * @return this builder
+         **/
         public Builder suffix(String suffix) {
             this.suffix = suffix;
             this.__explicitlySet__.add("suffix");
@@ -116,6 +168,13 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("header")
     private final String header;
 
+    /**
+     * A header name that conforms to RFC 7230.
+     * <p>
+     * Example: {@code example_header_name}
+     *
+     * @return the value
+     **/
     public String getHeader() {
         return header;
     }
@@ -132,6 +191,16 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
+    /**
+     * A string to prepend to the header value. The resulting header value must conform to RFC 7230.
+     * With the following exceptions:
+     * *  value cannot contain {@code $}
+     * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+     * <p>
+     * Example: {@code example_prefix_value}
+     *
+     * @return the value
+     **/
     public String getPrefix() {
         return prefix;
     }
@@ -148,6 +217,16 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("suffix")
     private final String suffix;
 
+    /**
+     * A string to append to the header value. The resulting header value must conform to RFC 7230.
+     * With the following exceptions:
+     * *  value cannot contain {@code $}
+     * *  value cannot contain patterns like {@code {variable_name}}. They are reserved for future extensions. Currently, such values are invalid.
+     * <p>
+     * Example: {@code example_suffix_value}
+     *
+     * @return the value
+     **/
     public String getSuffix() {
         return suffix;
     }

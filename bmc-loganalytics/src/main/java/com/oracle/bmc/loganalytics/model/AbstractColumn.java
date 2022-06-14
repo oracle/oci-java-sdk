@@ -94,6 +94,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Column display name - will be alias if column is renamed by queryStrng.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -105,6 +110,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
+    /**
+     * Subsystem column belongs to.
+     *
+     * @return the value
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }
@@ -116,6 +126,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<FieldValue> values;
 
+    /**
+     * If the column is a 'List of Values' column, this array contains the field values that are applicable to query results or all if no filters applied.
+     *
+     * @return the value
+     **/
     public java.util.List<FieldValue> getValues() {
         return values;
     }
@@ -127,6 +142,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("isListOfValues")
     private final Boolean isListOfValues;
 
+    /**
+     * Identifies if all values in this column come from a pre-defined list of values.
+     *
+     * @return the value
+     **/
     public Boolean getIsListOfValues() {
         return isListOfValues;
     }
@@ -138,6 +158,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
+    /**
+     * Identifies if this column allows multiple values to exist in a single row.
+     *
+     * @return the value
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
@@ -149,6 +174,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     private final Boolean isCaseSensitive;
 
+    /**
+     * A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
+     *
+     * @return the value
+     **/
     public Boolean getIsCaseSensitive() {
         return isCaseSensitive;
     }
@@ -160,6 +190,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupable")
     private final Boolean isGroupable;
 
+    /**
+     * Identifies if this column can be used as a grouping field in any grouping command.
+     *
+     * @return the value
+     **/
     public Boolean getIsGroupable() {
         return isGroupable;
     }
@@ -171,6 +206,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("isEvaluable")
     private final Boolean isEvaluable;
 
+    /**
+     * Identifies if this column can be used as an expression parameter in any command that accepts querylanguage expressions.
+     *
+     * @return the value
+     **/
     public Boolean getIsEvaluable() {
         return isEvaluable;
     }
@@ -182,6 +222,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
+    /**
+     * Field denoting column data type.
+     *
+     * @return the value
+     **/
     public ValueType getValueType() {
         return valueType;
     }
@@ -193,6 +238,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("originalDisplayName")
     private final String originalDisplayName;
 
+    /**
+     * Same as displayName unless column renamed in which case this will hold the original display name for the column.
+     *
+     * @return the value
+     **/
     public String getOriginalDisplayName() {
         return originalDisplayName;
     }
@@ -204,6 +254,11 @@ public class AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
+    /**
+     * Internal identifier for the column.
+     *
+     * @return the value
+     **/
     public String getInternalName() {
         return internalName;
     }

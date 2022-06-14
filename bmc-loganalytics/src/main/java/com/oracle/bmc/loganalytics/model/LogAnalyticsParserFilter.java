@@ -50,9 +50,17 @@ public final class LogAnalyticsParserFilter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The parser filter unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The parser filter unique identifier.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -67,46 +75,83 @@ public final class LogAnalyticsParserFilter {
             this.__explicitlySet__.add("parser");
             return this;
         }
-
+        /**
+         * The agent version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
         private String agentVersion;
 
+        /**
+         * The agent version.
+         * @param agentVersion the value to set
+         * @return this builder
+         **/
         public Builder agentVersion(String agentVersion) {
             this.agentVersion = agentVersion;
             this.__explicitlySet__.add("agentVersion");
             return this;
         }
-
+        /**
+         * A flag idicating whether or not hte filter is currently being used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
         private Long isInUse;
 
+        /**
+         * A flag idicating whether or not hte filter is currently being used.
+         *
+         * @param isInUse the value to set
+         * @return this builder
+         **/
         public Builder isInUse(Long isInUse) {
             this.isInUse = isInUse;
             this.__explicitlySet__.add("isInUse");
             return this;
         }
-
+        /**
+         * The operating system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
+        /**
+         * The operating system.
+         * @param operatingSystem the value to set
+         * @return this builder
+         **/
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = operatingSystem;
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-
+        /**
+         * The parser unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserId")
         private Long parserId;
 
+        /**
+         * The parser unique identifier.
+         * @param parserId the value to set
+         * @return this builder
+         **/
         public Builder parserId(Long parserId) {
             this.parserId = parserId;
             this.__explicitlySet__.add("parserId");
             return this;
         }
-
+        /**
+         * The version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -157,6 +202,10 @@ public final class LogAnalyticsParserFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The parser filter unique identifier.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -174,6 +223,10 @@ public final class LogAnalyticsParserFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
     private final String agentVersion;
 
+    /**
+     * The agent version.
+     * @return the value
+     **/
     public String getAgentVersion() {
         return agentVersion;
     }
@@ -185,6 +238,11 @@ public final class LogAnalyticsParserFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("isInUse")
     private final Long isInUse;
 
+    /**
+     * A flag idicating whether or not hte filter is currently being used.
+     *
+     * @return the value
+     **/
     public Long getIsInUse() {
         return isInUse;
     }
@@ -195,6 +253,10 @@ public final class LogAnalyticsParserFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     private final String operatingSystem;
 
+    /**
+     * The operating system.
+     * @return the value
+     **/
     public String getOperatingSystem() {
         return operatingSystem;
     }
@@ -205,6 +267,10 @@ public final class LogAnalyticsParserFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("parserId")
     private final Long parserId;
 
+    /**
+     * The parser unique identifier.
+     * @return the value
+     **/
     public Long getParserId() {
         return parserId;
     }
@@ -215,6 +281,10 @@ public final class LogAnalyticsParserFilter {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

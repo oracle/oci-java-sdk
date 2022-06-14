@@ -29,9 +29,17 @@ public final class ImportGlossaryDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The file contents used for the import of glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryFileContents")
         private byte[] glossaryFileContents;
 
+        /**
+         * The file contents used for the import of glossary.
+         * @param glossaryFileContents the value to set
+         * @return this builder
+         **/
         public Builder glossaryFileContents(byte[] glossaryFileContents) {
             this.glossaryFileContents = glossaryFileContents;
             this.__explicitlySet__.add("glossaryFileContents");
@@ -73,6 +81,10 @@ public final class ImportGlossaryDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryFileContents")
     private final byte[] glossaryFileContents;
 
+    /**
+     * The file contents used for the import of glossary.
+     * @return the value
+     **/
     public byte[] getGlossaryFileContents() {
         return glossaryFileContents;
     }

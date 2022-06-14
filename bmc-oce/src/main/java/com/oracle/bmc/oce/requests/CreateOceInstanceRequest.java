@@ -18,6 +18,9 @@ public class CreateOceInstanceRequest
      */
     private com.oracle.bmc.oce.model.CreateOceInstanceDetails createOceInstanceDetails;
 
+    /**
+     * Details for the new OceInstance.
+     */
     public com.oracle.bmc.oce.model.CreateOceInstanceDetails getCreateOceInstanceDetails() {
         return createOceInstanceDetails;
     }
@@ -31,6 +34,14 @@ public class CreateOceInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +50,9 @@ public class CreateOceInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,10 +74,14 @@ public class CreateOceInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new OceInstance.
+         */
         private com.oracle.bmc.oce.model.CreateOceInstanceDetails createOceInstanceDetails = null;
 
         /**
          * Details for the new OceInstance.
+         * @param createOceInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder createOceInstanceDetails(
@@ -72,6 +90,14 @@ public class CreateOceInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -81,6 +107,7 @@ public class CreateOceInstanceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -88,10 +115,14 @@ public class CreateOceInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +213,8 @@ public class CreateOceInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +223,10 @@ public class CreateOceInstanceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

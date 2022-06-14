@@ -18,6 +18,9 @@ public class ChangeDetectorRecipeCompartmentRequest
      */
     private String detectorRecipeId;
 
+    /**
+     * DetectorRecipe OCID
+     */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
@@ -27,6 +30,9 @@ public class ChangeDetectorRecipeCompartmentRequest
     private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
             changeDetectorRecipeCompartmentDetails;
 
+    /**
+     * The target compartment id.
+     */
     public com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
             getChangeDetectorRecipeCompartmentDetails() {
         return changeDetectorRecipeCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeDetectorRecipeCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class ChangeDetectorRecipeCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class ChangeDetectorRecipeCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -84,10 +109,14 @@ public class ChangeDetectorRecipeCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * DetectorRecipe OCID
+         */
         private String detectorRecipeId = null;
 
         /**
          * DetectorRecipe OCID
+         * @param detectorRecipeId the value to set
          * @return this builder instance
          */
         public Builder detectorRecipeId(String detectorRecipeId) {
@@ -95,11 +124,15 @@ public class ChangeDetectorRecipeCompartmentRequest
             return this;
         }
 
+        /**
+         * The target compartment id.
+         */
         private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
                 changeDetectorRecipeCompartmentDetails = null;
 
         /**
          * The target compartment id.
+         * @param changeDetectorRecipeCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeDetectorRecipeCompartmentDetails(
@@ -109,6 +142,14 @@ public class ChangeDetectorRecipeCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +159,7 @@ public class ChangeDetectorRecipeCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -125,10 +167,14 @@ public class ChangeDetectorRecipeCompartmentRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -136,6 +182,14 @@ public class ChangeDetectorRecipeCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -145,6 +199,7 @@ public class ChangeDetectorRecipeCompartmentRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -241,7 +296,8 @@ public class ChangeDetectorRecipeCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -252,6 +308,10 @@ public class ChangeDetectorRecipeCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

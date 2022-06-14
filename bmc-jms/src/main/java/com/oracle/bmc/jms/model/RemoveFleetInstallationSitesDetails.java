@@ -30,9 +30,17 @@ public final class RemoveFleetInstallationSitesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of installation sites to remove.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installationSites")
         private java.util.List<ExistingInstallationSiteId> installationSites;
 
+        /**
+         * The list of installation sites to remove.
+         * @param installationSites the value to set
+         * @return this builder
+         **/
         public Builder installationSites(
                 java.util.List<ExistingInstallationSiteId> installationSites) {
             this.installationSites = installationSites;
@@ -76,6 +84,10 @@ public final class RemoveFleetInstallationSitesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("installationSites")
     private final java.util.List<ExistingInstallationSiteId> installationSites;
 
+    /**
+     * The list of installation sites to remove.
+     * @return the value
+     **/
     public java.util.List<ExistingInstallationSiteId> getInstallationSites() {
         return installationSites;
     }

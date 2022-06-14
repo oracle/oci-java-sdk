@@ -44,10 +44,19 @@ public final class CreateNotificationServiceActionDetails extends ActionDetails 
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+         *
+         * @param topicId the value to set
+         * @return this builder
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
@@ -101,6 +110,11 @@ public final class CreateNotificationServiceActionDetails extends ActionDetails 
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+     *
+     * @return the value
+     **/
     public String getTopicId() {
         return topicId;
     }

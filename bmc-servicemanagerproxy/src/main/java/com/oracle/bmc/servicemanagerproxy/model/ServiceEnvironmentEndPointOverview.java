@@ -33,27 +33,49 @@ public final class ServiceEnvironmentEndPointOverview {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Service environment endpoint type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private EnvironmentType environmentType;
 
+        /**
+         * Service environment endpoint type.
+         * @param environmentType the value to set
+         * @return this builder
+         **/
         public Builder environmentType(EnvironmentType environmentType) {
             this.environmentType = environmentType;
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-
+        /**
+         * Service environment instance URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * Service environment instance URL.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * Description of the environment link
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the environment link
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -149,6 +171,10 @@ public final class ServiceEnvironmentEndPointOverview {
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final EnvironmentType environmentType;
 
+    /**
+     * Service environment endpoint type.
+     * @return the value
+     **/
     public EnvironmentType getEnvironmentType() {
         return environmentType;
     }
@@ -159,6 +185,10 @@ public final class ServiceEnvironmentEndPointOverview {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * Service environment instance URL.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -169,6 +199,10 @@ public final class ServiceEnvironmentEndPointOverview {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the environment link
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

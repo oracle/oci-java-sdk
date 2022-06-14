@@ -32,36 +32,65 @@ public final class ApplicationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier of the application.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Project identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
+        /**
+         * Project identifier.
+         * @param projectId the value to set
+         * @return this builder
+         **/
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
             return this;
         }
-
+        /**
+         * Version of deployed application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Version of deployed application.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Represents the deployment state of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * Represents the deployment state of the application.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -107,6 +136,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier of the application.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -117,6 +150,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
+    /**
+     * Project identifier.
+     * @return the value
+     **/
     public String getProjectId() {
         return projectId;
     }
@@ -127,6 +164,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Version of deployed application.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -184,6 +225,10 @@ public final class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * Represents the deployment state of the application.
+     * @return the value
+     **/
     public State getState() {
         return state;
     }

@@ -15,6 +15,12 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -26,6 +32,12 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +49,12 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcPrevPage;
 
+    /**
+     * For list pagination. When this header appears in the response, previous pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -47,6 +65,11 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Integer opcTotalItems;
 
+    /**
+     * The total number of items returned from the request.
+     *
+     * @return the value
+     */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
@@ -56,6 +79,10 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
+    /**
+     * A list of com.oracle.bmc.email.model.SenderSummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.email.model.SenderSummary> getItems() {
         return items;
     }
@@ -91,36 +118,90 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response, previous pages of results remain.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For list pagination. When this header appears in the response, previous pages of results remain.
+         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * The total number of items returned from the request.
+         *
+         */
         private Integer opcTotalItems;
 
+        /**
+         * The total number of items returned from the request.
+         *
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
         public Builder opcTotalItems(Integer opcTotalItems) {
             this.opcTotalItems = opcTotalItems;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.email.model.SenderSummary instances.
+         */
         private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
+        /**
+         * A list of com.oracle.bmc.email.model.SenderSummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(java.util.List<com.oracle.bmc.email.model.SenderSummary> items) {
             this.items = items;
             return this;
@@ -141,6 +222,10 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListSendersResponse build() {
             return new ListSendersResponse(
                     __httpStatusCode__,
@@ -152,6 +237,10 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -27,6 +27,7 @@ package com.oracle.bmc.autoscaling.model;
 public final class ResourcePowerAction extends ResourceAction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 

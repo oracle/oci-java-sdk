@@ -29,9 +29,17 @@ public final class GroupAssociationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * list of group/dynamic group ids associated with this configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupList")
         private java.util.List<String> groupList;
 
+        /**
+         * list of group/dynamic group ids associated with this configuration.
+         * @param groupList the value to set
+         * @return this builder
+         **/
         public Builder groupList(java.util.List<String> groupList) {
             this.groupList = groupList;
             this.__explicitlySet__.add("groupList");
@@ -73,6 +81,10 @@ public final class GroupAssociationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("groupList")
     private final java.util.List<String> groupList;
 
+    /**
+     * list of group/dynamic group ids associated with this configuration.
+     * @return the value
+     **/
     public java.util.List<String> getGroupList() {
         return groupList;
     }

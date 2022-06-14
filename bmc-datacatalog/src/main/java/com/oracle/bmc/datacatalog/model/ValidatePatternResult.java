@@ -44,45 +44,81 @@ public final class ValidatePatternResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The message from the pattern validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * The message from the pattern validation.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * The status returned from the pattern validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
+        /**
+         * The status returned from the pattern validation.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The expression used in the pattern validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * The expression used in the pattern validation.
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * The prefix used in the pattern validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
         private String filePathPrefix;
 
+        /**
+         * The prefix used in the pattern validation.
+         * @param filePathPrefix the value to set
+         * @return this builder
+         **/
         public Builder filePathPrefix(String filePathPrefix) {
             this.filePathPrefix = filePathPrefix;
             this.__explicitlySet__.add("filePathPrefix");
             return this;
         }
-
+        /**
+         * Collection of logical entities derived from the pattern, as applied to a list of file paths.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("derivedLogicalEntities")
         private java.util.List<DerivedLogicalEntities> derivedLogicalEntities;
 
+        /**
+         * Collection of logical entities derived from the pattern, as applied to a list of file paths.
+         * @param derivedLogicalEntities the value to set
+         * @return this builder
+         **/
         public Builder derivedLogicalEntities(
                 java.util.List<DerivedLogicalEntities> derivedLogicalEntities) {
             this.derivedLogicalEntities = derivedLogicalEntities;
@@ -132,6 +168,10 @@ public final class ValidatePatternResult {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * The message from the pattern validation.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -142,6 +182,10 @@ public final class ValidatePatternResult {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
+    /**
+     * The status returned from the pattern validation.
+     * @return the value
+     **/
     public String getStatus() {
         return status;
     }
@@ -152,6 +196,10 @@ public final class ValidatePatternResult {
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * The expression used in the pattern validation.
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
@@ -162,6 +210,10 @@ public final class ValidatePatternResult {
     @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
     private final String filePathPrefix;
 
+    /**
+     * The prefix used in the pattern validation.
+     * @return the value
+     **/
     public String getFilePathPrefix() {
         return filePathPrefix;
     }
@@ -172,6 +224,10 @@ public final class ValidatePatternResult {
     @com.fasterxml.jackson.annotation.JsonProperty("derivedLogicalEntities")
     private final java.util.List<DerivedLogicalEntities> derivedLogicalEntities;
 
+    /**
+     * Collection of logical entities derived from the pattern, as applied to a list of file paths.
+     * @return the value
+     **/
     public java.util.List<DerivedLogicalEntities> getDerivedLogicalEntities() {
         return derivedLogicalEntities;
     }

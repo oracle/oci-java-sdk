@@ -32,6 +32,7 @@ public final class AggregatedStackTrace {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("stackTraceElement")
         private StackTraceElement stackTraceElement;
 
@@ -40,10 +41,19 @@ public final class AggregatedStackTrace {
             this.__explicitlySet__.add("stackTraceElement");
             return this;
         }
-
+        /**
+         * List of child aggregated stack trace to represent branches.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("children")
         private java.util.List<AggregatedStackTrace> children;
 
+        /**
+         * List of child aggregated stack trace to represent branches.
+         *
+         * @param children the value to set
+         * @return this builder
+         **/
         public Builder children(java.util.List<AggregatedStackTrace> children) {
             this.children = children;
             this.__explicitlySet__.add("children");
@@ -95,6 +105,11 @@ public final class AggregatedStackTrace {
     @com.fasterxml.jackson.annotation.JsonProperty("children")
     private final java.util.List<AggregatedStackTrace> children;
 
+    /**
+     * List of child aggregated stack trace to represent branches.
+     *
+     * @return the value
+     **/
     public java.util.List<AggregatedStackTrace> getChildren() {
         return children;
     }

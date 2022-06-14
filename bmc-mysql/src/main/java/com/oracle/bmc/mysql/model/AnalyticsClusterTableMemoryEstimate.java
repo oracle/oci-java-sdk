@@ -50,54 +50,117 @@ public final class AnalyticsClusterTableMemoryEstimate {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The table name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
+        /**
+         * The table name.
+         * @param tableName the value to set
+         * @return this builder
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-
+        /**
+         * The number of columns to be loaded to Analytics Cluster memory.
+         * These columns contribute to the analytical memory footprint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toLoadColumnCount")
         private Integer toLoadColumnCount;
 
+        /**
+         * The number of columns to be loaded to Analytics Cluster memory.
+         * These columns contribute to the analytical memory footprint.
+         *
+         * @param toLoadColumnCount the value to set
+         * @return this builder
+         **/
         public Builder toLoadColumnCount(Integer toLoadColumnCount) {
             this.toLoadColumnCount = toLoadColumnCount;
             this.__explicitlySet__.add("toLoadColumnCount");
             return this;
         }
-
+        /**
+         * The number of variable-length columns to be loaded to Analytics Cluster memory.
+         * These columns contribute to the analytical memory footprint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("varlenColumnCount")
         private Integer varlenColumnCount;
 
+        /**
+         * The number of variable-length columns to be loaded to Analytics Cluster memory.
+         * These columns contribute to the analytical memory footprint.
+         *
+         * @param varlenColumnCount the value to set
+         * @return this builder
+         **/
         public Builder varlenColumnCount(Integer varlenColumnCount) {
             this.varlenColumnCount = varlenColumnCount;
             this.__explicitlySet__.add("varlenColumnCount");
             return this;
         }
-
+        /**
+         * The estimated number of rows in the table. This number was used to
+         * derive the analytical memory footprint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedRowCount")
         private Long estimatedRowCount;
 
+        /**
+         * The estimated number of rows in the table. This number was used to
+         * derive the analytical memory footprint.
+         *
+         * @param estimatedRowCount the value to set
+         * @return this builder
+         **/
         public Builder estimatedRowCount(Long estimatedRowCount) {
             this.estimatedRowCount = estimatedRowCount;
             this.__explicitlySet__.add("estimatedRowCount");
             return this;
         }
-
+        /**
+         * The estimated memory footprint of the table in MBs when loaded to
+         * Analytics Cluster memory (null if the table cannot be loaded to the
+         * Analytics Cluster).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("analyticalFootprintInMbs")
         private Long analyticalFootprintInMbs;
 
+        /**
+         * The estimated memory footprint of the table in MBs when loaded to
+         * Analytics Cluster memory (null if the table cannot be loaded to the
+         * Analytics Cluster).
+         *
+         * @param analyticalFootprintInMbs the value to set
+         * @return this builder
+         **/
         public Builder analyticalFootprintInMbs(Long analyticalFootprintInMbs) {
             this.analyticalFootprintInMbs = analyticalFootprintInMbs;
             this.__explicitlySet__.add("analyticalFootprintInMbs");
             return this;
         }
-
+        /**
+         * Error comment (empty string if no errors occured).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorComment")
         private String errorComment;
 
+        /**
+         * Error comment (empty string if no errors occured).
+         *
+         * @param errorComment the value to set
+         * @return this builder
+         **/
         public Builder errorComment(String errorComment) {
             this.errorComment = errorComment;
             this.__explicitlySet__.add("errorComment");
@@ -152,6 +215,10 @@ public final class AnalyticsClusterTableMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
+    /**
+     * The table name.
+     * @return the value
+     **/
     public String getTableName() {
         return tableName;
     }
@@ -164,6 +231,12 @@ public final class AnalyticsClusterTableMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("toLoadColumnCount")
     private final Integer toLoadColumnCount;
 
+    /**
+     * The number of columns to be loaded to Analytics Cluster memory.
+     * These columns contribute to the analytical memory footprint.
+     *
+     * @return the value
+     **/
     public Integer getToLoadColumnCount() {
         return toLoadColumnCount;
     }
@@ -176,6 +249,12 @@ public final class AnalyticsClusterTableMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("varlenColumnCount")
     private final Integer varlenColumnCount;
 
+    /**
+     * The number of variable-length columns to be loaded to Analytics Cluster memory.
+     * These columns contribute to the analytical memory footprint.
+     *
+     * @return the value
+     **/
     public Integer getVarlenColumnCount() {
         return varlenColumnCount;
     }
@@ -188,6 +267,12 @@ public final class AnalyticsClusterTableMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedRowCount")
     private final Long estimatedRowCount;
 
+    /**
+     * The estimated number of rows in the table. This number was used to
+     * derive the analytical memory footprint.
+     *
+     * @return the value
+     **/
     public Long getEstimatedRowCount() {
         return estimatedRowCount;
     }
@@ -201,6 +286,13 @@ public final class AnalyticsClusterTableMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("analyticalFootprintInMbs")
     private final Long analyticalFootprintInMbs;
 
+    /**
+     * The estimated memory footprint of the table in MBs when loaded to
+     * Analytics Cluster memory (null if the table cannot be loaded to the
+     * Analytics Cluster).
+     *
+     * @return the value
+     **/
     public Long getAnalyticalFootprintInMbs() {
         return analyticalFootprintInMbs;
     }
@@ -212,6 +304,11 @@ public final class AnalyticsClusterTableMemoryEstimate {
     @com.fasterxml.jackson.annotation.JsonProperty("errorComment")
     private final String errorComment;
 
+    /**
+     * Error comment (empty string if no errors occured).
+     *
+     * @return the value
+     **/
     public String getErrorComment() {
         return errorComment;
     }

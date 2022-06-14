@@ -48,63 +48,125 @@ public final class CreateJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Detailed description of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Detailed description of the job.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+         * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
         private String scheduleCronExpression;
 
+        /**
+         * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+         * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         *
+         * @param scheduleCronExpression the value to set
+         * @return this builder
+         **/
         public Builder scheduleCronExpression(String scheduleCronExpression) {
             this.scheduleCronExpression = scheduleCronExpression;
             this.__explicitlySet__.add("scheduleCronExpression");
             return this;
         }
-
+        /**
+         * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleBegin")
         private java.util.Date timeScheduleBegin;
 
+        /**
+         * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeScheduleBegin the value to set
+         * @return this builder
+         **/
         public Builder timeScheduleBegin(java.util.Date timeScheduleBegin) {
             this.timeScheduleBegin = timeScheduleBegin;
             this.__explicitlySet__.add("timeScheduleBegin");
             return this;
         }
-
+        /**
+         * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleEnd")
         private java.util.Date timeScheduleEnd;
 
+        /**
+         * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * @param timeScheduleEnd the value to set
+         * @return this builder
+         **/
         public Builder timeScheduleEnd(java.util.Date timeScheduleEnd) {
             this.timeScheduleEnd = timeScheduleEnd;
             this.__explicitlySet__.add("timeScheduleEnd");
             return this;
         }
-
+        /**
+         * The key of the connection used by the job. This connection will override the default connection specified in
+         * the associated job definition. All executions will use this connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
         private String connectionKey;
 
+        /**
+         * The key of the connection used by the job. This connection will override the default connection specified in
+         * the associated job definition. All executions will use this connection.
+         *
+         * @param connectionKey the value to set
+         * @return this builder
+         **/
         public Builder connectionKey(String connectionKey) {
             this.connectionKey = connectionKey;
             this.__explicitlySet__.add("connectionKey");
             return this;
         }
-
+        /**
+         * The unique key of the job definition that defined the scope of this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
         private String jobDefinitionKey;
 
+        /**
+         * The unique key of the job definition that defined the scope of this job.
+         * @param jobDefinitionKey the value to set
+         * @return this builder
+         **/
         public Builder jobDefinitionKey(String jobDefinitionKey) {
             this.jobDefinitionKey = jobDefinitionKey;
             this.__explicitlySet__.add("jobDefinitionKey");
@@ -163,6 +225,12 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -173,6 +241,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description of the job.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -185,6 +257,12 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
     private final String scheduleCronExpression;
 
+    /**
+     * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+     * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     *
+     * @return the value
+     **/
     public String getScheduleCronExpression() {
         return scheduleCronExpression;
     }
@@ -195,6 +273,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleBegin")
     private final java.util.Date timeScheduleBegin;
 
+    /**
+     * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeScheduleBegin() {
         return timeScheduleBegin;
     }
@@ -205,6 +287,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleEnd")
     private final java.util.Date timeScheduleEnd;
 
+    /**
+     * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * @return the value
+     **/
     public java.util.Date getTimeScheduleEnd() {
         return timeScheduleEnd;
     }
@@ -217,6 +303,12 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
     private final String connectionKey;
 
+    /**
+     * The key of the connection used by the job. This connection will override the default connection specified in
+     * the associated job definition. All executions will use this connection.
+     *
+     * @return the value
+     **/
     public String getConnectionKey() {
         return connectionKey;
     }
@@ -227,6 +319,10 @@ public final class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
     private final String jobDefinitionKey;
 
+    /**
+     * The unique key of the job definition that defined the scope of this job.
+     * @return the value
+     **/
     public String getJobDefinitionKey() {
         return jobDefinitionKey;
     }

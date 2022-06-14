@@ -18,6 +18,9 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
      */
     private String ipscId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     */
     public String getIpscId() {
         return ipscId;
     }
@@ -26,6 +29,9 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
      */
     private String tunnelId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+     */
     public String getTunnelId() {
         return tunnelId;
     }
@@ -35,6 +41,9 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
     private com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails
             updateIPSecConnectionTunnelSharedSecretDetails;
 
+    /**
+     * Details object for updating a IPSec connection tunnel's sharedSecret.
+     */
     public com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails
             getUpdateIPSecConnectionTunnelSharedSecretDetails() {
         return updateIPSecConnectionTunnelSharedSecretDetails;
@@ -47,6 +56,12 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -69,10 +84,14 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         */
         private String ipscId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+         * @param ipscId the value to set
          * @return this builder instance
          */
         public Builder ipscId(String ipscId) {
@@ -80,10 +99,14 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         */
         private String tunnelId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+         * @param tunnelId the value to set
          * @return this builder instance
          */
         public Builder tunnelId(String tunnelId) {
@@ -91,11 +114,15 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
             return this;
         }
 
+        /**
+         * Details object for updating a IPSec connection tunnel's sharedSecret.
+         */
         private com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails
                 updateIPSecConnectionTunnelSharedSecretDetails = null;
 
         /**
          * Details object for updating a IPSec connection tunnel's sharedSecret.
+         * @param updateIPSecConnectionTunnelSharedSecretDetails the value to set
          * @return this builder instance
          */
         public Builder updateIPSecConnectionTunnelSharedSecretDetails(
@@ -106,6 +133,12 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -113,6 +146,7 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -210,7 +244,8 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -221,6 +256,10 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

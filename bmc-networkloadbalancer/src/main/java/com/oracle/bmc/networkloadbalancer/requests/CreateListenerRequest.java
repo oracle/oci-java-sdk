@@ -18,6 +18,9 @@ public class CreateListenerRequest
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -26,6 +29,9 @@ public class CreateListenerRequest
      */
     private com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails createListenerDetails;
 
+    /**
+     * Details to add a listener.
+     */
     public com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails
             getCreateListenerDetails() {
         return createListenerDetails;
@@ -37,6 +43,11 @@ public class CreateListenerRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +61,14 @@ public class CreateListenerRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,6 +82,14 @@ public class CreateListenerRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -85,10 +112,14 @@ public class CreateListenerRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -96,11 +127,15 @@ public class CreateListenerRequest
             return this;
         }
 
+        /**
+         * Details to add a listener.
+         */
         private com.oracle.bmc.networkloadbalancer.model.CreateListenerDetails
                 createListenerDetails = null;
 
         /**
          * Details to add a listener.
+         * @param createListenerDetails the value to set
          * @return this builder instance
          */
         public Builder createListenerDetails(
@@ -110,12 +145,18 @@ public class CreateListenerRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -123,6 +164,14 @@ public class CreateListenerRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -132,6 +181,7 @@ public class CreateListenerRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -139,6 +189,14 @@ public class CreateListenerRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -148,6 +206,7 @@ public class CreateListenerRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the current etag value of the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -242,7 +301,8 @@ public class CreateListenerRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -253,6 +313,10 @@ public class CreateListenerRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

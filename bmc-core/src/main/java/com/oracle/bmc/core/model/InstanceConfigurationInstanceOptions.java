@@ -29,9 +29,23 @@ public final class InstanceConfigurationInstanceOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to disable the legacy (/v1) instance metadata service endpoints.
+         * Customers who have migrated to /v2 should set this to true for added security.
+         * Default is false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areLegacyImdsEndpointsDisabled")
         private Boolean areLegacyImdsEndpointsDisabled;
 
+        /**
+         * Whether to disable the legacy (/v1) instance metadata service endpoints.
+         * Customers who have migrated to /v2 should set this to true for added security.
+         * Default is false.
+         *
+         * @param areLegacyImdsEndpointsDisabled the value to set
+         * @return this builder
+         **/
         public Builder areLegacyImdsEndpointsDisabled(Boolean areLegacyImdsEndpointsDisabled) {
             this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
             this.__explicitlySet__.add("areLegacyImdsEndpointsDisabled");
@@ -78,6 +92,13 @@ public final class InstanceConfigurationInstanceOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("areLegacyImdsEndpointsDisabled")
     private final Boolean areLegacyImdsEndpointsDisabled;
 
+    /**
+     * Whether to disable the legacy (/v1) instance metadata service endpoints.
+     * Customers who have migrated to /v2 should set this to true for added security.
+     * Default is false.
+     *
+     * @return the value
+     **/
     public Boolean getAreLegacyImdsEndpointsDisabled() {
         return areLegacyImdsEndpointsDisabled;
     }

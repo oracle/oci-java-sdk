@@ -46,6 +46,10 @@ public class ComputeInstanceGroupRolloutPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
     private final Integer batchDelayInSeconds;
 
+    /**
+     * The duration of delay between batch rollout. The default delay is 1 minute.
+     * @return the value
+     **/
     public Integer getBatchDelayInSeconds() {
         return batchDelayInSeconds;
     }

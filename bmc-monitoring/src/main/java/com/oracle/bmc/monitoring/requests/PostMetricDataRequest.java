@@ -19,6 +19,10 @@ public class PostMetricDataRequest
      */
     private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails;
 
+    /**
+     * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
+     *
+     */
     public com.oracle.bmc.monitoring.model.PostMetricDataDetails getPostMetricDataDetails() {
         return postMetricDataDetails;
     }
@@ -29,6 +33,11 @@ public class PostMetricDataRequest
      */
     private String opcRequestId;
 
+    /**
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,11 +59,16 @@ public class PostMetricDataRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
+         *
+         */
         private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails = null;
 
         /**
          * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
          *
+         * @param postMetricDataDetails the value to set
          * @return this builder instance
          */
         public Builder postMetricDataDetails(
@@ -63,12 +77,18 @@ public class PostMetricDataRequest
             return this;
         }
 
+        /**
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Customer part of the request identifier token. If you need to contact Oracle about a particular
          * request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -157,7 +177,8 @@ public class PostMetricDataRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -165,6 +186,10 @@ public class PostMetricDataRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

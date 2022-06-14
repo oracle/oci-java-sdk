@@ -19,6 +19,10 @@ public class ExportQueryResultRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -27,6 +31,9 @@ public class ExportQueryResultRequest
      */
     private com.oracle.bmc.loganalytics.model.ExportDetails exportDetails;
 
+    /**
+     * Query to be exported
+     */
     public com.oracle.bmc.loganalytics.model.ExportDetails getExportDetails() {
         return exportDetails;
     }
@@ -35,6 +42,9 @@ public class ExportQueryResultRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,11 +71,16 @@ public class ExportQueryResultRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -73,10 +88,14 @@ public class ExportQueryResultRequest
             return this;
         }
 
+        /**
+         * Query to be exported
+         */
         private com.oracle.bmc.loganalytics.model.ExportDetails exportDetails = null;
 
         /**
          * Query to be exported
+         * @param exportDetails the value to set
          * @return this builder instance
          */
         public Builder exportDetails(
@@ -85,10 +104,14 @@ public class ExportQueryResultRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -179,7 +202,8 @@ public class ExportQueryResultRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -188,6 +212,10 @@ public class ExportQueryResultRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

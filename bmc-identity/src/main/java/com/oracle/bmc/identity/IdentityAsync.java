@@ -85,6 +85,40 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Add a resource lock to a tag default.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddTagDefaultLockResponse> addTagDefaultLock(
+            AddTagDefaultLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddTagDefaultLockRequest, AddTagDefaultLockResponse>
+                    handler);
+
+    /**
+     * Add a resource lock to a tag namespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddTagNamespaceLockResponse> addTagNamespaceLock(
+            AddTagNamespaceLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddTagNamespaceLockRequest, AddTagNamespaceLockResponse>
+                    handler);
+
+    /**
      * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
@@ -1233,7 +1267,6 @@ public interface IdentityAsync extends AutoCloseable {
      * tag from all resources in your tenancy.
      * <p>
      * These things happen immediately:
-     * \u00A0
      *   * If the tag was a cost-tracking tag, it no longer counts against your 10 cost-tracking
      *   tags limit, whether you first disabled it or not.
      *   * If the tag was used with dynamic groups, none of the rules that contain the tag will
@@ -2472,6 +2505,40 @@ public interface IdentityAsync extends AutoCloseable {
             RecoverCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RecoverCompartmentRequest, RecoverCompartmentResponse>
+                    handler);
+
+    /**
+     * Remove a resource lock from a tag default.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveTagDefaultLockResponse> removeTagDefaultLock(
+            RemoveTagDefaultLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveTagDefaultLockRequest, RemoveTagDefaultLockResponse>
+                    handler);
+
+    /**
+     * Remove a resource lock from a tag namespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveTagNamespaceLockResponse> removeTagNamespaceLock(
+            RemoveTagNamespaceLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveTagNamespaceLockRequest, RemoveTagNamespaceLockResponse>
                     handler);
 
     /**

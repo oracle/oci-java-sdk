@@ -15,6 +15,12 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -33,6 +43,10 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
      */
     private String eTag;
 
+    /**
+     * The entity tag (ETag) for the object lifecycle policy.
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -42,6 +56,10 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
+    /**
+     * The returned ObjectLifecyclePolicy instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy getObjectLifecyclePolicy() {
         return objectLifecyclePolicy;
     }
@@ -74,29 +92,65 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * The entity tag (ETag) for the object lifecycle policy.
+         */
         private String eTag;
 
+        /**
+         * The entity tag (ETag) for the object lifecycle policy.
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The returned ObjectLifecyclePolicy instance.
+         */
         private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
+        /**
+         * The returned ObjectLifecyclePolicy instance.
+         * @param objectLifecyclePolicy the value to set
+         * @return this builder
+         */
         public Builder objectLifecyclePolicy(
                 com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy) {
             this.objectLifecyclePolicy = objectLifecyclePolicy;
@@ -117,6 +171,10 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetObjectLifecyclePolicyResponse build() {
             return new GetObjectLifecyclePolicyResponse(
                     __httpStatusCode__,
@@ -127,6 +185,10 @@ public class GetObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

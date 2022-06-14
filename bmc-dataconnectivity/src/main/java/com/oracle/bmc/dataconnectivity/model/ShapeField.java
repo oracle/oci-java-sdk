@@ -87,19 +87,33 @@ public final class ShapeField extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The type reference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Object type;
 
+        /**
+         * The type reference.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Object type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
+        /**
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -189,6 +203,10 @@ public final class ShapeField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Object type;
 
+    /**
+     * The type reference.
+     * @return the value
+     **/
     public Object getType() {
         return type;
     }
@@ -199,6 +217,10 @@ public final class ShapeField extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
+    /**
+     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return the value
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }

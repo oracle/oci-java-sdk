@@ -36,36 +36,69 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OPSI Warehouse OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OPSI Warehouse OCID
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
         private Double cpuUsed;
 
+        /**
+         * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
+         *
+         * @param cpuUsed the value to set
+         * @return this builder
+         **/
         public Builder cpuUsed(Double cpuUsed) {
             this.cpuUsed = cpuUsed;
             this.__explicitlySet__.add("cpuUsed");
             return this;
         }
-
+        /**
+         * Storage by OPSI Warehouse ADW in GB.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
         private Double storageUsedInGBs;
 
+        /**
+         * Storage by OPSI Warehouse ADW in GB.
+         *
+         * @param storageUsedInGBs the value to set
+         * @return this builder
+         **/
         public Builder storageUsedInGBs(Double storageUsedInGBs) {
             this.storageUsedInGBs = storageUsedInGBs;
             this.__explicitlySet__.add("storageUsedInGBs");
             return this;
         }
-
+        /**
+         * Possible lifecycle states
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperationsInsightsWarehouseLifecycleState lifecycleState;
 
+        /**
+         * Possible lifecycle states
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(OperationsInsightsWarehouseLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -113,6 +146,10 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OPSI Warehouse OCID
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -124,6 +161,11 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
     private final Double cpuUsed;
 
+    /**
+     * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
+     *
+     * @return the value
+     **/
     public Double getCpuUsed() {
         return cpuUsed;
     }
@@ -135,6 +177,11 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
     private final Double storageUsedInGBs;
 
+    /**
+     * Storage by OPSI Warehouse ADW in GB.
+     *
+     * @return the value
+     **/
     public Double getStorageUsedInGBs() {
         return storageUsedInGBs;
     }
@@ -145,6 +192,10 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperationsInsightsWarehouseLifecycleState lifecycleState;
 
+    /**
+     * Possible lifecycle states
+     * @return the value
+     **/
     public OperationsInsightsWarehouseLifecycleState getLifecycleState() {
         return lifecycleState;
     }

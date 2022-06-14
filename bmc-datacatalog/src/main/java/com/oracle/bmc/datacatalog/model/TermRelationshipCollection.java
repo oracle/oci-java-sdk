@@ -32,18 +32,33 @@ public final class TermRelationshipCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of items returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
+        /**
+         * Total number of items returned.
+         * @param count the value to set
+         * @return this builder
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-
+        /**
+         * Collection of term relationships.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TermRelationshipSummary> items;
 
+        /**
+         * Collection of term relationships.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TermRelationshipSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -85,6 +100,10 @@ public final class TermRelationshipCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
+    /**
+     * Total number of items returned.
+     * @return the value
+     **/
     public Integer getCount() {
         return count;
     }
@@ -95,6 +114,10 @@ public final class TermRelationshipCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TermRelationshipSummary> items;
 
+    /**
+     * Collection of term relationships.
+     * @return the value
+     **/
     public java.util.List<TermRelationshipSummary> getItems() {
         return items;
     }

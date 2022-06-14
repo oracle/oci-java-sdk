@@ -72,19 +72,37 @@ public final class EventStatsCommandDescriptor extends AbstractCommandDescriptor
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Group by fields if specified in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
         private java.util.List<AbstractField> groupByFields;
 
+        /**
+         * Group by fields if specified in the query string.
+         *
+         * @param groupByFields the value to set
+         * @return this builder
+         **/
         public Builder groupByFields(java.util.List<AbstractField> groupByFields) {
             this.groupByFields = groupByFields;
             this.__explicitlySet__.add("groupByFields");
             return this;
         }
-
+        /**
+         * Statistical functions specified in the query string. Atleast 1 is required for a EVENTSTATS command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<FunctionField> functions;
 
+        /**
+         * Statistical functions specified in the query string. Atleast 1 is required for a EVENTSTATS command.
+         *
+         * @param functions the value to set
+         * @return this builder
+         **/
         public Builder functions(java.util.List<FunctionField> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
@@ -156,6 +174,11 @@ public final class EventStatsCommandDescriptor extends AbstractCommandDescriptor
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
     private final java.util.List<AbstractField> groupByFields;
 
+    /**
+     * Group by fields if specified in the query string.
+     *
+     * @return the value
+     **/
     public java.util.List<AbstractField> getGroupByFields() {
         return groupByFields;
     }
@@ -167,6 +190,11 @@ public final class EventStatsCommandDescriptor extends AbstractCommandDescriptor
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<FunctionField> functions;
 
+    /**
+     * Statistical functions specified in the query string. Atleast 1 is required for a EVENTSTATS command.
+     *
+     * @return the value
+     **/
     public java.util.List<FunctionField> getFunctions() {
         return functions;
     }

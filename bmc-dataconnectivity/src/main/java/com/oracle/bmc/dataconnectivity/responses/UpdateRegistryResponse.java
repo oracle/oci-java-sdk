@@ -13,6 +13,10 @@ public class UpdateRegistryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -23,6 +27,11 @@ public class UpdateRegistryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -35,6 +44,13 @@ public class UpdateRegistryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +60,10 @@ public class UpdateRegistryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.dataconnectivity.model.Registry registry;
 
+    /**
+     * The returned Registry instance.
+     * @return the value
+     */
     public com.oracle.bmc.dataconnectivity.model.Registry getRegistry() {
         return registry;
     }
@@ -76,29 +96,69 @@ public class UpdateRegistryResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Registry instance.
+         */
         private com.oracle.bmc.dataconnectivity.model.Registry registry;
 
+        /**
+         * The returned Registry instance.
+         * @param registry the value to set
+         * @return this builder
+         */
         public Builder registry(com.oracle.bmc.dataconnectivity.model.Registry registry) {
             this.registry = registry;
             return this;
@@ -118,12 +178,20 @@ public class UpdateRegistryResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateRegistryResponse build() {
             return new UpdateRegistryResponse(
                     __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, registry);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

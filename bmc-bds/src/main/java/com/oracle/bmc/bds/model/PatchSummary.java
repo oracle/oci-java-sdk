@@ -28,18 +28,33 @@ public final class PatchSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The version of the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of the patch.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The time when the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
+        /**
+         * The time when the patch was released.
+         * @param timeReleased the value to set
+         * @return this builder
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
@@ -81,6 +96,10 @@ public final class PatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of the patch.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -91,6 +110,10 @@ public final class PatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
+    /**
+     * The time when the patch was released.
+     * @return the value
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }

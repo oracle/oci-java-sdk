@@ -32,27 +32,51 @@ public final class UpdateDbManagementPrivateEndpointDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name of the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The display name of the private endpoint.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The description of the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the private endpoint.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -96,6 +120,10 @@ public final class UpdateDbManagementPrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The display name of the private endpoint.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -106,6 +134,10 @@ public final class UpdateDbManagementPrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the private endpoint.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -117,6 +149,11 @@ public final class UpdateDbManagementPrivateEndpointDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

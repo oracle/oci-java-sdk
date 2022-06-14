@@ -14,6 +14,11 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
+    /**
+     * The returned QueryWorkRequest instance, or null if {@link #isNotModified()} is true.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.QueryWorkRequest getQueryWorkRequest() {
         return queryWorkRequest;
     }
@@ -45,6 +59,13 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
      */
     private boolean isNotModified;
 
+    /**
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
+     * @param true if the object was not modified
+     */
     public boolean isNotModified() {
         return isNotModified;
     }
@@ -77,30 +98,71 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned QueryWorkRequest instance, or null if {@link #isNotModified()} is true.
+         */
         private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
+        /**
+         * The returned QueryWorkRequest instance, or null if {@link #isNotModified()} is true.
+         * @param queryWorkRequest the value to set
+         * @return this builder
+         */
         public Builder queryWorkRequest(
                 com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest) {
             this.queryWorkRequest = queryWorkRequest;
             return this;
         }
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         */
         private boolean isNotModified;
 
+        /**
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
+         * @param true if the object was not modified
+         */
         public Builder isNotModified(boolean isNotModified) {
             this.isNotModified = isNotModified;
             return this;
@@ -119,12 +181,20 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public PutQueryWorkRequestBackgroundResponse build() {
             return new PutQueryWorkRequestBackgroundResponse(
                     __httpStatusCode__, etag, opcRequestId, queryWorkRequest, isNotModified);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

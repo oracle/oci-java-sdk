@@ -35,28 +35,49 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
             this.__explicitlySet__.add("infrastructureType");
             return this;
         }
-
+        /**
+         * The OCID of the VM cluster in which the database is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
+        /**
+         * The OCID of the VM cluster in which the database is running.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = vmClusterId;
             this.__explicitlySet__.add("vmClusterId");
             return this;
         }
-
+        /**
+         * The OCID of the cloud database system registered as a target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
+        /**
+         * The OCID of the cloud database system registered as a target database in Data Safe.
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-
+        /**
+         * The database service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The database service name.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -116,6 +137,10 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
+    /**
+     * The OCID of the VM cluster in which the database is running.
+     * @return the value
+     **/
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -126,6 +151,10 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
+    /**
+     * The OCID of the cloud database system registered as a target database in Data Safe.
+     * @return the value
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -136,6 +165,10 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The database service name.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

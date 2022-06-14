@@ -32,18 +32,51 @@ public final class PostMetricDataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A metric object containing raw metric data points to be posted to the Monitoring service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricData")
         private java.util.List<MetricDataDetails> metricData;
 
+        /**
+         * A metric object containing raw metric data points to be posted to the Monitoring service.
+         *
+         * @param metricData the value to set
+         * @return this builder
+         **/
         public Builder metricData(java.util.List<MetricDataDetails> metricData) {
             this.metricData = metricData;
             this.__explicitlySet__.add("metricData");
             return this;
         }
-
+        /**
+         * Batch atomicity behavior. Requires either partial or full pass of input validation for
+         * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
+         * partial pass: at least one metric object in the request must pass input validation, and
+         * any objects that failed validation are identified in the returned summary, along with
+         * their error messages. A value of ATOMIC requires a full pass: all metric objects in
+         * the request must pass input validation.
+         * <p>
+         * Example: {@code NON_ATOMIC}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchAtomicity")
         private BatchAtomicity batchAtomicity;
 
+        /**
+         * Batch atomicity behavior. Requires either partial or full pass of input validation for
+         * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
+         * partial pass: at least one metric object in the request must pass input validation, and
+         * any objects that failed validation are identified in the returned summary, along with
+         * their error messages. A value of ATOMIC requires a full pass: all metric objects in
+         * the request must pass input validation.
+         * <p>
+         * Example: {@code NON_ATOMIC}
+         *
+         * @param batchAtomicity the value to set
+         * @return this builder
+         **/
         public Builder batchAtomicity(BatchAtomicity batchAtomicity) {
             this.batchAtomicity = batchAtomicity;
             this.__explicitlySet__.add("batchAtomicity");
@@ -88,6 +121,11 @@ public final class PostMetricDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metricData")
     private final java.util.List<MetricDataDetails> metricData;
 
+    /**
+     * A metric object containing raw metric data points to be posted to the Monitoring service.
+     *
+     * @return the value
+     **/
     public java.util.List<MetricDataDetails> getMetricData() {
         return metricData;
     }
@@ -149,6 +187,18 @@ public final class PostMetricDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("batchAtomicity")
     private final BatchAtomicity batchAtomicity;
 
+    /**
+     * Batch atomicity behavior. Requires either partial or full pass of input validation for
+     * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
+     * partial pass: at least one metric object in the request must pass input validation, and
+     * any objects that failed validation are identified in the returned summary, along with
+     * their error messages. A value of ATOMIC requires a full pass: all metric objects in
+     * the request must pass input validation.
+     * <p>
+     * Example: {@code NON_ATOMIC}
+     *
+     * @return the value
+     **/
     public BatchAtomicity getBatchAtomicity() {
         return batchAtomicity;
     }

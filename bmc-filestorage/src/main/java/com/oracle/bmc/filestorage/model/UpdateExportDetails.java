@@ -29,9 +29,27 @@ public final class UpdateExportDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * New export options for the export.
+         * <p>
+         **Setting to the empty array will make the export invisible to all clients.**
+         * <p>
+         * Leaving unset will leave the {@code exportOptions} unchanged.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
         private java.util.List<ClientOptions> exportOptions;
 
+        /**
+         * New export options for the export.
+         * <p>
+         **Setting to the empty array will make the export invisible to all clients.**
+         * <p>
+         * Leaving unset will leave the {@code exportOptions} unchanged.
+         *
+         * @param exportOptions the value to set
+         * @return this builder
+         **/
         public Builder exportOptions(java.util.List<ClientOptions> exportOptions) {
             this.exportOptions = exportOptions;
             this.__explicitlySet__.add("exportOptions");
@@ -78,6 +96,15 @@ public final class UpdateExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
     private final java.util.List<ClientOptions> exportOptions;
 
+    /**
+     * New export options for the export.
+     * <p>
+     **Setting to the empty array will make the export invisible to all clients.**
+     * <p>
+     * Leaving unset will leave the {@code exportOptions} unchanged.
+     *
+     * @return the value
+     **/
     public java.util.List<ClientOptions> getExportOptions() {
         return exportOptions;
     }

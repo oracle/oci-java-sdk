@@ -18,6 +18,9 @@ public class CreateOdaInstanceRequest
      */
     private com.oracle.bmc.oda.model.CreateOdaInstanceDetails createOdaInstanceDetails;
 
+    /**
+     * Details for the new Digital Assistant instance.
+     */
     public com.oracle.bmc.oda.model.CreateOdaInstanceDetails getCreateOdaInstanceDetails() {
         return createOdaInstanceDetails;
     }
@@ -26,6 +29,9 @@ public class CreateOdaInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,6 +46,15 @@ public class CreateOdaInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * conflicting operations. For example, if an instance was deleted and purged from the system,
+     * then the service might reject a retry of the original creation request.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -61,10 +76,14 @@ public class CreateOdaInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new Digital Assistant instance.
+         */
         private com.oracle.bmc.oda.model.CreateOdaInstanceDetails createOdaInstanceDetails = null;
 
         /**
          * Details for the new Digital Assistant instance.
+         * @param createOdaInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder createOdaInstanceDetails(
@@ -73,10 +92,14 @@ public class CreateOdaInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -84,6 +107,15 @@ public class CreateOdaInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -94,6 +126,7 @@ public class CreateOdaInstanceRequest
          * conflicting operations. For example, if an instance was deleted and purged from the system,
          * then the service might reject a retry of the original creation request.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -184,7 +217,8 @@ public class CreateOdaInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -193,6 +227,10 @@ public class CreateOdaInstanceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

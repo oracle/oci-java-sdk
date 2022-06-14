@@ -31,36 +31,65 @@ public final class Origin {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
+        /**
+         * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
+         * @param uri the value to set
+         * @return this builder
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-
+        /**
+         * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpPort")
         private Integer httpPort;
 
+        /**
+         * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
+         * @param httpPort the value to set
+         * @return this builder
+         **/
         public Builder httpPort(Integer httpPort) {
             this.httpPort = httpPort;
             this.__explicitlySet__.add("httpPort");
             return this;
         }
-
+        /**
+         * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpsPort")
         private Integer httpsPort;
 
+        /**
+         * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
+         * @param httpsPort the value to set
+         * @return this builder
+         **/
         public Builder httpsPort(Integer httpsPort) {
             this.httpsPort = httpsPort;
             this.__explicitlySet__.add("httpsPort");
             return this;
         }
-
+        /**
+         * A list of HTTP headers to forward to your origin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customHeaders")
         private java.util.List<Header> customHeaders;
 
+        /**
+         * A list of HTTP headers to forward to your origin.
+         * @param customHeaders the value to set
+         * @return this builder
+         **/
         public Builder customHeaders(java.util.List<Header> customHeaders) {
             this.customHeaders = customHeaders;
             this.__explicitlySet__.add("customHeaders");
@@ -106,6 +135,10 @@ public final class Origin {
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
+    /**
+     * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
+     * @return the value
+     **/
     public String getUri() {
         return uri;
     }
@@ -116,6 +149,10 @@ public final class Origin {
     @com.fasterxml.jackson.annotation.JsonProperty("httpPort")
     private final Integer httpPort;
 
+    /**
+     * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
+     * @return the value
+     **/
     public Integer getHttpPort() {
         return httpPort;
     }
@@ -126,6 +163,10 @@ public final class Origin {
     @com.fasterxml.jackson.annotation.JsonProperty("httpsPort")
     private final Integer httpsPort;
 
+    /**
+     * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
+     * @return the value
+     **/
     public Integer getHttpsPort() {
         return httpsPort;
     }
@@ -136,6 +177,10 @@ public final class Origin {
     @com.fasterxml.jackson.annotation.JsonProperty("customHeaders")
     private final java.util.List<Header> customHeaders;
 
+    /**
+     * A list of HTTP headers to forward to your origin.
+     * @return the value
+     **/
     public java.util.List<Header> getCustomHeaders() {
         return customHeaders;
     }

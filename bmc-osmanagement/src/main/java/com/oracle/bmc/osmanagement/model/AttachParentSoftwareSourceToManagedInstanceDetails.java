@@ -29,9 +29,17 @@ public final class AttachParentSoftwareSourceToManagedInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID for the Software Source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
+        /**
+         * OCID for the Software Source
+         * @param softwareSourceId the value to set
+         * @return this builder
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
@@ -74,6 +82,10 @@ public final class AttachParentSoftwareSourceToManagedInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
+    /**
+     * OCID for the Software Source
+     * @return the value
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }

@@ -18,6 +18,9 @@ public class UpdateMaskingColumnRequest
      */
     private String maskingColumnKey;
 
+    /**
+     * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+     */
     public String getMaskingColumnKey() {
         return maskingColumnKey;
     }
@@ -26,6 +29,9 @@ public class UpdateMaskingColumnRequest
      */
     private String maskingPolicyId;
 
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
@@ -34,6 +40,9 @@ public class UpdateMaskingColumnRequest
      */
     private com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails updateMaskingColumnDetails;
 
+    /**
+     * Details to update a masking column.
+     */
     public com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails
             getUpdateMaskingColumnDetails() {
         return updateMaskingColumnDetails;
@@ -48,6 +57,14 @@ public class UpdateMaskingColumnRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +73,9 @@ public class UpdateMaskingColumnRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -78,10 +98,14 @@ public class UpdateMaskingColumnRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+         */
         private String maskingColumnKey = null;
 
         /**
          * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
+         * @param maskingColumnKey the value to set
          * @return this builder instance
          */
         public Builder maskingColumnKey(String maskingColumnKey) {
@@ -89,10 +113,14 @@ public class UpdateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         * @param maskingPolicyId the value to set
          * @return this builder instance
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
@@ -100,11 +128,15 @@ public class UpdateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * Details to update a masking column.
+         */
         private com.oracle.bmc.datasafe.model.UpdateMaskingColumnDetails
                 updateMaskingColumnDetails = null;
 
         /**
          * Details to update a masking column.
+         * @param updateMaskingColumnDetails the value to set
          * @return this builder instance
          */
         public Builder updateMaskingColumnDetails(
@@ -114,6 +146,14 @@ public class UpdateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -123,6 +163,7 @@ public class UpdateMaskingColumnRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -130,10 +171,14 @@ public class UpdateMaskingColumnRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -228,7 +273,8 @@ public class UpdateMaskingColumnRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -239,6 +285,10 @@ public class UpdateMaskingColumnRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,9 +28,17 @@ public final class InstanceAgentCommandSourceViaObjectStorageUriDetails
         extends InstanceAgentCommandSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Object Storage URL or pre-authenticated request (PAR) for the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
         private String sourceUri;
 
+        /**
+         * The Object Storage URL or pre-authenticated request (PAR) for the command.
+         * @param sourceUri the value to set
+         * @return this builder
+         **/
         public Builder sourceUri(String sourceUri) {
             this.sourceUri = sourceUri;
             this.__explicitlySet__.add("sourceUri");
@@ -79,6 +87,10 @@ public final class InstanceAgentCommandSourceViaObjectStorageUriDetails
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
     private final String sourceUri;
 
+    /**
+     * The Object Storage URL or pre-authenticated request (PAR) for the command.
+     * @return the value
+     **/
     public String getSourceUri() {
         return sourceUri;
     }

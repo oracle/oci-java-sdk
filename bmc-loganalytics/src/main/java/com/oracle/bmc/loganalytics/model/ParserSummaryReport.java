@@ -30,18 +30,33 @@ public final class ParserSummaryReport {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The count of custom (user defined) parsers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
         private Integer nonOobCount;
 
+        /**
+         * The count of custom (user defined) parsers.
+         * @param nonOobCount the value to set
+         * @return this builder
+         **/
         public Builder nonOobCount(Integer nonOobCount) {
             this.nonOobCount = nonOobCount;
             this.__explicitlySet__.add("nonOobCount");
             return this;
         }
-
+        /**
+         * The count of built in parsers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
         private Integer oobCount;
 
+        /**
+         * The count of built in parsers.
+         * @param oobCount the value to set
+         * @return this builder
+         **/
         public Builder oobCount(Integer oobCount) {
             this.oobCount = oobCount;
             this.__explicitlySet__.add("oobCount");
@@ -83,6 +98,10 @@ public final class ParserSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     private final Integer nonOobCount;
 
+    /**
+     * The count of custom (user defined) parsers.
+     * @return the value
+     **/
     public Integer getNonOobCount() {
         return nonOobCount;
     }
@@ -93,6 +112,10 @@ public final class ParserSummaryReport {
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     private final Integer oobCount;
 
+    /**
+     * The count of built in parsers.
+     * @return the value
+     **/
     public Integer getOobCount() {
         return oobCount;
     }

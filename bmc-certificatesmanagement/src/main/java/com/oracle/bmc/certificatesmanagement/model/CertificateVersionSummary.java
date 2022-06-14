@@ -62,73 +62,144 @@ public final class CertificateVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
+        /**
+         * The OCID of the certificate.
+         * @param certificateId the value to set
+         * @return this builder
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
-
+        /**
+         * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
+         * Example: {@code 03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
 
+        /**
+         * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
+         * Example: {@code 03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF}
+         *
+         * @param serialNumber the value to set
+         * @return this builder
+         **/
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             this.__explicitlySet__.add("serialNumber");
             return this;
         }
-
+        /**
+         * A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The version number of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
         private Long versionNumber;
 
+        /**
+         * The version number of the certificate.
+         * @param versionNumber the value to set
+         * @return this builder
+         **/
         public Builder versionNumber(Long versionNumber) {
             this.versionNumber = versionNumber;
             this.__explicitlySet__.add("versionNumber");
             return this;
         }
-
+        /**
+         * The version number of the issuing certificate authority (CA).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuerCaVersionNumber")
         private Long issuerCaVersionNumber;
 
+        /**
+         * The version number of the issuing certificate authority (CA).
+         * @param issuerCaVersionNumber the value to set
+         * @return this builder
+         **/
         public Builder issuerCaVersionNumber(Long issuerCaVersionNumber) {
             this.issuerCaVersionNumber = issuerCaVersionNumber;
             this.__explicitlySet__.add("issuerCaVersionNumber");
             return this;
         }
-
+        /**
+         * The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionName")
         private String versionName;
 
+        /**
+         * The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
+         *
+         * @param versionName the value to set
+         * @return this builder
+         **/
         public Builder versionName(String versionName) {
             this.versionName = versionName;
             this.__explicitlySet__.add("versionName");
             return this;
         }
-
+        /**
+         * A list of subject alternative names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternativeNames")
         private java.util.List<CertificateSubjectAlternativeName> subjectAlternativeNames;
 
+        /**
+         * A list of subject alternative names.
+         * @param subjectAlternativeNames the value to set
+         * @return this builder
+         **/
         public Builder subjectAlternativeNames(
                 java.util.List<CertificateSubjectAlternativeName> subjectAlternativeNames) {
             this.subjectAlternativeNames = subjectAlternativeNames;
             this.__explicitlySet__.add("subjectAlternativeNames");
             return this;
         }
-
+        /**
+         * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
+        /**
+         * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         * @param timeOfDeletion the value to set
+         * @return this builder
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
@@ -143,10 +214,17 @@ public final class CertificateVersionSummary {
             this.__explicitlySet__.add("validity");
             return this;
         }
-
+        /**
+         * A list of rotation states for this certificate version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stages")
         private java.util.List<VersionStage> stages;
 
+        /**
+         * A list of rotation states for this certificate version.
+         * @param stages the value to set
+         * @return this builder
+         **/
         public Builder stages(java.util.List<VersionStage> stages) {
             this.stages = stages;
             this.__explicitlySet__.add("stages");
@@ -220,6 +298,10 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
+    /**
+     * The OCID of the certificate.
+     * @return the value
+     **/
     public String getCertificateId() {
         return certificateId;
     }
@@ -232,6 +314,12 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
+    /**
+     * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
+     * Example: {@code 03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF}
+     *
+     * @return the value
+     **/
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -244,6 +332,12 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -254,6 +348,10 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
     private final Long versionNumber;
 
+    /**
+     * The version number of the certificate.
+     * @return the value
+     **/
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -264,6 +362,10 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("issuerCaVersionNumber")
     private final Long issuerCaVersionNumber;
 
+    /**
+     * The version number of the issuing certificate authority (CA).
+     * @return the value
+     **/
     public Long getIssuerCaVersionNumber() {
         return issuerCaVersionNumber;
     }
@@ -275,6 +377,11 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
+     *
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }
@@ -285,6 +392,10 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subjectAlternativeNames")
     private final java.util.List<CertificateSubjectAlternativeName> subjectAlternativeNames;
 
+    /**
+     * A list of subject alternative names.
+     * @return the value
+     **/
     public java.util.List<CertificateSubjectAlternativeName> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
@@ -297,6 +408,12 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
+    /**
+     * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -314,6 +431,10 @@ public final class CertificateVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
     private final java.util.List<VersionStage> stages;
 
+    /**
+     * A list of rotation states for this certificate version.
+     * @return the value
+     **/
     public java.util.List<VersionStage> getStages() {
         return stages;
     }

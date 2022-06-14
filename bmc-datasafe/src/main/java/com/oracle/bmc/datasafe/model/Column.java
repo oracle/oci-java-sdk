@@ -42,45 +42,81 @@ public final class Column {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the column displayed on UI.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name of the column displayed on UI.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Specifies the corresponding field name in the data source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * Specifies the corresponding field name in the data source.
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * Specifies the data type of the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
+        /**
+         * Specifies the data type of the column.
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-
+        /**
+         * Indicates if the column is hidden. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
+        /**
+         * Indicates if the column is hidden. Values can either be 'true' or 'false'.
+         * @param isHidden the value to set
+         * @return this builder
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-
+        /**
+         * Specifies the display order of the column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
         private Integer displayOrder;
 
+        /**
+         * Specifies the display order of the column.
+         * @param displayOrder the value to set
+         * @return this builder
+         **/
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = displayOrder;
             this.__explicitlySet__.add("displayOrder");
@@ -128,6 +164,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name of the column displayed on UI.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -138,6 +178,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * Specifies the corresponding field name in the data source.
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -148,6 +192,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
+    /**
+     * Specifies the data type of the column.
+     * @return the value
+     **/
     public String getDataType() {
         return dataType;
     }
@@ -158,6 +206,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
+    /**
+     * Indicates if the column is hidden. Values can either be 'true' or 'false'.
+     * @return the value
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -168,6 +220,10 @@ public final class Column {
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
     private final Integer displayOrder;
 
+    /**
+     * Specifies the display order of the column.
+     * @return the value
+     **/
     public Integer getDisplayOrder() {
         return displayOrder;
     }

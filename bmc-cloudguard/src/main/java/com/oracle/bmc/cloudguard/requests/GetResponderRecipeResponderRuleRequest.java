@@ -17,6 +17,9 @@ public class GetResponderRecipeResponderRuleRequest
      */
     private String responderRecipeId;
 
+    /**
+     * OCID of ResponderRecipe
+     */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
@@ -25,6 +28,9 @@ public class GetResponderRecipeResponderRuleRequest
      */
     private String responderRuleId;
 
+    /**
+     * The id of ResponderRule
+     */
     public String getResponderRuleId() {
         return responderRuleId;
     }
@@ -33,6 +39,9 @@ public class GetResponderRecipeResponderRuleRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +53,14 @@ public class GetResponderRecipeResponderRuleRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of ResponderRecipe
+         */
         private String responderRecipeId = null;
 
         /**
          * OCID of ResponderRecipe
+         * @param responderRecipeId the value to set
          * @return this builder instance
          */
         public Builder responderRecipeId(String responderRecipeId) {
@@ -55,10 +68,14 @@ public class GetResponderRecipeResponderRuleRequest
             return this;
         }
 
+        /**
+         * The id of ResponderRule
+         */
         private String responderRuleId = null;
 
         /**
          * The id of ResponderRule
+         * @param responderRuleId the value to set
          * @return this builder instance
          */
         public Builder responderRuleId(String responderRuleId) {
@@ -66,10 +83,14 @@ public class GetResponderRecipeResponderRuleRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,7 +171,8 @@ public class GetResponderRecipeResponderRuleRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -159,6 +181,10 @@ public class GetResponderRecipeResponderRuleRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

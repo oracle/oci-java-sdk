@@ -17,6 +17,10 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String tagNamespaceId;
 
+    /**
+     * The OCID of the tag namespace.
+     *
+     */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
@@ -28,6 +32,12 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,8 +48,24 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     public static class Builder
@@ -49,11 +75,16 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the tag namespace.
+         *
+         */
         private String tagNamespaceId = null;
 
         /**
          * The OCID of the tag namespace.
          *
+         * @param tagNamespaceId the value to set
          * @return this builder instance
          */
         public Builder tagNamespaceId(String tagNamespaceId) {
@@ -61,6 +92,12 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -68,6 +105,7 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -75,16 +113,37 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -119,6 +178,7 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
             tagNamespaceId(o.getTagNamespaceId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -154,21 +214,28 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
             request.tagNamespaceId = tagNamespaceId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteTagNamespaceRequest(tagNamespaceId, ifMatch, opcRequestId);
+            // new DeleteTagNamespaceRequest(tagNamespaceId, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
                 .tagNamespaceId(tagNamespaceId)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,6 +248,7 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +266,8 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
         return super.equals(o)
                 && java.util.Objects.equals(this.tagNamespaceId, other.tagNamespaceId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -210,6 +279,9 @@ public class DeleteTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
                         + (this.tagNamespaceId == null ? 43 : this.tagNamespaceId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

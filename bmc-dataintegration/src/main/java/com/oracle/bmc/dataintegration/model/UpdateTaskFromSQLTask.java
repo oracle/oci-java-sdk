@@ -161,19 +161,33 @@ public final class UpdateTaskFromSQLTask extends UpdateTaskDetails {
             this.__explicitlySet__.add("script");
             return this;
         }
-
+        /**
+         * Indicates whether the task is invoking a custom SQL script or stored procedure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlScriptType")
         private SqlScriptType sqlScriptType;
 
+        /**
+         * Indicates whether the task is invoking a custom SQL script or stored procedure.
+         * @param sqlScriptType the value to set
+         * @return this builder
+         **/
         public Builder sqlScriptType(SqlScriptType sqlScriptType) {
             this.sqlScriptType = sqlScriptType;
             this.__explicitlySet__.add("sqlScriptType");
             return this;
         }
-
+        /**
+         * Describes the shape of the execution result
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Object operation;
 
+        /**
+         * Describes the shape of the execution result
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(Object operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
@@ -331,6 +345,10 @@ public final class UpdateTaskFromSQLTask extends UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlScriptType")
     private final SqlScriptType sqlScriptType;
 
+    /**
+     * Indicates whether the task is invoking a custom SQL script or stored procedure.
+     * @return the value
+     **/
     public SqlScriptType getSqlScriptType() {
         return sqlScriptType;
     }
@@ -341,6 +359,10 @@ public final class UpdateTaskFromSQLTask extends UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Object operation;
 
+    /**
+     * Describes the shape of the execution result
+     * @return the value
+     **/
     public Object getOperation() {
         return operation;
     }

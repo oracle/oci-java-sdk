@@ -32,27 +32,57 @@ public final class X509FederationRequest {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The x509 certificate of the service instance, issued by his CA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
+        /**
+         * The x509 certificate of the service instance, issued by his CA.
+         * @param certificate the value to set
+         * @return this builder
+         **/
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
             return this;
         }
-
+        /**
+         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
+         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        /**
+         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
+         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         *
+         * @param publicKey the value to set
+         * @return this builder
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
-
+        /**
+         * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
+         * service already has the intermediate certificate(s), then this is not required.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intermediateCertificates")
         private java.util.List<String> intermediateCertificates;
 
+        /**
+         * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
+         * service already has the intermediate certificate(s), then this is not required.
+         *
+         * @param intermediateCertificates the value to set
+         * @return this builder
+         **/
         public Builder intermediateCertificates(java.util.List<String> intermediateCertificates) {
             this.intermediateCertificates = intermediateCertificates;
             this.__explicitlySet__.add("intermediateCertificates");
@@ -98,6 +128,10 @@ public final class X509FederationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
+    /**
+     * The x509 certificate of the service instance, issued by his CA.
+     * @return the value
+     **/
     public String getCertificate() {
         return certificate;
     }
@@ -110,6 +144,12 @@ public final class X509FederationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
+    /**
+     * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
+     * key will by put inside the security token by the auth service after successful validation of the certificate.
+     *
+     * @return the value
+     **/
     public String getPublicKey() {
         return publicKey;
     }
@@ -122,6 +162,12 @@ public final class X509FederationRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("intermediateCertificates")
     private final java.util.List<String> intermediateCertificates;
 
+    /**
+     * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
+     * service already has the intermediate certificate(s), then this is not required.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getIntermediateCertificates() {
         return intermediateCertificates;
     }

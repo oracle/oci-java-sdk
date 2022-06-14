@@ -22,6 +22,14 @@ public class ListAppCatalogListingsRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -33,6 +41,12 @@ public class ListAppCatalogListingsRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -81,6 +95,11 @@ public class ListAppCatalogListingsRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -90,6 +109,10 @@ public class ListAppCatalogListingsRequest
      */
     private String publisherName;
 
+    /**
+     * A filter to return only the publisher that matches the given publisher name exactly.
+     *
+     */
     public String getPublisherName() {
         return publisherName;
     }
@@ -99,6 +122,10 @@ public class ListAppCatalogListingsRequest
      */
     private String publisherType;
 
+    /**
+     * A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
+     *
+     */
     public String getPublisherType() {
         return publisherType;
     }
@@ -108,6 +135,10 @@ public class ListAppCatalogListingsRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -119,6 +150,14 @@ public class ListAppCatalogListingsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -128,6 +167,7 @@ public class ListAppCatalogListingsRequest
          * <p>
          * Example: {@code 50}
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -135,6 +175,12 @@ public class ListAppCatalogListingsRequest
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -142,6 +188,7 @@ public class ListAppCatalogListingsRequest
          * call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -149,12 +196,18 @@ public class ListAppCatalogListingsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
          * is case sensitive.
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -162,11 +215,16 @@ public class ListAppCatalogListingsRequest
             return this;
         }
 
+        /**
+         * A filter to return only the publisher that matches the given publisher name exactly.
+         *
+         */
         private String publisherName = null;
 
         /**
          * A filter to return only the publisher that matches the given publisher name exactly.
          *
+         * @param publisherName the value to set
          * @return this builder instance
          */
         public Builder publisherName(String publisherName) {
@@ -174,11 +232,16 @@ public class ListAppCatalogListingsRequest
             return this;
         }
 
+        /**
+         * A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
+         *
+         */
         private String publisherType = null;
 
         /**
          * A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
          *
+         * @param publisherType the value to set
          * @return this builder instance
          */
         public Builder publisherType(String publisherType) {
@@ -186,11 +249,16 @@ public class ListAppCatalogListingsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the given display name exactly.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -276,7 +344,8 @@ public class ListAppCatalogListingsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -288,6 +357,10 @@ public class ListAppCatalogListingsRequest
                 .displayName(displayName);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

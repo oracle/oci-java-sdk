@@ -30,9 +30,17 @@ public final class AutonomousDatabaseManualRefreshDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshCutoff")
         private java.util.Date timeRefreshCutoff;
 
+        /**
+         * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+         * @param timeRefreshCutoff the value to set
+         * @return this builder
+         **/
         public Builder timeRefreshCutoff(java.util.Date timeRefreshCutoff) {
             this.timeRefreshCutoff = timeRefreshCutoff;
             this.__explicitlySet__.add("timeRefreshCutoff");
@@ -75,6 +83,10 @@ public final class AutonomousDatabaseManualRefreshDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshCutoff")
     private final java.util.Date timeRefreshCutoff;
 
+    /**
+     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+     * @return the value
+     **/
     public java.util.Date getTimeRefreshCutoff() {
         return timeRefreshCutoff;
     }

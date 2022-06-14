@@ -29,6 +29,7 @@ public final class CreateTemplateZipUploadConfigSourceDetails
         extends CreateTemplateConfigSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("zipFileBase64Encoded")
         private String zipFileBase64Encoded;
 

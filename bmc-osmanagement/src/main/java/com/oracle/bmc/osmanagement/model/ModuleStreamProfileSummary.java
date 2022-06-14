@@ -31,27 +31,49 @@ public final class ModuleStreamProfileSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the module that contains the stream profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
+        /**
+         * The name of the module that contains the stream profile
+         * @param moduleName the value to set
+         * @return this builder
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-
+        /**
+         * The name of the stream that contains the profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
+        /**
+         * The name of the stream that contains the profile
+         * @param streamName the value to set
+         * @return this builder
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-
+        /**
+         * The name of the profile
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
+        /**
+         * The name of the profile
+         * @param profileName the value to set
+         * @return this builder
+         **/
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
@@ -97,6 +119,10 @@ public final class ModuleStreamProfileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
+    /**
+     * The name of the module that contains the stream profile
+     * @return the value
+     **/
     public String getModuleName() {
         return moduleName;
     }
@@ -107,6 +133,10 @@ public final class ModuleStreamProfileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
+    /**
+     * The name of the stream that contains the profile
+     * @return the value
+     **/
     public String getStreamName() {
         return streamName;
     }
@@ -117,6 +147,10 @@ public final class ModuleStreamProfileSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
+    /**
+     * The name of the profile
+     * @return the value
+     **/
     public String getProfileName() {
         return profileName;
     }

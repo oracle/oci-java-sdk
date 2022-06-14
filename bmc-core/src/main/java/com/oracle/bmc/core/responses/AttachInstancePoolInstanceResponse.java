@@ -15,6 +15,12 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -37,6 +48,13 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private String opcWorkRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -47,6 +65,11 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private String location;
 
+    /**
+     * Location of the resource.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -56,6 +79,10 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
+    /**
+     * The returned InstancePoolInstance instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.InstancePoolInstance getInstancePoolInstance() {
         return instancePoolInstance;
     }
@@ -91,36 +118,90 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Location of the resource.
+         *
+         */
         private String location;
 
+        /**
+         * Location of the resource.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned InstancePoolInstance instance.
+         */
         private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
+        /**
+         * The returned InstancePoolInstance instance.
+         * @param instancePoolInstance the value to set
+         * @return this builder
+         */
         public Builder instancePoolInstance(
                 com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance) {
             this.instancePoolInstance = instancePoolInstance;
@@ -142,6 +223,10 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public AttachInstancePoolInstanceResponse build() {
             return new AttachInstancePoolInstanceResponse(
                     __httpStatusCode__,
@@ -153,6 +238,10 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

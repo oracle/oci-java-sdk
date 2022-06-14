@@ -13,6 +13,10 @@ public class ChangePrivateEndpointCompartmentResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,8 +35,16 @@ public class ChangePrivateEndpointCompartmentResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -49,11 +61,19 @@ public class ChangePrivateEndpointCompartmentResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ChangePrivateEndpointCompartmentResponse build() {
             return new ChangePrivateEndpointCompartmentResponse(__httpStatusCode__, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

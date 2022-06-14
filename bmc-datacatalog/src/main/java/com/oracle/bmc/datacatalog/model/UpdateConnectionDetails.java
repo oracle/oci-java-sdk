@@ -47,56 +47,135 @@ public final class UpdateConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A description of the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A description of the connection.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+        /**
+         * The list of customized properties along with the values for this object
+         * @param customPropertyMembers the value to set
+         * @return this builder
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
             this.__explicitlySet__.add("customPropertyMembers");
             return this;
         }
-
+        /**
+         * A map of maps that contains the properties which are specific to the connection type. Each connection type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * connections have required properties within the "default" category. To determine the set of optional and
+         * required properties for a connection type, a query can be done on '/types?type=connection' that returns a
+         * collection of all connection types. The appropriate connection type, which will include definitions of all
+         * of it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "username": "user1"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
+        /**
+         * A map of maps that contains the properties which are specific to the connection type. Each connection type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * connections have required properties within the "default" category. To determine the set of optional and
+         * required properties for a connection type, a query can be done on '/types?type=connection' that returns a
+         * collection of all connection types. The appropriate connection type, which will include definitions of all
+         * of it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "username": "user1"}}}}
+         *
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-
+        /**
+         * A map of maps that contains the encrypted values for sensitive properties which are specific to the
+         * connection type. Each connection type definition defines it's set of required and optional properties.
+         * The map keys are category names and the values are maps of property name to property value. Every property is
+         * contained inside of a category. Most connections have required properties within the "default" category.
+         * To determine the set of optional and required properties for a connection type, a query can be done
+         * on '/types?type=connection' that returns a collection of all connection types. The appropriate connection
+         * type, which will include definitions of all of it's properties, can be identified from this collection.
+         * Example: {@code {"encProperties": { "default": { "password": "example-password"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encProperties")
         private java.util.Map<String, java.util.Map<String, String>> encProperties;
 
+        /**
+         * A map of maps that contains the encrypted values for sensitive properties which are specific to the
+         * connection type. Each connection type definition defines it's set of required and optional properties.
+         * The map keys are category names and the values are maps of property name to property value. Every property is
+         * contained inside of a category. Most connections have required properties within the "default" category.
+         * To determine the set of optional and required properties for a connection type, a query can be done
+         * on '/types?type=connection' that returns a collection of all connection types. The appropriate connection
+         * type, which will include definitions of all of it's properties, can be identified from this collection.
+         * Example: {@code {"encProperties": { "default": { "password": "example-password"}}}}
+         *
+         * @param encProperties the value to set
+         * @return this builder
+         **/
         public Builder encProperties(
                 java.util.Map<String, java.util.Map<String, String>> encProperties) {
             this.encProperties = encProperties;
             this.__explicitlySet__.add("encProperties");
             return this;
         }
-
+        /**
+         * Indicates whether this connection is the default connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates whether this connection is the default connection.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -151,6 +230,10 @@ public final class UpdateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A description of the connection.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -163,6 +246,12 @@ public final class UpdateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -173,6 +262,10 @@ public final class UpdateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
+    /**
+     * The list of customized properties along with the values for this object
+     * @return the value
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }
@@ -191,6 +284,18 @@ public final class UpdateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
+    /**
+     * A map of maps that contains the properties which are specific to the connection type. Each connection type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * connections have required properties within the "default" category. To determine the set of optional and
+     * required properties for a connection type, a query can be done on '/types?type=connection' that returns a
+     * collection of all connection types. The appropriate connection type, which will include definitions of all
+     * of it's properties, can be identified from this collection.
+     * Example: {@code {"properties": { "default": { "username": "user1"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }
@@ -209,6 +314,18 @@ public final class UpdateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("encProperties")
     private final java.util.Map<String, java.util.Map<String, String>> encProperties;
 
+    /**
+     * A map of maps that contains the encrypted values for sensitive properties which are specific to the
+     * connection type. Each connection type definition defines it's set of required and optional properties.
+     * The map keys are category names and the values are maps of property name to property value. Every property is
+     * contained inside of a category. Most connections have required properties within the "default" category.
+     * To determine the set of optional and required properties for a connection type, a query can be done
+     * on '/types?type=connection' that returns a collection of all connection types. The appropriate connection
+     * type, which will include definitions of all of it's properties, can be identified from this collection.
+     * Example: {@code {"encProperties": { "default": { "password": "example-password"}}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getEncProperties() {
         return encProperties;
     }
@@ -219,6 +336,10 @@ public final class UpdateConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates whether this connection is the default connection.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }

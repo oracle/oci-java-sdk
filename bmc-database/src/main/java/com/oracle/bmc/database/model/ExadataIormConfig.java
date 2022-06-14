@@ -42,36 +42,77 @@ public final class ExadataIormConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The current state of IORM configuration for the Exadata DB system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of IORM configuration for the Exadata DB system.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Additional information about the current {@code lifecycleState}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current {@code lifecycleState}.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The current value for the IORM objective.
+         * The default is {@code AUTO}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objective")
         private Objective objective;
 
+        /**
+         * The current value for the IORM objective.
+         * The default is {@code AUTO}.
+         *
+         * @param objective the value to set
+         * @return this builder
+         **/
         public Builder objective(Objective objective) {
             this.objective = objective;
             this.__explicitlySet__.add("objective");
             return this;
         }
-
+        /**
+         * An array of IORM settings for all the database in
+         * the Exadata DB system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
         private java.util.List<DbIormConfig> dbPlans;
 
+        /**
+         * An array of IORM settings for all the database in
+         * the Exadata DB system.
+         *
+         * @param dbPlans the value to set
+         * @return this builder
+         **/
         public Builder dbPlans(java.util.List<DbIormConfig> dbPlans) {
             this.dbPlans = dbPlans;
             this.__explicitlySet__.add("dbPlans");
@@ -171,6 +212,11 @@ public final class ExadataIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of IORM configuration for the Exadata DB system.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -182,6 +228,11 @@ public final class ExadataIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current {@code lifecycleState}.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -247,6 +298,12 @@ public final class ExadataIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("objective")
     private final Objective objective;
 
+    /**
+     * The current value for the IORM objective.
+     * The default is {@code AUTO}.
+     *
+     * @return the value
+     **/
     public Objective getObjective() {
         return objective;
     }
@@ -259,6 +316,12 @@ public final class ExadataIormConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
     private final java.util.List<DbIormConfig> dbPlans;
 
+    /**
+     * An array of IORM settings for all the database in
+     * the Exadata DB system.
+     *
+     * @return the value
+     **/
     public java.util.List<DbIormConfig> getDbPlans() {
         return dbPlans;
     }

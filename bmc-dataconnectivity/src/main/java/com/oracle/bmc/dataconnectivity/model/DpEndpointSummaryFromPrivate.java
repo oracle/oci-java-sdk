@@ -107,64 +107,113 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
             this.__explicitlySet__.add("dataAssets");
             return this;
         }
-
+        /**
+         * The endpoint ID provided by control plane.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dcmsEndpointId")
         private String dcmsEndpointId;
 
+        /**
+         * The endpoint ID provided by control plane.
+         * @param dcmsEndpointId the value to set
+         * @return this builder
+         **/
         public Builder dcmsEndpointId(String dcmsEndpointId) {
             this.dcmsEndpointId = dcmsEndpointId;
             this.__explicitlySet__.add("dcmsEndpointId");
             return this;
         }
-
+        /**
+         * The ocid of private endpoint resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peId")
         private String peId;
 
+        /**
+         * The ocid of private endpoint resource.
+         * @param peId the value to set
+         * @return this builder
+         **/
         public Builder peId(String peId) {
             this.peId = peId;
             this.__explicitlySet__.add("peId");
             return this;
         }
-
+        /**
+         * The compartmentId of private endpoint resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartmentId of private endpoint resource.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The IP address of dns proxy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
         private String dnsProxyIp;
 
+        /**
+         * The IP address of dns proxy.
+         * @param dnsProxyIp the value to set
+         * @return this builder
+         **/
         public Builder dnsProxyIp(String dnsProxyIp) {
             this.dnsProxyIp = dnsProxyIp;
             this.__explicitlySet__.add("dnsProxyIp");
             return this;
         }
-
+        /**
+         * The ocid of private endpoint resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
+        /**
+         * The ocid of private endpoint resource.
+         * @param privateEndpointIp the value to set
+         * @return this builder
+         **/
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = privateEndpointIp;
             this.__explicitlySet__.add("privateEndpointIp");
             return this;
         }
-
+        /**
+         * Array of dns zones to be use during private endpoint resolution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
+        /**
+         * Array of dns zones to be use during private endpoint resolution.
+         * @param dnsZones the value to set
+         * @return this builder
+         **/
         public Builder dnsZones(java.util.List<String> dnsZones) {
             this.dnsZones = dnsZones;
             this.__explicitlySet__.add("dnsZones");
             return this;
         }
-
+        /**
+         * Specifies the private endpoint state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
+        /**
+         * Specifies the private endpoint state.
+         * @param state the value to set
+         * @return this builder
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -276,6 +325,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dcmsEndpointId")
     private final String dcmsEndpointId;
 
+    /**
+     * The endpoint ID provided by control plane.
+     * @return the value
+     **/
     public String getDcmsEndpointId() {
         return dcmsEndpointId;
     }
@@ -286,6 +339,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peId")
     private final String peId;
 
+    /**
+     * The ocid of private endpoint resource.
+     * @return the value
+     **/
     public String getPeId() {
         return peId;
     }
@@ -296,6 +353,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartmentId of private endpoint resource.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -306,6 +367,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
     private final String dnsProxyIp;
 
+    /**
+     * The IP address of dns proxy.
+     * @return the value
+     **/
     public String getDnsProxyIp() {
         return dnsProxyIp;
     }
@@ -316,6 +381,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
 
+    /**
+     * The ocid of private endpoint resource.
+     * @return the value
+     **/
     public String getPrivateEndpointIp() {
         return privateEndpointIp;
     }
@@ -326,6 +395,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
+    /**
+     * Array of dns zones to be use during private endpoint resolution.
+     * @return the value
+     **/
     public java.util.List<String> getDnsZones() {
         return dnsZones;
     }
@@ -371,6 +444,10 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
+    /**
+     * Specifies the private endpoint state.
+     * @return the value
+     **/
     public State getState() {
         return state;
     }

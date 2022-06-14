@@ -16,6 +16,9 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String namespaceId;
 
+    /**
+     * Unique namespace identifier.
+     */
     public String getNamespaceId() {
         return namespaceId;
     }
@@ -32,6 +38,9 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String customPropertyKey;
 
+    /**
+     * Unique Custom Property key
+     */
     public String getCustomPropertyKey() {
         return customPropertyKey;
     }
@@ -87,6 +96,10 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Specifies the fields to return in a custom property response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -95,6 +108,9 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -106,10 +122,14 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -117,10 +137,14 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique namespace identifier.
+         */
         private String namespaceId = null;
 
         /**
          * Unique namespace identifier.
+         * @param namespaceId the value to set
          * @return this builder instance
          */
         public Builder namespaceId(String namespaceId) {
@@ -128,10 +152,14 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique Custom Property key
+         */
         private String customPropertyKey = null;
 
         /**
          * Unique Custom Property key
+         * @param customPropertyKey the value to set
          * @return this builder instance
          */
         public Builder customPropertyKey(String customPropertyKey) {
@@ -139,11 +167,16 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a custom property response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a custom property response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -154,16 +187,21 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Singular setter. Specifies the fields to return in a custom property response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -247,7 +285,8 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -258,6 +297,10 @@ public class GetCustomPropertyRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

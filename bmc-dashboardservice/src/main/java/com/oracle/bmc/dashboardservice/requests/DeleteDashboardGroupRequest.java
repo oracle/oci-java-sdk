@@ -17,6 +17,9 @@ public class DeleteDashboardGroupRequest
      */
     private String dashboardGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+     */
     public String getDashboardGroupId() {
         return dashboardGroupId;
     }
@@ -30,6 +33,14 @@ public class DeleteDashboardGroupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,6 +49,9 @@ public class DeleteDashboardGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -51,6 +65,14 @@ public class DeleteDashboardGroupRequest
      */
     private String opcCrossRegion;
 
+    /**
+     * To identify if the call is cross-regional. In CRUD calls for a resource, to
+     * identify that the call originates from different region, set the
+     * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+     * The call will be served from a Replicated bucket.
+     * For same-region calls, the value is unassigned.
+     *
+     */
     public String getOpcCrossRegion() {
         return opcCrossRegion;
     }
@@ -62,10 +84,14 @@ public class DeleteDashboardGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+         */
         private String dashboardGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.
+         * @param dashboardGroupId the value to set
          * @return this builder instance
          */
         public Builder dashboardGroupId(String dashboardGroupId) {
@@ -73,6 +99,14 @@ public class DeleteDashboardGroupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -82,6 +116,7 @@ public class DeleteDashboardGroupRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -89,10 +124,14 @@ public class DeleteDashboardGroupRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -100,6 +139,14 @@ public class DeleteDashboardGroupRequest
             return this;
         }
 
+        /**
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to
+         * identify that the call originates from different region, set the
+         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
+         * The call will be served from a Replicated bucket.
+         * For same-region calls, the value is unassigned.
+         *
+         */
         private String opcCrossRegion = null;
 
         /**
@@ -109,6 +156,7 @@ public class DeleteDashboardGroupRequest
          * The call will be served from a Replicated bucket.
          * For same-region calls, the value is unassigned.
          *
+         * @param opcCrossRegion the value to set
          * @return this builder instance
          */
         public Builder opcCrossRegion(String opcCrossRegion) {
@@ -190,7 +238,8 @@ public class DeleteDashboardGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -200,6 +249,10 @@ public class DeleteDashboardGroupRequest
                 .opcCrossRegion(opcCrossRegion);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

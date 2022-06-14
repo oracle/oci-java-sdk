@@ -45,18 +45,45 @@ public final class InstanceReservationConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The fault domain of this capacity configuration.
+         * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
+         * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
+        /**
+         * The fault domain of this capacity configuration.
+         * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
+         * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+         *
+         * @param faultDomain the value to set
+         * @return this builder
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-
+        /**
+         * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
+         * and other resources allocated to the instance.
+         * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
+        /**
+         * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
+         * and other resources allocated to the instance.
+         * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+         *
+         * @param instanceShape the value to set
+         * @return this builder
+         **/
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -72,19 +99,33 @@ public final class InstanceReservationConfig {
             this.__explicitlySet__.add("instanceShapeConfig");
             return this;
         }
-
+        /**
+         * The total number of instances that can be launched from the capacity configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
         private Long reservedCount;
 
+        /**
+         * The total number of instances that can be launched from the capacity configuration.
+         * @param reservedCount the value to set
+         * @return this builder
+         **/
         public Builder reservedCount(Long reservedCount) {
             this.reservedCount = reservedCount;
             this.__explicitlySet__.add("reservedCount");
             return this;
         }
-
+        /**
+         * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedCount")
         private Long usedCount;
 
+        /**
+         * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
+         * @param usedCount the value to set
+         * @return this builder
+         **/
         public Builder usedCount(Long usedCount) {
             this.usedCount = usedCount;
             this.__explicitlySet__.add("usedCount");
@@ -140,6 +181,13 @@ public final class InstanceReservationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
+    /**
+     * The fault domain of this capacity configuration.
+     * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
+     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     *
+     * @return the value
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
@@ -153,6 +201,13 @@ public final class InstanceReservationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
+    /**
+     * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
+     * and other resources allocated to the instance.
+     * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+     *
+     * @return the value
+     **/
     public String getInstanceShape() {
         return instanceShape;
     }
@@ -170,6 +225,10 @@ public final class InstanceReservationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
     private final Long reservedCount;
 
+    /**
+     * The total number of instances that can be launched from the capacity configuration.
+     * @return the value
+     **/
     public Long getReservedCount() {
         return reservedCount;
     }
@@ -180,6 +239,10 @@ public final class InstanceReservationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("usedCount")
     private final Long usedCount;
 
+    /**
+     * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
+     * @return the value
+     **/
     public Long getUsedCount() {
         return usedCount;
     }

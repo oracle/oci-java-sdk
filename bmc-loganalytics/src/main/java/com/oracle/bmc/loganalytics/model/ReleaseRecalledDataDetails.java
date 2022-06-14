@@ -42,36 +42,65 @@ public final class ReleaseRecalledDataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the compartment OCID for permission checking
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * This is the compartment OCID for permission checking
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * This is the end of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
+        /**
+         * This is the end of the time interval
+         * @param timeDataEnded the value to set
+         * @return this builder
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-
+        /**
+         * This is the start of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
+        /**
+         * This is the start of the time interval
+         * @param timeDataStarted the value to set
+         * @return this builder
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-
+        /**
+         * This is the type of the recalled data to be released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
+        /**
+         * This is the type of the recalled data to be released
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
@@ -119,6 +148,10 @@ public final class ReleaseRecalledDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * This is the compartment OCID for permission checking
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -129,6 +162,10 @@ public final class ReleaseRecalledDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
+    /**
+     * This is the end of the time interval
+     * @return the value
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
@@ -139,6 +176,10 @@ public final class ReleaseRecalledDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
+    /**
+     * This is the start of the time interval
+     * @return the value
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
@@ -149,6 +190,10 @@ public final class ReleaseRecalledDataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
+    /**
+     * This is the type of the recalled data to be released
+     * @return the value
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }

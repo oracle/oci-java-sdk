@@ -16,6 +16,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -78,6 +86,13 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -86,6 +101,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String auditProfileId;
 
+    /**
+     * A optional filter to return only resources that match the specified id.
+     */
     public String getAuditProfileId() {
         return auditProfileId;
     }
@@ -94,6 +112,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String targetId;
 
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
@@ -103,6 +124,10 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -111,6 +136,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -119,6 +147,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -127,6 +158,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.datasafe.model.AuditProfileLifecycleState lifecycleState;
 
+    /**
+     * A optional filter to return only resources that match the specified lifecycle state.
+     */
     public com.oracle.bmc.datasafe.model.AuditProfileLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -135,6 +169,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean isOverrideGlobalRetentionSetting;
 
+    /**
+     * A optional filter to return only resources that match the specified retention configured value.
+     */
     public Boolean getIsOverrideGlobalRetentionSetting() {
         return isOverrideGlobalRetentionSetting;
     }
@@ -147,6 +184,13 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean isPaidUsageEnabled;
 
+    /**
+     * Indicates if you want to continue audit record collection beyond the free limit
+     * of one million audit records per month per target database, incurring additional charges.
+     * The default value is inherited from the global settings. You can change at the global level
+     * or at the target level.
+     *
+     */
     public Boolean getIsPaidUsageEnabled() {
         return isPaidUsageEnabled;
     }
@@ -155,6 +199,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Long auditCollectedVolumeGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only items that have count of audit records collected greater than or equal to the specified value.
+     */
     public Long getAuditCollectedVolumeGreaterThanOrEqualTo() {
         return auditCollectedVolumeGreaterThanOrEqualTo;
     }
@@ -199,6 +246,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -249,6 +299,12 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+     * The DISPLAYNAME sort order is case sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -257,6 +313,9 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -268,10 +327,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -279,12 +342,18 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -292,6 +361,13 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -300,6 +376,7 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
          * user has INSPECT permissions directly or indirectly (permissions can be on a
          * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -307,10 +384,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A optional filter to return only resources that match the specified id.
+         */
         private String auditProfileId = null;
 
         /**
          * A optional filter to return only resources that match the specified id.
+         * @param auditProfileId the value to set
          * @return this builder instance
          */
         public Builder auditProfileId(String auditProfileId) {
@@ -318,10 +399,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
+         * @param targetId the value to set
          * @return this builder instance
          */
         public Builder targetId(String targetId) {
@@ -329,11 +414,16 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the specified display name.
          *
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -341,10 +431,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -352,10 +446,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -363,10 +461,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A optional filter to return only resources that match the specified lifecycle state.
+         */
         private com.oracle.bmc.datasafe.model.AuditProfileLifecycleState lifecycleState = null;
 
         /**
          * A optional filter to return only resources that match the specified lifecycle state.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -375,10 +477,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A optional filter to return only resources that match the specified retention configured value.
+         */
         private Boolean isOverrideGlobalRetentionSetting = null;
 
         /**
          * A optional filter to return only resources that match the specified retention configured value.
+         * @param isOverrideGlobalRetentionSetting the value to set
          * @return this builder instance
          */
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
@@ -386,6 +492,13 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Indicates if you want to continue audit record collection beyond the free limit
+         * of one million audit records per month per target database, incurring additional charges.
+         * The default value is inherited from the global settings. You can change at the global level
+         * or at the target level.
+         *
+         */
         private Boolean isPaidUsageEnabled = null;
 
         /**
@@ -394,6 +507,7 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
          * The default value is inherited from the global settings. You can change at the global level
          * or at the target level.
          *
+         * @param isPaidUsageEnabled the value to set
          * @return this builder instance
          */
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
@@ -401,10 +515,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only items that have count of audit records collected greater than or equal to the specified value.
+         */
         private Long auditCollectedVolumeGreaterThanOrEqualTo = null;
 
         /**
          * A filter to return only items that have count of audit records collected greater than or equal to the specified value.
+         * @param auditCollectedVolumeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder auditCollectedVolumeGreaterThanOrEqualTo(
@@ -414,10 +532,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -425,6 +547,12 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+         * The DISPLAYNAME sort order is case sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -432,6 +560,7 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
          * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
          * The DISPLAYNAME sort order is case sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -439,10 +568,14 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -548,7 +681,8 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -569,6 +703,10 @@ public class ListAuditProfilesRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

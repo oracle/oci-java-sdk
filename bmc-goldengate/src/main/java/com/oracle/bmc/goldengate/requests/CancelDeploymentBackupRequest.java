@@ -19,6 +19,10 @@ public class CancelDeploymentBackupRequest
      */
     private String deploymentBackupId;
 
+    /**
+     * A unique DeploymentBackup identifier.
+     *
+     */
     public String getDeploymentBackupId() {
         return deploymentBackupId;
     }
@@ -29,6 +33,10 @@ public class CancelDeploymentBackupRequest
     private com.oracle.bmc.goldengate.model.CancelDeploymentBackupDetails
             cancelDeploymentBackupDetails;
 
+    /**
+     * A placeholder for any additional metadata to describe the deployment backup cancel.
+     *
+     */
     public com.oracle.bmc.goldengate.model.CancelDeploymentBackupDetails
             getCancelDeploymentBackupDetails() {
         return cancelDeploymentBackupDetails;
@@ -39,6 +47,10 @@ public class CancelDeploymentBackupRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +60,10 @@ public class CancelDeploymentBackupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,6 +73,10 @@ public class CancelDeploymentBackupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -79,11 +99,16 @@ public class CancelDeploymentBackupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A unique DeploymentBackup identifier.
+         *
+         */
         private String deploymentBackupId = null;
 
         /**
          * A unique DeploymentBackup identifier.
          *
+         * @param deploymentBackupId the value to set
          * @return this builder instance
          */
         public Builder deploymentBackupId(String deploymentBackupId) {
@@ -91,12 +116,17 @@ public class CancelDeploymentBackupRequest
             return this;
         }
 
+        /**
+         * A placeholder for any additional metadata to describe the deployment backup cancel.
+         *
+         */
         private com.oracle.bmc.goldengate.model.CancelDeploymentBackupDetails
                 cancelDeploymentBackupDetails = null;
 
         /**
          * A placeholder for any additional metadata to describe the deployment backup cancel.
          *
+         * @param cancelDeploymentBackupDetails the value to set
          * @return this builder instance
          */
         public Builder cancelDeploymentBackupDetails(
@@ -106,11 +136,16 @@ public class CancelDeploymentBackupRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -118,11 +153,16 @@ public class CancelDeploymentBackupRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -130,11 +170,16 @@ public class CancelDeploymentBackupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -229,7 +274,8 @@ public class CancelDeploymentBackupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -240,6 +286,10 @@ public class CancelDeploymentBackupRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

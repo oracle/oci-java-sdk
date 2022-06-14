@@ -29,27 +29,59 @@ public final class IndexKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of a column to be included as an index key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
+        /**
+         * The name of a column to be included as an index key.
+         * @param columnName the value to set
+         * @return this builder
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-
+        /**
+         * If the specified column is of type JSON, jsonPath contains
+         * a dotted path indicating the field within the JSON object
+         * that will be the index key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jsonPath")
         private String jsonPath;
 
+        /**
+         * If the specified column is of type JSON, jsonPath contains
+         * a dotted path indicating the field within the JSON object
+         * that will be the index key.
+         *
+         * @param jsonPath the value to set
+         * @return this builder
+         **/
         public Builder jsonPath(String jsonPath) {
             this.jsonPath = jsonPath;
             this.__explicitlySet__.add("jsonPath");
             return this;
         }
-
+        /**
+         * If the specified column is of type JSON, jsonFieldType contains
+         * the type of the field indicated by jsonPath.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jsonFieldType")
         private String jsonFieldType;
 
+        /**
+         * If the specified column is of type JSON, jsonFieldType contains
+         * the type of the field indicated by jsonPath.
+         *
+         * @param jsonFieldType the value to set
+         * @return this builder
+         **/
         public Builder jsonFieldType(String jsonFieldType) {
             this.jsonFieldType = jsonFieldType;
             this.__explicitlySet__.add("jsonFieldType");
@@ -94,6 +126,10 @@ public final class IndexKey {
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
+    /**
+     * The name of a column to be included as an index key.
+     * @return the value
+     **/
     public String getColumnName() {
         return columnName;
     }
@@ -107,6 +143,13 @@ public final class IndexKey {
     @com.fasterxml.jackson.annotation.JsonProperty("jsonPath")
     private final String jsonPath;
 
+    /**
+     * If the specified column is of type JSON, jsonPath contains
+     * a dotted path indicating the field within the JSON object
+     * that will be the index key.
+     *
+     * @return the value
+     **/
     public String getJsonPath() {
         return jsonPath;
     }
@@ -119,6 +162,12 @@ public final class IndexKey {
     @com.fasterxml.jackson.annotation.JsonProperty("jsonFieldType")
     private final String jsonFieldType;
 
+    /**
+     * If the specified column is of type JSON, jsonFieldType contains
+     * the type of the field indicated by jsonPath.
+     *
+     * @return the value
+     **/
     public String getJsonFieldType() {
         return jsonFieldType;
     }

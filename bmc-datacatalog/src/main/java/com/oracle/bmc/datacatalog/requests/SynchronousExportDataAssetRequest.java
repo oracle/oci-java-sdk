@@ -18,6 +18,9 @@ public class SynchronousExportDataAssetRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class SynchronousExportDataAssetRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -35,6 +41,9 @@ public class SynchronousExportDataAssetRequest
     private com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
             synchronousExportDataAssetDetails;
 
+    /**
+     * The details of what needs to be exported.
+     */
     public com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
             getSynchronousExportDataAssetDetails() {
         return synchronousExportDataAssetDetails;
@@ -45,6 +54,9 @@ public class SynchronousExportDataAssetRequest
     private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             exportType;
 
+    /**
+     * Type of export.
+     */
     public java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             getExportType() {
         return exportType;
@@ -54,6 +66,9 @@ public class SynchronousExportDataAssetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,6 +82,14 @@ public class SynchronousExportDataAssetRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -89,10 +112,14 @@ public class SynchronousExportDataAssetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -100,10 +127,14 @@ public class SynchronousExportDataAssetRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -111,11 +142,15 @@ public class SynchronousExportDataAssetRequest
             return this;
         }
 
+        /**
+         * The details of what needs to be exported.
+         */
         private com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
                 synchronousExportDataAssetDetails = null;
 
         /**
          * The details of what needs to be exported.
+         * @param synchronousExportDataAssetDetails the value to set
          * @return this builder instance
          */
         public Builder synchronousExportDataAssetDetails(
@@ -125,11 +160,15 @@ public class SynchronousExportDataAssetRequest
             return this;
         }
 
+        /**
+         * Type of export.
+         */
         private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
                 exportType = null;
 
         /**
          * Type of export.
+         * @param exportType the value to set
          * @return this builder instance
          */
         public Builder exportType(
@@ -141,16 +180,21 @@ public class SynchronousExportDataAssetRequest
 
         /**
          * Singular setter. Type of export.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder exportType(DataAssetImportExportTypeFilter singularValue) {
             return this.exportType(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,6 +202,14 @@ public class SynchronousExportDataAssetRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -167,6 +219,7 @@ public class SynchronousExportDataAssetRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -263,7 +316,8 @@ public class SynchronousExportDataAssetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -275,6 +329,10 @@ public class SynchronousExportDataAssetRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

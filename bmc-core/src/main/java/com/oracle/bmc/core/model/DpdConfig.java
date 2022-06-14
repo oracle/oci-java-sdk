@@ -29,18 +29,37 @@ public final class DpdConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This option defines whether DPD can be initiated from the Oracle side of the connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
         private DpdMode dpdMode;
 
+        /**
+         * This option defines whether DPD can be initiated from the Oracle side of the connection.
+         *
+         * @param dpdMode the value to set
+         * @return this builder
+         **/
         public Builder dpdMode(DpdMode dpdMode) {
             this.dpdMode = dpdMode;
             this.__explicitlySet__.add("dpdMode");
             return this;
         }
-
+        /**
+         * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
         private Integer dpdTimeoutInSec;
 
+        /**
+         * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         *
+         * @param dpdTimeoutInSec the value to set
+         * @return this builder
+         **/
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
             this.dpdTimeoutInSec = dpdTimeoutInSec;
             this.__explicitlySet__.add("dpdTimeoutInSec");
@@ -119,6 +138,11 @@ public final class DpdConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
     private final DpdMode dpdMode;
 
+    /**
+     * This option defines whether DPD can be initiated from the Oracle side of the connection.
+     *
+     * @return the value
+     **/
     public DpdMode getDpdMode() {
         return dpdMode;
     }
@@ -130,6 +154,11 @@ public final class DpdConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
     private final Integer dpdTimeoutInSec;
 
+    /**
+     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     *
+     * @return the value
+     **/
     public Integer getDpdTimeoutInSec() {
         return dpdTimeoutInSec;
     }

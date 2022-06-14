@@ -66,36 +66,65 @@ public final class ImageJob {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The job id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The job id
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that starts the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that starts the job.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The image job display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The image job display name.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The list of requested document analysis types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<ImageFeature> features;
 
+        /**
+         * The list of requested document analysis types.
+         * @param features the value to set
+         * @return this builder
+         **/
         public Builder features(java.util.List<ImageFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -110,37 +139,65 @@ public final class ImageJob {
             this.__explicitlySet__.add("inputLocation");
             return this;
         }
-
+        /**
+         * The job acceptance time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
+        /**
+         * The job acceptance time.
+         * @param timeAccepted the value to set
+         * @return this builder
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-
+        /**
+         * The job start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
+        /**
+         * The job start time.
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-
+        /**
+         * The job finish time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        /**
+         * The job finish time.
+         * @param timeFinished the value to set
+         * @return this builder
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-
+        /**
+         * How much progress the operation has made, compared to the total amount of work to be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
+        /**
+         * How much progress the operation has made, compared to the total amount of work to be performed.
+         * @param percentComplete the value to set
+         * @return this builder
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -155,28 +212,49 @@ public final class ImageJob {
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-
+        /**
+         * The current state of the batch image job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the batch image job.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The detailed status of FAILED state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
+        /**
+         * The detailed status of FAILED state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
         private Boolean isZipOutputEnabled;
 
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         * @param isZipOutputEnabled the value to set
+         * @return this builder
+         **/
         public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
             this.isZipOutputEnabled = isZipOutputEnabled;
             this.__explicitlySet__.add("isZipOutputEnabled");
@@ -245,6 +323,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The job id
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -255,6 +337,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that starts the job.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -265,6 +351,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The image job display name.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -275,6 +365,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<ImageFeature> features;
 
+    /**
+     * The list of requested document analysis types.
+     * @return the value
+     **/
     public java.util.List<ImageFeature> getFeatures() {
         return features;
     }
@@ -292,6 +386,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
+    /**
+     * The job acceptance time.
+     * @return the value
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
@@ -302,6 +400,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
+    /**
+     * The job start time.
+     * @return the value
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -312,6 +414,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
+    /**
+     * The job finish time.
+     * @return the value
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -322,6 +428,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
+    /**
+     * How much progress the operation has made, compared to the total amount of work to be performed.
+     * @return the value
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -391,6 +501,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the batch image job.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -449,6 +563,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
+    /**
+     * The detailed status of FAILED state.
+     * @return the value
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -459,6 +577,10 @@ public final class ImageJob {
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     private final Boolean isZipOutputEnabled;
 
+    /**
+     * Whether or not to generate a ZIP file containing the results.
+     * @return the value
+     **/
     public Boolean getIsZipOutputEnabled() {
         return isZipOutputEnabled;
     }

@@ -30,9 +30,17 @@ public final class EstimatePurgeDataSizeResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the size of data to be purged in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeDataSizeInBytes")
         private Long purgeDataSizeInBytes;
 
+        /**
+         * This is the size of data to be purged in bytes
+         * @param purgeDataSizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder purgeDataSizeInBytes(Long purgeDataSizeInBytes) {
             this.purgeDataSizeInBytes = purgeDataSizeInBytes;
             this.__explicitlySet__.add("purgeDataSizeInBytes");
@@ -75,6 +83,10 @@ public final class EstimatePurgeDataSizeResult {
     @com.fasterxml.jackson.annotation.JsonProperty("purgeDataSizeInBytes")
     private final Long purgeDataSizeInBytes;
 
+    /**
+     * This is the size of data to be purged in bytes
+     * @return the value
+     **/
     public Long getPurgeDataSizeInBytes() {
         return purgeDataSizeInBytes;
     }

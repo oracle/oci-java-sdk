@@ -57,81 +57,155 @@ public final class UpdateMaintenanceRunDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * If {@code FALSE}, skips the maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * If {@code FALSE}, skips the maintenance run.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The scheduled date and time of the maintenance run to update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
+        /**
+         * The scheduled date and time of the maintenance run to update.
+         * @param timeScheduled the value to set
+         * @return this builder
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
-
+        /**
+         * If set to {@code TRUE}, starts patching immediately.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPatchNowEnabled")
         private Boolean isPatchNowEnabled;
 
+        /**
+         * If set to {@code TRUE}, starts patching immediately.
+         * @param isPatchNowEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPatchNowEnabled(Boolean isPatchNowEnabled) {
             this.isPatchNowEnabled = isPatchNowEnabled;
             this.__explicitlySet__.add("isPatchNowEnabled");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+         * @param patchId the value to set
+         * @return this builder
+         **/
         public Builder patchId(String patchId) {
             this.patchId = patchId;
             this.__explicitlySet__.add("patchId");
             return this;
         }
-
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         * <p>
+         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
         private PatchingMode patchingMode;
 
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         * <p>
+         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         *
+         * @param patchingMode the value to set
+         * @return this builder
+         **/
         public Builder patchingMode(PatchingMode patchingMode) {
             this.patchingMode = patchingMode;
             this.__explicitlySet__.add("patchingMode");
             return this;
         }
-
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
         private Boolean isCustomActionTimeoutEnabled;
 
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         * @param isCustomActionTimeoutEnabled the value to set
+         * @return this builder
+         **/
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
             this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             this.__explicitlySet__.add("isCustomActionTimeoutEnabled");
             return this;
         }
-
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation.
+         * Specify a number of minutes from 15 to 120.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
         private Integer customActionTimeoutInMins;
 
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation.
+         * Specify a number of minutes from 15 to 120.
+         *
+         * @param customActionTimeoutInMins the value to set
+         * @return this builder
+         **/
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
             this.customActionTimeoutInMins = customActionTimeoutInMins;
             this.__explicitlySet__.add("customActionTimeoutInMins");
             return this;
         }
-
+        /**
+         * The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
         private Integer currentCustomActionTimeoutInMins;
 
+        /**
+         * The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+         * @param currentCustomActionTimeoutInMins the value to set
+         * @return this builder
+         **/
         public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
             this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
             this.__explicitlySet__.add("currentCustomActionTimeoutInMins");
             return this;
         }
-
+        /**
+         * If true, then the patching is resumed and the next component will be patched immediately.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isResumePatching")
         private Boolean isResumePatching;
 
+        /**
+         * If true, then the patching is resumed and the next component will be patched immediately.
+         * @param isResumePatching the value to set
+         * @return this builder
+         **/
         public Builder isResumePatching(Boolean isResumePatching) {
             this.isResumePatching = isResumePatching;
             this.__explicitlySet__.add("isResumePatching");
@@ -193,6 +267,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * If {@code FALSE}, skips the maintenance run.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -203,6 +281,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
+    /**
+     * The scheduled date and time of the maintenance run to update.
+     * @return the value
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
@@ -213,6 +295,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPatchNowEnabled")
     private final Boolean isPatchNowEnabled;
 
+    /**
+     * If set to {@code TRUE}, starts patching immediately.
+     * @return the value
+     **/
     public Boolean getIsPatchNowEnabled() {
         return isPatchNowEnabled;
     }
@@ -223,6 +309,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+     * @return the value
+     **/
     public String getPatchId() {
         return patchId;
     }
@@ -274,6 +364,13 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
     private final PatchingMode patchingMode;
 
+    /**
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     *
+     * @return the value
+     **/
     public PatchingMode getPatchingMode() {
         return patchingMode;
     }
@@ -284,6 +381,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
     private final Boolean isCustomActionTimeoutEnabled;
 
+    /**
+     * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     * @return the value
+     **/
     public Boolean getIsCustomActionTimeoutEnabled() {
         return isCustomActionTimeoutEnabled;
     }
@@ -296,6 +397,12 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
     private final Integer customActionTimeoutInMins;
 
+    /**
+     * Determines the amount of time the system will wait before the start of each database server patching operation.
+     * Specify a number of minutes from 15 to 120.
+     *
+     * @return the value
+     **/
     public Integer getCustomActionTimeoutInMins() {
         return customActionTimeoutInMins;
     }
@@ -306,6 +413,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
     private final Integer currentCustomActionTimeoutInMins;
 
+    /**
+     * The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+     * @return the value
+     **/
     public Integer getCurrentCustomActionTimeoutInMins() {
         return currentCustomActionTimeoutInMins;
     }
@@ -316,6 +427,10 @@ public final class UpdateMaintenanceRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isResumePatching")
     private final Boolean isResumePatching;
 
+    /**
+     * If true, then the patching is resumed and the next component will be patched immediately.
+     * @return the value
+     **/
     public Boolean getIsResumePatching() {
         return isResumePatching;
     }

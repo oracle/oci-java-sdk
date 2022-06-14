@@ -32,9 +32,17 @@ public final class NetworkLoadBalancersProtocolCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array of NetworkLoadBalancersProtocolSummary objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<NetworkLoadBalancersProtocolSummary> items;
 
+        /**
+         * Array of NetworkLoadBalancersProtocolSummary objects.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<NetworkLoadBalancersProtocolSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -77,6 +85,10 @@ public final class NetworkLoadBalancersProtocolCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<NetworkLoadBalancersProtocolSummary> items;
 
+    /**
+     * Array of NetworkLoadBalancersProtocolSummary objects.
+     * @return the value
+     **/
     public java.util.List<NetworkLoadBalancersProtocolSummary> getItems() {
         return items;
     }

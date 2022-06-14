@@ -34,27 +34,49 @@ public final class TextClassificationDocumentResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Document Unique Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Document Unique Identifier.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * List of detected text classes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textClassification")
         private java.util.List<TextClassification> textClassification;
 
+        /**
+         * List of detected text classes.
+         * @param textClassification the value to set
+         * @return this builder
+         **/
         public Builder textClassification(java.util.List<TextClassification> textClassification) {
             this.textClassification = textClassification;
             this.__explicitlySet__.add("textClassification");
             return this;
         }
-
+        /**
+         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
+        /**
+         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -100,6 +122,10 @@ public final class TextClassificationDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Document Unique Identifier.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -110,6 +136,10 @@ public final class TextClassificationDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("textClassification")
     private final java.util.List<TextClassification> textClassification;
 
+    /**
+     * List of detected text classes.
+     * @return the value
+     **/
     public java.util.List<TextClassification> getTextClassification() {
         return textClassification;
     }
@@ -120,6 +150,10 @@ public final class TextClassificationDocumentResult {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
+    /**
+     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * @return the value
+     **/
     public String getLanguageCode() {
         return languageCode;
     }

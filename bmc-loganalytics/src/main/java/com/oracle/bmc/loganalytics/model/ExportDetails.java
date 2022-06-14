@@ -64,54 +64,121 @@ public final class ExportDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
+        /**
+         * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-
+        /**
+         * Query to perform.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
+        /**
+         * Query to perform.
+         * @param queryString the value to set
+         * @return this builder
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
         private SubSystemName subSystem;
 
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         * @param subSystem the value to set
+         * @return this builder
+         **/
         public Builder subSystem(SubSystemName subSystem) {
             this.subSystem = subSystem;
             this.__explicitlySet__.add("subSystem");
             return this;
         }
-
+        /**
+         * List of filters to be applied when the query executes. More than one filter per field is not permitted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopeFilters")
         private java.util.List<ScopeFilter> scopeFilters;
 
+        /**
+         * List of filters to be applied when the query executes. More than one filter per field is not permitted.
+         *
+         * @param scopeFilters the value to set
+         * @return this builder
+         **/
         public Builder scopeFilters(java.util.List<ScopeFilter> scopeFilters) {
             this.scopeFilters = scopeFilters;
             this.__explicitlySet__.add("scopeFilters");
             return this;
         }
-
+        /**
+         * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+         * <p>
+         *
+         * Export will incrementally stream results depending on the queryString.
+         * <p>
+         * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
+         *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
+         *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
+         * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
         private Integer maxTotalCount;
 
+        /**
+         * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+         * <p>
+         *
+         * Export will incrementally stream results depending on the queryString.
+         * <p>
+         * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
+         *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
+         *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
+         * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+         *
+         * @param maxTotalCount the value to set
+         * @return this builder
+         **/
         public Builder maxTotalCount(Integer maxTotalCount) {
             this.maxTotalCount = maxTotalCount;
             this.__explicitlySet__.add("maxTotalCount");
@@ -126,46 +193,83 @@ public final class ExportDetails {
             this.__explicitlySet__.add("timeFilter");
             return this;
         }
-
+        /**
+         * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryTimeoutInSeconds")
         private Integer queryTimeoutInSeconds;
 
+        /**
+         * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
+         * @param queryTimeoutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder queryTimeoutInSeconds(Integer queryTimeoutInSeconds) {
             this.queryTimeoutInSeconds = queryTimeoutInSeconds;
             this.__explicitlySet__.add("queryTimeoutInSeconds");
             return this;
         }
-
+        /**
+         * Include columns in response
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeColumns")
         private Boolean shouldIncludeColumns;
 
+        /**
+         * Include columns in response
+         * @param shouldIncludeColumns the value to set
+         * @return this builder
+         **/
         public Builder shouldIncludeColumns(Boolean shouldIncludeColumns) {
             this.shouldIncludeColumns = shouldIncludeColumns;
             this.__explicitlySet__.add("shouldIncludeColumns");
             return this;
         }
-
+        /**
+         * Specifies the format for the returned results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
         private OutputFormat outputFormat;
 
+        /**
+         * Specifies the format for the returned results.
+         * @param outputFormat the value to set
+         * @return this builder
+         **/
         public Builder outputFormat(OutputFormat outputFormat) {
             this.outputFormat = outputFormat;
             this.__explicitlySet__.add("outputFormat");
             return this;
         }
-
+        /**
+         * Localize results, including header columns, List-Of-Values and timestamp values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldLocalize")
         private Boolean shouldLocalize;
 
+        /**
+         * Localize results, including header columns, List-Of-Values and timestamp values.
+         * @param shouldLocalize the value to set
+         * @return this builder
+         **/
         public Builder shouldLocalize(Boolean shouldLocalize) {
             this.shouldLocalize = shouldLocalize;
             this.__explicitlySet__.add("shouldLocalize");
             return this;
         }
-
+        /**
+         * Controls if query should ignore pre-calculated results if available and only use raw data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseAcceleration")
         private Boolean shouldUseAcceleration;
 
+        /**
+         * Controls if query should ignore pre-calculated results if available and only use raw data.
+         *
+         * @param shouldUseAcceleration the value to set
+         * @return this builder
+         **/
         public Builder shouldUseAcceleration(Boolean shouldUseAcceleration) {
             this.shouldUseAcceleration = shouldUseAcceleration;
             this.__explicitlySet__.add("shouldUseAcceleration");
@@ -232,6 +336,10 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -243,6 +351,11 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
+    /**
+     * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+     *
+     * @return the value
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -253,6 +366,10 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
+    /**
+     * Query to perform.
+     * @return the value
+     **/
     public String getQueryString() {
         return queryString;
     }
@@ -264,6 +381,11 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
+    /**
+     * Default subsystem to qualify fields with in the queryString if not specified.
+     *
+     * @return the value
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }
@@ -275,6 +397,11 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scopeFilters")
     private final java.util.List<ScopeFilter> scopeFilters;
 
+    /**
+     * List of filters to be applied when the query executes. More than one filter per field is not permitted.
+     *
+     * @return the value
+     **/
     public java.util.List<ScopeFilter> getScopeFilters() {
         return scopeFilters;
     }
@@ -294,6 +421,19 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
     private final Integer maxTotalCount;
 
+    /**
+     * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+     * <p>
+     *
+     * Export will incrementally stream results depending on the queryString.
+     * <p>
+     * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
+     *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
+     *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
+     * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+     *
+     * @return the value
+     **/
     public Integer getMaxTotalCount() {
         return maxTotalCount;
     }
@@ -311,6 +451,10 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("queryTimeoutInSeconds")
     private final Integer queryTimeoutInSeconds;
 
+    /**
+     * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
+     * @return the value
+     **/
     public Integer getQueryTimeoutInSeconds() {
         return queryTimeoutInSeconds;
     }
@@ -321,6 +465,10 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeColumns")
     private final Boolean shouldIncludeColumns;
 
+    /**
+     * Include columns in response
+     * @return the value
+     **/
     public Boolean getShouldIncludeColumns() {
         return shouldIncludeColumns;
     }
@@ -366,6 +514,10 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
     private final OutputFormat outputFormat;
 
+    /**
+     * Specifies the format for the returned results.
+     * @return the value
+     **/
     public OutputFormat getOutputFormat() {
         return outputFormat;
     }
@@ -376,6 +528,10 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldLocalize")
     private final Boolean shouldLocalize;
 
+    /**
+     * Localize results, including header columns, List-Of-Values and timestamp values.
+     * @return the value
+     **/
     public Boolean getShouldLocalize() {
         return shouldLocalize;
     }
@@ -387,6 +543,11 @@ public final class ExportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseAcceleration")
     private final Boolean shouldUseAcceleration;
 
+    /**
+     * Controls if query should ignore pre-calculated results if available and only use raw data.
+     *
+     * @return the value
+     **/
     public Boolean getShouldUseAcceleration() {
         return shouldUseAcceleration;
     }

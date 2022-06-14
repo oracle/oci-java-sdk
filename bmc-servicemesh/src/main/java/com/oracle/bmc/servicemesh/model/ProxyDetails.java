@@ -27,9 +27,17 @@ public final class ProxyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Proxy container image version to be deployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("proxyImage")
         private String proxyImage;
 
+        /**
+         * Proxy container image version to be deployed.
+         * @param proxyImage the value to set
+         * @return this builder
+         **/
         public Builder proxyImage(String proxyImage) {
             this.proxyImage = proxyImage;
             this.__explicitlySet__.add("proxyImage");
@@ -71,6 +79,10 @@ public final class ProxyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("proxyImage")
     private final String proxyImage;
 
+    /**
+     * Proxy container image version to be deployed.
+     * @return the value
+     **/
     public String getProxyImage() {
         return proxyImage;
     }

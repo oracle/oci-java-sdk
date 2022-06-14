@@ -30,9 +30,17 @@ public final class SupportedSkuSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * name of SKU
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Sku name;
 
+        /**
+         * name of SKU
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(Sku name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -74,6 +82,10 @@ public final class SupportedSkuSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Sku name;
 
+    /**
+     * name of SKU
+     * @return the value
+     **/
     public Sku getName() {
         return name;
     }

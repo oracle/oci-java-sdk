@@ -14,6 +14,11 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +44,10 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
             logAnalyticsAssociationParameterCollection;
 
+    /**
+     * The returned LogAnalyticsAssociationParameterCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
             getLogAnalyticsAssociationParameterCollection() {
         return logAnalyticsAssociationParameterCollection;
@@ -66,23 +80,51 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsAssociationParameterCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
                 logAnalyticsAssociationParameterCollection;
 
+        /**
+         * The returned LogAnalyticsAssociationParameterCollection instance.
+         * @param logAnalyticsAssociationParameterCollection the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsAssociationParameterCollection(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
                         logAnalyticsAssociationParameterCollection) {
@@ -105,6 +147,10 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ValidateAssociationParametersResponse build() {
             return new ValidateAssociationParametersResponse(
                     __httpStatusCode__,
@@ -114,6 +160,10 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

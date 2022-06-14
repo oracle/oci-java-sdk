@@ -32,27 +32,55 @@ public final class AdvisorReportBucketDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the bucket containing the Pre-Migration Advisor report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        /**
+         * Name of the bucket containing the Pre-Migration Advisor report.
+         *
+         * @param bucketName the value to set
+         * @return this builder
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-
+        /**
+         * Object Storage namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * Object Storage namespace.
+         *
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * Pre-Migration Advisor report object name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        /**
+         * Pre-Migration Advisor report object name.
+         *
+         * @param objectName the value to set
+         * @return this builder
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -99,6 +127,11 @@ public final class AdvisorReportBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
+    /**
+     * Name of the bucket containing the Pre-Migration Advisor report.
+     *
+     * @return the value
+     **/
     public String getBucketName() {
         return bucketName;
     }
@@ -110,6 +143,11 @@ public final class AdvisorReportBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * Object Storage namespace.
+     *
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -121,6 +159,11 @@ public final class AdvisorReportBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
+    /**
+     * Pre-Migration Advisor report object name.
+     *
+     * @return the value
+     **/
     public String getObjectName() {
         return objectName;
     }

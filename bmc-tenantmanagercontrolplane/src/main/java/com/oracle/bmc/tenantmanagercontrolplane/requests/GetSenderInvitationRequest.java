@@ -16,6 +16,9 @@ public class GetSenderInvitationRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String senderInvitationId;
 
+    /**
+     * OCID of the sender invitation to retrieve.
+     */
     public String getSenderInvitationId() {
         return senderInvitationId;
     }
@@ -24,6 +27,9 @@ public class GetSenderInvitationRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetSenderInvitationRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of the sender invitation to retrieve.
+         */
         private String senderInvitationId = null;
 
         /**
          * OCID of the sender invitation to retrieve.
+         * @param senderInvitationId the value to set
          * @return this builder instance
          */
         public Builder senderInvitationId(String senderInvitationId) {
@@ -46,10 +56,14 @@ public class GetSenderInvitationRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetSenderInvitationRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().senderInvitationId(senderInvitationId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

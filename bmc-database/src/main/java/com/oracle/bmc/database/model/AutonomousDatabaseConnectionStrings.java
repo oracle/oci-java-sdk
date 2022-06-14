@@ -94,54 +94,103 @@ public final class AutonomousDatabaseConnectionStrings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
+        /**
+         * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+         * @param high the value to set
+         * @return this builder
+         **/
         public Builder high(String high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
-
+        /**
+         * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("medium")
         private String medium;
 
+        /**
+         * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+         * @param medium the value to set
+         * @return this builder
+         **/
         public Builder medium(String medium) {
             this.medium = medium;
             this.__explicitlySet__.add("medium");
             return this;
         }
-
+        /**
+         * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private String low;
 
+        /**
+         * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         * @param low the value to set
+         * @return this builder
+         **/
         public Builder low(String low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
-
+        /**
+         * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
         private String dedicated;
 
+        /**
+         * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         * @param dedicated the value to set
+         * @return this builder
+         **/
         public Builder dedicated(String dedicated) {
             this.dedicated = dedicated;
             this.__explicitlySet__.add("dedicated");
             return this;
         }
-
+        /**
+         * Returns all connection strings that can be used to connect to the Autonomous Database.
+         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
+        /**
+         * Returns all connection strings that can be used to connect to the Autonomous Database.
+         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         *
+         * @param allConnectionStrings the value to set
+         * @return this builder
+         **/
         public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             this.__explicitlySet__.add("allConnectionStrings");
             return this;
         }
-
+        /**
+         * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profiles")
         private java.util.List<DatabaseConnectionStringProfile> profiles;
 
+        /**
+         * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+         *
+         * @param profiles the value to set
+         * @return this builder
+         **/
         public Builder profiles(java.util.List<DatabaseConnectionStringProfile> profiles) {
             this.profiles = profiles;
             this.__explicitlySet__.add("profiles");
@@ -191,6 +240,10 @@ public final class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final String high;
 
+    /**
+     * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+     * @return the value
+     **/
     public String getHigh() {
         return high;
     }
@@ -201,6 +254,10 @@ public final class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
     private final String medium;
 
+    /**
+     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+     * @return the value
+     **/
     public String getMedium() {
         return medium;
     }
@@ -211,6 +268,10 @@ public final class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final String low;
 
+    /**
+     * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+     * @return the value
+     **/
     public String getLow() {
         return low;
     }
@@ -221,6 +282,10 @@ public final class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
     private final String dedicated;
 
+    /**
+     * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+     * @return the value
+     **/
     public String getDedicated() {
         return dedicated;
     }
@@ -233,6 +298,12 @@ public final class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
+    /**
+     * Returns all connection strings that can be used to connect to the Autonomous Database.
+     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getAllConnectionStrings() {
         return allConnectionStrings;
     }
@@ -244,6 +315,11 @@ public final class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
     private final java.util.List<DatabaseConnectionStringProfile> profiles;
 
+    /**
+     * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+     *
+     * @return the value
+     **/
     public java.util.List<DatabaseConnectionStringProfile> getProfiles() {
         return profiles;
     }

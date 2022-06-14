@@ -29,9 +29,17 @@ public final class ScheduledRunCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The schedule past run list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ScheduledRunSummary> items;
 
+        /**
+         * The schedule past run list.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ScheduledRunSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ScheduledRunCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ScheduledRunSummary> items;
 
+    /**
+     * The schedule past run list.
+     * @return the value
+     **/
     public java.util.List<ScheduledRunSummary> getItems() {
         return items;
     }

@@ -18,6 +18,9 @@ public class CreateMeshRequest
      */
     private com.oracle.bmc.servicemesh.model.CreateMeshDetails createMeshDetails;
 
+    /**
+     * Details for the new Mesh.
+     */
     public com.oracle.bmc.servicemesh.model.CreateMeshDetails getCreateMeshDetails() {
         return createMeshDetails;
     }
@@ -31,6 +34,14 @@ public class CreateMeshRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +50,9 @@ public class CreateMeshRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,10 +74,14 @@ public class CreateMeshRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details for the new Mesh.
+         */
         private com.oracle.bmc.servicemesh.model.CreateMeshDetails createMeshDetails = null;
 
         /**
          * Details for the new Mesh.
+         * @param createMeshDetails the value to set
          * @return this builder instance
          */
         public Builder createMeshDetails(
@@ -72,6 +90,14 @@ public class CreateMeshRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -81,6 +107,7 @@ public class CreateMeshRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -88,10 +115,14 @@ public class CreateMeshRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +213,8 @@ public class CreateMeshRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +223,10 @@ public class CreateMeshRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

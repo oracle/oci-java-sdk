@@ -29,9 +29,23 @@ public final class UpdateVolumeKmsKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the new Key Management key to assign to protect the specified volume.
+         * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+         * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the new Key Management key to assign to protect the specified volume.
+         * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+         * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -76,6 +90,13 @@ public final class UpdateVolumeKmsKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the new Key Management key to assign to protect the specified volume.
+     * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+     * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }

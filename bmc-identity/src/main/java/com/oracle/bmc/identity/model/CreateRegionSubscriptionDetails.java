@@ -29,9 +29,25 @@ public final class CreateRegionSubscriptionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+         * the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
+        /**
+         * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+         * the full list of supported 3-letter region codes.
+         * <p>
+         * Example: {@code PHX}
+         *
+         * @param regionKey the value to set
+         * @return this builder
+         **/
         public Builder regionKey(String regionKey) {
             this.regionKey = regionKey;
             this.__explicitlySet__.add("regionKey");
@@ -78,6 +94,14 @@ public final class CreateRegionSubscriptionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
     private final String regionKey;
 
+    /**
+     * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * the full list of supported 3-letter region codes.
+     * <p>
+     * Example: {@code PHX}
+     *
+     * @return the value
+     **/
     public String getRegionKey() {
         return regionKey;
     }

@@ -17,6 +17,9 @@ public class GetInstanceAgentPluginRequest
      */
     private String instanceagentId;
 
+    /**
+     * The OCID of the instance.
+     */
     public String getInstanceagentId() {
         return instanceagentId;
     }
@@ -25,6 +28,9 @@ public class GetInstanceAgentPluginRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -33,6 +39,9 @@ public class GetInstanceAgentPluginRequest
      */
     private String pluginName;
 
+    /**
+     * The name of the plugin.
+     */
     public String getPluginName() {
         return pluginName;
     }
@@ -43,6 +52,11 @@ public class GetInstanceAgentPluginRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -54,10 +68,14 @@ public class GetInstanceAgentPluginRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the instance.
+         */
         private String instanceagentId = null;
 
         /**
          * The OCID of the instance.
+         * @param instanceagentId the value to set
          * @return this builder instance
          */
         public Builder instanceagentId(String instanceagentId) {
@@ -65,10 +83,14 @@ public class GetInstanceAgentPluginRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -76,10 +98,14 @@ public class GetInstanceAgentPluginRequest
             return this;
         }
 
+        /**
+         * The name of the plugin.
+         */
         private String pluginName = null;
 
         /**
          * The name of the plugin.
+         * @param pluginName the value to set
          * @return this builder instance
          */
         public Builder pluginName(String pluginName) {
@@ -87,12 +113,18 @@ public class GetInstanceAgentPluginRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -174,7 +206,8 @@ public class GetInstanceAgentPluginRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -184,6 +217,10 @@ public class GetInstanceAgentPluginRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

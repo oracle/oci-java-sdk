@@ -62,10 +62,17 @@ public final class AwrDbParameterCollection extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-
+        /**
+         * A list of AWR database parameter summary data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrDbParameterSummary> items;
 
+        /**
+         * A list of AWR database parameter summary data.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AwrDbParameterSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -124,6 +131,10 @@ public final class AwrDbParameterCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrDbParameterSummary> items;
 
+    /**
+     * A list of AWR database parameter summary data.
+     * @return the value
+     **/
     public java.util.List<AwrDbParameterSummary> getItems() {
         return items;
     }

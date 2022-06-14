@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Possible types of actions.
+ * The type of action.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum ActionType {

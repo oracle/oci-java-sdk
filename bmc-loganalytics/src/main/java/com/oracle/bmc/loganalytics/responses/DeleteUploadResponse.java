@@ -14,6 +14,11 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Long opcDeletedLogCount;
 
+    /**
+     * Deleted log records count.
+     * @return the value
+     */
     public Long getOpcDeletedLogCount() {
         return opcDeletedLogCount;
     }
@@ -32,6 +41,10 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Long opcDeletedLogfileCount;
 
+    /**
+     * Deleted log files count.
+     * @return the value
+     */
     public Long getOpcDeletedLogfileCount() {
         return opcDeletedLogfileCount;
     }
@@ -61,22 +74,48 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Deleted log records count.
+         */
         private Long opcDeletedLogCount;
 
+        /**
+         * Deleted log records count.
+         * @param opcDeletedLogCount the value to set
+         * @return this builder
+         */
         public Builder opcDeletedLogCount(Long opcDeletedLogCount) {
             this.opcDeletedLogCount = opcDeletedLogCount;
             return this;
         }
 
+        /**
+         * Deleted log files count.
+         */
         private Long opcDeletedLogfileCount;
 
+        /**
+         * Deleted log files count.
+         * @param opcDeletedLogfileCount the value to set
+         * @return this builder
+         */
         public Builder opcDeletedLogfileCount(Long opcDeletedLogfileCount) {
             this.opcDeletedLogfileCount = opcDeletedLogfileCount;
             return this;
@@ -95,12 +134,20 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteUploadResponse build() {
             return new DeleteUploadResponse(
                     __httpStatusCode__, opcRequestId, opcDeletedLogCount, opcDeletedLogfileCount);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

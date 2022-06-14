@@ -29,9 +29,17 @@ public final class RemovePackagesFromSoftwareSourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * the list of package names
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
         private java.util.List<String> packageNames;
 
+        /**
+         * the list of package names
+         * @param packageNames the value to set
+         * @return this builder
+         **/
         public Builder packageNames(java.util.List<String> packageNames) {
             this.packageNames = packageNames;
             this.__explicitlySet__.add("packageNames");
@@ -74,6 +82,10 @@ public final class RemovePackagesFromSoftwareSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     private final java.util.List<String> packageNames;
 
+    /**
+     * the list of package names
+     * @return the value
+     **/
     public java.util.List<String> getPackageNames() {
         return packageNames;
     }

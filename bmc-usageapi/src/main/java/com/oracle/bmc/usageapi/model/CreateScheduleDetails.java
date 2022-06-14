@@ -53,18 +53,33 @@ public final class CreateScheduleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique name of the schedule created by the user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique name of the schedule created by the user
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The tenancy of the customer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The tenancy of the customer
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -79,19 +94,37 @@ public final class CreateScheduleDetails {
             this.__explicitlySet__.add("resultLocation");
             return this;
         }
-
+        /**
+         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
+         * Describes the frequency of when the schedule will be run
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
         private String scheduleRecurrences;
 
+        /**
+         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
+         * Describes the frequency of when the schedule will be run
+         *
+         * @param scheduleRecurrences the value to set
+         * @return this builder
+         **/
         public Builder scheduleRecurrences(String scheduleRecurrences) {
             this.scheduleRecurrences = scheduleRecurrences;
             this.__explicitlySet__.add("scheduleRecurrences");
             return this;
         }
-
+        /**
+         * The date and time of the first time job execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
+        /**
+         * The date and time of the first time job execution
+         * @param timeScheduled the value to set
+         * @return this builder
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
@@ -106,19 +139,39 @@ public final class CreateScheduleDetails {
             this.__explicitlySet__.add("queryProperties");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -178,6 +231,10 @@ public final class CreateScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique name of the schedule created by the user
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -188,6 +245,10 @@ public final class CreateScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The tenancy of the customer
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -207,6 +268,12 @@ public final class CreateScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
     private final String scheduleRecurrences;
 
+    /**
+     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
+     * Describes the frequency of when the schedule will be run
+     *
+     * @return the value
+     **/
     public String getScheduleRecurrences() {
         return scheduleRecurrences;
     }
@@ -217,6 +284,10 @@ public final class CreateScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
+    /**
+     * The date and time of the first time job execution
+     * @return the value
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
@@ -236,6 +307,12 @@ public final class CreateScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -247,6 +324,11 @@ public final class CreateScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

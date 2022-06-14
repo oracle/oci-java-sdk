@@ -31,18 +31,45 @@ public final class AggregatedDatapoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date and time associated with the value of this data point. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        /**
+         * The date and time associated with the value of this data point. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2019-02-01T01:02:29.600Z}
+         *
+         * @param timestamp the value to set
+         * @return this builder
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-
+        /**
+         * Numeric value of the metric.
+         * <p>
+         * Example: {@code 10.4}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
 
+        /**
+         * Numeric value of the metric.
+         * <p>
+         * Example: {@code 10.4}
+         *
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(Double value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -87,6 +114,13 @@ public final class AggregatedDatapoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
+    /**
+     * The date and time associated with the value of this data point. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2019-02-01T01:02:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -100,6 +134,13 @@ public final class AggregatedDatapoint {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Double value;
 
+    /**
+     * Numeric value of the metric.
+     * <p>
+     * Example: {@code 10.4}
+     *
+     * @return the value
+     **/
     public Double getValue() {
         return value;
     }

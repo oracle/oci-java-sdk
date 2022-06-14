@@ -17,6 +17,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private String datasetId;
 
+    /**
+     * Filter the results by the OCID of the dataset.
+     */
     public String getDatasetId() {
         return datasetId;
     }
@@ -33,6 +39,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Record.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.Record.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -42,6 +51,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -50,6 +62,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -58,6 +73,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -104,6 +122,10 @@ public class SummarizeRecordAnalyticsRequest
         }
     };
 
+    /**
+     * The field to group by. If no value is specified isLabeled is used by default.
+     *
+     */
     public RecordGroupBy getRecordGroupBy() {
         return recordGroupBy;
     }
@@ -148,6 +170,9 @@ public class SummarizeRecordAnalyticsRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, count is used by default.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -156,6 +181,9 @@ public class SummarizeRecordAnalyticsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -167,10 +195,14 @@ public class SummarizeRecordAnalyticsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -178,10 +210,14 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * Filter the results by the OCID of the dataset.
+         */
         private String datasetId = null;
 
         /**
          * Filter the results by the OCID of the dataset.
+         * @param datasetId the value to set
          * @return this builder instance
          */
         public Builder datasetId(String datasetId) {
@@ -189,11 +225,15 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.Record.LifecycleState
                 lifecycleState = null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -203,10 +243,14 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -214,10 +258,14 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -225,10 +273,14 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(
@@ -237,11 +289,16 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * The field to group by. If no value is specified isLabeled is used by default.
+         *
+         */
         private RecordGroupBy recordGroupBy = null;
 
         /**
          * The field to group by. If no value is specified isLabeled is used by default.
          *
+         * @param recordGroupBy the value to set
          * @return this builder instance
          */
         public Builder recordGroupBy(RecordGroupBy recordGroupBy) {
@@ -249,10 +306,14 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, count is used by default.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, count is used by default.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -260,10 +321,14 @@ public class SummarizeRecordAnalyticsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -355,7 +420,8 @@ public class SummarizeRecordAnalyticsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -370,6 +436,10 @@ public class SummarizeRecordAnalyticsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

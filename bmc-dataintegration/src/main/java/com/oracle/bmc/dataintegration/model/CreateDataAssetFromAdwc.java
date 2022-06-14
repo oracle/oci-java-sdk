@@ -107,28 +107,49 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse instance service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * The Autonomous Data Warehouse instance service name.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse driver class.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
+        /**
+         * The Autonomous Data Warehouse driver class.
+         * @param driverClass the value to set
+         * @return this builder
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
             return this;
         }
-
+        /**
+         * The credential file content from a Autonomous Data Warehouse wallet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
         private String credentialFileContent;
 
+        /**
+         * The credential file content from a Autonomous Data Warehouse wallet.
+         * @param credentialFileContent the value to set
+         * @return this builder
+         **/
         public Builder credentialFileContent(String credentialFileContent) {
             this.credentialFileContent = credentialFileContent;
             this.__explicitlySet__.add("credentialFileContent");
@@ -152,37 +173,65 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
             this.__explicitlySet__.add("walletPasswordSecret");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse instance region Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionId")
         private String regionId;
 
+        /**
+         * The Autonomous Data Warehouse instance region Id.
+         * @param regionId the value to set
+         * @return this builder
+         **/
         public Builder regionId(String regionId) {
             this.regionId = regionId;
             this.__explicitlySet__.add("regionId");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse instance tenancy Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * The Autonomous Data Warehouse instance tenancy Id.
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-
+        /**
+         * The Autonomous Data Warehouse instance compartment Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The Autonomous Data Warehouse instance compartment Id.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Tha Autonomous Database Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
         private String autonomousDbId;
 
+        /**
+         * Tha Autonomous Database Id
+         * @param autonomousDbId the value to set
+         * @return this builder
+         **/
         public Builder autonomousDbId(String autonomousDbId) {
             this.autonomousDbId = autonomousDbId;
             this.__explicitlySet__.add("autonomousDbId");
@@ -315,6 +364,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * The Autonomous Data Warehouse instance service name.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }
@@ -325,6 +378,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
+    /**
+     * The Autonomous Data Warehouse driver class.
+     * @return the value
+     **/
     public String getDriverClass() {
         return driverClass;
     }
@@ -335,6 +392,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     private final String credentialFileContent;
 
+    /**
+     * The credential file content from a Autonomous Data Warehouse wallet.
+     * @return the value
+     **/
     public String getCredentialFileContent() {
         return credentialFileContent;
     }
@@ -359,6 +420,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("regionId")
     private final String regionId;
 
+    /**
+     * The Autonomous Data Warehouse instance region Id.
+     * @return the value
+     **/
     public String getRegionId() {
         return regionId;
     }
@@ -369,6 +434,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * The Autonomous Data Warehouse instance tenancy Id.
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -379,6 +448,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The Autonomous Data Warehouse instance compartment Id.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -389,6 +462,10 @@ public final class CreateDataAssetFromAdwc extends CreateDataAssetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
     private final String autonomousDbId;
 
+    /**
+     * Tha Autonomous Database Id
+     * @return the value
+     **/
     public String getAutonomousDbId() {
         return autonomousDbId;
     }

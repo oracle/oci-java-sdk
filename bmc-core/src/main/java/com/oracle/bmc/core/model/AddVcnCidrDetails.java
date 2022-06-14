@@ -29,9 +29,19 @@ public final class AddVcnCidrDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The CIDR block to add.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        /**
+         * The CIDR block to add.
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
@@ -74,6 +84,11 @@ public final class AddVcnCidrDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
+    /**
+     * The CIDR block to add.
+     *
+     * @return the value
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }

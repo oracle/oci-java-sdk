@@ -35,28 +35,56 @@ public final class UpdateDrgRouteDistributionStatementDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle-assigned ID of each route distribution statement to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The Oracle-assigned ID of each route distribution statement to be updated.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The action is applied only if all of the match criteria is met.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
         private java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
+        /**
+         * The action is applied only if all of the match criteria is met.
+         *
+         * @param matchCriteria the value to set
+         * @return this builder
+         **/
         public Builder matchCriteria(
                 java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria) {
             this.matchCriteria = matchCriteria;
             this.__explicitlySet__.add("matchCriteria");
             return this;
         }
-
+        /**
+         * The priority of the statement you'd like to update.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
+        /**
+         * The priority of the statement you'd like to update.
+         *
+         * @param priority the value to set
+         * @return this builder
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
@@ -101,6 +129,11 @@ public final class UpdateDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The Oracle-assigned ID of each route distribution statement to be updated.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -112,6 +145,11 @@ public final class UpdateDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
     private final java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
+    /**
+     * The action is applied only if all of the match criteria is met.
+     *
+     * @return the value
+     **/
     public java.util.List<DrgRouteDistributionMatchCriteria> getMatchCriteria() {
         return matchCriteria;
     }
@@ -123,6 +161,11 @@ public final class UpdateDrgRouteDistributionStatementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
+    /**
+     * The priority of the statement you'd like to update.
+     *
+     * @return the value
+     **/
     public Integer getPriority() {
         return priority;
     }

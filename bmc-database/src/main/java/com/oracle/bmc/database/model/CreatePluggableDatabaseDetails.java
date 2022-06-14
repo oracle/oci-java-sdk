@@ -53,63 +53,129 @@ public final class CreatePluggableDatabaseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
         private String pdbName;
 
+        /**
+         * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+         * @param pdbName the value to set
+         * @return this builder
+         **/
         public Builder pdbName(String pdbName) {
             this.pdbName = pdbName;
             this.__explicitlySet__.add("pdbName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
         private String containerDatabaseId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB
+         * @param containerDatabaseId the value to set
+         * @return this builder
+         **/
         public Builder containerDatabaseId(String containerDatabaseId) {
             this.containerDatabaseId = containerDatabaseId;
             this.__explicitlySet__.add("containerDatabaseId");
             return this;
         }
-
+        /**
+         * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
         private String pdbAdminPassword;
 
+        /**
+         * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+         * @param pdbAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder pdbAdminPassword(String pdbAdminPassword) {
             this.pdbAdminPassword = pdbAdminPassword;
             this.__explicitlySet__.add("pdbAdminPassword");
             return this;
         }
-
+        /**
+         * The existing TDE wallet password of the CDB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
         private String tdeWalletPassword;
 
+        /**
+         * The existing TDE wallet password of the CDB.
+         * @param tdeWalletPassword the value to set
+         * @return this builder
+         **/
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
             this.__explicitlySet__.add("tdeWalletPassword");
             return this;
         }
-
+        /**
+         * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+         * If true, the pluggable database will be locked and user cannot login to it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
         private Boolean shouldPdbAdminAccountBeLocked;
 
+        /**
+         * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+         * If true, the pluggable database will be locked and user cannot login to it.
+         *
+         * @param shouldPdbAdminAccountBeLocked the value to set
+         * @return this builder
+         **/
         public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
             this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             this.__explicitlySet__.add("shouldPdbAdminAccountBeLocked");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -167,6 +233,10 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
     private final String pdbName;
 
+    /**
+     * The name for the pluggable database (PDB). The name is unique in the context of a {@link Database}. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+     * @return the value
+     **/
     public String getPdbName() {
         return pdbName;
     }
@@ -177,6 +247,10 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
     private final String containerDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CDB
+     * @return the value
+     **/
     public String getContainerDatabaseId() {
         return containerDatabaseId;
     }
@@ -187,6 +261,10 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pdbAdminPassword")
     private final String pdbAdminPassword;
 
+    /**
+     * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+     * @return the value
+     **/
     public String getPdbAdminPassword() {
         return pdbAdminPassword;
     }
@@ -197,6 +275,10 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
     private final String tdeWalletPassword;
 
+    /**
+     * The existing TDE wallet password of the CDB.
+     * @return the value
+     **/
     public String getTdeWalletPassword() {
         return tdeWalletPassword;
     }
@@ -209,6 +291,12 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
     private final Boolean shouldPdbAdminAccountBeLocked;
 
+    /**
+     * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+     * If true, the pluggable database will be locked and user cannot login to it.
+     *
+     * @return the value
+     **/
     public Boolean getShouldPdbAdminAccountBeLocked() {
         return shouldPdbAdminAccountBeLocked;
     }
@@ -223,6 +311,14 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -235,6 +331,12 @@ public final class CreatePluggableDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

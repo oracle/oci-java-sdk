@@ -18,6 +18,9 @@ public class CreateNodePoolRequest
      */
     private com.oracle.bmc.containerengine.model.CreateNodePoolDetails createNodePoolDetails;
 
+    /**
+     * The details of the node pool to create.
+     */
     public com.oracle.bmc.containerengine.model.CreateNodePoolDetails getCreateNodePoolDetails() {
         return createNodePoolDetails;
     }
@@ -28,6 +31,11 @@ public class CreateNodePoolRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -38,6 +46,11 @@ public class CreateNodePoolRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,11 +73,15 @@ public class CreateNodePoolRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details of the node pool to create.
+         */
         private com.oracle.bmc.containerengine.model.CreateNodePoolDetails createNodePoolDetails =
                 null;
 
         /**
          * The details of the node pool to create.
+         * @param createNodePoolDetails the value to set
          * @return this builder instance
          */
         public Builder createNodePoolDetails(
@@ -73,12 +90,18 @@ public class CreateNodePoolRequest
             return this;
         }
 
+        /**
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token you supply to uniquely identify the request and provide idempotency if
          * the request is retried. Idempotency tokens expire after 24 hours.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -86,12 +109,18 @@ public class CreateNodePoolRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +211,8 @@ public class CreateNodePoolRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +221,10 @@ public class CreateNodePoolRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

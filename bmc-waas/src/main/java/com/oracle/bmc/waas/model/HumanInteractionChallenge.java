@@ -59,73 +59,130 @@ public final class HumanInteractionChallenge {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Enables or disables the human interaction challenge Web Application Firewall feature.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Enables or disables the human interaction challenge Web Application Firewall feature.
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
         private Integer failureThreshold;
 
+        /**
+         * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
+         * @param failureThreshold the value to set
+         * @return this builder
+         **/
         public Builder failureThreshold(Integer failureThreshold) {
             this.failureThreshold = failureThreshold;
             this.__explicitlySet__.add("failureThreshold");
             return this;
         }
-
+        /**
+         * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
         private Integer actionExpirationInSeconds;
 
+        /**
+         * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
+         * @param actionExpirationInSeconds the value to set
+         * @return this builder
+         **/
         public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             this.__explicitlySet__.add("actionExpirationInSeconds");
             return this;
         }
-
+        /**
+         * The number of seconds before the failure threshold resets. If unspecified, defaults to  {@code 60}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
         private Integer failureThresholdExpirationInSeconds;
 
+        /**
+         * The number of seconds before the failure threshold resets. If unspecified, defaults to  {@code 60}.
+         * @param failureThresholdExpirationInSeconds the value to set
+         * @return this builder
+         **/
         public Builder failureThresholdExpirationInSeconds(
                 Integer failureThresholdExpirationInSeconds) {
             this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             this.__explicitlySet__.add("failureThresholdExpirationInSeconds");
             return this;
         }
-
+        /**
+         * The number of interactions required to pass the challenge. If unspecified, defaults to {@code 3}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interactionThreshold")
         private Integer interactionThreshold;
 
+        /**
+         * The number of interactions required to pass the challenge. If unspecified, defaults to {@code 3}.
+         * @param interactionThreshold the value to set
+         * @return this builder
+         **/
         public Builder interactionThreshold(Integer interactionThreshold) {
             this.interactionThreshold = interactionThreshold;
             this.__explicitlySet__.add("interactionThreshold");
             return this;
         }
-
+        /**
+         * The number of seconds to record the interactions from the user. If unspecified, defaults to {@code 15}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordingPeriodInSeconds")
         private Integer recordingPeriodInSeconds;
 
+        /**
+         * The number of seconds to record the interactions from the user. If unspecified, defaults to {@code 15}.
+         * @param recordingPeriodInSeconds the value to set
+         * @return this builder
+         **/
         public Builder recordingPeriodInSeconds(Integer recordingPeriodInSeconds) {
             this.recordingPeriodInSeconds = recordingPeriodInSeconds;
             this.__explicitlySet__.add("recordingPeriodInSeconds");
             return this;
         }
-
+        /**
+         * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("setHttpHeader")
         private Header setHttpHeader;
 
+        /**
+         * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
+         * @param setHttpHeader the value to set
+         * @return this builder
+         **/
         public Builder setHttpHeader(Header setHttpHeader) {
             this.setHttpHeader = setHttpHeader;
             this.__explicitlySet__.add("setHttpHeader");
@@ -140,10 +197,17 @@ public final class HumanInteractionChallenge {
             this.__explicitlySet__.add("challengeSettings");
             return this;
         }
-
+        /**
+         * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
         private Boolean isNatEnabled;
 
+        /**
+         * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+         * @param isNatEnabled the value to set
+         * @return this builder
+         **/
         public Builder isNatEnabled(Boolean isNatEnabled) {
             this.isNatEnabled = isNatEnabled;
             this.__explicitlySet__.add("isNatEnabled");
@@ -207,6 +271,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Enables or disables the human interaction challenge Web Application Firewall feature.
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -264,6 +332,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The action to take against requests from detected bots. If unspecified, defaults to {@code DETECT}.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }
@@ -274,6 +346,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
     private final Integer failureThreshold;
 
+    /**
+     * The number of failed requests before taking action. If unspecified, defaults to {@code 10}.
+     * @return the value
+     **/
     public Integer getFailureThreshold() {
         return failureThreshold;
     }
@@ -284,6 +360,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("actionExpirationInSeconds")
     private final Integer actionExpirationInSeconds;
 
+    /**
+     * The number of seconds between challenges for the same IP address. If unspecified, defaults to {@code 60}.
+     * @return the value
+     **/
     public Integer getActionExpirationInSeconds() {
         return actionExpirationInSeconds;
     }
@@ -294,6 +374,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("failureThresholdExpirationInSeconds")
     private final Integer failureThresholdExpirationInSeconds;
 
+    /**
+     * The number of seconds before the failure threshold resets. If unspecified, defaults to  {@code 60}.
+     * @return the value
+     **/
     public Integer getFailureThresholdExpirationInSeconds() {
         return failureThresholdExpirationInSeconds;
     }
@@ -304,6 +388,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("interactionThreshold")
     private final Integer interactionThreshold;
 
+    /**
+     * The number of interactions required to pass the challenge. If unspecified, defaults to {@code 3}.
+     * @return the value
+     **/
     public Integer getInteractionThreshold() {
         return interactionThreshold;
     }
@@ -314,6 +402,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("recordingPeriodInSeconds")
     private final Integer recordingPeriodInSeconds;
 
+    /**
+     * The number of seconds to record the interactions from the user. If unspecified, defaults to {@code 15}.
+     * @return the value
+     **/
     public Integer getRecordingPeriodInSeconds() {
         return recordingPeriodInSeconds;
     }
@@ -324,6 +416,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("setHttpHeader")
     private final Header setHttpHeader;
 
+    /**
+     * Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the {@code action} is set to {@code DETECT}.
+     * @return the value
+     **/
     public Header getSetHttpHeader() {
         return setHttpHeader;
     }
@@ -341,6 +437,10 @@ public final class HumanInteractionChallenge {
     @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
     private final Boolean isNatEnabled;
 
+    /**
+     * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+     * @return the value
+     **/
     public Boolean getIsNatEnabled() {
         return isNatEnabled;
     }

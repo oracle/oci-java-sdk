@@ -16,6 +16,9 @@ public class GetVolumeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String volumeId;
 
+    /**
+     * The OCID of the volume.
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -27,10 +30,14 @@ public class GetVolumeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the volume.
+         */
         private String volumeId = null;
 
         /**
          * The OCID of the volume.
+         * @param volumeId the value to set
          * @return this builder instance
          */
         public Builder volumeId(String volumeId) {
@@ -106,12 +113,17 @@ public class GetVolumeRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().volumeId(volumeId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -16,6 +16,9 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String awrHubId;
 
+    /**
+     * Unique Awr Hub identifier
+     */
     public String getAwrHubId() {
         return awrHubId;
     }
@@ -24,6 +27,9 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String awrSourceDatabaseIdentifier;
 
+    /**
+     * AWR source database identifier.
+     */
     public String getAwrSourceDatabaseIdentifier() {
         return awrSourceDatabaseIdentifier;
     }
@@ -32,6 +38,9 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.opsi.model.AwrReportFormatType reportFormat;
 
+    /**
+     * The format of the AWR report. Default report format is HTML.
+     */
     public com.oracle.bmc.opsi.model.AwrReportFormatType getReportFormat() {
         return reportFormat;
     }
@@ -40,6 +49,9 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String instanceNumber;
 
+    /**
+     * The optional single value query parameter to filter by database instance number.
+     */
     public String getInstanceNumber() {
         return instanceNumber;
     }
@@ -49,6 +61,10 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer beginSnapshotIdentifierGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to filter on the snapshot ID.
+     *
+     */
     public Integer getBeginSnapshotIdentifierGreaterThanOrEqualTo() {
         return beginSnapshotIdentifierGreaterThanOrEqualTo;
     }
@@ -58,6 +74,10 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Integer endSnapshotIdentifierLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the snapshot Identifier.
+     *
+     */
     public Integer getEndSnapshotIdentifierLessThanOrEqualTo() {
         return endSnapshotIdentifierLessThanOrEqualTo;
     }
@@ -67,6 +87,10 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+     *
+     */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
@@ -76,6 +100,10 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.Date timeLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+     *
+     */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
@@ -86,6 +114,11 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -97,10 +130,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Awr Hub identifier
+         */
         private String awrHubId = null;
 
         /**
          * Unique Awr Hub identifier
+         * @param awrHubId the value to set
          * @return this builder instance
          */
         public Builder awrHubId(String awrHubId) {
@@ -108,10 +145,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * AWR source database identifier.
+         */
         private String awrSourceDatabaseIdentifier = null;
 
         /**
          * AWR source database identifier.
+         * @param awrSourceDatabaseIdentifier the value to set
          * @return this builder instance
          */
         public Builder awrSourceDatabaseIdentifier(String awrSourceDatabaseIdentifier) {
@@ -119,10 +160,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The format of the AWR report. Default report format is HTML.
+         */
         private com.oracle.bmc.opsi.model.AwrReportFormatType reportFormat = null;
 
         /**
          * The format of the AWR report. Default report format is HTML.
+         * @param reportFormat the value to set
          * @return this builder instance
          */
         public Builder reportFormat(com.oracle.bmc.opsi.model.AwrReportFormatType reportFormat) {
@@ -130,10 +175,14 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional single value query parameter to filter by database instance number.
+         */
         private String instanceNumber = null;
 
         /**
          * The optional single value query parameter to filter by database instance number.
+         * @param instanceNumber the value to set
          * @return this builder instance
          */
         public Builder instanceNumber(String instanceNumber) {
@@ -141,11 +190,16 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional greater than or equal to filter on the snapshot ID.
+         *
+         */
         private Integer beginSnapshotIdentifierGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to filter on the snapshot ID.
          *
+         * @param beginSnapshotIdentifierGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder beginSnapshotIdentifierGreaterThanOrEqualTo(
@@ -155,11 +209,16 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the snapshot Identifier.
+         *
+         */
         private Integer endSnapshotIdentifierLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the snapshot Identifier.
          *
+         * @param endSnapshotIdentifierLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder endSnapshotIdentifierLessThanOrEqualTo(
@@ -168,11 +227,16 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         *
+         */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
+         * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeGreaterThanOrEqualTo(java.util.Date timeGreaterThanOrEqualTo) {
@@ -180,11 +244,16 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         *
+         */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
+         * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLessThanOrEqualTo(java.util.Date timeLessThanOrEqualTo) {
@@ -192,12 +261,18 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -291,7 +366,8 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -307,6 +383,10 @@ public class GetAwrReportRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

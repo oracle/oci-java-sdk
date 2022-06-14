@@ -18,6 +18,9 @@ public class ChangeAuditProfileCompartmentRequest
      */
     private String auditProfileId;
 
+    /**
+     * The OCID of the audit.
+     */
     public String getAuditProfileId() {
         return auditProfileId;
     }
@@ -27,6 +30,9 @@ public class ChangeAuditProfileCompartmentRequest
     private com.oracle.bmc.datasafe.model.ChangeAuditProfileCompartmentDetails
             changeAuditProfileCompartmentDetails;
 
+    /**
+     * Details for the compartment move.
+     */
     public com.oracle.bmc.datasafe.model.ChangeAuditProfileCompartmentDetails
             getChangeAuditProfileCompartmentDetails() {
         return changeAuditProfileCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeAuditProfileCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -53,6 +67,13 @@ public class ChangeAuditProfileCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -61,6 +82,9 @@ public class ChangeAuditProfileCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -83,10 +107,14 @@ public class ChangeAuditProfileCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the audit.
+         */
         private String auditProfileId = null;
 
         /**
          * The OCID of the audit.
+         * @param auditProfileId the value to set
          * @return this builder instance
          */
         public Builder auditProfileId(String auditProfileId) {
@@ -94,11 +122,15 @@ public class ChangeAuditProfileCompartmentRequest
             return this;
         }
 
+        /**
+         * Details for the compartment move.
+         */
         private com.oracle.bmc.datasafe.model.ChangeAuditProfileCompartmentDetails
                 changeAuditProfileCompartmentDetails = null;
 
         /**
          * Details for the compartment move.
+         * @param changeAuditProfileCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeAuditProfileCompartmentDetails(
@@ -108,6 +140,14 @@ public class ChangeAuditProfileCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -117,6 +157,7 @@ public class ChangeAuditProfileCompartmentRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -124,6 +165,13 @@ public class ChangeAuditProfileCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -132,6 +180,7 @@ public class ChangeAuditProfileCompartmentRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -139,10 +188,14 @@ public class ChangeAuditProfileCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -239,7 +292,8 @@ public class ChangeAuditProfileCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -250,6 +304,10 @@ public class ChangeAuditProfileCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

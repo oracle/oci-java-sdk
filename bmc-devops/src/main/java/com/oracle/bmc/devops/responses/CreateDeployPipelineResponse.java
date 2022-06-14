@@ -13,6 +13,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String location;
 
+    /**
+     * Relative URL of the newly created resource.
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -22,6 +26,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -31,6 +39,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -40,6 +52,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,6 +65,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
+    /**
+     * The returned DeployPipeline instance.
+     * @return the value
+     */
     public com.oracle.bmc.devops.model.DeployPipeline getDeployPipeline() {
         return deployPipeline;
     }
@@ -84,36 +104,76 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Relative URL of the newly created resource.
+         */
         private String location;
 
+        /**
+         * Relative URL of the newly created resource.
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DeployPipeline instance.
+         */
         private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
+        /**
+         * The returned DeployPipeline instance.
+         * @param deployPipeline the value to set
+         * @return this builder
+         */
         public Builder deployPipeline(com.oracle.bmc.devops.model.DeployPipeline deployPipeline) {
             this.deployPipeline = deployPipeline;
             return this;
@@ -134,6 +194,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateDeployPipelineResponse build() {
             return new CreateDeployPipelineResponse(
                     __httpStatusCode__,
@@ -145,6 +209,10 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

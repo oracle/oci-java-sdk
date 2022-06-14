@@ -28,18 +28,33 @@ public final class PeerSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Peer identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
         private String peerKey;
 
+        /**
+         * Peer identifier
+         * @param peerKey the value to set
+         * @return this builder
+         **/
         public Builder peerKey(String peerKey) {
             this.peerKey = peerKey;
             this.__explicitlySet__.add("peerKey");
             return this;
         }
-
+        /**
+         * The current state of the peer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Peer.LifecycleState lifecycleState;
 
+        /**
+         * The current state of the peer.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(Peer.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -81,6 +96,10 @@ public final class PeerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("peerKey")
     private final String peerKey;
 
+    /**
+     * Peer identifier
+     * @return the value
+     **/
     public String getPeerKey() {
         return peerKey;
     }
@@ -91,6 +110,10 @@ public final class PeerSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Peer.LifecycleState lifecycleState;
 
+    /**
+     * The current state of the peer.
+     * @return the value
+     **/
     public Peer.LifecycleState getLifecycleState() {
         return lifecycleState;
     }

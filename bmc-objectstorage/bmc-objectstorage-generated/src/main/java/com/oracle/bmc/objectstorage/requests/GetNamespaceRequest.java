@@ -16,6 +16,9 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -26,6 +29,11 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or the compartment
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -37,10 +45,14 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -48,12 +60,18 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or the compartment
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or the compartment
          * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -131,12 +149,17 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().opcClientRequestId(opcClientRequestId).compartmentId(compartmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

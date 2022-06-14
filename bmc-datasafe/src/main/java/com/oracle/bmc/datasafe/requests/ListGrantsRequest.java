@@ -16,6 +16,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String userAssessmentId;
 
+    /**
+     * The OCID of the user assessment.
+     */
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
@@ -24,6 +27,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String userKey;
 
+    /**
+     * The unique user key. This is a system-generated identifier. ListUsers gets the user key for a user.
+     */
     public String getUserKey() {
         return userKey;
     }
@@ -32,6 +38,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String grantKey;
 
+    /**
+     * A filter to return only items that match the specified user grant key.
+     */
     public String getGrantKey() {
         return grantKey;
     }
@@ -40,6 +49,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String grantName;
 
+    /**
+     * A filter to return only items that match the specified user grant name.
+     */
     public String getGrantName() {
         return grantName;
     }
@@ -48,6 +60,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String privilegeType;
 
+    /**
+     * A filter to return only items that match the specified privilege grant type.
+     */
     public String getPrivilegeType() {
         return privilegeType;
     }
@@ -56,6 +71,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String privilegeCategory;
 
+    /**
+     * A filter to return only items that match the specified user privilege category.
+     */
     public String getPrivilegeCategory() {
         return privilegeCategory;
     }
@@ -64,6 +82,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer depthLevel;
 
+    /**
+     * A filter to return only items that match the specified user grant depth level.
+     */
     public Integer getDepthLevel() {
         return depthLevel;
     }
@@ -72,6 +93,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer depthLevelGreaterThanOrEqualTo;
 
+    /**
+     * A filter to return only items that are at a level greater than or equal to the specified user grant depth level.
+     */
     public Integer getDepthLevelGreaterThanOrEqualTo() {
         return depthLevelGreaterThanOrEqualTo;
     }
@@ -80,6 +104,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer depthLevelLessThan;
 
+    /**
+     * A filter to return only items that are at a level less than the specified user grant depth level.
+     */
     public Integer getDepthLevelLessThan() {
         return depthLevelLessThan;
     }
@@ -88,6 +115,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -96,6 +126,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     */
     public String getPage() {
         return page;
     }
@@ -140,6 +173,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -189,6 +225,10 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order for grantName is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -197,6 +237,9 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -208,10 +251,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the user assessment.
+         */
         private String userAssessmentId = null;
 
         /**
          * The OCID of the user assessment.
+         * @param userAssessmentId the value to set
          * @return this builder instance
          */
         public Builder userAssessmentId(String userAssessmentId) {
@@ -219,10 +266,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The unique user key. This is a system-generated identifier. ListUsers gets the user key for a user.
+         */
         private String userKey = null;
 
         /**
          * The unique user key. This is a system-generated identifier. ListUsers gets the user key for a user.
+         * @param userKey the value to set
          * @return this builder instance
          */
         public Builder userKey(String userKey) {
@@ -230,10 +281,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that match the specified user grant key.
+         */
         private String grantKey = null;
 
         /**
          * A filter to return only items that match the specified user grant key.
+         * @param grantKey the value to set
          * @return this builder instance
          */
         public Builder grantKey(String grantKey) {
@@ -241,10 +296,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that match the specified user grant name.
+         */
         private String grantName = null;
 
         /**
          * A filter to return only items that match the specified user grant name.
+         * @param grantName the value to set
          * @return this builder instance
          */
         public Builder grantName(String grantName) {
@@ -252,10 +311,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that match the specified privilege grant type.
+         */
         private String privilegeType = null;
 
         /**
          * A filter to return only items that match the specified privilege grant type.
+         * @param privilegeType the value to set
          * @return this builder instance
          */
         public Builder privilegeType(String privilegeType) {
@@ -263,10 +326,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that match the specified user privilege category.
+         */
         private String privilegeCategory = null;
 
         /**
          * A filter to return only items that match the specified user privilege category.
+         * @param privilegeCategory the value to set
          * @return this builder instance
          */
         public Builder privilegeCategory(String privilegeCategory) {
@@ -274,10 +341,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that match the specified user grant depth level.
+         */
         private Integer depthLevel = null;
 
         /**
          * A filter to return only items that match the specified user grant depth level.
+         * @param depthLevel the value to set
          * @return this builder instance
          */
         public Builder depthLevel(Integer depthLevel) {
@@ -285,10 +356,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that are at a level greater than or equal to the specified user grant depth level.
+         */
         private Integer depthLevelGreaterThanOrEqualTo = null;
 
         /**
          * A filter to return only items that are at a level greater than or equal to the specified user grant depth level.
+         * @param depthLevelGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder depthLevelGreaterThanOrEqualTo(Integer depthLevelGreaterThanOrEqualTo) {
@@ -296,10 +371,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A filter to return only items that are at a level less than the specified user grant depth level.
+         */
         private Integer depthLevelLessThan = null;
 
         /**
          * A filter to return only items that are at a level less than the specified user grant depth level.
+         * @param depthLevelLessThan the value to set
          * @return this builder instance
          */
         public Builder depthLevelLessThan(Integer depthLevelLessThan) {
@@ -307,10 +386,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -318,10 +401,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         */
         private String page = null;
 
         /**
          * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -329,10 +416,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -340,11 +431,16 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order for grantName is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can specify only one sort order (sortOrder). The default order for grantName is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -352,10 +448,14 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -457,7 +557,8 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -477,6 +578,10 @@ public class ListGrantsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

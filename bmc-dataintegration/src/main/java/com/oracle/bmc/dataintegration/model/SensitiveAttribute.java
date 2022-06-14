@@ -30,6 +30,7 @@ public final class SensitiveAttribute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("secretConfig")
         private SecretConfig secretConfig;
 
@@ -38,10 +39,17 @@ public final class SensitiveAttribute {
             this.__explicitlySet__.add("secretConfig");
             return this;
         }
-
+        /**
+         * Attribute to provide sensitive content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * Attribute to provide sensitive content.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -90,6 +98,10 @@ public final class SensitiveAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * Attribute to provide sensitive content.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }

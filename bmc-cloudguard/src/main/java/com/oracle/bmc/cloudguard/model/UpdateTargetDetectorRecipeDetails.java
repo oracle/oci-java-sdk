@@ -38,27 +38,49 @@ public final class UpdateTargetDetectorRecipeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Detector recipe identifier associated with the target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
+        /**
+         * Detector recipe identifier associated with the target
+         * @param detectorRecipeId the value to set
+         * @return this builder
+         **/
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = detectorRecipeId;
             this.__explicitlySet__.add("detectorRecipeId");
             return this;
         }
-
+        /**
+         * When enabled, validation is performed for attaching the detector recipe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
         private Boolean isValidationOnlyQuery;
 
+        /**
+         * When enabled, validation is performed for attaching the detector recipe.
+         * @param isValidationOnlyQuery the value to set
+         * @return this builder
+         **/
         public Builder isValidationOnlyQuery(Boolean isValidationOnlyQuery) {
             this.isValidationOnlyQuery = isValidationOnlyQuery;
             this.__explicitlySet__.add("isValidationOnlyQuery");
             return this;
         }
-
+        /**
+         * Update detector rules associated with detector recipe in a target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
+        /**
+         * Update detector rules associated with detector recipe in a target.
+         * @param detectorRules the value to set
+         * @return this builder
+         **/
         public Builder detectorRules(
                 java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules) {
             this.detectorRules = detectorRules;
@@ -106,6 +128,10 @@ public final class UpdateTargetDetectorRecipeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
+    /**
+     * Detector recipe identifier associated with the target
+     * @return the value
+     **/
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
@@ -116,6 +142,10 @@ public final class UpdateTargetDetectorRecipeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
     private final Boolean isValidationOnlyQuery;
 
+    /**
+     * When enabled, validation is performed for attaching the detector recipe.
+     * @return the value
+     **/
     public Boolean getIsValidationOnlyQuery() {
         return isValidationOnlyQuery;
     }
@@ -126,6 +156,10 @@ public final class UpdateTargetDetectorRecipeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
+    /**
+     * Update detector rules associated with detector recipe in a target.
+     * @return the value
+     **/
     public java.util.List<UpdateTargetRecipeDetectorRuleDetails> getDetectorRules() {
         return detectorRules;
     }

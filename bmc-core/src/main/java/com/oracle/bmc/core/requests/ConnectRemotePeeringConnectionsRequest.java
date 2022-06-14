@@ -18,6 +18,9 @@ public class ConnectRemotePeeringConnectionsRequest
      */
     private String remotePeeringConnectionId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+     */
     public String getRemotePeeringConnectionId() {
         return remotePeeringConnectionId;
     }
@@ -28,6 +31,10 @@ public class ConnectRemotePeeringConnectionsRequest
     private com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
             connectRemotePeeringConnectionsDetails;
 
+    /**
+     * Details to connect peering connection with peering connection from remote region
+     *
+     */
     public com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
             getConnectRemotePeeringConnectionsDetails() {
         return connectRemotePeeringConnectionsDetails;
@@ -51,10 +58,14 @@ public class ConnectRemotePeeringConnectionsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+         */
         private String remotePeeringConnectionId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).
+         * @param remotePeeringConnectionId the value to set
          * @return this builder instance
          */
         public Builder remotePeeringConnectionId(String remotePeeringConnectionId) {
@@ -62,12 +73,17 @@ public class ConnectRemotePeeringConnectionsRequest
             return this;
         }
 
+        /**
+         * Details to connect peering connection with peering connection from remote region
+         *
+         */
         private com.oracle.bmc.core.model.ConnectRemotePeeringConnectionsDetails
                 connectRemotePeeringConnectionsDetails = null;
 
         /**
          * Details to connect peering connection with peering connection from remote region
          *
+         * @param connectRemotePeeringConnectionsDetails the value to set
          * @return this builder instance
          */
         public Builder connectRemotePeeringConnectionsDetails(
@@ -160,7 +176,8 @@ public class ConnectRemotePeeringConnectionsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -168,6 +185,10 @@ public class ConnectRemotePeeringConnectionsRequest
                 .connectRemotePeeringConnectionsDetails(connectRemotePeeringConnectionsDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

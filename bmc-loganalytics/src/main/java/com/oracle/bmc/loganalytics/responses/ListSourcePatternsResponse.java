@@ -16,6 +16,13 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcPrevPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the previous batch of items.
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -28,6 +35,13 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+     * subsequent request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -38,6 +52,11 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,6 +67,10 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
     private com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
             logAnalyticsSourcePatternCollection;
 
+    /**
+     * The returned LogAnalyticsSourcePatternCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
             getLogAnalyticsSourcePatternCollection() {
         return logAnalyticsSourcePatternCollection;
@@ -82,30 +105,76 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the previous page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the previous batch of items.
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then additional items may be available on the next page of the list. Include this value as the {@code page} parameter for the
+         * subsequent request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsSourcePatternCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
                 logAnalyticsSourcePatternCollection;
 
+        /**
+         * The returned LogAnalyticsSourcePatternCollection instance.
+         * @param logAnalyticsSourcePatternCollection the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsSourcePatternCollection(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsSourcePatternCollection
                         logAnalyticsSourcePatternCollection) {
@@ -127,6 +196,10 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListSourcePatternsResponse build() {
             return new ListSourcePatternsResponse(
                     __httpStatusCode__,
@@ -137,6 +210,10 @@ public class ListSourcePatternsResponse extends com.oracle.bmc.responses.BmcResp
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

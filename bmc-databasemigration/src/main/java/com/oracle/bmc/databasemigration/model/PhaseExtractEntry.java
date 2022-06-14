@@ -31,18 +31,37 @@ public final class PhaseExtractEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of extract.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private PhaseExtractTypes type;
 
+        /**
+         * Type of extract.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(PhaseExtractTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Message in entry.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * Message in entry.
+         *
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -85,6 +104,11 @@ public final class PhaseExtractEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final PhaseExtractTypes type;
 
+    /**
+     * Type of extract.
+     *
+     * @return the value
+     **/
     public PhaseExtractTypes getType() {
         return type;
     }
@@ -96,6 +120,11 @@ public final class PhaseExtractEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * Message in entry.
+     *
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }

@@ -59,90 +59,161 @@ public final class ImpactedResourceSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for finding event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier for finding event
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Unique id of the Impacted Resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
+        /**
+         * Unique id of the Impacted Resource
+         * @param resourceId the value to set
+         * @return this builder
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-
+        /**
+         * Problem Id to which the Impacted Resource is associated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
+        /**
+         * Problem Id to which the Impacted Resource is associated
+         * @param problemId the value to set
+         * @return this builder
+         **/
         public Builder problemId(String problemId) {
             this.problemId = problemId;
             this.__explicitlySet__.add("problemId");
             return this;
         }
-
+        /**
+         * Compartment Id where the resource is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Id where the resource is created
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Identifier for the sighting type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
+        /**
+         * Identifier for the sighting type
+         * @param sightingType the value to set
+         * @return this builder
+         **/
         public Builder sightingType(String sightingType) {
             this.sightingType = sightingType;
             this.__explicitlySet__.add("sightingType");
             return this;
         }
-
+        /**
+         * Name of the sighting type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
+        /**
+         * Name of the sighting type
+         * @param sightingTypeDisplayName the value to set
+         * @return this builder
+         **/
         public Builder sightingTypeDisplayName(String sightingTypeDisplayName) {
             this.sightingTypeDisplayName = sightingTypeDisplayName;
             this.__explicitlySet__.add("sightingTypeDisplayName");
             return this;
         }
-
+        /**
+         * Name of the Impacted Resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * Name of the Impacted Resource
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * Type of the Impacted Resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
+        /**
+         * Type of the Impacted Resource
+         * @param resourceType the value to set
+         * @return this builder
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-
+        /**
+         * Region where the resource is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * Region where the resource is created
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * Time when the problem was identified
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
         private java.util.Date timeIdentified;
 
+        /**
+         * Time when the problem was identified
+         * @param timeIdentified the value to set
+         * @return this builder
+         **/
         public Builder timeIdentified(java.util.Date timeIdentified) {
             this.timeIdentified = timeIdentified;
             this.__explicitlySet__.add("timeIdentified");
@@ -205,6 +276,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier for finding event
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -215,6 +290,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * Unique id of the Impacted Resource
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -225,6 +304,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
+    /**
+     * Problem Id to which the Impacted Resource is associated
+     * @return the value
+     **/
     public String getProblemId() {
         return problemId;
     }
@@ -235,6 +318,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Id where the resource is created
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -245,6 +332,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
+    /**
+     * Identifier for the sighting type
+     * @return the value
+     **/
     public String getSightingType() {
         return sightingType;
     }
@@ -255,6 +346,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
+    /**
+     * Name of the sighting type
+     * @return the value
+     **/
     public String getSightingTypeDisplayName() {
         return sightingTypeDisplayName;
     }
@@ -265,6 +360,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * Name of the Impacted Resource
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -275,6 +374,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
+    /**
+     * Type of the Impacted Resource
+     * @return the value
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -285,6 +388,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * Region where the resource is created
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -295,6 +402,10 @@ public final class ImpactedResourceSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
     private final java.util.Date timeIdentified;
 
+    /**
+     * Time when the problem was identified
+     * @return the value
+     **/
     public java.util.Date getTimeIdentified() {
         return timeIdentified;
     }

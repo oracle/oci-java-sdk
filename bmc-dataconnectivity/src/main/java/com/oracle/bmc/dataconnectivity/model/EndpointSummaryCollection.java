@@ -29,9 +29,17 @@ public final class EndpointSummaryCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The array of endpoint summariess
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EndpointSummary> items;
 
+        /**
+         * The array of endpoint summariess
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<EndpointSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class EndpointSummaryCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EndpointSummary> items;
 
+    /**
+     * The array of endpoint summariess
+     * @return the value
+     **/
     public java.util.List<EndpointSummary> getItems() {
         return items;
     }

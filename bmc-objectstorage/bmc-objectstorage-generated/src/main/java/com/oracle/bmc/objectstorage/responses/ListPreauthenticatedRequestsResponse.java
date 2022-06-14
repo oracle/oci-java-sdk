@@ -13,6 +13,10 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -24,6 +28,12 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +51,18 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
      */
     private String opcNextPage;
 
+    /**
+     * For paginating a list of pre-authenticated requests.
+     * In the GET request, set the limit to the number of pre-authenticated requests that you want returned in
+     * the response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there
+     * are additional pre-authenticated requests to get. Include the header's value as the {@code page} parameter in
+     * the subsequent GET request to get the next batch of pre-authenticated requests. Repeat this process to
+     * retrieve the entire list of pre-authenticated requests.
+     * <p>
+     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -50,6 +72,10 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
      */
     private java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary> items;
 
+    /**
+     * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
+     * @return the value
+     */
     public java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary>
             getItems() {
         return items;
@@ -84,30 +110,82 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For paginating a list of pre-authenticated requests.
+         * In the GET request, set the limit to the number of pre-authenticated requests that you want returned in
+         * the response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there
+         * are additional pre-authenticated requests to get. Include the header's value as the {@code page} parameter in
+         * the subsequent GET request to get the next batch of pre-authenticated requests. Repeat this process to
+         * retrieve the entire list of pre-authenticated requests.
+         * <p>
+         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For paginating a list of pre-authenticated requests.
+         * In the GET request, set the limit to the number of pre-authenticated requests that you want returned in
+         * the response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there
+         * are additional pre-authenticated requests to get. Include the header's value as the {@code page} parameter in
+         * the subsequent GET request to get the next batch of pre-authenticated requests. Repeat this process to
+         * retrieve the entire list of pre-authenticated requests.
+         * <p>
+         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
+         */
         private java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary>
                 items;
 
+        /**
+         * A list of com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary instances.
+         * @param items the value to set
+         * @return this builder
+         */
         public Builder items(
                 java.util.List<com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary>
                         items) {
@@ -129,12 +207,20 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListPreauthenticatedRequestsResponse build() {
             return new ListPreauthenticatedRequestsResponse(
                     __httpStatusCode__, opcClientRequestId, opcRequestId, opcNextPage, items);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

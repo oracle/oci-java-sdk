@@ -31,18 +31,33 @@ public final class CalculateAuditVolumeCollectedDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFromMonth")
         private java.util.Date timeFromMonth;
 
+        /**
+         * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
+         * @param timeFromMonth the value to set
+         * @return this builder
+         **/
         public Builder timeFromMonth(java.util.Date timeFromMonth) {
             this.timeFromMonth = timeFromMonth;
             this.__explicitlySet__.add("timeFromMonth");
             return this;
         }
-
+        /**
+         * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeToMonth")
         private java.util.Date timeToMonth;
 
+        /**
+         * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
+         * @param timeToMonth the value to set
+         * @return this builder
+         **/
         public Builder timeToMonth(java.util.Date timeToMonth) {
             this.timeToMonth = timeToMonth;
             this.__explicitlySet__.add("timeToMonth");
@@ -86,6 +101,10 @@ public final class CalculateAuditVolumeCollectedDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFromMonth")
     private final java.util.Date timeFromMonth;
 
+    /**
+     * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
+     * @return the value
+     **/
     public java.util.Date getTimeFromMonth() {
         return timeFromMonth;
     }
@@ -96,6 +115,10 @@ public final class CalculateAuditVolumeCollectedDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeToMonth")
     private final java.util.Date timeToMonth;
 
+    /**
+     * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
+     * @return the value
+     **/
     public java.util.Date getTimeToMonth() {
         return timeToMonth;
     }

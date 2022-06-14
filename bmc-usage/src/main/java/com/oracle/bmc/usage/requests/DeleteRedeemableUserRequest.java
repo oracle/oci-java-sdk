@@ -17,6 +17,9 @@ public class DeleteRedeemableUserRequest
      */
     private String emailId;
 
+    /**
+     * The email ID that needs to be deleted.
+     */
     public String getEmailId() {
         return emailId;
     }
@@ -25,6 +28,9 @@ public class DeleteRedeemableUserRequest
      */
     private String tenancyId;
 
+    /**
+     * The OCID of the tenancy.
+     */
     public String getTenancyId() {
         return tenancyId;
     }
@@ -33,6 +39,9 @@ public class DeleteRedeemableUserRequest
      */
     private String subscriptionId;
 
+    /**
+     * The subscription ID for which rewards information is requested for.
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -41,6 +50,9 @@ public class DeleteRedeemableUserRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -54,6 +66,14 @@ public class DeleteRedeemableUserRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted, only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -65,10 +85,14 @@ public class DeleteRedeemableUserRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The email ID that needs to be deleted.
+         */
         private String emailId = null;
 
         /**
          * The email ID that needs to be deleted.
+         * @param emailId the value to set
          * @return this builder instance
          */
         public Builder emailId(String emailId) {
@@ -76,10 +100,14 @@ public class DeleteRedeemableUserRequest
             return this;
         }
 
+        /**
+         * The OCID of the tenancy.
+         */
         private String tenancyId = null;
 
         /**
          * The OCID of the tenancy.
+         * @param tenancyId the value to set
          * @return this builder instance
          */
         public Builder tenancyId(String tenancyId) {
@@ -87,10 +115,14 @@ public class DeleteRedeemableUserRequest
             return this;
         }
 
+        /**
+         * The subscription ID for which rewards information is requested for.
+         */
         private String subscriptionId = null;
 
         /**
          * The subscription ID for which rewards information is requested for.
+         * @param subscriptionId the value to set
          * @return this builder instance
          */
         public Builder subscriptionId(String subscriptionId) {
@@ -98,10 +130,14 @@ public class DeleteRedeemableUserRequest
             return this;
         }
 
+        /**
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -109,6 +145,14 @@ public class DeleteRedeemableUserRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -118,6 +162,7 @@ public class DeleteRedeemableUserRequest
          * The resource will be updated or deleted, only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -201,7 +246,8 @@ public class DeleteRedeemableUserRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -212,6 +258,10 @@ public class DeleteRedeemableUserRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

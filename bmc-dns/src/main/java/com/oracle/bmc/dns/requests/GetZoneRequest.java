@@ -16,6 +16,9 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String zoneNameOrId;
 
+    /**
+     * The name or OCID of the target zone.
+     */
     public String getZoneNameOrId() {
         return zoneNameOrId;
     }
@@ -28,6 +31,13 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String ifNoneMatch;
 
+    /**
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -40,6 +50,13 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String ifModifiedSince;
 
+    /**
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
+     */
     public String getIfModifiedSince() {
         return ifModifiedSince;
     }
@@ -51,6 +68,12 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,6 +83,10 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private com.oracle.bmc.dns.model.Scope scope;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -68,6 +95,9 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String viewId;
 
+    /**
+     * The OCID of the view the resource is associated with.
+     */
     public String getViewId() {
         return viewId;
     }
@@ -79,6 +109,12 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -89,10 +125,14 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The name or OCID of the target zone.
+         */
         private String zoneNameOrId = null;
 
         /**
          * The name or OCID of the target zone.
+         * @param zoneNameOrId the value to set
          * @return this builder instance
          */
         public Builder zoneNameOrId(String zoneNameOrId) {
@@ -100,6 +140,13 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -108,6 +155,7 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
          * the field-value is {@code *}, or having a selected representation with an
          * entity-tag that does not match any of those listed in the field-value.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -115,6 +163,13 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
+         */
         private String ifModifiedSince = null;
 
         /**
@@ -123,6 +178,7 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
          * recent than the date provided in the field-value.  Transfer of the
          * selected representation's data is avoided if that data has not changed.
          *
+         * @param ifModifiedSince the value to set
          * @return this builder instance
          */
         public Builder ifModifiedSince(String ifModifiedSince) {
@@ -130,6 +186,12 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -137,6 +199,7 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
          * to contact Oracle about a particular request, please provide
          * the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -144,11 +207,16 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
          * Specifies to operate only on resources that have a matching DNS scope.
          *
+         * @param scope the value to set
          * @return this builder instance
          */
         public Builder scope(com.oracle.bmc.dns.model.Scope scope) {
@@ -156,10 +224,14 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * The OCID of the view the resource is associated with.
+         */
         private String viewId = null;
 
         /**
          * The OCID of the view the resource is associated with.
+         * @param viewId the value to set
          * @return this builder instance
          */
         public Builder viewId(String viewId) {
@@ -167,6 +239,12 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /**
+         * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -174,6 +252,7 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
          * <p>
          * This parameter is deprecated and should be omitted.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -261,7 +340,8 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -274,6 +354,10 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 .compartmentId(compartmentId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

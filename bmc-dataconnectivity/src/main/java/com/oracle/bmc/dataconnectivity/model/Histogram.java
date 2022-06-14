@@ -28,18 +28,33 @@ public final class Histogram {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Range of values
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ranges")
         private java.util.List<String> ranges;
 
+        /**
+         * Range of values
+         * @param ranges the value to set
+         * @return this builder
+         **/
         public Builder ranges(java.util.List<String> ranges) {
             this.ranges = ranges;
             this.__explicitlySet__.add("ranges");
             return this;
         }
-
+        /**
+         * Count of each ranges.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("counts")
         private java.util.List<Integer> counts;
 
+        /**
+         * Count of each ranges.
+         * @param counts the value to set
+         * @return this builder
+         **/
         public Builder counts(java.util.List<Integer> counts) {
             this.counts = counts;
             this.__explicitlySet__.add("counts");
@@ -81,6 +96,10 @@ public final class Histogram {
     @com.fasterxml.jackson.annotation.JsonProperty("ranges")
     private final java.util.List<String> ranges;
 
+    /**
+     * Range of values
+     * @return the value
+     **/
     public java.util.List<String> getRanges() {
         return ranges;
     }
@@ -91,6 +110,10 @@ public final class Histogram {
     @com.fasterxml.jackson.annotation.JsonProperty("counts")
     private final java.util.List<Integer> counts;
 
+    /**
+     * Count of each ranges.
+     * @return the value
+     **/
     public java.util.List<Integer> getCounts() {
         return counts;
     }

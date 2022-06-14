@@ -31,18 +31,33 @@ public final class IngressGatewayListener {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of protocol used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Type of protocol used.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Port on which ingress gateway is listening.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * Port on which ingress gateway is listening.
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -142,6 +157,10 @@ public final class IngressGatewayListener {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Type of protocol used.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -152,6 +171,10 @@ public final class IngressGatewayListener {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * Port on which ingress gateway is listening.
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }

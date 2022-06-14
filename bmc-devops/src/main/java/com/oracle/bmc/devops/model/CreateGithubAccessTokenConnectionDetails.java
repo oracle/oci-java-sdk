@@ -74,10 +74,17 @@ public final class CreateGithubAccessTokenConnectionDetails extends CreateConnec
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The OCID of personal access token saved in secret store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
+        /**
+         * The OCID of personal access token saved in secret store.
+         * @param accessToken the value to set
+         * @return this builder
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -144,6 +151,10 @@ public final class CreateGithubAccessTokenConnectionDetails extends CreateConnec
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
+    /**
+     * The OCID of personal access token saved in secret store.
+     * @return the value
+     **/
     public String getAccessToken() {
         return accessToken;
     }

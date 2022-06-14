@@ -17,6 +17,9 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private java.util.Date timeScoreComputedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+     */
     public java.util.Date getTimeScoreComputedGreaterThanOrEqualTo() {
         return timeScoreComputedGreaterThanOrEqualTo;
     }
@@ -33,6 +39,9 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private java.util.Date timeScoreComputedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to today's current time.
+     */
     public java.util.Date getTimeScoreComputedLessThanOrEqualTo() {
         return timeScoreComputedLessThanOrEqualTo;
     }
@@ -45,6 +54,13 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -93,6 +109,10 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
         }
     };
 
+    /**
+     * The field to sort trendlines for resource profiles. Only one sort order may be provided. If no value is specified riskScore is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -102,6 +122,10 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private Integer count;
 
+    /**
+     * Number of resource profile risk score trend-lines to be displayed. Default value is 10.
+     *
+     */
     public Integer getCount() {
         return count;
     }
@@ -156,6 +180,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -164,6 +196,9 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -172,6 +207,9 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -180,6 +218,9 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -191,10 +232,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -202,10 +247,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+         */
         private java.util.Date timeScoreComputedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+         * @param timeScoreComputedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeScoreComputedGreaterThanOrEqualTo(
@@ -214,10 +263,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to today's current time.
+         */
         private java.util.Date timeScoreComputedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to today's current time.
+         * @param timeScoreComputedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeScoreComputedLessThanOrEqualTo(
@@ -226,6 +279,13 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -234,6 +294,7 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -241,11 +302,16 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * The field to sort trendlines for resource profiles. Only one sort order may be provided. If no value is specified riskScore is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort trendlines for resource profiles. Only one sort order may be provided. If no value is specified riskScore is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -253,11 +319,16 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * Number of resource profile risk score trend-lines to be displayed. Default value is 10.
+         *
+         */
         private Integer count = null;
 
         /**
          * Number of resource profile risk score trend-lines to be displayed. Default value is 10.
          *
+         * @param count the value to set
          * @return this builder instance
          */
         public Builder count(Integer count) {
@@ -265,6 +336,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -274,6 +353,7 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -281,10 +361,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -292,10 +376,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -303,10 +391,14 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -403,7 +495,8 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -419,6 +512,10 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

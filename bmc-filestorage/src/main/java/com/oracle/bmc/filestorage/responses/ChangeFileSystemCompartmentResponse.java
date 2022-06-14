@@ -13,6 +13,10 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,8 +35,16 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -49,11 +61,19 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ChangeFileSystemCompartmentResponse build() {
             return new ChangeFileSystemCompartmentResponse(__httpStatusCode__, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

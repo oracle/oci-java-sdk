@@ -29,9 +29,17 @@ public final class InstanceConfiguration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The shape used to launch the model deployment instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
         private String instanceShapeName;
 
+        /**
+         * The shape used to launch the model deployment instances.
+         * @param instanceShapeName the value to set
+         * @return this builder
+         **/
         public Builder instanceShapeName(String instanceShapeName) {
             this.instanceShapeName = instanceShapeName;
             this.__explicitlySet__.add("instanceShapeName");
@@ -73,6 +81,10 @@ public final class InstanceConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
     private final String instanceShapeName;
 
+    /**
+     * The shape used to launch the model deployment instances.
+     * @return the value
+     **/
     public String getInstanceShapeName() {
         return instanceShapeName;
     }

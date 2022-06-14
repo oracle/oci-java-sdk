@@ -28,9 +28,37 @@ public final class ReservedIP {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the reserved public IP address created with the virtual cloud network.
+         * <p>
+         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         * <p>
+         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the
+         * reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         * <p>
+         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         * <p>
+         * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * OCID of the reserved public IP address created with the virtual cloud network.
+         * <p>
+         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         * <p>
+         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the
+         * reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         * <p>
+         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         * <p>
+         * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -82,6 +110,20 @@ public final class ReservedIP {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * OCID of the reserved public IP address created with the virtual cloud network.
+     * <p>
+     * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+     * <p>
+     * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the
+     * reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+     * <p>
+     * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+     * <p>
+     * Example: "ocid1.publicip.oc1.phx.unique_ID"
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }

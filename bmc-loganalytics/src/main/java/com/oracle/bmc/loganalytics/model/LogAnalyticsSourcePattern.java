@@ -86,72 +86,133 @@ public final class LogAnalyticsSourcePattern {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The converted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("convertedText")
         private String convertedText;
 
+        /**
+         * The converted text.
+         * @param convertedText the value to set
+         * @return this builder
+         **/
         public Builder convertedText(String convertedText) {
             this.convertedText = convertedText;
             this.__explicitlySet__.add("convertedText");
             return this;
         }
-
+        /**
+         * The parser unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbParserId")
         private Long dbParserId;
 
+        /**
+         * The parser unique identifier.
+         * @param dbParserId the value to set
+         * @return this builder
+         **/
         public Builder dbParserId(Long dbParserId) {
             this.dbParserId = dbParserId;
             this.__explicitlySet__.add("dbParserId");
             return this;
         }
-
+        /**
+         * The date time columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPatternDateTimeColumns")
         private String dbPatternDateTimeColumns;
 
+        /**
+         * The date time columns.
+         * @param dbPatternDateTimeColumns the value to set
+         * @return this builder
+         **/
         public Builder dbPatternDateTimeColumns(String dbPatternDateTimeColumns) {
             this.dbPatternDateTimeColumns = dbPatternDateTimeColumns;
             this.__explicitlySet__.add("dbPatternDateTimeColumns");
             return this;
         }
-
+        /**
+         * The date time field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPatternDateTimeField")
         private String dbPatternDateTimeField;
 
+        /**
+         * The date time field.
+         * @param dbPatternDateTimeField the value to set
+         * @return this builder
+         **/
         public Builder dbPatternDateTimeField(String dbPatternDateTimeField) {
             this.dbPatternDateTimeField = dbPatternDateTimeField;
             this.__explicitlySet__.add("dbPatternDateTimeField");
             return this;
         }
-
+        /**
+         * The sequence column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPatternSequenceColumn")
         private String dbPatternSequenceColumn;
 
+        /**
+         * The sequence column.
+         * @param dbPatternSequenceColumn the value to set
+         * @return this builder
+         **/
         public Builder dbPatternSequenceColumn(String dbPatternSequenceColumn) {
             this.dbPatternSequenceColumn = dbPatternSequenceColumn;
             this.__explicitlySet__.add("dbPatternSequenceColumn");
             return this;
         }
-
+        /**
+         * The parser field list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<LogAnalyticsParserField> fields;
 
+        /**
+         * The parser field list.
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<LogAnalyticsParserField> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * A flag indicating if this is source pattern is included.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInclude")
         private Boolean isInclude;
 
+        /**
+         * A flag indicating if this is source pattern is included.
+         *
+         * @param isInclude the value to set
+         * @return this builder
+         **/
         public Builder isInclude(Boolean isInclude) {
             this.isInclude = isInclude;
             this.__explicitlySet__.add("isInclude");
             return this;
         }
-
+        /**
+         * A flag indicating if this is the default source pattern.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * A flag indicating if this is the default source pattern.
+         *
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -166,91 +227,171 @@ public final class LogAnalyticsSourcePattern {
             this.__explicitlySet__.add("patternFilter");
             return this;
         }
-
+        /**
+         * The source pattern alias.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
+        /**
+         * The source pattern alias.
+         * @param alias the value to set
+         * @return this builder
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
             return this;
         }
-
+        /**
+         * The source pattern description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The source pattern description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * A flag inidcating whether or not the source pattern is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * A flag inidcating whether or not the source pattern is enabled.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The source pattern unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternId")
         private Long patternId;
 
+        /**
+         * The source pattern unique identifier.
+         * @param patternId the value to set
+         * @return this builder
+         **/
         public Builder patternId(Long patternId) {
             this.patternId = patternId;
             this.__explicitlySet__.add("patternId");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
+        /**
+         * The source unique identifier.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not agent warnings are suppressed for
+         * this source pattern.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentWarningSuppressed")
         private Boolean isAgentWarningSuppressed;
 
+        /**
+         * A flag indicating whether or not agent warnings are suppressed for
+         * this source pattern.
+         *
+         * @param isAgentWarningSuppressed the value to set
+         * @return this builder
+         **/
         public Builder isAgentWarningSuppressed(Boolean isAgentWarningSuppressed) {
             this.isAgentWarningSuppressed = isAgentWarningSuppressed;
             this.__explicitlySet__.add("isAgentWarningSuppressed");
             return this;
         }
-
+        /**
+         * The pattern text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternText")
         private String patternText;
 
+        /**
+         * The pattern text.
+         * @param patternText the value to set
+         * @return this builder
+         **/
         public Builder patternText(String patternText) {
             this.patternText = patternText;
             this.__explicitlySet__.add("patternText");
             return this;
         }
-
+        /**
+         * The pattern type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternType")
         private Long patternType;
 
+        /**
+         * The pattern type.
+         * @param patternType the value to set
+         * @return this builder
+         **/
         public Builder patternType(Long patternType) {
             this.patternType = patternType;
             this.__explicitlySet__.add("patternType");
             return this;
         }
-
+        /**
+         * The source entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private java.util.List<String> entityType;
 
+        /**
+         * The source entity type.
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(java.util.List<String> entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -331,6 +472,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("convertedText")
     private final String convertedText;
 
+    /**
+     * The converted text.
+     * @return the value
+     **/
     public String getConvertedText() {
         return convertedText;
     }
@@ -341,6 +486,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("dbParserId")
     private final Long dbParserId;
 
+    /**
+     * The parser unique identifier.
+     * @return the value
+     **/
     public Long getDbParserId() {
         return dbParserId;
     }
@@ -351,6 +500,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("dbPatternDateTimeColumns")
     private final String dbPatternDateTimeColumns;
 
+    /**
+     * The date time columns.
+     * @return the value
+     **/
     public String getDbPatternDateTimeColumns() {
         return dbPatternDateTimeColumns;
     }
@@ -361,6 +514,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("dbPatternDateTimeField")
     private final String dbPatternDateTimeField;
 
+    /**
+     * The date time field.
+     * @return the value
+     **/
     public String getDbPatternDateTimeField() {
         return dbPatternDateTimeField;
     }
@@ -371,6 +528,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("dbPatternSequenceColumn")
     private final String dbPatternSequenceColumn;
 
+    /**
+     * The sequence column.
+     * @return the value
+     **/
     public String getDbPatternSequenceColumn() {
         return dbPatternSequenceColumn;
     }
@@ -381,6 +542,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<LogAnalyticsParserField> fields;
 
+    /**
+     * The parser field list.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsParserField> getFields() {
         return fields;
     }
@@ -392,6 +557,11 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("isInclude")
     private final Boolean isInclude;
 
+    /**
+     * A flag indicating if this is source pattern is included.
+     *
+     * @return the value
+     **/
     public Boolean getIsInclude() {
         return isInclude;
     }
@@ -403,6 +573,11 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * A flag indicating if this is the default source pattern.
+     *
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -420,6 +595,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
+    /**
+     * The source pattern alias.
+     * @return the value
+     **/
     public String getAlias() {
         return alias;
     }
@@ -430,6 +609,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The source pattern description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -441,6 +624,11 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * A flag inidcating whether or not the source pattern is enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -451,6 +639,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("patternId")
     private final Long patternId;
 
+    /**
+     * The source pattern unique identifier.
+     * @return the value
+     **/
     public Long getPatternId() {
         return patternId;
     }
@@ -463,6 +655,12 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -473,6 +671,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
+    /**
+     * The source unique identifier.
+     * @return the value
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -485,6 +687,12 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentWarningSuppressed")
     private final Boolean isAgentWarningSuppressed;
 
+    /**
+     * A flag indicating whether or not agent warnings are suppressed for
+     * this source pattern.
+     *
+     * @return the value
+     **/
     public Boolean getIsAgentWarningSuppressed() {
         return isAgentWarningSuppressed;
     }
@@ -495,6 +703,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("patternText")
     private final String patternText;
 
+    /**
+     * The pattern text.
+     * @return the value
+     **/
     public String getPatternText() {
         return patternText;
     }
@@ -505,6 +717,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("patternType")
     private final Long patternType;
 
+    /**
+     * The pattern type.
+     * @return the value
+     **/
     public Long getPatternType() {
         return patternType;
     }
@@ -515,6 +731,10 @@ public final class LogAnalyticsSourcePattern {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final java.util.List<String> entityType;
 
+    /**
+     * The source entity type.
+     * @return the value
+     **/
     public java.util.List<String> getEntityType() {
         return entityType;
     }

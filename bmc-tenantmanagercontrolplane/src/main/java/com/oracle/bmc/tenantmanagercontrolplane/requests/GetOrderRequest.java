@@ -17,6 +17,10 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String activationToken;
 
+    /**
+     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+     *
+     */
     public String getActivationToken() {
         return activationToken;
     }
@@ -25,6 +29,9 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,11 +42,16 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         *
+         */
         private String activationToken = null;
 
         /**
          * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
          *
+         * @param activationToken the value to set
          * @return this builder instance
          */
         public Builder activationToken(String activationToken) {
@@ -47,10 +59,14 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -128,12 +144,17 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().activationToken(activationToken).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

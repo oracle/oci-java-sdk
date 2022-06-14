@@ -44,6 +44,7 @@ public final class MetricBasedVerticalScaleUpConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private AutoScalePolicyMetricRule metric;
 
@@ -52,37 +53,67 @@ public final class MetricBasedVerticalScaleUpConfig {
             this.__explicitlySet__.add("metric");
             return this;
         }
-
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxOcpusPerNode")
         private Integer maxOcpusPerNode;
 
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         *
+         * @param maxOcpusPerNode the value to set
+         * @return this builder
+         **/
         public Builder maxOcpusPerNode(Integer maxOcpusPerNode) {
             this.maxOcpusPerNode = maxOcpusPerNode;
             this.__explicitlySet__.add("maxOcpusPerNode");
             return this;
         }
-
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryPerNode")
         private Integer maxMemoryPerNode;
 
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         * @param maxMemoryPerNode the value to set
+         * @return this builder
+         **/
         public Builder maxMemoryPerNode(Integer maxMemoryPerNode) {
             this.maxMemoryPerNode = maxMemoryPerNode;
             this.__explicitlySet__.add("maxMemoryPerNode");
             return this;
         }
-
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuStepSize")
         private Integer ocpuStepSize;
 
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         * @param ocpuStepSize the value to set
+         * @return this builder
+         **/
         public Builder ocpuStepSize(Integer ocpuStepSize) {
             this.ocpuStepSize = ocpuStepSize;
             this.__explicitlySet__.add("ocpuStepSize");
             return this;
         }
-
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryStepSize")
         private Integer memoryStepSize;
 
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         * @param memoryStepSize the value to set
+         * @return this builder
+         **/
         public Builder memoryStepSize(Integer memoryStepSize) {
             this.memoryStepSize = memoryStepSize;
             this.__explicitlySet__.add("memoryStepSize");
@@ -143,6 +174,11 @@ public final class MetricBasedVerticalScaleUpConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("maxOcpusPerNode")
     private final Integer maxOcpusPerNode;
 
+    /**
+     * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+     *
+     * @return the value
+     **/
     public Integer getMaxOcpusPerNode() {
         return maxOcpusPerNode;
     }
@@ -153,6 +189,10 @@ public final class MetricBasedVerticalScaleUpConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryPerNode")
     private final Integer maxMemoryPerNode;
 
+    /**
+     * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+     * @return the value
+     **/
     public Integer getMaxMemoryPerNode() {
         return maxMemoryPerNode;
     }
@@ -163,6 +203,10 @@ public final class MetricBasedVerticalScaleUpConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuStepSize")
     private final Integer ocpuStepSize;
 
+    /**
+     * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+     * @return the value
+     **/
     public Integer getOcpuStepSize() {
         return ocpuStepSize;
     }
@@ -173,6 +217,10 @@ public final class MetricBasedVerticalScaleUpConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryStepSize")
     private final Integer memoryStepSize;
 
+    /**
+     * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+     * @return the value
+     **/
     public Integer getMemoryStepSize() {
         return memoryStepSize;
     }

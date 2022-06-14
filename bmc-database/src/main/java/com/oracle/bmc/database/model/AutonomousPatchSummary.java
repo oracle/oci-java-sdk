@@ -64,90 +64,165 @@ public final class AutonomousPatchSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The text describing this patch package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The text describing this patch package.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The type of patch. BUNDLE is one example.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The type of patch. BUNDLE is one example.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * A descriptive text associated with the lifecycleState.
+         * Typically can contain additional displayable text.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * A descriptive text associated with the lifecycleState.
+         * Typically can contain additional displayable text.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * The current state of the patch as a result of lastAction.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the patch as a result of lastAction.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time that the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
+        /**
+         * The date and time that the patch was released.
+         * @param timeReleased the value to set
+         * @return this builder
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-
+        /**
+         * The version of this patch package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * The version of this patch package.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
         private PatchModel patchModel;
 
+        /**
+         * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
+         * @param patchModel the value to set
+         * @return this builder
+         **/
         public Builder patchModel(PatchModel patchModel) {
             this.patchModel = patchModel;
             this.__explicitlySet__.add("patchModel");
             return this;
         }
-
+        /**
+         * First month of the quarter in which the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quarter")
         private String quarter;
 
+        /**
+         * First month of the quarter in which the patch was released.
+         * @param quarter the value to set
+         * @return this builder
+         **/
         public Builder quarter(String quarter) {
             this.quarter = quarter;
             this.__explicitlySet__.add("quarter");
             return this;
         }
-
+        /**
+         * Year in which the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("year")
         private String year;
 
+        /**
+         * Year in which the patch was released.
+         * @param year the value to set
+         * @return this builder
+         **/
         public Builder year(String year) {
             this.year = year;
             this.__explicitlySet__.add("year");
@@ -210,6 +285,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -220,6 +299,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The text describing this patch package.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -230,6 +313,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The type of patch. BUNDLE is one example.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }
@@ -242,6 +329,12 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A descriptive text associated with the lifecycleState.
+     * Typically can contain additional displayable text.
+     *
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -302,6 +395,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the patch as a result of lastAction.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -312,6 +409,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
+    /**
+     * The date and time that the patch was released.
+     * @return the value
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
@@ -322,6 +423,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The version of this patch package.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -380,6 +485,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
     private final PatchModel patchModel;
 
+    /**
+     * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
+     * @return the value
+     **/
     public PatchModel getPatchModel() {
         return patchModel;
     }
@@ -390,6 +499,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("quarter")
     private final String quarter;
 
+    /**
+     * First month of the quarter in which the patch was released.
+     * @return the value
+     **/
     public String getQuarter() {
         return quarter;
     }
@@ -400,6 +513,10 @@ public final class AutonomousPatchSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("year")
     private final String year;
 
+    /**
+     * Year in which the patch was released.
+     * @return the value
+     **/
     public String getYear() {
         return year;
     }

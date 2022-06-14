@@ -14,6 +14,11 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse;
 
+    /**
+     * The returned FileValidationResponse instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.FileValidationResponse getFileValidationResponse() {
         return fileValidationResponse;
     }
@@ -49,15 +58,33 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned FileValidationResponse instance.
+         */
         private com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse;
 
+        /**
+         * The returned FileValidationResponse instance.
+         * @param fileValidationResponse the value to set
+         * @return this builder
+         */
         public Builder fileValidationResponse(
                 com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse) {
             this.fileValidationResponse = fileValidationResponse;
@@ -76,12 +103,20 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ValidateFileResponse build() {
             return new ValidateFileResponse(
                     __httpStatusCode__, opcRequestId, fileValidationResponse);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

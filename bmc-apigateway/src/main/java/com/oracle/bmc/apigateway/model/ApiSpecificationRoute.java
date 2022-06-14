@@ -48,18 +48,39 @@ public final class ApiSpecificationRoute {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+         * to allow wildcard and parameterized matching.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+         * to allow wildcard and parameterized matching.
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-
+        /**
+         * A list of allowed methods on this route.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("methods")
         private java.util.List<Methods> methods;
 
+        /**
+         * A list of allowed methods on this route.
+         *
+         * @param methods the value to set
+         * @return this builder
+         **/
         public Builder methods(java.util.List<Methods> methods) {
             this.methods = methods;
             this.__explicitlySet__.add("methods");
@@ -152,6 +173,12 @@ public final class ApiSpecificationRoute {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+     * to allow wildcard and parameterized matching.
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }
@@ -216,6 +243,11 @@ public final class ApiSpecificationRoute {
     @com.fasterxml.jackson.annotation.JsonProperty("methods")
     private final java.util.List<Methods> methods;
 
+    /**
+     * A list of allowed methods on this route.
+     *
+     * @return the value
+     **/
     public java.util.List<Methods> getMethods() {
         return methods;
     }

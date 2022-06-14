@@ -34,6 +34,7 @@ public final class RemoveDataFileDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
         private TablespaceAdminCredentialDetails credentialDetails;
 
@@ -42,19 +43,37 @@ public final class RemoveDataFileDetails {
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-
+        /**
+         * Specifies whether the file is a data file or temp file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileType")
         private FileType fileType;
 
+        /**
+         * Specifies whether the file is a data file or temp file.
+         *
+         * @param fileType the value to set
+         * @return this builder
+         **/
         public Builder fileType(FileType fileType) {
             this.fileType = fileType;
             this.__explicitlySet__.add("fileType");
             return this;
         }
-
+        /**
+         * Name of the data file or temp file to be removed from the tablespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataFile")
         private String dataFile;
 
+        /**
+         * Name of the data file or temp file to be removed from the tablespace.
+         *
+         * @param dataFile the value to set
+         * @return this builder
+         **/
         public Builder dataFile(String dataFile) {
             this.dataFile = dataFile;
             this.__explicitlySet__.add("dataFile");
@@ -144,6 +163,11 @@ public final class RemoveDataFileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fileType")
     private final FileType fileType;
 
+    /**
+     * Specifies whether the file is a data file or temp file.
+     *
+     * @return the value
+     **/
     public FileType getFileType() {
         return fileType;
     }
@@ -155,6 +179,11 @@ public final class RemoveDataFileDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataFile")
     private final String dataFile;
 
+    /**
+     * Name of the data file or temp file to be removed from the tablespace.
+     *
+     * @return the value
+     **/
     public String getDataFile() {
         return dataFile;
     }

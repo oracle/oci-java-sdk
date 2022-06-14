@@ -29,19 +29,42 @@ package com.oracle.bmc.certificatesmanagement.model;
 public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAuthorityRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("leafCertificateMaxValidityDuration")
         private String leafCertificateMaxValidityDuration;
 
+        /**
+         * A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         * @param leafCertificateMaxValidityDuration the value to set
+         * @return this builder
+         **/
         public Builder leafCertificateMaxValidityDuration(
                 String leafCertificateMaxValidityDuration) {
             this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
             this.__explicitlySet__.add("leafCertificateMaxValidityDuration");
             return this;
         }
-
+        /**
+         * A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityMaxValidityDuration")
         private String certificateAuthorityMaxValidityDuration;
 
+        /**
+         * A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         * @param certificateAuthorityMaxValidityDuration the value to set
+         * @return this builder
+         **/
         public Builder certificateAuthorityMaxValidityDuration(
                 String certificateAuthorityMaxValidityDuration) {
             this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
@@ -101,6 +124,12 @@ public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAut
     @com.fasterxml.jackson.annotation.JsonProperty("leafCertificateMaxValidityDuration")
     private final String leafCertificateMaxValidityDuration;
 
+    /**
+     * A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     *
+     * @return the value
+     **/
     public String getLeafCertificateMaxValidityDuration() {
         return leafCertificateMaxValidityDuration;
     }
@@ -113,6 +142,12 @@ public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAut
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityMaxValidityDuration")
     private final String certificateAuthorityMaxValidityDuration;
 
+    /**
+     * A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     *
+     * @return the value
+     **/
     public String getCertificateAuthorityMaxValidityDuration() {
         return certificateAuthorityMaxValidityDuration;
     }

@@ -31,6 +31,7 @@ public final class ImportConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("connectionDetail")
         private CreateConnectionDetails connectionDetail;
 
@@ -39,10 +40,17 @@ public final class ImportConnectionDetails {
             this.__explicitlySet__.add("connectionDetail");
             return this;
         }
-
+        /**
+         * The information used to import the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
         private byte[] connectionPayload;
 
+        /**
+         * The information used to import the connection.
+         * @param connectionPayload the value to set
+         * @return this builder
+         **/
         public Builder connectionPayload(byte[] connectionPayload) {
             this.connectionPayload = connectionPayload;
             this.__explicitlySet__.add("connectionPayload");
@@ -94,6 +102,10 @@ public final class ImportConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
     private final byte[] connectionPayload;
 
+    /**
+     * The information used to import the connection.
+     * @return the value
+     **/
     public byte[] getConnectionPayload() {
         return connectionPayload;
     }

@@ -28,9 +28,17 @@ public final class InstanceAgentCommandOutputViaObjectStorageUriDetails
         extends InstanceAgentCommandOutputDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Object Storage URL or pre-authenticated request (PAR) for the command output.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputUri")
         private String outputUri;
 
+        /**
+         * The Object Storage URL or pre-authenticated request (PAR) for the command output.
+         * @param outputUri the value to set
+         * @return this builder
+         **/
         public Builder outputUri(String outputUri) {
             this.outputUri = outputUri;
             this.__explicitlySet__.add("outputUri");
@@ -79,6 +87,10 @@ public final class InstanceAgentCommandOutputViaObjectStorageUriDetails
     @com.fasterxml.jackson.annotation.JsonProperty("outputUri")
     private final String outputUri;
 
+    /**
+     * The Object Storage URL or pre-authenticated request (PAR) for the command output.
+     * @return the value
+     **/
     public String getOutputUri() {
         return outputUri;
     }

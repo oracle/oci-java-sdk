@@ -35,36 +35,81 @@ public final class UpdateAwsS3Details {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * S3 bucket name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * S3 bucket name.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * AWS region code where the S3 bucket is located.
+         * Region code should match the documented available regions:
+         * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * AWS region code where the S3 bucket is located.
+         * Region code should match the documented available regions:
+         * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         *
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * AWS access key credentials identifier
+         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
+        /**
+         * AWS access key credentials identifier
+         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         *
+         * @param accessKeyId the value to set
+         * @return this builder
+         **/
         public Builder accessKeyId(String accessKeyId) {
             this.accessKeyId = accessKeyId;
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
-
+        /**
+         * AWS secret access key credentials
+         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
         private String secretAccessKey;
 
+        /**
+         * AWS secret access key credentials
+         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         *
+         * @param secretAccessKey the value to set
+         * @return this builder
+         **/
         public Builder secretAccessKey(String secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
             this.__explicitlySet__.add("secretAccessKey");
@@ -112,6 +157,11 @@ public final class UpdateAwsS3Details {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * S3 bucket name.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -125,6 +175,13 @@ public final class UpdateAwsS3Details {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * AWS region code where the S3 bucket is located.
+     * Region code should match the documented available regions:
+     * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     *
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -137,6 +194,12 @@ public final class UpdateAwsS3Details {
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
+    /**
+     * AWS access key credentials identifier
+     * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     *
+     * @return the value
+     **/
     public String getAccessKeyId() {
         return accessKeyId;
     }
@@ -149,6 +212,12 @@ public final class UpdateAwsS3Details {
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
     private final String secretAccessKey;
 
+    /**
+     * AWS secret access key credentials
+     * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     *
+     * @return the value
+     **/
     public String getSecretAccessKey() {
         return secretAccessKey;
     }

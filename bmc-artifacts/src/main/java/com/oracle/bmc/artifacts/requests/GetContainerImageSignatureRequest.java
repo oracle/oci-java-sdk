@@ -20,6 +20,12 @@ public class GetContainerImageSignatureRequest
      */
     private String imageSignatureId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
+     * <p>
+     * Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
+     *
+     */
     public String getImageSignatureId() {
         return imageSignatureId;
     }
@@ -30,6 +36,11 @@ public class GetContainerImageSignatureRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +52,12 @@ public class GetContainerImageSignatureRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
+         * <p>
+         * Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
+         *
+         */
         private String imageSignatureId = null;
 
         /**
@@ -48,6 +65,7 @@ public class GetContainerImageSignatureRequest
          * <p>
          * Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
          *
+         * @param imageSignatureId the value to set
          * @return this builder instance
          */
         public Builder imageSignatureId(String imageSignatureId) {
@@ -55,12 +73,18 @@ public class GetContainerImageSignatureRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -138,12 +162,17 @@ public class GetContainerImageSignatureRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().imageSignatureId(imageSignatureId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

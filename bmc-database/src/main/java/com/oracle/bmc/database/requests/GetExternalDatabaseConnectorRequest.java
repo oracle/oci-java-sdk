@@ -19,6 +19,11 @@ public class GetExternalDatabaseConnectorRequest
      */
     private String externalDatabaseConnectorId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * external database connector resource ({@code ExternalDatabaseConnectorId}).
+     *
+     */
     public String getExternalDatabaseConnectorId() {
         return externalDatabaseConnectorId;
     }
@@ -28,6 +33,10 @@ public class GetExternalDatabaseConnectorRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,12 +48,18 @@ public class GetExternalDatabaseConnectorRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * external database connector resource ({@code ExternalDatabaseConnectorId}).
+         *
+         */
         private String externalDatabaseConnectorId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * external database connector resource ({@code ExternalDatabaseConnectorId}).
          *
+         * @param externalDatabaseConnectorId the value to set
          * @return this builder instance
          */
         public Builder externalDatabaseConnectorId(String externalDatabaseConnectorId) {
@@ -52,11 +67,16 @@ public class GetExternalDatabaseConnectorRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -134,7 +154,8 @@ public class GetExternalDatabaseConnectorRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -142,6 +163,10 @@ public class GetExternalDatabaseConnectorRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

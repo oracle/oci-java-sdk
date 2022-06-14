@@ -30,18 +30,33 @@ public final class ChildReferenceDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The child reference key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The child reference key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The new reference object to use instead of the original reference. For example, this can be a connection reference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
         private Object targetObject;
 
+        /**
+         * The new reference object to use instead of the original reference. For example, this can be a connection reference.
+         * @param targetObject the value to set
+         * @return this builder
+         **/
         public Builder targetObject(Object targetObject) {
             this.targetObject = targetObject;
             this.__explicitlySet__.add("targetObject");
@@ -83,6 +98,10 @@ public final class ChildReferenceDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The child reference key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -93,6 +112,10 @@ public final class ChildReferenceDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
     private final Object targetObject;
 
+    /**
+     * The new reference object to use instead of the original reference. For example, this can be a connection reference.
+     * @return the value
+     **/
     public Object getTargetObject() {
         return targetObject;
     }

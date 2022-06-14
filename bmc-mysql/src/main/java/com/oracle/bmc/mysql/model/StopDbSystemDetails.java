@@ -29,9 +29,21 @@ public final class StopDbSystemDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The InnoDB shutdown mode to use, following the option
+         * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")
         private InnoDbShutdownMode shutdownType;
 
+        /**
+         * The InnoDB shutdown mode to use, following the option
+         * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
+         *
+         * @param shutdownType the value to set
+         * @return this builder
+         **/
         public Builder shutdownType(InnoDbShutdownMode shutdownType) {
             this.shutdownType = shutdownType;
             this.__explicitlySet__.add("shutdownType");
@@ -75,6 +87,12 @@ public final class StopDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")
     private final InnoDbShutdownMode shutdownType;
 
+    /**
+     * The InnoDB shutdown mode to use, following the option
+     * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
+     *
+     * @return the value
+     **/
     public InnoDbShutdownMode getShutdownType() {
         return shutdownType;
     }

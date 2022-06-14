@@ -71,126 +71,225 @@ public final class RecommendationSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique identifier for Recommendation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Unique identifier for Recommendation
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Recommendation type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private RecommendationType type;
 
+        /**
+         * Recommendation type
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(RecommendationType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Tenant Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
+        /**
+         * Tenant Identifier
+         * @param tenantId the value to set
+         * @return this builder
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * targetId associated with the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * targetId associated with the problem
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * Recommendation details
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.Map<String, String> details;
 
+        /**
+         * Recommendation details
+         * @param details the value to set
+         * @return this builder
+         **/
         public Builder details(java.util.Map<String, String> details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
-
+        /**
+         * The Risk Level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
+        /**
+         * The Risk Level
+         * @param riskLevel the value to set
+         * @return this builder
+         **/
         public Builder riskLevel(RiskLevel riskLevel) {
             this.riskLevel = riskLevel;
             this.__explicitlySet__.add("riskLevel");
             return this;
         }
-
+        /**
+         * Count number of the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemCount")
         private Long problemCount;
 
+        /**
+         * Count number of the problem
+         * @param problemCount the value to set
+         * @return this builder
+         **/
         public Builder problemCount(Long problemCount) {
             this.problemCount = problemCount;
             this.__explicitlySet__.add("problemCount");
             return this;
         }
-
+        /**
+         * The current state of the Recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the Recommendation.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private RecommendationLifecycleDetail lifecycleDetail;
 
+        /**
+         * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+         * @param lifecycleDetail the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetail(RecommendationLifecycleDetail lifecycleDetail) {
             this.lifecycleDetail = lifecycleDetail;
             this.__explicitlySet__.add("lifecycleDetail");
             return this;
         }
-
+        /**
+         * problem creating time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * problem creating time
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * problem updating time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * problem updating time
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * recommendation string showing on UX
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * recommendation string showing on UX
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * description of the recommendation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * description of the recommendation
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -261,6 +360,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Unique identifier for Recommendation
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -271,6 +374,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final RecommendationType type;
 
+    /**
+     * Recommendation type
+     * @return the value
+     **/
     public RecommendationType getType() {
         return type;
     }
@@ -281,6 +388,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
+    /**
+     * Tenant Identifier
+     * @return the value
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -291,6 +402,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -301,6 +416,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * targetId associated with the problem
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -311,6 +430,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final java.util.Map<String, String> details;
 
+    /**
+     * Recommendation details
+     * @return the value
+     **/
     public java.util.Map<String, String> getDetails() {
         return details;
     }
@@ -321,6 +444,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
+    /**
+     * The Risk Level
+     * @return the value
+     **/
     public RiskLevel getRiskLevel() {
         return riskLevel;
     }
@@ -331,6 +458,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("problemCount")
     private final Long problemCount;
 
+    /**
+     * Count number of the problem
+     * @return the value
+     **/
     public Long getProblemCount() {
         return problemCount;
     }
@@ -341,6 +472,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the Recommendation.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -351,6 +486,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final RecommendationLifecycleDetail lifecycleDetail;
 
+    /**
+     * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+     * @return the value
+     **/
     public RecommendationLifecycleDetail getLifecycleDetail() {
         return lifecycleDetail;
     }
@@ -361,6 +500,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * problem creating time
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -371,6 +514,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * problem updating time
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -381,6 +528,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * recommendation string showing on UX
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -391,6 +542,10 @@ public final class RecommendationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * description of the recommendation
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

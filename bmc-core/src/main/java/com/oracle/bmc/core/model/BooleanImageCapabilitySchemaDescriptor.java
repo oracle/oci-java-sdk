@@ -35,10 +35,17 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * the default value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Boolean defaultValue;
 
+        /**
+         * the default value
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(Boolean defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -87,6 +94,10 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Boolean defaultValue;
 
+    /**
+     * the default value
+     * @return the value
+     **/
     public Boolean getDefaultValue() {
         return defaultValue;
     }

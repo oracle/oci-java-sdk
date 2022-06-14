@@ -29,9 +29,17 @@ public final class AuthenticateClientDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The signed headers of the original caller's request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.Map<String, java.util.List<String>> requestHeaders;
 
+        /**
+         * The signed headers of the original caller's request.
+         * @param requestHeaders the value to set
+         * @return this builder
+         **/
         public Builder requestHeaders(
                 java.util.Map<String, java.util.List<String>> requestHeaders) {
             this.requestHeaders = requestHeaders;
@@ -74,6 +82,10 @@ public final class AuthenticateClientDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     private final java.util.Map<String, java.util.List<String>> requestHeaders;
 
+    /**
+     * The signed headers of the original caller's request.
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<String>> getRequestHeaders() {
         return requestHeaders;
     }

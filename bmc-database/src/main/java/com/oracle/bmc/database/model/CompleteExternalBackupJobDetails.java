@@ -47,54 +47,97 @@ public final class CompleteExternalBackupJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
         private String tdeWalletPath;
 
+        /**
+         * If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+         * @param tdeWalletPath the value to set
+         * @return this builder
+         **/
         public Builder tdeWalletPath(String tdeWalletPath) {
             this.tdeWalletPath = tdeWalletPath;
             this.__explicitlySet__.add("tdeWalletPath");
             return this;
         }
-
+        /**
+         * The handle of the control file backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cfBackupHandle")
         private String cfBackupHandle;
 
+        /**
+         * The handle of the control file backup.
+         * @param cfBackupHandle the value to set
+         * @return this builder
+         **/
         public Builder cfBackupHandle(String cfBackupHandle) {
             this.cfBackupHandle = cfBackupHandle;
             this.__explicitlySet__.add("cfBackupHandle");
             return this;
         }
-
+        /**
+         * The handle of the spfile backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spfBackupHandle")
         private String spfBackupHandle;
 
+        /**
+         * The handle of the spfile backup.
+         * @param spfBackupHandle the value to set
+         * @return this builder
+         **/
         public Builder spfBackupHandle(String spfBackupHandle) {
             this.spfBackupHandle = spfBackupHandle;
             this.__explicitlySet__.add("spfBackupHandle");
             return this;
         }
-
+        /**
+         * The list of SQL patches that need to be applied to the backup during the restore.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlPatches")
         private java.util.List<String> sqlPatches;
 
+        /**
+         * The list of SQL patches that need to be applied to the backup during the restore.
+         * @param sqlPatches the value to set
+         * @return this builder
+         **/
         public Builder sqlPatches(java.util.List<String> sqlPatches) {
             this.sqlPatches = sqlPatches;
             this.__explicitlySet__.add("sqlPatches");
             return this;
         }
-
+        /**
+         * The size of the data in the database, in megabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
         private Long dataSize;
 
+        /**
+         * The size of the data in the database, in megabytes.
+         * @param dataSize the value to set
+         * @return this builder
+         **/
         public Builder dataSize(Long dataSize) {
             this.dataSize = dataSize;
             this.__explicitlySet__.add("dataSize");
             return this;
         }
-
+        /**
+         * The size of the redo in the database, in megabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
         private Long redoSize;
 
+        /**
+         * The size of the redo in the database, in megabytes.
+         * @param redoSize the value to set
+         * @return this builder
+         **/
         public Builder redoSize(Long redoSize) {
             this.redoSize = redoSize;
             this.__explicitlySet__.add("redoSize");
@@ -149,6 +192,10 @@ public final class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
     private final String tdeWalletPath;
 
+    /**
+     * If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+     * @return the value
+     **/
     public String getTdeWalletPath() {
         return tdeWalletPath;
     }
@@ -159,6 +206,10 @@ public final class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cfBackupHandle")
     private final String cfBackupHandle;
 
+    /**
+     * The handle of the control file backup.
+     * @return the value
+     **/
     public String getCfBackupHandle() {
         return cfBackupHandle;
     }
@@ -169,6 +220,10 @@ public final class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("spfBackupHandle")
     private final String spfBackupHandle;
 
+    /**
+     * The handle of the spfile backup.
+     * @return the value
+     **/
     public String getSpfBackupHandle() {
         return spfBackupHandle;
     }
@@ -179,6 +234,10 @@ public final class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sqlPatches")
     private final java.util.List<String> sqlPatches;
 
+    /**
+     * The list of SQL patches that need to be applied to the backup during the restore.
+     * @return the value
+     **/
     public java.util.List<String> getSqlPatches() {
         return sqlPatches;
     }
@@ -189,6 +248,10 @@ public final class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
     private final Long dataSize;
 
+    /**
+     * The size of the data in the database, in megabytes.
+     * @return the value
+     **/
     public Long getDataSize() {
         return dataSize;
     }
@@ -199,6 +262,10 @@ public final class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
     private final Long redoSize;
 
+    /**
+     * The size of the redo in the database, in megabytes.
+     * @return the value
+     **/
     public Long getRedoSize() {
         return redoSize;
     }

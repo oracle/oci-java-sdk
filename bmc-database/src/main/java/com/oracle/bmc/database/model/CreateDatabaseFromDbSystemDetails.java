@@ -53,36 +53,65 @@ public final class CreateDatabaseFromDbSystemDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
+        /**
+         * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+         * @param adminPassword the value to set
+         * @return this builder
+         **/
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-
+        /**
+         * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-
+        /**
+         * The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbDomain")
         private String dbDomain;
 
+        /**
+         * The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
+         * @param dbDomain the value to set
+         * @return this builder
+         **/
         public Builder dbDomain(String dbDomain) {
             this.dbDomain = dbDomain;
             this.__explicitlySet__.add("dbDomain");
             return this;
         }
-
+        /**
+         * The {@code DB_UNIQUE_NAME} of the Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
+        /**
+         * The {@code DB_UNIQUE_NAME} of the Oracle Database.
+         * @param dbUniqueName the value to set
+         * @return this builder
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
@@ -97,19 +126,45 @@ public final class CreateDatabaseFromDbSystemDetails {
             this.__explicitlySet__.add("dbBackupConfig");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -167,6 +222,10 @@ public final class CreateDatabaseFromDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
+    /**
+     * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+     * @return the value
+     **/
     public String getAdminPassword() {
         return adminPassword;
     }
@@ -177,6 +236,10 @@ public final class CreateDatabaseFromDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }
@@ -187,6 +250,10 @@ public final class CreateDatabaseFromDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbDomain")
     private final String dbDomain;
 
+    /**
+     * The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
+     * @return the value
+     **/
     public String getDbDomain() {
         return dbDomain;
     }
@@ -197,6 +264,10 @@ public final class CreateDatabaseFromDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
+    /**
+     * The {@code DB_UNIQUE_NAME} of the Oracle Database.
+     * @return the value
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
@@ -218,6 +289,14 @@ public final class CreateDatabaseFromDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -230,6 +309,12 @@ public final class CreateDatabaseFromDbSystemDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

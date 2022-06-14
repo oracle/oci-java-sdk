@@ -31,18 +31,37 @@ public final class DbIormConfigUpdateDetail {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
+        /**
+         * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+         *
+         * @param dbName the value to set
+         * @return this builder
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-
+        /**
+         * The relative priority of this database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("share")
         private Integer share;
 
+        /**
+         * The relative priority of this database.
+         *
+         * @param share the value to set
+         * @return this builder
+         **/
         public Builder share(Integer share) {
             this.share = share;
             this.__explicitlySet__.add("share");
@@ -85,6 +104,11 @@ public final class DbIormConfigUpdateDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
+    /**
+     * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+     *
+     * @return the value
+     **/
     public String getDbName() {
         return dbName;
     }
@@ -96,6 +120,11 @@ public final class DbIormConfigUpdateDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("share")
     private final Integer share;
 
+    /**
+     * The relative priority of this database.
+     *
+     * @return the value
+     **/
     public Integer getShare() {
         return share;
     }

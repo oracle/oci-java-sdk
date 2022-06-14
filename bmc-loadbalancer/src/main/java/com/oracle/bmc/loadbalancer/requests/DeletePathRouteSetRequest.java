@@ -16,6 +16,9 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to delete.
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -27,6 +30,12 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String pathRouteSetName;
 
+    /**
+     * The name of the path route set to delete.
+     * <p>
+     * Example: {@code example_path_route_set}
+     *
+     */
     public String getPathRouteSetName() {
         return pathRouteSetName;
     }
@@ -37,6 +46,11 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,10 +62,14 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to delete.
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to delete.
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -59,6 +77,12 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The name of the path route set to delete.
+         * <p>
+         * Example: {@code example_path_route_set}
+         *
+         */
         private String pathRouteSetName = null;
 
         /**
@@ -66,6 +90,7 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
          * <p>
          * Example: {@code example_path_route_set}
          *
+         * @param pathRouteSetName the value to set
          * @return this builder instance
          */
         public Builder pathRouteSetName(String pathRouteSetName) {
@@ -73,12 +98,18 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -158,7 +189,8 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -167,6 +199,10 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

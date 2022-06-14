@@ -30,18 +30,39 @@ public final class GenerateScopedAccessTokenDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Scope definition for the scoped access token
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private String scope;
 
+        /**
+         * Scope definition for the scoped access token
+         *
+         * @param scope the value to set
+         * @return this builder
+         **/
         public Builder scope(String scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-
+        /**
+         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
+         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        /**
+         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
+         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         *
+         * @param publicKey the value to set
+         * @return this builder
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
@@ -85,6 +106,11 @@ public final class GenerateScopedAccessTokenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final String scope;
 
+    /**
+     * Scope definition for the scoped access token
+     *
+     * @return the value
+     **/
     public String getScope() {
         return scope;
     }
@@ -97,6 +123,12 @@ public final class GenerateScopedAccessTokenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
+    /**
+     * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
+     * key will by put inside the security token by the auth service after successful validation of the certificate.
+     *
+     * @return the value
+     **/
     public String getPublicKey() {
         return publicKey;
     }

@@ -65,100 +65,230 @@ public final class UpdateBucketDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Object Storage namespace in which the bucket lives.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        /**
+         * The Object Storage namespace in which the bucket lives.
+         * @param namespace the value to set
+         * @return this builder
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-
+        /**
+         * The compartmentId for the compartment to move the bucket to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartmentId for the compartment to move the bucket to.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         * Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
+         * Example: my-new-bucket1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+         * Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
+         * Example: my-new-bucket1
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        /**
+         * Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
+         * @param metadata the value to set
+         * @return this builder
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * The type of public access enabled on this bucket. A bucket is set to {@code NoPublicAccess} by default, which only allows an
+         * authenticated caller to access the bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access
+         * is allowed for the {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled
+         * on the bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
         private PublicAccessType publicAccessType;
 
+        /**
+         * The type of public access enabled on this bucket. A bucket is set to {@code NoPublicAccess} by default, which only allows an
+         * authenticated caller to access the bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access
+         * is allowed for the {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled
+         * on the bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
+         *
+         * @param publicAccessType the value to set
+         * @return this builder
+         **/
         public Builder publicAccessType(PublicAccessType publicAccessType) {
             this.publicAccessType = publicAccessType;
             this.__explicitlySet__.add("publicAccessType");
             return this;
         }
-
+        /**
+         * Whether or not events are emitted for object state changes in this bucket. By default, {@code objectEventsEnabled} is
+         * set to {@code false}. Set {@code objectEventsEnabled} to {@code true} to emit events for object state changes. For more information
+         * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
         private Boolean objectEventsEnabled;
 
+        /**
+         * Whether or not events are emitted for object state changes in this bucket. By default, {@code objectEventsEnabled} is
+         * set to {@code false}. Set {@code objectEventsEnabled} to {@code true} to emit events for object state changes. For more information
+         * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+         *
+         * @param objectEventsEnabled the value to set
+         * @return this builder
+         **/
         public Builder objectEventsEnabled(Boolean objectEventsEnabled) {
             this.objectEventsEnabled = objectEventsEnabled;
             this.__explicitlySet__.add("objectEventsEnabled");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {"Operations": {"CostCenter": "42"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {"Operations": {"CostCenter": "42"}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate
+         * with the specified bucket. If this value is empty, the Update operation will remove the associated key, if
+         * there is one, from the bucket. (The bucket will continue to be encrypted, but with an encryption key managed
+         * by Oracle.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate
+         * with the specified bucket. If this value is empty, the Update operation will remove the associated key, if
+         * there is one, from the bucket. (The bucket will continue to be encrypted, but with an encryption key managed
+         * by Oracle.)
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-
+        /**
+         * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the same object can be kept in the bucket.
+         * When the object is overwritten or deleted, previous versions will still be available. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+         * Versioning cannot be disabled on a bucket once enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versioning")
         private Versioning versioning;
 
+        /**
+         * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the same object can be kept in the bucket.
+         * When the object is overwritten or deleted, previous versions will still be available. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+         * Versioning cannot be disabled on a bucket once enabled.
+         *
+         * @param versioning the value to set
+         * @return this builder
+         **/
         public Builder versioning(Versioning versioning) {
             this.versioning = versioning;
             this.__explicitlySet__.add("versioning");
             return this;
         }
-
+        /**
+         * The auto tiering status on the bucket. If in state {@code InfrequentAccess}, objects are transitioned
+         * automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+         * When auto tiering is {@code Disabled}, there will be no automatic transitions between storage tiers.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
         private Bucket.AutoTiering autoTiering;
 
+        /**
+         * The auto tiering status on the bucket. If in state {@code InfrequentAccess}, objects are transitioned
+         * automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+         * When auto tiering is {@code Disabled}, there will be no automatic transitions between storage tiers.
+         *
+         * @param autoTiering the value to set
+         * @return this builder
+         **/
         public Builder autoTiering(Bucket.AutoTiering autoTiering) {
             this.autoTiering = autoTiering;
             this.__explicitlySet__.add("autoTiering");
@@ -223,6 +353,10 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
+    /**
+     * The Object Storage namespace in which the bucket lives.
+     * @return the value
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -233,6 +367,10 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartmentId for the compartment to move the bucket to.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -246,6 +384,13 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     * Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
+     * Example: my-new-bucket1
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -256,6 +401,10 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
+    /**
+     * Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
+     * @return the value
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
@@ -310,6 +459,14 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     private final PublicAccessType publicAccessType;
 
+    /**
+     * The type of public access enabled on this bucket. A bucket is set to {@code NoPublicAccess} by default, which only allows an
+     * authenticated caller to access the bucket and its contents. When {@code ObjectRead} is enabled on the bucket, public access
+     * is allowed for the {@code GetObject}, {@code HeadObject}, and {@code ListObjects} operations. When {@code ObjectReadWithoutList} is enabled
+     * on the bucket, public access is allowed for the {@code GetObject} and {@code HeadObject} operations.
+     *
+     * @return the value
+     **/
     public PublicAccessType getPublicAccessType() {
         return publicAccessType;
     }
@@ -323,6 +480,13 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
     private final Boolean objectEventsEnabled;
 
+    /**
+     * Whether or not events are emitted for object state changes in this bucket. By default, {@code objectEventsEnabled} is
+     * set to {@code false}. Set {@code objectEventsEnabled} to {@code true} to emit events for object state changes. For more information
+     * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+     *
+     * @return the value
+     **/
     public Boolean getObjectEventsEnabled() {
         return objectEventsEnabled;
     }
@@ -336,6 +500,13 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -349,6 +520,13 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {"Operations": {"CostCenter": "42"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -363,6 +541,14 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate
+     * with the specified bucket. If this value is empty, the Update operation will remove the associated key, if
+     * there is one, from the bucket. (The bucket will continue to be encrypted, but with an encryption key managed
+     * by Oracle.)
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -414,6 +600,13 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versioning")
     private final Versioning versioning;
 
+    /**
+     * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the same object can be kept in the bucket.
+     * When the object is overwritten or deleted, previous versions will still be available. When versioning is {@code Suspended}, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * Versioning cannot be disabled on a bucket once enabled.
+     *
+     * @return the value
+     **/
     public Versioning getVersioning() {
         return versioning;
     }
@@ -427,6 +620,13 @@ public final class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("autoTiering")
     private final Bucket.AutoTiering autoTiering;
 
+    /**
+     * The auto tiering status on the bucket. If in state {@code InfrequentAccess}, objects are transitioned
+     * automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+     * When auto tiering is {@code Disabled}, there will be no automatic transitions between storage tiers.
+     *
+     * @return the value
+     **/
     public Bucket.AutoTiering getAutoTiering() {
         return autoTiering;
     }

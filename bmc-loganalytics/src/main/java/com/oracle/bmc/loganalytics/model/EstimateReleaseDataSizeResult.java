@@ -32,27 +32,55 @@ public final class EstimateReleaseDataSizeResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the end of the time range of data to be released.  timeDataStarted and timeDataEnded delineate
+         * the time range of the recalled data to be released.  They may not be exact the same as the
+         * parameters in the request input (EstimateReleaseDataSizeDetails).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
+        /**
+         * This is the end of the time range of data to be released.  timeDataStarted and timeDataEnded delineate
+         * the time range of the recalled data to be released.  They may not be exact the same as the
+         * parameters in the request input (EstimateReleaseDataSizeDetails).
+         *
+         * @param timeDataEnded the value to set
+         * @return this builder
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-
+        /**
+         * This is the start of the time range of data to be released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
+        /**
+         * This is the start of the time range of data to be released
+         * @param timeDataStarted the value to set
+         * @return this builder
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-
+        /**
+         * This is the size in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
+        /**
+         * This is the size in bytes
+         * @param sizeInBytes the value to set
+         * @return this builder
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
@@ -101,6 +129,13 @@ public final class EstimateReleaseDataSizeResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
+    /**
+     * This is the end of the time range of data to be released.  timeDataStarted and timeDataEnded delineate
+     * the time range of the recalled data to be released.  They may not be exact the same as the
+     * parameters in the request input (EstimateReleaseDataSizeDetails).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
@@ -111,6 +146,10 @@ public final class EstimateReleaseDataSizeResult {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
+    /**
+     * This is the start of the time range of data to be released
+     * @return the value
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
@@ -121,6 +160,10 @@ public final class EstimateReleaseDataSizeResult {
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
+    /**
+     * This is the size in bytes
+     * @return the value
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }

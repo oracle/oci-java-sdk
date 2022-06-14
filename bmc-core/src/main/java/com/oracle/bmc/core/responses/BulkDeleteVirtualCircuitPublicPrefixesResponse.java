@@ -33,11 +33,19 @@ public class BulkDeleteVirtualCircuitPublicPrefixesResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public BulkDeleteVirtualCircuitPublicPrefixesResponse build() {
             return new BulkDeleteVirtualCircuitPublicPrefixesResponse(__httpStatusCode__);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

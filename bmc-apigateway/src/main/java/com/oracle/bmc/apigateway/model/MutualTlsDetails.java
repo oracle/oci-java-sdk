@@ -30,18 +30,33 @@ public final class MutualTlsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Determines whether to enable client verification when API Consumer makes connection to the gateway.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVerifiedCertificateRequired")
         private Boolean isVerifiedCertificateRequired;
 
+        /**
+         * Determines whether to enable client verification when API Consumer makes connection to the gateway.
+         * @param isVerifiedCertificateRequired the value to set
+         * @return this builder
+         **/
         public Builder isVerifiedCertificateRequired(Boolean isVerifiedCertificateRequired) {
             this.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
             this.__explicitlySet__.add("isVerifiedCertificateRequired");
             return this;
         }
-
+        /**
+         * Allowed list of CN or SAN which will be used for verification of certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedSans")
         private java.util.List<String> allowedSans;
 
+        /**
+         * Allowed list of CN or SAN which will be used for verification of certificate.
+         * @param allowedSans the value to set
+         * @return this builder
+         **/
         public Builder allowedSans(java.util.List<String> allowedSans) {
             this.allowedSans = allowedSans;
             this.__explicitlySet__.add("allowedSans");
@@ -86,6 +101,10 @@ public final class MutualTlsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isVerifiedCertificateRequired")
     private final Boolean isVerifiedCertificateRequired;
 
+    /**
+     * Determines whether to enable client verification when API Consumer makes connection to the gateway.
+     * @return the value
+     **/
     public Boolean getIsVerifiedCertificateRequired() {
         return isVerifiedCertificateRequired;
     }
@@ -96,6 +115,10 @@ public final class MutualTlsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedSans")
     private final java.util.List<String> allowedSans;
 
+    /**
+     * Allowed list of CN or SAN which will be used for verification of certificate.
+     * @return the value
+     **/
     public java.util.List<String> getAllowedSans() {
         return allowedSans;
     }

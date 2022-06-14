@@ -29,9 +29,17 @@ public final class NotificationConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The topic ID for notifications.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
+        /**
+         * The topic ID for notifications.
+         * @param topicId the value to set
+         * @return this builder
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
@@ -73,6 +81,10 @@ public final class NotificationConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
+    /**
+     * The topic ID for notifications.
+     * @return the value
+     **/
     public String getTopicId() {
         return topicId;
     }

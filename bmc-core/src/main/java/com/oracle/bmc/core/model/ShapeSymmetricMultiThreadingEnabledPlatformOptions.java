@@ -32,18 +32,37 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether symmetric multithreading can be enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<Boolean> allowedValues;
 
+        /**
+         * Whether symmetric multithreading can be enabled.
+         *
+         * @param allowedValues the value to set
+         * @return this builder
+         **/
         public Builder allowedValues(java.util.List<Boolean> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-
+        /**
+         * Whether symmetric multithreading is enabled by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultEnabled")
         private Boolean isDefaultEnabled;
 
+        /**
+         * Whether symmetric multithreading is enabled by default.
+         *
+         * @param isDefaultEnabled the value to set
+         * @return this builder
+         **/
         public Builder isDefaultEnabled(Boolean isDefaultEnabled) {
             this.isDefaultEnabled = isDefaultEnabled;
             this.__explicitlySet__.add("isDefaultEnabled");
@@ -89,6 +108,11 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<Boolean> allowedValues;
 
+    /**
+     * Whether symmetric multithreading can be enabled.
+     *
+     * @return the value
+     **/
     public java.util.List<Boolean> getAllowedValues() {
         return allowedValues;
     }
@@ -100,6 +124,11 @@ public final class ShapeSymmetricMultiThreadingEnabledPlatformOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultEnabled")
     private final Boolean isDefaultEnabled;
 
+    /**
+     * Whether symmetric multithreading is enabled by default.
+     *
+     * @return the value
+     **/
     public Boolean getIsDefaultEnabled() {
         return isDefaultEnabled;
     }

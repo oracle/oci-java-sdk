@@ -13,6 +13,10 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -22,6 +26,10 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String etag;
 
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -31,6 +39,10 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.dts.model.TransferJob transferJob;
 
+    /**
+     * The returned TransferJob instance.
+     * @return the value
+     */
     public com.oracle.bmc.dts.model.TransferJob getTransferJob() {
         return transferJob;
     }
@@ -55,22 +67,46 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         *
+         */
         private String opcRequestId;
 
+        /**
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         *
+         */
         private String etag;
 
+        /**
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned TransferJob instance.
+         */
         private com.oracle.bmc.dts.model.TransferJob transferJob;
 
+        /**
+         * The returned TransferJob instance.
+         * @param transferJob the value to set
+         * @return this builder
+         */
         public Builder transferJob(com.oracle.bmc.dts.model.TransferJob transferJob) {
             this.transferJob = transferJob;
             return this;
@@ -89,11 +125,19 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetTransferJobResponse build() {
             return new GetTransferJobResponse(__httpStatusCode__, opcRequestId, etag, transferJob);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

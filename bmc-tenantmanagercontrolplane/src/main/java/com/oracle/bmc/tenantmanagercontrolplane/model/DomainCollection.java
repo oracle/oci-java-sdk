@@ -27,9 +27,17 @@ public final class DomainCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Array containing DomainSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DomainSummary> items;
 
+        /**
+         * Array containing DomainSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DomainSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class DomainCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DomainSummary> items;
 
+    /**
+     * Array containing DomainSummary items.
+     * @return the value
+     **/
     public java.util.List<DomainSummary> getItems() {
         return items;
     }

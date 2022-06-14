@@ -30,18 +30,33 @@ public final class CatalogPermissionsSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The data catalog's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
+        /**
+         * The data catalog's OCID.
+         * @param catalogId the value to set
+         * @return this builder
+         **/
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
             return this;
         }
-
+        /**
+         * An array of permissions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
         private java.util.List<String> userPermissions;
 
+        /**
+         * An array of permissions.
+         * @param userPermissions the value to set
+         * @return this builder
+         **/
         public Builder userPermissions(java.util.List<String> userPermissions) {
             this.userPermissions = userPermissions;
             this.__explicitlySet__.add("userPermissions");
@@ -85,6 +100,10 @@ public final class CatalogPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
+    /**
+     * The data catalog's OCID.
+     * @return the value
+     **/
     public String getCatalogId() {
         return catalogId;
     }
@@ -95,6 +114,10 @@ public final class CatalogPermissionsSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("userPermissions")
     private final java.util.List<String> userPermissions;
 
+    /**
+     * An array of permissions.
+     * @return the value
+     **/
     public java.util.List<String> getUserPermissions() {
         return userPermissions;
     }

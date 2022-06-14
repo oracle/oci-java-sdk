@@ -29,9 +29,21 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
+         * traveling from the customer's VCN to the service's VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIp")
         private String sourceIp;
 
+        /**
+         * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
+         * traveling from the customer's VCN to the service's VCN.
+         *
+         * @param sourceIp the value to set
+         * @return this builder
+         **/
         public Builder sourceIp(String sourceIp) {
             this.sourceIp = sourceIp;
             this.__explicitlySet__.add("sourceIp");
@@ -76,6 +88,12 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIp")
     private final String sourceIp;
 
+    /**
+     * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
+     * traveling from the customer's VCN to the service's VCN.
+     *
+     * @return the value
+     **/
     public String getSourceIp() {
         return sourceIp;
     }

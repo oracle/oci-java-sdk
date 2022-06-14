@@ -31,18 +31,33 @@ public final class ActivateBdsMetastoreConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
         private String bdsApiKeyPassphrase;
 
+        /**
+         * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
+         * @param bdsApiKeyPassphrase the value to set
+         * @return this builder
+         **/
         public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
             this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
             this.__explicitlySet__.add("bdsApiKeyPassphrase");
             return this;
         }
-
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         * @param clusterAdminPassword the value to set
+         * @return this builder
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -88,6 +103,10 @@ public final class ActivateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bdsApiKeyPassphrase")
     private final String bdsApiKeyPassphrase;
 
+    /**
+     * Base-64 encoded passphrase of the BDS Api Key. Set only if metastore's type is EXTERNAL.
+     * @return the value
+     **/
     public String getBdsApiKeyPassphrase() {
         return bdsApiKeyPassphrase;
     }
@@ -98,6 +117,10 @@ public final class ActivateBdsMetastoreConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     * @return the value
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }

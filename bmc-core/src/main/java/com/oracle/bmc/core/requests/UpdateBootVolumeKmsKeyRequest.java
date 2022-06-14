@@ -18,6 +18,9 @@ public class UpdateBootVolumeKmsKeyRequest
      */
     private String bootVolumeId;
 
+    /**
+     * The OCID of the boot volume.
+     */
     public String getBootVolumeId() {
         return bootVolumeId;
     }
@@ -26,6 +29,9 @@ public class UpdateBootVolumeKmsKeyRequest
      */
     private com.oracle.bmc.core.model.UpdateBootVolumeKmsKeyDetails updateBootVolumeKmsKeyDetails;
 
+    /**
+     * Updates the Key Management master encryption key assigned to the specified boot volume.
+     */
     public com.oracle.bmc.core.model.UpdateBootVolumeKmsKeyDetails
             getUpdateBootVolumeKmsKeyDetails() {
         return updateBootVolumeKmsKeyDetails;
@@ -38,6 +44,12 @@ public class UpdateBootVolumeKmsKeyRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -60,10 +72,14 @@ public class UpdateBootVolumeKmsKeyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the boot volume.
+         */
         private String bootVolumeId = null;
 
         /**
          * The OCID of the boot volume.
+         * @param bootVolumeId the value to set
          * @return this builder instance
          */
         public Builder bootVolumeId(String bootVolumeId) {
@@ -71,11 +87,15 @@ public class UpdateBootVolumeKmsKeyRequest
             return this;
         }
 
+        /**
+         * Updates the Key Management master encryption key assigned to the specified boot volume.
+         */
         private com.oracle.bmc.core.model.UpdateBootVolumeKmsKeyDetails
                 updateBootVolumeKmsKeyDetails = null;
 
         /**
          * Updates the Key Management master encryption key assigned to the specified boot volume.
+         * @param updateBootVolumeKmsKeyDetails the value to set
          * @return this builder instance
          */
         public Builder updateBootVolumeKmsKeyDetails(
@@ -85,6 +105,12 @@ public class UpdateBootVolumeKmsKeyRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -92,6 +118,7 @@ public class UpdateBootVolumeKmsKeyRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -182,7 +209,8 @@ public class UpdateBootVolumeKmsKeyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +219,10 @@ public class UpdateBootVolumeKmsKeyRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

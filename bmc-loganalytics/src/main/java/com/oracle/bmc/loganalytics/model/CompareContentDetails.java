@@ -30,18 +30,33 @@ public final class CompareContentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The first of two strings to compare.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content1")
         private String content1;
 
+        /**
+         * The first of two strings to compare.
+         * @param content1 the value to set
+         * @return this builder
+         **/
         public Builder content1(String content1) {
             this.content1 = content1;
             this.__explicitlySet__.add("content1");
             return this;
         }
-
+        /**
+         * The second of two strings to compare.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content2")
         private String content2;
 
+        /**
+         * The second of two strings to compare.
+         * @param content2 the value to set
+         * @return this builder
+         **/
         public Builder content2(String content2) {
             this.content2 = content2;
             this.__explicitlySet__.add("content2");
@@ -83,6 +98,10 @@ public final class CompareContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("content1")
     private final String content1;
 
+    /**
+     * The first of two strings to compare.
+     * @return the value
+     **/
     public String getContent1() {
         return content1;
     }
@@ -93,6 +112,10 @@ public final class CompareContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("content2")
     private final String content2;
 
+    /**
+     * The second of two strings to compare.
+     * @return the value
+     **/
     public String getContent2() {
         return content2;
     }

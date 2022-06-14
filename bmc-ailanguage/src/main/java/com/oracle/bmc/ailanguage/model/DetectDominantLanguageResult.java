@@ -29,9 +29,19 @@ public final class DetectDominantLanguageResult {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languages")
         private java.util.List<DetectedLanguage> languages;
 
+        /**
+         * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
+         *
+         * @param languages the value to set
+         * @return this builder
+         **/
         public Builder languages(java.util.List<DetectedLanguage> languages) {
             this.languages = languages;
             this.__explicitlySet__.add("languages");
@@ -74,6 +84,11 @@ public final class DetectDominantLanguageResult {
     @com.fasterxml.jackson.annotation.JsonProperty("languages")
     private final java.util.List<DetectedLanguage> languages;
 
+    /**
+     * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
+     *
+     * @return the value
+     **/
     public java.util.List<DetectedLanguage> getLanguages() {
         return languages;
     }

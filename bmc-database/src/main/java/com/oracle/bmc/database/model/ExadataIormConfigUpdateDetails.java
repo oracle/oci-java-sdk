@@ -32,18 +32,41 @@ public final class ExadataIormConfigUpdateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Value for the IORM objective
+         * Default is "Auto"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objective")
         private Objective objective;
 
+        /**
+         * Value for the IORM objective
+         * Default is "Auto"
+         *
+         * @param objective the value to set
+         * @return this builder
+         **/
         public Builder objective(Objective objective) {
             this.objective = objective;
             this.__explicitlySet__.add("objective");
             return this;
         }
-
+        /**
+         * Array of IORM Setting for all the database in
+         * this Exadata DB System
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
         private java.util.List<DbIormConfigUpdateDetail> dbPlans;
 
+        /**
+         * Array of IORM Setting for all the database in
+         * this Exadata DB System
+         *
+         * @param dbPlans the value to set
+         * @return this builder
+         **/
         public Builder dbPlans(java.util.List<DbIormConfigUpdateDetail> dbPlans) {
             this.dbPlans = dbPlans;
             this.__explicitlySet__.add("dbPlans");
@@ -128,6 +151,12 @@ public final class ExadataIormConfigUpdateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objective")
     private final Objective objective;
 
+    /**
+     * Value for the IORM objective
+     * Default is "Auto"
+     *
+     * @return the value
+     **/
     public Objective getObjective() {
         return objective;
     }
@@ -140,6 +169,12 @@ public final class ExadataIormConfigUpdateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
     private final java.util.List<DbIormConfigUpdateDetail> dbPlans;
 
+    /**
+     * Array of IORM Setting for all the database in
+     * this Exadata DB System
+     *
+     * @return the value
+     **/
     public java.util.List<DbIormConfigUpdateDetail> getDbPlans() {
         return dbPlans;
     }

@@ -30,18 +30,33 @@ public final class MaskingAnalyticsDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
+        /**
+         * The OCID of the target database.
+         * @param targetId the value to set
+         * @return this builder
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-
+        /**
+         * The OCID of the masking policy..
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
+        /**
+         * The OCID of the masking policy..
+         * @param policyId the value to set
+         * @return this builder
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
@@ -84,6 +99,10 @@ public final class MaskingAnalyticsDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
+    /**
+     * The OCID of the target database.
+     * @return the value
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -94,6 +113,10 @@ public final class MaskingAnalyticsDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
+    /**
+     * The OCID of the masking policy..
+     * @return the value
+     **/
     public String getPolicyId() {
         return policyId;
     }

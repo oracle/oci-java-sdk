@@ -59,90 +59,175 @@ public final class CreateBastionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The type of bastion. Use {@code standard}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
         private String bastionType;
 
+        /**
+         * The type of bastion. Use {@code standard}.
+         *
+         * @param bastionType the value to set
+         * @return this builder
+         **/
         public Builder bastionType(String bastionType) {
             this.bastionType = bastionType;
             this.__explicitlySet__.add("bastionType");
             return this;
         }
-
+        /**
+         * The name of the bastion, which can't be changed after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the bastion, which can't be changed after creation.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the compartment where the bastion is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The unique identifier (OCID) of the compartment where the bastion is located.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the subnet that the bastion connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetSubnetId")
         private String targetSubnetId;
 
+        /**
+         * The unique identifier (OCID) of the subnet that the bastion connects to.
+         * @param targetSubnetId the value to set
+         * @return this builder
+         **/
         public Builder targetSubnetId(String targetSubnetId) {
             this.targetSubnetId = targetSubnetId;
             this.__explicitlySet__.add("targetSubnetId");
             return this;
         }
-
+        /**
+         * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to {@code standard} bastions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneBookEntry")
         private String phoneBookEntry;
 
+        /**
+         * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to {@code standard} bastions.
+         *
+         * @param phoneBookEntry the value to set
+         * @return this builder
+         **/
         public Builder phoneBookEntry(String phoneBookEntry) {
             this.phoneBookEntry = phoneBookEntry;
             this.__explicitlySet__.add("phoneBookEntry");
             return this;
         }
-
+        /**
+         * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
         private java.util.List<String> staticJumpHostIpAddresses;
 
+        /**
+         * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
+         *
+         * @param staticJumpHostIpAddresses the value to set
+         * @return this builder
+         **/
         public Builder staticJumpHostIpAddresses(java.util.List<String> staticJumpHostIpAddresses) {
             this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
             this.__explicitlySet__.add("staticJumpHostIpAddresses");
             return this;
         }
-
+        /**
+         * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientCidrBlockAllowList")
         private java.util.List<String> clientCidrBlockAllowList;
 
+        /**
+         * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
+         * @param clientCidrBlockAllowList the value to set
+         * @return this builder
+         **/
         public Builder clientCidrBlockAllowList(java.util.List<String> clientCidrBlockAllowList) {
             this.clientCidrBlockAllowList = clientCidrBlockAllowList;
             this.__explicitlySet__.add("clientCidrBlockAllowList");
             return this;
         }
-
+        /**
+         * The maximum amount of time that any session on the bastion can remain active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
         private Integer maxSessionTtlInSeconds;
 
+        /**
+         * The maximum amount of time that any session on the bastion can remain active.
+         * @param maxSessionTtlInSeconds the value to set
+         * @return this builder
+         **/
         public Builder maxSessionTtlInSeconds(Integer maxSessionTtlInSeconds) {
             this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
             this.__explicitlySet__.add("maxSessionTtlInSeconds");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -207,6 +292,11 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bastionType")
     private final String bastionType;
 
+    /**
+     * The type of bastion. Use {@code standard}.
+     *
+     * @return the value
+     **/
     public String getBastionType() {
         return bastionType;
     }
@@ -217,6 +307,10 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the bastion, which can't be changed after creation.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -227,6 +321,10 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The unique identifier (OCID) of the compartment where the bastion is located.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -237,6 +335,10 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetSubnetId")
     private final String targetSubnetId;
 
+    /**
+     * The unique identifier (OCID) of the subnet that the bastion connects to.
+     * @return the value
+     **/
     public String getTargetSubnetId() {
         return targetSubnetId;
     }
@@ -248,6 +350,11 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("phoneBookEntry")
     private final String phoneBookEntry;
 
+    /**
+     * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to {@code standard} bastions.
+     *
+     * @return the value
+     **/
     public String getPhoneBookEntry() {
         return phoneBookEntry;
     }
@@ -259,6 +366,11 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("staticJumpHostIpAddresses")
     private final java.util.List<String> staticJumpHostIpAddresses;
 
+    /**
+     * A list of IP addresses of the hosts that the bastion has access to. Not applicable to {@code standard} bastions.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getStaticJumpHostIpAddresses() {
         return staticJumpHostIpAddresses;
     }
@@ -269,6 +381,10 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clientCidrBlockAllowList")
     private final java.util.List<String> clientCidrBlockAllowList;
 
+    /**
+     * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
+     * @return the value
+     **/
     public java.util.List<String> getClientCidrBlockAllowList() {
         return clientCidrBlockAllowList;
     }
@@ -279,6 +395,10 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxSessionTtlInSeconds")
     private final Integer maxSessionTtlInSeconds;
 
+    /**
+     * The maximum amount of time that any session on the bastion can remain active.
+     * @return the value
+     **/
     public Integer getMaxSessionTtlInSeconds() {
         return maxSessionTtlInSeconds;
     }
@@ -291,6 +411,12 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -303,6 +429,12 @@ public final class CreateBastionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

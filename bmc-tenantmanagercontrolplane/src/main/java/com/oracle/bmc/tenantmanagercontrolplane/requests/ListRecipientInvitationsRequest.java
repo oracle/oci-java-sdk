@@ -17,6 +17,9 @@ public class ListRecipientInvitationsRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListRecipientInvitationsRequest
      */
     private String senderTenancyId;
 
+    /**
+     * The tenancy that sent the invitation.
+     */
     public String getSenderTenancyId() {
         return senderTenancyId;
     }
@@ -33,6 +39,9 @@ public class ListRecipientInvitationsRequest
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the resource.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -41,6 +50,9 @@ public class ListRecipientInvitationsRequest
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus status;
 
+    /**
+     * The status of the recipient invitation.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus getStatus() {
         return status;
     }
@@ -49,6 +61,9 @@ public class ListRecipientInvitationsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -57,6 +72,9 @@ public class ListRecipientInvitationsRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -68,10 +86,14 @@ public class ListRecipientInvitationsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -79,10 +101,14 @@ public class ListRecipientInvitationsRequest
             return this;
         }
 
+        /**
+         * The tenancy that sent the invitation.
+         */
         private String senderTenancyId = null;
 
         /**
          * The tenancy that sent the invitation.
+         * @param senderTenancyId the value to set
          * @return this builder instance
          */
         public Builder senderTenancyId(String senderTenancyId) {
@@ -90,10 +116,14 @@ public class ListRecipientInvitationsRequest
             return this;
         }
 
+        /**
+         * The lifecycle state of the resource.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState = null;
 
         /**
          * The lifecycle state of the resource.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -102,11 +132,15 @@ public class ListRecipientInvitationsRequest
             return this;
         }
 
+        /**
+         * The status of the recipient invitation.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationStatus status =
                 null;
 
         /**
          * The status of the recipient invitation.
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(
@@ -115,10 +149,14 @@ public class ListRecipientInvitationsRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -126,10 +164,14 @@ public class ListRecipientInvitationsRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -215,7 +257,8 @@ public class ListRecipientInvitationsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -227,6 +270,10 @@ public class ListRecipientInvitationsRequest
                 .page(page);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

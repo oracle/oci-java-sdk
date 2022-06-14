@@ -29,27 +29,49 @@ public final class Parameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Parameter name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Parameter type. One of integer, string, boolean.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * Parameter type. One of integer, string, boolean.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * Java regex pattern to validate a parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
+        /**
+         * Java regex pattern to validate a parameter value.
+         * @param pattern the value to set
+         * @return this builder
+         **/
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
@@ -91,6 +113,10 @@ public final class Parameter {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Parameter name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -148,6 +174,10 @@ public final class Parameter {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * Parameter type. One of integer, string, boolean.
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -158,6 +188,10 @@ public final class Parameter {
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
+    /**
+     * Java regex pattern to validate a parameter value.
+     * @return the value
+     **/
     public String getPattern() {
         return pattern;
     }

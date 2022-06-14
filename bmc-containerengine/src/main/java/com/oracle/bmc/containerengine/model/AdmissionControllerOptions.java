@@ -29,9 +29,17 @@ public final class AdmissionControllerOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether or not to enable the Pod Security Policy admission controller.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPodSecurityPolicyEnabled")
         private Boolean isPodSecurityPolicyEnabled;
 
+        /**
+         * Whether or not to enable the Pod Security Policy admission controller.
+         * @param isPodSecurityPolicyEnabled the value to set
+         * @return this builder
+         **/
         public Builder isPodSecurityPolicyEnabled(Boolean isPodSecurityPolicyEnabled) {
             this.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
             this.__explicitlySet__.add("isPodSecurityPolicyEnabled");
@@ -74,6 +82,10 @@ public final class AdmissionControllerOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isPodSecurityPolicyEnabled")
     private final Boolean isPodSecurityPolicyEnabled;
 
+    /**
+     * Whether or not to enable the Pod Security Policy admission controller.
+     * @return the value
+     **/
     public Boolean getIsPodSecurityPolicyEnabled() {
         return isPodSecurityPolicyEnabled;
     }

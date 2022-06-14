@@ -29,27 +29,61 @@ public final class DetectedLanguage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Full language name.
+         * Example: {@code English, Hindi, and so on}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Full language name.
+         * Example: {@code English, Hindi, and so on}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Example: {@code en, fr, hi etc}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
+        /**
+         * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Example: {@code en, fr, hi etc}.
+         *
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * Score or confidence of detected language code.
+         * Example: {@code 0.9999856066867399}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
+        /**
+         * Score or confidence of detected language code.
+         * Example: {@code 0.9999856066867399}
+         *
+         * @param score the value to set
+         * @return this builder
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -93,6 +127,12 @@ public final class DetectedLanguage {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Full language name.
+     * Example: {@code English, Hindi, and so on}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -105,6 +145,12 @@ public final class DetectedLanguage {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Example: {@code en, fr, hi etc}.
+     *
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -117,6 +163,12 @@ public final class DetectedLanguage {
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
+    /**
+     * Score or confidence of detected language code.
+     * Example: {@code 0.9999856066867399}
+     *
+     * @return the value
+     **/
     public Double getScore() {
         return score;
     }

@@ -32,27 +32,49 @@ public final class BulkUploadValidationErrorInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Refers to the license record number as provided in the bulk upload file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowNumber")
         private Integer rowNumber;
 
+        /**
+         * Refers to the license record number as provided in the bulk upload file.
+         * @param rowNumber the value to set
+         * @return this builder
+         **/
         public Builder rowNumber(Integer rowNumber) {
             this.rowNumber = rowNumber;
             this.__explicitlySet__.add("rowNumber");
             return this;
         }
-
+        /**
+         * Product name of invalid row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
+        /**
+         * Product name of invalid row.
+         * @param productName the value to set
+         * @return this builder
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-
+        /**
+         * Error information corresponding to each column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowError")
         private java.util.List<BulkUploadCellInfo> rowError;
 
+        /**
+         * Error information corresponding to each column.
+         * @param rowError the value to set
+         * @return this builder
+         **/
         public Builder rowError(java.util.List<BulkUploadCellInfo> rowError) {
             this.rowError = rowError;
             this.__explicitlySet__.add("rowError");
@@ -98,6 +120,10 @@ public final class BulkUploadValidationErrorInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("rowNumber")
     private final Integer rowNumber;
 
+    /**
+     * Refers to the license record number as provided in the bulk upload file.
+     * @return the value
+     **/
     public Integer getRowNumber() {
         return rowNumber;
     }
@@ -108,6 +134,10 @@ public final class BulkUploadValidationErrorInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
+    /**
+     * Product name of invalid row.
+     * @return the value
+     **/
     public String getProductName() {
         return productName;
     }
@@ -118,6 +148,10 @@ public final class BulkUploadValidationErrorInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("rowError")
     private final java.util.List<BulkUploadCellInfo> rowError;
 
+    /**
+     * Error information corresponding to each column.
+     * @return the value
+     **/
     public java.util.List<BulkUploadCellInfo> getRowError() {
         return rowError;
     }

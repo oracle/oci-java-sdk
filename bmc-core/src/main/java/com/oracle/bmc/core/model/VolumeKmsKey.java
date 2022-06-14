@@ -28,9 +28,19 @@ public final class VolumeKmsKey {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the {@code kmsKeyId} will be a null string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
+        /**
+         * The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the {@code kmsKeyId} will be a null string.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -73,6 +83,11 @@ public final class VolumeKmsKey {
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
+    /**
+     * The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the {@code kmsKeyId} will be a null string.
+     *
+     * @return the value
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }

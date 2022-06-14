@@ -28,9 +28,17 @@ public final class Storage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This indicates if old data can be archived for a tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
         private Boolean isArchivingEnabled;
 
+        /**
+         * This indicates if old data can be archived for a tenancy
+         * @param isArchivingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isArchivingEnabled(Boolean isArchivingEnabled) {
             this.isArchivingEnabled = isArchivingEnabled;
             this.__explicitlySet__.add("isArchivingEnabled");
@@ -83,6 +91,10 @@ public final class Storage {
     @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
     private final Boolean isArchivingEnabled;
 
+    /**
+     * This indicates if old data can be archived for a tenancy
+     * @return the value
+     **/
     public Boolean getIsArchivingEnabled() {
         return isArchivingEnabled;
     }

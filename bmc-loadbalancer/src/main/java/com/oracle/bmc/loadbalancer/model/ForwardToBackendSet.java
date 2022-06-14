@@ -28,9 +28,23 @@ package com.oracle.bmc.loadbalancer.model;
 public final class ForwardToBackendSet extends Action {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the backend set the listener will forward the traffic to.
+         * <p>
+         * Example: {@code backendSetForImages}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
         private String backendSetName;
 
+        /**
+         * Name of the backend set the listener will forward the traffic to.
+         * <p>
+         * Example: {@code backendSetForImages}
+         *
+         * @param backendSetName the value to set
+         * @return this builder
+         **/
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = backendSetName;
             this.__explicitlySet__.add("backendSetName");
@@ -81,6 +95,13 @@ public final class ForwardToBackendSet extends Action {
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     private final String backendSetName;
 
+    /**
+     * Name of the backend set the listener will forward the traffic to.
+     * <p>
+     * Example: {@code backendSetForImages}
+     *
+     * @return the value
+     **/
     public String getBackendSetName() {
         return backendSetName;
     }

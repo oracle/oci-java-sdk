@@ -30,9 +30,17 @@ public final class TargetResponderRecipeResponderRuleCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of TargetResponderRecipeResponderRuleSummary
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TargetResponderRecipeResponderRuleSummary> items;
 
+        /**
+         * List of TargetResponderRecipeResponderRuleSummary
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TargetResponderRecipeResponderRuleSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +83,10 @@ public final class TargetResponderRecipeResponderRuleCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TargetResponderRecipeResponderRuleSummary> items;
 
+    /**
+     * List of TargetResponderRecipeResponderRuleSummary
+     * @return the value
+     **/
     public java.util.List<TargetResponderRecipeResponderRuleSummary> getItems() {
         return items;
     }

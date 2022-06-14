@@ -19,6 +19,9 @@ public class BulkUploadLicenseRecordsRequest
     private com.oracle.bmc.licensemanager.model.BulkUploadLicenseRecordsDetails
             bulkUploadLicenseRecordsDetails;
 
+    /**
+     * Details required for the bulk upload of product licenses and license records.
+     */
     public com.oracle.bmc.licensemanager.model.BulkUploadLicenseRecordsDetails
             getBulkUploadLicenseRecordsDetails() {
         return bulkUploadLicenseRecordsDetails;
@@ -30,6 +33,11 @@ public class BulkUploadLicenseRecordsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -52,11 +60,15 @@ public class BulkUploadLicenseRecordsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details required for the bulk upload of product licenses and license records.
+         */
         private com.oracle.bmc.licensemanager.model.BulkUploadLicenseRecordsDetails
                 bulkUploadLicenseRecordsDetails = null;
 
         /**
          * Details required for the bulk upload of product licenses and license records.
+         * @param bulkUploadLicenseRecordsDetails the value to set
          * @return this builder instance
          */
         public Builder bulkUploadLicenseRecordsDetails(
@@ -66,12 +78,18 @@ public class BulkUploadLicenseRecordsRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -161,7 +179,8 @@ public class BulkUploadLicenseRecordsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +188,10 @@ public class BulkUploadLicenseRecordsRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

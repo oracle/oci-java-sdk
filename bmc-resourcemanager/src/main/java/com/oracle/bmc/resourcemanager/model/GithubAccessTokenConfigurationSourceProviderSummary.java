@@ -112,10 +112,21 @@ public final class GithubAccessTokenConfigurationSourceProviderSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The GitHub service endpoint.
+         * Example: {@code https://github.com/}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
 
+        /**
+         * The GitHub service endpoint.
+         * Example: {@code https://github.com/}
+         *
+         * @param apiEndpoint the value to set
+         * @return this builder
+         **/
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             this.__explicitlySet__.add("apiEndpoint");
@@ -205,6 +216,12 @@ public final class GithubAccessTokenConfigurationSourceProviderSummary
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     private final String apiEndpoint;
 
+    /**
+     * The GitHub service endpoint.
+     * Example: {@code https://github.com/}
+     *
+     * @return the value
+     **/
     public String getApiEndpoint() {
         return apiEndpoint;
     }

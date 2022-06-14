@@ -27,9 +27,17 @@ public final class PublicKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKeyContent")
         private String publicKeyContent;
 
+        /**
+         * The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
+         * @param publicKeyContent the value to set
+         * @return this builder
+         **/
         public Builder publicKeyContent(String publicKeyContent) {
             this.publicKeyContent = publicKeyContent;
             this.__explicitlySet__.add("publicKeyContent");
@@ -71,6 +79,10 @@ public final class PublicKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKeyContent")
     private final String publicKeyContent;
 
+    /**
+     * The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
+     * @return the value
+     **/
     public String getPublicKeyContent() {
         return publicKeyContent;
     }

@@ -15,6 +15,12 @@ public class GetReplicationPolicyResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetReplicationPolicyResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -33,6 +43,10 @@ public class GetReplicationPolicyResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
+    /**
+     * The returned ReplicationPolicy instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.ReplicationPolicy getReplicationPolicy() {
         return replicationPolicy;
     }
@@ -62,22 +76,50 @@ public class GetReplicationPolicyResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * The returned ReplicationPolicy instance.
+         */
         private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
+        /**
+         * The returned ReplicationPolicy instance.
+         * @param replicationPolicy the value to set
+         * @return this builder
+         */
         public Builder replicationPolicy(
                 com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy) {
             this.replicationPolicy = replicationPolicy;
@@ -97,12 +139,20 @@ public class GetReplicationPolicyResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetReplicationPolicyResponse build() {
             return new GetReplicationPolicyResponse(
                     __httpStatusCode__, opcRequestId, opcClientRequestId, replicationPolicy);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

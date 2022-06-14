@@ -29,27 +29,49 @@ public final class References {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Relevant section from STIG.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stig")
         private String stig;
 
+        /**
+         * Relevant section from STIG.
+         * @param stig the value to set
+         * @return this builder
+         **/
         public Builder stig(String stig) {
             this.stig = stig;
             this.__explicitlySet__.add("stig");
             return this;
         }
-
+        /**
+         * Relevant section from CIS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cis")
         private String cis;
 
+        /**
+         * Relevant section from CIS.
+         * @param cis the value to set
+         * @return this builder
+         **/
         public Builder cis(String cis) {
             this.cis = cis;
             this.__explicitlySet__.add("cis");
             return this;
         }
-
+        /**
+         * Relevant section from GDPR.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gdpr")
         private String gdpr;
 
+        /**
+         * Relevant section from GDPR.
+         * @param gdpr the value to set
+         * @return this builder
+         **/
         public Builder gdpr(String gdpr) {
             this.gdpr = gdpr;
             this.__explicitlySet__.add("gdpr");
@@ -91,6 +113,10 @@ public final class References {
     @com.fasterxml.jackson.annotation.JsonProperty("stig")
     private final String stig;
 
+    /**
+     * Relevant section from STIG.
+     * @return the value
+     **/
     public String getStig() {
         return stig;
     }
@@ -101,6 +127,10 @@ public final class References {
     @com.fasterxml.jackson.annotation.JsonProperty("cis")
     private final String cis;
 
+    /**
+     * Relevant section from CIS.
+     * @return the value
+     **/
     public String getCis() {
         return cis;
     }
@@ -111,6 +141,10 @@ public final class References {
     @com.fasterxml.jackson.annotation.JsonProperty("gdpr")
     private final String gdpr;
 
+    /**
+     * Relevant section from GDPR.
+     * @return the value
+     **/
     public String getGdpr() {
         return gdpr;
     }

@@ -15,6 +15,12 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate heatWaveClusterMemoryEstimate;
 
+    /**
+     * The returned HeatWaveClusterMemoryEstimate instance.
+     * @return the value
+     */
     public com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
             getHeatWaveClusterMemoryEstimate() {
         return heatWaveClusterMemoryEstimate;
@@ -52,16 +62,36 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned HeatWaveClusterMemoryEstimate instance.
+         */
         private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
                 heatWaveClusterMemoryEstimate;
 
+        /**
+         * The returned HeatWaveClusterMemoryEstimate instance.
+         * @param heatWaveClusterMemoryEstimate the value to set
+         * @return this builder
+         */
         public Builder heatWaveClusterMemoryEstimate(
                 com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate
                         heatWaveClusterMemoryEstimate) {
@@ -81,12 +111,20 @@ public class GetHeatWaveClusterMemoryEstimateResponse extends com.oracle.bmc.res
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetHeatWaveClusterMemoryEstimateResponse build() {
             return new GetHeatWaveClusterMemoryEstimateResponse(
                     __httpStatusCode__, opcRequestId, heatWaveClusterMemoryEstimate);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

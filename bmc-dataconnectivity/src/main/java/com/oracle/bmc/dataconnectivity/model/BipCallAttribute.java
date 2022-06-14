@@ -25,6 +25,7 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class BipCallAttribute extends AbstractCallAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("stagingBucket")
         private Schema stagingBucket;
 
@@ -33,19 +34,33 @@ public final class BipCallAttribute extends AbstractCallAttribute {
             this.__explicitlySet__.add("stagingBucket");
             return this;
         }
-
+        /**
+         * Parameter to set offset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
         private String offsetParameter;
 
+        /**
+         * Parameter to set offset
+         * @param offsetParameter the value to set
+         * @return this builder
+         **/
         public Builder offsetParameter(String offsetParameter) {
             this.offsetParameter = offsetParameter;
             this.__explicitlySet__.add("offsetParameter");
             return this;
         }
-
+        /**
+         * Parameter to fetch next set of rows
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
         private String fetchNextRowsParameter;
 
+        /**
+         * Parameter to fetch next set of rows
+         * @param fetchNextRowsParameter the value to set
+         * @return this builder
+         **/
         public Builder fetchNextRowsParameter(String fetchNextRowsParameter) {
             this.fetchNextRowsParameter = fetchNextRowsParameter;
             this.__explicitlySet__.add("fetchNextRowsParameter");
@@ -69,10 +84,17 @@ public final class BipCallAttribute extends AbstractCallAttribute {
             this.__explicitlySet__.add("stagingConnection");
             return this;
         }
-
+        /**
+         * Prefix for the staging DataAsset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stagingPrefix")
         private String stagingPrefix;
 
+        /**
+         * Prefix for the staging DataAsset
+         * @param stagingPrefix the value to set
+         * @return this builder
+         **/
         public Builder stagingPrefix(String stagingPrefix) {
             this.stagingPrefix = stagingPrefix;
             this.__explicitlySet__.add("stagingPrefix");
@@ -151,6 +173,10 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
     private final String offsetParameter;
 
+    /**
+     * Parameter to set offset
+     * @return the value
+     **/
     public String getOffsetParameter() {
         return offsetParameter;
     }
@@ -161,6 +187,10 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
     private final String fetchNextRowsParameter;
 
+    /**
+     * Parameter to fetch next set of rows
+     * @return the value
+     **/
     public String getFetchNextRowsParameter() {
         return fetchNextRowsParameter;
     }
@@ -185,6 +215,10 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("stagingPrefix")
     private final String stagingPrefix;
 
+    /**
+     * Prefix for the staging DataAsset
+     * @return the value
+     **/
     public String getStagingPrefix() {
         return stagingPrefix;
     }

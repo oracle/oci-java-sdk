@@ -34,45 +34,87 @@ public final class LogAnalyticsSourceMetadataField {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The field internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
+        /**
+         * The field internal name.
+         * @param fieldName the value to set
+         * @return this builder
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-
+        /**
+         * A flag inidcating whether or not the source metadata field is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * A flag inidcating whether or not the source metadata field is enabled.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
+        /**
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         * @param isSystem the value to set
+         * @return this builder
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-
+        /**
+         * The key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The source internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
+        /**
+         * The source internal name.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
@@ -121,6 +163,10 @@ public final class LogAnalyticsSourceMetadataField {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
+    /**
+     * The field internal name.
+     * @return the value
+     **/
     public String getFieldName() {
         return fieldName;
     }
@@ -132,6 +178,11 @@ public final class LogAnalyticsSourceMetadataField {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * A flag inidcating whether or not the source metadata field is enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -144,6 +195,12 @@ public final class LogAnalyticsSourceMetadataField {
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
+    /**
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     * @return the value
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -154,6 +211,10 @@ public final class LogAnalyticsSourceMetadataField {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -164,6 +225,10 @@ public final class LogAnalyticsSourceMetadataField {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
+    /**
+     * The source internal name.
+     * @return the value
+     **/
     public String getSourceName() {
         return sourceName;
     }

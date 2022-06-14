@@ -30,9 +30,17 @@ public final class Blocklist {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of this blocklist record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique identifier of this blocklist record.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -47,19 +55,33 @@ public final class Blocklist {
             this.__explicitlySet__.add("target");
             return this;
         }
-
+        /**
+         * The operation type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private OperationType operation;
 
+        /**
+         * The operation type
+         * @param operation the value to set
+         * @return this builder
+         **/
         public Builder operation(OperationType operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-
+        /**
+         * The reason for why the operation is blocklisted
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
+        /**
+         * The reason for why the operation is blocklisted
+         * @param reason the value to set
+         * @return this builder
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -105,6 +127,10 @@ public final class Blocklist {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique identifier of this blocklist record.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -122,6 +148,10 @@ public final class Blocklist {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final OperationType operation;
 
+    /**
+     * The operation type
+     * @return the value
+     **/
     public OperationType getOperation() {
         return operation;
     }
@@ -132,6 +162,10 @@ public final class Blocklist {
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
+    /**
+     * The reason for why the operation is blocklisted
+     * @return the value
+     **/
     public String getReason() {
         return reason;
     }

@@ -19,6 +19,9 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
      */
     private String announcementSubscriptionId;
 
+    /**
+     * The OCID of the announcement subscription.
+     */
     public String getAnnouncementSubscriptionId() {
         return announcementSubscriptionId;
     }
@@ -29,6 +32,9 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
                     .ChangeAnnouncementSubscriptionCompartmentDetails
             changeAnnouncementSubscriptionCompartmentDetails;
 
+    /**
+     * The compartment information to update.
+     */
     public com.oracle.bmc.announcementsservice.model
                     .ChangeAnnouncementSubscriptionCompartmentDetails
             getChangeAnnouncementSubscriptionCompartmentDetails() {
@@ -39,6 +45,9 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +58,11 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -74,10 +88,14 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the announcement subscription.
+         */
         private String announcementSubscriptionId = null;
 
         /**
          * The OCID of the announcement subscription.
+         * @param announcementSubscriptionId the value to set
          * @return this builder instance
          */
         public Builder announcementSubscriptionId(String announcementSubscriptionId) {
@@ -85,12 +103,16 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
             return this;
         }
 
+        /**
+         * The compartment information to update.
+         */
         private com.oracle.bmc.announcementsservice.model
                         .ChangeAnnouncementSubscriptionCompartmentDetails
                 changeAnnouncementSubscriptionCompartmentDetails = null;
 
         /**
          * The compartment information to update.
+         * @param changeAnnouncementSubscriptionCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeAnnouncementSubscriptionCompartmentDetails(
@@ -102,10 +124,14 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
             return this;
         }
 
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -113,12 +139,18 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -218,7 +250,8 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -229,6 +262,10 @@ public class ChangeAnnouncementSubscriptionCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

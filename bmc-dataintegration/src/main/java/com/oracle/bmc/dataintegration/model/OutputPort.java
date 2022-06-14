@@ -87,19 +87,33 @@ public final class OutputPort extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The port details for the data asset.Type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portType")
         private PortType portType;
 
+        /**
+         * The port details for the data asset.Type.
+         * @param portType the value to set
+         * @return this builder
+         **/
         public Builder portType(PortType portType) {
             this.portType = portType;
             this.__explicitlySet__.add("portType");
             return this;
         }
-
+        /**
+         * An array of fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<TypedObject> fields;
 
+        /**
+         * An array of fields.
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<TypedObject> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
@@ -225,6 +239,10 @@ public final class OutputPort extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("portType")
     private final PortType portType;
 
+    /**
+     * The port details for the data asset.Type.
+     * @return the value
+     **/
     public PortType getPortType() {
         return portType;
     }
@@ -235,6 +253,10 @@ public final class OutputPort extends TypedObject {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<TypedObject> fields;
 
+    /**
+     * An array of fields.
+     * @return the value
+     **/
     public java.util.List<TypedObject> getFields() {
         return fields;
     }

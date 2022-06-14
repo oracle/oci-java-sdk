@@ -15,6 +15,12 @@ public class GetProxyDetailsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetProxyDetailsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.servicemesh.model.ProxyDetails proxyDetails;
 
+    /**
+     * The returned ProxyDetails instance.
+     * @return the value
+     */
     public com.oracle.bmc.servicemesh.model.ProxyDetails getProxyDetails() {
         return proxyDetails;
     }
@@ -46,15 +56,35 @@ public class GetProxyDetailsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ProxyDetails instance.
+         */
         private com.oracle.bmc.servicemesh.model.ProxyDetails proxyDetails;
 
+        /**
+         * The returned ProxyDetails instance.
+         * @param proxyDetails the value to set
+         * @return this builder
+         */
         public Builder proxyDetails(com.oracle.bmc.servicemesh.model.ProxyDetails proxyDetails) {
             this.proxyDetails = proxyDetails;
             return this;
@@ -72,11 +102,19 @@ public class GetProxyDetailsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetProxyDetailsResponse build() {
             return new GetProxyDetailsResponse(__httpStatusCode__, opcRequestId, proxyDetails);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

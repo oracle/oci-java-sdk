@@ -33,36 +33,65 @@ public final class JobScheduleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private String startTime;
 
+        /**
+         * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * @param startTime the value to set
+         * @return this builder
+         **/
         public Builder startTime(String startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
-
+        /**
+         * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTime")
         private String endTime;
 
+        /**
+         * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * @param endTime the value to set
+         * @return this builder
+         **/
         public Builder endTime(String endTime) {
             this.endTime = endTime;
             this.__explicitlySet__.add("endTime");
             return this;
         }
-
+        /**
+         * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
         private IntervalType intervalType;
 
+        /**
+         * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
+         * @param intervalType the value to set
+         * @return this builder
+         **/
         public Builder intervalType(IntervalType intervalType) {
             this.intervalType = intervalType;
             this.__explicitlySet__.add("intervalType");
             return this;
         }
-
+        /**
+         * The value for the interval period for a recurring scheduled job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
         private String intervalValue;
 
+        /**
+         * The value for the interval period for a recurring scheduled job.
+         * @param intervalValue the value to set
+         * @return this builder
+         **/
         public Builder intervalValue(String intervalValue) {
             this.intervalValue = intervalValue;
             this.__explicitlySet__.add("intervalValue");
@@ -109,6 +138,10 @@ public final class JobScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final String startTime;
 
+    /**
+     * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * @return the value
+     **/
     public String getStartTime() {
         return startTime;
     }
@@ -119,6 +152,10 @@ public final class JobScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
     private final String endTime;
 
+    /**
+     * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * @return the value
+     **/
     public String getEndTime() {
         return endTime;
     }
@@ -180,6 +217,10 @@ public final class JobScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
     private final IntervalType intervalType;
 
+    /**
+     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
+     * @return the value
+     **/
     public IntervalType getIntervalType() {
         return intervalType;
     }
@@ -190,6 +231,10 @@ public final class JobScheduleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
     private final String intervalValue;
 
+    /**
+     * The value for the interval period for a recurring scheduled job.
+     * @return the value
+     **/
     public String getIntervalValue() {
         return intervalValue;
     }

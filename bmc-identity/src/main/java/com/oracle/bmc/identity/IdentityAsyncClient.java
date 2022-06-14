@@ -484,6 +484,108 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagDefaultLockResponse> addTagDefaultLock(
+            AddTagDefaultLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddTagDefaultLockRequest, AddTagDefaultLockResponse>
+                    handler) {
+        LOG.trace("Called async addTagDefaultLock");
+        final AddTagDefaultLockRequest interceptedRequest =
+                AddTagDefaultLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddTagDefaultLockConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddTagDefaultLockResponse>
+                transformer = AddTagDefaultLockConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Identity",
+                "AddTagDefaultLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AddTagDefaultLock");
+
+        com.oracle.bmc.responses.AsyncHandler<AddTagDefaultLockRequest, AddTagDefaultLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddTagDefaultLockRequest, AddTagDefaultLockResponse>,
+                        java.util.concurrent.Future<AddTagDefaultLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddTagDefaultLockRequest, AddTagDefaultLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagNamespaceLockResponse> addTagNamespaceLock(
+            AddTagNamespaceLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddTagNamespaceLockRequest, AddTagNamespaceLockResponse>
+                    handler) {
+        LOG.trace("Called async addTagNamespaceLock");
+        final AddTagNamespaceLockRequest interceptedRequest =
+                AddTagNamespaceLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddTagNamespaceLockConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddTagNamespaceLockResponse>
+                transformer = AddTagNamespaceLockConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Identity",
+                "AddTagNamespaceLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/AddTagNamespaceLock");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddTagNamespaceLockRequest, AddTagNamespaceLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddTagNamespaceLockRequest, AddTagNamespaceLockResponse>,
+                        java.util.concurrent.Future<AddTagNamespaceLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddTagNamespaceLockRequest, AddTagNamespaceLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddUserToGroupResponse> addUserToGroup(
             AddUserToGroupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5813,6 +5915,110 @@ public class IdentityAsyncClient implements IdentityAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RecoverCompartmentRequest, RecoverCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagDefaultLockResponse> removeTagDefaultLock(
+            RemoveTagDefaultLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveTagDefaultLockRequest, RemoveTagDefaultLockResponse>
+                    handler) {
+        LOG.trace("Called async removeTagDefaultLock");
+        final RemoveTagDefaultLockRequest interceptedRequest =
+                RemoveTagDefaultLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveTagDefaultLockConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveTagDefaultLockResponse>
+                transformer = RemoveTagDefaultLockConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Identity",
+                "RemoveTagDefaultLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/RemoveTagDefaultLock");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveTagDefaultLockRequest, RemoveTagDefaultLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveTagDefaultLockRequest, RemoveTagDefaultLockResponse>,
+                        java.util.concurrent.Future<RemoveTagDefaultLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveTagDefaultLockRequest, RemoveTagDefaultLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagNamespaceLockResponse> removeTagNamespaceLock(
+            RemoveTagNamespaceLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveTagNamespaceLockRequest, RemoveTagNamespaceLockResponse>
+                    handler) {
+        LOG.trace("Called async removeTagNamespaceLock");
+        final RemoveTagNamespaceLockRequest interceptedRequest =
+                RemoveTagNamespaceLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveTagNamespaceLockConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveTagNamespaceLockResponse>
+                transformer = RemoveTagNamespaceLockConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Identity",
+                "RemoveTagNamespaceLock",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/RemoveTagNamespaceLock");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveTagNamespaceLockRequest, RemoveTagNamespaceLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveTagNamespaceLockRequest, RemoveTagNamespaceLockResponse>,
+                        java.util.concurrent.Future<RemoveTagNamespaceLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveTagNamespaceLockRequest, RemoveTagNamespaceLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

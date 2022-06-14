@@ -29,9 +29,17 @@ public final class LogAnalyticsLookupCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * list of fields
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsLookup> items;
 
+        /**
+         * list of fields
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsLookup> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class LogAnalyticsLookupCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsLookup> items;
 
+    /**
+     * list of fields
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsLookup> getItems() {
         return items;
     }

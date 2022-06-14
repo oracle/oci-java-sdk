@@ -18,6 +18,9 @@ public class CreateBackendRequest
      */
     private com.oracle.bmc.loadbalancer.model.CreateBackendDetails createBackendDetails;
 
+    /**
+     * The details to add a backend server to a backend set.
+     */
     public com.oracle.bmc.loadbalancer.model.CreateBackendDetails getCreateBackendDetails() {
         return createBackendDetails;
     }
@@ -26,6 +29,9 @@ public class CreateBackendRequest
      */
     private String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
+     */
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -37,6 +43,12 @@ public class CreateBackendRequest
      */
     private String backendSetName;
 
+    /**
+     * The name of the backend set to add the backend server to.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -47,6 +59,11 @@ public class CreateBackendRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,6 +77,14 @@ public class CreateBackendRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -81,10 +106,14 @@ public class CreateBackendRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details to add a backend server to a backend set.
+         */
         private com.oracle.bmc.loadbalancer.model.CreateBackendDetails createBackendDetails = null;
 
         /**
          * The details to add a backend server to a backend set.
+         * @param createBackendDetails the value to set
          * @return this builder instance
          */
         public Builder createBackendDetails(
@@ -93,10 +122,14 @@ public class CreateBackendRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
+         */
         private String loadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
+         * @param loadBalancerId the value to set
          * @return this builder instance
          */
         public Builder loadBalancerId(String loadBalancerId) {
@@ -104,6 +137,12 @@ public class CreateBackendRequest
             return this;
         }
 
+        /**
+         * The name of the backend set to add the backend server to.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         */
         private String backendSetName = null;
 
         /**
@@ -111,6 +150,7 @@ public class CreateBackendRequest
          * <p>
          * Example: {@code example_backend_set}
          *
+         * @param backendSetName the value to set
          * @return this builder instance
          */
         public Builder backendSetName(String backendSetName) {
@@ -118,12 +158,18 @@ public class CreateBackendRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -131,6 +177,14 @@ public class CreateBackendRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -140,6 +194,7 @@ public class CreateBackendRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -234,7 +289,8 @@ public class CreateBackendRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -245,6 +301,10 @@ public class CreateBackendRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -17,6 +17,9 @@ public class ListIdpGroupMappingsRequest
      */
     private String identityProviderId;
 
+    /**
+     * The OCID of the identity provider.
+     */
     public String getIdentityProviderId() {
         return identityProviderId;
     }
@@ -26,6 +29,10 @@ public class ListIdpGroupMappingsRequest
      */
     private String page;
 
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -35,6 +42,10 @@ public class ListIdpGroupMappingsRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -46,10 +57,14 @@ public class ListIdpGroupMappingsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the identity provider.
+         */
         private String identityProviderId = null;
 
         /**
          * The OCID of the identity provider.
+         * @param identityProviderId the value to set
          * @return this builder instance
          */
         public Builder identityProviderId(String identityProviderId) {
@@ -57,11 +72,16 @@ public class ListIdpGroupMappingsRequest
             return this;
         }
 
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -69,11 +89,16 @@ public class ListIdpGroupMappingsRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
          *
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -153,12 +178,17 @@ public class ListIdpGroupMappingsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().identityProviderId(identityProviderId).page(page).limit(limit);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

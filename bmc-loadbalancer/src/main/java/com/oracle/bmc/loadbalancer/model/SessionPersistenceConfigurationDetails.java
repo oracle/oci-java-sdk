@@ -50,18 +50,49 @@ public final class SessionPersistenceConfigurationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
+         * that any cookie set by the backend causes the session to persist.
+         * <p>
+         * Example: {@code example_cookie}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
         private String cookieName;
 
+        /**
+         * The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
+         * that any cookie set by the backend causes the session to persist.
+         * <p>
+         * Example: {@code example_cookie}
+         *
+         * @param cookieName the value to set
+         * @return this builder
+         **/
         public Builder cookieName(String cookieName) {
             this.cookieName = cookieName;
             this.__explicitlySet__.add("cookieName");
             return this;
         }
-
+        /**
+         * Whether the load balancer is prevented from directing traffic from a persistent session client to
+         * a different backend server if the original server is unavailable. Defaults to false.
+         * <p>
+         * Example: {@code false}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
         private Boolean disableFallback;
 
+        /**
+         * Whether the load balancer is prevented from directing traffic from a persistent session client to
+         * a different backend server if the original server is unavailable. Defaults to false.
+         * <p>
+         * Example: {@code false}
+         *
+         * @param disableFallback the value to set
+         * @return this builder
+         **/
         public Builder disableFallback(Boolean disableFallback) {
             this.disableFallback = disableFallback;
             this.__explicitlySet__.add("disableFallback");
@@ -109,6 +140,14 @@ public final class SessionPersistenceConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
     private final String cookieName;
 
+    /**
+     * The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
+     * that any cookie set by the backend causes the session to persist.
+     * <p>
+     * Example: {@code example_cookie}
+     *
+     * @return the value
+     **/
     public String getCookieName() {
         return cookieName;
     }
@@ -123,6 +162,14 @@ public final class SessionPersistenceConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
     private final Boolean disableFallback;
 
+    /**
+     * Whether the load balancer is prevented from directing traffic from a persistent session client to
+     * a different backend server if the original server is unavailable. Defaults to false.
+     * <p>
+     * Example: {@code false}
+     *
+     * @return the value
+     **/
     public Boolean getDisableFallback() {
         return disableFallback;
     }

@@ -29,9 +29,17 @@ public final class GenerateUserAssessmentReportDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Format of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private Format format;
 
+        /**
+         * Format of the report.
+         * @param format the value to set
+         * @return this builder
+         **/
         public Builder format(Format format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -109,6 +117,10 @@ public final class GenerateUserAssessmentReportDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final Format format;
 
+    /**
+     * Format of the report.
+     * @return the value
+     **/
     public Format getFormat() {
         return format;
     }

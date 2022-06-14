@@ -32,18 +32,47 @@ public final class InstanceAvailabilityConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to live migrate supported VM instances to a healthy physical VM host without
+         * disrupting running instances during infrastructure maintenance events. If null, Oracle
+         * chooses the best option for migrating the VM during infrastructure maintenance events.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
         private Boolean isLiveMigrationPreferred;
 
+        /**
+         * Whether to live migrate supported VM instances to a healthy physical VM host without
+         * disrupting running instances during infrastructure maintenance events. If null, Oracle
+         * chooses the best option for migrating the VM during infrastructure maintenance events.
+         *
+         * @param isLiveMigrationPreferred the value to set
+         * @return this builder
+         **/
         public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
             this.isLiveMigrationPreferred = isLiveMigrationPreferred;
             this.__explicitlySet__.add("isLiveMigrationPreferred");
             return this;
         }
-
+        /**
+         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
+         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
         private RecoveryAction recoveryAction;
 
+        /**
+         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
+         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+         *
+         * @param recoveryAction the value to set
+         * @return this builder
+         **/
         public Builder recoveryAction(RecoveryAction recoveryAction) {
             this.recoveryAction = recoveryAction;
             this.__explicitlySet__.add("recoveryAction");
@@ -91,6 +120,13 @@ public final class InstanceAvailabilityConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
     private final Boolean isLiveMigrationPreferred;
 
+    /**
+     * Whether to live migrate supported VM instances to a healthy physical VM host without
+     * disrupting running instances during infrastructure maintenance events. If null, Oracle
+     * chooses the best option for migrating the VM during infrastructure maintenance events.
+     *
+     * @return the value
+     **/
     public Boolean getIsLiveMigrationPreferred() {
         return isLiveMigrationPreferred;
     }
@@ -157,6 +193,14 @@ public final class InstanceAvailabilityConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
     private final RecoveryAction recoveryAction;
 
+    /**
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
+     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+     *
+     * @return the value
+     **/
     public RecoveryAction getRecoveryAction() {
         return recoveryAction;
     }

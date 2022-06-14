@@ -72,28 +72,55 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topCount")
         private Integer topCount;
 
+        /**
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
+         *
+         * @param topCount the value to set
+         * @return this builder
+         **/
         public Builder topCount(Integer topCount) {
             this.topCount = topCount;
             this.__explicitlySet__.add("topCount");
             return this;
         }
-
+        /**
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bottomCount")
         private Integer bottomCount;
 
+        /**
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
+         *
+         * @param bottomCount the value to set
+         * @return this builder
+         **/
         public Builder bottomCount(Integer bottomCount) {
             this.bottomCount = bottomCount;
             this.__explicitlySet__.add("bottomCount");
             return this;
         }
-
+        /**
+         * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("correlate")
         private java.util.List<FieldsAddRemoveField> correlate;
 
+        /**
+         * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
+         *
+         * @param correlate the value to set
+         * @return this builder
+         **/
         public Builder correlate(java.util.List<FieldsAddRemoveField> correlate) {
             this.correlate = correlate;
             this.__explicitlySet__.add("correlate");
@@ -169,6 +196,11 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("topCount")
     private final Integer topCount;
 
+    /**
+     * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
+     *
+     * @return the value
+     **/
     public Integer getTopCount() {
         return topCount;
     }
@@ -180,6 +212,11 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("bottomCount")
     private final Integer bottomCount;
 
+    /**
+     * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
+     *
+     * @return the value
+     **/
     public Integer getBottomCount() {
         return bottomCount;
     }
@@ -191,6 +228,11 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("correlate")
     private final java.util.List<FieldsAddRemoveField> correlate;
 
+    /**
+     * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
+     *
+     * @return the value
+     **/
     public java.util.List<FieldsAddRemoveField> getCorrelate() {
         return correlate;
     }

@@ -42,36 +42,73 @@ public final class AvailableAuditVolumeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the audit profile resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
         private String auditProfileId;
 
+        /**
+         * The OCID of the audit profile resource.
+         * @param auditProfileId the value to set
+         * @return this builder
+         **/
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = auditProfileId;
             this.__explicitlySet__.add("auditProfileId");
             return this;
         }
-
+        /**
+         * Audit trail location on the target database from where the audit data is being collected by Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
         private String trailLocation;
 
+        /**
+         * Audit trail location on the target database from where the audit data is being collected by Data Safe.
+         * @param trailLocation the value to set
+         * @return this builder
+         **/
         public Builder trailLocation(String trailLocation) {
             this.trailLocation = trailLocation;
             this.__explicitlySet__.add("trailLocation");
             return this;
         }
-
+        /**
+         * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+         * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+         * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
         private java.util.Date monthInConsideration;
 
+        /**
+         * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+         * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+         * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+         *
+         * @param monthInConsideration the value to set
+         * @return this builder
+         **/
         public Builder monthInConsideration(java.util.Date monthInConsideration) {
             this.monthInConsideration = monthInConsideration;
             this.__explicitlySet__.add("monthInConsideration");
             return this;
         }
-
+        /**
+         * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volume")
         private Long volume;
 
+        /**
+         * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
+         *
+         * @param volume the value to set
+         * @return this builder
+         **/
         public Builder volume(Long volume) {
             this.volume = volume;
             this.__explicitlySet__.add("volume");
@@ -119,6 +156,10 @@ public final class AvailableAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
     private final String auditProfileId;
 
+    /**
+     * The OCID of the audit profile resource.
+     * @return the value
+     **/
     public String getAuditProfileId() {
         return auditProfileId;
     }
@@ -129,6 +170,10 @@ public final class AvailableAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
     private final String trailLocation;
 
+    /**
+     * Audit trail location on the target database from where the audit data is being collected by Data Safe.
+     * @return the value
+     **/
     public String getTrailLocation() {
         return trailLocation;
     }
@@ -142,6 +187,13 @@ public final class AvailableAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
     private final java.util.Date monthInConsideration;
 
+    /**
+     * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+     * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+     * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+     *
+     * @return the value
+     **/
     public java.util.Date getMonthInConsideration() {
         return monthInConsideration;
     }
@@ -153,6 +205,11 @@ public final class AvailableAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("volume")
     private final Long volume;
 
+    /**
+     * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
+     *
+     * @return the value
+     **/
     public Long getVolume() {
         return volume;
     }

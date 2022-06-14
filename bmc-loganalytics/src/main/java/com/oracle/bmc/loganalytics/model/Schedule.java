@@ -93,6 +93,10 @@ public class Schedule {
     @com.fasterxml.jackson.annotation.JsonProperty("misfirePolicy")
     private final MisfirePolicy misfirePolicy;
 
+    /**
+     * Schedule misfire retry policy.
+     * @return the value
+     **/
     public MisfirePolicy getMisfirePolicy() {
         return misfirePolicy;
     }
@@ -105,6 +109,12 @@ public class Schedule {
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfFirstExecution")
     private final java.util.Date timeOfFirstExecution;
 
+    /**
+     * The date and time the scheduled task should execute first time after create or update;
+     * thereafter the task will execute as specified in the schedule.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeOfFirstExecution() {
         return timeOfFirstExecution;
     }

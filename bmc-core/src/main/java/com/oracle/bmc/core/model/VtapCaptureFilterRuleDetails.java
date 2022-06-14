@@ -54,45 +54,99 @@ public final class VtapCaptureFilterRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The traffic direction the VTAP is configured to mirror.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficDirection")
         private TrafficDirection trafficDirection;
 
+        /**
+         * The traffic direction the VTAP is configured to mirror.
+         *
+         * @param trafficDirection the value to set
+         * @return this builder
+         **/
         public Builder trafficDirection(TrafficDirection trafficDirection) {
             this.trafficDirection = trafficDirection;
             this.__explicitlySet__.add("trafficDirection");
             return this;
         }
-
+        /**
+         * Include or exclude packets meeting this definition from mirrored traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
         private RuleAction ruleAction;
 
+        /**
+         * Include or exclude packets meeting this definition from mirrored traffic.
+         *
+         * @param ruleAction the value to set
+         * @return this builder
+         **/
         public Builder ruleAction(RuleAction ruleAction) {
             this.ruleAction = ruleAction;
             this.__explicitlySet__.add("ruleAction");
             return this;
         }
-
+        /**
+         * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
         private String sourceCidr;
 
+        /**
+         * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         *
+         * @param sourceCidr the value to set
+         * @return this builder
+         **/
         public Builder sourceCidr(String sourceCidr) {
             this.sourceCidr = sourceCidr;
             this.__explicitlySet__.add("sourceCidr");
             return this;
         }
-
+        /**
+         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
         private String destinationCidr;
 
+        /**
+         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         *
+         * @param destinationCidr the value to set
+         * @return this builder
+         **/
         public Builder destinationCidr(String destinationCidr) {
             this.destinationCidr = destinationCidr;
             this.__explicitlySet__.add("destinationCidr");
             return this;
         }
-
+        /**
+         * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+         * Supported options are:
+         *   * 1 = ICMP
+         *   * 6 = TCP
+         *   * 17 = UDP
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        /**
+         * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+         * Supported options are:
+         *   * 1 = ICMP
+         *   * 6 = TCP
+         *   * 17 = UDP
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -228,6 +282,11 @@ public final class VtapCaptureFilterRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("trafficDirection")
     private final TrafficDirection trafficDirection;
 
+    /**
+     * The traffic direction the VTAP is configured to mirror.
+     *
+     * @return the value
+     **/
     public TrafficDirection getTrafficDirection() {
         return trafficDirection;
     }
@@ -288,6 +347,11 @@ public final class VtapCaptureFilterRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
     private final RuleAction ruleAction;
 
+    /**
+     * Include or exclude packets meeting this definition from mirrored traffic.
+     *
+     * @return the value
+     **/
     public RuleAction getRuleAction() {
         return ruleAction;
     }
@@ -299,6 +363,11 @@ public final class VtapCaptureFilterRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
     private final String sourceCidr;
 
+    /**
+     * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+     *
+     * @return the value
+     **/
     public String getSourceCidr() {
         return sourceCidr;
     }
@@ -310,6 +379,11 @@ public final class VtapCaptureFilterRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
     private final String destinationCidr;
 
+    /**
+     * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+     *
+     * @return the value
+     **/
     public String getDestinationCidr() {
         return destinationCidr;
     }
@@ -325,6 +399,15 @@ public final class VtapCaptureFilterRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
+    /**
+     * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+     * Supported options are:
+     *   * 1 = ICMP
+     *   * 6 = TCP
+     *   * 17 = UDP
+     *
+     * @return the value
+     **/
     public String getProtocol() {
         return protocol;
     }

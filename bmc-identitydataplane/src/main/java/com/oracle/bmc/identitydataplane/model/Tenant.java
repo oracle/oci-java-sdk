@@ -29,27 +29,49 @@ public final class Tenant {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tenant's Oracle ID (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The tenant's Oracle ID (OCID).
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the tenancy.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The service namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
         private String serviceNamespace;
 
+        /**
+         * The service namespace.
+         * @param serviceNamespace the value to set
+         * @return this builder
+         **/
         public Builder serviceNamespace(String serviceNamespace) {
             this.serviceNamespace = serviceNamespace;
             this.__explicitlySet__.add("serviceNamespace");
@@ -92,6 +114,10 @@ public final class Tenant {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The tenant's Oracle ID (OCID).
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -102,6 +128,10 @@ public final class Tenant {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the tenancy.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -112,6 +142,10 @@ public final class Tenant {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
     private final String serviceNamespace;
 
+    /**
+     * The service namespace.
+     * @return the value
+     **/
     public String getServiceNamespace() {
         return serviceNamespace;
     }

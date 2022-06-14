@@ -16,6 +16,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String compartmentId;
 
+    /**
+     * List the Digital Assistant instances that belong to this compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,6 +38,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String odaInstanceId;
 
+    /**
+     * List only the information for this Digital Assistant instance.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
@@ -46,6 +55,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String page;
 
+    /**
+     * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -54,6 +72,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -107,6 +128,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * The field to sort by. You can specify only one sort order. If no value is specified, then the default is {@code TIME_ACCEPTED}.
+     * <p>
+     * The default sort order for the time fields is descending. The default order for {@code DISPLAYNAME} and {@code STATUS} is ascending.default: TIME_ACCEPTED
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -151,6 +178,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
+    /**
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -162,10 +192,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * List the Digital Assistant instances that belong to this compartment.
+         */
         private String compartmentId = null;
 
         /**
          * List the Digital Assistant instances that belong to this compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -173,10 +207,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -184,10 +222,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * List only the information for this Digital Assistant instance.
+         */
         private String odaInstanceId = null;
 
         /**
          * List only the information for this Digital Assistant instance.
+         * @param odaInstanceId the value to set
          * @return this builder instance
          */
         public Builder odaInstanceId(String odaInstanceId) {
@@ -195,6 +237,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The page at which to start retrieving results.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
+         *
+         */
         private String page = null;
 
         /**
@@ -205,6 +256,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * Example: {@code MToxMA==}
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -212,10 +264,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -223,6 +279,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * The field to sort by. You can specify only one sort order. If no value is specified, then the default is {@code TIME_ACCEPTED}.
+         * <p>
+         * The default sort order for the time fields is descending. The default order for {@code DISPLAYNAME} and {@code STATUS} is ascending.default: TIME_ACCEPTED
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -230,6 +292,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          * <p>
          * The default sort order for the time fields is descending. The default order for {@code DISPLAYNAME} and {@code STATUS} is ascending.default: TIME_ACCEPTED
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -237,10 +300,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /**
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -328,7 +395,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -341,6 +409,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,18 +28,33 @@ public final class HostInstanceMap {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The hostname of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
+        /**
+         * The hostname of the database insight resource.
+         * @param hostName the value to set
+         * @return this builder
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-
+        /**
+         * The instance name of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
+        /**
+         * The instance name of the database insight resource.
+         * @param instanceName the value to set
+         * @return this builder
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
@@ -81,6 +96,10 @@ public final class HostInstanceMap {
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
+    /**
+     * The hostname of the database insight resource.
+     * @return the value
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -91,6 +110,10 @@ public final class HostInstanceMap {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
+    /**
+     * The instance name of the database insight resource.
+     * @return the value
+     **/
     public String getInstanceName() {
         return instanceName;
     }

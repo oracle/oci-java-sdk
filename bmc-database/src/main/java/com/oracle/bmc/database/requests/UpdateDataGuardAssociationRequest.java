@@ -18,6 +18,9 @@ public class UpdateDataGuardAssociationRequest
      */
     private String databaseId;
 
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -26,6 +29,9 @@ public class UpdateDataGuardAssociationRequest
      */
     private String dataGuardAssociationId;
 
+    /**
+     * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getDataGuardAssociationId() {
         return dataGuardAssociationId;
     }
@@ -35,6 +41,9 @@ public class UpdateDataGuardAssociationRequest
     private com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails
             updateDataGuardAssociationDetails;
 
+    /**
+     * A request to update Data Guard association of a database.
+     */
     public com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails
             getUpdateDataGuardAssociationDetails() {
         return updateDataGuardAssociationDetails;
@@ -47,6 +56,12 @@ public class UpdateDataGuardAssociationRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -56,6 +71,10 @@ public class UpdateDataGuardAssociationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -78,10 +97,14 @@ public class UpdateDataGuardAssociationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String databaseId = null;
 
         /**
          * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -89,10 +112,14 @@ public class UpdateDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String dataGuardAssociationId = null;
 
         /**
          * The Data Guard association's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param dataGuardAssociationId the value to set
          * @return this builder instance
          */
         public Builder dataGuardAssociationId(String dataGuardAssociationId) {
@@ -100,11 +127,15 @@ public class UpdateDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * A request to update Data Guard association of a database.
+         */
         private com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails
                 updateDataGuardAssociationDetails = null;
 
         /**
          * A request to update Data Guard association of a database.
+         * @param updateDataGuardAssociationDetails the value to set
          * @return this builder instance
          */
         public Builder updateDataGuardAssociationDetails(
@@ -114,6 +145,12 @@ public class UpdateDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -121,6 +158,7 @@ public class UpdateDataGuardAssociationRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -128,11 +166,16 @@ public class UpdateDataGuardAssociationRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -227,7 +270,8 @@ public class UpdateDataGuardAssociationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -238,6 +282,10 @@ public class UpdateDataGuardAssociationRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

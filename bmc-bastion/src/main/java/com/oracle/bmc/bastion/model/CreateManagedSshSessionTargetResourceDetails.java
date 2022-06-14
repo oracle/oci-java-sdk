@@ -36,29 +36,50 @@ public final class CreateManagedSshSessionTargetResourceDetails
             this.__explicitlySet__.add("targetResourcePort");
             return this;
         }
-
+        /**
+         * The name of the user on the target resource operating system that the session uses for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceOperatingSystemUserName")
         private String targetResourceOperatingSystemUserName;
 
+        /**
+         * The name of the user on the target resource operating system that the session uses for the connection.
+         * @param targetResourceOperatingSystemUserName the value to set
+         * @return this builder
+         **/
         public Builder targetResourceOperatingSystemUserName(
                 String targetResourceOperatingSystemUserName) {
             this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             this.__explicitlySet__.add("targetResourceOperatingSystemUserName");
             return this;
         }
-
+        /**
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
+        /**
+         * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+         * @param targetResourceId the value to set
+         * @return this builder
+         **/
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-
+        /**
+         * The private IP address of the target resource that the session connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
         private String targetResourcePrivateIpAddress;
 
+        /**
+         * The private IP address of the target resource that the session connects to.
+         * @param targetResourcePrivateIpAddress the value to set
+         * @return this builder
+         **/
         public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
             this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             this.__explicitlySet__.add("targetResourcePrivateIpAddress");
@@ -122,6 +143,10 @@ public final class CreateManagedSshSessionTargetResourceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceOperatingSystemUserName")
     private final String targetResourceOperatingSystemUserName;
 
+    /**
+     * The name of the user on the target resource operating system that the session uses for the connection.
+     * @return the value
+     **/
     public String getTargetResourceOperatingSystemUserName() {
         return targetResourceOperatingSystemUserName;
     }
@@ -132,6 +157,10 @@ public final class CreateManagedSshSessionTargetResourceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
+    /**
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+     * @return the value
+     **/
     public String getTargetResourceId() {
         return targetResourceId;
     }
@@ -142,6 +171,10 @@ public final class CreateManagedSshSessionTargetResourceDetails
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePrivateIpAddress")
     private final String targetResourcePrivateIpAddress;
 
+    /**
+     * The private IP address of the target resource that the session connects to.
+     * @return the value
+     **/
     public String getTargetResourcePrivateIpAddress() {
         return targetResourcePrivateIpAddress;
     }

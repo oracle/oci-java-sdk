@@ -15,6 +15,12 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String etag;
 
+    /**
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -33,6 +43,10 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
+    /**
+     * The returned ImportedPackage instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.ImportedPackage getImportedPackage() {
         return importedPackage;
     }
@@ -62,22 +76,50 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         */
         private String etag;
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned ImportedPackage instance.
+         */
         private com.oracle.bmc.oda.model.ImportedPackage importedPackage;
 
+        /**
+         * The returned ImportedPackage instance.
+         * @param importedPackage the value to set
+         * @return this builder
+         */
         public Builder importedPackage(com.oracle.bmc.oda.model.ImportedPackage importedPackage) {
             this.importedPackage = importedPackage;
             return this;
@@ -96,12 +138,20 @@ public class GetImportedPackageResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetImportedPackageResponse build() {
             return new GetImportedPackageResponse(
                     __httpStatusCode__, opcRequestId, etag, importedPackage);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

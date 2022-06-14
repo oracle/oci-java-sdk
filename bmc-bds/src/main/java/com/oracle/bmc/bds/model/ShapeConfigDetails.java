@@ -30,18 +30,33 @@ public final class ShapeConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The total number of OCPUs available to the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Integer ocpus;
 
+        /**
+         * The total number of OCPUs available to the node.
+         * @param ocpus the value to set
+         * @return this builder
+         **/
         public Builder ocpus(Integer ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         * @param memoryInGBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -83,6 +98,10 @@ public final class ShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Integer ocpus;
 
+    /**
+     * The total number of OCPUs available to the node.
+     * @return the value
+     **/
     public Integer getOcpus() {
         return ocpus;
     }
@@ -93,6 +112,10 @@ public final class ShapeConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
+    /**
+     * The total amount of memory available to the node, in gigabytes
+     * @return the value
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }

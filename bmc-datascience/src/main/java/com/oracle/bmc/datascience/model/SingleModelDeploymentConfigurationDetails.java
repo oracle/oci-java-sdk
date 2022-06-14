@@ -28,6 +28,7 @@ public final class SingleModelDeploymentConfigurationDetails
         extends ModelDeploymentConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("modelConfigurationDetails")
         private ModelConfigurationDetails modelConfigurationDetails;
 

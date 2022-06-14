@@ -17,6 +17,9 @@ public class GetConnectionValidationRequest
      */
     private String registryId;
 
+    /**
+     * The registry Ocid.
+     */
     public String getRegistryId() {
         return registryId;
     }
@@ -25,6 +28,9 @@ public class GetConnectionValidationRequest
      */
     private String connectionValidationKey;
 
+    /**
+     * The key of the connection validation.
+     */
     public String getConnectionValidationKey() {
         return connectionValidationKey;
     }
@@ -36,6 +42,12 @@ public class GetConnectionValidationRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,6 +56,9 @@ public class GetConnectionValidationRequest
      */
     private String endpointId;
 
+    /**
+     * Endpoint Id used for getDataAssetFullDetails.
+     */
     public String getEndpointId() {
         return endpointId;
     }
@@ -55,10 +70,14 @@ public class GetConnectionValidationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The registry Ocid.
+         */
         private String registryId = null;
 
         /**
          * The registry Ocid.
+         * @param registryId the value to set
          * @return this builder instance
          */
         public Builder registryId(String registryId) {
@@ -66,10 +85,14 @@ public class GetConnectionValidationRequest
             return this;
         }
 
+        /**
+         * The key of the connection validation.
+         */
         private String connectionValidationKey = null;
 
         /**
          * The key of the connection validation.
+         * @param connectionValidationKey the value to set
          * @return this builder instance
          */
         public Builder connectionValidationKey(String connectionValidationKey) {
@@ -77,6 +100,12 @@ public class GetConnectionValidationRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -84,6 +113,7 @@ public class GetConnectionValidationRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -91,10 +121,14 @@ public class GetConnectionValidationRequest
             return this;
         }
 
+        /**
+         * Endpoint Id used for getDataAssetFullDetails.
+         */
         private String endpointId = null;
 
         /**
          * Endpoint Id used for getDataAssetFullDetails.
+         * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
@@ -176,7 +210,8 @@ public class GetConnectionValidationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -186,6 +221,10 @@ public class GetConnectionValidationRequest
                 .endpointId(endpointId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -55,46 +55,107 @@ public final class AmdRomeBmGpuLaunchInstancePlatformConfig extends LaunchInstan
             this.__explicitlySet__.add("isMeasuredBootEnabled");
             return this;
         }
-
+        /**
+         * The number of NUMA nodes per socket (NPS).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
         private NumaNodesPerSocket numaNodesPerSocket;
 
+        /**
+         * The number of NUMA nodes per socket (NPS).
+         *
+         * @param numaNodesPerSocket the value to set
+         * @return this builder
+         **/
         public Builder numaNodesPerSocket(NumaNodesPerSocket numaNodesPerSocket) {
             this.numaNodesPerSocket = numaNodesPerSocket;
             this.__explicitlySet__.add("numaNodesPerSocket");
             return this;
         }
-
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+         * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * <p>
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+         * independent threads of execution, to better use the resources and increase the efficiency
+         * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+         * can provide higher or more predictable performance for some workloads.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
         private Boolean isSymmetricMultiThreadingEnabled;
 
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+         * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * <p>
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+         * independent threads of execution, to better use the resources and increase the efficiency
+         * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+         * can provide higher or more predictable performance for some workloads.
+         *
+         * @param isSymmetricMultiThreadingEnabled the value to set
+         * @return this builder
+         **/
         public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
             this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             this.__explicitlySet__.add("isSymmetricMultiThreadingEnabled");
             return this;
         }
-
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled,
+         * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlServiceEnabled")
         private Boolean isAccessControlServiceEnabled;
 
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled,
+         * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+         *
+         * @param isAccessControlServiceEnabled the value to set
+         * @return this builder
+         **/
         public Builder isAccessControlServiceEnabled(Boolean isAccessControlServiceEnabled) {
             this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             this.__explicitlySet__.add("isAccessControlServiceEnabled");
             return this;
         }
-
+        /**
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
+         * or VT-x for Intel shapes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areVirtualInstructionsEnabled")
         private Boolean areVirtualInstructionsEnabled;
 
+        /**
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
+         * or VT-x for Intel shapes.
+         *
+         * @param areVirtualInstructionsEnabled the value to set
+         * @return this builder
+         **/
         public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
             this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
             this.__explicitlySet__.add("areVirtualInstructionsEnabled");
             return this;
         }
-
+        /**
+         * Whether the input-output memory management unit is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
         private Boolean isInputOutputMemoryManagementUnitEnabled;
 
+        /**
+         * Whether the input-output memory management unit is enabled.
+         *
+         * @param isInputOutputMemoryManagementUnitEnabled the value to set
+         * @return this builder
+         **/
         public Builder isInputOutputMemoryManagementUnitEnabled(
                 Boolean isInputOutputMemoryManagementUnitEnabled) {
             this.isInputOutputMemoryManagementUnitEnabled =
@@ -214,6 +275,11 @@ public final class AmdRomeBmGpuLaunchInstancePlatformConfig extends LaunchInstan
     @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
     private final NumaNodesPerSocket numaNodesPerSocket;
 
+    /**
+     * The number of NUMA nodes per socket (NPS).
+     *
+     * @return the value
+     **/
     public NumaNodesPerSocket getNumaNodesPerSocket() {
         return numaNodesPerSocket;
     }
@@ -231,6 +297,17 @@ public final class AmdRomeBmGpuLaunchInstancePlatformConfig extends LaunchInstan
     @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
     private final Boolean isSymmetricMultiThreadingEnabled;
 
+    /**
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+     * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+     * <p>
+     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+     * independent threads of execution, to better use the resources and increase the efficiency
+     * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+     * can provide higher or more predictable performance for some workloads.
+     *
+     * @return the value
+     **/
     public Boolean getIsSymmetricMultiThreadingEnabled() {
         return isSymmetricMultiThreadingEnabled;
     }
@@ -243,6 +320,12 @@ public final class AmdRomeBmGpuLaunchInstancePlatformConfig extends LaunchInstan
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlServiceEnabled")
     private final Boolean isAccessControlServiceEnabled;
 
+    /**
+     * Whether the Access Control Service is enabled on the instance. When enabled,
+     * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+     *
+     * @return the value
+     **/
     public Boolean getIsAccessControlServiceEnabled() {
         return isAccessControlServiceEnabled;
     }
@@ -255,6 +338,12 @@ public final class AmdRomeBmGpuLaunchInstancePlatformConfig extends LaunchInstan
     @com.fasterxml.jackson.annotation.JsonProperty("areVirtualInstructionsEnabled")
     private final Boolean areVirtualInstructionsEnabled;
 
+    /**
+     * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
+     * or VT-x for Intel shapes.
+     *
+     * @return the value
+     **/
     public Boolean getAreVirtualInstructionsEnabled() {
         return areVirtualInstructionsEnabled;
     }
@@ -266,6 +355,11 @@ public final class AmdRomeBmGpuLaunchInstancePlatformConfig extends LaunchInstan
     @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
     private final Boolean isInputOutputMemoryManagementUnitEnabled;
 
+    /**
+     * Whether the input-output memory management unit is enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsInputOutputMemoryManagementUnitEnabled() {
         return isInputOutputMemoryManagementUnitEnabled;
     }

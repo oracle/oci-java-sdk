@@ -31,27 +31,49 @@ public final class CandidateResponderRule {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier of the Responder rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The unique identifier of the Responder rule
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of the Responder rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the Responder rule
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Preferred state
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreferred")
         private Boolean isPreferred;
 
+        /**
+         * Preferred state
+         * @param isPreferred the value to set
+         * @return this builder
+         **/
         public Builder isPreferred(Boolean isPreferred) {
             this.isPreferred = isPreferred;
             this.__explicitlySet__.add("isPreferred");
@@ -95,6 +117,10 @@ public final class CandidateResponderRule {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The unique identifier of the Responder rule
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -105,6 +131,10 @@ public final class CandidateResponderRule {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the Responder rule
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -115,6 +145,10 @@ public final class CandidateResponderRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isPreferred")
     private final Boolean isPreferred;
 
+    /**
+     * Preferred state
+     * @return the value
+     **/
     public Boolean getIsPreferred() {
         return isPreferred;
     }

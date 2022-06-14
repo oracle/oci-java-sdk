@@ -69,126 +69,237 @@ public final class VmClusterNetwork {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * @param exadataInfrastructureId the value to set
+         * @return this builder
+         **/
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = vmClusterId;
             this.__explicitlySet__.add("vmClusterId");
             return this;
         }
-
+        /**
+         * The user-friendly name for the VM cluster network. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The user-friendly name for the VM cluster network. The name does not need to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The SCAN details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scans")
         private java.util.List<ScanDetails> scans;
 
+        /**
+         * The SCAN details.
+         * @param scans the value to set
+         * @return this builder
+         **/
         public Builder scans(java.util.List<ScanDetails> scans) {
             this.scans = scans;
             this.__explicitlySet__.add("scans");
             return this;
         }
-
+        /**
+         * The list of DNS server IP addresses. Maximum of 3 allowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dns")
         private java.util.List<String> dns;
 
+        /**
+         * The list of DNS server IP addresses. Maximum of 3 allowed.
+         * @param dns the value to set
+         * @return this builder
+         **/
         public Builder dns(java.util.List<String> dns) {
             this.dns = dns;
             this.__explicitlySet__.add("dns");
             return this;
         }
-
+        /**
+         * The list of NTP server IP addresses. Maximum of 3 allowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ntp")
         private java.util.List<String> ntp;
 
+        /**
+         * The list of NTP server IP addresses. Maximum of 3 allowed.
+         * @param ntp the value to set
+         * @return this builder
+         **/
         public Builder ntp(java.util.List<String> ntp) {
             this.ntp = ntp;
             this.__explicitlySet__.add("ntp");
             return this;
         }
-
+        /**
+         * Details of the client and backup networks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmNetworks")
         private java.util.List<VmNetworkDetails> vmNetworks;
 
+        /**
+         * Details of the client and backup networks.
+         * @param vmNetworks the value to set
+         * @return this builder
+         **/
         public Builder vmNetworks(java.util.List<VmNetworkDetails> vmNetworks) {
             this.vmNetworks = vmNetworks;
             this.__explicitlySet__.add("vmNetworks");
             return this;
         }
-
+        /**
+         * The current state of the VM cluster network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the VM cluster network.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The date and time when the VM cluster network was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time when the VM cluster network was created.
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current lifecycle state.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -260,6 +371,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -270,6 +385,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * @return the value
+     **/
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -280,6 +399,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -290,6 +413,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
+     * @return the value
+     **/
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -300,6 +427,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The user-friendly name for the VM cluster network. The name does not need to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -310,6 +441,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("scans")
     private final java.util.List<ScanDetails> scans;
 
+    /**
+     * The SCAN details.
+     * @return the value
+     **/
     public java.util.List<ScanDetails> getScans() {
         return scans;
     }
@@ -320,6 +455,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("dns")
     private final java.util.List<String> dns;
 
+    /**
+     * The list of DNS server IP addresses. Maximum of 3 allowed.
+     * @return the value
+     **/
     public java.util.List<String> getDns() {
         return dns;
     }
@@ -330,6 +469,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("ntp")
     private final java.util.List<String> ntp;
 
+    /**
+     * The list of NTP server IP addresses. Maximum of 3 allowed.
+     * @return the value
+     **/
     public java.util.List<String> getNtp() {
         return ntp;
     }
@@ -340,6 +483,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("vmNetworks")
     private final java.util.List<VmNetworkDetails> vmNetworks;
 
+    /**
+     * Details of the client and backup networks.
+     * @return the value
+     **/
     public java.util.List<VmNetworkDetails> getVmNetworks() {
         return vmNetworks;
     }
@@ -406,6 +553,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the VM cluster network.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -416,6 +567,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time when the VM cluster network was created.
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -426,6 +581,10 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current lifecycle state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -440,6 +599,14 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -452,6 +619,12 @@ public final class VmClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

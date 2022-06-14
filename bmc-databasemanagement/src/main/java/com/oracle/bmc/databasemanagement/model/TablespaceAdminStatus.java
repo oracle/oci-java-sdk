@@ -31,27 +31,55 @@ public final class TablespaceAdminStatus {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The status of a tablespace admin action.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of a tablespace admin action.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private Integer errorCode;
 
+        /**
+         * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
+         *
+         * @param errorCode the value to set
+         * @return this builder
+         **/
         public Builder errorCode(Integer errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-
+        /**
+         * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
+         *
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -146,6 +174,11 @@ public final class TablespaceAdminStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of a tablespace admin action.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -157,6 +190,11 @@ public final class TablespaceAdminStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final Integer errorCode;
 
+    /**
+     * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
+     *
+     * @return the value
+     **/
     public Integer getErrorCode() {
         return errorCode;
     }
@@ -168,6 +206,11 @@ public final class TablespaceAdminStatus {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
+     *
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }

@@ -31,18 +31,37 @@ public final class Duration {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation
+         * to each object's Last-Modified timestamp.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
         private Long timeAmount;
 
+        /**
+         * The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation
+         * to each object's Last-Modified timestamp.
+         *
+         * @param timeAmount the value to set
+         * @return this builder
+         **/
         public Builder timeAmount(Long timeAmount) {
             this.timeAmount = timeAmount;
             this.__explicitlySet__.add("timeAmount");
             return this;
         }
-
+        /**
+         * The unit that should be used to interpret timeAmount.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
         private TimeUnit timeUnit;
 
+        /**
+         * The unit that should be used to interpret timeAmount.
+         * @param timeUnit the value to set
+         * @return this builder
+         **/
         public Builder timeUnit(TimeUnit timeUnit) {
             this.timeUnit = timeUnit;
             this.__explicitlySet__.add("timeUnit");
@@ -86,6 +105,12 @@ public final class Duration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
     private final Long timeAmount;
 
+    /**
+     * The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation
+     * to each object's Last-Modified timestamp.
+     *
+     * @return the value
+     **/
     public Long getTimeAmount() {
         return timeAmount;
     }
@@ -144,6 +169,10 @@ public final class Duration {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
     private final TimeUnit timeUnit;
 
+    /**
+     * The unit that should be used to interpret timeAmount.
+     * @return the value
+     **/
     public TimeUnit getTimeUnit() {
         return timeUnit;
     }

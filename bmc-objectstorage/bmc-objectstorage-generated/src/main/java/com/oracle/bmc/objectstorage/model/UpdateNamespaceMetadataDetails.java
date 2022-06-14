@@ -33,18 +33,33 @@ public final class UpdateNamespaceMetadataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The updated compartment id for use by an S3 client, if this field is set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
         private String defaultS3CompartmentId;
 
+        /**
+         * The updated compartment id for use by an S3 client, if this field is set.
+         * @param defaultS3CompartmentId the value to set
+         * @return this builder
+         **/
         public Builder defaultS3CompartmentId(String defaultS3CompartmentId) {
             this.defaultS3CompartmentId = defaultS3CompartmentId;
             this.__explicitlySet__.add("defaultS3CompartmentId");
             return this;
         }
-
+        /**
+         * The updated compartment id for use by a Swift client, if this field is set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
         private String defaultSwiftCompartmentId;
 
+        /**
+         * The updated compartment id for use by a Swift client, if this field is set.
+         * @param defaultSwiftCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder defaultSwiftCompartmentId(String defaultSwiftCompartmentId) {
             this.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
             this.__explicitlySet__.add("defaultSwiftCompartmentId");
@@ -90,6 +105,10 @@ public final class UpdateNamespaceMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
     private final String defaultS3CompartmentId;
 
+    /**
+     * The updated compartment id for use by an S3 client, if this field is set.
+     * @return the value
+     **/
     public String getDefaultS3CompartmentId() {
         return defaultS3CompartmentId;
     }
@@ -100,6 +119,10 @@ public final class UpdateNamespaceMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
     private final String defaultSwiftCompartmentId;
 
+    /**
+     * The updated compartment id for use by a Swift client, if this field is set.
+     * @return the value
+     **/
     public String getDefaultSwiftCompartmentId() {
         return defaultSwiftCompartmentId;
     }

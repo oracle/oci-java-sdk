@@ -19,6 +19,10 @@ public class UpdateLogAnalyticsEntityTypeRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -28,6 +32,9 @@ public class UpdateLogAnalyticsEntityTypeRequest
     private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails
             updateLogAnalyticsEntityTypeDetails;
 
+    /**
+     * Log analytics entity type update details.
+     */
     public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails
             getUpdateLogAnalyticsEntityTypeDetails() {
         return updateLogAnalyticsEntityTypeDetails;
@@ -38,6 +45,10 @@ public class UpdateLogAnalyticsEntityTypeRequest
      */
     private String entityTypeName;
 
+    /**
+     * Log analytics entity type name.
+     *
+     */
     public String getEntityTypeName() {
         return entityTypeName;
     }
@@ -46,6 +57,9 @@ public class UpdateLogAnalyticsEntityTypeRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -59,6 +73,14 @@ public class UpdateLogAnalyticsEntityTypeRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -86,11 +108,16 @@ public class UpdateLogAnalyticsEntityTypeRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -98,11 +125,15 @@ public class UpdateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * Log analytics entity type update details.
+         */
         private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails
                 updateLogAnalyticsEntityTypeDetails = null;
 
         /**
          * Log analytics entity type update details.
+         * @param updateLogAnalyticsEntityTypeDetails the value to set
          * @return this builder instance
          */
         public Builder updateLogAnalyticsEntityTypeDetails(
@@ -112,11 +143,16 @@ public class UpdateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * Log analytics entity type name.
+         *
+         */
         private String entityTypeName = null;
 
         /**
          * Log analytics entity type name.
          *
+         * @param entityTypeName the value to set
          * @return this builder instance
          */
         public Builder entityTypeName(String entityTypeName) {
@@ -124,10 +160,14 @@ public class UpdateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -135,6 +175,14 @@ public class UpdateLogAnalyticsEntityTypeRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -144,6 +192,7 @@ public class UpdateLogAnalyticsEntityTypeRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -239,7 +288,8 @@ public class UpdateLogAnalyticsEntityTypeRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -250,6 +300,10 @@ public class UpdateLogAnalyticsEntityTypeRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

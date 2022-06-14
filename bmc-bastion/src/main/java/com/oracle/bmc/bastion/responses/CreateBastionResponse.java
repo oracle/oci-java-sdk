@@ -14,6 +14,11 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcWorkRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -25,6 +30,12 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +46,11 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String location;
 
+    /**
+     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/bastions/<some-ocid>"
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -45,6 +61,11 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -54,6 +75,10 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.bastion.model.Bastion bastion;
 
+    /**
+     * The returned Bastion instance.
+     * @return the value
+     */
     public com.oracle.bmc.bastion.model.Bastion getBastion() {
         return bastion;
     }
@@ -89,36 +114,86 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/bastions/<some-ocid>"
+         *
+         */
         private String location;
 
+        /**
+         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/bastions/<some-ocid>"
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned Bastion instance.
+         */
         private com.oracle.bmc.bastion.model.Bastion bastion;
 
+        /**
+         * The returned Bastion instance.
+         * @param bastion the value to set
+         * @return this builder
+         */
         public Builder bastion(com.oracle.bmc.bastion.model.Bastion bastion) {
             this.bastion = bastion;
             return this;
@@ -139,12 +214,20 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateBastionResponse build() {
             return new CreateBastionResponse(
                     __httpStatusCode__, opcWorkRequestId, opcRequestId, location, etag, bastion);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

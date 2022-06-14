@@ -27,9 +27,17 @@ public final class ClusterOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Available Kubernetes versions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersions")
         private java.util.List<String> kubernetesVersions;
 
+        /**
+         * Available Kubernetes versions.
+         * @param kubernetesVersions the value to set
+         * @return this builder
+         **/
         public Builder kubernetesVersions(java.util.List<String> kubernetesVersions) {
             this.kubernetesVersions = kubernetesVersions;
             this.__explicitlySet__.add("kubernetesVersions");
@@ -71,6 +79,10 @@ public final class ClusterOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersions")
     private final java.util.List<String> kubernetesVersions;
 
+    /**
+     * Available Kubernetes versions.
+     * @return the value
+     **/
     public java.util.List<String> getKubernetesVersions() {
         return kubernetesVersions;
     }

@@ -18,6 +18,9 @@ public class ConnectLocalPeeringGatewaysRequest
      */
     private String localPeeringGatewayId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+     */
     public String getLocalPeeringGatewayId() {
         return localPeeringGatewayId;
     }
@@ -27,6 +30,9 @@ public class ConnectLocalPeeringGatewaysRequest
     private com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails
             connectLocalPeeringGatewaysDetails;
 
+    /**
+     * Details regarding the local peering gateway to connect.
+     */
     public com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails
             getConnectLocalPeeringGatewaysDetails() {
         return connectLocalPeeringGatewaysDetails;
@@ -50,10 +56,14 @@ public class ConnectLocalPeeringGatewaysRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+         */
         private String localPeeringGatewayId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
+         * @param localPeeringGatewayId the value to set
          * @return this builder instance
          */
         public Builder localPeeringGatewayId(String localPeeringGatewayId) {
@@ -61,11 +71,15 @@ public class ConnectLocalPeeringGatewaysRequest
             return this;
         }
 
+        /**
+         * Details regarding the local peering gateway to connect.
+         */
         private com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails
                 connectLocalPeeringGatewaysDetails = null;
 
         /**
          * Details regarding the local peering gateway to connect.
+         * @param connectLocalPeeringGatewaysDetails the value to set
          * @return this builder instance
          */
         public Builder connectLocalPeeringGatewaysDetails(
@@ -156,7 +170,8 @@ public class ConnectLocalPeeringGatewaysRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -164,6 +179,10 @@ public class ConnectLocalPeeringGatewaysRequest
                 .connectLocalPeeringGatewaysDetails(connectLocalPeeringGatewaysDetails);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class ChangeDisApplicationCompartmentRequest
      */
     private String workspaceId;
 
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -26,6 +29,9 @@ public class ChangeDisApplicationCompartmentRequest
      */
     private String disApplicationId;
 
+    /**
+     * The OCID of the DIS Application.
+     */
     public String getDisApplicationId() {
         return disApplicationId;
     }
@@ -35,6 +41,9 @@ public class ChangeDisApplicationCompartmentRequest
     private com.oracle.bmc.dataintegration.model.ChangeDisApplicationCompartmentDetails
             changeDisApplicationCompartmentDetails;
 
+    /**
+     * The information needed to move a DIS Application to a specified compartment.
+     */
     public com.oracle.bmc.dataintegration.model.ChangeDisApplicationCompartmentDetails
             getChangeDisApplicationCompartmentDetails() {
         return changeDisApplicationCompartmentDetails;
@@ -47,6 +56,12 @@ public class ChangeDisApplicationCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -58,6 +73,12 @@ public class ChangeDisApplicationCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -67,6 +88,10 @@ public class ChangeDisApplicationCompartmentRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -89,10 +114,14 @@ public class ChangeDisApplicationCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         * @param workspaceId the value to set
          * @return this builder instance
          */
         public Builder workspaceId(String workspaceId) {
@@ -100,10 +129,14 @@ public class ChangeDisApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * The OCID of the DIS Application.
+         */
         private String disApplicationId = null;
 
         /**
          * The OCID of the DIS Application.
+         * @param disApplicationId the value to set
          * @return this builder instance
          */
         public Builder disApplicationId(String disApplicationId) {
@@ -111,11 +144,15 @@ public class ChangeDisApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * The information needed to move a DIS Application to a specified compartment.
+         */
         private com.oracle.bmc.dataintegration.model.ChangeDisApplicationCompartmentDetails
                 changeDisApplicationCompartmentDetails = null;
 
         /**
          * The information needed to move a DIS Application to a specified compartment.
+         * @param changeDisApplicationCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeDisApplicationCompartmentDetails(
@@ -125,6 +162,12 @@ public class ChangeDisApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -132,6 +175,7 @@ public class ChangeDisApplicationCompartmentRequest
          * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
          * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -139,6 +183,12 @@ public class ChangeDisApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -146,6 +196,7 @@ public class ChangeDisApplicationCompartmentRequest
          * you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -153,11 +204,16 @@ public class ChangeDisApplicationCompartmentRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -256,7 +312,8 @@ public class ChangeDisApplicationCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -268,6 +325,10 @@ public class ChangeDisApplicationCompartmentRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

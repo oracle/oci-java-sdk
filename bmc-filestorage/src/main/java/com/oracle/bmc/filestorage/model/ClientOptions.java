@@ -50,54 +50,143 @@ public final class ClientOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Clients these options should apply to. Must be a either
+         * single IPv4 address or single IPv4 CIDR block.
+         * <p>
+         **Note:** Access will also be limited by any applicable VCN
+         * security rules and the ability to route IP packets to the
+         * mount target. Mount targets do not have Internet-routable IP addresses.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
+        /**
+         * Clients these options should apply to. Must be a either
+         * single IPv4 address or single IPv4 CIDR block.
+         * <p>
+         **Note:** Access will also be limited by any applicable VCN
+         * security rules and the ability to route IP packets to the
+         * mount target. Mount targets do not have Internet-routable IP addresses.
+         *
+         * @param source the value to set
+         * @return this builder
+         **/
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * If {@code true}, clients accessing the file system through this
+         * export must connect from a privileged source port. If
+         * unspecified, defaults to {@code true}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requirePrivilegedSourcePort")
         private Boolean requirePrivilegedSourcePort;
 
+        /**
+         * If {@code true}, clients accessing the file system through this
+         * export must connect from a privileged source port. If
+         * unspecified, defaults to {@code true}.
+         *
+         * @param requirePrivilegedSourcePort the value to set
+         * @return this builder
+         **/
         public Builder requirePrivilegedSourcePort(Boolean requirePrivilegedSourcePort) {
             this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
             this.__explicitlySet__.add("requirePrivilegedSourcePort");
             return this;
         }
-
+        /**
+         * Type of access to grant clients using the file system
+         * through this export. If unspecified defaults to {@code READ_ONLY}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("access")
         private Access access;
 
+        /**
+         * Type of access to grant clients using the file system
+         * through this export. If unspecified defaults to {@code READ_ONLY}.
+         *
+         * @param access the value to set
+         * @return this builder
+         **/
         public Builder access(Access access) {
             this.access = access;
             this.__explicitlySet__.add("access");
             return this;
         }
-
+        /**
+         * Used when clients accessing the file system through this export
+         * have their UID and GID remapped to 'anonymousUid' and
+         * 'anonymousGid'. If {@code ALL}, all users and groups are remapped;
+         * if {@code ROOT}, only the root user and group (UID/GID 0) are
+         * remapped; if {@code NONE}, no remapping is done. If unspecified,
+         * defaults to {@code ROOT}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identitySquash")
         private IdentitySquash identitySquash;
 
+        /**
+         * Used when clients accessing the file system through this export
+         * have their UID and GID remapped to 'anonymousUid' and
+         * 'anonymousGid'. If {@code ALL}, all users and groups are remapped;
+         * if {@code ROOT}, only the root user and group (UID/GID 0) are
+         * remapped; if {@code NONE}, no remapping is done. If unspecified,
+         * defaults to {@code ROOT}.
+         *
+         * @param identitySquash the value to set
+         * @return this builder
+         **/
         public Builder identitySquash(IdentitySquash identitySquash) {
             this.identitySquash = identitySquash;
             this.__explicitlySet__.add("identitySquash");
             return this;
         }
-
+        /**
+         * UID value to remap to when squashing a client UID (see
+         * identitySquash for more details.) If unspecified, defaults
+         * to {@code 65534}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anonymousUid")
         private Long anonymousUid;
 
+        /**
+         * UID value to remap to when squashing a client UID (see
+         * identitySquash for more details.) If unspecified, defaults
+         * to {@code 65534}.
+         *
+         * @param anonymousUid the value to set
+         * @return this builder
+         **/
         public Builder anonymousUid(Long anonymousUid) {
             this.anonymousUid = anonymousUid;
             this.__explicitlySet__.add("anonymousUid");
             return this;
         }
-
+        /**
+         * GID value to remap to when squashing a client GID (see
+         * identitySquash for more details.) If unspecified defaults
+         * to {@code 65534}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anonymousGid")
         private Long anonymousGid;
 
+        /**
+         * GID value to remap to when squashing a client GID (see
+         * identitySquash for more details.) If unspecified defaults
+         * to {@code 65534}.
+         *
+         * @param anonymousGid the value to set
+         * @return this builder
+         **/
         public Builder anonymousGid(Long anonymousGid) {
             this.anonymousGid = anonymousGid;
             this.__explicitlySet__.add("anonymousGid");
@@ -158,6 +247,16 @@ public final class ClientOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
+    /**
+     * Clients these options should apply to. Must be a either
+     * single IPv4 address or single IPv4 CIDR block.
+     * <p>
+     **Note:** Access will also be limited by any applicable VCN
+     * security rules and the ability to route IP packets to the
+     * mount target. Mount targets do not have Internet-routable IP addresses.
+     *
+     * @return the value
+     **/
     public String getSource() {
         return source;
     }
@@ -171,6 +270,13 @@ public final class ClientOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("requirePrivilegedSourcePort")
     private final Boolean requirePrivilegedSourcePort;
 
+    /**
+     * If {@code true}, clients accessing the file system through this
+     * export must connect from a privileged source port. If
+     * unspecified, defaults to {@code true}.
+     *
+     * @return the value
+     **/
     public Boolean getRequirePrivilegedSourcePort() {
         return requirePrivilegedSourcePort;
     }
@@ -232,6 +338,12 @@ public final class ClientOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("access")
     private final Access access;
 
+    /**
+     * Type of access to grant clients using the file system
+     * through this export. If unspecified defaults to {@code READ_ONLY}.
+     *
+     * @return the value
+     **/
     public Access getAccess() {
         return access;
     }
@@ -303,6 +415,16 @@ public final class ClientOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("identitySquash")
     private final IdentitySquash identitySquash;
 
+    /**
+     * Used when clients accessing the file system through this export
+     * have their UID and GID remapped to 'anonymousUid' and
+     * 'anonymousGid'. If {@code ALL}, all users and groups are remapped;
+     * if {@code ROOT}, only the root user and group (UID/GID 0) are
+     * remapped; if {@code NONE}, no remapping is done. If unspecified,
+     * defaults to {@code ROOT}.
+     *
+     * @return the value
+     **/
     public IdentitySquash getIdentitySquash() {
         return identitySquash;
     }
@@ -316,6 +438,13 @@ public final class ClientOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("anonymousUid")
     private final Long anonymousUid;
 
+    /**
+     * UID value to remap to when squashing a client UID (see
+     * identitySquash for more details.) If unspecified, defaults
+     * to {@code 65534}.
+     *
+     * @return the value
+     **/
     public Long getAnonymousUid() {
         return anonymousUid;
     }
@@ -329,6 +458,13 @@ public final class ClientOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("anonymousGid")
     private final Long anonymousGid;
 
+    /**
+     * GID value to remap to when squashing a client GID (see
+     * identitySquash for more details.) If unspecified defaults
+     * to {@code 65534}.
+     *
+     * @return the value
+     **/
     public Long getAnonymousGid() {
         return anonymousGid;
     }

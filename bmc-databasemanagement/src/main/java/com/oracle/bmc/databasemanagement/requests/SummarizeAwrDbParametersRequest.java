@@ -17,6 +17,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private String managedDatabaseId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
@@ -28,6 +31,12 @@ public class SummarizeAwrDbParametersRequest
      */
     private String awrDbId;
 
+    /**
+     * The parameter to filter the database by internal ID.
+     * Note that the internal ID of the database can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbs
+     *
+     */
     public String getAwrDbId() {
         return awrDbId;
     }
@@ -36,6 +45,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private String instNum;
 
+    /**
+     * The optional single value query parameter to filter the database instance number.
+     */
     public String getInstNum() {
         return instNum;
     }
@@ -44,6 +56,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private Integer beginSnIdGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to filter on the snapshot ID.
+     */
     public Integer getBeginSnIdGreaterThanOrEqualTo() {
         return beginSnIdGreaterThanOrEqualTo;
     }
@@ -52,6 +67,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private Integer endSnIdLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the snapshot ID.
+     */
     public Integer getEndSnIdLessThanOrEqualTo() {
         return endSnIdLessThanOrEqualTo;
     }
@@ -60,6 +78,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
+    /**
+     * The optional greater than or equal to query parameter to filter the timestamp.
+     */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
@@ -68,6 +89,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private java.util.Date timeLessThanOrEqualTo;
 
+    /**
+     * The optional less than or equal to query parameter to filter the timestamp.
+     */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
@@ -79,6 +103,12 @@ public class SummarizeAwrDbParametersRequest
      */
     private Integer containerId;
 
+    /**
+     * The optional query parameter to filter the database container by an exact ID value.
+     * Note that the database container ID can be retrieved from the following endpoint:
+     * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+     *
+     */
     public Integer getContainerId() {
         return containerId;
     }
@@ -87,6 +117,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private java.util.List<String> name;
 
+    /**
+     * The optional multiple value query parameter to filter the entity name.
+     */
     public java.util.List<String> getName() {
         return name;
     }
@@ -95,6 +128,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private String nameContains;
 
+    /**
+     * The optional contains query parameter to filter the entity name by any part of the name.
+     */
     public String getNameContains() {
         return nameContains;
     }
@@ -139,6 +175,9 @@ public class SummarizeAwrDbParametersRequest
         }
     };
 
+    /**
+     * The optional query parameter to filter database parameters whose values were changed.
+     */
     public ValueChanged getValueChanged() {
         return valueChanged;
     }
@@ -183,6 +222,9 @@ public class SummarizeAwrDbParametersRequest
         }
     };
 
+    /**
+     * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+     */
     public ValueDefault getValueDefault() {
         return valueDefault;
     }
@@ -228,6 +270,9 @@ public class SummarizeAwrDbParametersRequest
         }
     };
 
+    /**
+     * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+     */
     public ValueModified getValueModified() {
         return valueModified;
     }
@@ -238,6 +283,11 @@ public class SummarizeAwrDbParametersRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -246,6 +296,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in large paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -290,6 +343,9 @@ public class SummarizeAwrDbParametersRequest
         }
     };
 
+    /**
+     * The option to sort the AWR database parameter change history data.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -298,6 +354,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -306,6 +365,9 @@ public class SummarizeAwrDbParametersRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -319,6 +381,14 @@ public class SummarizeAwrDbParametersRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -330,10 +400,14 @@ public class SummarizeAwrDbParametersRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
         private String managedDatabaseId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param managedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseId(String managedDatabaseId) {
@@ -341,6 +415,12 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The parameter to filter the database by internal ID.
+         * Note that the internal ID of the database can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbs
+         *
+         */
         private String awrDbId = null;
 
         /**
@@ -348,6 +428,7 @@ public class SummarizeAwrDbParametersRequest
          * Note that the internal ID of the database can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs
          *
+         * @param awrDbId the value to set
          * @return this builder instance
          */
         public Builder awrDbId(String awrDbId) {
@@ -355,10 +436,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional single value query parameter to filter the database instance number.
+         */
         private String instNum = null;
 
         /**
          * The optional single value query parameter to filter the database instance number.
+         * @param instNum the value to set
          * @return this builder instance
          */
         public Builder instNum(String instNum) {
@@ -366,10 +451,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional greater than or equal to filter on the snapshot ID.
+         */
         private Integer beginSnIdGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to filter on the snapshot ID.
+         * @param beginSnIdGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder beginSnIdGreaterThanOrEqualTo(Integer beginSnIdGreaterThanOrEqualTo) {
@@ -377,10 +466,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the snapshot ID.
+         */
         private Integer endSnIdLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the snapshot ID.
+         * @param endSnIdLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder endSnIdLessThanOrEqualTo(Integer endSnIdLessThanOrEqualTo) {
@@ -388,10 +481,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional greater than or equal to query parameter to filter the timestamp.
+         */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
          * The optional greater than or equal to query parameter to filter the timestamp.
+         * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeGreaterThanOrEqualTo(java.util.Date timeGreaterThanOrEqualTo) {
@@ -399,10 +496,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional less than or equal to query parameter to filter the timestamp.
+         */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
          * The optional less than or equal to query parameter to filter the timestamp.
+         * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLessThanOrEqualTo(java.util.Date timeLessThanOrEqualTo) {
@@ -410,6 +511,12 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional query parameter to filter the database container by an exact ID value.
+         * Note that the database container ID can be retrieved from the following endpoint:
+         * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+         *
+         */
         private Integer containerId = null;
 
         /**
@@ -417,6 +524,7 @@ public class SummarizeAwrDbParametersRequest
          * Note that the database container ID can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          *
+         * @param containerId the value to set
          * @return this builder instance
          */
         public Builder containerId(Integer containerId) {
@@ -424,10 +532,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional multiple value query parameter to filter the entity name.
+         */
         private java.util.List<String> name = null;
 
         /**
          * The optional multiple value query parameter to filter the entity name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(java.util.List<String> name) {
@@ -437,16 +549,21 @@ public class SummarizeAwrDbParametersRequest
 
         /**
          * Singular setter. The optional multiple value query parameter to filter the entity name.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder name(String singularValue) {
             return this.name(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The optional contains query parameter to filter the entity name by any part of the name.
+         */
         private String nameContains = null;
 
         /**
          * The optional contains query parameter to filter the entity name by any part of the name.
+         * @param nameContains the value to set
          * @return this builder instance
          */
         public Builder nameContains(String nameContains) {
@@ -454,10 +571,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional query parameter to filter database parameters whose values were changed.
+         */
         private ValueChanged valueChanged = null;
 
         /**
          * The optional query parameter to filter database parameters whose values were changed.
+         * @param valueChanged the value to set
          * @return this builder instance
          */
         public Builder valueChanged(ValueChanged valueChanged) {
@@ -465,10 +586,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+         */
         private ValueDefault valueDefault = null;
 
         /**
          * The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+         * @param valueDefault the value to set
          * @return this builder instance
          */
         public Builder valueDefault(ValueDefault valueDefault) {
@@ -476,10 +601,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+         */
         private ValueModified valueModified = null;
 
         /**
          * The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+         * @param valueModified the value to set
          * @return this builder instance
          */
         public Builder valueModified(ValueModified valueModified) {
@@ -487,12 +616,18 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -500,10 +635,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in large paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in large paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -511,10 +650,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The option to sort the AWR database parameter change history data.
+         */
         private SortBy sortBy = null;
 
         /**
          * The option to sort the AWR database parameter change history data.
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -522,10 +665,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -533,10 +680,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -544,6 +695,14 @@ public class SummarizeAwrDbParametersRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -553,6 +712,7 @@ public class SummarizeAwrDbParametersRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -664,7 +824,8 @@ public class SummarizeAwrDbParametersRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -689,6 +850,10 @@ public class SummarizeAwrDbParametersRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

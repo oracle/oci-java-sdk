@@ -29,27 +29,53 @@ public final class WorkRequestError {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A machine-usable code for the error that occurred. Error codes are listed at
+         * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
+        /**
+         * A machine-usable code for the error that occurred. Error codes are listed at
+         * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+         *
+         * @param code the value to set
+         * @return this builder
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-
+        /**
+         * A human-readable description of the issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * A human-readable description of the issue.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * When the error occurred. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
         private java.util.Date timeStamp;
 
+        /**
+         * When the error occurred. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeStamp the value to set
+         * @return this builder
+         **/
         public Builder timeStamp(java.util.Date timeStamp) {
             this.timeStamp = timeStamp;
             this.__explicitlySet__.add("timeStamp");
@@ -94,6 +120,12 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
+    /**
+     * A machine-usable code for the error that occurred. Error codes are listed at
+     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+     *
+     * @return the value
+     **/
     public String getCode() {
         return code;
     }
@@ -104,6 +136,10 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * A human-readable description of the issue.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -114,6 +150,10 @@ public final class WorkRequestError {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
     private final java.util.Date timeStamp;
 
+    /**
+     * When the error occurred. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeStamp() {
         return timeStamp;
     }

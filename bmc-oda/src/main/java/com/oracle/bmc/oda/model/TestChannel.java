@@ -116,10 +116,21 @@ public final class TestChannel extends Channel {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
         private String webhookUrl;
 
+        /**
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         * @param webhookUrl the value to set
+         * @return this builder
+         **/
         public Builder webhookUrl(String webhookUrl) {
             this.webhookUrl = webhookUrl;
             this.__explicitlySet__.add("webhookUrl");
@@ -214,6 +225,12 @@ public final class TestChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
     private final String webhookUrl;
 
+    /**
+     * The URL to use to send messages to this channel.
+     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+     *
+     * @return the value
+     **/
     public String getWebhookUrl() {
         return webhookUrl;
     }

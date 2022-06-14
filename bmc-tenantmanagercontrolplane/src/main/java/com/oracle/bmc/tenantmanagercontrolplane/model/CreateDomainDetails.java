@@ -47,54 +47,105 @@ public final class CreateDomainDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * OCID of the tenancy.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The domain name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
+        /**
+         * The domain name.
+         * @param domainName the value to set
+         * @return this builder
+         **/
         public Builder domainName(String domainName) {
             this.domainName = domainName;
             this.__explicitlySet__.add("domainName");
             return this;
         }
-
+        /**
+         * The email to notify the user, and that the ONS subscription will be created with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
         private String subscriptionEmail;
 
+        /**
+         * The email to notify the user, and that the ONS subscription will be created with.
+         * @param subscriptionEmail the value to set
+         * @return this builder
+         **/
         public Builder subscriptionEmail(String subscriptionEmail) {
             this.subscriptionEmail = subscriptionEmail;
             this.__explicitlySet__.add("subscriptionEmail");
             return this;
         }
-
+        /**
+         * Indicates whether governance should be enabled for this domain. Defaults to false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
         private Boolean isGovernanceEnabled;
 
+        /**
+         * Indicates whether governance should be enabled for this domain. Defaults to false.
+         * @param isGovernanceEnabled the value to set
+         * @return this builder
+         **/
         public Builder isGovernanceEnabled(Boolean isGovernanceEnabled) {
             this.isGovernanceEnabled = isGovernanceEnabled;
             this.__explicitlySet__.add("isGovernanceEnabled");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -150,6 +201,10 @@ public final class CreateDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * OCID of the tenancy.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -160,6 +215,10 @@ public final class CreateDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
+    /**
+     * The domain name.
+     * @return the value
+     **/
     public String getDomainName() {
         return domainName;
     }
@@ -170,6 +229,10 @@ public final class CreateDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
     private final String subscriptionEmail;
 
+    /**
+     * The email to notify the user, and that the ONS subscription will be created with.
+     * @return the value
+     **/
     public String getSubscriptionEmail() {
         return subscriptionEmail;
     }
@@ -180,6 +243,10 @@ public final class CreateDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
     private final Boolean isGovernanceEnabled;
 
+    /**
+     * Indicates whether governance should be enabled for this domain. Defaults to false.
+     * @return the value
+     **/
     public Boolean getIsGovernanceEnabled() {
         return isGovernanceEnabled;
     }
@@ -192,6 +259,12 @@ public final class CreateDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -204,6 +277,12 @@ public final class CreateDomainDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

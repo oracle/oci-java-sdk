@@ -30,27 +30,53 @@ public final class ExternalMaster {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         * @param address the value to set
+         * @return this builder
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
-
+        /**
+         * The server's port. Port value must be a value of 53, otherwise omit
+         * the port value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        /**
+         * The server's port. Port value must be a value of 53, otherwise omit
+         * the port value.
+         *
+         * @param port the value to set
+         * @return this builder
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-
+        /**
+         * The OCID of the TSIG key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
         private String tsigKeyId;
 
+        /**
+         * The OCID of the TSIG key.
+         * @param tsigKeyId the value to set
+         * @return this builder
+         **/
         public Builder tsigKeyId(String tsigKeyId) {
             this.tsigKeyId = tsigKeyId;
             this.__explicitlySet__.add("tsigKeyId");
@@ -93,6 +119,10 @@ public final class ExternalMaster {
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
+    /**
+     * The server's IP address (IPv4 or IPv6).
+     * @return the value
+     **/
     public String getAddress() {
         return address;
     }
@@ -105,6 +135,12 @@ public final class ExternalMaster {
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
+    /**
+     * The server's port. Port value must be a value of 53, otherwise omit
+     * the port value.
+     *
+     * @return the value
+     **/
     public Integer getPort() {
         return port;
     }
@@ -115,6 +151,10 @@ public final class ExternalMaster {
     @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
     private final String tsigKeyId;
 
+    /**
+     * The OCID of the TSIG key.
+     * @return the value
+     **/
     public String getTsigKeyId() {
         return tsigKeyId;
     }

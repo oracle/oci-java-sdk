@@ -27,9 +27,17 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class HdfsWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies whether to write output to single-file or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("writeToSingleFile")
         private Boolean writeToSingleFile;
 
+        /**
+         * Specifies whether to write output to single-file or not.
+         * @param writeToSingleFile the value to set
+         * @return this builder
+         **/
         public Builder writeToSingleFile(Boolean writeToSingleFile) {
             this.writeToSingleFile = writeToSingleFile;
             this.__explicitlySet__.add("writeToSingleFile");
@@ -77,6 +85,10 @@ public final class HdfsWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("writeToSingleFile")
     private final Boolean writeToSingleFile;
 
+    /**
+     * Specifies whether to write output to single-file or not.
+     * @return the value
+     **/
     public Boolean getWriteToSingleFile() {
         return writeToSingleFile;
     }

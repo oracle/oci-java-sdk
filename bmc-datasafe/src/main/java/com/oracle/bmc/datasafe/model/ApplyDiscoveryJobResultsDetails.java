@@ -29,9 +29,17 @@ public final class ApplyDiscoveryJobResultsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the discovery job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
         private String discoveryJobId;
 
+        /**
+         * The OCID of the discovery job.
+         * @param discoveryJobId the value to set
+         * @return this builder
+         **/
         public Builder discoveryJobId(String discoveryJobId) {
             this.discoveryJobId = discoveryJobId;
             this.__explicitlySet__.add("discoveryJobId");
@@ -74,6 +82,10 @@ public final class ApplyDiscoveryJobResultsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
     private final String discoveryJobId;
 
+    /**
+     * The OCID of the discovery job.
+     * @return the value
+     **/
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }

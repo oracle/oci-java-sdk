@@ -58,81 +58,185 @@ public final class ProtectionCapabilitySummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key of protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * Unique key of protection capability.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The display name of protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of protection capability.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The description of protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of protection capability.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The version of protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Integer version;
 
+        /**
+         * The version of protection capability.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(Integer version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * The field that shows if this is the latest version of protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
         private Boolean isLatestVersion;
 
+        /**
+         * The field that shows if this is the latest version of protection capability.
+         * @param isLatestVersion the value to set
+         * @return this builder
+         **/
         public Builder isLatestVersion(Boolean isLatestVersion) {
             this.isLatestVersion = isLatestVersion;
             this.__explicitlySet__.add("isLatestVersion");
             return this;
         }
-
+        /**
+         * The list of unique names protection capability group tags that are associated with this capability.
+         * Example: ["PCI", "Recommended"]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupTags")
         private java.util.List<String> groupTags;
 
+        /**
+         * The list of unique names protection capability group tags that are associated with this capability.
+         * Example: ["PCI", "Recommended"]
+         *
+         * @param groupTags the value to set
+         * @return this builder
+         **/
         public Builder groupTags(java.util.List<String> groupTags) {
             this.groupTags = groupTags;
             this.__explicitlySet__.add("groupTags");
             return this;
         }
-
+        /**
+         * The type of protection capability.
+         * <p>
+         * **REQUEST_PROTECTION_CAPABILITY** can only be used in {@code requestProtection} module of WebAppFirewallPolicy.
+         * <p>
+         * **RESPONSE_PROTECTION_CAPABILITY** can only be used in {@code responseProtection} module of WebAppFirewallPolicy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        /**
+         * The type of protection capability.
+         * <p>
+         * **REQUEST_PROTECTION_CAPABILITY** can only be used in {@code requestProtection} module of WebAppFirewallPolicy.
+         * <p>
+         * **RESPONSE_PROTECTION_CAPABILITY** can only be used in {@code responseProtection} module of WebAppFirewallPolicy.
+         *
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-
+        /**
+         * The default collaborative action threshold for OCI-managed collaborative protection capability.
+         * Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities
+         * (referred to as {@code contributing capabilities} later on) which have weights assigned to them. These weights can
+         * be found in the {@code collaborativeWeights} array.
+         * For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered
+         * contributing capabilities weights is calculated. Only if this sum is greater than or equal to
+         * {@code collaborativeActionThreshold} is the incoming/outgoing HTTP message marked as malicious.
+         * <p>
+         * This field is ignored for non-collaborative capabilities.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
         private Integer collaborativeActionThreshold;
 
+        /**
+         * The default collaborative action threshold for OCI-managed collaborative protection capability.
+         * Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities
+         * (referred to as {@code contributing capabilities} later on) which have weights assigned to them. These weights can
+         * be found in the {@code collaborativeWeights} array.
+         * For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered
+         * contributing capabilities weights is calculated. Only if this sum is greater than or equal to
+         * {@code collaborativeActionThreshold} is the incoming/outgoing HTTP message marked as malicious.
+         * <p>
+         * This field is ignored for non-collaborative capabilities.
+         *
+         * @param collaborativeActionThreshold the value to set
+         * @return this builder
+         **/
         public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
             this.collaborativeActionThreshold = collaborativeActionThreshold;
             this.__explicitlySet__.add("collaborativeActionThreshold");
             return this;
         }
-
+        /**
+         * The weights of contributing capabilities.
+         * Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
+         * <p>
+         * This field is ignored for non-collaborative capabilities.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
         private java.util.List<CollaborativeCapabilityWeight> collaborativeWeights;
 
+        /**
+         * The weights of contributing capabilities.
+         * Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
+         * <p>
+         * This field is ignored for non-collaborative capabilities.
+         *
+         * @param collaborativeWeights the value to set
+         * @return this builder
+         **/
         public Builder collaborativeWeights(
                 java.util.List<CollaborativeCapabilityWeight> collaborativeWeights) {
             this.collaborativeWeights = collaborativeWeights;
@@ -194,6 +298,10 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Unique key of protection capability.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -204,6 +312,10 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of protection capability.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -214,6 +326,10 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of protection capability.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -224,6 +340,10 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Integer version;
 
+    /**
+     * The version of protection capability.
+     * @return the value
+     **/
     public Integer getVersion() {
         return version;
     }
@@ -234,6 +354,10 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
     private final Boolean isLatestVersion;
 
+    /**
+     * The field that shows if this is the latest version of protection capability.
+     * @return the value
+     **/
     public Boolean getIsLatestVersion() {
         return isLatestVersion;
     }
@@ -246,6 +370,12 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("groupTags")
     private final java.util.List<String> groupTags;
 
+    /**
+     * The list of unique names protection capability group tags that are associated with this capability.
+     * Example: ["PCI", "Recommended"]
+     *
+     * @return the value
+     **/
     public java.util.List<String> getGroupTags() {
         return groupTags;
     }
@@ -312,6 +442,15 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
+    /**
+     * The type of protection capability.
+     * <p>
+     * **REQUEST_PROTECTION_CAPABILITY** can only be used in {@code requestProtection} module of WebAppFirewallPolicy.
+     * <p>
+     * **RESPONSE_PROTECTION_CAPABILITY** can only be used in {@code responseProtection} module of WebAppFirewallPolicy.
+     *
+     * @return the value
+     **/
     public Type getType() {
         return type;
     }
@@ -331,6 +470,19 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
     private final Integer collaborativeActionThreshold;
 
+    /**
+     * The default collaborative action threshold for OCI-managed collaborative protection capability.
+     * Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities
+     * (referred to as {@code contributing capabilities} later on) which have weights assigned to them. These weights can
+     * be found in the {@code collaborativeWeights} array.
+     * For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered
+     * contributing capabilities weights is calculated. Only if this sum is greater than or equal to
+     * {@code collaborativeActionThreshold} is the incoming/outgoing HTTP message marked as malicious.
+     * <p>
+     * This field is ignored for non-collaborative capabilities.
+     *
+     * @return the value
+     **/
     public Integer getCollaborativeActionThreshold() {
         return collaborativeActionThreshold;
     }
@@ -345,6 +497,14 @@ public final class ProtectionCapabilitySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
     private final java.util.List<CollaborativeCapabilityWeight> collaborativeWeights;
 
+    /**
+     * The weights of contributing capabilities.
+     * Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
+     * <p>
+     * This field is ignored for non-collaborative capabilities.
+     *
+     * @return the value
+     **/
     public java.util.List<CollaborativeCapabilityWeight> getCollaborativeWeights() {
         return collaborativeWeights;
     }

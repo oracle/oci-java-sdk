@@ -57,45 +57,105 @@ public final class UpdateFunctionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The qualified name of the Docker image to use in the function, including the image tag.
+         * The image should be in the OCI Registry that is in the same region as the function itself.
+         * If an image is specified but no value for imageDigest is provided, the digest currently associated with the image tag in the OCI Registry will be used.
+         * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("image")
         private String image;
 
+        /**
+         * The qualified name of the Docker image to use in the function, including the image tag.
+         * The image should be in the OCI Registry that is in the same region as the function itself.
+         * If an image is specified but no value for imageDigest is provided, the digest currently associated with the image tag in the OCI Registry will be used.
+         * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
+         *
+         * @param image the value to set
+         * @return this builder
+         **/
         public Builder image(String image) {
             this.image = image;
             this.__explicitlySet__.add("image");
             return this;
         }
-
+        /**
+         * The image digest for the version of the image that will be pulled when invoking this function.
+         * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
         private String imageDigest;
 
+        /**
+         * The image digest for the version of the image that will be pulled when invoking this function.
+         * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+         *
+         * @param imageDigest the value to set
+         * @return this builder
+         **/
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
             return this;
         }
-
+        /**
+         * Maximum usable memory for the function (MiB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
         private Long memoryInMBs;
 
+        /**
+         * Maximum usable memory for the function (MiB).
+         * @param memoryInMBs the value to set
+         * @return this builder
+         **/
         public Builder memoryInMBs(Long memoryInMBs) {
             this.memoryInMBs = memoryInMBs;
             this.__explicitlySet__.add("memoryInMBs");
             return this;
         }
-
+        /**
+         * Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values.
+         * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+         * <p>
+         * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+         * <p>
+         * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.Map<String, String> config;
 
+        /**
+         * Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values.
+         * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+         * <p>
+         * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+         * <p>
+         * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
+         *
+         * @param config the value to set
+         * @return this builder
+         **/
         public Builder config(java.util.Map<String, String> config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-
+        /**
+         * Timeout for executions of the function. Value in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
+        /**
+         * Timeout for executions of the function. Value in seconds.
+         * @param timeoutInSeconds the value to set
+         * @return this builder
+         **/
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             this.__explicitlySet__.add("timeoutInSeconds");
@@ -120,19 +180,45 @@ public final class UpdateFunctionDetails {
             this.__explicitlySet__.add("traceConfig");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -198,6 +284,14 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("image")
     private final String image;
 
+    /**
+     * The qualified name of the Docker image to use in the function, including the image tag.
+     * The image should be in the OCI Registry that is in the same region as the function itself.
+     * If an image is specified but no value for imageDigest is provided, the digest currently associated with the image tag in the OCI Registry will be used.
+     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
+     *
+     * @return the value
+     **/
     public String getImage() {
         return image;
     }
@@ -210,6 +304,12 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
     private final String imageDigest;
 
+    /**
+     * The image digest for the version of the image that will be pulled when invoking this function.
+     * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+     *
+     * @return the value
+     **/
     public String getImageDigest() {
         return imageDigest;
     }
@@ -220,6 +320,10 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
     private final Long memoryInMBs;
 
+    /**
+     * Maximum usable memory for the function (MiB).
+     * @return the value
+     **/
     public Long getMemoryInMBs() {
         return memoryInMBs;
     }
@@ -236,6 +340,16 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final java.util.Map<String, String> config;
 
+    /**
+     * Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values.
+     * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+     * <p>
+     * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+     * <p>
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getConfig() {
         return config;
     }
@@ -246,6 +360,10 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
+    /**
+     * Timeout for executions of the function. Value in seconds.
+     * @return the value
+     **/
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
@@ -273,6 +391,13 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -286,6 +411,13 @@ public final class UpdateFunctionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

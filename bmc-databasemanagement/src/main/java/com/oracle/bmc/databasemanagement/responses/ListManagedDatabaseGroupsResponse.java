@@ -15,6 +15,12 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -37,6 +50,10 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
             managedDatabaseGroupCollection;
 
+    /**
+     * The returned ManagedDatabaseGroupCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
             getManagedDatabaseGroupCollection() {
         return managedDatabaseGroupCollection;
@@ -68,23 +85,57 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned ManagedDatabaseGroupCollection instance.
+         */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
                 managedDatabaseGroupCollection;
 
+        /**
+         * The returned ManagedDatabaseGroupCollection instance.
+         * @param managedDatabaseGroupCollection the value to set
+         * @return this builder
+         */
         public Builder managedDatabaseGroupCollection(
                 com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
                         managedDatabaseGroupCollection) {
@@ -105,12 +156,20 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListManagedDatabaseGroupsResponse build() {
             return new ListManagedDatabaseGroupsResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, managedDatabaseGroupCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -38,27 +38,49 @@ public final class ThirdPartyPaidListingEligibility {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether the tenant is permitted to use paid listings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidListingEligible")
         private Boolean isPaidListingEligible;
 
+        /**
+         * Whether the tenant is permitted to use paid listings
+         * @param isPaidListingEligible the value to set
+         * @return this builder
+         **/
         public Builder isPaidListingEligible(Boolean isPaidListingEligible) {
             this.isPaidListingEligible = isPaidListingEligible;
             this.__explicitlySet__.add("isPaidListingEligible");
             return this;
         }
-
+        /**
+         * Whether the tenant is currently prevented from using paid listings because of throttling
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidListingThrottled")
         private Boolean isPaidListingThrottled;
 
+        /**
+         * Whether the tenant is currently prevented from using paid listings because of throttling
+         * @param isPaidListingThrottled the value to set
+         * @return this builder
+         **/
         public Builder isPaidListingThrottled(Boolean isPaidListingThrottled) {
             this.isPaidListingThrottled = isPaidListingThrottled;
             this.__explicitlySet__.add("isPaidListingThrottled");
             return this;
         }
-
+        /**
+         * Reason the account is ineligible to launch paid listings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eligibilityReason")
         private EligibilityReason eligibilityReason;
 
+        /**
+         * Reason the account is ineligible to launch paid listings
+         * @param eligibilityReason the value to set
+         * @return this builder
+         **/
         public Builder eligibilityReason(EligibilityReason eligibilityReason) {
             this.eligibilityReason = eligibilityReason;
             this.__explicitlySet__.add("eligibilityReason");
@@ -105,6 +127,10 @@ public final class ThirdPartyPaidListingEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidListingEligible")
     private final Boolean isPaidListingEligible;
 
+    /**
+     * Whether the tenant is permitted to use paid listings
+     * @return the value
+     **/
     public Boolean getIsPaidListingEligible() {
         return isPaidListingEligible;
     }
@@ -115,6 +141,10 @@ public final class ThirdPartyPaidListingEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidListingThrottled")
     private final Boolean isPaidListingThrottled;
 
+    /**
+     * Whether the tenant is currently prevented from using paid listings because of throttling
+     * @return the value
+     **/
     public Boolean getIsPaidListingThrottled() {
         return isPaidListingThrottled;
     }
@@ -181,6 +211,10 @@ public final class ThirdPartyPaidListingEligibility {
     @com.fasterxml.jackson.annotation.JsonProperty("eligibilityReason")
     private final EligibilityReason eligibilityReason;
 
+    /**
+     * Reason the account is ineligible to launch paid listings
+     * @return the value
+     **/
     public EligibilityReason getEligibilityReason() {
         return eligibilityReason;
     }

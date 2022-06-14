@@ -38,6 +38,7 @@ public final class DatabaseStorageAggregateMetrics {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("storageAllocated")
         private MetricDataPoint storageAllocated;
 
@@ -55,10 +56,17 @@ public final class DatabaseStorageAggregateMetrics {
             this.__explicitlySet__.add("storageUsed");
             return this;
         }
-
+        /**
+         * A list of the storage metrics grouped by TableSpace for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsedByTableSpace")
         private java.util.List<MetricDataPoint> storageUsedByTableSpace;
 
+        /**
+         * A list of the storage metrics grouped by TableSpace for a specific Managed Database.
+         * @param storageUsedByTableSpace the value to set
+         * @return this builder
+         **/
         public Builder storageUsedByTableSpace(
                 java.util.List<MetricDataPoint> storageUsedByTableSpace) {
             this.storageUsedByTableSpace = storageUsedByTableSpace;
@@ -120,6 +128,10 @@ public final class DatabaseStorageAggregateMetrics {
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedByTableSpace")
     private final java.util.List<MetricDataPoint> storageUsedByTableSpace;
 
+    /**
+     * A list of the storage metrics grouped by TableSpace for a specific Managed Database.
+     * @return the value
+     **/
     public java.util.List<MetricDataPoint> getStorageUsedByTableSpace() {
         return storageUsedByTableSpace;
     }

@@ -18,6 +18,9 @@ public class CreateCustomTableRequest
      */
     private com.oracle.bmc.usageapi.model.CreateCustomTableDetails createCustomTableDetails;
 
+    /**
+     * New custom table details.
+     */
     public com.oracle.bmc.usageapi.model.CreateCustomTableDetails getCreateCustomTableDetails() {
         return createCustomTableDetails;
     }
@@ -28,6 +31,11 @@ public class CreateCustomTableRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -41,6 +49,14 @@ public class CreateCustomTableRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error, without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,11 +79,15 @@ public class CreateCustomTableRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * New custom table details.
+         */
         private com.oracle.bmc.usageapi.model.CreateCustomTableDetails createCustomTableDetails =
                 null;
 
         /**
          * New custom table details.
+         * @param createCustomTableDetails the value to set
          * @return this builder instance
          */
         public Builder createCustomTableDetails(
@@ -76,12 +96,18 @@ public class CreateCustomTableRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -89,6 +115,14 @@ public class CreateCustomTableRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -98,6 +132,7 @@ public class CreateCustomTableRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -188,7 +223,8 @@ public class CreateCustomTableRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -197,6 +233,10 @@ public class CreateCustomTableRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

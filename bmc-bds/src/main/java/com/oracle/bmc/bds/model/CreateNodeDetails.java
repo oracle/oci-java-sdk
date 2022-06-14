@@ -44,36 +44,69 @@ public final class CreateNodeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Big Data Service cluster node type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private Node.NodeType nodeType;
 
+        /**
+         * The Big Data Service cluster node type.
+         * @param nodeType the value to set
+         * @return this builder
+         **/
         public Builder nodeType(Node.NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-
+        /**
+         * Shape of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
+        /**
+         * Shape of the node.
+         * @param shape the value to set
+         * @return this builder
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-
+        /**
+         * The size of block volume in GB to be attached to a given node. All the
+         * details needed for attaching the block volume are managed by service itself.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
+        /**
+         * The size of block volume in GB to be attached to a given node. All the
+         * details needed for attaching the block volume are managed by service itself.
+         *
+         * @param blockVolumeSizeInGBs the value to set
+         * @return this builder
+         **/
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
             return this;
         }
-
+        /**
+         * The OCID of the subnet in which the node will be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of the subnet in which the node will be created.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -131,6 +164,10 @@ public final class CreateNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final Node.NodeType nodeType;
 
+    /**
+     * The Big Data Service cluster node type.
+     * @return the value
+     **/
     public Node.NodeType getNodeType() {
         return nodeType;
     }
@@ -141,6 +178,10 @@ public final class CreateNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
+    /**
+     * Shape of the node.
+     * @return the value
+     **/
     public String getShape() {
         return shape;
     }
@@ -153,6 +194,12 @@ public final class CreateNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
+    /**
+     * The size of block volume in GB to be attached to a given node. All the
+     * details needed for attaching the block volume are managed by service itself.
+     *
+     * @return the value
+     **/
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
@@ -163,6 +210,10 @@ public final class CreateNodeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of the subnet in which the node will be created.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }

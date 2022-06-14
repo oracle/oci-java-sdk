@@ -27,9 +27,17 @@ public final class OpsiDataObjects {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OPSI Data Object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiDataObjects")
         private Object opsiDataObjects;
 
+        /**
+         * OPSI Data Object.
+         * @param opsiDataObjects the value to set
+         * @return this builder
+         **/
         public Builder opsiDataObjects(Object opsiDataObjects) {
             this.opsiDataObjects = opsiDataObjects;
             this.__explicitlySet__.add("opsiDataObjects");
@@ -71,6 +79,10 @@ public final class OpsiDataObjects {
     @com.fasterxml.jackson.annotation.JsonProperty("opsiDataObjects")
     private final Object opsiDataObjects;
 
+    /**
+     * OPSI Data Object.
+     * @return the value
+     **/
     public Object getOpsiDataObjects() {
         return opsiDataObjects;
     }

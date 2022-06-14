@@ -32,6 +32,7 @@ public final class UpdateAuthenticationPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("passwordPolicy")
         private PasswordPolicy passwordPolicy;
 

@@ -29,9 +29,17 @@ public final class ChangeBastionCompartmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier (OCID) of the compartment that the bastion should move to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The unique identifier (OCID) of the compartment that the bastion should move to.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -74,6 +82,10 @@ public final class ChangeBastionCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The unique identifier (OCID) of the compartment that the bastion should move to.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

@@ -16,6 +16,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String name;
 
+    /**
+     * Immutable resource name.
+     */
     public String getName() {
         return name;
     }
@@ -32,6 +38,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+     */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -40,6 +49,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String isInternal;
 
+    /**
+     * Indicates whether the type is internal, making it unavailable for use by metadata elements.
+     */
     public String getIsInternal() {
         return isInternal;
     }
@@ -48,6 +60,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String isTag;
 
+    /**
+     * Indicates whether the type can be used for tagging metadata elements.
+     */
     public String getIsTag() {
         return isTag;
     }
@@ -56,6 +71,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String isApproved;
 
+    /**
+     * Indicates whether the type is approved for use as a classifying object.
+     */
     public String getIsApproved() {
         return isApproved;
     }
@@ -64,6 +82,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String externalTypeName;
 
+    /**
+     * Data type as defined in an external system.
+     */
     public String getExternalTypeName() {
         return externalTypeName;
     }
@@ -72,6 +93,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String typeCategory;
 
+    /**
+     * Indicates the category of this type . For example, data assets or connections.
+     */
     public String getTypeCategory() {
         return typeCategory;
     }
@@ -123,6 +147,10 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Specifies the fields to return in a type summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -169,6 +197,10 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -213,6 +245,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -221,6 +256,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -229,6 +267,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -237,6 +278,9 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -248,10 +292,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -259,10 +307,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Immutable resource name.
+         */
         private String name = null;
 
         /**
          * Immutable resource name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -270,10 +322,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -282,10 +338,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Indicates whether the type is internal, making it unavailable for use by metadata elements.
+         */
         private String isInternal = null;
 
         /**
          * Indicates whether the type is internal, making it unavailable for use by metadata elements.
+         * @param isInternal the value to set
          * @return this builder instance
          */
         public Builder isInternal(String isInternal) {
@@ -293,10 +353,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Indicates whether the type can be used for tagging metadata elements.
+         */
         private String isTag = null;
 
         /**
          * Indicates whether the type can be used for tagging metadata elements.
+         * @param isTag the value to set
          * @return this builder instance
          */
         public Builder isTag(String isTag) {
@@ -304,10 +368,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Indicates whether the type is approved for use as a classifying object.
+         */
         private String isApproved = null;
 
         /**
          * Indicates whether the type is approved for use as a classifying object.
+         * @param isApproved the value to set
          * @return this builder instance
          */
         public Builder isApproved(String isApproved) {
@@ -315,10 +383,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Data type as defined in an external system.
+         */
         private String externalTypeName = null;
 
         /**
          * Data type as defined in an external system.
+         * @param externalTypeName the value to set
          * @return this builder instance
          */
         public Builder externalTypeName(String externalTypeName) {
@@ -326,10 +398,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Indicates the category of this type . For example, data assets or connections.
+         */
         private String typeCategory = null;
 
         /**
          * Indicates the category of this type . For example, data assets or connections.
+         * @param typeCategory the value to set
          * @return this builder instance
          */
         public Builder typeCategory(String typeCategory) {
@@ -337,11 +413,16 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a type summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a type summary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -352,17 +433,23 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Singular setter. Specifies the fields to return in a type summary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -370,10 +457,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -381,10 +472,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -392,10 +487,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -403,10 +502,14 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -508,7 +611,8 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -528,6 +632,10 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

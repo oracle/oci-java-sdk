@@ -30,18 +30,33 @@ public final class CreateSourceApplicationInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
         private String workspaceId;
 
+        /**
+         * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+         * @param workspaceId the value to set
+         * @return this builder
+         **/
         public Builder workspaceId(String workspaceId) {
             this.workspaceId = workspaceId;
             this.__explicitlySet__.add("workspaceId");
             return this;
         }
-
+        /**
+         * The source application key to use when creating the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
         private String applicationKey;
 
+        /**
+         * The source application key to use when creating the application.
+         * @param applicationKey the value to set
+         * @return this builder
+         **/
         public Builder applicationKey(String applicationKey) {
             this.applicationKey = applicationKey;
             this.__explicitlySet__.add("applicationKey");
@@ -85,6 +100,10 @@ public final class CreateSourceApplicationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("workspaceId")
     private final String workspaceId;
 
+    /**
+     * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+     * @return the value
+     **/
     public String getWorkspaceId() {
         return workspaceId;
     }
@@ -95,6 +114,10 @@ public final class CreateSourceApplicationInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
     private final String applicationKey;
 
+    /**
+     * The source application key to use when creating the application.
+     * @return the value
+     **/
     public String getApplicationKey() {
         return applicationKey;
     }

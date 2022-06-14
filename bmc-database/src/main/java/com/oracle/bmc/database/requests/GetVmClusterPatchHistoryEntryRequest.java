@@ -17,6 +17,9 @@ public class GetVmClusterPatchHistoryEntryRequest
      */
     private String vmClusterId;
 
+    /**
+     * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getVmClusterId() {
         return vmClusterId;
     }
@@ -25,6 +28,9 @@ public class GetVmClusterPatchHistoryEntryRequest
      */
     private String patchHistoryEntryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+     */
     public String getPatchHistoryEntryId() {
         return patchHistoryEntryId;
     }
@@ -36,10 +42,14 @@ public class GetVmClusterPatchHistoryEntryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String vmClusterId = null;
 
         /**
          * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param vmClusterId the value to set
          * @return this builder instance
          */
         public Builder vmClusterId(String vmClusterId) {
@@ -47,10 +57,14 @@ public class GetVmClusterPatchHistoryEntryRequest
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+         */
         private String patchHistoryEntryId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+         * @param patchHistoryEntryId the value to set
          * @return this builder instance
          */
         public Builder patchHistoryEntryId(String patchHistoryEntryId) {
@@ -129,12 +143,17 @@ public class GetVmClusterPatchHistoryEntryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().vmClusterId(vmClusterId).patchHistoryEntryId(patchHistoryEntryId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

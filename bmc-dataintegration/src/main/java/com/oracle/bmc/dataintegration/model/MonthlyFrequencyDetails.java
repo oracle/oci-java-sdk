@@ -35,10 +35,17 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
             this.__explicitlySet__.add("frequency");
             return this;
         }
-
+        /**
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
+        /**
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         * @param interval the value to set
+         * @return this builder
+         **/
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -53,10 +60,17 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
             this.__explicitlySet__.add("time");
             return this;
         }
-
+        /**
+         * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("days")
         private java.util.List<Integer> days;
 
+        /**
+         * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+         * @param days the value to set
+         * @return this builder
+         **/
         public Builder days(java.util.List<Integer> days) {
             this.days = days;
             this.__explicitlySet__.add("days");
@@ -112,6 +126,10 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
+    /**
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+     * @return the value
+     **/
     public Integer getInterval() {
         return interval;
     }
@@ -129,6 +147,10 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("days")
     private final java.util.List<Integer> days;
 
+    /**
+     * A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+     * @return the value
+     **/
     public java.util.List<Integer> getDays() {
         return days;
     }

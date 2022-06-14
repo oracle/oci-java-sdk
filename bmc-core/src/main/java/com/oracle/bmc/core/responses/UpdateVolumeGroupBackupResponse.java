@@ -14,6 +14,11 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -23,6 +28,10 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
+    /**
+     * The returned VolumeGroupBackup instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.VolumeGroupBackup getVolumeGroupBackup() {
         return volumeGroupBackup;
     }
@@ -45,15 +54,33 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned VolumeGroupBackup instance.
+         */
         private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
+        /**
+         * The returned VolumeGroupBackup instance.
+         * @param volumeGroupBackup the value to set
+         * @return this builder
+         */
         public Builder volumeGroupBackup(
                 com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup) {
             this.volumeGroupBackup = volumeGroupBackup;
@@ -72,11 +99,19 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateVolumeGroupBackupResponse build() {
             return new UpdateVolumeGroupBackupResponse(__httpStatusCode__, etag, volumeGroupBackup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

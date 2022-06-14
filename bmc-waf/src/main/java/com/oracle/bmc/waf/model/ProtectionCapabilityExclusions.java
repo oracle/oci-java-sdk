@@ -32,18 +32,41 @@ public final class ProtectionCapabilityExclusions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of HTTP request cookie values (by cookie name) to exclude from inspecting.
+         * Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestCookies")
         private java.util.List<String> requestCookies;
 
+        /**
+         * List of HTTP request cookie values (by cookie name) to exclude from inspecting.
+         * Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
+         *
+         * @param requestCookies the value to set
+         * @return this builder
+         **/
         public Builder requestCookies(java.util.List<String> requestCookies) {
             this.requestCookies = requestCookies;
             this.__explicitlySet__.add("requestCookies");
             return this;
         }
-
+        /**
+         * List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting.
+         * Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("args")
         private java.util.List<String> args;
 
+        /**
+         * List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting.
+         * Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
+         *
+         * @param args the value to set
+         * @return this builder
+         **/
         public Builder args(java.util.List<String> args) {
             this.args = args;
             this.__explicitlySet__.add("args");
@@ -88,6 +111,12 @@ public final class ProtectionCapabilityExclusions {
     @com.fasterxml.jackson.annotation.JsonProperty("requestCookies")
     private final java.util.List<String> requestCookies;
 
+    /**
+     * List of HTTP request cookie values (by cookie name) to exclude from inspecting.
+     * Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getRequestCookies() {
         return requestCookies;
     }
@@ -100,6 +129,12 @@ public final class ProtectionCapabilityExclusions {
     @com.fasterxml.jackson.annotation.JsonProperty("args")
     private final java.util.List<String> args;
 
+    /**
+     * List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting.
+     * Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getArgs() {
         return args;
     }

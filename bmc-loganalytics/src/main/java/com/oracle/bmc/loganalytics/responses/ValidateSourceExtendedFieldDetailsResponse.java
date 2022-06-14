@@ -15,6 +15,11 @@ public class ValidateSourceExtendedFieldDetailsResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +30,10 @@ public class ValidateSourceExtendedFieldDetailsResponse
     private com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
             extendedFieldsValidationResult;
 
+    /**
+     * The returned ExtendedFieldsValidationResult instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
             getExtendedFieldsValidationResult() {
         return extendedFieldsValidationResult;
@@ -53,16 +62,34 @@ public class ValidateSourceExtendedFieldDetailsResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ExtendedFieldsValidationResult instance.
+         */
         private com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
                 extendedFieldsValidationResult;
 
+        /**
+         * The returned ExtendedFieldsValidationResult instance.
+         * @param extendedFieldsValidationResult the value to set
+         * @return this builder
+         */
         public Builder extendedFieldsValidationResult(
                 com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
                         extendedFieldsValidationResult) {
@@ -82,12 +109,20 @@ public class ValidateSourceExtendedFieldDetailsResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ValidateSourceExtendedFieldDetailsResponse build() {
             return new ValidateSourceExtendedFieldDetailsResponse(
                     __httpStatusCode__, opcRequestId, extendedFieldsValidationResult);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

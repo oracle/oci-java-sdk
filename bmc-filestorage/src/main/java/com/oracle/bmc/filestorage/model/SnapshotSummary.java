@@ -58,90 +58,207 @@ public final class SnapshotSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
+         *
+         * @param fileSystemId the value to set
+         * @return this builder
+         **/
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = fileSystemId;
             this.__explicitlySet__.add("fileSystemId");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The current state of the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the snapshot.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * Name of the snapshot. This value is immutable.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code Sunday}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the snapshot. This value is immutable.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code Sunday}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The date and time the snapshot was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the snapshot was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
+         * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
+         * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provenanceId")
         private String provenanceId;
 
+        /**
+         * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
+         * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
+         * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         * @param provenanceId the value to set
+         * @return this builder
+         **/
         public Builder provenanceId(String provenanceId) {
             this.provenanceId = provenanceId;
             this.__explicitlySet__.add("provenanceId");
             return this;
         }
-
+        /**
+         * Specifies whether the snapshot has been cloned.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneSource")
         private Boolean isCloneSource;
 
+        /**
+         * Specifies whether the snapshot has been cloned.
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         *
+         * @param isCloneSource the value to set
+         * @return this builder
+         **/
         public Builder isCloneSource(Boolean isCloneSource) {
             this.isCloneSource = isCloneSource;
             this.__explicitlySet__.add("isCloneSource");
             return this;
         }
-
+        /**
+         * Additional information about the current 'lifecycleState'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
+        /**
+         * Additional information about the current 'lifecycleState'.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair
+         *  with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair
+         *  with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -206,6 +323,11 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
+     *
+     * @return the value
+     **/
     public String getFileSystemId() {
         return fileSystemId;
     }
@@ -216,6 +338,10 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -276,6 +402,10 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the snapshot.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -291,6 +421,15 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the snapshot. This value is immutable.
+     * <p>
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code Sunday}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -305,6 +444,14 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the snapshot was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -319,6 +466,14 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("provenanceId")
     private final String provenanceId;
 
+    /**
+     * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
+     * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
+     * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     *
+     * @return the value
+     **/
     public String getProvenanceId() {
         return provenanceId;
     }
@@ -331,6 +486,12 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneSource")
     private final Boolean isCloneSource;
 
+    /**
+     * Specifies whether the snapshot has been cloned.
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     *
+     * @return the value
+     **/
     public Boolean getIsCloneSource() {
         return isCloneSource;
     }
@@ -341,6 +502,10 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * Additional information about the current 'lifecycleState'.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -355,6 +520,14 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair
+     *  with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -368,6 +541,13 @@ public final class SnapshotSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -80,19 +80,33 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-
+        /**
+         * A link to the stack resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
         private String resourceLink;
 
+        /**
+         * A link to the stack resource.
+         * @param resourceLink the value to set
+         * @return this builder
+         **/
         public Builder resourceLink(String resourceLink) {
             this.resourceLink = resourceLink;
             this.__explicitlySet__.add("resourceLink");
             return this;
         }
-
+        /**
+         * A list of variables for the stack resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.List<OrchestrationVariable> variables;
 
+        /**
+         * A list of variables for the stack resource.
+         * @param variables the value to set
+         * @return this builder
+         **/
         public Builder variables(java.util.List<OrchestrationVariable> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
@@ -166,6 +180,10 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
     private final String resourceLink;
 
+    /**
+     * A link to the stack resource.
+     * @return the value
+     **/
     public String getResourceLink() {
         return resourceLink;
     }
@@ -176,6 +194,10 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.List<OrchestrationVariable> variables;
 
+    /**
+     * A list of variables for the stack resource.
+     * @return the value
+     **/
     public java.util.List<OrchestrationVariable> getVariables() {
         return variables;
     }

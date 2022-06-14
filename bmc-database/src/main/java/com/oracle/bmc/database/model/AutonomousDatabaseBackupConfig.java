@@ -32,18 +32,33 @@ public final class AutonomousDatabaseBackupConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
         private String manualBackupBucketName;
 
+        /**
+         * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
+         * @param manualBackupBucketName the value to set
+         * @return this builder
+         **/
         public Builder manualBackupBucketName(String manualBackupBucketName) {
             this.manualBackupBucketName = manualBackupBucketName;
             this.__explicitlySet__.add("manualBackupBucketName");
             return this;
         }
-
+        /**
+         * The manual backup destination type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manualBackupType")
         private ManualBackupType manualBackupType;
 
+        /**
+         * The manual backup destination type.
+         * @param manualBackupType the value to set
+         * @return this builder
+         **/
         public Builder manualBackupType(ManualBackupType manualBackupType) {
             this.manualBackupType = manualBackupType;
             this.__explicitlySet__.add("manualBackupType");
@@ -88,6 +103,10 @@ public final class AutonomousDatabaseBackupConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupBucketName")
     private final String manualBackupBucketName;
 
+    /**
+     * Name of [Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
+     * @return the value
+     **/
     public String getManualBackupBucketName() {
         return manualBackupBucketName;
     }
@@ -146,6 +165,10 @@ public final class AutonomousDatabaseBackupConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("manualBackupType")
     private final ManualBackupType manualBackupType;
 
+    /**
+     * The manual backup destination type.
+     * @return the value
+     **/
     public ManualBackupType getManualBackupType() {
         return manualBackupType;
     }

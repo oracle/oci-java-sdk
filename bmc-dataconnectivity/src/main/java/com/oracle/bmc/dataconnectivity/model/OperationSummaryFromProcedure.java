@@ -35,19 +35,33 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
             this.__explicitlySet__.add("metadata");
             return this;
         }
-
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The model version of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The model version of the object.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -62,46 +76,81 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * The operation name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The operation name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         * @param objectVersion the value to set
+         * @return this builder
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-
+        /**
+         * The external key for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
+        /**
+         * The external key for the object.
+         * @param externalKey the value to set
+         * @return this builder
+         **/
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
             return this;
         }
-
+        /**
+         * The resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * The resource name.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -184,6 +233,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -194,6 +247,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The model version of the object.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -211,6 +268,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The operation name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -221,6 +282,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -231,6 +296,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
+    /**
+     * The external key for the object.
+     * @return the value
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -241,6 +310,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * The resource name.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -251,6 +324,10 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }

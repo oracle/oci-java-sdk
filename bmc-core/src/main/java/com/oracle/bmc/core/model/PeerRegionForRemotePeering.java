@@ -31,9 +31,23 @@ public final class PeerRegionForRemotePeering {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The region's name.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The region's name.
+         * <p>
+         * Example: {@code us-phoenix-1}
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -78,6 +92,13 @@ public final class PeerRegionForRemotePeering {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The region's name.
+     * <p>
+     * Example: {@code us-phoenix-1}
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }

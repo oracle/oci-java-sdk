@@ -27,45 +27,81 @@ package com.oracle.bmc.dataintegration.model;
 public final class BipReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The fetch size for reading.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
         private Integer fetchSize;
 
+        /**
+         * The fetch size for reading.
+         * @param fetchSize the value to set
+         * @return this builder
+         **/
         public Builder fetchSize(Integer fetchSize) {
             this.fetchSize = fetchSize;
             this.__explicitlySet__.add("fetchSize");
             return this;
         }
-
+        /**
+         * The maximum number of rows to read.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
         private Integer rowLimit;
 
+        /**
+         * The maximum number of rows to read.
+         * @param rowLimit the value to set
+         * @return this builder
+         **/
         public Builder rowLimit(Integer rowLimit) {
             this.rowLimit = rowLimit;
             this.__explicitlySet__.add("rowLimit");
             return this;
         }
-
+        /**
+         * Name of BIP report parameter to control the start of the chunk
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
         private String offsetParameter;
 
+        /**
+         * Name of BIP report parameter to control the start of the chunk
+         * @param offsetParameter the value to set
+         * @return this builder
+         **/
         public Builder offsetParameter(String offsetParameter) {
             this.offsetParameter = offsetParameter;
             this.__explicitlySet__.add("offsetParameter");
             return this;
         }
-
+        /**
+         * Name of BIP report parameter to control the start of the chunk
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
         private String fetchNextRowsParameter;
 
+        /**
+         * Name of BIP report parameter to control the start of the chunk
+         * @param fetchNextRowsParameter the value to set
+         * @return this builder
+         **/
         public Builder fetchNextRowsParameter(String fetchNextRowsParameter) {
             this.fetchNextRowsParameter = fetchNextRowsParameter;
             this.__explicitlySet__.add("fetchNextRowsParameter");
             return this;
         }
-
+        /**
+         * An array of custom BIP report parameters and their values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customParameters")
         private java.util.List<BipReportParameterValue> customParameters;
 
+        /**
+         * An array of custom BIP report parameters and their values.
+         * @param customParameters the value to set
+         * @return this builder
+         **/
         public Builder customParameters(java.util.List<BipReportParameterValue> customParameters) {
             this.customParameters = customParameters;
             this.__explicitlySet__.add("customParameters");
@@ -172,6 +208,10 @@ public final class BipReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
     private final Integer fetchSize;
 
+    /**
+     * The fetch size for reading.
+     * @return the value
+     **/
     public Integer getFetchSize() {
         return fetchSize;
     }
@@ -182,6 +222,10 @@ public final class BipReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
     private final Integer rowLimit;
 
+    /**
+     * The maximum number of rows to read.
+     * @return the value
+     **/
     public Integer getRowLimit() {
         return rowLimit;
     }
@@ -192,6 +236,10 @@ public final class BipReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
     private final String offsetParameter;
 
+    /**
+     * Name of BIP report parameter to control the start of the chunk
+     * @return the value
+     **/
     public String getOffsetParameter() {
         return offsetParameter;
     }
@@ -202,6 +250,10 @@ public final class BipReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
     private final String fetchNextRowsParameter;
 
+    /**
+     * Name of BIP report parameter to control the start of the chunk
+     * @return the value
+     **/
     public String getFetchNextRowsParameter() {
         return fetchNextRowsParameter;
     }
@@ -212,6 +264,10 @@ public final class BipReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.annotation.JsonProperty("customParameters")
     private final java.util.List<BipReportParameterValue> customParameters;
 
+    /**
+     * An array of custom BIP report parameters and their values.
+     * @return the value
+     **/
     public java.util.List<BipReportParameterValue> getCustomParameters() {
         return customParameters;
     }

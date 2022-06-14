@@ -51,72 +51,133 @@ public final class ChildDatabase {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Managed Database.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         * @param deploymentType the value to set
+         * @return this builder
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-
+        /**
+         * The workload type of the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private WorkloadType workloadType;
 
+        /**
+         * The workload type of the Autonomous Database.
+         * @param workloadType the value to set
+         * @return this builder
+         **/
         public Builder workloadType(WorkloadType workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
         }
-
+        /**
+         * The type of Oracle Database installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
+        /**
+         * The type of Oracle Database installation.
+         * @param databaseType the value to set
+         * @return this builder
+         **/
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
         private DatabaseSubType databaseSubType;
 
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         *
+         * @param databaseSubType the value to set
+         * @return this builder
+         **/
         public Builder databaseSubType(DatabaseSubType databaseSubType) {
             this.databaseSubType = databaseSubType;
             this.__explicitlySet__.add("databaseSubType");
             return this;
         }
-
+        /**
+         * The date and time the Managed Database was added to the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAdded")
         private java.util.Date timeAdded;
 
+        /**
+         * The date and time the Managed Database was added to the group.
+         * @param timeAdded the value to set
+         * @return this builder
+         **/
         public Builder timeAdded(java.util.Date timeAdded) {
             this.timeAdded = timeAdded;
             this.__explicitlySet__.add("timeAdded");
@@ -175,6 +236,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -185,6 +250,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Managed Database.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -195,6 +264,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -205,6 +278,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     * @return the value
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
@@ -215,6 +292,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final WorkloadType workloadType;
 
+    /**
+     * The workload type of the Autonomous Database.
+     * @return the value
+     **/
     public WorkloadType getWorkloadType() {
         return workloadType;
     }
@@ -225,6 +306,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
+    /**
+     * The type of Oracle Database installation.
+     * @return the value
+     **/
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
@@ -237,6 +322,12 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
+    /**
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
+     * @return the value
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
@@ -247,6 +338,10 @@ public final class ChildDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("timeAdded")
     private final java.util.Date timeAdded;
 
+    /**
+     * The date and time the Managed Database was added to the group.
+     * @return the value
+     **/
     public java.util.Date getTimeAdded() {
         return timeAdded;
     }

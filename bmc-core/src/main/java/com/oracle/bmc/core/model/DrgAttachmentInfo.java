@@ -30,9 +30,19 @@ public final class DrgAttachmentInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The Oracle-assigned ID of the DRG attachment
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The Oracle-assigned ID of the DRG attachment
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -75,6 +85,11 @@ public final class DrgAttachmentInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The Oracle-assigned ID of the DRG attachment
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }

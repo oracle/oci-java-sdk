@@ -90,46 +90,85 @@ public final class CreateSensitiveTypePatternDetails extends CreateSensitiveType
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * A regular expression to be used by data discovery for matching column names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namePattern")
         private String namePattern;
 
+        /**
+         * A regular expression to be used by data discovery for matching column names.
+         * @param namePattern the value to set
+         * @return this builder
+         **/
         public Builder namePattern(String namePattern) {
             this.namePattern = namePattern;
             this.__explicitlySet__.add("namePattern");
             return this;
         }
-
+        /**
+         * A regular expression to be used by data discovery for matching column comments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commentPattern")
         private String commentPattern;
 
+        /**
+         * A regular expression to be used by data discovery for matching column comments.
+         * @param commentPattern the value to set
+         * @return this builder
+         **/
         public Builder commentPattern(String commentPattern) {
             this.commentPattern = commentPattern;
             this.__explicitlySet__.add("commentPattern");
             return this;
         }
-
+        /**
+         * A regular expression to be used by data discovery for matching column data values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataPattern")
         private String dataPattern;
 
+        /**
+         * A regular expression to be used by data discovery for matching column data values.
+         * @param dataPattern the value to set
+         * @return this builder
+         **/
         public Builder dataPattern(String dataPattern) {
             this.dataPattern = dataPattern;
             this.__explicitlySet__.add("dataPattern");
             return this;
         }
-
+        /**
+         * The search type indicating how the column name, comment and data patterns should be used by data discovery.
+         * [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchType")
         private SensitiveTypePattern.SearchType searchType;
 
+        /**
+         * The search type indicating how the column name, comment and data patterns should be used by data discovery.
+         * [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
+         *
+         * @param searchType the value to set
+         * @return this builder
+         **/
         public Builder searchType(SensitiveTypePattern.SearchType searchType) {
             this.searchType = searchType;
             this.__explicitlySet__.add("searchType");
             return this;
         }
-
+        /**
+         * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMaskingFormatId")
         private String defaultMaskingFormatId;
 
+        /**
+         * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
+         * @param defaultMaskingFormatId the value to set
+         * @return this builder
+         **/
         public Builder defaultMaskingFormatId(String defaultMaskingFormatId) {
             this.defaultMaskingFormatId = defaultMaskingFormatId;
             this.__explicitlySet__.add("defaultMaskingFormatId");
@@ -225,6 +264,10 @@ public final class CreateSensitiveTypePatternDetails extends CreateSensitiveType
     @com.fasterxml.jackson.annotation.JsonProperty("namePattern")
     private final String namePattern;
 
+    /**
+     * A regular expression to be used by data discovery for matching column names.
+     * @return the value
+     **/
     public String getNamePattern() {
         return namePattern;
     }
@@ -235,6 +278,10 @@ public final class CreateSensitiveTypePatternDetails extends CreateSensitiveType
     @com.fasterxml.jackson.annotation.JsonProperty("commentPattern")
     private final String commentPattern;
 
+    /**
+     * A regular expression to be used by data discovery for matching column comments.
+     * @return the value
+     **/
     public String getCommentPattern() {
         return commentPattern;
     }
@@ -245,6 +292,10 @@ public final class CreateSensitiveTypePatternDetails extends CreateSensitiveType
     @com.fasterxml.jackson.annotation.JsonProperty("dataPattern")
     private final String dataPattern;
 
+    /**
+     * A regular expression to be used by data discovery for matching column data values.
+     * @return the value
+     **/
     public String getDataPattern() {
         return dataPattern;
     }
@@ -257,6 +308,12 @@ public final class CreateSensitiveTypePatternDetails extends CreateSensitiveType
     @com.fasterxml.jackson.annotation.JsonProperty("searchType")
     private final SensitiveTypePattern.SearchType searchType;
 
+    /**
+     * The search type indicating how the column name, comment and data patterns should be used by data discovery.
+     * [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
+     *
+     * @return the value
+     **/
     public SensitiveTypePattern.SearchType getSearchType() {
         return searchType;
     }
@@ -267,6 +324,10 @@ public final class CreateSensitiveTypePatternDetails extends CreateSensitiveType
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMaskingFormatId")
     private final String defaultMaskingFormatId;
 
+    /**
+     * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
+     * @return the value
+     **/
     public String getDefaultMaskingFormatId() {
         return defaultMaskingFormatId;
     }

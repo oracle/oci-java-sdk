@@ -17,6 +17,9 @@ public class GetSecurityAssessmentComparisonRequest
      */
     private String securityAssessmentId;
 
+    /**
+     * The OCID of the security assessment.
+     */
     public String getSecurityAssessmentId() {
         return securityAssessmentId;
     }
@@ -25,6 +28,9 @@ public class GetSecurityAssessmentComparisonRequest
      */
     private String comparisonSecurityAssessmentId;
 
+    /**
+     * The OCID of the baseline security assessment.
+     */
     public String getComparisonSecurityAssessmentId() {
         return comparisonSecurityAssessmentId;
     }
@@ -33,6 +39,9 @@ public class GetSecurityAssessmentComparisonRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -44,10 +53,14 @@ public class GetSecurityAssessmentComparisonRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the security assessment.
+         */
         private String securityAssessmentId = null;
 
         /**
          * The OCID of the security assessment.
+         * @param securityAssessmentId the value to set
          * @return this builder instance
          */
         public Builder securityAssessmentId(String securityAssessmentId) {
@@ -55,10 +68,14 @@ public class GetSecurityAssessmentComparisonRequest
             return this;
         }
 
+        /**
+         * The OCID of the baseline security assessment.
+         */
         private String comparisonSecurityAssessmentId = null;
 
         /**
          * The OCID of the baseline security assessment.
+         * @param comparisonSecurityAssessmentId the value to set
          * @return this builder instance
          */
         public Builder comparisonSecurityAssessmentId(String comparisonSecurityAssessmentId) {
@@ -66,10 +83,14 @@ public class GetSecurityAssessmentComparisonRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -150,7 +171,8 @@ public class GetSecurityAssessmentComparisonRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -159,6 +181,10 @@ public class GetSecurityAssessmentComparisonRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

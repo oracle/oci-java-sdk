@@ -38,27 +38,51 @@ public final class ObjectStorageBucketConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tenancy of the bucket where the CRL is stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
+        /**
+         * The tenancy of the bucket where the CRL is stored.
+         * @param objectStorageNamespace the value to set
+         * @return this builder
+         **/
         public Builder objectStorageNamespace(String objectStorageNamespace) {
             this.objectStorageNamespace = objectStorageNamespace;
             this.__explicitlySet__.add("objectStorageNamespace");
             return this;
         }
-
+        /**
+         * The name of the bucket where the CRL is stored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketName")
         private String objectStorageBucketName;
 
+        /**
+         * The name of the bucket where the CRL is stored.
+         * @param objectStorageBucketName the value to set
+         * @return this builder
+         **/
         public Builder objectStorageBucketName(String objectStorageBucketName) {
             this.objectStorageBucketName = objectStorageBucketName;
             this.__explicitlySet__.add("objectStorageBucketName");
             return this;
         }
-
+        /**
+         * The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageObjectNameFormat")
         private String objectStorageObjectNameFormat;
 
+        /**
+         * The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+         *
+         * @param objectStorageObjectNameFormat the value to set
+         * @return this builder
+         **/
         public Builder objectStorageObjectNameFormat(String objectStorageObjectNameFormat) {
             this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
             this.__explicitlySet__.add("objectStorageObjectNameFormat");
@@ -107,6 +131,10 @@ public final class ObjectStorageBucketConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
     private final String objectStorageNamespace;
 
+    /**
+     * The tenancy of the bucket where the CRL is stored.
+     * @return the value
+     **/
     public String getObjectStorageNamespace() {
         return objectStorageNamespace;
     }
@@ -117,6 +145,10 @@ public final class ObjectStorageBucketConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucketName")
     private final String objectStorageBucketName;
 
+    /**
+     * The name of the bucket where the CRL is stored.
+     * @return the value
+     **/
     public String getObjectStorageBucketName() {
         return objectStorageBucketName;
     }
@@ -128,6 +160,11 @@ public final class ObjectStorageBucketConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageObjectNameFormat")
     private final String objectStorageObjectNameFormat;
 
+    /**
+     * The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+     *
+     * @return the value
+     **/
     public String getObjectStorageObjectNameFormat() {
         return objectStorageObjectNameFormat;
     }

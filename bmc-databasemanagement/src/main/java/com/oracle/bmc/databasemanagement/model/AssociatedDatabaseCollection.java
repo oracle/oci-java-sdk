@@ -29,9 +29,17 @@ public final class AssociatedDatabaseCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of databases using a Database Management private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AssociatedDatabaseSummary> items;
 
+        /**
+         * A list of databases using a Database Management private endpoint.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AssociatedDatabaseSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class AssociatedDatabaseCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AssociatedDatabaseSummary> items;
 
+    /**
+     * A list of databases using a Database Management private endpoint.
+     * @return the value
+     **/
     public java.util.List<AssociatedDatabaseSummary> getItems() {
         return items;
     }

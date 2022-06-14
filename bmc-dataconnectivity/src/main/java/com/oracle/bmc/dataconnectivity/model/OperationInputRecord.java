@@ -29,9 +29,17 @@ public final class OperationInputRecord {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * values of IN/INOUT params.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<Object> fieldValues;
 
+        /**
+         * values of IN/INOUT params.
+         * @param fieldValues the value to set
+         * @return this builder
+         **/
         public Builder fieldValues(java.util.List<Object> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
@@ -73,6 +81,10 @@ public final class OperationInputRecord {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<Object> fieldValues;
 
+    /**
+     * values of IN/INOUT params.
+     * @return the value
+     **/
     public java.util.List<Object> getFieldValues() {
         return fieldValues;
     }

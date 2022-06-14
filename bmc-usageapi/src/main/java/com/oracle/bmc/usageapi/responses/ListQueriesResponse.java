@@ -15,6 +15,12 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -27,6 +33,13 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For pagination of a list of Queries. If this header appears in the response, then this
+     * is a partial list of Queries. Include this value as the {@code page} parameter in a subsequent
+     * GET request, to get the next batch of Queries.
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -36,6 +49,10 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.usageapi.model.QueryCollection queryCollection;
 
+    /**
+     * The returned QueryCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.usageapi.model.QueryCollection getQueryCollection() {
         return queryCollection;
     }
@@ -65,22 +82,56 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For pagination of a list of Queries. If this header appears in the response, then this
+         * is a partial list of Queries. Include this value as the {@code page} parameter in a subsequent
+         * GET request, to get the next batch of Queries.
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For pagination of a list of Queries. If this header appears in the response, then this
+         * is a partial list of Queries. Include this value as the {@code page} parameter in a subsequent
+         * GET request, to get the next batch of Queries.
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * The returned QueryCollection instance.
+         */
         private com.oracle.bmc.usageapi.model.QueryCollection queryCollection;
 
+        /**
+         * The returned QueryCollection instance.
+         * @param queryCollection the value to set
+         * @return this builder
+         */
         public Builder queryCollection(
                 com.oracle.bmc.usageapi.model.QueryCollection queryCollection) {
             this.queryCollection = queryCollection;
@@ -100,12 +151,20 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListQueriesResponse build() {
             return new ListQueriesResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, queryCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

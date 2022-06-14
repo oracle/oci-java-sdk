@@ -16,6 +16,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String id;
 
+    /**
+     * A filter to return only resources that match the specified identifier.
+     */
     public String getId() {
         return id;
     }
@@ -70,6 +73,13 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
+    /**
+     * The field used to sort Knowledge Bases. Only one sort order is allowed.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, FAILED, DELETING, and DELETED**.Default order for _timeCreated_ is **descending**.
+     * Default order for _timeUpdated_ is **descending**.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -78,6 +88,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.adm.model.KnowledgeBase.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only Knowledge Bases that match the specified lifecycleState.
+     */
     public com.oracle.bmc.adm.model.KnowledgeBase.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -86,6 +99,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -94,6 +110,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -102,6 +121,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -110,6 +132,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -118,6 +143,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String compartmentId;
 
+    /**
+     * A filter to return only resources that belong to the specified compartment identifier.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -126,6 +154,9 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -137,10 +168,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * A filter to return only resources that match the specified identifier.
+         */
         private String id = null;
 
         /**
          * A filter to return only resources that match the specified identifier.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -148,6 +183,13 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The field used to sort Knowledge Bases. Only one sort order is allowed.
+         * Default order for _displayName_ is **ascending alphabetical order**.
+         * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, FAILED, DELETING, and DELETED**.Default order for _timeCreated_ is **descending**.
+         * Default order for _timeUpdated_ is **descending**.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -156,6 +198,7 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
          * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, FAILED, DELETING, and DELETED**.Default order for _timeCreated_ is **descending**.
          * Default order for _timeUpdated_ is **descending**.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -163,10 +206,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only Knowledge Bases that match the specified lifecycleState.
+         */
         private com.oracle.bmc.adm.model.KnowledgeBase.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only Knowledge Bases that match the specified lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -175,10 +222,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.adm.model.SortOrder sortOrder) {
@@ -186,10 +237,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -197,10 +252,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -208,10 +267,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -219,10 +282,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that belong to the specified compartment identifier.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -230,10 +297,14 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -325,7 +396,8 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -340,6 +412,10 @@ public class ListKnowledgeBasesRequest extends com.oracle.bmc.requests.BmcReques
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

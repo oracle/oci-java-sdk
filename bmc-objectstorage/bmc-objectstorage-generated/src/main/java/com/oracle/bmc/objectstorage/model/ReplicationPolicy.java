@@ -53,72 +53,141 @@ public final class ReplicationPolicy {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The id of the replication policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The id of the replication policy.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The name of the policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the policy.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The destination region to replicate to, for example "us-ashburn-1".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
         private String destinationRegionName;
 
+        /**
+         * The destination region to replicate to, for example "us-ashburn-1".
+         * @param destinationRegionName the value to set
+         * @return this builder
+         **/
         public Builder destinationRegionName(String destinationRegionName) {
             this.destinationRegionName = destinationRegionName;
             this.__explicitlySet__.add("destinationRegionName");
             return this;
         }
-
+        /**
+         * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+         * create a destination bucket. Create the destination bucket before creating the policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
         private String destinationBucketName;
 
+        /**
+         * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+         * create a destination bucket. Create the destination bucket before creating the policy.
+         *
+         * @param destinationBucketName the value to set
+         * @return this builder
+         **/
         public Builder destinationBucketName(String destinationBucketName) {
             this.destinationBucketName = destinationBucketName;
             this.__explicitlySet__.add("destinationBucketName");
             return this;
         }
-
+        /**
+         * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * Changes made to the source bucket before this time has been replicated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSync")
         private java.util.Date timeLastSync;
 
+        /**
+         * Changes made to the source bucket before this time has been replicated.
+         *
+         * @param timeLastSync the value to set
+         * @return this builder
+         **/
         public Builder timeLastSync(java.util.Date timeLastSync) {
             this.timeLastSync = timeLastSync;
             this.__explicitlySet__.add("timeLastSync");
             return this;
         }
-
+        /**
+         * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue
+         * described in the status message, the status will become ACTIVE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue
+         * described in the status message, the status will become ACTIVE.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * A human-readable description of the status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
         private String statusMessage;
 
+        /**
+         * A human-readable description of the status.
+         * @param statusMessage the value to set
+         * @return this builder
+         **/
         public Builder statusMessage(String statusMessage) {
             this.statusMessage = statusMessage;
             this.__explicitlySet__.add("statusMessage");
@@ -177,6 +246,10 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The id of the replication policy.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -187,6 +260,10 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the policy.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -197,6 +274,10 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
     private final String destinationRegionName;
 
+    /**
+     * The destination region to replicate to, for example "us-ashburn-1".
+     * @return the value
+     **/
     public String getDestinationRegionName() {
         return destinationRegionName;
     }
@@ -209,6 +290,12 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
     private final String destinationBucketName;
 
+    /**
+     * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+     * create a destination bucket. Create the destination bucket before creating the policy.
+     *
+     * @return the value
+     **/
     public String getDestinationBucketName() {
         return destinationBucketName;
     }
@@ -220,6 +307,11 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -231,6 +323,11 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSync")
     private final java.util.Date timeLastSync;
 
+    /**
+     * Changes made to the source bucket before this time has been replicated.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeLastSync() {
         return timeLastSync;
     }
@@ -292,6 +389,12 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue
+     * described in the status message, the status will become ACTIVE.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -302,6 +405,10 @@ public final class ReplicationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
     private final String statusMessage;
 
+    /**
+     * A human-readable description of the status.
+     * @return the value
+     **/
     public String getStatusMessage() {
         return statusMessage;
     }

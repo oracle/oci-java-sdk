@@ -18,6 +18,9 @@ public class UpdateBackendSetRequest
      */
     private String networkLoadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
@@ -27,6 +30,9 @@ public class UpdateBackendSetRequest
     private com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails
             updateBackendSetDetails;
 
+    /**
+     * The details to update a backend set.
+     */
     public com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails
             getUpdateBackendSetDetails() {
         return updateBackendSetDetails;
@@ -39,6 +45,12 @@ public class UpdateBackendSetRequest
      */
     private String backendSetName;
 
+    /**
+     * The name of the backend set to update.
+     * <p>
+     * Example: {@code example_backend_set}
+     *
+     */
     public String getBackendSetName() {
         return backendSetName;
     }
@@ -49,6 +61,11 @@ public class UpdateBackendSetRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -62,6 +79,14 @@ public class UpdateBackendSetRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -75,6 +100,14 @@ public class UpdateBackendSetRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -97,10 +130,14 @@ public class UpdateBackendSetRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         */
         private String networkLoadBalancerId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
@@ -108,11 +145,15 @@ public class UpdateBackendSetRequest
             return this;
         }
 
+        /**
+         * The details to update a backend set.
+         */
         private com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails
                 updateBackendSetDetails = null;
 
         /**
          * The details to update a backend set.
+         * @param updateBackendSetDetails the value to set
          * @return this builder instance
          */
         public Builder updateBackendSetDetails(
@@ -122,6 +163,12 @@ public class UpdateBackendSetRequest
             return this;
         }
 
+        /**
+         * The name of the backend set to update.
+         * <p>
+         * Example: {@code example_backend_set}
+         *
+         */
         private String backendSetName = null;
 
         /**
@@ -129,6 +176,7 @@ public class UpdateBackendSetRequest
          * <p>
          * Example: {@code example_backend_set}
          *
+         * @param backendSetName the value to set
          * @return this builder instance
          */
         public Builder backendSetName(String backendSetName) {
@@ -136,12 +184,18 @@ public class UpdateBackendSetRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -149,6 +203,14 @@ public class UpdateBackendSetRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -158,6 +220,7 @@ public class UpdateBackendSetRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -165,6 +228,14 @@ public class UpdateBackendSetRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -174,6 +245,7 @@ public class UpdateBackendSetRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the current etag value of the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -271,7 +343,8 @@ public class UpdateBackendSetRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -283,6 +356,10 @@ public class UpdateBackendSetRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

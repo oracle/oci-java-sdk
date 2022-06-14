@@ -36,10 +36,17 @@ public final class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSo
             this.__explicitlySet__.add("options");
             return this;
         }
-
+        /**
+         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
+        /**
+         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         * @param dbVersion the value to set
+         * @return this builder
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
@@ -88,6 +95,10 @@ public final class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSo
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
+    /**
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * @return the value
+     **/
     public String getDbVersion() {
         return dbVersion;
     }

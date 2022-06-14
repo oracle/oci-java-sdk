@@ -17,6 +17,10 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -61,6 +65,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The lookup type.  Valid values are Lookup or Dictionary.
+     */
     public Type getType() {
         return type;
     }
@@ -71,6 +78,11 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String lookupDisplayText;
 
+    /**
+     * The lookup text used for filtering.  Only lookups with the specified name
+     * or description will be returned.
+     *
+     */
     public String getLookupDisplayText() {
         return lookupDisplayText;
     }
@@ -122,6 +134,12 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The system value used for filtering.  Only items with the specified system value
+     * will be returned.  Valid values are built in, custom (for user defined items), or
+     * all (for all items, regardless of system value).
+     *
+     */
     public IsSystem getIsSystem() {
         return isSystem;
     }
@@ -169,6 +187,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * sort by field
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -215,6 +236,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The lookup status used for filtering when fetching a list of lookups.
+     */
     public Status getStatus() {
         return status;
     }
@@ -223,6 +247,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String categories;
 
+    /**
+     * A comma-separated list of categories used for filtering
+     */
     public String getCategories() {
         return categories;
     }
@@ -232,6 +259,10 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Boolean isHideSpecial;
 
+    /**
+     * A flag indicating whether or not to return OMC annotated or hidden lookups.
+     *
+     */
     public Boolean getIsHideSpecial() {
         return isHideSpecial;
     }
@@ -240,6 +271,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -248,6 +282,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -294,6 +331,10 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -302,6 +343,9 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -313,11 +357,16 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -325,10 +374,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The lookup type.  Valid values are Lookup or Dictionary.
+         */
         private Type type = null;
 
         /**
          * The lookup type.  Valid values are Lookup or Dictionary.
+         * @param type the value to set
          * @return this builder instance
          */
         public Builder type(Type type) {
@@ -336,12 +389,18 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The lookup text used for filtering.  Only lookups with the specified name
+         * or description will be returned.
+         *
+         */
         private String lookupDisplayText = null;
 
         /**
          * The lookup text used for filtering.  Only lookups with the specified name
          * or description will be returned.
          *
+         * @param lookupDisplayText the value to set
          * @return this builder instance
          */
         public Builder lookupDisplayText(String lookupDisplayText) {
@@ -349,6 +408,12 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The system value used for filtering.  Only items with the specified system value
+         * will be returned.  Valid values are built in, custom (for user defined items), or
+         * all (for all items, regardless of system value).
+         *
+         */
         private IsSystem isSystem = null;
 
         /**
@@ -356,6 +421,7 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * will be returned.  Valid values are built in, custom (for user defined items), or
          * all (for all items, regardless of system value).
          *
+         * @param isSystem the value to set
          * @return this builder instance
          */
         public Builder isSystem(IsSystem isSystem) {
@@ -363,10 +429,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * sort by field
+         */
         private SortBy sortBy = null;
 
         /**
          * sort by field
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -374,10 +444,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The lookup status used for filtering when fetching a list of lookups.
+         */
         private Status status = null;
 
         /**
          * The lookup status used for filtering when fetching a list of lookups.
+         * @param status the value to set
          * @return this builder instance
          */
         public Builder status(Status status) {
@@ -385,10 +459,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A comma-separated list of categories used for filtering
+         */
         private String categories = null;
 
         /**
          * A comma-separated list of categories used for filtering
+         * @param categories the value to set
          * @return this builder instance
          */
         public Builder categories(String categories) {
@@ -396,11 +474,16 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * A flag indicating whether or not to return OMC annotated or hidden lookups.
+         *
+         */
         private Boolean isHideSpecial = null;
 
         /**
          * A flag indicating whether or not to return OMC annotated or hidden lookups.
          *
+         * @param isHideSpecial the value to set
          * @return this builder instance
          */
         public Builder isHideSpecial(Boolean isHideSpecial) {
@@ -408,10 +491,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -419,10 +506,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -430,11 +521,16 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -442,10 +538,14 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -543,7 +643,8 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -561,6 +662,10 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

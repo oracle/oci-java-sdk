@@ -72,10 +72,19 @@ public final class BottomCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
-
+        /**
+         * Value from queryString for bottom command limit argument.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private Integer limit;
 
+        /**
+         * Value from queryString for bottom command limit argument.
+         *
+         * @param limit the value to set
+         * @return this builder
+         **/
         public Builder limit(Integer limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
@@ -143,6 +152,11 @@ public final class BottomCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final Integer limit;
 
+    /**
+     * Value from queryString for bottom command limit argument.
+     *
+     * @return the value
+     **/
     public Integer getLimit() {
         return limit;
     }

@@ -27,9 +27,17 @@ public final class ScriptCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of ScriptSummary items.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ScriptSummary> items;
 
+        /**
+         * List of ScriptSummary items.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ScriptSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -71,6 +79,10 @@ public final class ScriptCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ScriptSummary> items;
 
+    /**
+     * List of ScriptSummary items.
+     * @return the value
+     **/
     public java.util.List<ScriptSummary> getItems() {
         return items;
     }

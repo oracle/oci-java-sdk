@@ -13,6 +13,10 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -22,6 +26,10 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -31,6 +39,10 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.devops.model.Repository repository;
 
+    /**
+     * The returned Repository instance.
+     * @return the value
+     */
     public com.oracle.bmc.devops.model.Repository getRepository() {
         return repository;
     }
@@ -55,22 +67,46 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Repository instance.
+         */
         private com.oracle.bmc.devops.model.Repository repository;
 
+        /**
+         * The returned Repository instance.
+         * @param repository the value to set
+         * @return this builder
+         */
         public Builder repository(com.oracle.bmc.devops.model.Repository repository) {
             this.repository = repository;
             return this;
@@ -89,11 +125,19 @@ public class GetRepositoryResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetRepositoryResponse build() {
             return new GetRepositoryResponse(__httpStatusCode__, etag, opcRequestId, repository);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

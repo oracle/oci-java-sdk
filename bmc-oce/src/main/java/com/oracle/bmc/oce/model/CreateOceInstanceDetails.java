@@ -80,45 +80,81 @@ public final class CreateOceInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OceInstance description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * OceInstance description
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * Compartment Identifier
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * OceInstance Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * OceInstance Name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Tenancy Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
+        /**
+         * Tenancy Identifier
+         * @param tenancyId the value to set
+         * @return this builder
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-
+        /**
+         * Identity Cloud Service access token identifying a stripe and service administrator user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
         private String idcsAccessToken;
 
+        /**
+         * Identity Cloud Service access token identifying a stripe and service administrator user
+         * @param idcsAccessToken the value to set
+         * @return this builder
+         **/
         public Builder idcsAccessToken(String idcsAccessToken) {
             this.idcsAccessToken = idcsAccessToken;
             this.__explicitlySet__.add("idcsAccessToken");
@@ -133,100 +169,189 @@ public final class CreateOceInstanceDetails {
             this.__explicitlySet__.add("identityStripe");
             return this;
         }
-
+        /**
+         * Tenancy Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
         private String tenancyName;
 
+        /**
+         * Tenancy Name
+         * @param tenancyName the value to set
+         * @return this builder
+         **/
         public Builder tenancyName(String tenancyName) {
             this.tenancyName = tenancyName;
             this.__explicitlySet__.add("tenancyName");
             return this;
         }
-
+        /**
+         * Instance type based on its usage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
         private InstanceUsageType instanceUsageType;
 
+        /**
+         * Instance type based on its usage
+         * @param instanceUsageType the value to set
+         * @return this builder
+         **/
         public Builder instanceUsageType(InstanceUsageType instanceUsageType) {
             this.instanceUsageType = instanceUsageType;
             this.__explicitlySet__.add("instanceUsageType");
             return this;
         }
-
+        /**
+         * a list of add-on features for the ocm instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
         private java.util.List<String> addOnFeatures;
 
+        /**
+         * a list of add-on features for the ocm instance
+         * @param addOnFeatures the value to set
+         * @return this builder
+         **/
         public Builder addOnFeatures(java.util.List<String> addOnFeatures) {
             this.addOnFeatures = addOnFeatures;
             this.__explicitlySet__.add("addOnFeatures");
             return this;
         }
-
+        /**
+         * Object Storage Namespace of Tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
+        /**
+         * Object Storage Namespace of Tenancy
+         * @param objectStorageNamespace the value to set
+         * @return this builder
+         **/
         public Builder objectStorageNamespace(String objectStorageNamespace) {
             this.objectStorageNamespace = objectStorageNamespace;
             this.__explicitlySet__.add("objectStorageNamespace");
             return this;
         }
-
+        /**
+         * Admin Email for Notification
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
+        /**
+         * Admin Email for Notification
+         * @param adminEmail the value to set
+         * @return this builder
+         **/
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = adminEmail;
             this.__explicitlySet__.add("adminEmail");
             return this;
         }
-
+        /**
+         * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+         * or delay upgrade of the service to previous released version
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
         private OceInstance.UpgradeSchedule upgradeSchedule;
 
+        /**
+         * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+         * or delay upgrade of the service to previous released version
+         *
+         * @param upgradeSchedule the value to set
+         * @return this builder
+         **/
         public Builder upgradeSchedule(OceInstance.UpgradeSchedule upgradeSchedule) {
             this.upgradeSchedule = upgradeSchedule;
             this.__explicitlySet__.add("upgradeSchedule");
             return this;
         }
-
+        /**
+         * Web Application Firewall(WAF) primary domain
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
         private String wafPrimaryDomain;
 
+        /**
+         * Web Application Firewall(WAF) primary domain
+         * @param wafPrimaryDomain the value to set
+         * @return this builder
+         **/
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
             this.wafPrimaryDomain = wafPrimaryDomain;
             this.__explicitlySet__.add("wafPrimaryDomain");
             return this;
         }
-
+        /**
+         * Flag indicating whether the instance access is private or public
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
         private InstanceAccessType instanceAccessType;
 
+        /**
+         * Flag indicating whether the instance access is private or public
+         * @param instanceAccessType the value to set
+         * @return this builder
+         **/
         public Builder instanceAccessType(InstanceAccessType instanceAccessType) {
             this.instanceAccessType = instanceAccessType;
             this.__explicitlySet__.add("instanceAccessType");
             return this;
         }
-
+        /**
+         * Flag indicating whether the instance license is new cloud or bring your own license
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
         private LicenseType instanceLicenseType;
 
+        /**
+         * Flag indicating whether the instance license is new cloud or bring your own license
+         * @param instanceLicenseType the value to set
+         * @return this builder
+         **/
         public Builder instanceLicenseType(LicenseType instanceLicenseType) {
             this.instanceLicenseType = instanceLicenseType;
             this.__explicitlySet__.add("instanceLicenseType");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -304,6 +429,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * OceInstance description
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -314,6 +443,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment Identifier
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -324,6 +457,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * OceInstance Name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -334,6 +471,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
+    /**
+     * Tenancy Identifier
+     * @return the value
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -344,6 +485,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
     private final String idcsAccessToken;
 
+    /**
+     * Identity Cloud Service access token identifying a stripe and service administrator user
+     * @return the value
+     **/
     public String getIdcsAccessToken() {
         return idcsAccessToken;
     }
@@ -361,6 +506,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     private final String tenancyName;
 
+    /**
+     * Tenancy Name
+     * @return the value
+     **/
     public String getTenancyName() {
         return tenancyName;
     }
@@ -406,6 +555,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
     private final InstanceUsageType instanceUsageType;
 
+    /**
+     * Instance type based on its usage
+     * @return the value
+     **/
     public InstanceUsageType getInstanceUsageType() {
         return instanceUsageType;
     }
@@ -416,6 +569,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
     private final java.util.List<String> addOnFeatures;
 
+    /**
+     * a list of add-on features for the ocm instance
+     * @return the value
+     **/
     public java.util.List<String> getAddOnFeatures() {
         return addOnFeatures;
     }
@@ -426,6 +583,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
     private final String objectStorageNamespace;
 
+    /**
+     * Object Storage Namespace of Tenancy
+     * @return the value
+     **/
     public String getObjectStorageNamespace() {
         return objectStorageNamespace;
     }
@@ -436,6 +597,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
+    /**
+     * Admin Email for Notification
+     * @return the value
+     **/
     public String getAdminEmail() {
         return adminEmail;
     }
@@ -448,6 +613,12 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
     private final OceInstance.UpgradeSchedule upgradeSchedule;
 
+    /**
+     * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+     * or delay upgrade of the service to previous released version
+     *
+     * @return the value
+     **/
     public OceInstance.UpgradeSchedule getUpgradeSchedule() {
         return upgradeSchedule;
     }
@@ -458,6 +629,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
     private final String wafPrimaryDomain;
 
+    /**
+     * Web Application Firewall(WAF) primary domain
+     * @return the value
+     **/
     public String getWafPrimaryDomain() {
         return wafPrimaryDomain;
     }
@@ -503,6 +678,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
     private final InstanceAccessType instanceAccessType;
 
+    /**
+     * Flag indicating whether the instance access is private or public
+     * @return the value
+     **/
     public InstanceAccessType getInstanceAccessType() {
         return instanceAccessType;
     }
@@ -513,6 +692,10 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
     private final LicenseType instanceLicenseType;
 
+    /**
+     * Flag indicating whether the instance license is new cloud or bring your own license
+     * @return the value
+     **/
     public LicenseType getInstanceLicenseType() {
         return instanceLicenseType;
     }
@@ -525,6 +708,12 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -537,6 +726,12 @@ public final class CreateOceInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

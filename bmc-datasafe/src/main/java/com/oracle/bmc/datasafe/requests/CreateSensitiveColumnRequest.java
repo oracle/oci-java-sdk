@@ -18,6 +18,9 @@ public class CreateSensitiveColumnRequest
      */
     private String sensitiveDataModelId;
 
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
@@ -26,6 +29,9 @@ public class CreateSensitiveColumnRequest
      */
     private com.oracle.bmc.datasafe.model.CreateSensitiveColumnDetails createSensitiveColumnDetails;
 
+    /**
+     * Details to create a new sensitive column.
+     */
     public com.oracle.bmc.datasafe.model.CreateSensitiveColumnDetails
             getCreateSensitiveColumnDetails() {
         return createSensitiveColumnDetails;
@@ -39,6 +45,13 @@ public class CreateSensitiveColumnRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -47,6 +60,9 @@ public class CreateSensitiveColumnRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,10 +85,14 @@ public class CreateSensitiveColumnRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
+         * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
@@ -80,11 +100,15 @@ public class CreateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * Details to create a new sensitive column.
+         */
         private com.oracle.bmc.datasafe.model.CreateSensitiveColumnDetails
                 createSensitiveColumnDetails = null;
 
         /**
          * Details to create a new sensitive column.
+         * @param createSensitiveColumnDetails the value to set
          * @return this builder instance
          */
         public Builder createSensitiveColumnDetails(
@@ -94,6 +118,13 @@ public class CreateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -102,6 +133,7 @@ public class CreateSensitiveColumnRequest
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -109,10 +141,14 @@ public class CreateSensitiveColumnRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -205,7 +241,8 @@ public class CreateSensitiveColumnRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -215,6 +252,10 @@ public class CreateSensitiveColumnRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

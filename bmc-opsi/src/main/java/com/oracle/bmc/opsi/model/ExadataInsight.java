@@ -87,6 +87,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Exadata insight identifier
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -97,6 +101,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * Compartment identifier of the Exadata insight resource
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -107,6 +115,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataName")
     private final String exadataName;
 
+    /**
+     * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
+     * @return the value
+     **/
     public String getExadataName() {
         return exadataName;
     }
@@ -117,6 +129,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
     private final String exadataDisplayName;
 
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     * @return the value
+     **/
     public String getExadataDisplayName() {
         return exadataDisplayName;
     }
@@ -127,6 +143,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataType")
     private final ExadataType exadataType;
 
+    /**
+     * Operations Insights internal representation of the the Exadata system type.
+     * @return the value
+     **/
     public ExadataType getExadataType() {
         return exadataType;
     }
@@ -137,6 +157,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("exadataRackType")
     private final ExadataRackType exadataRackType;
 
+    /**
+     * Exadata rack type.
+     * @return the value
+     **/
     public ExadataRackType getExadataRackType() {
         return exadataRackType;
     }
@@ -147,6 +171,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("isVirtualizedExadata")
     private final Boolean isVirtualizedExadata;
 
+    /**
+     * true if virtualization is used in the Exadata system
+     * @return the value
+     **/
     public Boolean getIsVirtualizedExadata() {
         return isVirtualizedExadata;
     }
@@ -157,6 +185,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
+    /**
+     * Indicates the status of an Exadata insight in Operations Insights
+     * @return the value
+     **/
     public ResourceStatus getStatus() {
         return status;
     }
@@ -169,6 +201,12 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -181,6 +219,12 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -193,6 +237,12 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -203,6 +253,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -213,6 +267,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the Exadata insight was updated. An RFC3339 formatted datetime string
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -223,6 +281,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ExadataInsightLifecycleState lifecycleState;
 
+    /**
+     * The current state of the Exadata insight.
+     * @return the value
+     **/
     public ExadataInsightLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -233,6 +295,10 @@ public class ExadataInsight {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return the value
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }

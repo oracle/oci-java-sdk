@@ -16,6 +16,9 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,6 +29,11 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String sqlIdentifier;
 
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     * Example: {@code 6rgjh9bjmy2s7}
+     *
+     */
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
@@ -36,6 +44,11 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<Long> planHash;
 
+    /**
+     * Unique plan hash for a SQL Plan of a particular SQL Statement.
+     * Example: {@code 9820154385}
+     *
+     */
     public java.util.List<Long> getPlanHash() {
         return planHash;
     }
@@ -45,6 +58,10 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String databaseId;
 
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
+     */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -54,6 +71,10 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String id;
 
+    /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
+     */
     public String getId() {
         return id;
     }
@@ -65,6 +86,12 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String page;
 
+    /**
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -75,6 +102,11 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -86,10 +118,14 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -97,12 +133,18 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         * Example: {@code 6rgjh9bjmy2s7}
+         *
+         */
         private String sqlIdentifier = null;
 
         /**
          * Unique SQL_ID for a SQL Statement.
          * Example: {@code 6rgjh9bjmy2s7}
          *
+         * @param sqlIdentifier the value to set
          * @return this builder instance
          */
         public Builder sqlIdentifier(String sqlIdentifier) {
@@ -110,12 +152,18 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique plan hash for a SQL Plan of a particular SQL Statement.
+         * Example: {@code 9820154385}
+         *
+         */
         private java.util.List<Long> planHash = null;
 
         /**
          * Unique plan hash for a SQL Plan of a particular SQL Statement.
          * Example: {@code 9820154385}
          *
+         * @param planHash the value to set
          * @return this builder instance
          */
         public Builder planHash(java.util.List<Long> planHash) {
@@ -127,17 +175,23 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Singular setter. Unique plan hash for a SQL Plan of a particular SQL Statement.
          * Example: {@code 9820154385}
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder planHash(Long singularValue) {
             return this.planHash(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
+         */
         private String databaseId = null;
 
         /**
          * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
+         * @param databaseId the value to set
          * @return this builder instance
          */
         public Builder databaseId(String databaseId) {
@@ -145,11 +199,16 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         *
+         */
         private String id = null;
 
         /**
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          *
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -157,6 +216,12 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String page = null;
 
         /**
@@ -164,6 +229,7 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
          * the previous "List" call. For important details about how pagination works,
          * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -171,12 +237,18 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -264,7 +336,8 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -277,6 +350,10 @@ public class ListSqlPlansRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

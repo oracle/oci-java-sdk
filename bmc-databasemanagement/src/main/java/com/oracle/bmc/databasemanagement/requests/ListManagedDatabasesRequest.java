@@ -17,6 +17,9 @@ public class ListManagedDatabasesRequest
      */
     private String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListManagedDatabasesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +39,9 @@ public class ListManagedDatabasesRequest
      */
     private String id;
 
+    /**
+     * The identifier of the resource.
+     */
     public String getId() {
         return id;
     }
@@ -41,6 +50,9 @@ public class ListManagedDatabasesRequest
      */
     private String name;
 
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     public String getName() {
         return name;
     }
@@ -49,6 +61,9 @@ public class ListManagedDatabasesRequest
      */
     private com.oracle.bmc.databasemanagement.model.ManagementOption managementOption;
 
+    /**
+     * A filter to return Managed Databases with the specified management option.
+     */
     public com.oracle.bmc.databasemanagement.model.ManagementOption getManagementOption() {
         return managementOption;
     }
@@ -57,6 +72,9 @@ public class ListManagedDatabasesRequest
      */
     private com.oracle.bmc.databasemanagement.model.DeploymentType deploymentType;
 
+    /**
+     * A filter to return Managed Databases of the specified deployment type.
+     */
     public com.oracle.bmc.databasemanagement.model.DeploymentType getDeploymentType() {
         return deploymentType;
     }
@@ -67,6 +85,11 @@ public class ListManagedDatabasesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
+     */
     public String getPage() {
         return page;
     }
@@ -75,6 +98,9 @@ public class ListManagedDatabasesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -125,6 +151,12 @@ public class ListManagedDatabasesRequest
         }
     };
 
+    /**
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -133,6 +165,9 @@ public class ListManagedDatabasesRequest
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
+    /**
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -144,10 +179,14 @@ public class ListManagedDatabasesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -155,10 +194,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -166,10 +209,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * The identifier of the resource.
+         */
         private String id = null;
 
         /**
          * The identifier of the resource.
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -177,10 +224,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire name.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name.
+         * @param name the value to set
          * @return this builder instance
          */
         public Builder name(String name) {
@@ -188,10 +239,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return Managed Databases with the specified management option.
+         */
         private com.oracle.bmc.databasemanagement.model.ManagementOption managementOption = null;
 
         /**
          * A filter to return Managed Databases with the specified management option.
+         * @param managementOption the value to set
          * @return this builder instance
          */
         public Builder managementOption(
@@ -200,10 +255,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * A filter to return Managed Databases of the specified deployment type.
+         */
         private com.oracle.bmc.databasemanagement.model.DeploymentType deploymentType = null;
 
         /**
          * A filter to return Managed Databases of the specified deployment type.
+         * @param deploymentType the value to set
          * @return this builder instance
          */
         public Builder deploymentType(
@@ -212,12 +271,18 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
+         */
         private String page = null;
 
         /**
          * The page token representing the page from where the next set of paginated results
          * are retrieved. This is usually retrieved from a previous list call.
          *
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -225,10 +290,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -236,6 +305,12 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * The field to sort information by. Only one sortOrder can be used. The default sort order
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -243,6 +318,7 @@ public class ListManagedDatabasesRequest
          * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
          * The \u2018NAME\u2019 sort order is case-sensitive.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -250,10 +326,14 @@ public class ListManagedDatabasesRequest
             return this;
         }
 
+        /**
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
          * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.databasemanagement.model.SortOrders sortOrder) {
@@ -347,7 +427,8 @@ public class ListManagedDatabasesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -363,6 +444,10 @@ public class ListManagedDatabasesRequest
                 .sortOrder(sortOrder);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

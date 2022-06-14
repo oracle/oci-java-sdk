@@ -48,6 +48,12 @@ public class AuthenticationPolicy {
     @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
     private final Boolean isAnonymousAccessAllowed;
 
+    /**
+     * Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS
+     * route authorization.
+     *
+     * @return the value
+     **/
     public Boolean getIsAnonymousAccessAllowed() {
         return isAnonymousAccessAllowed;
     }

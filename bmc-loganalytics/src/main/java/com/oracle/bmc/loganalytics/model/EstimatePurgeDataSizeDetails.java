@@ -45,45 +45,81 @@ public final class EstimatePurgeDataSizeDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the compartment OCID under which the data will be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * This is the compartment OCID under which the data will be purged
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * If true, purge child compartments data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
+        /**
+         * If true, purge child compartments data
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-
+        /**
+         * This is the time before which data will be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
+        /**
+         * This is the time before which data will be purged
+         * @param timeDataEnded the value to set
+         * @return this builder
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-
+        /**
+         * This is the solr data filter query, '*' means all
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
         private String purgeQueryString;
 
+        /**
+         * This is the solr data filter query, '*' means all
+         * @param purgeQueryString the value to set
+         * @return this builder
+         **/
         public Builder purgeQueryString(String purgeQueryString) {
             this.purgeQueryString = purgeQueryString;
             this.__explicitlySet__.add("purgeQueryString");
             return this;
         }
-
+        /**
+         * This is the type of the log data to be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
+        /**
+         * This is the type of the log data to be purged
+         * @param dataType the value to set
+         * @return this builder
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
@@ -136,6 +172,10 @@ public final class EstimatePurgeDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * This is the compartment OCID under which the data will be purged
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -146,6 +186,10 @@ public final class EstimatePurgeDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
+    /**
+     * If true, purge child compartments data
+     * @return the value
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -156,6 +200,10 @@ public final class EstimatePurgeDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
+    /**
+     * This is the time before which data will be purged
+     * @return the value
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
@@ -166,6 +214,10 @@ public final class EstimatePurgeDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     private final String purgeQueryString;
 
+    /**
+     * This is the solr data filter query, '*' means all
+     * @return the value
+     **/
     public String getPurgeQueryString() {
         return purgeQueryString;
     }
@@ -176,6 +228,10 @@ public final class EstimatePurgeDataSizeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
+    /**
+     * This is the type of the log data to be purged
+     * @return the value
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }

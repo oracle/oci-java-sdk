@@ -118,28 +118,49 @@ public final class EmManagedExternalDatabaseConfigurationSummary
             this.__explicitlySet__.add("processorCount");
             return this;
         }
-
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
+        /**
+         * Enterprise Manager Unique Identifier
+         * @param enterpriseManagerIdentifier the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         * @param enterpriseManagerBridgeId the value to set
+         * @return this builder
+         **/
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
             return this;
         }
-
+        /**
+         * Array of hostname and instance name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instances")
         private java.util.List<HostInstanceMap> instances;
 
+        /**
+         * Array of hostname and instance name.
+         * @param instances the value to set
+         * @return this builder
+         **/
         public Builder instances(java.util.List<HostInstanceMap> instances) {
             this.instances = instances;
             this.__explicitlySet__.add("instances");
@@ -252,6 +273,10 @@ public final class EmManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
+    /**
+     * Enterprise Manager Unique Identifier
+     * @return the value
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
@@ -262,6 +287,10 @@ public final class EmManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
+    /**
+     * OPSI Enterprise Manager Bridge OCID
+     * @return the value
+     **/
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -272,6 +301,10 @@ public final class EmManagedExternalDatabaseConfigurationSummary
     @com.fasterxml.jackson.annotation.JsonProperty("instances")
     private final java.util.List<HostInstanceMap> instances;
 
+    /**
+     * Array of hostname and instance name.
+     * @return the value
+     **/
     public java.util.List<HostInstanceMap> getInstances() {
         return instances;
     }

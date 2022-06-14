@@ -104,6 +104,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -114,6 +118,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -131,6 +139,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -141,6 +153,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Detailed description for the object.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -151,6 +167,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -161,6 +181,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -171,6 +195,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -181,6 +209,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
     private final java.util.List<InputPort> inputPorts;
 
+    /**
+     * An array of input ports.
+     * @return the value
+     **/
     public java.util.List<InputPort> getInputPorts() {
         return inputPorts;
     }
@@ -191,6 +223,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
     private final java.util.List<OutputPort> outputPorts;
 
+    /**
+     * An array of output ports.
+     * @return the value
+     **/
     public java.util.List<OutputPort> getOutputPorts() {
         return outputPorts;
     }
@@ -201,6 +237,10 @@ public class UpdateTaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
+    /**
+     * An array of parameters.
+     * @return the value
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }

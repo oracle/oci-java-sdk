@@ -29,9 +29,17 @@ public final class ServiceCatalogCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of catalog summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ServiceCatalogSummary> items;
 
+        /**
+         * Collection of catalog summaries.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<ServiceCatalogSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class ServiceCatalogCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ServiceCatalogSummary> items;
 
+    /**
+     * Collection of catalog summaries.
+     * @return the value
+     **/
     public java.util.List<ServiceCatalogSummary> getItems() {
         return items;
     }

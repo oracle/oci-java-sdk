@@ -100,10 +100,17 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
             this.__explicitlySet__.add("artifactOverrideParameters");
             return this;
         }
-
+        /**
+         * Identifier of the deployment triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
+        /**
+         * Identifier of the deployment triggered.
+         * @param deploymentId the value to set
+         * @return this builder
+         **/
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
@@ -201,6 +208,10 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
+    /**
+     * Identifier of the deployment triggered.
+     * @return the value
+     **/
     public String getDeploymentId() {
         return deploymentId;
     }

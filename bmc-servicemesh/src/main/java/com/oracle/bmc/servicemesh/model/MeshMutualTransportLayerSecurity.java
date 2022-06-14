@@ -29,9 +29,23 @@ public final class MeshMutualTransportLayerSecurity {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
+         * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
+         * STRICT: All virtual services within this mesh must use STRICT mode.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimum")
         private MutualTransportLayerSecurity.Mode minimum;
 
+        /**
+         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
+         * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
+         * STRICT: All virtual services within this mesh must use STRICT mode.
+         *
+         * @param minimum the value to set
+         * @return this builder
+         **/
         public Builder minimum(MutualTransportLayerSecurity.Mode minimum) {
             this.minimum = minimum;
             this.__explicitlySet__.add("minimum");
@@ -77,6 +91,13 @@ public final class MeshMutualTransportLayerSecurity {
     @com.fasterxml.jackson.annotation.JsonProperty("minimum")
     private final MutualTransportLayerSecurity.Mode minimum;
 
+    /**
+     * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
+     * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
+     * STRICT: All virtual services within this mesh must use STRICT mode.
+     *
+     * @return the value
+     **/
     public MutualTransportLayerSecurity.Mode getMinimum() {
         return minimum;
     }

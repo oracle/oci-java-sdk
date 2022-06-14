@@ -29,9 +29,17 @@ public final class UpdateRuleSetDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of rules that compose the rule set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<Rule> items;
 
+        /**
+         * An array of rules that compose the rule set.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<Rule> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class UpdateRuleSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<Rule> items;
 
+    /**
+     * An array of rules that compose the rule set.
+     * @return the value
+     **/
     public java.util.List<Rule> getItems() {
         return items;
     }

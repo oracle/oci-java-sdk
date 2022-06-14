@@ -47,54 +47,101 @@ public final class LogAnalyticsParserMetaPluginParameter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The parameter description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The parameter description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The parameter internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The parameter internal name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the parameter is mandatory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
+        /**
+         * A flag indicating whether or not the parameter is mandatory.
+         *
+         * @param isMandatory the value to set
+         * @return this builder
+         **/
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = isMandatory;
             this.__explicitlySet__.add("isMandatory");
             return this;
         }
-
+        /**
+         * A flag indicating whether or not the parameter is repeatable.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRepeatable")
         private Boolean isRepeatable;
 
+        /**
+         * A flag indicating whether or not the parameter is repeatable.
+         *
+         * @param isRepeatable the value to set
+         * @return this builder
+         **/
         public Builder isRepeatable(Boolean isRepeatable) {
             this.isRepeatable = isRepeatable;
             this.__explicitlySet__.add("isRepeatable");
             return this;
         }
-
+        /**
+         * The plugin internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
         private String pluginName;
 
+        /**
+         * The plugin internal name.
+         * @param pluginName the value to set
+         * @return this builder
+         **/
         public Builder pluginName(String pluginName) {
             this.pluginName = pluginName;
             this.__explicitlySet__.add("pluginName");
             return this;
         }
-
+        /**
+         * The parameter type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * The parameter type.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -144,6 +191,10 @@ public final class LogAnalyticsParserMetaPluginParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The parameter description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -154,6 +205,10 @@ public final class LogAnalyticsParserMetaPluginParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The parameter internal name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -165,6 +220,11 @@ public final class LogAnalyticsParserMetaPluginParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
+    /**
+     * A flag indicating whether or not the parameter is mandatory.
+     *
+     * @return the value
+     **/
     public Boolean getIsMandatory() {
         return isMandatory;
     }
@@ -176,6 +236,11 @@ public final class LogAnalyticsParserMetaPluginParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("isRepeatable")
     private final Boolean isRepeatable;
 
+    /**
+     * A flag indicating whether or not the parameter is repeatable.
+     *
+     * @return the value
+     **/
     public Boolean getIsRepeatable() {
         return isRepeatable;
     }
@@ -186,6 +251,10 @@ public final class LogAnalyticsParserMetaPluginParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     private final String pluginName;
 
+    /**
+     * The plugin internal name.
+     * @return the value
+     **/
     public String getPluginName() {
         return pluginName;
     }
@@ -196,6 +265,10 @@ public final class LogAnalyticsParserMetaPluginParameter {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * The parameter type.
+     * @return the value
+     **/
     public String getType() {
         return type;
     }

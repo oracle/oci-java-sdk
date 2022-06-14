@@ -16,6 +16,9 @@ public class GetCertificateRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String certificateId;
 
+    /**
+     * The ocid of the certificate.
+     */
     public String getCertificateId() {
         return certificateId;
     }
@@ -24,6 +27,9 @@ public class GetCertificateRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String opcRequestId;
 
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,10 +41,14 @@ public class GetCertificateRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ocid of the certificate.
+         */
         private String certificateId = null;
 
         /**
          * The ocid of the certificate.
+         * @param certificateId the value to set
          * @return this builder instance
          */
         public Builder certificateId(String certificateId) {
@@ -46,10 +56,14 @@ public class GetCertificateRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -127,12 +141,17 @@ public class GetCertificateRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().certificateId(certificateId).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

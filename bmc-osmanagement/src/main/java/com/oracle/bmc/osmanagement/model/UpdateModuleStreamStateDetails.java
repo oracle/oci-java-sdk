@@ -29,9 +29,17 @@ public final class UpdateModuleStreamStateDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The modules known to a managed instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modules")
         private java.util.List<UpdateModuleDetails> modules;
 
+        /**
+         * The modules known to a managed instance
+         * @param modules the value to set
+         * @return this builder
+         **/
         public Builder modules(java.util.List<UpdateModuleDetails> modules) {
             this.modules = modules;
             this.__explicitlySet__.add("modules");
@@ -74,6 +82,10 @@ public final class UpdateModuleStreamStateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("modules")
     private final java.util.List<UpdateModuleDetails> modules;
 
+    /**
+     * The modules known to a managed instance
+     * @return the value
+     **/
     public java.util.List<UpdateModuleDetails> getModules() {
         return modules;
     }

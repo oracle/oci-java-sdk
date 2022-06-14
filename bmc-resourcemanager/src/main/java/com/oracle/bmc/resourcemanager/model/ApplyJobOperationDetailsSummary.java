@@ -28,19 +28,42 @@ package com.oracle.bmc.resourcemanager.model;
 public final class ApplyJobOperationDetailsSummary extends JobOperationDetailsSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
+        /**
+         * Specifies the source of the execution plan to apply.
+         * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+         *
+         * @param executionPlanStrategy the value to set
+         * @return this builder
+         **/
         public Builder executionPlanStrategy(
                 ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
             this.executionPlanStrategy = executionPlanStrategy;
             this.__explicitlySet__.add("executionPlanStrategy");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
+         * or {@code null} if no execution plan was used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
         private String executionPlanJobId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
+         * or {@code null} if no execution plan was used.
+         *
+         * @param executionPlanJobId the value to set
+         * @return this builder
+         **/
         public Builder executionPlanJobId(String executionPlanJobId) {
             this.executionPlanJobId = executionPlanJobId;
             this.__explicitlySet__.add("executionPlanJobId");
@@ -96,6 +119,12 @@ public final class ApplyJobOperationDetailsSummary extends JobOperationDetailsSu
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
     private final ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
+    /**
+     * Specifies the source of the execution plan to apply.
+     * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+     *
+     * @return the value
+     **/
     public ApplyJobOperationDetails.ExecutionPlanStrategy getExecutionPlanStrategy() {
         return executionPlanStrategy;
     }
@@ -108,6 +137,12 @@ public final class ApplyJobOperationDetailsSummary extends JobOperationDetailsSu
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
     private final String executionPlanJobId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
+     * or {@code null} if no execution plan was used.
+     *
+     * @return the value
+     **/
     public String getExecutionPlanJobId() {
         return executionPlanJobId;
     }

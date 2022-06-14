@@ -18,6 +18,9 @@ public class CreateLogSavedSearchRequest
      */
     private com.oracle.bmc.logging.model.CreateLogSavedSearchDetails createLogSavedSearchDetails;
 
+    /**
+     * Specification of the Saved Search to create
+     */
     public com.oracle.bmc.logging.model.CreateLogSavedSearchDetails
             getCreateLogSavedSearchDetails() {
         return createLogSavedSearchDetails;
@@ -33,6 +36,15 @@ public class CreateLogSavedSearchRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error, without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated
+     * before then due to conflicting operations (e.g., if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -43,6 +55,11 @@ public class CreateLogSavedSearchRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,11 +82,15 @@ public class CreateLogSavedSearchRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Specification of the Saved Search to create
+         */
         private com.oracle.bmc.logging.model.CreateLogSavedSearchDetails
                 createLogSavedSearchDetails = null;
 
         /**
          * Specification of the Saved Search to create
+         * @param createLogSavedSearchDetails the value to set
          * @return this builder instance
          */
         public Builder createLogSavedSearchDetails(
@@ -79,6 +100,15 @@ public class CreateLogSavedSearchRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error, without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -89,6 +119,7 @@ public class CreateLogSavedSearchRequest
          * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -96,12 +127,18 @@ public class CreateLogSavedSearchRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -192,7 +229,8 @@ public class CreateLogSavedSearchRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -201,6 +239,10 @@ public class CreateLogSavedSearchRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

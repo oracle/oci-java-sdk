@@ -32,27 +32,49 @@ public final class ExecuteOperationJobDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Job id to track job status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executeOperationJobId")
         private String executeOperationJobId;
 
+        /**
+         * Job id to track job status.
+         * @param executeOperationJobId the value to set
+         * @return this builder
+         **/
         public Builder executeOperationJobId(String executeOperationJobId) {
             this.executeOperationJobId = executeOperationJobId;
             this.__explicitlySet__.add("executeOperationJobId");
             return this;
         }
-
+        /**
+         * The status of job
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The status of job
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-
+        /**
+         * Error message if job creation is failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
+        /**
+         * Error message if job creation is failed.
+         * @param errorMessage the value to set
+         * @return this builder
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -98,6 +120,10 @@ public final class ExecuteOperationJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("executeOperationJobId")
     private final String executeOperationJobId;
 
+    /**
+     * Job id to track job status.
+     * @return the value
+     **/
     public String getExecuteOperationJobId() {
         return executeOperationJobId;
     }
@@ -155,6 +181,10 @@ public final class ExecuteOperationJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The status of job
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }
@@ -165,6 +195,10 @@ public final class ExecuteOperationJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
+    /**
+     * Error message if job creation is failed.
+     * @return the value
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }

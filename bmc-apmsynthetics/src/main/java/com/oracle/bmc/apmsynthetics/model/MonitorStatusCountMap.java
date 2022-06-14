@@ -35,36 +35,65 @@ public final class MonitorStatusCountMap {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Total number of monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
 
+        /**
+         * Total number of monitors using the script.
+         * @param total the value to set
+         * @return this builder
+         **/
         public Builder total(Integer total) {
             this.total = total;
             this.__explicitlySet__.add("total");
             return this;
         }
-
+        /**
+         * Number of enabled monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabled")
         private Integer enabled;
 
+        /**
+         * Number of enabled monitors using the script.
+         * @param enabled the value to set
+         * @return this builder
+         **/
         public Builder enabled(Integer enabled) {
             this.enabled = enabled;
             this.__explicitlySet__.add("enabled");
             return this;
         }
-
+        /**
+         * Number of disabled monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disabled")
         private Integer disabled;
 
+        /**
+         * Number of disabled monitors using the script.
+         * @param disabled the value to set
+         * @return this builder
+         **/
         public Builder disabled(Integer disabled) {
             this.disabled = disabled;
             this.__explicitlySet__.add("disabled");
             return this;
         }
-
+        /**
+         * Number of invalid monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invalid")
         private Integer invalid;
 
+        /**
+         * Number of invalid monitors using the script.
+         * @param invalid the value to set
+         * @return this builder
+         **/
         public Builder invalid(Integer invalid) {
             this.invalid = invalid;
             this.__explicitlySet__.add("invalid");
@@ -111,6 +140,10 @@ public final class MonitorStatusCountMap {
     @com.fasterxml.jackson.annotation.JsonProperty("total")
     private final Integer total;
 
+    /**
+     * Total number of monitors using the script.
+     * @return the value
+     **/
     public Integer getTotal() {
         return total;
     }
@@ -121,6 +154,10 @@ public final class MonitorStatusCountMap {
     @com.fasterxml.jackson.annotation.JsonProperty("enabled")
     private final Integer enabled;
 
+    /**
+     * Number of enabled monitors using the script.
+     * @return the value
+     **/
     public Integer getEnabled() {
         return enabled;
     }
@@ -131,6 +168,10 @@ public final class MonitorStatusCountMap {
     @com.fasterxml.jackson.annotation.JsonProperty("disabled")
     private final Integer disabled;
 
+    /**
+     * Number of disabled monitors using the script.
+     * @return the value
+     **/
     public Integer getDisabled() {
         return disabled;
     }
@@ -141,6 +182,10 @@ public final class MonitorStatusCountMap {
     @com.fasterxml.jackson.annotation.JsonProperty("invalid")
     private final Integer invalid;
 
+    /**
+     * Number of invalid monitors using the script.
+     * @return the value
+     **/
     public Integer getInvalid() {
         return invalid;
     }

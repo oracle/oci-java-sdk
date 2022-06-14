@@ -44,45 +44,89 @@ public final class ThickAuthorizationResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The policy string related to the request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
+        /**
+         * The policy string related to the request
+         * @param policy the value to set
+         * @return this builder
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
-
+        /**
+         * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+         * string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyCacheDuration")
         private String policyCacheDuration;
 
+        /**
+         * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+         * string.
+         *
+         * @param policyCacheDuration the value to set
+         * @return this builder
+         **/
         public Builder policyCacheDuration(String policyCacheDuration) {
             this.policyCacheDuration = policyCacheDuration;
             this.__explicitlySet__.add("policyCacheDuration");
             return this;
         }
-
+        /**
+         * The policy string related to the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groups")
         private java.util.List<String> groups;
 
+        /**
+         * The policy string related to the request.
+         * @param groups the value to set
+         * @return this builder
+         **/
         public Builder groups(java.util.List<String> groups) {
             this.groups = groups;
             this.__explicitlySet__.add("groups");
             return this;
         }
-
+        /**
+         * The duration of how long the user's group membership should be cached. Note that the type is of type
+         * java.time.Duration, not string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipCacheDuration")
         private String groupMembershipCacheDuration;
 
+        /**
+         * The duration of how long the user's group membership should be cached. Note that the type is of type
+         * java.time.Duration, not string.
+         *
+         * @param groupMembershipCacheDuration the value to set
+         * @return this builder
+         **/
         public Builder groupMembershipCacheDuration(String groupMembershipCacheDuration) {
             this.groupMembershipCacheDuration = groupMembershipCacheDuration;
             this.__explicitlySet__.add("groupMembershipCacheDuration");
             return this;
         }
-
+        /**
+         * If set to true, the SDK should clear the caches.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flushAllCaches")
         private Boolean flushAllCaches;
 
+        /**
+         * If set to true, the SDK should clear the caches.
+         * @param flushAllCaches the value to set
+         * @return this builder
+         **/
         public Builder flushAllCaches(Boolean flushAllCaches) {
             this.flushAllCaches = flushAllCaches;
             this.__explicitlySet__.add("flushAllCaches");
@@ -135,6 +179,10 @@ public final class ThickAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
+    /**
+     * The policy string related to the request
+     * @return the value
+     **/
     public String getPolicy() {
         return policy;
     }
@@ -147,6 +195,12 @@ public final class ThickAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("policyCacheDuration")
     private final String policyCacheDuration;
 
+    /**
+     * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+     * string.
+     *
+     * @return the value
+     **/
     public String getPolicyCacheDuration() {
         return policyCacheDuration;
     }
@@ -157,6 +211,10 @@ public final class ThickAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
     private final java.util.List<String> groups;
 
+    /**
+     * The policy string related to the request.
+     * @return the value
+     **/
     public java.util.List<String> getGroups() {
         return groups;
     }
@@ -169,6 +227,12 @@ public final class ThickAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipCacheDuration")
     private final String groupMembershipCacheDuration;
 
+    /**
+     * The duration of how long the user's group membership should be cached. Note that the type is of type
+     * java.time.Duration, not string.
+     *
+     * @return the value
+     **/
     public String getGroupMembershipCacheDuration() {
         return groupMembershipCacheDuration;
     }
@@ -179,6 +243,10 @@ public final class ThickAuthorizationResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("flushAllCaches")
     private final Boolean flushAllCaches;
 
+    /**
+     * If set to true, the SDK should clear the caches.
+     * @return the value
+     **/
     public Boolean getFlushAllCaches() {
         return flushAllCaches;
     }

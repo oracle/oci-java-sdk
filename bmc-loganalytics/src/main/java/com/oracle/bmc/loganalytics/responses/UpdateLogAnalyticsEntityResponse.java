@@ -14,6 +14,11 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
+    /**
+     * The returned LogAnalyticsEntity instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsEntity getLogAnalyticsEntity() {
         return logAnalyticsEntity;
     }
@@ -62,22 +76,50 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned LogAnalyticsEntity instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
+        /**
+         * The returned LogAnalyticsEntity instance.
+         * @param logAnalyticsEntity the value to set
+         * @return this builder
+         */
         public Builder logAnalyticsEntity(
                 com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity) {
             this.logAnalyticsEntity = logAnalyticsEntity;
@@ -97,12 +139,20 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateLogAnalyticsEntityResponse build() {
             return new UpdateLogAnalyticsEntityResponse(
                     __httpStatusCode__, etag, opcRequestId, logAnalyticsEntity);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

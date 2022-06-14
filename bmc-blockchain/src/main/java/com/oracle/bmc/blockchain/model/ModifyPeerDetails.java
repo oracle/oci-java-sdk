@@ -30,9 +30,17 @@ public final class ModifyPeerDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * peer identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerName")
         private String peerName;
 
+        /**
+         * peer identifier
+         * @param peerName the value to set
+         * @return this builder
+         **/
         public Builder peerName(String peerName) {
             this.peerName = peerName;
             this.__explicitlySet__.add("peerName");
@@ -84,6 +92,10 @@ public final class ModifyPeerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("peerName")
     private final String peerName;
 
+    /**
+     * peer identifier
+     * @return the value
+     **/
     public String getPeerName() {
         return peerName;
     }

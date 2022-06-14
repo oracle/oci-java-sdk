@@ -29,27 +29,49 @@ public final class EdgeSubnet {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An edge node subnet. This can include /24 or /8 addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidr")
         private String cidr;
 
+        /**
+         * An edge node subnet. This can include /24 or /8 addresses.
+         * @param cidr the value to set
+         * @return this builder
+         **/
         public Builder cidr(String cidr) {
             this.cidr = cidr;
             this.__explicitlySet__.add("cidr");
             return this;
         }
-
+        /**
+         * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
+        /**
+         * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
+         * @param timeModified the value to set
+         * @return this builder
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-
+        /**
+         * The name of the region containing the indicated subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * The name of the region containing the indicated subnet.
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -92,6 +114,10 @@ public final class EdgeSubnet {
     @com.fasterxml.jackson.annotation.JsonProperty("cidr")
     private final String cidr;
 
+    /**
+     * An edge node subnet. This can include /24 or /8 addresses.
+     * @return the value
+     **/
     public String getCidr() {
         return cidr;
     }
@@ -102,6 +128,10 @@ public final class EdgeSubnet {
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
+    /**
+     * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
+     * @return the value
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
@@ -112,6 +142,10 @@ public final class EdgeSubnet {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * The name of the region containing the indicated subnet.
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }

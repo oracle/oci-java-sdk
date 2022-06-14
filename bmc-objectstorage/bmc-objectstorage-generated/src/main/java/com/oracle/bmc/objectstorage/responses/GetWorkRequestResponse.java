@@ -15,6 +15,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcClientRequestId;
 
+    /**
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * @return the value
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -33,6 +43,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private Float retryAfter;
 
+    /**
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+     * @return the value
+     */
     public Float getRetryAfter() {
         return retryAfter;
     }
@@ -42,6 +56,10 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.objectstorage.model.WorkRequest workRequest;
 
+    /**
+     * The returned WorkRequest instance.
+     * @return the value
+     */
     public com.oracle.bmc.objectstorage.model.WorkRequest getWorkRequest() {
         return workRequest;
     }
@@ -74,29 +92,65 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         */
         private String opcClientRequestId;
 
+        /**
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * @param opcClientRequestId the value to set
+         * @return this builder
+         */
         public Builder opcClientRequestId(String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         */
         private Float retryAfter;
 
+        /**
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
+         * @param retryAfter the value to set
+         * @return this builder
+         */
         public Builder retryAfter(Float retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }
 
+        /**
+         * The returned WorkRequest instance.
+         */
         private com.oracle.bmc.objectstorage.model.WorkRequest workRequest;
 
+        /**
+         * The returned WorkRequest instance.
+         * @param workRequest the value to set
+         * @return this builder
+         */
         public Builder workRequest(com.oracle.bmc.objectstorage.model.WorkRequest workRequest) {
             this.workRequest = workRequest;
             return this;
@@ -116,12 +170,20 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetWorkRequestResponse build() {
             return new GetWorkRequestResponse(
                     __httpStatusCode__, opcRequestId, opcClientRequestId, retryAfter, workRequest);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

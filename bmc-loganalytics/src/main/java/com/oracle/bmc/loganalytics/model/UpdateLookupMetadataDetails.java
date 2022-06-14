@@ -44,45 +44,85 @@ public final class UpdateLookupMetadataDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The default match value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
         private String defaultMatchValue;
 
+        /**
+         * The default match value.
+         * @param defaultMatchValue the value to set
+         * @return this builder
+         **/
         public Builder defaultMatchValue(String defaultMatchValue) {
             this.defaultMatchValue = defaultMatchValue;
             this.__explicitlySet__.add("defaultMatchValue");
             return this;
         }
-
+        /**
+         * The lookup description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The lookup description.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The lookup fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<LogAnalyticsLookupFields> fields;
 
+        /**
+         * The lookup fields.
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<LogAnalyticsLookupFields> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-
+        /**
+         * The maximum number of matches.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxMatches")
         private Long maxMatches;
 
+        /**
+         * The maximum number of matches.
+         * @param maxMatches the value to set
+         * @return this builder
+         **/
         public Builder maxMatches(Long maxMatches) {
             this.maxMatches = maxMatches;
             this.__explicitlySet__.add("maxMatches");
             return this;
         }
-
+        /**
+         * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
+         * Oracle-defined category assignments cannot be removed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<LogAnalyticsCategory> categories;
 
+        /**
+         * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
+         * Oracle-defined category assignments cannot be removed.
+         *
+         * @param categories the value to set
+         * @return this builder
+         **/
         public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
@@ -131,6 +171,10 @@ public final class UpdateLookupMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
     private final String defaultMatchValue;
 
+    /**
+     * The default match value.
+     * @return the value
+     **/
     public String getDefaultMatchValue() {
         return defaultMatchValue;
     }
@@ -141,6 +185,10 @@ public final class UpdateLookupMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The lookup description.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -151,6 +199,10 @@ public final class UpdateLookupMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<LogAnalyticsLookupFields> fields;
 
+    /**
+     * The lookup fields.
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsLookupFields> getFields() {
         return fields;
     }
@@ -161,6 +213,10 @@ public final class UpdateLookupMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("maxMatches")
     private final Long maxMatches;
 
+    /**
+     * The maximum number of matches.
+     * @return the value
+     **/
     public Long getMaxMatches() {
         return maxMatches;
     }
@@ -173,6 +229,12 @@ public final class UpdateLookupMetadataDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<LogAnalyticsCategory> categories;
 
+    /**
+     * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
+     * Oracle-defined category assignments cannot be removed.
+     *
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsCategory> getCategories() {
         return categories;
     }

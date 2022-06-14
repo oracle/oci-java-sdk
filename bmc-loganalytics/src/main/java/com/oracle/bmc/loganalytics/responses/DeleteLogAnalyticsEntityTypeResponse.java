@@ -14,6 +14,11 @@ public class DeleteLogAnalyticsEntityTypeResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,8 +37,18 @@ public class DeleteLogAnalyticsEntityTypeResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
@@ -50,11 +65,19 @@ public class DeleteLogAnalyticsEntityTypeResponse extends com.oracle.bmc.respons
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DeleteLogAnalyticsEntityTypeResponse build() {
             return new DeleteLogAnalyticsEntityTypeResponse(__httpStatusCode__, opcRequestId);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -38,9 +38,17 @@ public final class UpdateClusterOptionsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Configurable cluster admission controllers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
         private AdmissionControllerOptions admissionControllerOptions;
 
+        /**
+         * Configurable cluster admission controllers
+         * @param admissionControllerOptions the value to set
+         * @return this builder
+         **/
         public Builder admissionControllerOptions(
                 AdmissionControllerOptions admissionControllerOptions) {
             this.admissionControllerOptions = admissionControllerOptions;
@@ -107,6 +115,10 @@ public final class UpdateClusterOptionsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     private final AdmissionControllerOptions admissionControllerOptions;
 
+    /**
+     * Configurable cluster admission controllers
+     * @return the value
+     **/
     public AdmissionControllerOptions getAdmissionControllerOptions() {
         return admissionControllerOptions;
     }

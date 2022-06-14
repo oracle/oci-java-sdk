@@ -19,6 +19,11 @@ public class GetLogIncludedSearchRequest
      */
     private String compartmentId;
 
+    /**
+     * Compartment OCID to list resources in. See compartmentIdInSubtree
+     *      for nested compartments traversal.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,6 +33,10 @@ public class GetLogIncludedSearchRequest
      */
     private String logIncludedSearchId;
 
+    /**
+     * OCID of the included search
+     *
+     */
     public String getLogIncludedSearchId() {
         return logIncludedSearchId;
     }
@@ -38,6 +47,11 @@ public class GetLogIncludedSearchRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,12 +63,18 @@ public class GetLogIncludedSearchRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Compartment OCID to list resources in. See compartmentIdInSubtree
+         *      for nested compartments traversal.
+         *
+         */
         private String compartmentId = null;
 
         /**
          * Compartment OCID to list resources in. See compartmentIdInSubtree
          *      for nested compartments traversal.
          *
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -62,11 +82,16 @@ public class GetLogIncludedSearchRequest
             return this;
         }
 
+        /**
+         * OCID of the included search
+         *
+         */
         private String logIncludedSearchId = null;
 
         /**
          * OCID of the included search
          *
+         * @param logIncludedSearchId the value to set
          * @return this builder instance
          */
         public Builder logIncludedSearchId(String logIncludedSearchId) {
@@ -74,12 +99,18 @@ public class GetLogIncludedSearchRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -159,7 +190,8 @@ public class GetLogIncludedSearchRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -168,6 +200,10 @@ public class GetLogIncludedSearchRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

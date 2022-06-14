@@ -27,6 +27,7 @@ package com.oracle.bmc.aianomalydetection.model;
 public final class DataSourceDetailsInflux extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("versionSpecificDetails")
         private InfluxDetails versionSpecificDetails;
 
@@ -35,37 +36,65 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
             this.__explicitlySet__.add("versionSpecificDetails");
             return this;
         }
-
+        /**
+         * Username for connection to Influx
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * Username for connection to Influx
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * Password Secret Id for the influx connection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
+        /**
+         * Password Secret Id for the influx connection
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-
+        /**
+         * Measurement name for influx
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("measurementName")
         private String measurementName;
 
+        /**
+         * Measurement name for influx
+         * @param measurementName the value to set
+         * @return this builder
+         **/
         public Builder measurementName(String measurementName) {
             this.measurementName = measurementName;
             this.__explicitlySet__.add("measurementName");
             return this;
         }
-
+        /**
+         * public IP address and port to influx DB
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * public IP address and port to influx DB
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -140,6 +169,10 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * Username for connection to Influx
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -150,6 +183,10 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
+    /**
+     * Password Secret Id for the influx connection
+     * @return the value
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
@@ -160,6 +197,10 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("measurementName")
     private final String measurementName;
 
+    /**
+     * Measurement name for influx
+     * @return the value
+     **/
     public String getMeasurementName() {
         return measurementName;
     }
@@ -170,6 +211,10 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * public IP address and port to influx DB
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }

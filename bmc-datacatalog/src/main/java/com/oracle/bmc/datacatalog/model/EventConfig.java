@@ -54,81 +54,151 @@ public final class EventConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique type key identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeId")
         private String typeId;
 
+        /**
+         * Unique type key identifier.
+         * @param typeId the value to set
+         * @return this builder
+         **/
         public Builder typeId(String typeId) {
             this.typeId = typeId;
             this.__explicitlySet__.add("typeId");
             return this;
         }
-
+        /**
+         * Name of the type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
+        /**
+         * Name of the type.
+         * @param typeName the value to set
+         * @return this builder
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-
+        /**
+         * Unique property key identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
         private String propertyId;
 
+        /**
+         * Unique property key identifier.
+         * @param propertyId the value to set
+         * @return this builder
+         **/
         public Builder propertyId(String propertyId) {
             this.propertyId = propertyId;
             this.__explicitlySet__.add("propertyId");
             return this;
         }
-
+        /**
+         * Name of the property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
         private String propertyName;
 
+        /**
+         * Name of the property.
+         * @param propertyName the value to set
+         * @return this builder
+         **/
         public Builder propertyName(String propertyName) {
             this.propertyName = propertyName;
             this.__explicitlySet__.add("propertyName");
             return this;
         }
-
+        /**
+         * Status of the configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventConfigStatus")
         private EventConfigStatus eventConfigStatus;
 
+        /**
+         * Status of the configuration.
+         * @param eventConfigStatus the value to set
+         * @return this builder
+         **/
         public Builder eventConfigStatus(EventConfigStatus eventConfigStatus) {
             this.eventConfigStatus = eventConfigStatus;
             this.__explicitlySet__.add("eventConfigStatus");
             return this;
         }
-
+        /**
+         * The date and time the event was configured, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the event was configured, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The last time that any change was made to the configuration. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The last time that any change was made to the configuration. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * OCID of the user who created the configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
+        /**
+         * OCID of the user who created the configuration.
+         * @param createdById the value to set
+         * @return this builder
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
-
+        /**
+         * OCID of the user who last modified the configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
         private String updatedById;
 
+        /**
+         * OCID of the user who last modified the configuration.
+         * @param updatedById the value to set
+         * @return this builder
+         **/
         public Builder updatedById(String updatedById) {
             this.updatedById = updatedById;
             this.__explicitlySet__.add("updatedById");
@@ -189,6 +259,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("typeId")
     private final String typeId;
 
+    /**
+     * Unique type key identifier.
+     * @return the value
+     **/
     public String getTypeId() {
         return typeId;
     }
@@ -199,6 +273,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
+    /**
+     * Name of the type.
+     * @return the value
+     **/
     public String getTypeName() {
         return typeName;
     }
@@ -209,6 +287,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
     private final String propertyId;
 
+    /**
+     * Unique property key identifier.
+     * @return the value
+     **/
     public String getPropertyId() {
         return propertyId;
     }
@@ -219,6 +301,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
     private final String propertyName;
 
+    /**
+     * Name of the property.
+     * @return the value
+     **/
     public String getPropertyName() {
         return propertyName;
     }
@@ -229,6 +315,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("eventConfigStatus")
     private final EventConfigStatus eventConfigStatus;
 
+    /**
+     * Status of the configuration.
+     * @return the value
+     **/
     public EventConfigStatus getEventConfigStatus() {
         return eventConfigStatus;
     }
@@ -241,6 +331,12 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the event was configured, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -252,6 +348,11 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The last time that any change was made to the configuration. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -262,6 +363,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
+    /**
+     * OCID of the user who created the configuration.
+     * @return the value
+     **/
     public String getCreatedById() {
         return createdById;
     }
@@ -272,6 +377,10 @@ public final class EventConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     private final String updatedById;
 
+    /**
+     * OCID of the user who last modified the configuration.
+     * @return the value
+     **/
     public String getUpdatedById() {
         return updatedById;
     }

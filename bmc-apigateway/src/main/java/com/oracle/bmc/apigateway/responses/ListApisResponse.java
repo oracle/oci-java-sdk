@@ -16,6 +16,13 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -29,6 +36,14 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcNextPage;
 
+    /**
+     * For list pagination. When this header appears in the response,
+     * additional pages of results remain. For important details about how
+     * pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcNextPage() {
         return opcNextPage;
     }
@@ -42,6 +57,14 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcPrevPage;
 
+    /**
+     * For list pagination. When this header appears in the response,
+     * additional pages of results were seen previously. For important details
+     * about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
     public String getOpcPrevPage() {
         return opcPrevPage;
     }
@@ -51,6 +74,10 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
 
+    /**
+     * The returned ApiCollection instance.
+     * @return the value
+     */
     public com.oracle.bmc.apigateway.model.ApiCollection getApiCollection() {
         return apiCollection;
     }
@@ -83,29 +110,83 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response,
+         * additional pages of results remain. For important details about how
+         * pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcNextPage;
 
+        /**
+         * For list pagination. When this header appears in the response,
+         * additional pages of results remain. For important details about how
+         * pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcNextPage the value to set
+         * @return this builder
+         */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
             return this;
         }
 
+        /**
+         * For list pagination. When this header appears in the response,
+         * additional pages of results were seen previously. For important details
+         * about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
         private String opcPrevPage;
 
+        /**
+         * For list pagination. When this header appears in the response,
+         * additional pages of results were seen previously. For important details
+         * about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
         public Builder opcPrevPage(String opcPrevPage) {
             this.opcPrevPage = opcPrevPage;
             return this;
         }
 
+        /**
+         * The returned ApiCollection instance.
+         */
         private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
 
+        /**
+         * The returned ApiCollection instance.
+         * @param apiCollection the value to set
+         * @return this builder
+         */
         public Builder apiCollection(com.oracle.bmc.apigateway.model.ApiCollection apiCollection) {
             this.apiCollection = apiCollection;
             return this;
@@ -125,12 +206,20 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public ListApisResponse build() {
             return new ListApisResponse(
                     __httpStatusCode__, opcRequestId, opcNextPage, opcPrevPage, apiCollection);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

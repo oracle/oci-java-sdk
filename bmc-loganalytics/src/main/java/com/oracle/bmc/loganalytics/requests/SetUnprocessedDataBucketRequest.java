@@ -18,6 +18,10 @@ public class SetUnprocessedDataBucketRequest
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +30,9 @@ public class SetUnprocessedDataBucketRequest
      */
     private String bucketName;
 
+    /**
+     * Name of the Object Storage bucket.
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -36,6 +43,11 @@ public class SetUnprocessedDataBucketRequest
      */
     private Boolean isEnabled;
 
+    /**
+     * The enabled flag used for filtering.  Only items with the specified enabled value
+     * will be returned.
+     *
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -44,6 +56,9 @@ public class SetUnprocessedDataBucketRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -55,11 +70,16 @@ public class SetUnprocessedDataBucketRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -67,10 +87,14 @@ public class SetUnprocessedDataBucketRequest
             return this;
         }
 
+        /**
+         * Name of the Object Storage bucket.
+         */
         private String bucketName = null;
 
         /**
          * Name of the Object Storage bucket.
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -78,12 +102,18 @@ public class SetUnprocessedDataBucketRequest
             return this;
         }
 
+        /**
+         * The enabled flag used for filtering.  Only items with the specified enabled value
+         * will be returned.
+         *
+         */
         private Boolean isEnabled = null;
 
         /**
          * The enabled flag used for filtering.  Only items with the specified enabled value
          * will be returned.
          *
+         * @param isEnabled the value to set
          * @return this builder instance
          */
         public Builder isEnabled(Boolean isEnabled) {
@@ -91,10 +121,14 @@ public class SetUnprocessedDataBucketRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -176,7 +210,8 @@ public class SetUnprocessedDataBucketRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -186,6 +221,10 @@ public class SetUnprocessedDataBucketRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -18,6 +18,9 @@ public class DetachInstancePoolInstanceRequest
      */
     private String instancePoolId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+     */
     public String getInstancePoolId() {
         return instancePoolId;
     }
@@ -27,6 +30,9 @@ public class DetachInstancePoolInstanceRequest
     private com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails
             detachInstancePoolInstanceDetails;
 
+    /**
+     * Instance being detached
+     */
     public com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails
             getDetachInstancePoolInstanceDetails() {
         return detachInstancePoolInstanceDetails;
@@ -41,6 +47,14 @@ public class DetachInstancePoolInstanceRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -63,10 +77,14 @@ public class DetachInstancePoolInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         */
         private String instancePoolId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         * @param instancePoolId the value to set
          * @return this builder instance
          */
         public Builder instancePoolId(String instancePoolId) {
@@ -74,11 +92,15 @@ public class DetachInstancePoolInstanceRequest
             return this;
         }
 
+        /**
+         * Instance being detached
+         */
         private com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails
                 detachInstancePoolInstanceDetails = null;
 
         /**
          * Instance being detached
+         * @param detachInstancePoolInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder detachInstancePoolInstanceDetails(
@@ -88,6 +110,14 @@ public class DetachInstancePoolInstanceRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -97,6 +127,7 @@ public class DetachInstancePoolInstanceRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -187,7 +218,8 @@ public class DetachInstancePoolInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -196,6 +228,10 @@ public class DetachInstancePoolInstanceRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

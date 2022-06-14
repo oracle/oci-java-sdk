@@ -18,6 +18,9 @@ public class LaunchInstanceConfigurationRequest
      */
     private String instanceConfigurationId;
 
+    /**
+     * The OCID of the instance configuration.
+     */
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
@@ -26,6 +29,9 @@ public class LaunchInstanceConfigurationRequest
      */
     private com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails instanceConfiguration;
 
+    /**
+     * Instance configuration Instance Details
+     */
     public com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails
             getInstanceConfiguration() {
         return instanceConfiguration;
@@ -40,6 +46,14 @@ public class LaunchInstanceConfigurationRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -62,10 +76,14 @@ public class LaunchInstanceConfigurationRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the instance configuration.
+         */
         private String instanceConfigurationId = null;
 
         /**
          * The OCID of the instance configuration.
+         * @param instanceConfigurationId the value to set
          * @return this builder instance
          */
         public Builder instanceConfigurationId(String instanceConfigurationId) {
@@ -73,11 +91,15 @@ public class LaunchInstanceConfigurationRequest
             return this;
         }
 
+        /**
+         * Instance configuration Instance Details
+         */
         private com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails
                 instanceConfiguration = null;
 
         /**
          * Instance configuration Instance Details
+         * @param instanceConfiguration the value to set
          * @return this builder instance
          */
         public Builder instanceConfiguration(
@@ -87,6 +109,14 @@ public class LaunchInstanceConfigurationRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -96,6 +126,7 @@ public class LaunchInstanceConfigurationRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -186,7 +217,8 @@ public class LaunchInstanceConfigurationRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -195,6 +227,10 @@ public class LaunchInstanceConfigurationRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

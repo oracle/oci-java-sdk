@@ -50,6 +50,10 @@ public class CreateCertificateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }

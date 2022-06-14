@@ -28,9 +28,21 @@ package com.oracle.bmc.apigateway.model;
 public final class AnyOfRouteAuthorizationPolicy extends RouteAuthorizationPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user whose scope includes any of these access ranges is allowed on
+         * this route. Access ranges are case-sensitive.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedScope")
         private java.util.List<String> allowedScope;
 
+        /**
+         * A user whose scope includes any of these access ranges is allowed on
+         * this route. Access ranges are case-sensitive.
+         *
+         * @param allowedScope the value to set
+         * @return this builder
+         **/
         public Builder allowedScope(java.util.List<String> allowedScope) {
             this.allowedScope = allowedScope;
             this.__explicitlySet__.add("allowedScope");
@@ -81,6 +93,12 @@ public final class AnyOfRouteAuthorizationPolicy extends RouteAuthorizationPolic
     @com.fasterxml.jackson.annotation.JsonProperty("allowedScope")
     private final java.util.List<String> allowedScope;
 
+    /**
+     * A user whose scope includes any of these access ranges is allowed on
+     * this route. Access ranges are case-sensitive.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getAllowedScope() {
         return allowedScope;
     }

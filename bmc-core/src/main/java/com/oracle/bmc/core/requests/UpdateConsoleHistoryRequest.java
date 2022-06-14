@@ -18,6 +18,9 @@ public class UpdateConsoleHistoryRequest
      */
     private String instanceConsoleHistoryId;
 
+    /**
+     * The OCID of the console history.
+     */
     public String getInstanceConsoleHistoryId() {
         return instanceConsoleHistoryId;
     }
@@ -26,6 +29,9 @@ public class UpdateConsoleHistoryRequest
      */
     private com.oracle.bmc.core.model.UpdateConsoleHistoryDetails updateConsoleHistoryDetails;
 
+    /**
+     * Update instance fields
+     */
     public com.oracle.bmc.core.model.UpdateConsoleHistoryDetails getUpdateConsoleHistoryDetails() {
         return updateConsoleHistoryDetails;
     }
@@ -37,6 +43,12 @@ public class UpdateConsoleHistoryRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -59,10 +71,14 @@ public class UpdateConsoleHistoryRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the console history.
+         */
         private String instanceConsoleHistoryId = null;
 
         /**
          * The OCID of the console history.
+         * @param instanceConsoleHistoryId the value to set
          * @return this builder instance
          */
         public Builder instanceConsoleHistoryId(String instanceConsoleHistoryId) {
@@ -70,11 +86,15 @@ public class UpdateConsoleHistoryRequest
             return this;
         }
 
+        /**
+         * Update instance fields
+         */
         private com.oracle.bmc.core.model.UpdateConsoleHistoryDetails updateConsoleHistoryDetails =
                 null;
 
         /**
          * Update instance fields
+         * @param updateConsoleHistoryDetails the value to set
          * @return this builder instance
          */
         public Builder updateConsoleHistoryDetails(
@@ -83,6 +103,12 @@ public class UpdateConsoleHistoryRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -90,6 +116,7 @@ public class UpdateConsoleHistoryRequest
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -180,7 +207,8 @@ public class UpdateConsoleHistoryRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -189,6 +217,10 @@ public class UpdateConsoleHistoryRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

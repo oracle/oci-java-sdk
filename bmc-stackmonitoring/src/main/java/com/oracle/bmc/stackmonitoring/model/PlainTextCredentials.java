@@ -63,10 +63,17 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The credential properties list. Credential property values will be either in plain text format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<CredentialProperty> properties;
 
+        /**
+         * The credential properties list. Credential property values will be either in plain text format.
+         * @param properties the value to set
+         * @return this builder
+         **/
         public Builder properties(java.util.List<CredentialProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -125,6 +132,10 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<CredentialProperty> properties;
 
+    /**
+     * The credential properties list. Credential property values will be either in plain text format.
+     * @return the value
+     **/
     public java.util.List<CredentialProperty> getProperties() {
         return properties;
     }

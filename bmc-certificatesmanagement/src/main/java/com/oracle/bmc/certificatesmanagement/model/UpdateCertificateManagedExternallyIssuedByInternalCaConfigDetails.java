@@ -45,10 +45,17 @@ public final class UpdateCertificateManagedExternallyIssuedByInternalCaConfigDet
             this.__explicitlySet__.add("stage");
             return this;
         }
-
+        /**
+         * The certificate signing request (in PEM format).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csrPem")
         private String csrPem;
 
+        /**
+         * The certificate signing request (in PEM format).
+         * @param csrPem the value to set
+         * @return this builder
+         **/
         public Builder csrPem(String csrPem) {
             this.csrPem = csrPem;
             this.__explicitlySet__.add("csrPem");
@@ -113,6 +120,10 @@ public final class UpdateCertificateManagedExternallyIssuedByInternalCaConfigDet
     @com.fasterxml.jackson.annotation.JsonProperty("csrPem")
     private final String csrPem;
 
+    /**
+     * The certificate signing request (in PEM format).
+     * @return the value
+     **/
     public String getCsrPem() {
         return csrPem;
     }

@@ -38,27 +38,59 @@ public final class HealthChecksVantagePointSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The display name for the vantage point. Display names are determined by
+         * the best information available and may change over time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name for the vantage point. Display names are determined by
+         * the best information available and may change over time.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The organization on whose infrastructure this vantage point resides.
+         * Provider names are not unique, as Oracle Cloud Infrastructure maintains
+         * many vantage points in each major provider.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
+        /**
+         * The organization on whose infrastructure this vantage point resides.
+         * Provider names are not unique, as Oracle Cloud Infrastructure maintains
+         * many vantage points in each major provider.
+         *
+         * @param providerName the value to set
+         * @return this builder
+         **/
         public Builder providerName(String providerName) {
             this.providerName = providerName;
             this.__explicitlySet__.add("providerName");
             return this;
         }
-
+        /**
+         * The unique, permanent name for the vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The unique, permanent name for the vantage point.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -73,10 +105,37 @@ public final class HealthChecksVantagePointSummary {
             this.__explicitlySet__.add("geo");
             return this;
         }
-
+        /**
+         * An array of objects that describe how traffic to this vantage point is
+         * routed, including which prefixes and ASNs connect it to the internet.
+         * <p>
+         * The addresses are sorted from the most-specific to least-specific
+         * prefix (the smallest network to largest network). When a prefix has
+         * multiple origin ASNs (MOAS routing), they are sorted by weight
+         * (highest to lowest). Weight is determined by the total percentage of
+         * peers observing the prefix originating from an ASN. Only present if
+         * {@code fields} includes {@code routing}. The field will be null if the address's
+         * routing information is unknown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routing")
         private java.util.List<Routing> routing;
 
+        /**
+         * An array of objects that describe how traffic to this vantage point is
+         * routed, including which prefixes and ASNs connect it to the internet.
+         * <p>
+         * The addresses are sorted from the most-specific to least-specific
+         * prefix (the smallest network to largest network). When a prefix has
+         * multiple origin ASNs (MOAS routing), they are sorted by weight
+         * (highest to lowest). Weight is determined by the total percentage of
+         * peers observing the prefix originating from an ASN. Only present if
+         * {@code fields} includes {@code routing}. The field will be null if the address's
+         * routing information is unknown.
+         *
+         * @param routing the value to set
+         * @return this builder
+         **/
         public Builder routing(java.util.List<Routing> routing) {
             this.routing = routing;
             this.__explicitlySet__.add("routing");
@@ -127,6 +186,12 @@ public final class HealthChecksVantagePointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name for the vantage point. Display names are determined by
+     * the best information available and may change over time.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -140,6 +205,13 @@ public final class HealthChecksVantagePointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
+    /**
+     * The organization on whose infrastructure this vantage point resides.
+     * Provider names are not unique, as Oracle Cloud Infrastructure maintains
+     * many vantage points in each major provider.
+     *
+     * @return the value
+     **/
     public String getProviderName() {
         return providerName;
     }
@@ -150,6 +222,10 @@ public final class HealthChecksVantagePointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The unique, permanent name for the vantage point.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -177,6 +253,20 @@ public final class HealthChecksVantagePointSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     private final java.util.List<Routing> routing;
 
+    /**
+     * An array of objects that describe how traffic to this vantage point is
+     * routed, including which prefixes and ASNs connect it to the internet.
+     * <p>
+     * The addresses are sorted from the most-specific to least-specific
+     * prefix (the smallest network to largest network). When a prefix has
+     * multiple origin ASNs (MOAS routing), they are sorted by weight
+     * (highest to lowest). Weight is determined by the total percentage of
+     * peers observing the prefix originating from an ASN. Only present if
+     * {@code fields} includes {@code routing}. The field will be null if the address's
+     * routing information is unknown.
+     *
+     * @return the value
+     **/
     public java.util.List<Routing> getRouting() {
         return routing;
     }

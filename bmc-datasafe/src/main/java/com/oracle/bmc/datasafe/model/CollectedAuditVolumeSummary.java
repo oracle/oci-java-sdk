@@ -41,36 +41,71 @@ public final class CollectedAuditVolumeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the audit profile resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
         private String auditProfileId;
 
+        /**
+         * The OCID of the audit profile resource.
+         * @param auditProfileId the value to set
+         * @return this builder
+         **/
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = auditProfileId;
             this.__explicitlySet__.add("auditProfileId");
             return this;
         }
-
+        /**
+         * Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed.
+         * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+         * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
         private java.util.Date monthInConsideration;
 
+        /**
+         * Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed.
+         * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+         * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+         *
+         * @param monthInConsideration the value to set
+         * @return this builder
+         **/
         public Builder monthInConsideration(java.util.Date monthInConsideration) {
             this.monthInConsideration = monthInConsideration;
             this.__explicitlySet__.add("monthInConsideration");
             return this;
         }
-
+        /**
+         * The audit data volume collected by Data Safe and is available online in repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onlineVolume")
         private Long onlineVolume;
 
+        /**
+         * The audit data volume collected by Data Safe and is available online in repository.
+         * @param onlineVolume the value to set
+         * @return this builder
+         **/
         public Builder onlineVolume(Long onlineVolume) {
             this.onlineVolume = onlineVolume;
             this.__explicitlySet__.add("onlineVolume");
             return this;
         }
-
+        /**
+         * The audit data volume collected by Data Safe and is available in archive storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archivedVolume")
         private Long archivedVolume;
 
+        /**
+         * The audit data volume collected by Data Safe and is available in archive storage.
+         * @param archivedVolume the value to set
+         * @return this builder
+         **/
         public Builder archivedVolume(Long archivedVolume) {
             this.archivedVolume = archivedVolume;
             this.__explicitlySet__.add("archivedVolume");
@@ -118,6 +153,10 @@ public final class CollectedAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
     private final String auditProfileId;
 
+    /**
+     * The OCID of the audit profile resource.
+     * @return the value
+     **/
     public String getAuditProfileId() {
         return auditProfileId;
     }
@@ -131,6 +170,13 @@ public final class CollectedAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
     private final java.util.Date monthInConsideration;
 
+    /**
+     * Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed.
+     * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+     * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+     *
+     * @return the value
+     **/
     public java.util.Date getMonthInConsideration() {
         return monthInConsideration;
     }
@@ -141,6 +187,10 @@ public final class CollectedAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("onlineVolume")
     private final Long onlineVolume;
 
+    /**
+     * The audit data volume collected by Data Safe and is available online in repository.
+     * @return the value
+     **/
     public Long getOnlineVolume() {
         return onlineVolume;
     }
@@ -151,6 +201,10 @@ public final class CollectedAuditVolumeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("archivedVolume")
     private final Long archivedVolume;
 
+    /**
+     * The audit data volume collected by Data Safe and is available in archive storage.
+     * @return the value
+     **/
     public Long getArchivedVolume() {
         return archivedVolume;
     }

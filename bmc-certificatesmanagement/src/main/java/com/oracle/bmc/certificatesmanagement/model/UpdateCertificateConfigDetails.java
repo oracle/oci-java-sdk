@@ -51,6 +51,10 @@ public class UpdateCertificateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
+    /**
+     * A name for the certificate version. When the value is not null, a name is unique across versions of a given certificate.
+     * @return the value
+     **/
     public String getVersionName() {
         return versionName;
     }
@@ -102,6 +106,13 @@ public class UpdateCertificateConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("stage")
     private final Stage stage;
 
+    /**
+     * The rotation state of the certificate. The default is {@code CURRENT}, meaning that the certificate is currently in use. A certificate version
+     * that you mark as {@code PENDING} is staged and available for use, but you don't yet want to rotate it into current, active use. For example,
+     * you might update a certificate and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
+     *
+     * @return the value
+     **/
     public Stage getStage() {
         return stage;
     }

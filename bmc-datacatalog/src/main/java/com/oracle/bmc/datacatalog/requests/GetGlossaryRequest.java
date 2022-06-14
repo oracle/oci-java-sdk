@@ -16,6 +16,9 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -24,6 +27,9 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String glossaryKey;
 
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
@@ -80,6 +86,10 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
+    /**
+     * Specifies the fields to return in a glossary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -88,6 +98,9 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -99,10 +112,14 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -110,10 +127,14 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
+         * @param glossaryKey the value to set
          * @return this builder instance
          */
         public Builder glossaryKey(String glossaryKey) {
@@ -121,11 +142,16 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /**
+         * Specifies the fields to return in a glossary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
          * Specifies the fields to return in a glossary response.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -136,16 +162,21 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Singular setter. Specifies the fields to return in a glossary response.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -227,7 +258,8 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -237,6 +269,10 @@ public class GetGlossaryRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

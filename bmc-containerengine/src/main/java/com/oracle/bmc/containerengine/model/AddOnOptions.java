@@ -28,18 +28,33 @@ public final class AddOnOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether or not to enable the Kubernetes Dashboard add-on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKubernetesDashboardEnabled")
         private Boolean isKubernetesDashboardEnabled;
 
+        /**
+         * Whether or not to enable the Kubernetes Dashboard add-on.
+         * @param isKubernetesDashboardEnabled the value to set
+         * @return this builder
+         **/
         public Builder isKubernetesDashboardEnabled(Boolean isKubernetesDashboardEnabled) {
             this.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
             this.__explicitlySet__.add("isKubernetesDashboardEnabled");
             return this;
         }
-
+        /**
+         * Whether or not to enable the Tiller add-on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTillerEnabled")
         private Boolean isTillerEnabled;
 
+        /**
+         * Whether or not to enable the Tiller add-on.
+         * @param isTillerEnabled the value to set
+         * @return this builder
+         **/
         public Builder isTillerEnabled(Boolean isTillerEnabled) {
             this.isTillerEnabled = isTillerEnabled;
             this.__explicitlySet__.add("isTillerEnabled");
@@ -84,6 +99,10 @@ public final class AddOnOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isKubernetesDashboardEnabled")
     private final Boolean isKubernetesDashboardEnabled;
 
+    /**
+     * Whether or not to enable the Kubernetes Dashboard add-on.
+     * @return the value
+     **/
     public Boolean getIsKubernetesDashboardEnabled() {
         return isKubernetesDashboardEnabled;
     }
@@ -94,6 +113,10 @@ public final class AddOnOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isTillerEnabled")
     private final Boolean isTillerEnabled;
 
+    /**
+     * Whether or not to enable the Tiller add-on.
+     * @return the value
+     **/
     public Boolean getIsTillerEnabled() {
         return isTillerEnabled;
     }

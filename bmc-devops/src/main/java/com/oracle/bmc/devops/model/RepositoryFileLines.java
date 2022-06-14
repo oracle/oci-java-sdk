@@ -29,9 +29,17 @@ public final class RepositoryFileLines {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of lines in the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<FileLineDetails> lines;
 
+        /**
+         * The list of lines in the file.
+         * @param lines the value to set
+         * @return this builder
+         **/
         public Builder lines(java.util.List<FileLineDetails> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
@@ -73,6 +81,10 @@ public final class RepositoryFileLines {
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<FileLineDetails> lines;
 
+    /**
+     * The list of lines in the file.
+     * @return the value
+     **/
     public java.util.List<FileLineDetails> getLines() {
         return lines;
     }

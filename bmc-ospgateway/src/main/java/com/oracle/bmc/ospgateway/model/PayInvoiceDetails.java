@@ -31,27 +31,49 @@ public final class PayInvoiceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Language code
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
+        /**
+         * Language code
+         * @param languageCode the value to set
+         * @return this builder
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-
+        /**
+         * Callback URL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("returnUrl")
         private String returnUrl;
 
+        /**
+         * Callback URL
+         * @param returnUrl the value to set
+         * @return this builder
+         **/
         public Builder returnUrl(String returnUrl) {
             this.returnUrl = returnUrl;
             this.__explicitlySet__.add("returnUrl");
             return this;
         }
-
+        /**
+         * User email
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
+        /**
+         * User email
+         * @param email the value to set
+         * @return this builder
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -96,6 +118,10 @@ public final class PayInvoiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
+    /**
+     * Language code
+     * @return the value
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
@@ -106,6 +132,10 @@ public final class PayInvoiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("returnUrl")
     private final String returnUrl;
 
+    /**
+     * Callback URL
+     * @return the value
+     **/
     public String getReturnUrl() {
         return returnUrl;
     }
@@ -116,6 +146,10 @@ public final class PayInvoiceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
+    /**
+     * User email
+     * @return the value
+     **/
     public String getEmail() {
         return email;
     }

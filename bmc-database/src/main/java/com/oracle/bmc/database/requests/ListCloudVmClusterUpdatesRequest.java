@@ -17,6 +17,9 @@ public class ListCloudVmClusterUpdatesRequest
      */
     private String cloudVmClusterId;
 
+    /**
+     * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     public String getCloudVmClusterId() {
         return cloudVmClusterId;
     }
@@ -62,6 +65,9 @@ public class ListCloudVmClusterUpdatesRequest
         }
     };
 
+    /**
+     * A filter to return only resources that match the given update type exactly.
+     */
     public UpdateType getUpdateType() {
         return updateType;
     }
@@ -70,6 +76,9 @@ public class ListCloudVmClusterUpdatesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -78,6 +87,9 @@ public class ListCloudVmClusterUpdatesRequest
      */
     private String page;
 
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -87,6 +99,10 @@ public class ListCloudVmClusterUpdatesRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -98,10 +114,14 @@ public class ListCloudVmClusterUpdatesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         private String cloudVmClusterId = null;
 
         /**
          * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param cloudVmClusterId the value to set
          * @return this builder instance
          */
         public Builder cloudVmClusterId(String cloudVmClusterId) {
@@ -109,10 +129,14 @@ public class ListCloudVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given update type exactly.
+         */
         private UpdateType updateType = null;
 
         /**
          * A filter to return only resources that match the given update type exactly.
+         * @param updateType the value to set
          * @return this builder instance
          */
         public Builder updateType(UpdateType updateType) {
@@ -120,10 +144,14 @@ public class ListCloudVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -131,10 +159,14 @@ public class ListCloudVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -142,11 +174,16 @@ public class ListCloudVmClusterUpdatesRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -230,7 +267,8 @@ public class ListCloudVmClusterUpdatesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -241,6 +279,10 @@ public class ListCloudVmClusterUpdatesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

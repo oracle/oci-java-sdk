@@ -18,6 +18,9 @@ public class ChangeLogGroupCompartmentRequest
      */
     private String logGroupId;
 
+    /**
+     * OCID of a log group to work with.
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -27,6 +30,9 @@ public class ChangeLogGroupCompartmentRequest
     private com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails
             changeLogGroupCompartmentDetails;
 
+    /**
+     * Request to change the compartment of a given resource.
+     */
     public com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails
             getChangeLogGroupCompartmentDetails() {
         return changeLogGroupCompartmentDetails;
@@ -41,6 +47,14 @@ public class ChangeLogGroupCompartmentRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -51,6 +65,11 @@ public class ChangeLogGroupCompartmentRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,10 +92,14 @@ public class ChangeLogGroupCompartmentRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * OCID of a log group to work with.
+         */
         private String logGroupId = null;
 
         /**
          * OCID of a log group to work with.
+         * @param logGroupId the value to set
          * @return this builder instance
          */
         public Builder logGroupId(String logGroupId) {
@@ -84,11 +107,15 @@ public class ChangeLogGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * Request to change the compartment of a given resource.
+         */
         private com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails
                 changeLogGroupCompartmentDetails = null;
 
         /**
          * Request to change the compartment of a given resource.
+         * @param changeLogGroupCompartmentDetails the value to set
          * @return this builder instance
          */
         public Builder changeLogGroupCompartmentDetails(
@@ -98,6 +125,14 @@ public class ChangeLogGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -107,6 +142,7 @@ public class ChangeLogGroupCompartmentRequest
          * updated or deleted only if the etag you provide matches the resource's
          * current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -114,12 +150,18 @@ public class ChangeLogGroupCompartmentRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -212,7 +254,8 @@ public class ChangeLogGroupCompartmentRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -222,6 +265,10 @@ public class ChangeLogGroupCompartmentRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

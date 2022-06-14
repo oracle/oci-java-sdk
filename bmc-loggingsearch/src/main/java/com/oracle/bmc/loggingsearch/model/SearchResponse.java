@@ -32,18 +32,33 @@ public final class SearchResponse {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of search results
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("results")
         private java.util.List<SearchResult> results;
 
+        /**
+         * List of search results
+         * @param results the value to set
+         * @return this builder
+         **/
         public Builder results(java.util.List<SearchResult> results) {
             this.results = results;
             this.__explicitlySet__.add("results");
             return this;
         }
-
+        /**
+         * List of log field schema information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<FieldInfo> fields;
 
+        /**
+         * List of log field schema information.
+         * @param fields the value to set
+         * @return this builder
+         **/
         public Builder fields(java.util.List<FieldInfo> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
@@ -95,6 +110,10 @@ public final class SearchResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("results")
     private final java.util.List<SearchResult> results;
 
+    /**
+     * List of search results
+     * @return the value
+     **/
     public java.util.List<SearchResult> getResults() {
         return results;
     }
@@ -105,6 +124,10 @@ public final class SearchResponse {
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<FieldInfo> fields;
 
+    /**
+     * List of log field schema information.
+     * @return the value
+     **/
     public java.util.List<FieldInfo> getFields() {
         return fields;
     }

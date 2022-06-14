@@ -17,6 +17,9 @@ public class ListTranscriptionTasksRequest
      */
     private String transcriptionJobId;
 
+    /**
+     * Unique Transcription Job identifier.
+     */
     public String getTranscriptionJobId() {
         return transcriptionJobId;
     }
@@ -25,6 +28,9 @@ public class ListTranscriptionTasksRequest
      */
     private com.oracle.bmc.aispeech.model.TranscriptionTask.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.aispeech.model.TranscriptionTask.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -33,6 +39,9 @@ public class ListTranscriptionTasksRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -41,6 +50,9 @@ public class ListTranscriptionTasksRequest
      */
     private String id;
 
+    /**
+     * Unique identifier(OCID).
+     */
     public String getId() {
         return id;
     }
@@ -49,6 +61,9 @@ public class ListTranscriptionTasksRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -57,6 +72,9 @@ public class ListTranscriptionTasksRequest
      */
     private String page;
 
+    /**
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     */
     public String getPage() {
         return page;
     }
@@ -65,6 +83,9 @@ public class ListTranscriptionTasksRequest
      */
     private com.oracle.bmc.aispeech.model.SortOrder sortOrder;
 
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.aispeech.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -111,6 +132,10 @@ public class ListTranscriptionTasksRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -119,6 +144,9 @@ public class ListTranscriptionTasksRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -130,10 +158,14 @@ public class ListTranscriptionTasksRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Transcription Job identifier.
+         */
         private String transcriptionJobId = null;
 
         /**
          * Unique Transcription Job identifier.
+         * @param transcriptionJobId the value to set
          * @return this builder instance
          */
         public Builder transcriptionJobId(String transcriptionJobId) {
@@ -141,11 +173,15 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         */
         private com.oracle.bmc.aispeech.model.TranscriptionTask.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(
@@ -154,10 +190,14 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -165,10 +205,14 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * Unique identifier(OCID).
+         */
         private String id = null;
 
         /**
          * Unique identifier(OCID).
+         * @param id the value to set
          * @return this builder instance
          */
         public Builder id(String id) {
@@ -176,10 +220,14 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -187,10 +235,14 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         */
         private String page = null;
 
         /**
          * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -198,10 +250,14 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.aispeech.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.aispeech.model.SortOrder sortOrder) {
@@ -209,11 +265,16 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -221,10 +282,14 @@ public class ListTranscriptionTasksRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -316,7 +381,8 @@ public class ListTranscriptionTasksRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -331,6 +397,10 @@ public class ListTranscriptionTasksRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -30,9 +30,17 @@ public final class GiVersionSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -74,6 +82,10 @@ public final class GiVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * A valid Oracle Grid Infrastructure (GI) software version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }

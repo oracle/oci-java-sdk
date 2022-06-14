@@ -60,92 +60,197 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A string that describes the details of the rule.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A string that describes the details of the rule.
+         * Avoid entering confidential information.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Logging Analytics Log group OCID to associate the processed logs with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
+        /**
+         * Logging Analytics Log group OCID to associate the processed logs with.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-
+        /**
+         * Name of the Logging Analytics Source to use for the processing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
         private String logSourceName;
 
+        /**
+         * Name of the Logging Analytics Source to use for the processing.
+         * @param logSourceName the value to set
+         * @return this builder
+         **/
         public Builder logSourceName(String logSourceName) {
             this.logSourceName = logSourceName;
             this.__explicitlySet__.add("logSourceName");
             return this;
         }
-
+        /**
+         * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
+        /**
+         * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+         * @param entityId the value to set
+         * @return this builder
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-
+        /**
+         * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
+         * It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
+         * and very few alphabets.
+         * For e.g. this applies when configuring VCN Flow Logs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("charEncoding")
         private String charEncoding;
 
+        /**
+         * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
+         * It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
+         * and very few alphabets.
+         * For e.g. this applies when configuring VCN Flow Logs.
+         *
+         * @param charEncoding the value to set
+         * @return this builder
+         **/
         public Builder charEncoding(String charEncoding) {
             this.charEncoding = charEncoding;
             this.__explicitlySet__.add("charEncoding");
             return this;
         }
-
+        /**
+         * Whether or not this rule is currently enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
+        /**
+         * Whether or not this rule is currently enabled.
+         *
+         * @param isEnabled the value to set
+         * @return this builder
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-
+        /**
+         * Use this to override some property values which are defined at bucket level to the scope of object.
+         * Supported propeties for override are: logSourceName, charEncoding, entityId.
+         * Supported matchType for override are "contains".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overrides")
         private java.util.Map<String, java.util.List<PropertyOverride>> overrides;
 
+        /**
+         * Use this to override some property values which are defined at bucket level to the scope of object.
+         * Supported propeties for override are: logSourceName, charEncoding, entityId.
+         * Supported matchType for override are "contains".
+         *
+         * @param overrides the value to set
+         * @return this builder
+         **/
         public Builder overrides(
                 java.util.Map<String, java.util.List<PropertyOverride>> overrides) {
             this.overrides = overrides;
             this.__explicitlySet__.add("overrides");
             return this;
         }
-
+        /**
+         * When the filters are provided, only the objects matching the filters are picked up for processing.
+         * The matchType supported is exact match and accommodates wildcard "*".
+         * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
         private java.util.List<String> objectNameFilters;
 
+        /**
+         * When the filters are provided, only the objects matching the filters are picked up for processing.
+         * The matchType supported is exact match and accommodates wildcard "*".
+         * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+         *
+         * @param objectNameFilters the value to set
+         * @return this builder
+         **/
         public Builder objectNameFilters(java.util.List<String> objectNameFilters) {
             this.objectNameFilters = objectNameFilters;
             this.__explicitlySet__.add("objectNameFilters");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -210,6 +315,12 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A string that describes the details of the rule.
+     * Avoid entering confidential information.
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -220,6 +331,10 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
+    /**
+     * Logging Analytics Log group OCID to associate the processed logs with.
+     * @return the value
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -230,6 +345,10 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
     private final String logSourceName;
 
+    /**
+     * Name of the Logging Analytics Source to use for the processing.
+     * @return the value
+     **/
     public String getLogSourceName() {
         return logSourceName;
     }
@@ -240,6 +359,10 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
+    /**
+     * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * @return the value
+     **/
     public String getEntityId() {
         return entityId;
     }
@@ -254,6 +377,14 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("charEncoding")
     private final String charEncoding;
 
+    /**
+     * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
+     * It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
+     * and very few alphabets.
+     * For e.g. this applies when configuring VCN Flow Logs.
+     *
+     * @return the value
+     **/
     public String getCharEncoding() {
         return charEncoding;
     }
@@ -265,6 +396,11 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
+    /**
+     * Whether or not this rule is currently enabled.
+     *
+     * @return the value
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -278,6 +414,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("overrides")
     private final java.util.Map<String, java.util.List<PropertyOverride>> overrides;
 
+    /**
+     * Use this to override some property values which are defined at bucket level to the scope of object.
+     * Supported propeties for override are: logSourceName, charEncoding, entityId.
+     * Supported matchType for override are "contains".
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.List<PropertyOverride>> getOverrides() {
         return overrides;
     }
@@ -291,6 +434,13 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
     private final java.util.List<String> objectNameFilters;
 
+    /**
+     * When the filters are provided, only the objects matching the filters are picked up for processing.
+     * The matchType supported is exact match and accommodates wildcard "*".
+     * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+     *
+     * @return the value
+     **/
     public java.util.List<String> getObjectNameFilters() {
         return objectNameFilters;
     }
@@ -303,6 +453,12 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -315,6 +471,12 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }

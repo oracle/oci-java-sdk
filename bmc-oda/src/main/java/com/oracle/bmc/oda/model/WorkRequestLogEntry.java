@@ -30,18 +30,33 @@ public final class WorkRequestLogEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Human-readable log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        /**
+         * Human-readable log message.
+         * @param message the value to set
+         * @return this builder
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-
+        /**
+         * When the log message was written. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
         private java.util.Date timeStamp;
 
+        /**
+         * When the log message was written. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * @param timeStamp the value to set
+         * @return this builder
+         **/
         public Builder timeStamp(java.util.Date timeStamp) {
             this.timeStamp = timeStamp;
             this.__explicitlySet__.add("timeStamp");
@@ -83,6 +98,10 @@ public final class WorkRequestLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
+    /**
+     * Human-readable log message.
+     * @return the value
+     **/
     public String getMessage() {
         return message;
     }
@@ -93,6 +112,10 @@ public final class WorkRequestLogEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
     private final java.util.Date timeStamp;
 
+    /**
+     * When the log message was written. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return the value
+     **/
     public java.util.Date getTimeStamp() {
         return timeStamp;
     }

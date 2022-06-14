@@ -50,63 +50,137 @@ public final class Record {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The fully qualified domain name where the record can be located.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
+        /**
+         * The fully qualified domain name where the record can be located.
+         *
+         * @param domain the value to set
+         * @return this builder
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-
+        /**
+         * A unique identifier for the record within its zone.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordHash")
         private String recordHash;
 
+        /**
+         * A unique identifier for the record within its zone.
+         *
+         * @param recordHash the value to set
+         * @return this builder
+         **/
         public Builder recordHash(String recordHash) {
             this.recordHash = recordHash;
             this.__explicitlySet__.add("recordHash");
             return this;
         }
-
+        /**
+         * A Boolean flag indicating whether or not parts of the record
+         * are unable to be explicitly managed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
         private Boolean isProtected;
 
+        /**
+         * A Boolean flag indicating whether or not parts of the record
+         * are unable to be explicitly managed.
+         *
+         * @param isProtected the value to set
+         * @return this builder
+         **/
         public Builder isProtected(Boolean isProtected) {
             this.isProtected = isProtected;
             this.__explicitlySet__.add("isProtected");
             return this;
         }
-
+        /**
+         * The record's data, as whitespace-delimited tokens in
+         * type-specific presentation format. All RDATA is normalized and the
+         * returned presentation of your RDATA may differ from its initial input.
+         * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
 
+        /**
+         * The record's data, as whitespace-delimited tokens in
+         * type-specific presentation format. All RDATA is normalized and the
+         * returned presentation of your RDATA may differ from its initial input.
+         * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         *
+         * @param rdata the value to set
+         * @return this builder
+         **/
         public Builder rdata(String rdata) {
             this.rdata = rdata;
             this.__explicitlySet__.add("rdata");
             return this;
         }
-
+        /**
+         * The latest version of the record's zone in which its RRSet differs
+         * from the preceding version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rrsetVersion")
         private String rrsetVersion;
 
+        /**
+         * The latest version of the record's zone in which its RRSet differs
+         * from the preceding version.
+         *
+         * @param rrsetVersion the value to set
+         * @return this builder
+         **/
         public Builder rrsetVersion(String rrsetVersion) {
             this.rrsetVersion = rrsetVersion;
             this.__explicitlySet__.add("rrsetVersion");
             return this;
         }
-
+        /**
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rtype")
         private String rtype;
 
+        /**
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         *
+         * @param rtype the value to set
+         * @return this builder
+         **/
         public Builder rtype(String rtype) {
             this.rtype = rtype;
             this.__explicitlySet__.add("rtype");
             return this;
         }
-
+        /**
+         * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttl")
         private Integer ttl;
 
+        /**
+         * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+         *
+         * @param ttl the value to set
+         * @return this builder
+         **/
         public Builder ttl(Integer ttl) {
             this.ttl = ttl;
             this.__explicitlySet__.add("ttl");
@@ -157,6 +231,11 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
+    /**
+     * The fully qualified domain name where the record can be located.
+     *
+     * @return the value
+     **/
     public String getDomain() {
         return domain;
     }
@@ -168,6 +247,11 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("recordHash")
     private final String recordHash;
 
+    /**
+     * A unique identifier for the record within its zone.
+     *
+     * @return the value
+     **/
     public String getRecordHash() {
         return recordHash;
     }
@@ -180,6 +264,12 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
     private final Boolean isProtected;
 
+    /**
+     * A Boolean flag indicating whether or not parts of the record
+     * are unable to be explicitly managed.
+     *
+     * @return the value
+     **/
     public Boolean getIsProtected() {
         return isProtected;
     }
@@ -194,6 +284,14 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
 
+    /**
+     * The record's data, as whitespace-delimited tokens in
+     * type-specific presentation format. All RDATA is normalized and the
+     * returned presentation of your RDATA may differ from its initial input.
+     * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     *
+     * @return the value
+     **/
     public String getRdata() {
         return rdata;
     }
@@ -206,6 +304,12 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("rrsetVersion")
     private final String rrsetVersion;
 
+    /**
+     * The latest version of the record's zone in which its RRSet differs
+     * from the preceding version.
+     *
+     * @return the value
+     **/
     public String getRrsetVersion() {
         return rrsetVersion;
     }
@@ -217,6 +321,11 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
     private final String rtype;
 
+    /**
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     *
+     * @return the value
+     **/
     public String getRtype() {
         return rtype;
     }
@@ -228,6 +337,11 @@ public final class Record {
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     private final Integer ttl;
 
+    /**
+     * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+     *
+     * @return the value
+     **/
     public Integer getTtl() {
         return ttl;
     }

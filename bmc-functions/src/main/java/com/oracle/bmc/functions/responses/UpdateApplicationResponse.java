@@ -16,6 +16,13 @@ public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. Add this value to the {@code if-match} parameter
+     * in a PUT or DELETE operation. The resource will be updated only if the value you
+     * provide matches the {@code etag} on the resource.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -27,6 +34,12 @@ public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -36,6 +49,10 @@ public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.functions.model.Application application;
 
+    /**
+     * The returned Application instance.
+     * @return the value
+     */
     public com.oracle.bmc.functions.model.Application getApplication() {
         return application;
     }
@@ -60,22 +77,56 @@ public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. Add this value to the {@code if-match} parameter
+         * in a PUT or DELETE operation. The resource will be updated only if the value you
+         * provide matches the {@code etag} on the resource.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. Add this value to the {@code if-match} parameter
+         * in a PUT or DELETE operation. The resource will be updated only if the value you
+         * provide matches the {@code etag} on the resource.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Application instance.
+         */
         private com.oracle.bmc.functions.model.Application application;
 
+        /**
+         * The returned Application instance.
+         * @param application the value to set
+         * @return this builder
+         */
         public Builder application(com.oracle.bmc.functions.model.Application application) {
             this.application = application;
             return this;
@@ -94,12 +145,20 @@ public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateApplicationResponse build() {
             return new UpdateApplicationResponse(
                     __httpStatusCode__, etag, opcRequestId, application);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

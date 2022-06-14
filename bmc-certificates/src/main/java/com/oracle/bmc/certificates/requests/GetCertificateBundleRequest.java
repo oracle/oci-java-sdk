@@ -17,6 +17,9 @@ public class GetCertificateBundleRequest
      */
     private String certificateId;
 
+    /**
+     * The OCID of the certificate.
+     */
     public String getCertificateId() {
         return certificateId;
     }
@@ -27,6 +30,11 @@ public class GetCertificateBundleRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -35,6 +43,9 @@ public class GetCertificateBundleRequest
      */
     private Long versionNumber;
 
+    /**
+     * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+     */
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -44,6 +55,10 @@ public class GetCertificateBundleRequest
      */
     private String certificateVersionName;
 
+    /**
+     * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
+     *
+     */
     public String getCertificateVersionName() {
         return certificateVersionName;
     }
@@ -91,6 +106,9 @@ public class GetCertificateBundleRequest
         }
     };
 
+    /**
+     * The rotation state of the certificate version.
+     */
     public Stage getStage() {
         return stage;
     }
@@ -137,6 +155,10 @@ public class GetCertificateBundleRequest
         }
     };
 
+    /**
+     * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
+     *
+     */
     public CertificateBundleType getCertificateBundleType() {
         return certificateBundleType;
     }
@@ -148,10 +170,14 @@ public class GetCertificateBundleRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the certificate.
+         */
         private String certificateId = null;
 
         /**
          * The OCID of the certificate.
+         * @param certificateId the value to set
          * @return this builder instance
          */
         public Builder certificateId(String certificateId) {
@@ -159,12 +185,18 @@ public class GetCertificateBundleRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
          * please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -172,10 +204,14 @@ public class GetCertificateBundleRequest
             return this;
         }
 
+        /**
+         * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+         */
         private Long versionNumber = null;
 
         /**
          * The version number of the certificate. The default value is 0, which means that this query parameter is ignored.
+         * @param versionNumber the value to set
          * @return this builder instance
          */
         public Builder versionNumber(Long versionNumber) {
@@ -183,11 +219,16 @@ public class GetCertificateBundleRequest
             return this;
         }
 
+        /**
+         * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
+         *
+         */
         private String certificateVersionName = null;
 
         /**
          * The name of the certificate. (This might be referred to as the name of the certificate version, as every certificate consists of at least one version.) Names are unique across versions of a given certificate.
          *
+         * @param certificateVersionName the value to set
          * @return this builder instance
          */
         public Builder certificateVersionName(String certificateVersionName) {
@@ -195,10 +236,14 @@ public class GetCertificateBundleRequest
             return this;
         }
 
+        /**
+         * The rotation state of the certificate version.
+         */
         private Stage stage = null;
 
         /**
          * The rotation state of the certificate version.
+         * @param stage the value to set
          * @return this builder instance
          */
         public Builder stage(Stage stage) {
@@ -206,11 +251,16 @@ public class GetCertificateBundleRequest
             return this;
         }
 
+        /**
+         * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
+         *
+         */
         private CertificateBundleType certificateBundleType = null;
 
         /**
          * The type of certificate bundle. By default, the private key fields are not returned. When querying for certificate bundles, to return results with certificate contents, the private key in PEM format, and the private key passphrase, specify the value of this parameter as {@code CERTIFICATE_CONTENT_WITH_PRIVATE_KEY}.
          *
+         * @param certificateBundleType the value to set
          * @return this builder instance
          */
         public Builder certificateBundleType(CertificateBundleType certificateBundleType) {
@@ -296,7 +346,8 @@ public class GetCertificateBundleRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -308,6 +359,10 @@ public class GetCertificateBundleRequest
                 .certificateBundleType(certificateBundleType);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -28,18 +28,35 @@ public final class BaseKeyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Type of the Data Key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DataKeyTypes type;
 
+        /**
+         * Type of the Data Key.
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(DataKeyTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -82,6 +99,11 @@ public final class BaseKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -92,6 +114,10 @@ public final class BaseKeyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DataKeyTypes type;
 
+    /**
+     * Type of the Data Key.
+     * @return the value
+     **/
     public DataKeyTypes getType() {
         return type;
     }

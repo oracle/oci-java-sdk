@@ -29,9 +29,17 @@ public final class LogAnalyticsWarningCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A collection of LogAnalyticsWarnings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsWarning> items;
 
+        /**
+         * A collection of LogAnalyticsWarnings
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<LogAnalyticsWarning> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class LogAnalyticsWarningCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsWarning> items;
 
+    /**
+     * A collection of LogAnalyticsWarnings
+     * @return the value
+     **/
     public java.util.List<LogAnalyticsWarning> getItems() {
         return items;
     }

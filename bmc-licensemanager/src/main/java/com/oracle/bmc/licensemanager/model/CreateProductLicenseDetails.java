@@ -53,72 +53,141 @@ public final class CreateProductLicenseDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * Specifies if the product license vendor is Oracle or a third party.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVendorOracle")
         private Boolean isVendorOracle;
 
+        /**
+         * Specifies if the product license vendor is Oracle or a third party.
+         * @param isVendorOracle the value to set
+         * @return this builder
+         **/
         public Builder isVendorOracle(Boolean isVendorOracle) {
             this.isVendorOracle = isVendorOracle;
             this.__explicitlySet__.add("isVendorOracle");
             return this;
         }
-
+        /**
+         * Name of the product license.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Name of the product license.
+         *
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The product license unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseUnit")
         private LicenseUnit licenseUnit;
 
+        /**
+         * The product license unit.
+         * @param licenseUnit the value to set
+         * @return this builder
+         **/
         public Builder licenseUnit(LicenseUnit licenseUnit) {
             this.licenseUnit = licenseUnit;
             this.__explicitlySet__.add("licenseUnit");
             return this;
         }
-
+        /**
+         * The product license vendor name, for example: Microsoft, RHEL, and so on.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private String vendorName;
 
+        /**
+         * The product license vendor name, for example: Microsoft, RHEL, and so on.
+         *
+         * @param vendorName the value to set
+         * @return this builder
+         **/
         public Builder vendorName(String vendorName) {
             this.vendorName = vendorName;
             this.__explicitlySet__.add("vendorName");
             return this;
         }
-
+        /**
+         * The image details associated with the product license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("images")
         private java.util.List<ImageDetails> images;
 
+        /**
+         * The image details associated with the product license.
+         * @param images the value to set
+         * @return this builder
+         **/
         public Builder images(java.util.List<ImageDetails> images) {
             this.images = images;
             this.__explicitlySet__.add("images");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -178,6 +247,10 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -188,6 +261,10 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isVendorOracle")
     private final Boolean isVendorOracle;
 
+    /**
+     * Specifies if the product license vendor is Oracle or a third party.
+     * @return the value
+     **/
     public Boolean getIsVendorOracle() {
         return isVendorOracle;
     }
@@ -199,6 +276,11 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Name of the product license.
+     *
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -209,6 +291,10 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnit")
     private final LicenseUnit licenseUnit;
 
+    /**
+     * The product license unit.
+     * @return the value
+     **/
     public LicenseUnit getLicenseUnit() {
         return licenseUnit;
     }
@@ -220,6 +306,11 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final String vendorName;
 
+    /**
+     * The product license vendor name, for example: Microsoft, RHEL, and so on.
+     *
+     * @return the value
+     **/
     public String getVendorName() {
         return vendorName;
     }
@@ -230,6 +321,10 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("images")
     private final java.util.List<ImageDetails> images;
 
+    /**
+     * The image details associated with the product license.
+     * @return the value
+     **/
     public java.util.List<ImageDetails> getImages() {
         return images;
     }
@@ -242,6 +337,12 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -254,6 +355,12 @@ public final class CreateProductLicenseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

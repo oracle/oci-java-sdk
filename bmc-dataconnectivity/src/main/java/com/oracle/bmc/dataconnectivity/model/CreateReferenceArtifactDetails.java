@@ -29,9 +29,17 @@ public final class CreateReferenceArtifactDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * unique id of service which is referencing data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
         private String serviceArtifactId;
 
+        /**
+         * unique id of service which is referencing data asset.
+         * @param serviceArtifactId the value to set
+         * @return this builder
+         **/
         public Builder serviceArtifactId(String serviceArtifactId) {
             this.serviceArtifactId = serviceArtifactId;
             this.__explicitlySet__.add("serviceArtifactId");
@@ -74,6 +82,10 @@ public final class CreateReferenceArtifactDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
     private final String serviceArtifactId;
 
+    /**
+     * unique id of service which is referencing data asset.
+     * @return the value
+     **/
     public String getServiceArtifactId() {
         return serviceArtifactId;
     }

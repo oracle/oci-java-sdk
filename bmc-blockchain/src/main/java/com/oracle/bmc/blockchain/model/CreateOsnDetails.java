@@ -29,9 +29,17 @@ public final class CreateOsnDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Availability Domain to place new OSN
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private AvailabilityDomain.Ads ad;
 
+        /**
+         * Availability Domain to place new OSN
+         * @param ad the value to set
+         * @return this builder
+         **/
         public Builder ad(AvailabilityDomain.Ads ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
@@ -82,6 +90,10 @@ public final class CreateOsnDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final AvailabilityDomain.Ads ad;
 
+    /**
+     * Availability Domain to place new OSN
+     * @return the value
+     **/
     public AvailabilityDomain.Ads getAd() {
         return ad;
     }

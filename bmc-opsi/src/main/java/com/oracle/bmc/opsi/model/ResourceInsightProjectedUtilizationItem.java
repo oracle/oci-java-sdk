@@ -30,18 +30,33 @@ public final class ResourceInsightProjectedUtilizationItem {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Db id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * Db id
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Days to reach projected utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReach")
         private Integer daysToReach;
 
+        /**
+         * Days to reach projected utilization
+         * @param daysToReach the value to set
+         * @return this builder
+         **/
         public Builder daysToReach(Integer daysToReach) {
             this.daysToReach = daysToReach;
             this.__explicitlySet__.add("daysToReach");
@@ -84,6 +99,10 @@ public final class ResourceInsightProjectedUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * Db id
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -94,6 +113,10 @@ public final class ResourceInsightProjectedUtilizationItem {
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReach")
     private final Integer daysToReach;
 
+    /**
+     * Days to reach projected utilization
+     * @return the value
+     **/
     public Integer getDaysToReach() {
         return daysToReach;
     }

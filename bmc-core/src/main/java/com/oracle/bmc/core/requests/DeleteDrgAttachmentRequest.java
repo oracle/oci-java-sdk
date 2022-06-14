@@ -16,6 +16,9 @@ public class DeleteDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String drgAttachmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+     */
     public String getDrgAttachmentId() {
         return drgAttachmentId;
     }
@@ -27,6 +30,12 @@ public class DeleteDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,10 +47,14 @@ public class DeleteDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+         */
         private String drgAttachmentId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
+         * @param drgAttachmentId the value to set
          * @return this builder instance
          */
         public Builder drgAttachmentId(String drgAttachmentId) {
@@ -49,6 +62,12 @@ public class DeleteDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -56,6 +75,7 @@ public class DeleteDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
          * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
          * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -133,12 +153,17 @@ public class DeleteDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().drgAttachmentId(drgAttachmentId).ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

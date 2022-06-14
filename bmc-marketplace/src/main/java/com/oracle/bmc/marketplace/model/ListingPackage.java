@@ -67,6 +67,10 @@ public class ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of this package.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -77,6 +81,10 @@ public class ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
+    /**
+     * The ID of the listing this package belongs to.
+     * @return the value
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -87,6 +95,10 @@ public class ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * The package version.
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -104,6 +116,10 @@ public class ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
+    /**
+     * The unique identifier for the package resource.
+     * @return the value
+     **/
     public String getResourceId() {
         return resourceId;
     }
@@ -118,6 +134,14 @@ public class ListingPackage {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

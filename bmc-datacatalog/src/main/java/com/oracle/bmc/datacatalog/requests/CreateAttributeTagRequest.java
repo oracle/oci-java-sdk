@@ -18,6 +18,9 @@ public class CreateAttributeTagRequest
      */
     private String catalogId;
 
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
@@ -26,6 +29,9 @@ public class CreateAttributeTagRequest
      */
     private String dataAssetKey;
 
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
@@ -34,6 +40,9 @@ public class CreateAttributeTagRequest
      */
     private String entityKey;
 
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
@@ -42,6 +51,9 @@ public class CreateAttributeTagRequest
      */
     private String attributeKey;
 
+    /**
+     * Unique attribute key.
+     */
     public String getAttributeKey() {
         return attributeKey;
     }
@@ -50,6 +62,9 @@ public class CreateAttributeTagRequest
      */
     private com.oracle.bmc.datacatalog.model.CreateTagDetails createAttributeTagDetails;
 
+    /**
+     * The information used to create an entity attribute tag.
+     */
     public com.oracle.bmc.datacatalog.model.CreateTagDetails getCreateAttributeTagDetails() {
         return createAttributeTagDetails;
     }
@@ -58,6 +73,9 @@ public class CreateAttributeTagRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,6 +89,14 @@ public class CreateAttributeTagRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -92,10 +118,14 @@ public class CreateAttributeTagRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         * @param catalogId the value to set
          * @return this builder instance
          */
         public Builder catalogId(String catalogId) {
@@ -103,10 +133,14 @@ public class CreateAttributeTagRequest
             return this;
         }
 
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         * @param dataAssetKey the value to set
          * @return this builder instance
          */
         public Builder dataAssetKey(String dataAssetKey) {
@@ -114,10 +148,14 @@ public class CreateAttributeTagRequest
             return this;
         }
 
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
+         * @param entityKey the value to set
          * @return this builder instance
          */
         public Builder entityKey(String entityKey) {
@@ -125,10 +163,14 @@ public class CreateAttributeTagRequest
             return this;
         }
 
+        /**
+         * Unique attribute key.
+         */
         private String attributeKey = null;
 
         /**
          * Unique attribute key.
+         * @param attributeKey the value to set
          * @return this builder instance
          */
         public Builder attributeKey(String attributeKey) {
@@ -136,10 +178,14 @@ public class CreateAttributeTagRequest
             return this;
         }
 
+        /**
+         * The information used to create an entity attribute tag.
+         */
         private com.oracle.bmc.datacatalog.model.CreateTagDetails createAttributeTagDetails = null;
 
         /**
          * The information used to create an entity attribute tag.
+         * @param createAttributeTagDetails the value to set
          * @return this builder instance
          */
         public Builder createAttributeTagDetails(
@@ -148,10 +194,14 @@ public class CreateAttributeTagRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -159,6 +209,14 @@ public class CreateAttributeTagRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -168,6 +226,7 @@ public class CreateAttributeTagRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -266,7 +325,8 @@ public class CreateAttributeTagRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -279,6 +339,10 @@ public class CreateAttributeTagRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

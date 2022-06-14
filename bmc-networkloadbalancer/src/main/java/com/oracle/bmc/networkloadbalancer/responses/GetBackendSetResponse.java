@@ -15,6 +15,12 @@ public class GetBackendSetResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +31,11 @@ public class GetBackendSetResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -34,6 +45,10 @@ public class GetBackendSetResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.networkloadbalancer.model.BackendSet backendSet;
 
+    /**
+     * The returned BackendSet instance.
+     * @return the value
+     */
     public com.oracle.bmc.networkloadbalancer.model.BackendSet getBackendSet() {
         return backendSet;
     }
@@ -58,22 +73,52 @@ public class GetBackendSetResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned BackendSet instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.BackendSet backendSet;
 
+        /**
+         * The returned BackendSet instance.
+         * @param backendSet the value to set
+         * @return this builder
+         */
         public Builder backendSet(com.oracle.bmc.networkloadbalancer.model.BackendSet backendSet) {
             this.backendSet = backendSet;
             return this;
@@ -92,11 +137,19 @@ public class GetBackendSetResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetBackendSetResponse build() {
             return new GetBackendSetResponse(__httpStatusCode__, opcRequestId, etag, backendSet);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

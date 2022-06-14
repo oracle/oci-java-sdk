@@ -116,37 +116,79 @@ public final class WebChannel extends Channel {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The maximum time until the token expires (in minutes).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokenExpirationTimeInMinutes")
         private Long maxTokenExpirationTimeInMinutes;
 
+        /**
+         * The maximum time until the token expires (in minutes).
+         * @param maxTokenExpirationTimeInMinutes the value to set
+         * @return this builder
+         **/
         public Builder maxTokenExpirationTimeInMinutes(Long maxTokenExpirationTimeInMinutes) {
             this.maxTokenExpirationTimeInMinutes = maxTokenExpirationTimeInMinutes;
             this.__explicitlySet__.add("maxTokenExpirationTimeInMinutes");
             return this;
         }
-
+        /**
+         * Whether client authentication is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClientAuthenticationEnabled")
         private Boolean isClientAuthenticationEnabled;
 
+        /**
+         * Whether client authentication is enabled or not.
+         * @param isClientAuthenticationEnabled the value to set
+         * @return this builder
+         **/
         public Builder isClientAuthenticationEnabled(Boolean isClientAuthenticationEnabled) {
             this.isClientAuthenticationEnabled = isClientAuthenticationEnabled;
             this.__explicitlySet__.add("isClientAuthenticationEnabled");
             return this;
         }
-
+        /**
+         * A comma-delimited whitelist of allowed domains.
+         *
+         * The channel will only communicate with the sites from the domains that you add to this list.
+         * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
+         * to the channel from any domain.
+         *
+         * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedDomains")
         private String allowedDomains;
 
+        /**
+         * A comma-delimited whitelist of allowed domains.
+         *
+         * The channel will only communicate with the sites from the domains that you add to this list.
+         * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
+         * to the channel from any domain.
+         *
+         * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
+         *
+         * @param allowedDomains the value to set
+         * @return this builder
+         **/
         public Builder allowedDomains(String allowedDomains) {
             this.allowedDomains = allowedDomains;
             this.__explicitlySet__.add("allowedDomains");
             return this;
         }
-
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         * @param botId the value to set
+         * @return this builder
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -251,6 +293,10 @@ public final class WebChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokenExpirationTimeInMinutes")
     private final Long maxTokenExpirationTimeInMinutes;
 
+    /**
+     * The maximum time until the token expires (in minutes).
+     * @return the value
+     **/
     public Long getMaxTokenExpirationTimeInMinutes() {
         return maxTokenExpirationTimeInMinutes;
     }
@@ -261,6 +307,10 @@ public final class WebChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("isClientAuthenticationEnabled")
     private final Boolean isClientAuthenticationEnabled;
 
+    /**
+     * Whether client authentication is enabled or not.
+     * @return the value
+     **/
     public Boolean getIsClientAuthenticationEnabled() {
         return isClientAuthenticationEnabled;
     }
@@ -278,6 +328,17 @@ public final class WebChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedDomains")
     private final String allowedDomains;
 
+    /**
+     * A comma-delimited whitelist of allowed domains.
+     *
+     * The channel will only communicate with the sites from the domains that you add to this list.
+     * For example, *.corp.example.com, *.hdr.example.com. Entering a single asterisk (*) allows unrestricted access
+     * to the channel from any domain.
+     *
+     * Typically, you'd only enter a single asterisk during development. For production, you would add an allowlist of domains.
+     *
+     * @return the value
+     **/
     public String getAllowedDomains() {
         return allowedDomains;
     }
@@ -288,6 +349,10 @@ public final class WebChannel extends Channel {
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     * @return the value
+     **/
     public String getBotId() {
         return botId;
     }

@@ -18,6 +18,9 @@ public class PatchAlertsRequest
      */
     private com.oracle.bmc.datasafe.model.PatchAlertsDetails patchAlertsDetails;
 
+    /**
+     * Details to patch alerts.
+     */
     public com.oracle.bmc.datasafe.model.PatchAlertsDetails getPatchAlertsDetails() {
         return patchAlertsDetails;
     }
@@ -26,6 +29,9 @@ public class PatchAlertsRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,6 +45,14 @@ public class PatchAlertsRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -60,10 +74,14 @@ public class PatchAlertsRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Details to patch alerts.
+         */
         private com.oracle.bmc.datasafe.model.PatchAlertsDetails patchAlertsDetails = null;
 
         /**
          * Details to patch alerts.
+         * @param patchAlertsDetails the value to set
          * @return this builder instance
          */
         public Builder patchAlertsDetails(
@@ -72,10 +90,14 @@ public class PatchAlertsRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -83,6 +105,14 @@ public class PatchAlertsRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -92,6 +122,7 @@ public class PatchAlertsRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -182,7 +213,8 @@ public class PatchAlertsRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +223,10 @@ public class PatchAlertsRequest
                 .ifMatch(ifMatch);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

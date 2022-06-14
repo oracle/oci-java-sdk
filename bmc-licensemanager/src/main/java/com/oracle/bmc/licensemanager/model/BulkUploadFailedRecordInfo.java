@@ -31,27 +31,49 @@ public final class BulkUploadFailedRecordInfo {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Refers to the license record number as provided in the bulk upload file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowNumber")
         private Integer rowNumber;
 
+        /**
+         * Refers to the license record number as provided in the bulk upload file.
+         * @param rowNumber the value to set
+         * @return this builder
+         **/
         public Builder rowNumber(Integer rowNumber) {
             this.rowNumber = rowNumber;
             this.__explicitlySet__.add("rowNumber");
             return this;
         }
-
+        /**
+         * Product name of the failed row.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
+        /**
+         * Product name of the failed row.
+         * @param productName the value to set
+         * @return this builder
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-
+        /**
+         * Failed license record error information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("error")
         private String error;
 
+        /**
+         * Failed license record error information.
+         * @param error the value to set
+         * @return this builder
+         **/
         public Builder error(String error) {
             this.error = error;
             this.__explicitlySet__.add("error");
@@ -95,6 +117,10 @@ public final class BulkUploadFailedRecordInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("rowNumber")
     private final Integer rowNumber;
 
+    /**
+     * Refers to the license record number as provided in the bulk upload file.
+     * @return the value
+     **/
     public Integer getRowNumber() {
         return rowNumber;
     }
@@ -105,6 +131,10 @@ public final class BulkUploadFailedRecordInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
+    /**
+     * Product name of the failed row.
+     * @return the value
+     **/
     public String getProductName() {
         return productName;
     }
@@ -115,6 +145,10 @@ public final class BulkUploadFailedRecordInfo {
     @com.fasterxml.jackson.annotation.JsonProperty("error")
     private final String error;
 
+    /**
+     * Failed license record error information.
+     * @return the value
+     **/
     public String getError() {
         return error;
     }

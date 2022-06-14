@@ -43,6 +43,11 @@ public class DrgAttachmentNetworkCreateDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }

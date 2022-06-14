@@ -39,6 +39,7 @@ public final class FlattenDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("flattenProjectionPreferences")
         private FlattenProjectionPreferences flattenProjectionPreferences;
 
@@ -48,28 +49,49 @@ public final class FlattenDetails {
             this.__explicitlySet__.add("flattenProjectionPreferences");
             return this;
         }
-
+        /**
+         * The string of flatten attribute column name where the flatten process starts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flattenAttributeRoot")
         private String flattenAttributeRoot;
 
+        /**
+         * The string of flatten attribute column name where the flatten process starts.
+         * @param flattenAttributeRoot the value to set
+         * @return this builder
+         **/
         public Builder flattenAttributeRoot(String flattenAttributeRoot) {
             this.flattenAttributeRoot = flattenAttributeRoot;
             this.__explicitlySet__.add("flattenAttributeRoot");
             return this;
         }
-
+        /**
+         * The string of flatten attribute path in flattenAttributeRoot from upper level to leaf/targeted level concatenated with dot(.)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flattenAttributePath")
         private String flattenAttributePath;
 
+        /**
+         * The string of flatten attribute path in flattenAttributeRoot from upper level to leaf/targeted level concatenated with dot(.)
+         * @param flattenAttributePath the value to set
+         * @return this builder
+         **/
         public Builder flattenAttributePath(String flattenAttributePath) {
             this.flattenAttributePath = flattenAttributePath;
             this.__explicitlySet__.add("flattenAttributePath");
             return this;
         }
-
+        /**
+         * The array of flatten columns which are the input to flatten.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flattenColumns")
         private java.util.List<TypedObject> flattenColumns;
 
+        /**
+         * The array of flatten columns which are the input to flatten.
+         * @param flattenColumns the value to set
+         * @return this builder
+         **/
         public Builder flattenColumns(java.util.List<TypedObject> flattenColumns) {
             this.flattenColumns = flattenColumns;
             this.__explicitlySet__.add("flattenColumns");
@@ -127,6 +149,10 @@ public final class FlattenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("flattenAttributeRoot")
     private final String flattenAttributeRoot;
 
+    /**
+     * The string of flatten attribute column name where the flatten process starts.
+     * @return the value
+     **/
     public String getFlattenAttributeRoot() {
         return flattenAttributeRoot;
     }
@@ -137,6 +163,10 @@ public final class FlattenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("flattenAttributePath")
     private final String flattenAttributePath;
 
+    /**
+     * The string of flatten attribute path in flattenAttributeRoot from upper level to leaf/targeted level concatenated with dot(.)
+     * @return the value
+     **/
     public String getFlattenAttributePath() {
         return flattenAttributePath;
     }
@@ -147,6 +177,10 @@ public final class FlattenDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("flattenColumns")
     private final java.util.List<TypedObject> flattenColumns;
 
+    /**
+     * The array of flatten columns which are the input to flatten.
+     * @return the value
+     **/
     public java.util.List<TypedObject> getFlattenColumns() {
         return flattenColumns;
     }

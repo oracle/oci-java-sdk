@@ -30,9 +30,17 @@ public final class IngestHostMetricsDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of one or more host performance metric data points
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<HostPerformanceMetricGroup> items;
 
+        /**
+         * Collection of one or more host performance metric data points
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<HostPerformanceMetricGroup> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class IngestHostMetricsDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<HostPerformanceMetricGroup> items;
 
+    /**
+     * Collection of one or more host performance metric data points
+     * @return the value
+     **/
     public java.util.List<HostPerformanceMetricGroup> getItems() {
         return items;
     }

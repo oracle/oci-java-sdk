@@ -31,36 +31,65 @@ public final class ContextualData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique client identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
+        /**
+         * The unique client identifier
+         * @param clientId the value to set
+         * @return this builder
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-
+        /**
+         * The schema name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
+        /**
+         * The schema name
+         * @param schemaName the value to set
+         * @return this builder
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-
+        /**
+         * The schema version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
         private String schemaVersion;
 
+        /**
+         * The schema version
+         * @param schemaVersion the value to set
+         * @return this builder
+         **/
         public Builder schemaVersion(String schemaVersion) {
             this.schemaVersion = schemaVersion;
             this.__explicitlySet__.add("schemaVersion");
             return this;
         }
-
+        /**
+         * The context data payload
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private String payload;
 
+        /**
+         * The context data payload
+         * @param payload the value to set
+         * @return this builder
+         **/
         public Builder payload(String payload) {
             this.payload = payload;
             this.__explicitlySet__.add("payload");
@@ -107,6 +136,10 @@ public final class ContextualData {
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
+    /**
+     * The unique client identifier
+     * @return the value
+     **/
     public String getClientId() {
         return clientId;
     }
@@ -117,6 +150,10 @@ public final class ContextualData {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
+    /**
+     * The schema name
+     * @return the value
+     **/
     public String getSchemaName() {
         return schemaName;
     }
@@ -127,6 +164,10 @@ public final class ContextualData {
     @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
     private final String schemaVersion;
 
+    /**
+     * The schema version
+     * @return the value
+     **/
     public String getSchemaVersion() {
         return schemaVersion;
     }
@@ -137,6 +178,10 @@ public final class ContextualData {
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final String payload;
 
+    /**
+     * The context data payload
+     * @return the value
+     **/
     public String getPayload() {
         return payload;
     }

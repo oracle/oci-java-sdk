@@ -31,18 +31,35 @@ public final class UpdateRoutingPolicyDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The version of the language in which {@code condition} of {@code rules} are composed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
         private ConditionLanguageVersion conditionLanguageVersion;
 
+        /**
+         * The version of the language in which {@code condition} of {@code rules} are composed.
+         *
+         * @param conditionLanguageVersion the value to set
+         * @return this builder
+         **/
         public Builder conditionLanguageVersion(ConditionLanguageVersion conditionLanguageVersion) {
             this.conditionLanguageVersion = conditionLanguageVersion;
             this.__explicitlySet__.add("conditionLanguageVersion");
             return this;
         }
-
+        /**
+         * The list of routing rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RoutingRule> rules;
 
+        /**
+         * The list of routing rules.
+         * @param rules the value to set
+         * @return this builder
+         **/
         public Builder rules(java.util.List<RoutingRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -122,6 +139,11 @@ public final class UpdateRoutingPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
     private final ConditionLanguageVersion conditionLanguageVersion;
 
+    /**
+     * The version of the language in which {@code condition} of {@code rules} are composed.
+     *
+     * @return the value
+     **/
     public ConditionLanguageVersion getConditionLanguageVersion() {
         return conditionLanguageVersion;
     }
@@ -132,6 +154,10 @@ public final class UpdateRoutingPolicyDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RoutingRule> rules;
 
+    /**
+     * The list of routing rules.
+     * @return the value
+     **/
     public java.util.List<RoutingRule> getRules() {
         return rules;
     }

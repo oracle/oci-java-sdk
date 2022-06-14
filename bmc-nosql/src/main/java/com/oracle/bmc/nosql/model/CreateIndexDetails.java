@@ -36,36 +36,81 @@ public final class CreateIndexDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Index name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Index name.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The OCID of the table's compartment.  Required
+         * if the tableNameOrId path parameter is a table name.
+         * Optional if tableNameOrId is an OCID.  If tableNameOrId
+         * is an OCID, and compartmentId is supplied, the latter
+         * must match the identified table's compartmentId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the table's compartment.  Required
+         * if the tableNameOrId path parameter is a table name.
+         * Optional if tableNameOrId is an OCID.  If tableNameOrId
+         * is an OCID, and compartmentId is supplied, the latter
+         * must match the identified table's compartmentId.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * A set of keys for a secondary index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<IndexKey> keys;
 
+        /**
+         * A set of keys for a secondary index.
+         * @param keys the value to set
+         * @return this builder
+         **/
         public Builder keys(java.util.List<IndexKey> keys) {
             this.keys = keys;
             this.__explicitlySet__.add("keys");
             return this;
         }
-
+        /**
+         * If true, the operation completes successfully even when the
+         * index exists.  Otherwise, an attempt to create an index
+         * that already exists will return an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
         private Boolean isIfNotExists;
 
+        /**
+         * If true, the operation completes successfully even when the
+         * index exists.  Otherwise, an attempt to create an index
+         * that already exists will return an error.
+         *
+         * @param isIfNotExists the value to set
+         * @return this builder
+         **/
         public Builder isIfNotExists(Boolean isIfNotExists) {
             this.isIfNotExists = isIfNotExists;
             this.__explicitlySet__.add("isIfNotExists");
@@ -112,6 +157,10 @@ public final class CreateIndexDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Index name.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -127,6 +176,15 @@ public final class CreateIndexDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the table's compartment.  Required
+     * if the tableNameOrId path parameter is a table name.
+     * Optional if tableNameOrId is an OCID.  If tableNameOrId
+     * is an OCID, and compartmentId is supplied, the latter
+     * must match the identified table's compartmentId.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -137,6 +195,10 @@ public final class CreateIndexDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<IndexKey> keys;
 
+    /**
+     * A set of keys for a secondary index.
+     * @return the value
+     **/
     public java.util.List<IndexKey> getKeys() {
         return keys;
     }
@@ -150,6 +212,13 @@ public final class CreateIndexDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
     private final Boolean isIfNotExists;
 
+    /**
+     * If true, the operation completes successfully even when the
+     * index exists.  Otherwise, an attempt to create an index
+     * that already exists will return an error.
+     *
+     * @return the value
+     **/
     public Boolean getIsIfNotExists() {
         return isIfNotExists;
     }

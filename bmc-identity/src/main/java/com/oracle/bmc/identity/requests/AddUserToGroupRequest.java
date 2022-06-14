@@ -18,6 +18,9 @@ public class AddUserToGroupRequest
      */
     private com.oracle.bmc.identity.model.AddUserToGroupDetails addUserToGroupDetails;
 
+    /**
+     * Request object for adding a user to a group.
+     */
     public com.oracle.bmc.identity.model.AddUserToGroupDetails getAddUserToGroupDetails() {
         return addUserToGroupDetails;
     }
@@ -31,6 +34,14 @@ public class AddUserToGroupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -52,10 +63,14 @@ public class AddUserToGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request object for adding a user to a group.
+         */
         private com.oracle.bmc.identity.model.AddUserToGroupDetails addUserToGroupDetails = null;
 
         /**
          * Request object for adding a user to a group.
+         * @param addUserToGroupDetails the value to set
          * @return this builder instance
          */
         public Builder addUserToGroupDetails(
@@ -64,6 +79,14 @@ public class AddUserToGroupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -73,6 +96,7 @@ public class AddUserToGroupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -161,7 +185,8 @@ public class AddUserToGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -169,6 +194,10 @@ public class AddUserToGroupRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

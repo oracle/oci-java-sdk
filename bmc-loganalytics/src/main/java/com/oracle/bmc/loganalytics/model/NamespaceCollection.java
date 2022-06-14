@@ -30,9 +30,19 @@ public final class NamespaceCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * There is at most one item in the items array.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<NamespaceSummary> items;
 
+        /**
+         * There is at most one item in the items array.
+         *
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<NamespaceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -75,6 +85,11 @@ public final class NamespaceCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<NamespaceSummary> items;
 
+    /**
+     * There is at most one item in the items array.
+     *
+     * @return the value
+     **/
     public java.util.List<NamespaceSummary> getItems() {
         return items;
     }

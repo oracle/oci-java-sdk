@@ -63,19 +63,33 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
             this.__explicitlySet__.add("action");
             return this;
         }
-
+        /**
+         * The database name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
+        /**
+         * The database name.
+         * @param databaseName the value to set
+         * @return this builder
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-
+        /**
+         * The database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
+        /**
+         * The database version.
+         * @param databaseVersion the value to set
+         * @return this builder
+         **/
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
@@ -138,6 +152,10 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
+    /**
+     * The database name.
+     * @return the value
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
@@ -148,6 +166,10 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
+    /**
+     * The database version.
+     * @return the value
+     **/
     public String getDatabaseVersion() {
         return databaseVersion;
     }

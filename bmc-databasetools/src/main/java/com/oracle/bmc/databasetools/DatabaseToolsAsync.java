@@ -8,7 +8,7 @@ import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
 
 /**
- * Database Tools APIs to manage Connections and Private Endpoints.
+ * Use the Database Tools API to manage connections, private endpoints, and work requests in the Database Tools service.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public interface DatabaseToolsAsync extends AutoCloseable {
@@ -46,7 +46,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a DatabaseToolsConnection into a different compartment within the same tenancy.
+     * Moves the specified Database Tools connection to a different compartment in the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -67,7 +67,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a DatabaseToolsPrivateEndpoint into a different compartment within the same tenancy.
+     * Moves a Database Tools private endpoint into a different compartment in the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -88,7 +88,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new DatabaseToolsConnection.
+     * Creates a new Database Tools connection.
      *
      *
      * @param request The request object containing the details to send
@@ -107,7 +107,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new DatabaseToolsPrivateEndpoint.
+     * Creates a new Database Tools private endpoint.
      *
      *
      * @param request The request object containing the details to send
@@ -126,7 +126,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes a DatabaseToolsConnection resource by identifier
+     * Deletes the specified Database Tools connection resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -144,7 +144,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes a DatabaseToolsPrivateEndpoint resource by identifier
+     * Deletes the specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -162,7 +162,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a DatabaseToolsConnection by identifier
+     * Gets details of the specified Database Tools connection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -178,7 +178,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a DatabaseToolsEndpointService by identifier
+     * Gets details for the specified Database Tools endpoint service.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -196,7 +196,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a DatabaseToolsPrivateEndpoint by identifier
+     * Gets details of a specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -214,7 +214,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the status of the work request with the given ID.
+     * Gets the status of the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -229,7 +229,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of DatabaseToolsConnections.
+     * Returns a list of Database Tools connections.
      *
      *
      * @param request The request object containing the details to send
@@ -247,7 +247,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of DatabaseToolsEndpointServices.
+     * Returns a list of Database Tools endpoint services.
      *
      *
      * @param request The request object containing the details to send
@@ -266,7 +266,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of DatabaseToolsPrivateEndpoints.
+     * Returns a list of Database Tools private endpoints.
      *
      *
      * @param request The request object containing the details to send
@@ -285,7 +285,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a paginated list of errors for the specified work request.
      *
      *
      * @param request The request object containing the details to send
@@ -302,7 +302,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for the specified work request.
      *
      *
      * @param request The request object containing the details to send
@@ -335,7 +335,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the DatabaseToolsConnection
+     * Updates the specified Database Tools connection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -353,7 +353,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the DatabaseToolsPrivateEndpoint
+     * Updates the specified Database Tools private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -371,7 +371,7 @@ public interface DatabaseToolsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Validate the DatabaseToolsConnection information details by establishing a connection to the database.
+     * Validates the Database Tools connection details by establishing a connection to the database.
      *
      *
      * @param request The request object containing the details to send

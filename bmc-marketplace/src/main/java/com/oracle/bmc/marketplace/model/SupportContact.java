@@ -30,36 +30,65 @@ public final class SupportContact {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the contact.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The phone number of the contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phone")
         private String phone;
 
+        /**
+         * The phone number of the contact.
+         * @param phone the value to set
+         * @return this builder
+         **/
         public Builder phone(String phone) {
             this.phone = phone;
             this.__explicitlySet__.add("phone");
             return this;
         }
-
+        /**
+         * The email of the contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
+        /**
+         * The email of the contact.
+         * @param email the value to set
+         * @return this builder
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
-
+        /**
+         * The email subject line to use when contacting support.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subject")
         private String subject;
 
+        /**
+         * The email subject line to use when contacting support.
+         * @param subject the value to set
+         * @return this builder
+         **/
         public Builder subject(String subject) {
             this.subject = subject;
             this.__explicitlySet__.add("subject");
@@ -105,6 +134,10 @@ public final class SupportContact {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the contact.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -115,6 +148,10 @@ public final class SupportContact {
     @com.fasterxml.jackson.annotation.JsonProperty("phone")
     private final String phone;
 
+    /**
+     * The phone number of the contact.
+     * @return the value
+     **/
     public String getPhone() {
         return phone;
     }
@@ -125,6 +162,10 @@ public final class SupportContact {
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
+    /**
+     * The email of the contact.
+     * @return the value
+     **/
     public String getEmail() {
         return email;
     }
@@ -135,6 +176,10 @@ public final class SupportContact {
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
     private final String subject;
 
+    /**
+     * The email subject line to use when contacting support.
+     * @return the value
+     **/
     public String getSubject() {
         return subject;
     }

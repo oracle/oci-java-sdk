@@ -31,18 +31,37 @@ public final class CreateAdminCredentials {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Administrator username
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * Administrator username
+         *
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * Administrator password
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * Administrator password
+         *
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -85,6 +104,11 @@ public final class CreateAdminCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * Administrator username
+     *
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -96,6 +120,11 @@ public final class CreateAdminCredentials {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * Administrator password
+     *
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

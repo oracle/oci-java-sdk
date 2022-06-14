@@ -17,6 +17,9 @@ public class GetTaggingWorkRequestRequest
      */
     private String workRequestId;
 
+    /**
+     * The OCID of the work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -28,10 +31,14 @@ public class GetTaggingWorkRequestRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the work request.
+         */
         private String workRequestId = null;
 
         /**
          * The OCID of the work request.
+         * @param workRequestId the value to set
          * @return this builder instance
          */
         public Builder workRequestId(String workRequestId) {
@@ -107,12 +114,17 @@ public class GetTaggingWorkRequestRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().workRequestId(workRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

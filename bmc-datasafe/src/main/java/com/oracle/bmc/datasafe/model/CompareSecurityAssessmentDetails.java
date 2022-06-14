@@ -29,9 +29,19 @@ public final class CompareSecurityAssessmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comparisonSecurityAssessmentId")
         private String comparisonSecurityAssessmentId;
 
+        /**
+         * The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
+         *
+         * @param comparisonSecurityAssessmentId the value to set
+         * @return this builder
+         **/
         public Builder comparisonSecurityAssessmentId(String comparisonSecurityAssessmentId) {
             this.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
             this.__explicitlySet__.add("comparisonSecurityAssessmentId");
@@ -76,6 +86,11 @@ public final class CompareSecurityAssessmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("comparisonSecurityAssessmentId")
     private final String comparisonSecurityAssessmentId;
 
+    /**
+     * The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
+     *
+     * @return the value
+     **/
     public String getComparisonSecurityAssessmentId() {
         return comparisonSecurityAssessmentId;
     }

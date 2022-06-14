@@ -28,9 +28,29 @@ package com.oracle.bmc.sch.model;
 public final class JmesPathDimensionValue extends DimensionValueDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The location to use for deriving the dimension value (evaluated).
+         * The path must start with {@code logContent} in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator ({@code .} and {@code {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         * The returned value depends on the results of evaluation.
+         * If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value {@code "compartmentId"} is returned as {@code compartmentId}.)
+         * If the evaluated value is invalid, then the returned value is {@code SCH_EVAL_INVALID_VALUE}.
+         * If the evaluated value is empty, then the returned value is {@code SCH_EVAL_VALUE_EMPTY}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
+        /**
+         * The location to use for deriving the dimension value (evaluated).
+         * The path must start with {@code logContent} in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator ({@code .} and {@code {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         * The returned value depends on the results of evaluation.
+         * If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value {@code "compartmentId"} is returned as {@code compartmentId}.)
+         * If the evaluated value is invalid, then the returned value is {@code SCH_EVAL_INVALID_VALUE}.
+         * If the evaluated value is empty, then the returned value is {@code SCH_EVAL_VALUE_EMPTY}.
+         *
+         * @param path the value to set
+         * @return this builder
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -84,6 +104,16 @@ public final class JmesPathDimensionValue extends DimensionValueDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
+    /**
+     * The location to use for deriving the dimension value (evaluated).
+     * The path must start with {@code logContent} in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator ({@code .} and {@code {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+     * The returned value depends on the results of evaluation.
+     * If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value {@code "compartmentId"} is returned as {@code compartmentId}.)
+     * If the evaluated value is invalid, then the returned value is {@code SCH_EVAL_INVALID_VALUE}.
+     * If the evaluated value is empty, then the returned value is {@code SCH_EVAL_VALUE_EMPTY}.
+     *
+     * @return the value
+     **/
     public String getPath() {
         return path;
     }

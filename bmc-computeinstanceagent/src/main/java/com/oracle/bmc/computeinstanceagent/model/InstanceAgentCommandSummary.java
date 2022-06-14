@@ -47,54 +47,105 @@ public final class InstanceAgentCommandSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
         private String instanceAgentCommandId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+         * @param instanceAgentCommandId the value to set
+         * @return this builder
+         **/
         public Builder instanceAgentCommandId(String instanceAgentCommandId) {
             this.instanceAgentCommandId = instanceAgentCommandId;
             this.__explicitlySet__.add("instanceAgentCommandId");
             return this;
         }
-
+        /**
+         * A user-friendly name. Does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The date and time the command was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the command was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the command was last updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the command was last updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
         private Boolean isCanceled;
 
+        /**
+         * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
+         * @param isCanceled the value to set
+         * @return this builder
+         **/
         public Builder isCanceled(Boolean isCanceled) {
             this.isCanceled = isCanceled;
             this.__explicitlySet__.add("isCanceled");
@@ -149,6 +200,10 @@ public final class InstanceAgentCommandSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
     private final String instanceAgentCommandId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.
+     * @return the value
+     **/
     public String getInstanceAgentCommandId() {
         return instanceAgentCommandId;
     }
@@ -159,6 +214,10 @@ public final class InstanceAgentCommandSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -169,6 +228,10 @@ public final class InstanceAgentCommandSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -181,6 +244,12 @@ public final class InstanceAgentCommandSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the command was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -193,6 +262,12 @@ public final class InstanceAgentCommandSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the command was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -203,6 +278,10 @@ public final class InstanceAgentCommandSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
     private final Boolean isCanceled;
 
+    /**
+     * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
+     * @return the value
+     **/
     public Boolean getIsCanceled() {
         return isCanceled;
     }

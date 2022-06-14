@@ -25,18 +25,37 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public final class GenericEntity extends Entity {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A collection of label entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<Label> labels;
 
+        /**
+         * A collection of label entities.
+         * @param labels the value to set
+         * @return this builder
+         **/
         public Builder labels(java.util.List<Label> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
         private java.util.Map<String, String> extendedMetadata;
 
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         * @param extendedMetadata the value to set
+         * @return this builder
+         **/
         public Builder extendedMetadata(java.util.Map<String, String> extendedMetadata) {
             this.extendedMetadata = extendedMetadata;
             this.__explicitlySet__.add("extendedMetadata");
@@ -86,6 +105,10 @@ public final class GenericEntity extends Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<Label> labels;
 
+    /**
+     * A collection of label entities.
+     * @return the value
+     **/
     public java.util.List<Label> getLabels() {
         return labels;
     }
@@ -98,6 +121,12 @@ public final class GenericEntity extends Entity {
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     private final java.util.Map<String, String> extendedMetadata;
 
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getExtendedMetadata() {
         return extendedMetadata;
     }

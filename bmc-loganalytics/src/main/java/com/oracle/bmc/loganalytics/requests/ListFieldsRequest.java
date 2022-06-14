@@ -17,6 +17,10 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String namespaceName;
 
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -30,6 +34,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Boolean isMatchAll;
 
+    /**
+     * A flag indicating how to handle filtering when multiple filter criteria are specified.
+     * A value of true will always result in the most expansive list of items being returned.
+     * For example, if two field lists are supplies as filter criteria, a value of true will
+     * result in any item matching a field in either list being returned, while a value of
+     * false will result in a list of items which only have fields contained in both input lists.
+     *
+     */
     public Boolean getIsMatchAll() {
         return isMatchAll;
     }
@@ -40,6 +52,11 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String sourceIds;
 
+    /**
+     * A list of source IDs used for filtering.  Only fields used by the specified
+     * sources will be returned.
+     *
+     */
     public String getSourceIds() {
         return sourceIds;
     }
@@ -50,6 +67,11 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String sourceNames;
 
+    /**
+     * A list of source names used for filtering.  Only fields used by the specified
+     * sources will be returned.
+     *
+     */
     public String getSourceNames() {
         return sourceNames;
     }
@@ -102,6 +124,11 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The parser type used for filtering.  Only items with, or associated with, parsers
+     * of the specified type will be returned.
+     *
+     */
     public ParserType getParserType() {
         return parserType;
     }
@@ -112,6 +139,11 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String parserIds;
 
+    /**
+     * A list of parser names used for filtering.  Only fields used by the specified
+     * parsers will be returned.
+     *
+     */
     public String getParserIds() {
         return parserIds;
     }
@@ -122,6 +154,11 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String parserNames;
 
+    /**
+     * A list of parser names used for filtering.  Only fields used by the specified
+     * parsers will be returned.
+     *
+     */
     public String getParserNames() {
         return parserNames;
     }
@@ -130,6 +167,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Boolean isIncludeParser;
 
+    /**
+     * isIncludeParser
+     */
     public Boolean getIsIncludeParser() {
         return isIncludeParser;
     }
@@ -138,6 +178,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String filter;
 
+    /**
+     * filter
+     */
     public String getFilter() {
         return filter;
     }
@@ -146,6 +189,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -154,6 +200,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -200,6 +249,10 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -244,6 +297,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
+    /**
+     * The attribute used to sort the returned fields
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -252,6 +308,9 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -263,11 +322,16 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
          * The Logging Analytics namespace used for the request.
          *
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -275,6 +339,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A flag indicating how to handle filtering when multiple filter criteria are specified.
+         * A value of true will always result in the most expansive list of items being returned.
+         * For example, if two field lists are supplies as filter criteria, a value of true will
+         * result in any item matching a field in either list being returned, while a value of
+         * false will result in a list of items which only have fields contained in both input lists.
+         *
+         */
         private Boolean isMatchAll = null;
 
         /**
@@ -284,6 +356,7 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          * result in any item matching a field in either list being returned, while a value of
          * false will result in a list of items which only have fields contained in both input lists.
          *
+         * @param isMatchAll the value to set
          * @return this builder instance
          */
         public Builder isMatchAll(Boolean isMatchAll) {
@@ -291,12 +364,18 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A list of source IDs used for filtering.  Only fields used by the specified
+         * sources will be returned.
+         *
+         */
         private String sourceIds = null;
 
         /**
          * A list of source IDs used for filtering.  Only fields used by the specified
          * sources will be returned.
          *
+         * @param sourceIds the value to set
          * @return this builder instance
          */
         public Builder sourceIds(String sourceIds) {
@@ -304,12 +383,18 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A list of source names used for filtering.  Only fields used by the specified
+         * sources will be returned.
+         *
+         */
         private String sourceNames = null;
 
         /**
          * A list of source names used for filtering.  Only fields used by the specified
          * sources will be returned.
          *
+         * @param sourceNames the value to set
          * @return this builder instance
          */
         public Builder sourceNames(String sourceNames) {
@@ -317,12 +402,18 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The parser type used for filtering.  Only items with, or associated with, parsers
+         * of the specified type will be returned.
+         *
+         */
         private ParserType parserType = null;
 
         /**
          * The parser type used for filtering.  Only items with, or associated with, parsers
          * of the specified type will be returned.
          *
+         * @param parserType the value to set
          * @return this builder instance
          */
         public Builder parserType(ParserType parserType) {
@@ -330,12 +421,18 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A list of parser names used for filtering.  Only fields used by the specified
+         * parsers will be returned.
+         *
+         */
         private String parserIds = null;
 
         /**
          * A list of parser names used for filtering.  Only fields used by the specified
          * parsers will be returned.
          *
+         * @param parserIds the value to set
          * @return this builder instance
          */
         public Builder parserIds(String parserIds) {
@@ -343,12 +440,18 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * A list of parser names used for filtering.  Only fields used by the specified
+         * parsers will be returned.
+         *
+         */
         private String parserNames = null;
 
         /**
          * A list of parser names used for filtering.  Only fields used by the specified
          * parsers will be returned.
          *
+         * @param parserNames the value to set
          * @return this builder instance
          */
         public Builder parserNames(String parserNames) {
@@ -356,10 +459,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * isIncludeParser
+         */
         private Boolean isIncludeParser = null;
 
         /**
          * isIncludeParser
+         * @param isIncludeParser the value to set
          * @return this builder instance
          */
         public Builder isIncludeParser(Boolean isIncludeParser) {
@@ -367,10 +474,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * filter
+         */
         private String filter = null;
 
         /**
          * filter
+         * @param filter the value to set
          * @return this builder instance
          */
         public Builder filter(String filter) {
@@ -378,10 +489,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -389,10 +504,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -400,11 +519,16 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
          *
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(SortOrder sortOrder) {
@@ -412,10 +536,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The attribute used to sort the returned fields
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned fields
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -423,10 +551,14 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -528,7 +660,8 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -548,6 +681,10 @@ public class ListFieldsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

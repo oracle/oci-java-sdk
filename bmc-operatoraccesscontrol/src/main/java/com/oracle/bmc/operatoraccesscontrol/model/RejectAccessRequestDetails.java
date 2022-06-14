@@ -29,9 +29,17 @@ public final class RejectAccessRequestDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Comment by the approver explaining why the request is rejected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
 
+        /**
+         * Comment by the approver explaining why the request is rejected.
+         * @param approverComment the value to set
+         * @return this builder
+         **/
         public Builder approverComment(String approverComment) {
             this.approverComment = approverComment;
             this.__explicitlySet__.add("approverComment");
@@ -74,6 +82,10 @@ public final class RejectAccessRequestDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     private final String approverComment;
 
+    /**
+     * Comment by the approver explaining why the request is rejected.
+     * @return the value
+     **/
     public String getApproverComment() {
         return approverComment;
     }

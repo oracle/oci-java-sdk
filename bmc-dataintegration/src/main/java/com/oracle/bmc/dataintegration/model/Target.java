@@ -141,64 +141,113 @@ public final class Target extends Operator {
             this.__explicitlySet__.add("entity");
             return this;
         }
-
+        /**
+         * Specifies the read access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
         private Boolean isReadAccess;
 
+        /**
+         * Specifies the read access.
+         * @param isReadAccess the value to set
+         * @return this builder
+         **/
         public Builder isReadAccess(Boolean isReadAccess) {
             this.isReadAccess = isReadAccess;
             this.__explicitlySet__.add("isReadAccess");
             return this;
         }
-
+        /**
+         * Specifies the copy fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
         private Boolean isCopyFields;
 
+        /**
+         * Specifies the copy fields.
+         * @param isCopyFields the value to set
+         * @return this builder
+         **/
         public Builder isCopyFields(Boolean isCopyFields) {
             this.isCopyFields = isCopyFields;
             this.__explicitlySet__.add("isCopyFields");
             return this;
         }
-
+        /**
+         * Specifies if this uses a predefined shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
         private Boolean isPredefinedShape;
 
+        /**
+         * Specifies if this uses a predefined shape.
+         * @param isPredefinedShape the value to set
+         * @return this builder
+         **/
         public Builder isPredefinedShape(Boolean isPredefinedShape) {
             this.isPredefinedShape = isPredefinedShape;
             this.__explicitlySet__.add("isPredefinedShape");
             return this;
         }
-
+        /**
+         * Specifies if entity name is the same as source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
         private Boolean isUseSameSourceName;
 
+        /**
+         * Specifies if entity name is the same as source.
+         * @param isUseSameSourceName the value to set
+         * @return this builder
+         **/
         public Builder isUseSameSourceName(Boolean isUseSameSourceName) {
             this.isUseSameSourceName = isUseSameSourceName;
             this.__explicitlySet__.add("isUseSameSourceName");
             return this;
         }
-
+        /**
+         * Prefix for the entity Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
         private String targetEntityNamePrefix;
 
+        /**
+         * Prefix for the entity Name.
+         * @param targetEntityNamePrefix the value to set
+         * @return this builder
+         **/
         public Builder targetEntityNamePrefix(String targetEntityNamePrefix) {
             this.targetEntityNamePrefix = targetEntityNamePrefix;
             this.__explicitlySet__.add("targetEntityNamePrefix");
             return this;
         }
-
+        /**
+         * Suffix for the entity Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
         private String targetEntityNameSuffix;
 
+        /**
+         * Suffix for the entity Name.
+         * @param targetEntityNameSuffix the value to set
+         * @return this builder
+         **/
         public Builder targetEntityNameSuffix(String targetEntityNameSuffix) {
             this.targetEntityNameSuffix = targetEntityNameSuffix;
             this.__explicitlySet__.add("targetEntityNameSuffix");
             return this;
         }
-
+        /**
+         * Specifies the data property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
         private DataProperty dataProperty;
 
+        /**
+         * Specifies the data property.
+         * @param dataProperty the value to set
+         * @return this builder
+         **/
         public Builder dataProperty(DataProperty dataProperty) {
             this.dataProperty = dataProperty;
             this.__explicitlySet__.add("dataProperty");
@@ -231,10 +280,17 @@ public final class Target extends Operator {
             this.__explicitlySet__.add("writeOperationConfig");
             return this;
         }
-
+        /**
+         * A numeric loading order number for the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
         private Integer loadOrder;
 
+        /**
+         * A numeric loading order number for the target.
+         * @param loadOrder the value to set
+         * @return this builder
+         **/
         public Builder loadOrder(Integer loadOrder) {
             this.loadOrder = loadOrder;
             this.__explicitlySet__.add("loadOrder");
@@ -385,6 +441,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
     private final Boolean isReadAccess;
 
+    /**
+     * Specifies the read access.
+     * @return the value
+     **/
     public Boolean getIsReadAccess() {
         return isReadAccess;
     }
@@ -395,6 +455,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
     private final Boolean isCopyFields;
 
+    /**
+     * Specifies the copy fields.
+     * @return the value
+     **/
     public Boolean getIsCopyFields() {
         return isCopyFields;
     }
@@ -405,6 +469,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
     private final Boolean isPredefinedShape;
 
+    /**
+     * Specifies if this uses a predefined shape.
+     * @return the value
+     **/
     public Boolean getIsPredefinedShape() {
         return isPredefinedShape;
     }
@@ -415,6 +483,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
     private final Boolean isUseSameSourceName;
 
+    /**
+     * Specifies if entity name is the same as source.
+     * @return the value
+     **/
     public Boolean getIsUseSameSourceName() {
         return isUseSameSourceName;
     }
@@ -425,6 +497,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
     private final String targetEntityNamePrefix;
 
+    /**
+     * Prefix for the entity Name.
+     * @return the value
+     **/
     public String getTargetEntityNamePrefix() {
         return targetEntityNamePrefix;
     }
@@ -435,6 +511,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
     private final String targetEntityNameSuffix;
 
+    /**
+     * Suffix for the entity Name.
+     * @return the value
+     **/
     public String getTargetEntityNameSuffix() {
         return targetEntityNameSuffix;
     }
@@ -497,6 +577,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
     private final DataProperty dataProperty;
 
+    /**
+     * Specifies the data property.
+     * @return the value
+     **/
     public DataProperty getDataProperty() {
         return dataProperty;
     }
@@ -528,6 +612,10 @@ public final class Target extends Operator {
     @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
     private final Integer loadOrder;
 
+    /**
+     * A numeric loading order number for the target.
+     * @return the value
+     **/
     public Integer getLoadOrder() {
         return loadOrder;
     }

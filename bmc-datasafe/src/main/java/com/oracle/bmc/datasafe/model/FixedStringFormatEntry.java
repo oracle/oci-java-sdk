@@ -37,10 +37,17 @@ public final class FixedStringFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The constant string to be used for masking.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fixedString")
         private String fixedString;
 
+        /**
+         * The constant string to be used for masking.
+         * @param fixedString the value to set
+         * @return this builder
+         **/
         public Builder fixedString(String fixedString) {
             this.fixedString = fixedString;
             this.__explicitlySet__.add("fixedString");
@@ -89,6 +96,10 @@ public final class FixedStringFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("fixedString")
     private final String fixedString;
 
+    /**
+     * The constant string to be used for masking.
+     * @return the value
+     **/
     public String getFixedString() {
         return fixedString;
     }

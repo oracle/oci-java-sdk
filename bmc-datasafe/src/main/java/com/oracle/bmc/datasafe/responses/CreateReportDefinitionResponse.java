@@ -14,6 +14,11 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcWorkRequestId;
 
+    /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+     *
+     * @return the value
+     */
     public String getOpcWorkRequestId() {
         return opcWorkRequestId;
     }
@@ -34,6 +44,11 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -43,6 +58,10 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.datasafe.model.ReportDefinition reportDefinition;
 
+    /**
+     * The returned ReportDefinition instance.
+     * @return the value
+     */
     public com.oracle.bmc.datasafe.model.ReportDefinition getReportDefinition() {
         return reportDefinition;
     }
@@ -75,29 +94,67 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
+         */
         private String opcWorkRequestId;
 
+        /**
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
         public Builder opcWorkRequestId(String opcWorkRequestId) {
             this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned ReportDefinition instance.
+         */
         private com.oracle.bmc.datasafe.model.ReportDefinition reportDefinition;
 
+        /**
+         * The returned ReportDefinition instance.
+         * @param reportDefinition the value to set
+         * @return this builder
+         */
         public Builder reportDefinition(
                 com.oracle.bmc.datasafe.model.ReportDefinition reportDefinition) {
             this.reportDefinition = reportDefinition;
@@ -118,12 +175,20 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateReportDefinitionResponse build() {
             return new CreateReportDefinitionResponse(
                     __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, reportDefinition);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

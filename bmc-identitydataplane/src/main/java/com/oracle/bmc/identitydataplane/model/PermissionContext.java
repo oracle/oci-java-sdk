@@ -30,18 +30,33 @@ public final class PermissionContext {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The permission context.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("permission")
         private Permission permission;
 
+        /**
+         * The permission context.
+         * @param permission the value to set
+         * @return this builder
+         **/
         public Builder permission(Permission permission) {
             this.permission = permission;
             this.__explicitlySet__.add("permission");
             return this;
         }
-
+        /**
+         * The set of variables in this permission context.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.List<ContextVariable> variables;
 
+        /**
+         * The set of variables in this permission context.
+         * @param variables the value to set
+         * @return this builder
+         **/
         public Builder variables(java.util.List<ContextVariable> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
@@ -83,6 +98,10 @@ public final class PermissionContext {
     @com.fasterxml.jackson.annotation.JsonProperty("permission")
     private final Permission permission;
 
+    /**
+     * The permission context.
+     * @return the value
+     **/
     public Permission getPermission() {
         return permission;
     }
@@ -93,6 +112,10 @@ public final class PermissionContext {
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.List<ContextVariable> variables;
 
+    /**
+     * The set of variables in this permission context.
+     * @return the value
+     **/
     public java.util.List<ContextVariable> getVariables() {
         return variables;
     }

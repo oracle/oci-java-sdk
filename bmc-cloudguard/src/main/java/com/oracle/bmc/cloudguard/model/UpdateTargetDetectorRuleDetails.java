@@ -29,9 +29,17 @@ public final class UpdateTargetDetectorRuleDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Condition group corresponding to each compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionGroups")
         private java.util.List<ConditionGroup> conditionGroups;
 
+        /**
+         * Condition group corresponding to each compartment
+         * @param conditionGroups the value to set
+         * @return this builder
+         **/
         public Builder conditionGroups(java.util.List<ConditionGroup> conditionGroups) {
             this.conditionGroups = conditionGroups;
             this.__explicitlySet__.add("conditionGroups");
@@ -74,6 +82,10 @@ public final class UpdateTargetDetectorRuleDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("conditionGroups")
     private final java.util.List<ConditionGroup> conditionGroups;
 
+    /**
+     * Condition group corresponding to each compartment
+     * @return the value
+     **/
     public java.util.List<ConditionGroup> getConditionGroups() {
         return conditionGroups;
     }

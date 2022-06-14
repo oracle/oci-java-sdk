@@ -30,9 +30,19 @@ package com.oracle.bmc.sch.model;
 public final class LogRuleTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A filter or mask to limit the source used in the flow defined by the service connector.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
+        /**
+         * A filter or mask to limit the source used in the flow defined by the service connector.
+         *
+         * @param condition the value to set
+         * @return this builder
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
@@ -81,6 +91,11 @@ public final class LogRuleTaskDetails extends TaskDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
+    /**
+     * A filter or mask to limit the source used in the flow defined by the service connector.
+     *
+     * @return the value
+     **/
     public String getCondition() {
         return condition;
     }

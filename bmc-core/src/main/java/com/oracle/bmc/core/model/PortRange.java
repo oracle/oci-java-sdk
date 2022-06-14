@@ -28,18 +28,39 @@ public final class PortRange {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify
+         * a single port number, set both the min and max to the same value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Integer max;
 
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify
+         * a single port number, set both the min and max to the same value.
+         *
+         * @param max the value to set
+         * @return this builder
+         **/
         public Builder max(Integer max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         *
+         * @param min the value to set
+         * @return this builder
+         **/
         public Builder min(Integer min) {
             this.min = min;
             this.__explicitlySet__.add("min");
@@ -83,6 +104,12 @@ public final class PortRange {
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Integer max;
 
+    /**
+     * The maximum port number, which must not be less than the minimum port number. To specify
+     * a single port number, set both the min and max to the same value.
+     *
+     * @return the value
+     **/
     public Integer getMax() {
         return max;
     }
@@ -94,6 +121,11 @@ public final class PortRange {
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Integer min;
 
+    /**
+     * The minimum port number, which must not be greater than the maximum port number.
+     *
+     * @return the value
+     **/
     public Integer getMin() {
         return min;
     }

@@ -30,18 +30,73 @@ public final class LoadBalancerHealthSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer the health status is associated with.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer the health status is associated with.
+         *
+         * @param loadBalancerId the value to set
+         * @return this builder
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-
+        /**
+         * The overall health status of the load balancer.
+         * <p>
+         *  **OK:** All backend sets associated with the load balancer return a status of {@code OK}.
+         * <p>
+         *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of {@code WARNING},
+         * no backend sets return a status of {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of {@code CRITICAL}.
+         * <p>
+         *  **UNKNOWN:** If any one of the following conditions is true:
+         * <p>
+         *  The load balancer life cycle state is not {@code ACTIVE}.
+         * <p>
+         *  No backend sets are defined for the load balancer.
+         * <p>
+         *  More than half of the backend sets associated with the load balancer return a status of {@code UNKNOWN}, none of the backend
+         *        sets return a status of {@code WARNING} or {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  The system could not retrieve metrics for any reason.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * The overall health status of the load balancer.
+         * <p>
+         *  **OK:** All backend sets associated with the load balancer return a status of {@code OK}.
+         * <p>
+         *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of {@code WARNING},
+         * no backend sets return a status of {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of {@code CRITICAL}.
+         * <p>
+         *  **UNKNOWN:** If any one of the following conditions is true:
+         * <p>
+         *  The load balancer life cycle state is not {@code ACTIVE}.
+         * <p>
+         *  No backend sets are defined for the load balancer.
+         * <p>
+         *  More than half of the backend sets associated with the load balancer return a status of {@code UNKNOWN}, none of the backend
+         *        sets return a status of {@code WARNING} or {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  The system could not retrieve metrics for any reason.
+         *
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -85,6 +140,11 @@ public final class LoadBalancerHealthSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer the health status is associated with.
+     *
+     * @return the value
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
@@ -182,6 +242,29 @@ public final class LoadBalancerHealthSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * The overall health status of the load balancer.
+     * <p>
+     *  **OK:** All backend sets associated with the load balancer return a status of {@code OK}.
+     * <p>
+     *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of {@code WARNING},
+     * no backend sets return a status of {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  **CRITICAL:** One or more of the backend sets associated with the load balancer return a status of {@code CRITICAL}.
+     * <p>
+     *  **UNKNOWN:** If any one of the following conditions is true:
+     * <p>
+     *  The load balancer life cycle state is not {@code ACTIVE}.
+     * <p>
+     *  No backend sets are defined for the load balancer.
+     * <p>
+     *  More than half of the backend sets associated with the load balancer return a status of {@code UNKNOWN}, none of the backend
+     *        sets return a status of {@code WARNING} or {@code CRITICAL}, and the load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  The system could not retrieve metrics for any reason.
+     *
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }

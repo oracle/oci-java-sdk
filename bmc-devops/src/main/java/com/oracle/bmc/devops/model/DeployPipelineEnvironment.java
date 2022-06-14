@@ -38,18 +38,33 @@ public final class DeployPipelineEnvironment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of an Environment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentId")
         private String deployEnvironmentId;
 
+        /**
+         * The OCID of an Environment
+         * @param deployEnvironmentId the value to set
+         * @return this builder
+         **/
         public Builder deployEnvironmentId(String deployEnvironmentId) {
             this.deployEnvironmentId = deployEnvironmentId;
             this.__explicitlySet__.add("deployEnvironmentId");
             return this;
         }
-
+        /**
+         * Display name of the environment. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Display name of the environment. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -105,6 +120,10 @@ public final class DeployPipelineEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("deployEnvironmentId")
     private final String deployEnvironmentId;
 
+    /**
+     * The OCID of an Environment
+     * @return the value
+     **/
     public String getDeployEnvironmentId() {
         return deployEnvironmentId;
     }
@@ -115,6 +134,10 @@ public final class DeployPipelineEnvironment {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Display name of the environment. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

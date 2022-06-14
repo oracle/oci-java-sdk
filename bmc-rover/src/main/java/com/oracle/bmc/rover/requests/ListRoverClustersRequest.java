@@ -16,6 +16,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String compartmentId;
 
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -24,6 +27,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -32,6 +38,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.rover.model.ClusterType clusterType;
 
+    /**
+     * A filter to return only Clusters of type matched with the given cluster type.
+     */
     public com.oracle.bmc.rover.model.ClusterType getClusterType() {
         return clusterType;
     }
@@ -40,6 +49,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -48,6 +60,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -56,6 +71,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.rover.model.LifecycleState lifecycleState;
 
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.rover.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -64,6 +82,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private com.oracle.bmc.rover.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.rover.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -110,6 +131,10 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -118,6 +143,9 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -129,10 +157,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -140,10 +172,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
+         * @param displayName the value to set
          * @return this builder instance
          */
         public Builder displayName(String displayName) {
@@ -151,10 +187,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only Clusters of type matched with the given cluster type.
+         */
         private com.oracle.bmc.rover.model.ClusterType clusterType = null;
 
         /**
          * A filter to return only Clusters of type matched with the given cluster type.
+         * @param clusterType the value to set
          * @return this builder instance
          */
         public Builder clusterType(com.oracle.bmc.rover.model.ClusterType clusterType) {
@@ -162,10 +202,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -173,10 +217,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -184,10 +232,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         */
         private com.oracle.bmc.rover.model.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param lifecycleState the value to set
          * @return this builder instance
          */
         public Builder lifecycleState(com.oracle.bmc.rover.model.LifecycleState lifecycleState) {
@@ -195,10 +247,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.rover.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.rover.model.SortOrders sortOrder) {
@@ -206,11 +262,16 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -218,10 +279,14 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -313,7 +378,8 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -328,6 +394,10 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

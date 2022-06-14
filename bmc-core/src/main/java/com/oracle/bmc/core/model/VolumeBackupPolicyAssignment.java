@@ -37,36 +37,71 @@ public final class VolumeBackupPolicyAssignment {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the volume the policy has been assigned to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assetId")
         private String assetId;
 
+        /**
+         * The OCID of the volume the policy has been assigned to.
+         * @param assetId the value to set
+         * @return this builder
+         **/
         public Builder assetId(String assetId) {
             this.assetId = assetId;
             this.__explicitlySet__.add("assetId");
             return this;
         }
-
+        /**
+         * The OCID of the volume backup policy assignment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the volume backup policy assignment.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The OCID of the volume backup policy that has been assigned to the volume.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
+        /**
+         * The OCID of the volume backup policy that has been assigned to the volume.
+         *
+         * @param policyId the value to set
+         * @return this builder
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
             return this;
         }
-
+        /**
+         * The date and time the volume backup policy was assigned to the volume. The format is
+         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the volume backup policy was assigned to the volume. The format is
+         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -113,6 +148,10 @@ public final class VolumeBackupPolicyAssignment {
     @com.fasterxml.jackson.annotation.JsonProperty("assetId")
     private final String assetId;
 
+    /**
+     * The OCID of the volume the policy has been assigned to.
+     * @return the value
+     **/
     public String getAssetId() {
         return assetId;
     }
@@ -123,6 +162,10 @@ public final class VolumeBackupPolicyAssignment {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the volume backup policy assignment.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -134,6 +177,11 @@ public final class VolumeBackupPolicyAssignment {
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
+    /**
+     * The OCID of the volume backup policy that has been assigned to the volume.
+     *
+     * @return the value
+     **/
     public String getPolicyId() {
         return policyId;
     }
@@ -146,6 +194,12 @@ public final class VolumeBackupPolicyAssignment {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the volume backup policy was assigned to the volume. The format is
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }

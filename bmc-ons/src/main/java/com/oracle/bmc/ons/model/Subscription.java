@@ -62,99 +62,231 @@ public final class Subscription {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
+         *
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
+         *
+         * @param topicId the value to set
+         * @return this builder
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
             return this;
         }
-
+        /**
+         * The protocol used for the subscription.
+         * <p>
+         * Allowed values:
+         *   * {@code CUSTOM_HTTPS}
+         *   * {@code EMAIL}
+         *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+         *   * {@code ORACLE_FUNCTIONS}
+         *   * {@code PAGERDUTY}
+         *   * {@code SLACK}
+         *   * {@code SMS}
+         * <p>
+         * For information about subscription protocols, see
+         * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        /**
+         * The protocol used for the subscription.
+         * <p>
+         * Allowed values:
+         *   * {@code CUSTOM_HTTPS}
+         *   * {@code EMAIL}
+         *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+         *   * {@code ORACLE_FUNCTIONS}
+         *   * {@code PAGERDUTY}
+         *   * {@code SLACK}
+         *   * {@code SMS}
+         * <p>
+         * For information about subscription protocols, see
+         * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         *
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * A locator that corresponds to the subscription protocol.
+         * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
 
+        /**
+         * A locator that corresponds to the subscription protocol.
+         * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+         *
+         * @param endpoint the value to set
+         * @return this builder
+         **/
         public Builder endpoint(String endpoint) {
             this.endpoint = endpoint;
             this.__explicitlySet__.add("endpoint");
             return this;
         }
-
+        /**
+         * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The time when this suscription was created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdTime")
         private Long createdTime;
 
+        /**
+         * The time when this suscription was created.
+         *
+         * @param createdTime the value to set
+         * @return this builder
+         **/
         public Builder createdTime(Long createdTime) {
             this.createdTime = createdTime;
             this.__explicitlySet__.add("createdTime");
             return this;
         }
-
+        /**
+         * The delivery policy of the subscription. Stored as a JSON string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deliverPolicy")
         private String deliverPolicy;
 
+        /**
+         * The delivery policy of the subscription. Stored as a JSON string.
+         * @param deliverPolicy the value to set
+         * @return this builder
+         **/
         public Builder deliverPolicy(String deliverPolicy) {
             this.deliverPolicy = deliverPolicy;
             this.__explicitlySet__.add("deliverPolicy");
             return this;
         }
-
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -221,6 +353,11 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
+     *
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -232,6 +369,11 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
+     *
+     * @return the value
+     **/
     public String getTopicId() {
         return topicId;
     }
@@ -255,6 +397,23 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
+    /**
+     * The protocol used for the subscription.
+     * <p>
+     * Allowed values:
+     *   * {@code CUSTOM_HTTPS}
+     *   * {@code EMAIL}
+     *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
+     *   * {@code ORACLE_FUNCTIONS}
+     *   * {@code PAGERDUTY}
+     *   * {@code SLACK}
+     *   * {@code SMS}
+     * <p>
+     * For information about subscription protocols, see
+     * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+     *
+     * @return the value
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -267,6 +426,12 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
 
+    /**
+     * A locator that corresponds to the subscription protocol.
+     * For example, an email address for a subscription that uses the {@code EMAIL} protocol, or a URL for a subscription that uses an HTTP-based protocol.
+     *
+     * @return the value
+     **/
     public String getEndpoint() {
         return endpoint;
     }
@@ -328,6 +493,11 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
+     *
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -339,6 +509,11 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -350,6 +525,11 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("createdTime")
     private final Long createdTime;
 
+    /**
+     * The time when this suscription was created.
+     *
+     * @return the value
+     **/
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -360,6 +540,10 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("deliverPolicy")
     private final String deliverPolicy;
 
+    /**
+     * The delivery policy of the subscription. Stored as a JSON string.
+     * @return the value
+     **/
     public String getDeliverPolicy() {
         return deliverPolicy;
     }
@@ -371,6 +555,11 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     **/
     public String getEtag() {
         return etag;
     }
@@ -384,6 +573,13 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -397,6 +593,13 @@ public final class Subscription {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

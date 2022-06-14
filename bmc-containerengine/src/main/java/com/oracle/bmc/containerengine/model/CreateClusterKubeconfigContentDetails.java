@@ -32,27 +32,53 @@ public final class CreateClusterKubeconfigContentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The version of the kubeconfig token. Supported value 2.0.0
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tokenVersion")
         private String tokenVersion;
 
+        /**
+         * The version of the kubeconfig token. Supported value 2.0.0
+         *
+         * @param tokenVersion the value to set
+         * @return this builder
+         **/
         public Builder tokenVersion(String tokenVersion) {
             this.tokenVersion = tokenVersion;
             this.__explicitlySet__.add("tokenVersion");
             return this;
         }
-
+        /**
+         * Deprecated. This field is no longer used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expiration")
         private Integer expiration;
 
+        /**
+         * Deprecated. This field is no longer used.
+         *
+         * @param expiration the value to set
+         * @return this builder
+         **/
         public Builder expiration(Integer expiration) {
             this.expiration = expiration;
             this.__explicitlySet__.add("expiration");
             return this;
         }
-
+        /**
+         * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private Endpoint endpoint;
 
+        /**
+         * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+         * @param endpoint the value to set
+         * @return this builder
+         **/
         public Builder endpoint(Endpoint endpoint) {
             this.endpoint = endpoint;
             this.__explicitlySet__.add("endpoint");
@@ -99,6 +125,11 @@ public final class CreateClusterKubeconfigContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tokenVersion")
     private final String tokenVersion;
 
+    /**
+     * The version of the kubeconfig token. Supported value 2.0.0
+     *
+     * @return the value
+     **/
     public String getTokenVersion() {
         return tokenVersion;
     }
@@ -110,6 +141,11 @@ public final class CreateClusterKubeconfigContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("expiration")
     private final Integer expiration;
 
+    /**
+     * Deprecated. This field is no longer used.
+     *
+     * @return the value
+     **/
     public Integer getExpiration() {
         return expiration;
     }
@@ -157,6 +193,10 @@ public final class CreateClusterKubeconfigContentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final Endpoint endpoint;
 
+    /**
+     * The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+     * @return the value
+     **/
     public Endpoint getEndpoint() {
         return endpoint;
     }

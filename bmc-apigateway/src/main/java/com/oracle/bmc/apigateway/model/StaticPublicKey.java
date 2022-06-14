@@ -48,6 +48,12 @@ public class StaticPublicKey {
     @com.fasterxml.jackson.annotation.JsonProperty("kid")
     private final String kid;
 
+    /**
+     * A unique key ID. This key will be used to verify the signature of a
+     * JWT with matching "kid".
+     *
+     * @return the value
+     **/
     public String getKid() {
         return kid;
     }

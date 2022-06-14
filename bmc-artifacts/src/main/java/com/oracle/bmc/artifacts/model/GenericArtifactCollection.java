@@ -29,9 +29,17 @@ public final class GenericArtifactCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The listed artifacts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<GenericArtifactSummary> items;
 
+        /**
+         * The listed artifacts.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<GenericArtifactSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class GenericArtifactCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<GenericArtifactSummary> items;
 
+    /**
+     * The listed artifacts.
+     * @return the value
+     **/
     public java.util.List<GenericArtifactSummary> getItems() {
         return items;
     }

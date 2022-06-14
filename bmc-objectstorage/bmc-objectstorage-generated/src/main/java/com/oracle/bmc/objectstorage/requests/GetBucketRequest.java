@@ -16,6 +16,9 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String namespaceName;
 
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
@@ -26,6 +29,11 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String bucketName;
 
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -37,6 +45,12 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifMatch;
 
+    /**
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -48,6 +62,12 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String ifNoneMatch;
 
+    /**
+     * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+     * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+     * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+     *
+     */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
@@ -56,6 +76,9 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcClientRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
@@ -109,6 +132,13 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
+    /**
+     * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+     * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+     * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+     * For example 'approximateCount,approximateSize,autoTiering'.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
@@ -120,10 +150,14 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         * @param namespaceName the value to set
          * @return this builder instance
          */
         public Builder namespaceName(String namespaceName) {
@@ -131,12 +165,18 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
+         */
         private String bucketName = null;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
          * Example: {@code my-new-bucket1}
          *
+         * @param bucketName the value to set
          * @return this builder instance
          */
         public Builder bucketName(String bucketName) {
@@ -144,6 +184,12 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -151,6 +197,7 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
          * the resource.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -158,6 +205,12 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+         * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+         * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+         *
+         */
         private String ifNoneMatch = null;
 
         /**
@@ -165,6 +218,7 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
          * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
          *
+         * @param ifNoneMatch the value to set
          * @return this builder instance
          */
         public Builder ifNoneMatch(String ifNoneMatch) {
@@ -172,10 +226,14 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcClientRequestId the value to set
          * @return this builder instance
          */
         public Builder opcClientRequestId(String opcClientRequestId) {
@@ -183,6 +241,13 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /**
+         * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+         * and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+         * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+         * For example 'approximateCount,approximateSize,autoTiering'.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -191,6 +256,7 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
          * For example 'approximateCount,approximateSize,autoTiering'.
          *
+         * @param fields the value to set
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -204,6 +270,7 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
          * For example 'approximateCount,approximateSize,autoTiering'.
          *
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {
@@ -288,7 +355,8 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -300,6 +368,10 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .fields(fields);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

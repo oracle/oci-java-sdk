@@ -36,6 +36,7 @@ package com.oracle.bmc.loadbalancer.model;
 public final class AllowRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("conditions")
         private java.util.List<RuleCondition> conditions;
 
@@ -44,10 +45,23 @@ public final class AllowRule extends Rule {
             this.__explicitlySet__.add("conditions");
             return this;
         }
-
+        /**
+         * A brief description of the access control rule. Avoid entering confidential information.
+         * <p>
+         * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * A brief description of the access control rule. Avoid entering confidential information.
+         * <p>
+         * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -106,6 +120,13 @@ public final class AllowRule extends Rule {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * A brief description of the access control rule. Avoid entering confidential information.
+     * <p>
+     * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
+     *
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }

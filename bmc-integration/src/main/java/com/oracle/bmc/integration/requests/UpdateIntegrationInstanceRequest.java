@@ -18,6 +18,9 @@ public class UpdateIntegrationInstanceRequest
      */
     private String integrationInstanceId;
 
+    /**
+     * Unique Integration Instance identifier.
+     */
     public String getIntegrationInstanceId() {
         return integrationInstanceId;
     }
@@ -27,6 +30,9 @@ public class UpdateIntegrationInstanceRequest
     private com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails
             updateIntegrationInstanceDetails;
 
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails
             getUpdateIntegrationInstanceDetails() {
         return updateIntegrationInstanceDetails;
@@ -41,6 +47,14 @@ public class UpdateIntegrationInstanceRequest
      */
     private String ifMatch;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -49,6 +63,9 @@ public class UpdateIntegrationInstanceRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -71,10 +88,14 @@ public class UpdateIntegrationInstanceRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Unique Integration Instance identifier.
+         */
         private String integrationInstanceId = null;
 
         /**
          * Unique Integration Instance identifier.
+         * @param integrationInstanceId the value to set
          * @return this builder instance
          */
         public Builder integrationInstanceId(String integrationInstanceId) {
@@ -82,11 +103,15 @@ public class UpdateIntegrationInstanceRequest
             return this;
         }
 
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.integration.model.UpdateIntegrationInstanceDetails
                 updateIntegrationInstanceDetails = null;
 
         /**
          * The information to be updated.
+         * @param updateIntegrationInstanceDetails the value to set
          * @return this builder instance
          */
         public Builder updateIntegrationInstanceDetails(
@@ -96,6 +121,14 @@ public class UpdateIntegrationInstanceRequest
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
+         */
         private String ifMatch = null;
 
         /**
@@ -105,6 +138,7 @@ public class UpdateIntegrationInstanceRequest
          * The resource will be updated or deleted only if the etag you
          * provide matches the resource's current etag value.
          *
+         * @param ifMatch the value to set
          * @return this builder instance
          */
         public Builder ifMatch(String ifMatch) {
@@ -112,10 +146,14 @@ public class UpdateIntegrationInstanceRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -209,7 +247,8 @@ public class UpdateIntegrationInstanceRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -219,6 +258,10 @@ public class UpdateIntegrationInstanceRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

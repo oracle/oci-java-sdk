@@ -30,9 +30,17 @@ public final class CompatibleFormatsForSensitiveTypes {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * An array of library masking formats compatible with the existing sensitive types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatsForSensitiveType")
         private java.util.List<FormatsForSensitiveType> formatsForSensitiveType;
 
+        /**
+         * An array of library masking formats compatible with the existing sensitive types.
+         * @param formatsForSensitiveType the value to set
+         * @return this builder
+         **/
         public Builder formatsForSensitiveType(
                 java.util.List<FormatsForSensitiveType> formatsForSensitiveType) {
             this.formatsForSensitiveType = formatsForSensitiveType;
@@ -76,6 +84,10 @@ public final class CompatibleFormatsForSensitiveTypes {
     @com.fasterxml.jackson.annotation.JsonProperty("formatsForSensitiveType")
     private final java.util.List<FormatsForSensitiveType> formatsForSensitiveType;
 
+    /**
+     * An array of library masking formats compatible with the existing sensitive types.
+     * @return the value
+     **/
     public java.util.List<FormatsForSensitiveType> getFormatsForSensitiveType() {
         return formatsForSensitiveType;
     }

@@ -27,9 +27,17 @@ package com.oracle.bmc.apigateway.model;
 public final class StaticPublicKeySet extends PublicKeySet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The set of static public keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<StaticPublicKey> keys;
 
+        /**
+         * The set of static public keys.
+         * @param keys the value to set
+         * @return this builder
+         **/
         public Builder keys(java.util.List<StaticPublicKey> keys) {
             this.keys = keys;
             this.__explicitlySet__.add("keys");
@@ -77,6 +85,10 @@ public final class StaticPublicKeySet extends PublicKeySet {
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<StaticPublicKey> keys;
 
+    /**
+     * The set of static public keys.
+     * @return the value
+     **/
     public java.util.List<StaticPublicKey> getKeys() {
         return keys;
     }

@@ -35,27 +35,49 @@ public final class GlobalSettings {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The paid usage option chosen by the customer admin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsage")
         private Boolean isPaidUsage;
 
+        /**
+         * The paid usage option chosen by the customer admin.
+         * @param isPaidUsage the value to set
+         * @return this builder
+         **/
         public Builder isPaidUsage(Boolean isPaidUsage) {
             this.isPaidUsage = isPaidUsage;
             this.__explicitlySet__.add("isPaidUsage");
             return this;
         }
-
+        /**
+         * The online retention period in months.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onlineRetentionPeriod")
         private Integer onlineRetentionPeriod;
 
+        /**
+         * The online retention period in months.
+         * @param onlineRetentionPeriod the value to set
+         * @return this builder
+         **/
         public Builder onlineRetentionPeriod(Integer onlineRetentionPeriod) {
             this.onlineRetentionPeriod = onlineRetentionPeriod;
             this.__explicitlySet__.add("onlineRetentionPeriod");
             return this;
         }
-
+        /**
+         * The offline retention period in months.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offlineRetentionPeriod")
         private Integer offlineRetentionPeriod;
 
+        /**
+         * The offline retention period in months.
+         * @param offlineRetentionPeriod the value to set
+         * @return this builder
+         **/
         public Builder offlineRetentionPeriod(Integer offlineRetentionPeriod) {
             this.offlineRetentionPeriod = offlineRetentionPeriod;
             this.__explicitlySet__.add("offlineRetentionPeriod");
@@ -101,6 +123,10 @@ public final class GlobalSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsage")
     private final Boolean isPaidUsage;
 
+    /**
+     * The paid usage option chosen by the customer admin.
+     * @return the value
+     **/
     public Boolean getIsPaidUsage() {
         return isPaidUsage;
     }
@@ -111,6 +137,10 @@ public final class GlobalSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("onlineRetentionPeriod")
     private final Integer onlineRetentionPeriod;
 
+    /**
+     * The online retention period in months.
+     * @return the value
+     **/
     public Integer getOnlineRetentionPeriod() {
         return onlineRetentionPeriod;
     }
@@ -121,6 +151,10 @@ public final class GlobalSettings {
     @com.fasterxml.jackson.annotation.JsonProperty("offlineRetentionPeriod")
     private final Integer offlineRetentionPeriod;
 
+    /**
+     * The offline retention period in months.
+     * @return the value
+     **/
     public Integer getOfflineRetentionPeriod() {
         return offlineRetentionPeriod;
     }

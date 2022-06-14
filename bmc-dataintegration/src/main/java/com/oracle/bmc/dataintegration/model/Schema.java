@@ -69,27 +69,49 @@ public final class Schema {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The object's type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
+        /**
+         * The object's type.
+         * @param modelType the value to set
+         * @return this builder
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The object's model version.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -104,82 +126,145 @@ public final class Schema {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
+        /**
+         * A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
+         * @param resourceName the value to set
+         * @return this builder
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-
+        /**
+         * User-defined description for the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * User-defined description for the schema.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         * @param objectVersion the value to set
+         * @return this builder
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-
+        /**
+         * The external key for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
+        /**
+         * The external key for the object.
+         * @param externalKey the value to set
+         * @return this builder
+         **/
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
             return this;
         }
-
+        /**
+         * Specifies whether the schema has containers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHasContainers")
         private Boolean isHasContainers;
 
+        /**
+         * Specifies whether the schema has containers.
+         * @param isHasContainers the value to set
+         * @return this builder
+         **/
         public Builder isHasContainers(Boolean isHasContainers) {
             this.isHasContainers = isHasContainers;
             this.__explicitlySet__.add("isHasContainers");
             return this;
         }
-
+        /**
+         * The default connection key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
         private String defaultConnection;
 
+        /**
+         * The default connection key.
+         * @param defaultConnection the value to set
+         * @return this builder
+         **/
         public Builder defaultConnection(String defaultConnection) {
             this.defaultConnection = defaultConnection;
             this.__explicitlySet__.add("defaultConnection");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-
+        /**
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
+        /**
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier the value to set
+         * @return this builder
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
@@ -259,6 +344,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -269,6 +358,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
+    /**
+     * The object's type.
+     * @return the value
+     **/
     public String getModelType() {
         return modelType;
     }
@@ -279,6 +372,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -296,6 +393,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -306,6 +407,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
+    /**
+     * A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
+     * @return the value
+     **/
     public String getResourceName() {
         return resourceName;
     }
@@ -316,6 +421,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * User-defined description for the schema.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -326,6 +435,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     * @return the value
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -336,6 +449,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
+    /**
+     * The external key for the object.
+     * @return the value
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -346,6 +463,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("isHasContainers")
     private final Boolean isHasContainers;
 
+    /**
+     * Specifies whether the schema has containers.
+     * @return the value
+     **/
     public Boolean getIsHasContainers() {
         return isHasContainers;
     }
@@ -356,6 +477,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
     private final String defaultConnection;
 
+    /**
+     * The default connection key.
+     * @return the value
+     **/
     public String getDefaultConnection() {
         return defaultConnection;
     }
@@ -366,6 +491,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -376,6 +505,10 @@ public final class Schema {
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
+    /**
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return the value
+     **/
     public String getIdentifier() {
         return identifier;
     }

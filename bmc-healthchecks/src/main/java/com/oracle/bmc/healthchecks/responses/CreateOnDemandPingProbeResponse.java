@@ -16,6 +16,13 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -25,6 +32,10 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
      */
     private String location;
 
+    /**
+     * The URL for fetching probe results.
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -34,6 +45,10 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
+    /**
+     * The returned PingProbe instance.
+     * @return the value
+     */
     public com.oracle.bmc.healthchecks.model.PingProbe getPingProbe() {
         return pingProbe;
     }
@@ -63,22 +78,52 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The URL for fetching probe results.
+         */
         private String location;
 
+        /**
+         * The URL for fetching probe results.
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * The returned PingProbe instance.
+         */
         private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
+        /**
+         * The returned PingProbe instance.
+         * @param pingProbe the value to set
+         * @return this builder
+         */
         public Builder pingProbe(com.oracle.bmc.healthchecks.model.PingProbe pingProbe) {
             this.pingProbe = pingProbe;
             return this;
@@ -97,12 +142,20 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateOnDemandPingProbeResponse build() {
             return new CreateOnDemandPingProbeResponse(
                     __httpStatusCode__, opcRequestId, location, pingProbe);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

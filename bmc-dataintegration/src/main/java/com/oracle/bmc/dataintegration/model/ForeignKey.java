@@ -25,18 +25,33 @@ package com.oracle.bmc.dataintegration.model;
 public final class ForeignKey extends Key {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The object key.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
+        /**
+         * The object's model version.
+         * @param modelVersion the value to set
+         * @return this builder
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -51,37 +66,65 @@ public final class ForeignKey extends Key {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * An array of attribute references.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeRefs")
         private java.util.List<KeyAttribute> attributeRefs;
 
+        /**
+         * An array of attribute references.
+         * @param attributeRefs the value to set
+         * @return this builder
+         **/
         public Builder attributeRefs(java.util.List<KeyAttribute> attributeRefs) {
             this.attributeRefs = attributeRefs;
             this.__explicitlySet__.add("attributeRefs");
             return this;
         }
-
+        /**
+         * The update rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateRule")
         private Integer updateRule;
 
+        /**
+         * The update rule.
+         * @param updateRule the value to set
+         * @return this builder
+         **/
         public Builder updateRule(Integer updateRule) {
             this.updateRule = updateRule;
             this.__explicitlySet__.add("updateRule");
             return this;
         }
-
+        /**
+         * The delete rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteRule")
         private Integer deleteRule;
 
+        /**
+         * The delete rule.
+         * @param deleteRule the value to set
+         * @return this builder
+         **/
         public Builder deleteRule(Integer deleteRule) {
             this.deleteRule = deleteRule;
             this.__explicitlySet__.add("deleteRule");
@@ -96,10 +139,17 @@ public final class ForeignKey extends Key {
             this.__explicitlySet__.add("referenceUniqueKey");
             return this;
         }
-
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
+        /**
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * @param objectStatus the value to set
+         * @return this builder
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -183,6 +233,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The object key.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -193,6 +247,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
+    /**
+     * The object's model version.
+     * @return the value
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -210,6 +268,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -220,6 +282,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("attributeRefs")
     private final java.util.List<KeyAttribute> attributeRefs;
 
+    /**
+     * An array of attribute references.
+     * @return the value
+     **/
     public java.util.List<KeyAttribute> getAttributeRefs() {
         return attributeRefs;
     }
@@ -230,6 +296,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("updateRule")
     private final Integer updateRule;
 
+    /**
+     * The update rule.
+     * @return the value
+     **/
     public Integer getUpdateRule() {
         return updateRule;
     }
@@ -240,6 +310,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("deleteRule")
     private final Integer deleteRule;
 
+    /**
+     * The delete rule.
+     * @return the value
+     **/
     public Integer getDeleteRule() {
         return deleteRule;
     }
@@ -257,6 +331,10 @@ public final class ForeignKey extends Key {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
+    /**
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * @return the value
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }

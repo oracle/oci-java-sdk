@@ -31,27 +31,49 @@ public final class AllowedParameterValue {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The ordinal number in the list (1-based).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
         private java.math.BigDecimal ordinal;
 
+        /**
+         * The ordinal number in the list (1-based).
+         * @param ordinal the value to set
+         * @return this builder
+         **/
         public Builder ordinal(java.math.BigDecimal ordinal) {
             this.ordinal = ordinal;
             this.__explicitlySet__.add("ordinal");
             return this;
         }
-
+        /**
+         * The parameter value at ordinal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
+        /**
+         * The parameter value at ordinal.
+         * @param value the value to set
+         * @return this builder
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-
+        /**
+         * Indicates whether the given ordinal value is the default value for the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
+        /**
+         * Indicates whether the given ordinal value is the default value for the parameter.
+         * @param isDefault the value to set
+         * @return this builder
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -95,6 +117,10 @@ public final class AllowedParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
     private final java.math.BigDecimal ordinal;
 
+    /**
+     * The ordinal number in the list (1-based).
+     * @return the value
+     **/
     public java.math.BigDecimal getOrdinal() {
         return ordinal;
     }
@@ -105,6 +131,10 @@ public final class AllowedParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
+    /**
+     * The parameter value at ordinal.
+     * @return the value
+     **/
     public String getValue() {
         return value;
     }
@@ -115,6 +145,10 @@ public final class AllowedParameterValue {
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
+    /**
+     * Indicates whether the given ordinal value is the default value for the parameter.
+     * @return the value
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }

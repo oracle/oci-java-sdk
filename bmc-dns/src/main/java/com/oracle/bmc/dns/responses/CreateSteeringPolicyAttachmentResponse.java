@@ -16,6 +16,13 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private String eTag;
 
+    /**
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     * @return the value
+     */
     public String getETag() {
         return eTag;
     }
@@ -26,6 +33,11 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private String location;
 
+    /**
+     * The full URI of the resource related to the request.
+     *
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -37,6 +49,12 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,6 +64,10 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+    /**
+     * The returned SteeringPolicyAttachment instance.
+     * @return the value
+     */
     public com.oracle.bmc.dns.model.SteeringPolicyAttachment getSteeringPolicyAttachment() {
         return steeringPolicyAttachment;
     }
@@ -78,29 +100,73 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         */
         private String eTag;
 
+        /**
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
         public Builder eTag(String eTag) {
             this.eTag = eTag;
             return this;
         }
 
+        /**
+         * The full URI of the resource related to the request.
+         *
+         */
         private String location;
 
+        /**
+         * The full URI of the resource related to the request.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned SteeringPolicyAttachment instance.
+         */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+        /**
+         * The returned SteeringPolicyAttachment instance.
+         * @param steeringPolicyAttachment the value to set
+         * @return this builder
+         */
         public Builder steeringPolicyAttachment(
                 com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
             this.steeringPolicyAttachment = steeringPolicyAttachment;
@@ -121,12 +187,20 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSteeringPolicyAttachmentResponse build() {
             return new CreateSteeringPolicyAttachmentResponse(
                     __httpStatusCode__, eTag, location, opcRequestId, steeringPolicyAttachment);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -34,27 +34,49 @@ public final class PeComanagedDatabaseConnectionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * List of hosts and port for private endpoint accessed database resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<PeComanagedDatabaseHostDetails> hosts;
 
+        /**
+         * List of hosts and port for private endpoint accessed database resource.
+         * @param hosts the value to set
+         * @return this builder
+         **/
         public Builder hosts(java.util.List<PeComanagedDatabaseHostDetails> hosts) {
             this.hosts = hosts;
             this.__explicitlySet__.add("hosts");
             return this;
         }
-
+        /**
+         * Protocol used for connection requests for private endpoint accssed database resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
+        /**
+         * Protocol used for connection requests for private endpoint accssed database resource.
+         * @param protocol the value to set
+         * @return this builder
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-
+        /**
+         * Database service name used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
+        /**
+         * Database service name used for connection requests.
+         * @param serviceName the value to set
+         * @return this builder
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -98,6 +120,10 @@ public final class PeComanagedDatabaseConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<PeComanagedDatabaseHostDetails> hosts;
 
+    /**
+     * List of hosts and port for private endpoint accessed database resource.
+     * @return the value
+     **/
     public java.util.List<PeComanagedDatabaseHostDetails> getHosts() {
         return hosts;
     }
@@ -156,6 +182,10 @@ public final class PeComanagedDatabaseConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
+    /**
+     * Protocol used for connection requests for private endpoint accssed database resource.
+     * @return the value
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
@@ -166,6 +196,10 @@ public final class PeComanagedDatabaseConnectionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
+    /**
+     * Database service name used for connection requests.
+     * @return the value
+     **/
     public String getServiceName() {
         return serviceName;
     }

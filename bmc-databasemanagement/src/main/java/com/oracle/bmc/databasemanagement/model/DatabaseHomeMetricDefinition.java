@@ -53,9 +53,17 @@ public final class DatabaseHomeMetricDefinition {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A list of the active session metrics for CPU and Wait time for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
         private java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
 
+        /**
+         * A list of the active session metrics for CPU and Wait time for a specific Managed Database.
+         * @param activityTimeSeriesMetrics the value to set
+         * @return this builder
+         **/
         public Builder activityTimeSeriesMetrics(
                 java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics) {
             this.activityTimeSeriesMetrics = activityTimeSeriesMetrics;
@@ -183,6 +191,10 @@ public final class DatabaseHomeMetricDefinition {
     @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
     private final java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
 
+    /**
+     * A list of the active session metrics for CPU and Wait time for a specific Managed Database.
+     * @return the value
+     **/
     public java.util.List<ActivityTimeSeriesMetrics> getActivityTimeSeriesMetrics() {
         return activityTimeSeriesMetrics;
     }

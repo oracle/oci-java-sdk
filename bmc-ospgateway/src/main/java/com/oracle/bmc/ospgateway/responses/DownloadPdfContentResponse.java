@@ -15,6 +15,12 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String contentDisposition;
 
+    /**
+     * Set content to download
+     * @return the value
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
@@ -33,6 +43,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String contentType;
 
+    /**
+     * Set the content type to download
+     * @return the value
+     */
     public String getContentType() {
         return contentType;
     }
@@ -42,6 +56,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private Integer contentLength;
 
+    /**
+     * Set the content length to download
+     * @return the value
+     */
     public Integer getContentLength() {
         return contentLength;
     }
@@ -51,6 +69,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private java.io.InputStream inputStream;
 
+    /**
+     * The returned java.io.InputStream instance.
+     * @return the value
+     */
     public java.io.InputStream getInputStream() {
         return inputStream;
     }
@@ -86,36 +108,80 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * Set content to download
+         */
         private String contentDisposition;
 
+        /**
+         * Set content to download
+         * @param contentDisposition the value to set
+         * @return this builder
+         */
         public Builder contentDisposition(String contentDisposition) {
             this.contentDisposition = contentDisposition;
             return this;
         }
 
+        /**
+         * Set the content type to download
+         */
         private String contentType;
 
+        /**
+         * Set the content type to download
+         * @param contentType the value to set
+         * @return this builder
+         */
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             return this;
         }
 
+        /**
+         * Set the content length to download
+         */
         private Integer contentLength;
 
+        /**
+         * Set the content length to download
+         * @param contentLength the value to set
+         * @return this builder
+         */
         public Builder contentLength(Integer contentLength) {
             this.contentLength = contentLength;
             return this;
         }
 
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
+        /**
+         * The returned java.io.InputStream instance.
+         * @param inputStream the value to set
+         * @return this builder
+         */
         public Builder inputStream(java.io.InputStream inputStream) {
             this.inputStream = inputStream;
             return this;
@@ -136,6 +202,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public DownloadPdfContentResponse build() {
             return new DownloadPdfContentResponse(
                     __httpStatusCode__,
@@ -147,6 +217,10 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

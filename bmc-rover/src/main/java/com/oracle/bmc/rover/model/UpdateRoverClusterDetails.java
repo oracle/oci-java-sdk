@@ -98,18 +98,33 @@ public final class UpdateRoverClusterDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
+        /**
+         * Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
+         * @param clusterSize the value to set
+         * @return this builder
+         **/
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
@@ -124,182 +139,340 @@ public final class UpdateRoverClusterDetails {
             this.__explicitlySet__.add("customerShippingAddress");
             return this;
         }
-
+        /**
+         * List of existing workloads that should be provisioned on the nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterWorkloads")
         private java.util.List<RoverWorkload> clusterWorkloads;
 
+        /**
+         * List of existing workloads that should be provisioned on the nodes.
+         * @param clusterWorkloads the value to set
+         * @return this builder
+         **/
         public Builder clusterWorkloads(java.util.List<RoverWorkload> clusterWorkloads) {
             this.clusterWorkloads = clusterWorkloads;
             this.__explicitlySet__.add("clusterWorkloads");
             return this;
         }
-
+        /**
+         * Root password for the rover cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("superUserPassword")
         private String superUserPassword;
 
+        /**
+         * Root password for the rover cluster.
+         * @param superUserPassword the value to set
+         * @return this builder
+         **/
         public Builder superUserPassword(String superUserPassword) {
             this.superUserPassword = superUserPassword;
             this.__explicitlySet__.add("superUserPassword");
             return this;
         }
-
+        /**
+         * The current state of the RoverCluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        /**
+         * The current state of the RoverCluster.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * A property that can contain details on the lifecycle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
         private String lifecycleStateDetails;
 
+        /**
+         * A property that can contain details on the lifecycle.
+         * @param lifecycleStateDetails the value to set
+         * @return this builder
+         **/
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             this.lifecycleStateDetails = lifecycleStateDetails;
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
-
+        /**
+         * Password to unlock the rover cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unlockPassphrase")
         private String unlockPassphrase;
 
+        /**
+         * Password to unlock the rover cluster.
+         * @param unlockPassphrase the value to set
+         * @return this builder
+         **/
         public Builder unlockPassphrase(String unlockPassphrase) {
             this.unlockPassphrase = unlockPassphrase;
             this.__explicitlySet__.add("unlockPassphrase");
             return this;
         }
-
+        /**
+         * The type of enclosure rover nodes in this cluster are shipped in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enclosureType")
         private EnclosureType enclosureType;
 
+        /**
+         * The type of enclosure rover nodes in this cluster are shipped in.
+         * @param enclosureType the value to set
+         * @return this builder
+         **/
         public Builder enclosureType(EnclosureType enclosureType) {
             this.enclosureType = enclosureType;
             this.__explicitlySet__.add("enclosureType");
             return this;
         }
-
+        /**
+         * Name of point of contact for this order if customer is picking up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pointOfContact")
         private String pointOfContact;
 
+        /**
+         * Name of point of contact for this order if customer is picking up.
+         * @param pointOfContact the value to set
+         * @return this builder
+         **/
         public Builder pointOfContact(String pointOfContact) {
             this.pointOfContact = pointOfContact;
             this.__explicitlySet__.add("pointOfContact");
             return this;
         }
-
+        /**
+         * Phone number of point of contact for this order if customer is picking up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pointOfContactPhoneNumber")
         private String pointOfContactPhoneNumber;
 
+        /**
+         * Phone number of point of contact for this order if customer is picking up.
+         * @param pointOfContactPhoneNumber the value to set
+         * @return this builder
+         **/
         public Builder pointOfContactPhoneNumber(String pointOfContactPhoneNumber) {
             this.pointOfContactPhoneNumber = pointOfContactPhoneNumber;
             this.__explicitlySet__.add("pointOfContactPhoneNumber");
             return this;
         }
-
+        /**
+         * Preference for device delivery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shippingPreference")
         private ShippingPreference shippingPreference;
 
+        /**
+         * Preference for device delivery.
+         * @param shippingPreference the value to set
+         * @return this builder
+         **/
         public Builder shippingPreference(ShippingPreference shippingPreference) {
             this.shippingPreference = shippingPreference;
             this.__explicitlySet__.add("shippingPreference");
             return this;
         }
-
+        /**
+         * Tracking Url for the shipped Rover Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
         private String oracleShippingTrackingUrl;
 
+        /**
+         * Tracking Url for the shipped Rover Cluster.
+         * @param oracleShippingTrackingUrl the value to set
+         * @return this builder
+         **/
         public Builder oracleShippingTrackingUrl(String oracleShippingTrackingUrl) {
             this.oracleShippingTrackingUrl = oracleShippingTrackingUrl;
             this.__explicitlySet__.add("oracleShippingTrackingUrl");
             return this;
         }
-
+        /**
+         * ID provided to customer after successful subscription to Rover Stations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
+        /**
+         * ID provided to customer after successful subscription to Rover Stations.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-
+        /**
+         * Shipping vendor of choice for orace to customer shipping.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shippingVendor")
         private String shippingVendor;
 
+        /**
+         * Shipping vendor of choice for orace to customer shipping.
+         * @param shippingVendor the value to set
+         * @return this builder
+         **/
         public Builder shippingVendor(String shippingVendor) {
             this.shippingVendor = shippingVendor;
             this.__explicitlySet__.add("shippingVendor");
             return this;
         }
-
+        /**
+         * Expected date when customer wants to pickup the device if they chose customer pickup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePickupExpected")
         private java.util.Date timePickupExpected;
 
+        /**
+         * Expected date when customer wants to pickup the device if they chose customer pickup.
+         * @param timePickupExpected the value to set
+         * @return this builder
+         **/
         public Builder timePickupExpected(java.util.Date timePickupExpected) {
             this.timePickupExpected = timePickupExpected;
             this.__explicitlySet__.add("timePickupExpected");
             return this;
         }
-
+        /**
+         * The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
         private Boolean isImportRequested;
 
+        /**
+         * The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+         * @param isImportRequested the value to set
+         * @return this builder
+         **/
         public Builder isImportRequested(Boolean isImportRequested) {
             this.isImportRequested = isImportRequested;
             this.__explicitlySet__.add("isImportRequested");
             return this;
         }
-
+        /**
+         * An OCID of a compartment where data will be imported to upon Rover cluster return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
         private String importCompartmentId;
 
+        /**
+         * An OCID of a compartment where data will be imported to upon Rover cluster return.
+         * @param importCompartmentId the value to set
+         * @return this builder
+         **/
         public Builder importCompartmentId(String importCompartmentId) {
             this.importCompartmentId = importCompartmentId;
             this.__explicitlySet__.add("importCompartmentId");
             return this;
         }
-
+        /**
+         * Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
         private String importFileBucket;
 
+        /**
+         * Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+         * @param importFileBucket the value to set
+         * @return this builder
+         **/
         public Builder importFileBucket(String importFileBucket) {
             this.importFileBucket = importFileBucket;
             this.__explicitlySet__.add("importFileBucket");
             return this;
         }
-
+        /**
+         * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
         private String dataValidationCode;
 
+        /**
+         * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+         * @param dataValidationCode the value to set
+         * @return this builder
+         **/
         public Builder dataValidationCode(String dataValidationCode) {
             this.dataValidationCode = dataValidationCode;
             this.__explicitlySet__.add("dataValidationCode");
             return this;
         }
-
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+        /**
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -388,6 +561,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -398,6 +575,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
+    /**
+     * Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
+     * @return the value
+     **/
     public Integer getClusterSize() {
         return clusterSize;
     }
@@ -415,6 +596,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("clusterWorkloads")
     private final java.util.List<RoverWorkload> clusterWorkloads;
 
+    /**
+     * List of existing workloads that should be provisioned on the nodes.
+     * @return the value
+     **/
     public java.util.List<RoverWorkload> getClusterWorkloads() {
         return clusterWorkloads;
     }
@@ -425,6 +610,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("superUserPassword")
     private final String superUserPassword;
 
+    /**
+     * Root password for the rover cluster.
+     * @return the value
+     **/
     public String getSuperUserPassword() {
         return superUserPassword;
     }
@@ -435,6 +624,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
+    /**
+     * The current state of the RoverCluster.
+     * @return the value
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -445,6 +638,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
     private final String lifecycleStateDetails;
 
+    /**
+     * A property that can contain details on the lifecycle.
+     * @return the value
+     **/
     public String getLifecycleStateDetails() {
         return lifecycleStateDetails;
     }
@@ -455,6 +652,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("unlockPassphrase")
     private final String unlockPassphrase;
 
+    /**
+     * Password to unlock the rover cluster.
+     * @return the value
+     **/
     public String getUnlockPassphrase() {
         return unlockPassphrase;
     }
@@ -465,6 +666,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("enclosureType")
     private final EnclosureType enclosureType;
 
+    /**
+     * The type of enclosure rover nodes in this cluster are shipped in.
+     * @return the value
+     **/
     public EnclosureType getEnclosureType() {
         return enclosureType;
     }
@@ -475,6 +680,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pointOfContact")
     private final String pointOfContact;
 
+    /**
+     * Name of point of contact for this order if customer is picking up.
+     * @return the value
+     **/
     public String getPointOfContact() {
         return pointOfContact;
     }
@@ -485,6 +694,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("pointOfContactPhoneNumber")
     private final String pointOfContactPhoneNumber;
 
+    /**
+     * Phone number of point of contact for this order if customer is picking up.
+     * @return the value
+     **/
     public String getPointOfContactPhoneNumber() {
         return pointOfContactPhoneNumber;
     }
@@ -530,6 +743,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shippingPreference")
     private final ShippingPreference shippingPreference;
 
+    /**
+     * Preference for device delivery.
+     * @return the value
+     **/
     public ShippingPreference getShippingPreference() {
         return shippingPreference;
     }
@@ -540,6 +757,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
     private final String oracleShippingTrackingUrl;
 
+    /**
+     * Tracking Url for the shipped Rover Cluster.
+     * @return the value
+     **/
     public String getOracleShippingTrackingUrl() {
         return oracleShippingTrackingUrl;
     }
@@ -550,6 +771,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
+    /**
+     * ID provided to customer after successful subscription to Rover Stations.
+     * @return the value
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -560,6 +785,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shippingVendor")
     private final String shippingVendor;
 
+    /**
+     * Shipping vendor of choice for orace to customer shipping.
+     * @return the value
+     **/
     public String getShippingVendor() {
         return shippingVendor;
     }
@@ -570,6 +799,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("timePickupExpected")
     private final java.util.Date timePickupExpected;
 
+    /**
+     * Expected date when customer wants to pickup the device if they chose customer pickup.
+     * @return the value
+     **/
     public java.util.Date getTimePickupExpected() {
         return timePickupExpected;
     }
@@ -580,6 +813,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
     private final Boolean isImportRequested;
 
+    /**
+     * The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+     * @return the value
+     **/
     public Boolean getIsImportRequested() {
         return isImportRequested;
     }
@@ -590,6 +827,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
     private final String importCompartmentId;
 
+    /**
+     * An OCID of a compartment where data will be imported to upon Rover cluster return.
+     * @return the value
+     **/
     public String getImportCompartmentId() {
         return importCompartmentId;
     }
@@ -600,6 +841,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
     private final String importFileBucket;
 
+    /**
+     * Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+     * @return the value
+     **/
     public String getImportFileBucket() {
         return importFileBucket;
     }
@@ -610,6 +855,10 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
     private final String dataValidationCode;
 
+    /**
+     * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+     * @return the value
+     **/
     public String getDataValidationCode() {
         return dataValidationCode;
     }
@@ -623,6 +872,13 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -636,6 +892,13 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -649,6 +912,13 @@ public final class UpdateRoverClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }

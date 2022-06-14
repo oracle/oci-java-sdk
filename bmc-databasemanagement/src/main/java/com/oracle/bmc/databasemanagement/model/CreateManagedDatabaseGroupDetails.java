@@ -32,27 +32,61 @@ public final class CreateManagedDatabaseGroupDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The name of the Managed Database Group. Valid characters are uppercase or
+         * lowercase letters, numbers, and "_". The name of the Managed Database Group
+         * cannot be modified. It must be unique in the compartment and must begin with
+         * an alphabetic character.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The name of the Managed Database Group. Valid characters are uppercase or
+         * lowercase letters, numbers, and "_". The name of the Managed Database Group
+         * cannot be modified. It must be unique in the compartment and must begin with
+         * an alphabetic character.
+         *
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The information specified by the user about the Managed Database Group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The information specified by the user about the Managed Database Group.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+         * in which the Managed Database Group resides.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+         * in which the Managed Database Group resides.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -102,6 +136,14 @@ public final class CreateManagedDatabaseGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The name of the Managed Database Group. Valid characters are uppercase or
+     * lowercase letters, numbers, and "_". The name of the Managed Database Group
+     * cannot be modified. It must be unique in the compartment and must begin with
+     * an alphabetic character.
+     *
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -112,6 +154,10 @@ public final class CreateManagedDatabaseGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The information specified by the user about the Managed Database Group.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -124,6 +170,12 @@ public final class CreateManagedDatabaseGroupDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * in which the Managed Database Group resides.
+     *
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

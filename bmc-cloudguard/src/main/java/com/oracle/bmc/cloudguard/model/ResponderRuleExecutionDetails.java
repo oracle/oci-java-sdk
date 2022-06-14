@@ -31,6 +31,7 @@ public final class ResponderRuleExecutionDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private Condition condition;
 
@@ -39,10 +40,17 @@ public final class ResponderRuleExecutionDetails {
             this.__explicitlySet__.add("condition");
             return this;
         }
-
+        /**
+         * ResponderRule configurations
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
+        /**
+         * ResponderRule configurations
+         * @param configurations the value to set
+         * @return this builder
+         **/
         public Builder configurations(java.util.List<ResponderConfiguration> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
@@ -93,6 +101,10 @@ public final class ResponderRuleExecutionDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
+    /**
+     * ResponderRule configurations
+     * @return the value
+     **/
     public java.util.List<ResponderConfiguration> getConfigurations() {
         return configurations;
     }

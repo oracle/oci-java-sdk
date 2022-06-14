@@ -34,27 +34,49 @@ public final class UpdateOAuth2ClientCredentialDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Description of the oauth credential to help user differentiate them.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * Description of the oauth credential to help user differentiate them.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * Allowed scopes for the given oauth credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<FullyQualifiedScope> scopes;
 
+        /**
+         * Allowed scopes for the given oauth credential.
+         * @param scopes the value to set
+         * @return this builder
+         **/
         public Builder scopes(java.util.List<FullyQualifiedScope> scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
             return this;
         }
-
+        /**
+         * Indicate if the password to be reset or not in the update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isResetPassword")
         private Boolean isResetPassword;
 
+        /**
+         * Indicate if the password to be reset or not in the update.
+         * @param isResetPassword the value to set
+         * @return this builder
+         **/
         public Builder isResetPassword(Boolean isResetPassword) {
             this.isResetPassword = isResetPassword;
             this.__explicitlySet__.add("isResetPassword");
@@ -100,6 +122,10 @@ public final class UpdateOAuth2ClientCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * Description of the oauth credential to help user differentiate them.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -110,6 +136,10 @@ public final class UpdateOAuth2ClientCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final java.util.List<FullyQualifiedScope> scopes;
 
+    /**
+     * Allowed scopes for the given oauth credential.
+     * @return the value
+     **/
     public java.util.List<FullyQualifiedScope> getScopes() {
         return scopes;
     }
@@ -120,6 +150,10 @@ public final class UpdateOAuth2ClientCredentialDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isResetPassword")
     private final Boolean isResetPassword;
 
+    /**
+     * Indicate if the password to be reset or not in the update.
+     * @return the value
+     **/
     public Boolean getIsResetPassword() {
         return isResetPassword;
     }

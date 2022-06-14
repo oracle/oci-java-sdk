@@ -28,18 +28,33 @@ public final class DocumentMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Teh number of pages in the document.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageCount")
         private Integer pageCount;
 
+        /**
+         * Teh number of pages in the document.
+         * @param pageCount the value to set
+         * @return this builder
+         **/
         public Builder pageCount(Integer pageCount) {
             this.pageCount = pageCount;
             this.__explicitlySet__.add("pageCount");
             return this;
         }
-
+        /**
+         * The result data format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
+        /**
+         * The result data format.
+         * @param mimeType the value to set
+         * @return this builder
+         **/
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
@@ -81,6 +96,10 @@ public final class DocumentMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("pageCount")
     private final Integer pageCount;
 
+    /**
+     * Teh number of pages in the document.
+     * @return the value
+     **/
     public Integer getPageCount() {
         return pageCount;
     }
@@ -91,6 +110,10 @@ public final class DocumentMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
+    /**
+     * The result data format.
+     * @return the value
+     **/
     public String getMimeType() {
         return mimeType;
     }

@@ -14,6 +14,11 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -23,6 +28,10 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcContentMd5;
 
+    /**
+     * The base-64 encoded MD5 hash of the request body as computed by the server.
+     * @return the value
+     */
     public String getOpcContentMd5() {
         return opcContentMd5;
     }
@@ -32,6 +41,10 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private String opcObjectId;
 
+    /**
+     * Unique Oracle-assigned identifier for log data.
+     * @return the value
+     */
     public String getOpcObjectId() {
         return opcObjectId;
     }
@@ -41,6 +54,10 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
+    /**
+     * The returned Upload instance.
+     * @return the value
+     */
     public com.oracle.bmc.loganalytics.model.Upload getUpload() {
         return upload;
     }
@@ -73,29 +90,63 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The base-64 encoded MD5 hash of the request body as computed by the server.
+         */
         private String opcContentMd5;
 
+        /**
+         * The base-64 encoded MD5 hash of the request body as computed by the server.
+         * @param opcContentMd5 the value to set
+         * @return this builder
+         */
         public Builder opcContentMd5(String opcContentMd5) {
             this.opcContentMd5 = opcContentMd5;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for log data.
+         */
         private String opcObjectId;
 
+        /**
+         * Unique Oracle-assigned identifier for log data.
+         * @param opcObjectId the value to set
+         * @return this builder
+         */
         public Builder opcObjectId(String opcObjectId) {
             this.opcObjectId = opcObjectId;
             return this;
         }
 
+        /**
+         * The returned Upload instance.
+         */
         private com.oracle.bmc.loganalytics.model.Upload upload;
 
+        /**
+         * The returned Upload instance.
+         * @param upload the value to set
+         * @return this builder
+         */
         public Builder upload(com.oracle.bmc.loganalytics.model.Upload upload) {
             this.upload = upload;
             return this;
@@ -115,12 +166,20 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UploadLogFileResponse build() {
             return new UploadLogFileResponse(
                     __httpStatusCode__, opcRequestId, opcContentMd5, opcObjectId, upload);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -35,10 +35,17 @@ public final class DataObjectOtherStandardColumnUnit extends DataObjectColumnUni
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Other standard column unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
+        /**
+         * Other standard column unit.
+         * @param unit the value to set
+         * @return this builder
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -145,6 +152,10 @@ public final class DataObjectOtherStandardColumnUnit extends DataObjectColumnUni
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
+    /**
+     * Other standard column unit.
+     * @return the value
+     **/
     public Unit getUnit() {
         return unit;
     }

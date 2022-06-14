@@ -32,27 +32,49 @@ public final class UiParserTestMetadata {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The last modified time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedTime")
         private String lastModifiedTime;
 
+        /**
+         * The last modified time.
+         * @param lastModifiedTime the value to set
+         * @return this builder
+         **/
         public Builder lastModifiedTime(String lastModifiedTime) {
             this.lastModifiedTime = lastModifiedTime;
             this.__explicitlySet__.add("lastModifiedTime");
             return this;
         }
-
+        /**
+         * The log file name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logFileName")
         private String logFileName;
 
+        /**
+         * The log file name.
+         * @param logFileName the value to set
+         * @return this builder
+         **/
         public Builder logFileName(String logFileName) {
             this.logFileName = logFileName;
             this.__explicitlySet__.add("logFileName");
             return this;
         }
-
+        /**
+         * The time zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private java.util.Date timeZone;
 
+        /**
+         * The time zone.
+         * @param timeZone the value to set
+         * @return this builder
+         **/
         public Builder timeZone(java.util.Date timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -98,6 +120,10 @@ public final class UiParserTestMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedTime")
     private final String lastModifiedTime;
 
+    /**
+     * The last modified time.
+     * @return the value
+     **/
     public String getLastModifiedTime() {
         return lastModifiedTime;
     }
@@ -108,6 +134,10 @@ public final class UiParserTestMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("logFileName")
     private final String logFileName;
 
+    /**
+     * The log file name.
+     * @return the value
+     **/
     public String getLogFileName() {
         return logFileName;
     }
@@ -118,6 +148,10 @@ public final class UiParserTestMetadata {
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final java.util.Date timeZone;
 
+    /**
+     * The time zone.
+     * @return the value
+     **/
     public java.util.Date getTimeZone() {
         return timeZone;
     }

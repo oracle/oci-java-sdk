@@ -25,9 +25,17 @@ package com.oracle.bmc.servicemesh.model;
 public final class OciCaBundle extends CaBundle {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the CA Bundle resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
         private String caBundleId;
 
+        /**
+         * The OCID of the CA Bundle resource.
+         * @param caBundleId the value to set
+         * @return this builder
+         **/
         public Builder caBundleId(String caBundleId) {
             this.caBundleId = caBundleId;
             this.__explicitlySet__.add("caBundleId");
@@ -75,6 +83,10 @@ public final class OciCaBundle extends CaBundle {
     @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
     private final String caBundleId;
 
+    /**
+     * The OCID of the CA Bundle resource.
+     * @return the value
+     **/
     public String getCaBundleId() {
         return caBundleId;
     }

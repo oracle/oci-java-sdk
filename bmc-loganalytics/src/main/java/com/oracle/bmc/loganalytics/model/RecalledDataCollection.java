@@ -29,9 +29,17 @@ public final class RecalledDataCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * This is the array of recalled data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RecalledData> items;
 
+        /**
+         * This is the array of recalled data
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<RecalledData> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -73,6 +81,10 @@ public final class RecalledDataCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RecalledData> items;
 
+    /**
+     * This is the array of recalled data
+     * @return the value
+     **/
     public java.util.List<RecalledData> getItems() {
         return items;
     }

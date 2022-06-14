@@ -14,6 +14,11 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -24,6 +29,11 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    /**
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
+    /**
+     * The returned DeploymentBackup instance.
+     * @return the value
+     */
     public com.oracle.bmc.goldengate.model.DeploymentBackup getDeploymentBackup() {
         return deploymentBackup;
     }
@@ -62,22 +76,50 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned DeploymentBackup instance.
+         */
         private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
+        /**
+         * The returned DeploymentBackup instance.
+         * @param deploymentBackup the value to set
+         * @return this builder
+         */
         public Builder deploymentBackup(
                 com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup) {
             this.deploymentBackup = deploymentBackup;
@@ -97,12 +139,20 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public UpdateDeploymentBackupResponse build() {
             return new UpdateDeploymentBackupResponse(
                     __httpStatusCode__, etag, opcRequestId, deploymentBackup);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

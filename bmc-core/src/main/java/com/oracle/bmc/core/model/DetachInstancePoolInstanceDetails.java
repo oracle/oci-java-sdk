@@ -33,27 +33,59 @@ public final class DetachInstancePoolInstanceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         * @param instanceId the value to set
+         * @return this builder
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-
+        /**
+         * Whether to decrease the size of the instance pool when the instance is detached. If {@code true}, the
+         * pool size is decreased. If {@code false}, the pool will provision a new, replacement instance
+         * using the pool's instance configuration as a template. Default is {@code true}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDecrementSize")
         private Boolean isDecrementSize;
 
+        /**
+         * Whether to decrease the size of the instance pool when the instance is detached. If {@code true}, the
+         * pool size is decreased. If {@code false}, the pool will provision a new, replacement instance
+         * using the pool's instance configuration as a template. Default is {@code true}.
+         *
+         * @param isDecrementSize the value to set
+         * @return this builder
+         **/
         public Builder isDecrementSize(Boolean isDecrementSize) {
             this.isDecrementSize = isDecrementSize;
             this.__explicitlySet__.add("isDecrementSize");
             return this;
         }
-
+        /**
+         * Whether to permanently terminate (delete) the instance and its attached boot volume
+         * when detaching it from the instance pool. Default is {@code false}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoTerminate")
         private Boolean isAutoTerminate;
 
+        /**
+         * Whether to permanently terminate (delete) the instance and its attached boot volume
+         * when detaching it from the instance pool. Default is {@code false}.
+         *
+         * @param isAutoTerminate the value to set
+         * @return this builder
+         **/
         public Builder isAutoTerminate(Boolean isAutoTerminate) {
             this.isAutoTerminate = isAutoTerminate;
             this.__explicitlySet__.add("isAutoTerminate");
@@ -100,6 +132,10 @@ public final class DetachInstancePoolInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+     * @return the value
+     **/
     public String getInstanceId() {
         return instanceId;
     }
@@ -113,6 +149,13 @@ public final class DetachInstancePoolInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isDecrementSize")
     private final Boolean isDecrementSize;
 
+    /**
+     * Whether to decrease the size of the instance pool when the instance is detached. If {@code true}, the
+     * pool size is decreased. If {@code false}, the pool will provision a new, replacement instance
+     * using the pool's instance configuration as a template. Default is {@code true}.
+     *
+     * @return the value
+     **/
     public Boolean getIsDecrementSize() {
         return isDecrementSize;
     }
@@ -125,6 +168,12 @@ public final class DetachInstancePoolInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTerminate")
     private final Boolean isAutoTerminate;
 
+    /**
+     * Whether to permanently terminate (delete) the instance and its attached boot volume
+     * when detaching it from the instance pool. Default is {@code false}.
+     *
+     * @return the value
+     **/
     public Boolean getIsAutoTerminate() {
         return isAutoTerminate;
     }

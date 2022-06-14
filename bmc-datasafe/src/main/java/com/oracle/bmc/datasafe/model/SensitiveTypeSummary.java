@@ -71,126 +71,241 @@ public final class SensitiveTypeSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The OCID of the sensitive type.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * The display name of the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * The display name of the sensitive type.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * The OCID of the compartment that contains the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The OCID of the compartment that contains the sensitive type.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-
+        /**
+         * The current state of the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DiscoveryLifecycleState lifecycleState;
 
+        /**
+         * The current state of the sensitive type.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
         public Builder lifecycleState(DiscoveryLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-
+        /**
+         * The short name of the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortName")
         private String shortName;
 
+        /**
+         * The short name of the sensitive type.
+         * @param shortName the value to set
+         * @return this builder
+         **/
         public Builder shortName(String shortName) {
             this.shortName = shortName;
             this.__explicitlySet__.add("shortName");
             return this;
         }
-
+        /**
+         * Specifies whether the sensitive type is user-defined or predefined.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private SensitiveTypeSource source;
 
+        /**
+         * Specifies whether the sensitive type is user-defined or predefined.
+         * @param source the value to set
+         * @return this builder
+         **/
         public Builder source(SensitiveTypeSource source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-
+        /**
+         * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * The description of the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        /**
+         * The description of the sensitive type.
+         * @param description the value to set
+         * @return this builder
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-
+        /**
+         * The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for
+         * grouping similar sensitive types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private SensitiveTypeEntity entityType;
 
+        /**
+         * The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for
+         * grouping similar sensitive types.
+         *
+         * @param entityType the value to set
+         * @return this builder
+         **/
         public Builder entityType(SensitiveTypeEntity entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-
+        /**
+         * The OCID of the parent sensitive category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentCategoryId")
         private String parentCategoryId;
 
+        /**
+         * The OCID of the parent sensitive category.
+         * @param parentCategoryId the value to set
+         * @return this builder
+         **/
         public Builder parentCategoryId(String parentCategoryId) {
             this.parentCategoryId = parentCategoryId;
             this.__explicitlySet__.add("parentCategoryId");
             return this;
         }
-
+        /**
+         * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMaskingFormatId")
         private String defaultMaskingFormatId;
 
+        /**
+         * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
+         * @param defaultMaskingFormatId the value to set
+         * @return this builder
+         **/
         public Builder defaultMaskingFormatId(String defaultMaskingFormatId) {
             this.defaultMaskingFormatId = defaultMaskingFormatId;
             this.__explicitlySet__.add("defaultMaskingFormatId");
             return this;
         }
-
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -262,6 +377,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The OCID of the sensitive type.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -272,6 +391,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * The display name of the sensitive type.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -282,6 +405,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The OCID of the compartment that contains the sensitive type.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -292,6 +419,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DiscoveryLifecycleState lifecycleState;
 
+    /**
+     * The current state of the sensitive type.
+     * @return the value
+     **/
     public DiscoveryLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -302,6 +433,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("shortName")
     private final String shortName;
 
+    /**
+     * The short name of the sensitive type.
+     * @return the value
+     **/
     public String getShortName() {
         return shortName;
     }
@@ -312,6 +447,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final SensitiveTypeSource source;
 
+    /**
+     * Specifies whether the sensitive type is user-defined or predefined.
+     * @return the value
+     **/
     public SensitiveTypeSource getSource() {
         return source;
     }
@@ -322,6 +461,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -332,6 +475,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -342,6 +489,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
+    /**
+     * The description of the sensitive type.
+     * @return the value
+     **/
     public String getDescription() {
         return description;
     }
@@ -354,6 +505,12 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final SensitiveTypeEntity entityType;
 
+    /**
+     * The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for
+     * grouping similar sensitive types.
+     *
+     * @return the value
+     **/
     public SensitiveTypeEntity getEntityType() {
         return entityType;
     }
@@ -364,6 +521,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentCategoryId")
     private final String parentCategoryId;
 
+    /**
+     * The OCID of the parent sensitive category.
+     * @return the value
+     **/
     public String getParentCategoryId() {
         return parentCategoryId;
     }
@@ -374,6 +535,10 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMaskingFormatId")
     private final String defaultMaskingFormatId;
 
+    /**
+     * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
+     * @return the value
+     **/
     public String getDefaultMaskingFormatId() {
         return defaultMaskingFormatId;
     }
@@ -387,6 +552,13 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -400,6 +572,13 @@ public final class SensitiveTypeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

@@ -30,9 +30,17 @@ public final class StackResourceDriftCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of drift status details for all resources defined in the stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<StackResourceDriftSummary> items;
 
+        /**
+         * Collection of drift status details for all resources defined in the stack.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<StackResourceDriftSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class StackResourceDriftCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<StackResourceDriftSummary> items;
 
+    /**
+     * Collection of drift status details for all resources defined in the stack.
+     * @return the value
+     **/
     public java.util.List<StackResourceDriftSummary> getItems() {
         return items;
     }

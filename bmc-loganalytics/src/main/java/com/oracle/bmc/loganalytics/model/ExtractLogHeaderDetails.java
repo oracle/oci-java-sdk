@@ -30,18 +30,33 @@ public final class ExtractLogHeaderDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logKey")
         private String logKey;
 
+        /**
+         * The log key.
+         * @param logKey the value to set
+         * @return this builder
+         **/
         public Builder logKey(String logKey) {
             this.logKey = logKey;
             this.__explicitlySet__.add("logKey");
             return this;
         }
-
+        /**
+         * The log header values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerValues")
         private java.util.List<String> headerValues;
 
+        /**
+         * The log header values.
+         * @param headerValues the value to set
+         * @return this builder
+         **/
         public Builder headerValues(java.util.List<String> headerValues) {
             this.headerValues = headerValues;
             this.__explicitlySet__.add("headerValues");
@@ -84,6 +99,10 @@ public final class ExtractLogHeaderDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("logKey")
     private final String logKey;
 
+    /**
+     * The log key.
+     * @return the value
+     **/
     public String getLogKey() {
         return logKey;
     }
@@ -94,6 +113,10 @@ public final class ExtractLogHeaderDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("headerValues")
     private final java.util.List<String> headerValues;
 
+    /**
+     * The log header values.
+     * @return the value
+     **/
     public java.util.List<String> getHeaderValues() {
         return headerValues;
     }

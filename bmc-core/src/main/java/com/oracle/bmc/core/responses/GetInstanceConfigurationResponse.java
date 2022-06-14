@@ -14,6 +14,11 @@ public class GetInstanceConfigurationResponse extends com.oracle.bmc.responses.B
      */
     private String etag;
 
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -25,6 +30,12 @@ public class GetInstanceConfigurationResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -34,6 +45,10 @@ public class GetInstanceConfigurationResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration;
 
+    /**
+     * The returned InstanceConfiguration instance.
+     * @return the value
+     */
     public com.oracle.bmc.core.model.InstanceConfiguration getInstanceConfiguration() {
         return instanceConfiguration;
     }
@@ -63,22 +78,52 @@ public class GetInstanceConfigurationResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned InstanceConfiguration instance.
+         */
         private com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration;
 
+        /**
+         * The returned InstanceConfiguration instance.
+         * @param instanceConfiguration the value to set
+         * @return this builder
+         */
         public Builder instanceConfiguration(
                 com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration) {
             this.instanceConfiguration = instanceConfiguration;
@@ -98,12 +143,20 @@ public class GetInstanceConfigurationResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public GetInstanceConfigurationResponse build() {
             return new GetInstanceConfigurationResponse(
                     __httpStatusCode__, etag, opcRequestId, instanceConfiguration);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

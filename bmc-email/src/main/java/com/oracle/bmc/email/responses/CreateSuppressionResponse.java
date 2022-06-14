@@ -15,6 +15,12 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -24,6 +30,10 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.email.model.Suppression suppression;
 
+    /**
+     * The returned Suppression instance.
+     * @return the value
+     */
     public com.oracle.bmc.email.model.Suppression getSuppression() {
         return suppression;
     }
@@ -46,15 +56,35 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * The returned Suppression instance.
+         */
         private com.oracle.bmc.email.model.Suppression suppression;
 
+        /**
+         * The returned Suppression instance.
+         * @param suppression the value to set
+         * @return this builder
+         */
         public Builder suppression(com.oracle.bmc.email.model.Suppression suppression) {
             this.suppression = suppression;
             return this;
@@ -72,11 +102,19 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSuppressionResponse build() {
             return new CreateSuppressionResponse(__httpStatusCode__, opcRequestId, suppression);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

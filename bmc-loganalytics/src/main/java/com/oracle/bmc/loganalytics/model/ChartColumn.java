@@ -124,37 +124,73 @@ public final class ChartColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-
+        /**
+         * Time span between each timestamp in the timeseries datapoints.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
         private String intervalGap;
 
+        /**
+         * Time span between each timestamp in the timeseries datapoints.
+         *
+         * @param intervalGap the value to set
+         * @return this builder
+         **/
         public Builder intervalGap(String intervalGap) {
             this.intervalGap = intervalGap;
             this.__explicitlySet__.add("intervalGap");
             return this;
         }
-
+        /**
+         * List of timestamps making up the timeseries datapoints.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervals")
         private java.util.List<Long> intervals;
 
+        /**
+         * List of timestamps making up the timeseries datapoints.
+         *
+         * @param intervals the value to set
+         * @return this builder
+         **/
         public Builder intervals(java.util.List<Long> intervals) {
             this.intervals = intervals;
             this.__explicitlySet__.add("intervals");
             return this;
         }
-
+        /**
+         * Total matching count for each timeseries datapoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
         private java.util.List<Long> totalIntervalCounts;
 
+        /**
+         * Total matching count for each timeseries datapoint.
+         *
+         * @param totalIntervalCounts the value to set
+         * @return this builder
+         **/
         public Builder totalIntervalCounts(java.util.List<Long> totalIntervalCounts) {
             this.totalIntervalCounts = totalIntervalCounts;
             this.__explicitlySet__.add("totalIntervalCounts");
             return this;
         }
-
+        /**
+         * List of series data sets representing various link command results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("series")
         private java.util.List<ChartDataColumn> series;
 
+        /**
+         * List of series data sets representing various link command results.
+         *
+         * @param series the value to set
+         * @return this builder
+         **/
         public Builder series(java.util.List<ChartDataColumn> series) {
             this.series = series;
             this.__explicitlySet__.add("series");
@@ -263,6 +299,11 @@ public final class ChartColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
     private final String intervalGap;
 
+    /**
+     * Time span between each timestamp in the timeseries datapoints.
+     *
+     * @return the value
+     **/
     public String getIntervalGap() {
         return intervalGap;
     }
@@ -274,6 +315,11 @@ public final class ChartColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("intervals")
     private final java.util.List<Long> intervals;
 
+    /**
+     * List of timestamps making up the timeseries datapoints.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getIntervals() {
         return intervals;
     }
@@ -285,6 +331,11 @@ public final class ChartColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCounts")
     private final java.util.List<Long> totalIntervalCounts;
 
+    /**
+     * Total matching count for each timeseries datapoint.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getTotalIntervalCounts() {
         return totalIntervalCounts;
     }
@@ -296,6 +347,11 @@ public final class ChartColumn extends AbstractColumn {
     @com.fasterxml.jackson.annotation.JsonProperty("series")
     private final java.util.List<ChartDataColumn> series;
 
+    /**
+     * List of series data sets representing various link command results.
+     *
+     * @return the value
+     **/
     public java.util.List<ChartDataColumn> getSeries() {
         return series;
     }

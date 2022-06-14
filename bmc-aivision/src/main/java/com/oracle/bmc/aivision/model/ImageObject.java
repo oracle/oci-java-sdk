@@ -29,18 +29,33 @@ public final class ImageObject {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The object category name. Every value returned by the pre-deployed model is in English.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * The object category name. Every value returned by the pre-deployed model is in English.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * The confidence score, between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
+        /**
+         * The confidence score, between 0 and 1.
+         * @param confidence the value to set
+         * @return this builder
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -94,6 +109,10 @@ public final class ImageObject {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * The object category name. Every value returned by the pre-deployed model is in English.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -104,6 +123,10 @@ public final class ImageObject {
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
+    /**
+     * The confidence score, between 0 and 1.
+     * @return the value
+     **/
     public Float getConfidence() {
         return confidence;
     }

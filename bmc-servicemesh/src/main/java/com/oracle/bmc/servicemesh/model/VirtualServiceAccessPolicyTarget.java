@@ -27,9 +27,17 @@ package com.oracle.bmc.servicemesh.model;
 public final class VirtualServiceAccessPolicyTarget extends AccessPolicyTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the virtual service resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("virtualServiceId")
         private String virtualServiceId;
 
+        /**
+         * The OCID of the virtual service resource.
+         * @param virtualServiceId the value to set
+         * @return this builder
+         **/
         public Builder virtualServiceId(String virtualServiceId) {
             this.virtualServiceId = virtualServiceId;
             this.__explicitlySet__.add("virtualServiceId");
@@ -78,6 +86,10 @@ public final class VirtualServiceAccessPolicyTarget extends AccessPolicyTarget {
     @com.fasterxml.jackson.annotation.JsonProperty("virtualServiceId")
     private final String virtualServiceId;
 
+    /**
+     * The OCID of the virtual service resource.
+     * @return the value
+     **/
     public String getVirtualServiceId() {
         return virtualServiceId;
     }

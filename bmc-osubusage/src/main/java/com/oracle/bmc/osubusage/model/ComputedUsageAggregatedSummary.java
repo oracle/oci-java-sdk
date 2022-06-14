@@ -60,18 +60,37 @@ public final class ComputedUsageAggregatedSummary {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
+        /**
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-
+        /**
+         * Subscribed service line parent id
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
         private String parentSubscribedServiceId;
 
+        /**
+         * Subscribed service line parent id
+         *
+         * @param parentSubscribedServiceId the value to set
+         * @return this builder
+         **/
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
             this.parentSubscribedServiceId = parentSubscribedServiceId;
             this.__explicitlySet__.add("parentSubscribedServiceId");
@@ -86,64 +105,127 @@ public final class ComputedUsageAggregatedSummary {
             this.__explicitlySet__.add("parentProduct");
             return this;
         }
-
+        /**
+         * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
+        /**
+         * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
+         *
+         * @param timeStart the value to set
+         * @return this builder
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-
+        /**
+         * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
+        /**
+         * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
+         *
+         * @param timeEnd the value to set
+         * @return this builder
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-
+        /**
+         * Subscribed service asociated subscription plan number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
         private String planNumber;
 
+        /**
+         * Subscribed service asociated subscription plan number.
+         *
+         * @param planNumber the value to set
+         * @return this builder
+         **/
         public Builder planNumber(String planNumber) {
             this.planNumber = planNumber;
             this.__explicitlySet__.add("planNumber");
             return this;
         }
-
+        /**
+         * Currency code
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
+        /**
+         * Currency code
+         *
+         * @param currencyCode the value to set
+         * @return this builder
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-
+        /**
+         * Inernal SPM Ratecard Id at line level
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
         private String rateCardId;
 
+        /**
+         * Inernal SPM Ratecard Id at line level
+         *
+         * @param rateCardId the value to set
+         * @return this builder
+         **/
         public Builder rateCardId(String rateCardId) {
             this.rateCardId = rateCardId;
             this.__explicitlySet__.add("rateCardId");
             return this;
         }
-
+        /**
+         * Subscribed services pricing model
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
         private PricingModel pricingModel;
 
+        /**
+         * Subscribed services pricing model
+         *
+         * @param pricingModel the value to set
+         * @return this builder
+         **/
         public Builder pricingModel(PricingModel pricingModel) {
             this.pricingModel = pricingModel;
             this.__explicitlySet__.add("pricingModel");
             return this;
         }
-
+        /**
+         * Aggregation of computed usages for the subscribed service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedComputedUsages")
         private java.util.List<ComputedUsageAggregation> aggregatedComputedUsages;
 
+        /**
+         * Aggregation of computed usages for the subscribed service.
+         *
+         * @param aggregatedComputedUsages the value to set
+         * @return this builder
+         **/
         public Builder aggregatedComputedUsages(
                 java.util.List<ComputedUsageAggregation> aggregatedComputedUsages) {
             this.aggregatedComputedUsages = aggregatedComputedUsages;
@@ -208,6 +290,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
+    /**
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+     *
+     * @return the value
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -219,6 +306,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
     private final String parentSubscribedServiceId;
 
+    /**
+     * Subscribed service line parent id
+     *
+     * @return the value
+     **/
     public String getParentSubscribedServiceId() {
         return parentSubscribedServiceId;
     }
@@ -237,6 +329,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
+    /**
+     * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
@@ -248,6 +345,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
+    /**
+     * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -259,6 +361,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
     private final String planNumber;
 
+    /**
+     * Subscribed service asociated subscription plan number.
+     *
+     * @return the value
+     **/
     public String getPlanNumber() {
         return planNumber;
     }
@@ -270,6 +377,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
+    /**
+     * Currency code
+     *
+     * @return the value
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
@@ -281,6 +393,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
     private final String rateCardId;
 
+    /**
+     * Inernal SPM Ratecard Id at line level
+     *
+     * @return the value
+     **/
     public String getRateCardId() {
         return rateCardId;
     }
@@ -344,6 +461,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
     private final PricingModel pricingModel;
 
+    /**
+     * Subscribed services pricing model
+     *
+     * @return the value
+     **/
     public PricingModel getPricingModel() {
         return pricingModel;
     }
@@ -355,6 +477,11 @@ public final class ComputedUsageAggregatedSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedComputedUsages")
     private final java.util.List<ComputedUsageAggregation> aggregatedComputedUsages;
 
+    /**
+     * Aggregation of computed usages for the subscribed service.
+     *
+     * @return the value
+     **/
     public java.util.List<ComputedUsageAggregation> getAggregatedComputedUsages() {
         return aggregatedComputedUsages;
     }

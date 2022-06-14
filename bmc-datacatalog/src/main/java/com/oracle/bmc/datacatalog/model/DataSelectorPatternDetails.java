@@ -30,9 +30,17 @@ public final class DataSelectorPatternDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of pattern Ids.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<String> items;
 
+        /**
+         * Collection of pattern Ids.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<String> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class DataSelectorPatternDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<String> items;
 
+    /**
+     * Collection of pattern Ids.
+     * @return the value
+     **/
     public java.util.List<String> getItems() {
         return items;
     }

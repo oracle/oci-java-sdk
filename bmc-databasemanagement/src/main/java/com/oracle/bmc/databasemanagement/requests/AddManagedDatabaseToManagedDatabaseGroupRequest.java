@@ -19,6 +19,9 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
      */
     private String managedDatabaseGroupId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+     */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
@@ -28,6 +31,9 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
     private com.oracle.bmc.databasemanagement.model.AddManagedDatabaseToManagedDatabaseGroupDetails
             addManagedDatabaseToManagedDatabaseGroupDetails;
 
+    /**
+     * The Managed Database details required to add the Managed Database to a Managed Database Group.
+     */
     public com.oracle.bmc.databasemanagement.model.AddManagedDatabaseToManagedDatabaseGroupDetails
             getAddManagedDatabaseToManagedDatabaseGroupDetails() {
         return addManagedDatabaseToManagedDatabaseGroupDetails;
@@ -37,6 +43,9 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,6 +59,14 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -74,10 +91,14 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         */
         private String managedDatabaseGroupId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+         * @param managedDatabaseGroupId the value to set
          * @return this builder instance
          */
         public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
@@ -85,12 +106,16 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
             return this;
         }
 
+        /**
+         * The Managed Database details required to add the Managed Database to a Managed Database Group.
+         */
         private com.oracle.bmc.databasemanagement.model
                         .AddManagedDatabaseToManagedDatabaseGroupDetails
                 addManagedDatabaseToManagedDatabaseGroupDetails = null;
 
         /**
          * The Managed Database details required to add the Managed Database to a Managed Database Group.
+         * @param addManagedDatabaseToManagedDatabaseGroupDetails the value to set
          * @return this builder instance
          */
         public Builder addManagedDatabaseToManagedDatabaseGroupDetails(
@@ -102,10 +127,14 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -113,6 +142,14 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -122,6 +159,7 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -221,7 +259,8 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -232,6 +271,10 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
                 .opcRetryToken(opcRetryToken);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

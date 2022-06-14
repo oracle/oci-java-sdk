@@ -29,9 +29,17 @@ public final class ChangeAiPrivateEndpointCompartmentDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The identifier of the compartment where the resource should be moved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        /**
+         * The identifier of the compartment where the resource should be moved.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -74,6 +82,10 @@ public final class ChangeAiPrivateEndpointCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
+    /**
+     * The identifier of the compartment where the resource should be moved.
+     * @return the value
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }

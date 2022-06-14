@@ -30,9 +30,19 @@ public final class DataCollectionOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDiagnosticsEventsEnabled")
         private Boolean isDiagnosticsEventsEnabled;
 
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
+         *
+         * @param isDiagnosticsEventsEnabled the value to set
+         * @return this builder
+         **/
         public Builder isDiagnosticsEventsEnabled(Boolean isDiagnosticsEventsEnabled) {
             this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             this.__explicitlySet__.add("isDiagnosticsEventsEnabled");
@@ -76,6 +86,11 @@ public final class DataCollectionOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("isDiagnosticsEventsEnabled")
     private final Boolean isDiagnosticsEventsEnabled;
 
+    /**
+     * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
+     *
+     * @return the value
+     **/
     public Boolean getIsDiagnosticsEventsEnabled() {
         return isDiagnosticsEventsEnabled;
     }

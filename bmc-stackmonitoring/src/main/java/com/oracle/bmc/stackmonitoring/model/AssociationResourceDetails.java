@@ -30,18 +30,33 @@ public final class AssociationResourceDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Monitored Resource Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Monitored Resource Name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Monitored Resource Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        /**
+         * Monitored Resource Type
+         * @param type the value to set
+         * @return this builder
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -83,6 +98,10 @@ public final class AssociationResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Monitored Resource Name
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -93,6 +112,10 @@ public final class AssociationResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
+    /**
+     * Monitored Resource Type
+     * @return the value
+     **/
     public String getType() {
         return type;
     }

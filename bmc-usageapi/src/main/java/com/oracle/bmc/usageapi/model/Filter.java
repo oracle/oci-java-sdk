@@ -34,36 +34,65 @@ public final class Filter {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The filter operator. Example: 'AND', 'OR', 'NOT'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
+        /**
+         * The filter operator. Example: 'AND', 'OR', 'NOT'.
+         * @param operator the value to set
+         * @return this builder
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-
+        /**
+         * The dimensions to filter on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<Dimension> dimensions;
 
+        /**
+         * The dimensions to filter on.
+         * @param dimensions the value to set
+         * @return this builder
+         **/
         public Builder dimensions(java.util.List<Dimension> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-
+        /**
+         * The tags to filter on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
+        /**
+         * The tags to filter on.
+         * @param tags the value to set
+         * @return this builder
+         **/
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
-
+        /**
+         * The nested filter object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<Filter> filters;
 
+        /**
+         * The nested filter object.
+         * @param filters the value to set
+         * @return this builder
+         **/
         public Builder filters(java.util.List<Filter> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
@@ -158,6 +187,10 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
+    /**
+     * The filter operator. Example: 'AND', 'OR', 'NOT'.
+     * @return the value
+     **/
     public Operator getOperator() {
         return operator;
     }
@@ -168,6 +201,10 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<Dimension> dimensions;
 
+    /**
+     * The dimensions to filter on.
+     * @return the value
+     **/
     public java.util.List<Dimension> getDimensions() {
         return dimensions;
     }
@@ -178,6 +215,10 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
+    /**
+     * The tags to filter on.
+     * @return the value
+     **/
     public java.util.List<Tag> getTags() {
         return tags;
     }
@@ -188,6 +229,10 @@ public final class Filter {
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<Filter> filters;
 
+    /**
+     * The nested filter object.
+     * @return the value
+     **/
     public java.util.List<Filter> getFilters() {
         return filters;
     }

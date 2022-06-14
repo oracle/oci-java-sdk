@@ -44,45 +44,81 @@ public final class ManagementAgentAggregationDimensions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The availability status of managementAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private AvailabilityStatus availabilityStatus;
 
+        /**
+         * The availability status of managementAgent
+         * @param availabilityStatus the value to set
+         * @return this builder
+         **/
         public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
             return this;
         }
-
+        /**
+         * Platform Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformTypes platformType;
 
+        /**
+         * Platform Type
+         * @param platformType the value to set
+         * @return this builder
+         **/
         public Builder platformType(PlatformTypes platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-
+        /**
+         * Agent image version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
+        /**
+         * Agent image version
+         * @param version the value to set
+         * @return this builder
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-
+        /**
+         * Whether or not a managementAgent has at least one plugin
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hasPlugins")
         private Boolean hasPlugins;
 
+        /**
+         * Whether or not a managementAgent has at least one plugin
+         * @param hasPlugins the value to set
+         * @return this builder
+         **/
         public Builder hasPlugins(Boolean hasPlugins) {
             this.hasPlugins = hasPlugins;
             this.__explicitlySet__.add("hasPlugins");
             return this;
         }
-
+        /**
+         * The install type, either AGENT or GATEWAY
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installType")
         private InstallTypes installType;
 
+        /**
+         * The install type, either AGENT or GATEWAY
+         * @param installType the value to set
+         * @return this builder
+         **/
         public Builder installType(InstallTypes installType) {
             this.installType = installType;
             this.__explicitlySet__.add("installType");
@@ -131,6 +167,10 @@ public final class ManagementAgentAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final AvailabilityStatus availabilityStatus;
 
+    /**
+     * The availability status of managementAgent
+     * @return the value
+     **/
     public AvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
@@ -141,6 +181,10 @@ public final class ManagementAgentAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformTypes platformType;
 
+    /**
+     * Platform Type
+     * @return the value
+     **/
     public PlatformTypes getPlatformType() {
         return platformType;
     }
@@ -151,6 +195,10 @@ public final class ManagementAgentAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
+    /**
+     * Agent image version
+     * @return the value
+     **/
     public String getVersion() {
         return version;
     }
@@ -161,6 +209,10 @@ public final class ManagementAgentAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("hasPlugins")
     private final Boolean hasPlugins;
 
+    /**
+     * Whether or not a managementAgent has at least one plugin
+     * @return the value
+     **/
     public Boolean getHasPlugins() {
         return hasPlugins;
     }
@@ -171,6 +223,10 @@ public final class ManagementAgentAggregationDimensions {
     @com.fasterxml.jackson.annotation.JsonProperty("installType")
     private final InstallTypes installType;
 
+    /**
+     * The install type, either AGENT or GATEWAY
+     * @return the value
+     **/
     public InstallTypes getInstallType() {
         return installType;
     }

@@ -52,6 +52,7 @@ public final class GoldenGateHub {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
         @com.fasterxml.jackson.annotation.JsonProperty("restAdminCredentials")
         private AdminCredentials restAdminCredentials;
 
@@ -88,37 +89,75 @@ public final class GoldenGateHub {
             this.__explicitlySet__.add("targetDbAdminCredentials");
             return this;
         }
-
+        /**
+         * Oracle GoldenGate hub's REST endpoint.
+         * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * Oracle GoldenGate hub's REST endpoint.
+         * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+         *
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * Name of GoldenGate deployment to operate on source database
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceMicroservicesDeploymentName")
         private String sourceMicroservicesDeploymentName;
 
+        /**
+         * Name of GoldenGate deployment to operate on source database
+         *
+         * @param sourceMicroservicesDeploymentName the value to set
+         * @return this builder
+         **/
         public Builder sourceMicroservicesDeploymentName(String sourceMicroservicesDeploymentName) {
             this.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
             this.__explicitlySet__.add("sourceMicroservicesDeploymentName");
             return this;
         }
-
+        /**
+         * Name of GoldenGate deployment to operate on target database
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetMicroservicesDeploymentName")
         private String targetMicroservicesDeploymentName;
 
+        /**
+         * Name of GoldenGate deployment to operate on target database
+         *
+         * @param targetMicroservicesDeploymentName the value to set
+         * @return this builder
+         **/
         public Builder targetMicroservicesDeploymentName(String targetMicroservicesDeploymentName) {
             this.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
             this.__explicitlySet__.add("targetMicroservicesDeploymentName");
             return this;
         }
-
+        /**
+         * OCID of GoldenGate compute instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeId")
         private String computeId;
 
+        /**
+         * OCID of GoldenGate compute instance.
+         *
+         * @param computeId the value to set
+         * @return this builder
+         **/
         public Builder computeId(String computeId) {
             this.computeId = computeId;
             this.__explicitlySet__.add("computeId");
@@ -210,6 +249,12 @@ public final class GoldenGateHub {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * Oracle GoldenGate hub's REST endpoint.
+     * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+     *
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -221,6 +266,11 @@ public final class GoldenGateHub {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMicroservicesDeploymentName")
     private final String sourceMicroservicesDeploymentName;
 
+    /**
+     * Name of GoldenGate deployment to operate on source database
+     *
+     * @return the value
+     **/
     public String getSourceMicroservicesDeploymentName() {
         return sourceMicroservicesDeploymentName;
     }
@@ -232,6 +282,11 @@ public final class GoldenGateHub {
     @com.fasterxml.jackson.annotation.JsonProperty("targetMicroservicesDeploymentName")
     private final String targetMicroservicesDeploymentName;
 
+    /**
+     * Name of GoldenGate deployment to operate on target database
+     *
+     * @return the value
+     **/
     public String getTargetMicroservicesDeploymentName() {
         return targetMicroservicesDeploymentName;
     }
@@ -243,6 +298,11 @@ public final class GoldenGateHub {
     @com.fasterxml.jackson.annotation.JsonProperty("computeId")
     private final String computeId;
 
+    /**
+     * OCID of GoldenGate compute instance.
+     *
+     * @return the value
+     **/
     public String getComputeId() {
         return computeId;
     }

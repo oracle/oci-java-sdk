@@ -41,36 +41,65 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeRecommended")
         private Integer dbTimeBeforeRecommended;
 
+        /**
+         * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
+         * @param dbTimeBeforeRecommended the value to set
+         * @return this builder
+         **/
         public Builder dbTimeBeforeRecommended(Integer dbTimeBeforeRecommended) {
             this.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
             this.__explicitlySet__.add("dbTimeBeforeRecommended");
             return this;
         }
-
+        /**
+         * The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterRecommended")
         private Integer dbTimeAfterRecommended;
 
+        /**
+         * The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
+         * @param dbTimeAfterRecommended the value to set
+         * @return this builder
+         **/
         public Builder dbTimeAfterRecommended(Integer dbTimeAfterRecommended) {
             this.dbTimeAfterRecommended = dbTimeAfterRecommended;
             this.__explicitlySet__.add("dbTimeAfterRecommended");
             return this;
         }
-
+        /**
+         * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterImplemented")
         private Integer dbTimeAfterImplemented;
 
+        /**
+         * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
+         * @param dbTimeAfterImplemented the value to set
+         * @return this builder
+         **/
         public Builder dbTimeAfterImplemented(Integer dbTimeAfterImplemented) {
             this.dbTimeAfterImplemented = dbTimeAfterImplemented;
             this.__explicitlySet__.add("dbTimeAfterImplemented");
             return this;
         }
-
+        /**
+         * The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeImplemented")
         private Integer dbTimeBeforeImplemented;
 
+        /**
+         * The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
+         * @param dbTimeBeforeImplemented the value to set
+         * @return this builder
+         **/
         public Builder dbTimeBeforeImplemented(Integer dbTimeBeforeImplemented) {
             this.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
             this.__explicitlySet__.add("dbTimeBeforeImplemented");
@@ -121,6 +150,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeRecommended")
     private final Integer dbTimeBeforeRecommended;
 
+    /**
+     * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
+     * @return the value
+     **/
     public Integer getDbTimeBeforeRecommended() {
         return dbTimeBeforeRecommended;
     }
@@ -131,6 +164,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterRecommended")
     private final Integer dbTimeAfterRecommended;
 
+    /**
+     * The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
+     * @return the value
+     **/
     public Integer getDbTimeAfterRecommended() {
         return dbTimeAfterRecommended;
     }
@@ -141,6 +178,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterImplemented")
     private final Integer dbTimeAfterImplemented;
 
+    /**
+     * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
+     * @return the value
+     **/
     public Integer getDbTimeAfterImplemented() {
         return dbTimeAfterImplemented;
     }
@@ -151,6 +192,10 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeImplemented")
     private final Integer dbTimeBeforeImplemented;
 
+    /**
+     * The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
+     * @return the value
+     **/
     public Integer getDbTimeBeforeImplemented() {
         return dbTimeBeforeImplemented;
     }

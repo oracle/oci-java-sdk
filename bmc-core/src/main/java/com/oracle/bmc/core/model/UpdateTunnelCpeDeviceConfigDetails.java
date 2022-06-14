@@ -30,9 +30,19 @@ public final class UpdateTunnelCpeDeviceConfigDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The set of configuration answers for a CPE device.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelCpeDeviceConfig")
         private java.util.List<CpeDeviceConfigAnswer> tunnelCpeDeviceConfig;
 
+        /**
+         * The set of configuration answers for a CPE device.
+         *
+         * @param tunnelCpeDeviceConfig the value to set
+         * @return this builder
+         **/
         public Builder tunnelCpeDeviceConfig(
                 java.util.List<CpeDeviceConfigAnswer> tunnelCpeDeviceConfig) {
             this.tunnelCpeDeviceConfig = tunnelCpeDeviceConfig;
@@ -77,6 +87,11 @@ public final class UpdateTunnelCpeDeviceConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelCpeDeviceConfig")
     private final java.util.List<CpeDeviceConfigAnswer> tunnelCpeDeviceConfig;
 
+    /**
+     * The set of configuration answers for a CPE device.
+     *
+     * @return the value
+     **/
     public java.util.List<CpeDeviceConfigAnswer> getTunnelCpeDeviceConfig() {
         return tunnelCpeDeviceConfig;
     }

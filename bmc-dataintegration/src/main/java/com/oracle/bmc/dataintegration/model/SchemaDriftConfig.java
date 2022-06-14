@@ -41,36 +41,65 @@ public final class SchemaDriftConfig {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
         private ExtraColumnHandling extraColumnHandling;
 
+        /**
+         * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+         * @param extraColumnHandling the value to set
+         * @return this builder
+         **/
         public Builder extraColumnHandling(ExtraColumnHandling extraColumnHandling) {
             this.extraColumnHandling = extraColumnHandling;
             this.__explicitlySet__.add("extraColumnHandling");
             return this;
         }
-
+        /**
+         * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
         private MissingColumnHandling missingColumnHandling;
 
+        /**
+         * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+         * @param missingColumnHandling the value to set
+         * @return this builder
+         **/
         public Builder missingColumnHandling(MissingColumnHandling missingColumnHandling) {
             this.missingColumnHandling = missingColumnHandling;
             this.__explicitlySet__.add("missingColumnHandling");
             return this;
         }
-
+        /**
+         * The setting for how to handle columns/fields with changed data types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
         private DataTypeChangeHandling dataTypeChangeHandling;
 
+        /**
+         * The setting for how to handle columns/fields with changed data types.
+         * @param dataTypeChangeHandling the value to set
+         * @return this builder
+         **/
         public Builder dataTypeChangeHandling(DataTypeChangeHandling dataTypeChangeHandling) {
             this.dataTypeChangeHandling = dataTypeChangeHandling;
             this.__explicitlySet__.add("dataTypeChangeHandling");
             return this;
         }
-
+        /**
+         * If true, display a validation warning for schema changes, even if they are allowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValidationWarningIfAllowed")
         private Boolean isValidationWarningIfAllowed;
 
+        /**
+         * If true, display a validation warning for schema changes, even if they are allowed.
+         * @param isValidationWarningIfAllowed the value to set
+         * @return this builder
+         **/
         public Builder isValidationWarningIfAllowed(Boolean isValidationWarningIfAllowed) {
             this.isValidationWarningIfAllowed = isValidationWarningIfAllowed;
             this.__explicitlySet__.add("isValidationWarningIfAllowed");
@@ -170,6 +199,10 @@ public final class SchemaDriftConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
     private final ExtraColumnHandling extraColumnHandling;
 
+    /**
+     * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+     * @return the value
+     **/
     public ExtraColumnHandling getExtraColumnHandling() {
         return extraColumnHandling;
     }
@@ -229,6 +262,10 @@ public final class SchemaDriftConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
     private final MissingColumnHandling missingColumnHandling;
 
+    /**
+     * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+     * @return the value
+     **/
     public MissingColumnHandling getMissingColumnHandling() {
         return missingColumnHandling;
     }
@@ -288,6 +325,10 @@ public final class SchemaDriftConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
     private final DataTypeChangeHandling dataTypeChangeHandling;
 
+    /**
+     * The setting for how to handle columns/fields with changed data types.
+     * @return the value
+     **/
     public DataTypeChangeHandling getDataTypeChangeHandling() {
         return dataTypeChangeHandling;
     }
@@ -298,6 +339,10 @@ public final class SchemaDriftConfig {
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationWarningIfAllowed")
     private final Boolean isValidationWarningIfAllowed;
 
+    /**
+     * If true, display a validation warning for schema changes, even if they are allowed.
+     * @return the value
+     **/
     public Boolean getIsValidationWarningIfAllowed() {
         return isValidationWarningIfAllowed;
     }

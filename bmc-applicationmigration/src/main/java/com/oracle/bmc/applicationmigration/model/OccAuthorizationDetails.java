@@ -28,18 +28,33 @@ package com.oracle.bmc.applicationmigration.model;
 public final class OccAuthorizationDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * User with Compute Operations role in Oracle Cloud@Customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        /**
+         * User with Compute Operations role in Oracle Cloud@Customer.
+         * @param username the value to set
+         * @return this builder
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-
+        /**
+         * Password for this user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        /**
+         * Password for this user.
+         * @param password the value to set
+         * @return this builder
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -88,6 +103,10 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
+    /**
+     * User with Compute Operations role in Oracle Cloud@Customer.
+     * @return the value
+     **/
     public String getUsername() {
         return username;
     }
@@ -98,6 +117,10 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
+    /**
+     * Password for this user.
+     * @return the value
+     **/
     public String getPassword() {
         return password;
     }

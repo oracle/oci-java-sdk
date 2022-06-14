@@ -30,18 +30,33 @@ public final class ConditionOperator {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * operator name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private ConditionOperatorName name;
 
+        /**
+         * operator name
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(ConditionOperatorName name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * display name of the operator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * display name of the operator
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -83,6 +98,10 @@ public final class ConditionOperator {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final ConditionOperatorName name;
 
+    /**
+     * operator name
+     * @return the value
+     **/
     public ConditionOperatorName getName() {
         return name;
     }
@@ -93,6 +112,10 @@ public final class ConditionOperator {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * display name of the operator
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }

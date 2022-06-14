@@ -20,6 +20,12 @@ public class GetGenericArtifactContentByPathRequest
      */
     private String repositoryId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+     * <p>
+     * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+     *
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -31,6 +37,12 @@ public class GetGenericArtifactContentByPathRequest
      */
     private String artifactPath;
 
+    /**
+     * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+     * <p>
+     * Example: {@code project01/my-web-app/artifact-abc}
+     *
+     */
     public String getArtifactPath() {
         return artifactPath;
     }
@@ -42,6 +54,12 @@ public class GetGenericArtifactContentByPathRequest
      */
     private String version;
 
+    /**
+     * A user-defined string to describe the artifact version.
+     * <p>
+     * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+     *
+     */
     public String getVersion() {
         return version;
     }
@@ -54,6 +72,13 @@ public class GetGenericArtifactContentByPathRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * <p>
+     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+     * If you contact Oracle about a request, provide this request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,6 +90,12 @@ public class GetGenericArtifactContentByPathRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+         * <p>
+         * Example: {@code ocid1.repository.oc1..exampleuniqueID}
+         *
+         */
         private String repositoryId = null;
 
         /**
@@ -72,6 +103,7 @@ public class GetGenericArtifactContentByPathRequest
          * <p>
          * Example: {@code ocid1.repository.oc1..exampleuniqueID}
          *
+         * @param repositoryId the value to set
          * @return this builder instance
          */
         public Builder repositoryId(String repositoryId) {
@@ -79,6 +111,12 @@ public class GetGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
+         * <p>
+         * Example: {@code project01/my-web-app/artifact-abc}
+         *
+         */
         private String artifactPath = null;
 
         /**
@@ -86,6 +124,7 @@ public class GetGenericArtifactContentByPathRequest
          * <p>
          * Example: {@code project01/my-web-app/artifact-abc}
          *
+         * @param artifactPath the value to set
          * @return this builder instance
          */
         public Builder artifactPath(String artifactPath) {
@@ -93,6 +132,12 @@ public class GetGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * A user-defined string to describe the artifact version.
+         * <p>
+         * Example: {@code 1.1.2} or {@code 1.2-beta-2}
+         *
+         */
         private String version = null;
 
         /**
@@ -100,6 +145,7 @@ public class GetGenericArtifactContentByPathRequest
          * <p>
          * Example: {@code 1.1.2} or {@code 1.2-beta-2}
          *
+         * @param version the value to set
          * @return this builder instance
          */
         public Builder version(String version) {
@@ -107,6 +153,13 @@ public class GetGenericArtifactContentByPathRequest
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * <p>
+         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+         * If you contact Oracle about a request, provide this request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -115,6 +168,7 @@ public class GetGenericArtifactContentByPathRequest
          * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
          * If you contact Oracle about a request, provide this request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -197,7 +251,8 @@ public class GetGenericArtifactContentByPathRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -207,6 +262,10 @@ public class GetGenericArtifactContentByPathRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

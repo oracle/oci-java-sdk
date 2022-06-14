@@ -32,18 +32,37 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The supported values for this platform configuration property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<AllowedValues> allowedValues;
 
+        /**
+         * The supported values for this platform configuration property.
+         *
+         * @param allowedValues the value to set
+         * @return this builder
+         **/
         public Builder allowedValues(java.util.List<AllowedValues> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
-
+        /**
+         * The default NUMA nodes per socket configuration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
+        /**
+         * The default NUMA nodes per socket configuration.
+         *
+         * @param defaultValue the value to set
+         * @return this builder
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -137,6 +156,11 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<AllowedValues> allowedValues;
 
+    /**
+     * The supported values for this platform configuration property.
+     *
+     * @return the value
+     **/
     public java.util.List<AllowedValues> getAllowedValues() {
         return allowedValues;
     }
@@ -148,6 +172,11 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
+    /**
+     * The default NUMA nodes per socket configuration.
+     *
+     * @return the value
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }

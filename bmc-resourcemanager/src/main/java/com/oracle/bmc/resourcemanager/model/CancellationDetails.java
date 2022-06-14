@@ -30,9 +30,23 @@ public final class CancellationDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Indicates whether a forced cancellation was requested for the job while it was running.
+         * A forced cancellation can result in an incorrect state file.
+         * For example, the state file might not reflect the exact state of the provisioned resources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForced")
         private Boolean isForced;
 
+        /**
+         * Indicates whether a forced cancellation was requested for the job while it was running.
+         * A forced cancellation can result in an incorrect state file.
+         * For example, the state file might not reflect the exact state of the provisioned resources.
+         *
+         * @param isForced the value to set
+         * @return this builder
+         **/
         public Builder isForced(Boolean isForced) {
             this.isForced = isForced;
             this.__explicitlySet__.add("isForced");
@@ -77,6 +91,13 @@ public final class CancellationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isForced")
     private final Boolean isForced;
 
+    /**
+     * Indicates whether a forced cancellation was requested for the job while it was running.
+     * A forced cancellation can result in an incorrect state file.
+     * For example, the state file might not reflect the exact state of the provisioned resources.
+     *
+     * @return the value
+     **/
     public Boolean getIsForced() {
         return isForced;
     }

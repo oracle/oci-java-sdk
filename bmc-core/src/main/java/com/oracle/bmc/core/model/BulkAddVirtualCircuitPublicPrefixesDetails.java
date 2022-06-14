@@ -30,9 +30,17 @@ public final class BulkAddVirtualCircuitPublicPrefixesDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The public IP prefixes (CIDRs) to add to the public virtual circuit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
         private java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
 
+        /**
+         * The public IP prefixes (CIDRs) to add to the public virtual circuit.
+         * @param publicPrefixes the value to set
+         * @return this builder
+         **/
         public Builder publicPrefixes(
                 java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes) {
             this.publicPrefixes = publicPrefixes;
@@ -76,6 +84,10 @@ public final class BulkAddVirtualCircuitPublicPrefixesDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
     private final java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
 
+    /**
+     * The public IP prefixes (CIDRs) to add to the public virtual circuit.
+     * @return the value
+     **/
     public java.util.List<CreateVirtualCircuitPublicPrefixDetails> getPublicPrefixes() {
         return publicPrefixes;
     }

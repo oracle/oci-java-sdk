@@ -62,19 +62,33 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-
+        /**
+         * The total waits of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalWaits")
         private Long totalWaits;
 
+        /**
+         * The total waits of the database.
+         * @param totalWaits the value to set
+         * @return this builder
+         **/
         public Builder totalWaits(Long totalWaits) {
             this.totalWaits = totalWaits;
             this.__explicitlySet__.add("totalWaits");
             return this;
         }
-
+        /**
+         * A list of AWR wait event buckets.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrDbWaitEventBucketSummary> items;
 
+        /**
+         * A list of AWR wait event buckets.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<AwrDbWaitEventBucketSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -137,6 +151,10 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("totalWaits")
     private final Long totalWaits;
 
+    /**
+     * The total waits of the database.
+     * @return the value
+     **/
     public Long getTotalWaits() {
         return totalWaits;
     }
@@ -147,6 +165,10 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrDbWaitEventBucketSummary> items;
 
+    /**
+     * A list of AWR wait event buckets.
+     * @return the value
+     **/
     public java.util.List<AwrDbWaitEventBucketSummary> getItems() {
         return items;
     }

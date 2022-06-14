@@ -76,19 +76,37 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
             this.__explicitlySet__.add("listeningAddress");
             return this;
         }
-
+        /**
+         * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        /**
+         * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+         * @param subnetId the value to set
+         * @return this builder
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-
+        /**
+         * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+         * resolver endpoint is a part of.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
+        /**
+         * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+         * resolver endpoint is a part of.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -159,6 +177,10 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
+    /**
+     * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+     * @return the value
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -171,6 +193,12 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
+    /**
+     * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+     * resolver endpoint is a part of.
+     *
+     * @return the value
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }

@@ -28,18 +28,33 @@ public final class ThreatFeedAction {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique key of the object for which the action applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        /**
+         * The unique key of the object for which the action applies.
+         * @param key the value to set
+         * @return this builder
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-
+        /**
+         * The selected action. If unspecified, defaults to {@code OFF}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
+        /**
+         * The selected action. If unspecified, defaults to {@code OFF}.
+         * @param action the value to set
+         * @return this builder
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -81,6 +96,10 @@ public final class ThreatFeedAction {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
+    /**
+     * The unique key of the object for which the action applies.
+     * @return the value
+     **/
     public String getKey() {
         return key;
     }
@@ -127,6 +146,10 @@ public final class ThreatFeedAction {
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
+    /**
+     * The selected action. If unspecified, defaults to {@code OFF}.
+     * @return the value
+     **/
     public Action getAction() {
         return action;
     }

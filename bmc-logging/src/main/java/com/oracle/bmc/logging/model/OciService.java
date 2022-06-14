@@ -25,36 +25,65 @@ package com.oracle.bmc.logging.model;
 public final class OciService extends Source {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Service generating log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
+        /**
+         * Service generating log.
+         * @param service the value to set
+         * @return this builder
+         **/
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-
+        /**
+         * The unique identifier of the resource emitting the log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resource")
         private String resource;
 
+        /**
+         * The unique identifier of the resource emitting the log.
+         * @param resource the value to set
+         * @return this builder
+         **/
         public Builder resource(String resource) {
             this.resource = resource;
             this.__explicitlySet__.add("resource");
             return this;
         }
-
+        /**
+         * Log object category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
+        /**
+         * Log object category.
+         * @param category the value to set
+         * @return this builder
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-
+        /**
+         * Log category parameters are stored here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, String> parameters;
 
+        /**
+         * Log category parameters are stored here.
+         * @param parameters the value to set
+         * @return this builder
+         **/
         public Builder parameters(java.util.Map<String, String> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -113,6 +142,10 @@ public final class OciService extends Source {
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
+    /**
+     * Service generating log.
+     * @return the value
+     **/
     public String getService() {
         return service;
     }
@@ -123,6 +156,10 @@ public final class OciService extends Source {
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
     private final String resource;
 
+    /**
+     * The unique identifier of the resource emitting the log.
+     * @return the value
+     **/
     public String getResource() {
         return resource;
     }
@@ -133,6 +170,10 @@ public final class OciService extends Source {
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
+    /**
+     * Log object category.
+     * @return the value
+     **/
     public String getCategory() {
         return category;
     }
@@ -143,6 +184,10 @@ public final class OciService extends Source {
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, String> parameters;
 
+    /**
+     * Log category parameters are stored here.
+     * @return the value
+     **/
     public java.util.Map<String, String> getParameters() {
         return parameters;
     }

@@ -18,6 +18,9 @@ public class CreateImageJobRequest
      */
     private com.oracle.bmc.aivision.model.CreateImageJobDetails createImageJobDetails;
 
+    /**
+     * The details of the batch image analysis.
+     */
     public com.oracle.bmc.aivision.model.CreateImageJobDetails getCreateImageJobDetails() {
         return createImageJobDetails;
     }
@@ -31,6 +34,14 @@ public class CreateImageJobRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -39,6 +50,9 @@ public class CreateImageJobRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,10 +74,14 @@ public class CreateImageJobRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The details of the batch image analysis.
+         */
         private com.oracle.bmc.aivision.model.CreateImageJobDetails createImageJobDetails = null;
 
         /**
          * The details of the batch image analysis.
+         * @param createImageJobDetails the value to set
          * @return this builder instance
          */
         public Builder createImageJobDetails(
@@ -72,6 +90,14 @@ public class CreateImageJobRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -81,6 +107,7 @@ public class CreateImageJobRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -88,10 +115,14 @@ public class CreateImageJobRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -182,7 +213,8 @@ public class CreateImageJobRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -191,6 +223,10 @@ public class CreateImageJobRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

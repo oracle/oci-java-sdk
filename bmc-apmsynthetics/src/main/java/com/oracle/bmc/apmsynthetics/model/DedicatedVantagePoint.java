@@ -62,36 +62,65 @@ public final class DedicatedVantagePoint {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+         * @param id the value to set
+         * @return this builder
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-
+        /**
+         * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        /**
+         * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
+         * @param displayName the value to set
+         * @return this builder
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-
+        /**
+         * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
+         * @param name the value to set
+         * @return this builder
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /**
+         * Status of the dedicated vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DedicatedVantagePointStatus status;
 
+        /**
+         * Status of the dedicated vantage point.
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(DedicatedVantagePointStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -106,10 +135,17 @@ public final class DedicatedVantagePoint {
             this.__explicitlySet__.add("dvpStackDetails");
             return this;
         }
-
+        /**
+         * Name of the region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        /**
+         * Name of the region.
+         * @param region the value to set
+         * @return this builder
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -124,37 +160,85 @@ public final class DedicatedVantagePoint {
             this.__explicitlySet__.add("monitorStatusCountMap");
             return this;
         }
-
+        /**
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        /**
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-
+        /**
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
+        /**
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -220,6 +304,10 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+     * @return the value
+     **/
     public String getId() {
         return id;
     }
@@ -230,6 +318,10 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
+    /**
+     * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
+     * @return the value
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -240,6 +332,10 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
+     * @return the value
+     **/
     public String getName() {
         return name;
     }
@@ -250,6 +346,10 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DedicatedVantagePointStatus status;
 
+    /**
+     * Status of the dedicated vantage point.
+     * @return the value
+     **/
     public DedicatedVantagePointStatus getStatus() {
         return status;
     }
@@ -267,6 +367,10 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
+    /**
+     * Name of the region.
+     * @return the value
+     **/
     public String getRegion() {
         return region;
     }
@@ -287,6 +391,13 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
+    /**
+     * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -300,6 +411,13 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
+    /**
+     * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-13T22:47:12.613Z}
+     *
+     * @return the value
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -312,6 +430,12 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -324,6 +448,12 @@ public final class DedicatedVantagePoint {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     * @return the value
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }

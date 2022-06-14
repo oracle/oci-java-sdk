@@ -19,6 +19,9 @@ public class CreateVolumeBackupPolicyRequest
     private com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails
             createVolumeBackupPolicyDetails;
 
+    /**
+     * Request to create a new scheduled backup policy.
+     */
     public com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails
             getCreateVolumeBackupPolicyDetails() {
         return createVolumeBackupPolicyDetails;
@@ -33,6 +36,14 @@ public class CreateVolumeBackupPolicyRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -43,6 +54,11 @@ public class CreateVolumeBackupPolicyRequest
      */
     private String opcRequestId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -65,11 +81,15 @@ public class CreateVolumeBackupPolicyRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Request to create a new scheduled backup policy.
+         */
         private com.oracle.bmc.core.model.CreateVolumeBackupPolicyDetails
                 createVolumeBackupPolicyDetails = null;
 
         /**
          * Request to create a new scheduled backup policy.
+         * @param createVolumeBackupPolicyDetails the value to set
          * @return this builder instance
          */
         public Builder createVolumeBackupPolicyDetails(
@@ -79,6 +99,14 @@ public class CreateVolumeBackupPolicyRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -88,6 +116,7 @@ public class CreateVolumeBackupPolicyRequest
          * has been deleted and purged from the system, then a retry of the original creation request
          * may be rejected).
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -95,12 +124,18 @@ public class CreateVolumeBackupPolicyRequest
             return this;
         }
 
+        /**
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -191,7 +226,8 @@ public class CreateVolumeBackupPolicyRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -200,6 +236,10 @@ public class CreateVolumeBackupPolicyRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

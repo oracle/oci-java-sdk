@@ -17,6 +17,9 @@ public class CreateTableRequest
      */
     private com.oracle.bmc.nosql.model.CreateTableDetails createTableDetails;
 
+    /**
+     * Specifications for the new table.
+     */
     public com.oracle.bmc.nosql.model.CreateTableDetails getCreateTableDetails() {
         return createTableDetails;
     }
@@ -32,6 +35,16 @@ public class CreateTableRequest
      */
     private String opcRetryToken;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried
+     * in case of a timeout or server error without risk of executing
+     * that same action again. Retry tokens expire after 24 hours, but
+     * can be invalidated before then due to conflicting
+     * operations. For example, if a resource has been deleted and
+     * purged from the system, then a retry of the original creation
+     * request might be rejected.
+     *
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
@@ -40,6 +53,9 @@ public class CreateTableRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -61,10 +77,14 @@ public class CreateTableRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * Specifications for the new table.
+         */
         private com.oracle.bmc.nosql.model.CreateTableDetails createTableDetails = null;
 
         /**
          * Specifications for the new table.
+         * @param createTableDetails the value to set
          * @return this builder instance
          */
         public Builder createTableDetails(
@@ -73,6 +93,16 @@ public class CreateTableRequest
             return this;
         }
 
+        /**
+         * A token that uniquely identifies a request so it can be retried
+         * in case of a timeout or server error without risk of executing
+         * that same action again. Retry tokens expire after 24 hours, but
+         * can be invalidated before then due to conflicting
+         * operations. For example, if a resource has been deleted and
+         * purged from the system, then a retry of the original creation
+         * request might be rejected.
+         *
+         */
         private String opcRetryToken = null;
 
         /**
@@ -84,6 +114,7 @@ public class CreateTableRequest
          * purged from the system, then a retry of the original creation
          * request might be rejected.
          *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
@@ -91,10 +122,14 @@ public class CreateTableRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -185,7 +220,8 @@ public class CreateTableRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -194,6 +230,10 @@ public class CreateTableRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

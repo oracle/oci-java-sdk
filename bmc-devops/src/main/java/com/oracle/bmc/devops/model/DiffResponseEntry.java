@@ -62,99 +62,177 @@ public final class DiffResponseEntry {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Type of change made to file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeType")
         private String changeType;
 
+        /**
+         * Type of change made to file.
+         * @param changeType the value to set
+         * @return this builder
+         **/
         public Builder changeType(String changeType) {
             this.changeType = changeType;
             this.__explicitlySet__.add("changeType");
             return this;
         }
-
+        /**
+         * The type of the changed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
+        /**
+         * The type of the changed object.
+         * @param objectType the value to set
+         * @return this builder
+         **/
         public Builder objectType(String objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-
+        /**
+         * The ID of the commit where the change is coming from.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
 
+        /**
+         * The ID of the commit where the change is coming from.
+         * @param commitId the value to set
+         * @return this builder
+         **/
         public Builder commitId(String commitId) {
             this.commitId = commitId;
             this.__explicitlySet__.add("commitId");
             return this;
         }
-
+        /**
+         * The path on the target to the changed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
         private String oldPath;
 
+        /**
+         * The path on the target to the changed object.
+         * @param oldPath the value to set
+         * @return this builder
+         **/
         public Builder oldPath(String oldPath) {
             this.oldPath = oldPath;
             this.__explicitlySet__.add("oldPath");
             return this;
         }
-
+        /**
+         * The path on the source to the changed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newPath")
         private String newPath;
 
+        /**
+         * The path on the source to the changed object.
+         * @param newPath the value to set
+         * @return this builder
+         **/
         public Builder newPath(String newPath) {
             this.newPath = newPath;
             this.__explicitlySet__.add("newPath");
             return this;
         }
-
+        /**
+         * The ID of the changed object on the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldId")
         private String oldId;
 
+        /**
+         * The ID of the changed object on the target.
+         * @param oldId the value to set
+         * @return this builder
+         **/
         public Builder oldId(String oldId) {
             this.oldId = oldId;
             this.__explicitlySet__.add("oldId");
             return this;
         }
-
+        /**
+         * The ID of the changed object on the source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newId")
         private String newId;
 
+        /**
+         * The ID of the changed object on the source.
+         * @param newId the value to set
+         * @return this builder
+         **/
         public Builder newId(String newId) {
             this.newId = newId;
             this.__explicitlySet__.add("newId");
             return this;
         }
-
+        /**
+         * The URL of the changed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
+        /**
+         * The URL of the changed object.
+         * @param url the value to set
+         * @return this builder
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-
+        /**
+         * The number of lines added in whole difference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
         private Integer addedLinesCount;
 
+        /**
+         * The number of lines added in whole difference.
+         * @param addedLinesCount the value to set
+         * @return this builder
+         **/
         public Builder addedLinesCount(Integer addedLinesCount) {
             this.addedLinesCount = addedLinesCount;
             this.__explicitlySet__.add("addedLinesCount");
             return this;
         }
-
+        /**
+         * The number of lines deleted in whole difference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
         private Integer deletedLinesCount;
 
+        /**
+         * The number of lines deleted in whole difference.
+         * @param deletedLinesCount the value to set
+         * @return this builder
+         **/
         public Builder deletedLinesCount(Integer deletedLinesCount) {
             this.deletedLinesCount = deletedLinesCount;
             this.__explicitlySet__.add("deletedLinesCount");
             return this;
         }
-
+        /**
+         * Indicates whether the changed file contains conflicts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areConflictsInFile")
         private Boolean areConflictsInFile;
 
+        /**
+         * Indicates whether the changed file contains conflicts.
+         * @param areConflictsInFile the value to set
+         * @return this builder
+         **/
         public Builder areConflictsInFile(Boolean areConflictsInFile) {
             this.areConflictsInFile = areConflictsInFile;
             this.__explicitlySet__.add("areConflictsInFile");
@@ -219,6 +297,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("changeType")
     private final String changeType;
 
+    /**
+     * Type of change made to file.
+     * @return the value
+     **/
     public String getChangeType() {
         return changeType;
     }
@@ -229,6 +311,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
+    /**
+     * The type of the changed object.
+     * @return the value
+     **/
     public String getObjectType() {
         return objectType;
     }
@@ -239,6 +325,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
     private final String commitId;
 
+    /**
+     * The ID of the commit where the change is coming from.
+     * @return the value
+     **/
     public String getCommitId() {
         return commitId;
     }
@@ -249,6 +339,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
     private final String oldPath;
 
+    /**
+     * The path on the target to the changed object.
+     * @return the value
+     **/
     public String getOldPath() {
         return oldPath;
     }
@@ -259,6 +353,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("newPath")
     private final String newPath;
 
+    /**
+     * The path on the source to the changed object.
+     * @return the value
+     **/
     public String getNewPath() {
         return newPath;
     }
@@ -269,6 +367,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("oldId")
     private final String oldId;
 
+    /**
+     * The ID of the changed object on the target.
+     * @return the value
+     **/
     public String getOldId() {
         return oldId;
     }
@@ -279,6 +381,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("newId")
     private final String newId;
 
+    /**
+     * The ID of the changed object on the source.
+     * @return the value
+     **/
     public String getNewId() {
         return newId;
     }
@@ -289,6 +395,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
+    /**
+     * The URL of the changed object.
+     * @return the value
+     **/
     public String getUrl() {
         return url;
     }
@@ -299,6 +409,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
     private final Integer addedLinesCount;
 
+    /**
+     * The number of lines added in whole difference.
+     * @return the value
+     **/
     public Integer getAddedLinesCount() {
         return addedLinesCount;
     }
@@ -309,6 +423,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
     private final Integer deletedLinesCount;
 
+    /**
+     * The number of lines deleted in whole difference.
+     * @return the value
+     **/
     public Integer getDeletedLinesCount() {
         return deletedLinesCount;
     }
@@ -319,6 +437,10 @@ public final class DiffResponseEntry {
     @com.fasterxml.jackson.annotation.JsonProperty("areConflictsInFile")
     private final Boolean areConflictsInFile;
 
+    /**
+     * Indicates whether the changed file contains conflicts.
+     * @return the value
+     **/
     public Boolean getAreConflictsInFile() {
         return areConflictsInFile;
     }

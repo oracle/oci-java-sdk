@@ -46,6 +46,10 @@ public class TargetResourceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
     private final Integer targetResourcePort;
 
+    /**
+     * The port number to connect to on the target resource.
+     * @return the value
+     **/
     public Integer getTargetResourcePort() {
         return targetResourcePort;
     }

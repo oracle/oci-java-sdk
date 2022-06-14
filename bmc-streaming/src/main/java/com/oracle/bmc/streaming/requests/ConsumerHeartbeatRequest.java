@@ -17,6 +17,10 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String streamId;
 
+    /**
+     * The OCID of the stream.
+     *
+     */
     public String getStreamId() {
         return streamId;
     }
@@ -26,6 +30,10 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String cursor;
 
+    /**
+     * The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
+     *
+     */
     public String getCursor() {
         return cursor;
     }
@@ -36,6 +44,11 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -47,11 +60,16 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the stream.
+         *
+         */
         private String streamId = null;
 
         /**
          * The OCID of the stream.
          *
+         * @param streamId the value to set
          * @return this builder instance
          */
         public Builder streamId(String streamId) {
@@ -59,11 +77,16 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
+         *
+         */
         private String cursor = null;
 
         /**
          * The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
          *
+         * @param cursor the value to set
          * @return this builder instance
          */
         public Builder cursor(String cursor) {
@@ -71,12 +94,18 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /**
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId = null;
 
         /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -156,12 +185,17 @@ public class ConsumerHeartbeatRequest extends com.oracle.bmc.requests.BmcRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().streamId(streamId).cursor(cursor).opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

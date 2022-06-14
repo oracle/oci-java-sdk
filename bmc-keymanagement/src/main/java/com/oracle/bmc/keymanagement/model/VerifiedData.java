@@ -27,9 +27,17 @@ public final class VerifiedData {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A Boolean value that indicates whether the signature was verified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSignatureValid")
         private Boolean isSignatureValid;
 
+        /**
+         * A Boolean value that indicates whether the signature was verified.
+         * @param isSignatureValid the value to set
+         * @return this builder
+         **/
         public Builder isSignatureValid(Boolean isSignatureValid) {
             this.isSignatureValid = isSignatureValid;
             this.__explicitlySet__.add("isSignatureValid");
@@ -71,6 +79,10 @@ public final class VerifiedData {
     @com.fasterxml.jackson.annotation.JsonProperty("isSignatureValid")
     private final Boolean isSignatureValid;
 
+    /**
+     * A Boolean value that indicates whether the signature was verified.
+     * @return the value
+     **/
     public Boolean getIsSignatureValid() {
         return isSignatureValid;
     }

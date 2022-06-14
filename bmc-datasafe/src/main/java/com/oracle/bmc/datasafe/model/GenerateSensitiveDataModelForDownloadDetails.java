@@ -29,9 +29,17 @@ public final class GenerateSensitiveDataModelForDownloadDetails {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The format of the sensitive data model file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataModelFormat")
         private DataModelFormat dataModelFormat;
 
+        /**
+         * The format of the sensitive data model file.
+         * @param dataModelFormat the value to set
+         * @return this builder
+         **/
         public Builder dataModelFormat(DataModelFormat dataModelFormat) {
             this.dataModelFormat = dataModelFormat;
             this.__explicitlySet__.add("dataModelFormat");
@@ -74,6 +82,10 @@ public final class GenerateSensitiveDataModelForDownloadDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataModelFormat")
     private final DataModelFormat dataModelFormat;
 
+    /**
+     * The format of the sensitive data model file.
+     * @return the value
+     **/
     public DataModelFormat getDataModelFormat() {
         return dataModelFormat;
     }

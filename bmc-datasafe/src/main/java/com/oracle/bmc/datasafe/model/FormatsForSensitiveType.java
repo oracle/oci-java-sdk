@@ -31,18 +31,33 @@ public final class FormatsForSensitiveType {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
+        /**
+         * The OCID of the sensitive type.
+         * @param sensitiveTypeId the value to set
+         * @return this builder
+         **/
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
-
+        /**
+         * An array of the library masking formats compatible with the sensitive type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
         private java.util.List<FormatSummary> maskingFormats;
 
+        /**
+         * An array of the library masking formats compatible with the sensitive type.
+         * @param maskingFormats the value to set
+         * @return this builder
+         **/
         public Builder maskingFormats(java.util.List<FormatSummary> maskingFormats) {
             this.maskingFormats = maskingFormats;
             this.__explicitlySet__.add("maskingFormats");
@@ -86,6 +101,10 @@ public final class FormatsForSensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
+    /**
+     * The OCID of the sensitive type.
+     * @return the value
+     **/
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
@@ -96,6 +115,10 @@ public final class FormatsForSensitiveType {
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
     private final java.util.List<FormatSummary> maskingFormats;
 
+    /**
+     * An array of the library masking formats compatible with the sensitive type.
+     * @return the value
+     **/
     public java.util.List<FormatSummary> getMaskingFormats() {
         return maskingFormats;
     }

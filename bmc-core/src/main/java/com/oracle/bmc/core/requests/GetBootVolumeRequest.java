@@ -16,6 +16,9 @@ public class GetBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String bootVolumeId;
 
+    /**
+     * The OCID of the boot volume.
+     */
     public String getBootVolumeId() {
         return bootVolumeId;
     }
@@ -27,10 +30,14 @@ public class GetBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The OCID of the boot volume.
+         */
         private String bootVolumeId = null;
 
         /**
          * The OCID of the boot volume.
+         * @param bootVolumeId the value to set
          * @return this builder instance
          */
         public Builder bootVolumeId(String bootVolumeId) {
@@ -106,12 +113,17 @@ public class GetBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder().bootVolumeId(bootVolumeId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

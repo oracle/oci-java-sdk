@@ -13,6 +13,10 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String location;
 
+    /**
+     * Fully qualified URL for the newly created resource.
+     * @return the value
+     */
     public String getLocation() {
         return location;
     }
@@ -24,6 +28,12 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,6 +43,10 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String etag;
 
+    /**
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -42,6 +56,10 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.oda.model.SkillParameter skillParameter;
 
+    /**
+     * The returned SkillParameter instance.
+     * @return the value
+     */
     public com.oracle.bmc.oda.model.SkillParameter getSkillParameter() {
         return skillParameter;
     }
@@ -74,29 +92,65 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Fully qualified URL for the newly created resource.
+         */
         private String location;
 
+        /**
+         * Fully qualified URL for the newly created resource.
+         * @param location the value to set
+         * @return this builder
+         */
         public Builder location(String location) {
             this.location = location;
             return this;
         }
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         */
         private String opcRequestId;
 
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             return this;
         }
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         */
         private String etag;
 
+        /**
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * @param etag the value to set
+         * @return this builder
+         */
         public Builder etag(String etag) {
             this.etag = etag;
             return this;
         }
 
+        /**
+         * The returned SkillParameter instance.
+         */
         private com.oracle.bmc.oda.model.SkillParameter skillParameter;
 
+        /**
+         * The returned SkillParameter instance.
+         * @param skillParameter the value to set
+         * @return this builder
+         */
         public Builder skillParameter(com.oracle.bmc.oda.model.SkillParameter skillParameter) {
             this.skillParameter = skillParameter;
             return this;
@@ -116,12 +170,20 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /**
+         * Build the response object.
+         * @return the response object
+         */
         public CreateSkillParameterResponse build() {
             return new CreateSkillParameterResponse(
                     __httpStatusCode__, location, opcRequestId, etag, skillParameter);
         }
     }
 
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
     public static Builder builder() {
         return new Builder();
     }

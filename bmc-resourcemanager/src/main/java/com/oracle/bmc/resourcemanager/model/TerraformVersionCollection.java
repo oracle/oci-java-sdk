@@ -30,9 +30,17 @@ public final class TerraformVersionCollection {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Collection of supported Terraform versions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TerraformVersionSummary> items;
 
+        /**
+         * Collection of supported Terraform versions.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<TerraformVersionSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -74,6 +82,10 @@ public final class TerraformVersionCollection {
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TerraformVersionSummary> items;
 
+    /**
+     * Collection of supported Terraform versions.
+     * @return the value
+     **/
     public java.util.List<TerraformVersionSummary> getItems() {
         return items;
     }

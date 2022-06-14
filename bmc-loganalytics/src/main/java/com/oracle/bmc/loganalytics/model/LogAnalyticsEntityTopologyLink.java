@@ -31,18 +31,41 @@ public final class LogAnalyticsEntityTopologyLink {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceEntityId")
         private String sourceEntityId;
 
+        /**
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         * @param sourceEntityId the value to set
+         * @return this builder
+         **/
         public Builder sourceEntityId(String sourceEntityId) {
             this.sourceEntityId = sourceEntityId;
             this.__explicitlySet__.add("sourceEntityId");
             return this;
         }
-
+        /**
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationEntityId")
         private String destinationEntityId;
 
+        /**
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         * @param destinationEntityId the value to set
+         * @return this builder
+         **/
         public Builder destinationEntityId(String destinationEntityId) {
             this.destinationEntityId = destinationEntityId;
             this.__explicitlySet__.add("destinationEntityId");
@@ -89,6 +112,12 @@ public final class LogAnalyticsEntityTopologyLink {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEntityId")
     private final String sourceEntityId;
 
+    /**
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     *
+     * @return the value
+     **/
     public String getSourceEntityId() {
         return sourceEntityId;
     }
@@ -101,6 +130,12 @@ public final class LogAnalyticsEntityTopologyLink {
     @com.fasterxml.jackson.annotation.JsonProperty("destinationEntityId")
     private final String destinationEntityId;
 
+    /**
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     *
+     * @return the value
+     **/
     public String getDestinationEntityId() {
         return destinationEntityId;
     }

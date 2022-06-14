@@ -17,6 +17,9 @@ public class ListResourceProfilesRequest
      */
     private String compartmentId;
 
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -25,6 +28,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.Date timeLastDetectedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+     */
     public java.util.Date getTimeLastDetectedGreaterThanOrEqualTo() {
         return timeLastDetectedGreaterThanOrEqualTo;
     }
@@ -33,6 +39,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.Date timeLastDetectedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to current time.
+     */
     public java.util.Date getTimeLastDetectedLessThanOrEqualTo() {
         return timeLastDetectedLessThanOrEqualTo;
     }
@@ -41,6 +50,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.Date timeFirstDetectedGreaterThanOrEqualTo;
 
+    /**
+     * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+     */
     public java.util.Date getTimeFirstDetectedGreaterThanOrEqualTo() {
         return timeFirstDetectedGreaterThanOrEqualTo;
     }
@@ -49,6 +61,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.Date timeFirstDetectedLessThanOrEqualTo;
 
+    /**
+     * End time for a filter. If end time is not specified, end time will be set to current time.
+     */
     public java.util.Date getTimeFirstDetectedLessThanOrEqualTo() {
         return timeFirstDetectedLessThanOrEqualTo;
     }
@@ -61,6 +76,13 @@ public class ListResourceProfilesRequest
      */
     private Boolean compartmentIdInSubtree;
 
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of {@code accessLevel}.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -115,6 +137,14 @@ public class ListResourceProfilesRequest
         }
     };
 
+    /**
+     * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -123,6 +153,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.List<String> resourceTypes;
 
+    /**
+     * A filter to return only resources that match the list of resource types given
+     */
     public java.util.List<String> getResourceTypes() {
         return resourceTypes;
     }
@@ -131,6 +164,9 @@ public class ListResourceProfilesRequest
      */
     private Double riskScoreGreaterThanOrEqualTo;
 
+    /**
+     * risk score filter
+     */
     public Double getRiskScoreGreaterThanOrEqualTo() {
         return riskScoreGreaterThanOrEqualTo;
     }
@@ -139,6 +175,9 @@ public class ListResourceProfilesRequest
      */
     private Double riskScoreLessThanOrEqualTo;
 
+    /**
+     * risk score filter
+     */
     public Double getRiskScoreLessThanOrEqualTo() {
         return riskScoreLessThanOrEqualTo;
     }
@@ -147,6 +186,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.List<String> techniques;
 
+    /**
+     * A filter to return only resources that match the list of techniques given
+     */
     public java.util.List<String> getTechniques() {
         return techniques;
     }
@@ -155,6 +197,9 @@ public class ListResourceProfilesRequest
      */
     private java.util.List<String> tactics;
 
+    /**
+     * A filter to return only resources that match the list of tactics given.
+     */
     public java.util.List<String> getTactics() {
         return tactics;
     }
@@ -163,6 +208,9 @@ public class ListResourceProfilesRequest
      */
     private Integer limit;
 
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -171,6 +219,9 @@ public class ListResourceProfilesRequest
      */
     private String page;
 
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
     public String getPage() {
         return page;
     }
@@ -179,6 +230,9 @@ public class ListResourceProfilesRequest
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -230,6 +284,10 @@ public class ListResourceProfilesRequest
         }
     };
 
+    /**
+     * The field to sort resource profiles. Only one sort order may be provided. Default order for timeLastDetected is descending. If no value is specified timeLastDetected is default.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -238,6 +296,9 @@ public class ListResourceProfilesRequest
      */
     private String opcRequestId;
 
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -249,10 +310,14 @@ public class ListResourceProfilesRequest
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
@@ -260,10 +325,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         */
         private java.util.Date timeLastDetectedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @param timeLastDetectedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLastDetectedGreaterThanOrEqualTo(
@@ -272,10 +341,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         */
         private java.util.Date timeLastDetectedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @param timeLastDetectedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeLastDetectedLessThanOrEqualTo(
@@ -284,10 +357,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         */
         private java.util.Date timeFirstDetectedGreaterThanOrEqualTo = null;
 
         /**
          * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+         * @param timeFirstDetectedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeFirstDetectedGreaterThanOrEqualTo(
@@ -296,10 +373,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * End time for a filter. If end time is not specified, end time will be set to current time.
+         */
         private java.util.Date timeFirstDetectedLessThanOrEqualTo = null;
 
         /**
          * End time for a filter. If end time is not specified, end time will be set to current time.
+         * @param timeFirstDetectedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder timeFirstDetectedLessThanOrEqualTo(
@@ -308,6 +389,13 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the the setting of {@code accessLevel}.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -316,6 +404,7 @@ public class ListResourceProfilesRequest
          * and all compartments and subcompartments in the tenancy are
          * returned depending on the the setting of {@code accessLevel}.
          *
+         * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
@@ -323,6 +412,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
+         */
         private AccessLevel accessLevel = null;
 
         /**
@@ -332,6 +429,7 @@ public class ListResourceProfilesRequest
          * resource in a subcompartment).
          * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
+         * @param accessLevel the value to set
          * @return this builder instance
          */
         public Builder accessLevel(AccessLevel accessLevel) {
@@ -339,10 +437,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the list of resource types given
+         */
         private java.util.List<String> resourceTypes = null;
 
         /**
          * A filter to return only resources that match the list of resource types given
+         * @param resourceTypes the value to set
          * @return this builder instance
          */
         public Builder resourceTypes(java.util.List<String> resourceTypes) {
@@ -352,16 +454,21 @@ public class ListResourceProfilesRequest
 
         /**
          * Singular setter. A filter to return only resources that match the list of resource types given
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder resourceTypes(String singularValue) {
             return this.resourceTypes(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * risk score filter
+         */
         private Double riskScoreGreaterThanOrEqualTo = null;
 
         /**
          * risk score filter
+         * @param riskScoreGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder riskScoreGreaterThanOrEqualTo(Double riskScoreGreaterThanOrEqualTo) {
@@ -369,10 +476,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * risk score filter
+         */
         private Double riskScoreLessThanOrEqualTo = null;
 
         /**
          * risk score filter
+         * @param riskScoreLessThanOrEqualTo the value to set
          * @return this builder instance
          */
         public Builder riskScoreLessThanOrEqualTo(Double riskScoreLessThanOrEqualTo) {
@@ -380,10 +491,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the list of techniques given
+         */
         private java.util.List<String> techniques = null;
 
         /**
          * A filter to return only resources that match the list of techniques given
+         * @param techniques the value to set
          * @return this builder instance
          */
         public Builder techniques(java.util.List<String> techniques) {
@@ -393,16 +508,21 @@ public class ListResourceProfilesRequest
 
         /**
          * Singular setter. A filter to return only resources that match the list of techniques given
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder techniques(String singularValue) {
             return this.techniques(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * A filter to return only resources that match the list of tactics given.
+         */
         private java.util.List<String> tactics = null;
 
         /**
          * A filter to return only resources that match the list of tactics given.
+         * @param tactics the value to set
          * @return this builder instance
          */
         public Builder tactics(java.util.List<String> tactics) {
@@ -412,16 +532,21 @@ public class ListResourceProfilesRequest
 
         /**
          * Singular setter. A filter to return only resources that match the list of tactics given.
+         * @param singularValue the singular value to set
          * @return this builder instance
          */
         public Builder tactics(String singularValue) {
             return this.tactics(java.util.Arrays.asList(singularValue));
         }
 
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
@@ -429,10 +554,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         */
         private String page = null;
 
         /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * @param page the value to set
          * @return this builder instance
          */
         public Builder page(String page) {
@@ -440,10 +569,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         * @param sortOrder the value to set
          * @return this builder instance
          */
         public Builder sortOrder(com.oracle.bmc.cloudguard.model.SortOrders sortOrder) {
@@ -451,11 +584,16 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * The field to sort resource profiles. Only one sort order may be provided. Default order for timeLastDetected is descending. If no value is specified timeLastDetected is default.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort resource profiles. Only one sort order may be provided. Default order for timeLastDetected is descending. If no value is specified timeLastDetected is default.
          *
+         * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
@@ -463,10 +601,14 @@ public class ListResourceProfilesRequest
             return this;
         }
 
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
@@ -574,7 +716,8 @@ public class ListResourceProfilesRequest
     }
 
     /**
-     * @return instance of {@link Builder} that allows you to modify request properties
+     * Return an instance of {@link Builder} that allows you to modify request properties.
+     * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
         return new Builder()
@@ -597,6 +740,10 @@ public class ListResourceProfilesRequest
                 .opcRequestId(opcRequestId);
     }
 
+    /**
+     * Return a new builder for this request object.
+     * @return builder for the request object
+     */
     public static Builder builder() {
         return new Builder();
     }

@@ -118,37 +118,97 @@ public final class CreateServiceCloudChannelResult extends CreateChannelResult {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-
+        /**
+         * The domain name.
+         *
+         * If you have access to Oracle B2C Service, you can derive this value from the URL that you use to launch the
+         * Agent Browser User Interface. For example, if the URL is sitename.exampledomain.com, then the host name prefix
+         * is sitename and the domain name is exampledomain.com.
+         *
+         * If the channel is connecting to Oracle B2C Service version 19A or later, and you have multiple interfaces,
+         * then you must include the interface ID in the host (site) name . For example, for the interface that has an ID of 2, you would use something like sitename-2.exampledomain.com.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
+        /**
+         * The domain name.
+         *
+         * If you have access to Oracle B2C Service, you can derive this value from the URL that you use to launch the
+         * Agent Browser User Interface. For example, if the URL is sitename.exampledomain.com, then the host name prefix
+         * is sitename and the domain name is exampledomain.com.
+         *
+         * If the channel is connecting to Oracle B2C Service version 19A or later, and you have multiple interfaces,
+         * then you must include the interface ID in the host (site) name . For example, for the interface that has an ID of 2, you would use something like sitename-2.exampledomain.com.
+         *
+         * @param domainName the value to set
+         * @return this builder
+         **/
         public Builder domainName(String domainName) {
             this.domainName = domainName;
             this.__explicitlySet__.add("domainName");
             return this;
         }
-
+        /**
+         * The host prefix.
+         *
+         * If you have access to Oracle B2C Service, you can derive this value from the URL that you use to launch the
+         * Agent Browser User Interface. For example, if the URL is sitename.exampledomain.com, then the host name prefix
+         * is sitename and the domain name is exampledomain.com.
+         *
+         * If the channel is connecting to Oracle B2C Service version 19A or later, and you have multiple interfaces,
+         * then you must include the interface ID in the host (site) name . For example, for the interface that has an ID of 2, you would use something like sitename-2.exampledomain.com.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostNamePrefix")
         private String hostNamePrefix;
 
+        /**
+         * The host prefix.
+         *
+         * If you have access to Oracle B2C Service, you can derive this value from the URL that you use to launch the
+         * Agent Browser User Interface. For example, if the URL is sitename.exampledomain.com, then the host name prefix
+         * is sitename and the domain name is exampledomain.com.
+         *
+         * If the channel is connecting to Oracle B2C Service version 19A or later, and you have multiple interfaces,
+         * then you must include the interface ID in the host (site) name . For example, for the interface that has an ID of 2, you would use something like sitename-2.exampledomain.com.
+         *
+         * @param hostNamePrefix the value to set
+         * @return this builder
+         **/
         public Builder hostNamePrefix(String hostNamePrefix) {
             this.hostNamePrefix = hostNamePrefix;
             this.__explicitlySet__.add("hostNamePrefix");
             return this;
         }
-
+        /**
+         * The user name for an Oracle B2C Service staff member who has the necessary profile permissions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
+        /**
+         * The user name for an Oracle B2C Service staff member who has the necessary profile permissions.
+         * @param userName the value to set
+         * @return this builder
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-
+        /**
+         * The type of Service Cloud client.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientType")
         private ServiceCloudClientType clientType;
 
+        /**
+         * The type of Service Cloud client.
+         * @param clientType the value to set
+         * @return this builder
+         **/
         public Builder clientType(ServiceCloudClientType clientType) {
             this.clientType = clientType;
             this.__explicitlySet__.add("clientType");
@@ -261,6 +321,18 @@ public final class CreateServiceCloudChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
+    /**
+     * The domain name.
+     *
+     * If you have access to Oracle B2C Service, you can derive this value from the URL that you use to launch the
+     * Agent Browser User Interface. For example, if the URL is sitename.exampledomain.com, then the host name prefix
+     * is sitename and the domain name is exampledomain.com.
+     *
+     * If the channel is connecting to Oracle B2C Service version 19A or later, and you have multiple interfaces,
+     * then you must include the interface ID in the host (site) name . For example, for the interface that has an ID of 2, you would use something like sitename-2.exampledomain.com.
+     *
+     * @return the value
+     **/
     public String getDomainName() {
         return domainName;
     }
@@ -279,6 +351,18 @@ public final class CreateServiceCloudChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("hostNamePrefix")
     private final String hostNamePrefix;
 
+    /**
+     * The host prefix.
+     *
+     * If you have access to Oracle B2C Service, you can derive this value from the URL that you use to launch the
+     * Agent Browser User Interface. For example, if the URL is sitename.exampledomain.com, then the host name prefix
+     * is sitename and the domain name is exampledomain.com.
+     *
+     * If the channel is connecting to Oracle B2C Service version 19A or later, and you have multiple interfaces,
+     * then you must include the interface ID in the host (site) name . For example, for the interface that has an ID of 2, you would use something like sitename-2.exampledomain.com.
+     *
+     * @return the value
+     **/
     public String getHostNamePrefix() {
         return hostNamePrefix;
     }
@@ -289,6 +373,10 @@ public final class CreateServiceCloudChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
+    /**
+     * The user name for an Oracle B2C Service staff member who has the necessary profile permissions.
+     * @return the value
+     **/
     public String getUserName() {
         return userName;
     }
@@ -299,6 +387,10 @@ public final class CreateServiceCloudChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.annotation.JsonProperty("clientType")
     private final ServiceCloudClientType clientType;
 
+    /**
+     * The type of Service Cloud client.
+     * @return the value
+     **/
     public ServiceCloudClientType getClientType() {
         return clientType;
     }
